@@ -1,0 +1,186 @@
+{
+ "id": "rc365-MixCakeFrosting-synth-sim_reset-ep492601--v1--gpt-6-sol",
+ "domain": "household",
+ "task_type": "pour_fill_mix",
+ "agent": "gpt-6-sol",
+ "source": {
+  "data": "RoboCasa365 (MIT)",
+  "scene_id": "rc365/MixCakeFrosting/synth/sim_reset/ep_492601",
+  "task": "MixCakeFrosting",
+  "composed": false
+ },
+ "input": {
+  "instruction": "스탠드 믹서 볼에 스틱 버터랑 각설탕을 넣고, 프로스팅 만들게 스탠드 믹서를 켜 줘.",
+  "instruction_en": "Add butter and sugar cubes to the stand mixer bowl and then turn on the stand mixer to begin making frosting.",
+  "world_state": "장소: 가정 주방\n로봇(PandaOmron). 들고 있는 물체 없음.\n\n물체가 놓인 곳:\n- 조리대 4 위, 스탠드 믹서 옆: 접시, 각설탕 1, 각설탕 2\n- 접시 위: 스틱 버터\n\n물체 크기:\n- 각설탕: 큰 것부터 각설탕 2, 각설탕 1\n\n가구:\n- 조리대 1: 전자레인지 옆, 스토브 옆\n- 조리대 2: 식기세척기 옆, 싱크대 옆\n- 조리대 3: 커피머신 옆, 전자레인지 옆, 스토브 옆, 토스터 옆, 토스터 오븐 옆\n- 조리대 4: 스탠드 믹서 옆\n- 조리대 7(식탁용 조리대): 냉장고 옆\n- 식기세척기: 문 닫힘. 칸: 랙 1, 2(위에서부터)\n- 냉장고: 문 닫힘, 냉동실 문 닫힘. 칸: 냉장실 선반 1, 2(위에서부터), 냉장실 서랍\n- 캐비닛 1부터 10까지, 15부터 18까지: 문 닫힘\n- 전자레인지: 문 닫힘\n- 싱크대: 미가동\n- 서랍 1부터 5까지, 9부터 15까지: 서랍 닫힘\n- 캐비닛 12부터 14까지(식탁 구역): 문 닫힘\n- 서랍 6부터 8까지(식탁 구역): 서랍 닫힘\n- 스탠드 믹서: 헤드 올라감\n- 스토브: 문 닫힘, 미가동. 칸: 랙, 앞 왼쪽 화구, 앞 오른쪽 화구, 뒤 왼쪽 화구, 뒤 오른쪽 화구\n- 토스터 오븐: 문 닫힘\n- 커피머신\n- 조리대 5(식탁용 조리대)\n- 조리대 6\n- 수납장\n- 캐비닛 11\n- 스툴 1부터 4까지\n- 토스터",
+  "entity_labels": {
+   "fx_coffee_machine_1": "커피머신",
+   "fx_counter_1": "조리대 1",
+   "fx_counter_2": "조리대 2",
+   "fx_counter_3": "조리대 3",
+   "fx_counter_4": "조리대 4",
+   "fx_counter_5": "조리대 5",
+   "fx_counter_6": "조리대 6",
+   "fx_counter_7": "조리대 7",
+   "fx_dishwasher_1": "식기세척기",
+   "fx_cabinet_1": "수납장",
+   "fx_fridge_1": "냉장고",
+   "fx_cabinet_2": "캐비닛 1",
+   "fx_cabinet_3": "캐비닛 2",
+   "fx_cabinet_4": "캐비닛 3",
+   "fx_cabinet_5": "캐비닛 4",
+   "fx_microwave_1": "전자레인지",
+   "fx_cabinet_6": "캐비닛 5",
+   "fx_sink_1": "싱크대",
+   "fx_cabinet_7": "캐비닛 6",
+   "fx_drawer_1": "서랍 1",
+   "fx_cabinet_8": "캐비닛 7",
+   "fx_drawer_2": "서랍 2",
+   "fx_drawer_3": "서랍 3",
+   "fx_drawer_4": "서랍 4",
+   "fx_drawer_5": "서랍 5",
+   "fx_cabinet_9": "캐비닛 8",
+   "fx_cabinet_10": "캐비닛 9",
+   "fx_cabinet_11": "캐비닛 10",
+   "fx_cabinet_12": "캐비닛 11",
+   "fx_cabinet_13": "캐비닛 12",
+   "fx_drawer_6": "서랍 6",
+   "fx_cabinet_14": "캐비닛 13",
+   "fx_drawer_7": "서랍 7",
+   "fx_cabinet_15": "캐비닛 14",
+   "fx_drawer_8": "서랍 8",
+   "fx_cabinet_16": "캐비닛 15",
+   "fx_drawer_9": "서랍 9",
+   "fx_cabinet_17": "캐비닛 16",
+   "fx_drawer_10": "서랍 10",
+   "fx_drawer_11": "서랍 11",
+   "fx_drawer_12": "서랍 12",
+   "fx_drawer_13": "서랍 13",
+   "fx_cabinet_18": "캐비닛 17",
+   "fx_drawer_14": "서랍 14",
+   "fx_cabinet_19": "캐비닛 18",
+   "fx_drawer_15": "서랍 15",
+   "fx_stand_mixer_1": "스탠드 믹서",
+   "fx_stool_1": "스툴 1",
+   "fx_stool_2": "스툴 2",
+   "fx_stool_3": "스툴 3",
+   "fx_stool_4": "스툴 4",
+   "fx_stove_1": "스토브",
+   "fx_toaster_1": "토스터",
+   "fx_toaster_oven_1": "토스터 오븐",
+   "obj_001": "접시",
+   "obj_002": "스틱 버터",
+   "obj_003": "각설탕 1",
+   "obj_004": "각설탕 2",
+   "fx_dishwasher_1/rack1": "식기세척기 랙 1",
+   "fx_dishwasher_1/rack0": "식기세척기 랙 2",
+   "fx_fridge_1/fridge_shelf1": "냉장고 냉장실 선반 1",
+   "fx_fridge_1/fridge_shelf0": "냉장고 냉장실 선반 2",
+   "fx_fridge_1/fridge_drawer0": "냉장고 냉장실 서랍",
+   "fx_stove_1/rack0": "스토브 랙",
+   "fx_stove_1/front_left": "스토브 앞 왼쪽 화구",
+   "fx_stove_1/front_right": "스토브 앞 오른쪽 화구",
+   "fx_stove_1/rear_left": "스토브 뒤 왼쪽 화구",
+   "fx_stove_1/rear_right": "스토브 뒤 오른쪽 화구"
+  }
+ },
+ "output": {
+  "reasoning": "① 지시 해석: 스틱 버터와 각설탕 1·2를 스탠드 믹서의 볼에 넣고, 프로스팅을 만들 수 있도록 믹서를 켜는 작업이다. 시간 조건은 없다. 재료가 모두 조리대 4에 있으므로 그곳에서 시작해 스탠드 믹서에서 끝난다. ② 씬 접지: 스틱 버터는 조리대 4 위의 접시에 있고, 각설탕 1·2는 조리대 4 위에 있다. 스탠드 믹서는 헤드가 올라간 상태다. 볼은 환경 설명에 별도 대상으로 나오지 않아 스탠드 믹서를 받는 곳으로 접지한다. ③ 역할 부여: 재료 세 가지는 위치가 바뀌고 스탠드 믹서는 가동 상태가 바뀌므로 필수다. 접시와 조리대 4는 재료의 초기 위치 기준인 보조다. ④ 제약 도출: 재료는 가동 전에 볼에 들어가야 하며, 올라간 믹서 헤드는 가동 전에 내려야 한다. 볼이라는 놓을 자리의 한정은 환경 설명의 대상 이름으로 목표 상태에 표현할 수 없어 공간 제약으로 둔다. ⑤ 목표 상태: 재료 세 가지가 스탠드 믹서 안에 있고 스탠드 믹서가 가동 중인 경우 하나다.",
+  "task_situation_description": {
+   "task_goal": {
+    "summary": "스탠드 믹서 볼에 스틱 버터와 각설탕을 넣고 믹서를 켜 프로스팅을 만들도록 하는 것",
+    "goal_state": [
+     [
+      {
+       "kind": "relation",
+       "subject": "스틱 버터",
+       "predicate": "in",
+       "object": "스탠드 믹서",
+       "value": true
+      },
+      {
+       "kind": "relation",
+       "subject": "각설탕 1",
+       "predicate": "in",
+       "object": "스탠드 믹서",
+       "value": true
+      },
+      {
+       "kind": "relation",
+       "subject": "각설탕 2",
+       "predicate": "in",
+       "object": "스탠드 믹서",
+       "value": true
+      },
+      {
+       "kind": "state",
+       "subject": "스탠드 믹서",
+       "predicate": "turned_on",
+       "object": null,
+       "value": true
+      }
+     ]
+    ]
+   },
+   "spatiotemporal_conditions": {
+    "time": null,
+    "space": {
+     "start": "조리대 4",
+     "end": "스탠드 믹서"
+    }
+   },
+   "target_objects": {
+    "required": [
+     {
+      "ref": "스틱 버터",
+      "location": "접시 위",
+      "state": null
+     },
+     {
+      "ref": "각설탕 1",
+      "location": "조리대 4 위, 스탠드 믹서 옆",
+      "state": null
+     },
+     {
+      "ref": "각설탕 2",
+      "location": "조리대 4 위, 스탠드 믹서 옆",
+      "state": null
+     },
+     {
+      "ref": "스탠드 믹서",
+      "location": null,
+      "state": "헤드 올라감"
+     }
+    ],
+    "key_means": [],
+    "auxiliary": [
+     {
+      "ref": "접시",
+      "location": "조리대 4 위, 스탠드 믹서 옆",
+      "note": "스틱 버터의 초기 위치 기준"
+     },
+     {
+      "ref": "조리대 4",
+      "location": null,
+      "note": "각설탕 1과 각설탕 2의 초기 위치 기준"
+     }
+    ]
+   },
+   "constraints": [
+    {
+     "type": "spatial",
+     "description": "스틱 버터와 각설탕은 스탠드 믹서의 볼에 넣어야 함"
+    },
+    {
+     "type": "precedence",
+     "description": "재료가 볼에 들어가는 것이 프로스팅을 위한 스탠드 믹서 가동에 선행해야 함"
+    },
+    {
+     "type": "precedence",
+     "description": "스탠드 믹서의 헤드가 올라가 있으므로 헤드를 내리는 것이 가동에 선행해야 함"
+    }
+   ]
+  },
+  "task_situation_description_text": "작업 목표: 스탠드 믹서 볼에 스틱 버터와 각설탕을 넣고 믹서를 켜 프로스팅을 만들도록 하는 것\n목표 상태:\n- 스틱 버터: 스탠드 믹서 안\n- 각설탕 1: 스탠드 믹서 안\n- 각설탕 2: 스탠드 믹서 안\n- 스탠드 믹서: 가동 중\n시간·공간 조건: 시간 조건은 없음, 공간 조건은 시작 조리대 4, 종료 스탠드 믹서\n대상 물체:\n- 필수 물체: 스틱 버터(위치: 접시 위)\n- 필수 물체: 각설탕 1(위치: 조리대 4 위, 스탠드 믹서 옆)\n- 필수 물체: 각설탕 2(위치: 조리대 4 위, 스탠드 믹서 옆)\n- 필수 물체: 스탠드 믹서(상태: 헤드 올라감)\n- 보조 물체: 접시(위치: 조리대 4 위, 스탠드 믹서 옆, 비고: 스틱 버터의 초기 위치 기준)\n- 보조 물체: 조리대 4(비고: 각설탕 1과 각설탕 2의 초기 위치 기준)\n제약 사항:\n- [공간] 스틱 버터와 각설탕은 스탠드 믹서의 볼에 넣어야 함\n- [선후] 재료가 볼에 들어가는 것이 프로스팅을 위한 스탠드 믹서 가동에 선행해야 함\n- [선후] 스탠드 믹서의 헤드가 올라가 있으므로 헤드를 내리는 것이 가동에 선행해야 함\n"
+ }
+}
