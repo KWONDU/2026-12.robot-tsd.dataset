@@ -1,0 +1,141 @@
+{
+ "id": "factory_floor-floors-1425268693--go_to-6c79408e--v1--gpt-6-sol",
+ "domain": "manufacturing",
+ "task_type": "go_to",
+ "agent": "gpt-6-sol",
+ "source": {
+  "data": "RoboCup Logistics League 2025 rules, FloorLayout.jl FLP instances (MIT), NVIDIA SimReady assets (CC BY 4.0)",
+  "scene_id": "factory_floor/1425268693",
+  "task": "go_to",
+  "composed": true
+ },
+ "input": {
+  "instruction": "충전소로 가.",
+  "instruction_en": "Go to the charging station.",
+  "world_state": "장소: 공장\n로봇(mobile_manipulator). 들고 있는 물체 없음. 가공기 4 근처에 있음.\n\n지도의 구역과 곳(미리 알고 있는 정보):\n- 조립 구역: 검사대, 조립 스테이션 1, 조립 스테이션 2, 조립 스테이션 3, 조립 스테이션 4\n- 가공 구역: 가공기 1, 가공기 2, 가공기 3, 가공기 4, 가공기 5\n- 자재 구역: 자동 창고, 자재 공급대 1, 자재 공급대 2\n- 출하 구역: 출하 도크\n- 지원 구역: 공구 보관소, 로봇 대기 구역, 충전소, 폐기물 수거장\n\n지도의 통로:\n- 로봇 대기 구역 - 가공기 4: 통로 1, 15 m\n- 로봇 대기 구역 - 가공기 5: 통로 2, 33 m\n- 로봇 대기 구역 - 검사대: 통로 3, 18 m, 막힘(바닥 청소 중)\n- 자재 공급대 1 - 자재 공급대 2: 통로 4, 6 m\n- 자재 공급대 1 - 가공기 1: 통로 5, 9 m\n- 자재 공급대 1 - 가공기 2: 통로 6, 6 m\n- 자재 공급대 1 - 조립 스테이션 3: 통로 7, 9 m\n- 자재 공급대 1 - 출하 도크: 통로 8, 6 m\n- 자재 공급대 2 - 조립 스테이션 2: 통로 9, 6 m\n- 자재 공급대 2 - 조립 스테이션 4: 통로 10, 6 m\n- 가공기 3 - 공구 보관소: 통로 11, 6 m, 가공기 3에서 공구 보관소 쪽으로만\n- 가공기 3 - 폐기물 수거장: 통로 12, 9 m\n- 가공기 5 - 공구 보관소: 통로 13, 9 m\n- 자동 창고 - 공구 보관소: 통로 14, 6 m\n- 자동 창고 - 충전소: 통로 15, 12 m\n- 공구 보관소 - 폐기물 수거장: 통로 16, 6 m\n- 충전소 - 폐기물 수거장: 통로 17, 18 m\n- 가공기 1 - 가공기 4: 통로 18, 6 m\n- 가공기 1 - 조립 스테이션 2: 통로 19, 9 m\n- 가공기 1 - 조립 스테이션 3: 통로 20, 9 m\n- 가공기 1 - 출하 도크: 통로 21, 6 m, 가공기 1에서 출하 도크 쪽으로만\n- 가공기 2 - 가공기 3: 통로 22, 6 m\n- 가공기 2 - 조립 스테이션 1: 통로 23, 6 m\n- 가공기 2 - 조립 스테이션 4: 통로 24, 6 m\n- 조립 스테이션 1 - 충전소: 통로 25, 24 m\n- 조립 스테이션 1 - 폐기물 수거장: 통로 26, 15 m\n- 조립 스테이션 2 - 조립 스테이션 3: 통로 27, 9 m\n- 조립 스테이션 3 - 가공기 4: 통로 28, 6 m\n- 출하 도크 - 가공기 3: 통로 29, 6 m\n- 출하 도크 - 검사대: 통로 30, 6 m\n- 검사대 - 가공기 4: 통로 31, 6 m\n- 검사대 - 공구 보관소: 통로 32, 12 m\n- 조립 스테이션 4 - 가공기 3: 통로 33, 15 m\n- 조립 스테이션 4 - 자동 창고: 통로 34, 27 m\n- 조립 스테이션 4 - 충전소: 통로 35, 24 m\n- 조립 스테이션 4 - 폐기물 수거장: 통로 36, 15 m\n\n시설 알림:\n- 통로 3(로봇 대기 구역 - 검사대) 막힘: 바닥 청소 중\n\n공장 시스템이 알려 준 물품(지금 보이지 않음):\n- 자재 공급대 1 출구 버퍼 위: 체인 가이드, M12 너트\n- 자재 공급대 2 출구 버퍼 위: 시동 모터\n- 가공기 1 출구 버퍼 위: 아이들러 풀리, 오일 필터 1\n- 가공기 2 출구 버퍼 위: 작업용 타월 1\n- 조립 스테이션 1 출구 버퍼 위: 작업 장갑 1\n- 조립 스테이션 2 출구 버퍼 위: 오일 실 1, 작업 장갑 2, 종이컵 1\n- 조립 스테이션 3 입구 버퍼 위: 스프로킷\n- 조립 스테이션 3 출구 버퍼 위: 타이밍 체인\n- 검사대 입구 버퍼 위: 엔진 제어 모듈 1\n- 조립 스테이션 4 입구 버퍼 위: 베어링\n- 조립 스테이션 4 출구 버퍼 위: 종이컵 2\n- 가공기 3 출구 버퍼 위: 엔진 제어 모듈 2, 작업용 타월 2\n- 가공기 5 출구 버퍼 위: 작업용 타월 4, 오일 필터 3\n- 자동 창고 선반 1 위: M8 볼트\n- 자동 창고 선반 2 위: 오일 실 2, 전구\n- 자동 창고 선반 4 위: M20 너트\n- 자동 창고 선반 5 위: M4 너트, 에어 필터\n- 자동 창고 선반 6 위: 호스\n- 공구 보관소 반출대 위: 플라이어, 멀티미터, 소켓\n\n물체가 놓인 곳:\n- 가공기 4 입구 버퍼 위: M16 너트\n- 가공기 4 출구 버퍼 위: 점화 플러그, 작업용 타월 3, 오일 필터 2\n\n설비:\n- 가공기 1(가공 구역): 가동 중. 칸: 입구 버퍼, 출구 버퍼\n- 가공기 2(가공 구역): 가동 중. 칸: 입구 버퍼, 출구 버퍼\n- 조립 스테이션 1(조립 구역): 가동 중. 칸: 입구 버퍼, 출구 버퍼\n- 조립 스테이션 2(조립 구역): 가동 중. 칸: 입구 버퍼, 출구 버퍼\n- 조립 스테이션 3(조립 구역): 가동 중. 칸: 입구 버퍼, 출구 버퍼\n- 조립 스테이션 4(조립 구역): 가동 중. 칸: 입구 버퍼, 출구 버퍼\n- 가공기 3(가공 구역): 가동 중. 칸: 입구 버퍼, 출구 버퍼\n- 가공기 4(가공 구역): 가동 중. 칸: 입구 버퍼, 출구 버퍼\n- 가공기 5(가공 구역): 가동 중. 칸: 입구 버퍼, 출구 버퍼\n- 바닥\n- 로봇 대기 구역(지원 구역)\n- 자재 공급대 1(자재 구역): 칸: 출구 버퍼\n- 자재 공급대 2(자재 구역): 칸: 출구 버퍼\n- 출하 도크(출하 구역): 칸: 입구 버퍼\n- 검사대(조립 구역): 칸: 입구 버퍼, 출구 버퍼\n- 자동 창고(자재 구역): 칸: 선반 1부터 6까지(위에서부터)\n- 공구 보관소(지원 구역): 칸: 반출대\n- 충전소(지원 구역)\n- 폐기물 수거장(지원 구역): 칸: 수거함",
+  "entity_labels": {
+   "fx_floor_1": "바닥",
+   "fx_robot_bay_1": "로봇 대기 구역",
+   "fx_supply_station_1": "자재 공급대 1",
+   "fx_supply_station_2": "자재 공급대 2",
+   "fx_machining_station_1": "가공기 1",
+   "fx_machining_station_2": "가공기 2",
+   "fx_assembly_station_1": "조립 스테이션 1",
+   "fx_assembly_station_2": "조립 스테이션 2",
+   "fx_assembly_station_3": "조립 스테이션 3",
+   "fx_shipping_dock_1": "출하 도크",
+   "fx_inspection_station_1": "검사대",
+   "fx_assembly_station_4": "조립 스테이션 4",
+   "fx_machining_station_3": "가공기 3",
+   "fx_machining_station_4": "가공기 4",
+   "fx_machining_station_5": "가공기 5",
+   "fx_storage_station_1": "자동 창고",
+   "fx_tool_crib_1": "공구 보관소",
+   "fx_charging_station_1": "충전소",
+   "fx_waste_station_1": "폐기물 수거장",
+   "obj_001": "체인 가이드",
+   "obj_002": "M12 너트",
+   "obj_003": "시동 모터",
+   "obj_004": "아이들러 풀리",
+   "obj_005": "오일 필터 1",
+   "obj_006": "작업용 타월 1",
+   "obj_007": "작업 장갑 1",
+   "obj_008": "오일 실 1",
+   "obj_009": "작업 장갑 2",
+   "obj_010": "종이컵 1",
+   "obj_011": "스프로킷",
+   "obj_012": "타이밍 체인",
+   "obj_013": "엔진 제어 모듈 1",
+   "obj_014": "베어링",
+   "obj_015": "종이컵 2",
+   "obj_016": "엔진 제어 모듈 2",
+   "obj_017": "작업용 타월 2",
+   "obj_018": "M16 너트",
+   "obj_019": "점화 플러그",
+   "obj_020": "작업용 타월 3",
+   "obj_021": "오일 필터 2",
+   "obj_022": "작업용 타월 4",
+   "obj_023": "오일 필터 3",
+   "obj_024": "M8 볼트",
+   "obj_025": "오일 실 2",
+   "obj_026": "전구",
+   "obj_027": "M20 너트",
+   "obj_028": "M4 너트",
+   "obj_029": "에어 필터",
+   "obj_030": "호스",
+   "obj_031": "플라이어",
+   "obj_032": "멀티미터",
+   "obj_033": "소켓",
+   "fx_supply_station_1/output": "자재 공급대 1 출구 버퍼",
+   "fx_supply_station_2/output": "자재 공급대 2 출구 버퍼",
+   "fx_machining_station_1/input": "가공기 1 입구 버퍼",
+   "fx_machining_station_1/output": "가공기 1 출구 버퍼",
+   "fx_machining_station_2/input": "가공기 2 입구 버퍼",
+   "fx_machining_station_2/output": "가공기 2 출구 버퍼",
+   "fx_assembly_station_1/input": "조립 스테이션 1 입구 버퍼",
+   "fx_assembly_station_1/output": "조립 스테이션 1 출구 버퍼",
+   "fx_assembly_station_2/input": "조립 스테이션 2 입구 버퍼",
+   "fx_assembly_station_2/output": "조립 스테이션 2 출구 버퍼",
+   "fx_assembly_station_3/input": "조립 스테이션 3 입구 버퍼",
+   "fx_assembly_station_3/output": "조립 스테이션 3 출구 버퍼",
+   "fx_shipping_dock_1/input": "출하 도크 입구 버퍼",
+   "fx_inspection_station_1/input": "검사대 입구 버퍼",
+   "fx_inspection_station_1/output": "검사대 출구 버퍼",
+   "fx_assembly_station_4/input": "조립 스테이션 4 입구 버퍼",
+   "fx_assembly_station_4/output": "조립 스테이션 4 출구 버퍼",
+   "fx_machining_station_3/input": "가공기 3 입구 버퍼",
+   "fx_machining_station_3/output": "가공기 3 출구 버퍼",
+   "fx_machining_station_4/input": "가공기 4 입구 버퍼",
+   "fx_machining_station_4/output": "가공기 4 출구 버퍼",
+   "fx_machining_station_5/input": "가공기 5 입구 버퍼",
+   "fx_machining_station_5/output": "가공기 5 출구 버퍼",
+   "fx_storage_station_1/shelf1": "자동 창고 선반 1",
+   "fx_storage_station_1/shelf2": "자동 창고 선반 2",
+   "fx_storage_station_1/shelf3": "자동 창고 선반 3",
+   "fx_storage_station_1/shelf4": "자동 창고 선반 4",
+   "fx_storage_station_1/shelf5": "자동 창고 선반 5",
+   "fx_storage_station_1/shelf6": "자동 창고 선반 6",
+   "fx_tool_crib_1/counter": "공구 보관소 반출대",
+   "fx_waste_station_1/bin": "폐기물 수거장 수거함"
+  }
+ },
+ "output": {
+  "reasoning": "① 지시 해석: 물건을 옮기지 않고 로봇이 충전소로 가는 작업이다. 시간 조건은 없다. 로봇이 지금 가공기 4 근처에 있으므로 시작은 가공기 4, 끝은 충전소다. ② 씬 접지: 가공기 4와 충전소는 지도에 있는 설비다. 가공기 4에서 충전소까지 통로 길이로 가장 짧은 길에는 막히거나 출입이 제한된 통로가 없다. ③ 역할 부여: 로봇이 도착해야 하는 충전소는 목표 상태의 주어이므로 필수다. ④ 제약 도출: 이 작업에 적용할 시간·통로·선후 제약은 없다. ⑤ 목표 상태 도출: 작업을 마치면 로봇이 충전소에 와 있어야 한다.",
+  "task_situation_description": {
+   "task_goal": {
+    "summary": "로봇이 현재 있는 가공기 4 근처에서 충전소로 가는 것",
+    "goal_state": [
+     [
+      {
+       "kind": "relation",
+       "subject": "충전소",
+       "predicate": "robot_at",
+       "object": null,
+       "value": true
+      }
+     ]
+    ]
+   },
+   "spatiotemporal_conditions": {
+    "time": null,
+    "space": {
+     "start": "가공기 4",
+     "end": "충전소"
+    }
+   },
+   "target_objects": {
+    "required": [
+     {
+      "ref": "충전소",
+      "location": null,
+      "state": null
+     }
+    ],
+    "key_means": [],
+    "auxiliary": []
+   },
+   "constraints": []
+  },
+  "task_situation_description_text": "작업 목표: 로봇이 현재 있는 가공기 4 근처에서 충전소로 가는 것\n목표 상태:\n- 충전소: 로봇 로봇 위치\n시간·공간 조건: 시간 조건은 없음, 공간 조건은 시작 가공기 4, 종료 충전소\n대상 물체:\n- 필수 물체: 충전소\n제약 사항: 없음\n"
+ }
+}
