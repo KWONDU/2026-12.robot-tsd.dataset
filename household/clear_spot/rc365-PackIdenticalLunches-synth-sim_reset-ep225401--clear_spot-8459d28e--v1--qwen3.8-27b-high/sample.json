@@ -1,0 +1,154 @@
+{
+ "id": "rc365-PackIdenticalLunches-synth-sim_reset-ep225401--clear_spot-8459d28e--v1--qwen3.8-27b-high",
+ "domain": "household",
+ "task_type": "clear_spot",
+ "agent": "qwen3.8-27b-high",
+ "source": {
+  "data": "RoboCasa365 (MIT)",
+  "scene_id": "rc365/PackIdenticalLunches/synth/sim_reset/ep_225401",
+  "task": "clear_spot",
+  "composed": true
+ },
+ "input": {
+  "instruction": "냉장고 맨 아래 선반에 있는 것들 다 꺼내서 조리대에 올려놔.",
+  "instruction_en": "Clear everything out of the bottom shelf of the fridge and put it all on a counter.",
+  "world_state": "장소: 가정 주방\n로봇(PandaOmron). 들고 있는 물체 없음.\n\n물체가 놓인 곳:\n- 냉장고 냉장실 선반 2 위: 호박 1, 호박 2\n- 냉장고 냉장실 선반 1 위: 닭다리 1, 닭다리 2\n- 조리대 2 위, 냉장고 옆: 밀폐용기 1, 밀폐용기 2\n\n물체 크기:\n- 닭다리: 큰 것부터 닭다리 1, 닭다리 2\n\n가구:\n- 서랍 1, 4부터 6까지, 8부터 10까지, 13: 서랍 닫힘\n- 캐비닛 1부터 6까지, 9, 10, 13, 14, 17부터 19까지: 문 닫힘\n- 조리대 1: 커피머신 옆, 식기세척기 옆, 오븐 옆, 싱크대 옆, 토스터 옆\n- 조리대 2: 냉장고 옆, 토스터 오븐 옆\n- 조리대 3(식탁용 조리대): 전자레인지 옆, 스토브 상판 옆\n- 식기세척기: 문 닫힘. 칸: 랙 1, 2(위에서부터)\n- 냉장고: 문 열림, 냉동실 문 닫힘. 칸: 냉장실 선반 1, 2(위에서부터), 냉장실 서랍\n- 전자레인지: 문 닫힘\n- 오븐: 문 닫힘. 칸: 랙 1, 2(위에서부터)\n- 싱크대: 미가동\n- 캐비닛 7, 8, 11, 12, 15, 16(식탁 구역): 문 닫힘\n- 서랍 2, 3, 7, 11, 12(식탁 구역): 서랍 닫힘\n- 스토브 상판(식탁 구역): 미가동. 칸: 뒤 왼쪽 화구, 앞 왼쪽 화구, 앞 오른쪽 화구, 뒤 오른쪽 화구\n- 토스터 오븐: 문 닫힘. 칸: 랙\n- 커피머신\n- 조리대 4(식탁용 조리대)\n- 수납장 1, 2\n- 스툴 1부터 6까지\n- 토스터",
+  "entity_labels": {
+   "fx_drawer_1": "서랍 1",
+   "fx_cabinet_1": "캐비닛 1",
+   "fx_cabinet_2": "캐비닛 2",
+   "fx_cabinet_3": "캐비닛 3",
+   "fx_cabinet_4": "캐비닛 4",
+   "fx_cabinet_5": "캐비닛 5",
+   "fx_coffee_machine_1": "커피머신",
+   "fx_counter_1": "조리대 1",
+   "fx_counter_2": "조리대 2",
+   "fx_counter_3": "조리대 3",
+   "fx_counter_4": "조리대 4",
+   "fx_dishwasher_1": "식기세척기",
+   "fx_cabinet_6": "수납장 1",
+   "fx_fridge_1": "냉장고",
+   "fx_microwave_1": "전자레인지",
+   "fx_cabinet_7": "수납장 2",
+   "fx_cabinet_8": "캐비닛 6",
+   "fx_oven_1": "오븐",
+   "fx_sink_1": "싱크대",
+   "fx_cabinet_9": "캐비닛 7",
+   "fx_drawer_2": "서랍 2",
+   "fx_cabinet_10": "캐비닛 8",
+   "fx_drawer_3": "서랍 3",
+   "fx_cabinet_11": "캐비닛 9",
+   "fx_drawer_4": "서랍 4",
+   "fx_cabinet_12": "캐비닛 10",
+   "fx_drawer_5": "서랍 5",
+   "fx_drawer_6": "서랍 6",
+   "fx_cabinet_13": "캐비닛 11",
+   "fx_cabinet_14": "캐비닛 12",
+   "fx_drawer_7": "서랍 7",
+   "fx_cabinet_15": "캐비닛 13",
+   "fx_drawer_8": "서랍 8",
+   "fx_cabinet_16": "캐비닛 14",
+   "fx_drawer_9": "서랍 9",
+   "fx_drawer_10": "서랍 10",
+   "fx_cabinet_17": "캐비닛 15",
+   "fx_drawer_11": "서랍 11",
+   "fx_cabinet_18": "캐비닛 16",
+   "fx_drawer_12": "서랍 12",
+   "fx_cabinet_19": "캐비닛 17",
+   "fx_cabinet_20": "캐비닛 18",
+   "fx_drawer_13": "서랍 13",
+   "fx_stool_1": "스툴 1",
+   "fx_stool_2": "스툴 2",
+   "fx_stool_3": "스툴 3",
+   "fx_stool_4": "스툴 4",
+   "fx_stool_5": "스툴 5",
+   "fx_stool_6": "스툴 6",
+   "fx_stovetop_1": "스토브 상판",
+   "fx_toaster_1": "토스터",
+   "fx_toaster_oven_1": "토스터 오븐",
+   "fx_cabinet_21": "캐비닛 19",
+   "obj_001": "호박 1",
+   "obj_002": "호박 2",
+   "obj_003": "닭다리 1",
+   "obj_004": "닭다리 2",
+   "obj_005": "밀폐용기 1",
+   "obj_006": "밀폐용기 2",
+   "fx_dishwasher_1/rack1": "식기세척기 랙 1",
+   "fx_dishwasher_1/rack0": "식기세척기 랙 2",
+   "fx_fridge_1/fridge_shelf1": "냉장고 냉장실 선반 1",
+   "fx_fridge_1/fridge_shelf0": "냉장고 냉장실 선반 2",
+   "fx_fridge_1/fridge_drawer0": "냉장고 냉장실 서랍",
+   "fx_oven_1/rack1": "오븐 랙 1",
+   "fx_oven_1/rack0": "오븐 랙 2",
+   "fx_stovetop_1/rear_left": "스토브 상판 뒤 왼쪽 화구",
+   "fx_stovetop_1/front_left": "스토브 상판 앞 왼쪽 화구",
+   "fx_stovetop_1/front_right": "스토브 상판 앞 오른쪽 화구",
+   "fx_stovetop_1/rear_right": "스토브 상판 뒤 오른쪽 화구",
+   "fx_toaster_oven_1/rack0": "토스터 오븐 랙"
+  }
+ },
+ "output": {
+  "reasoning": "① 지시 해석: '냉장고 맨 아래 선반에 있는 것들 다 꺼내서 조리대에 올려놔'는 냉장고의 가장 아래 선반에 있는 모든 물체를 꺼내어 조리대 위에 올려놓는 작업이다. 시간 조건은 없다. 작업은 물건이 있는 냉장고에서 시작해 조리대에서 끝난다. ② 씬 접지: 냉장고의 칸은 '냉장실 선반 1, 2(위에서부터), 냉장실 서랍'으로, 위에서부터 선반 1이 맨 위 선반, 선반 2가 맨 아래 선반이다. 냉장실 선반 2 위에는 호박 1, 호박 2가 있다. '조리대'에 번호가 없으므로 환경 설명의 조리대 1~4 중 어느 것이든 되며, 접지 규칙에 따라 번호를 떼어 '조리대'로 쓴다. ③ 역할 부여: 호박 1, 호박 2는 위치가 바뀌어야 하므로 필수다. 조리대는 goal_state에서 on 관계의 object로 물체를 받는 곳이므로 핵심 수단이다. 냉장고는 호박 1, 2가 처음 놓여 있는 가구가므로 초기 위치 기준의 보조다. ④ 제약 도출: 냉장고 문이 이미 열려 있으므로 문을 여는 선행 제약은 없다. 냉동실 문은 닫혀 있으나 이번 작업 대상이 아니라 관련 없다. 물리·안전·공간 제약도 지시나 환경에서 도출되는 것이 없다. ⑤ 목표 상태: 지시가 요구한 끝 상태는 호박 1과 호박 2가 조리대 위에 올라 있는 것이다. 어느 조리대든 되고 같은 곳이나 다른 곳이든 지시에서 구별하지 않으므로 경우 하나에 두 단언으로 쓴다.",
+  "task_situation_description": {
+   "task_goal": {
+    "summary": "냉장고 냉장실 맨 아래 선반에 있는 호박 1, 호박 2를 꺼내어 조리대 위에 올리는 것",
+    "goal_state": [
+     [
+      {
+       "kind": "relation",
+       "subject": "호박 1",
+       "predicate": "on",
+       "object": "조리대",
+       "value": true
+      },
+      {
+       "kind": "relation",
+       "subject": "호박 2",
+       "predicate": "on",
+       "object": "조리대",
+       "value": true
+      }
+     ]
+    ]
+   },
+   "spatiotemporal_conditions": {
+    "time": null,
+    "space": {
+     "start": "냉장고",
+     "end": "조리대"
+    }
+   },
+   "target_objects": {
+    "required": [
+     {
+      "ref": "호박 1",
+      "location": "냉장고 냉장실 선반 2 위",
+      "state": null
+     },
+     {
+      "ref": "호박 2",
+      "location": "냉장고 냉장실 선반 2 위",
+      "state": null
+     }
+    ],
+    "key_means": [
+     {
+      "ref": "조리대",
+      "location": null,
+      "state": null,
+      "alternatives": []
+     }
+    ],
+    "auxiliary": [
+     {
+      "ref": "냉장고",
+      "location": null,
+      "note": "호박 1, 호박 2의 초기 위치 기준"
+     }
+    ]
+   },
+   "constraints": []
+  },
+  "task_situation_description_text": "작업 목표: 냉장고 냉장실 맨 아래 선반에 있는 호박 1, 호박 2를 꺼내어 조리대 위에 올리는 것\n목표 상태:\n- 호박 1: 조리대 위\n- 호박 2: 조리대 위\n시간·공간 조건: 시간 조건은 없음, 공간 조건은 시작 냉장고, 종료 조리대\n대상 물체:\n- 필수 물체: 호박 1(위치: 냉장고 냉장실 선반 2 위)\n- 필수 물체: 호박 2(위치: 냉장고 냉장실 선반 2 위)\n- 핵심 수단: 조리대\n- 보조 물체: 냉장고(비고: 호박 1, 호박 2의 초기 위치 기준)\n제약 사항: 없음\n"
+ }
+}

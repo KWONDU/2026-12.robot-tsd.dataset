@@ -1,0 +1,180 @@
+{
+ "id": "rc365-CheesyBread-synth-sim_reset-ep331101--sort_two-53ef4ef1--v1--gpt-6-sol",
+ "domain": "household",
+ "task_type": "sort_two",
+ "agent": "gpt-6-sol",
+ "source": {
+  "data": "RoboCasa365 (MIT)",
+  "scene_id": "rc365/CheesyBread/synth/sim_reset/ep_331101",
+  "task": "sort_two",
+  "composed": true
+ },
+ "input": {
+  "instruction": "납작빵은 눕혀서 냉장고 맨 위 선반에 놓고, 치즈는 싱크대에 놔줘.",
+  "instruction_en": "Put the bread flat on the top shelf of the fridge and the cheese in the sink.",
+  "world_state": "장소: 가정 주방\n로봇(PandaOmron). 들고 있는 물체 없음.\n\n물체가 놓인 곳:\n- 조리대 1 위: 도마, 치즈, 병 음료\n- 도마 위: 납작빵\n\n가구:\n- 서랍 1, 3, 4, 6부터 13까지, 15: 서랍 닫힘\n- 조리대 1: 토스터 오븐 옆, 스토브 옆\n- 조리대 2: 냉장고 옆, 토스터 옆\n- 조리대 3: 스토브 옆\n- 조리대 4: 커피머신 옆, 냉장고 옆, 전자레인지 옆\n- 식기세척기(아일랜드): 문 닫힘. 칸: 랙 1, 2(위에서부터)\n- 냉장고: 문 닫힘, 냉동실 문 닫힘. 칸: 냉장실 선반 1, 2(위에서부터), 냉장실 서랍\n- 캐비닛 1부터 9까지, 11, 12, 14, 17, 19, 20: 문 닫힘\n- 조리대 5(아일랜드 식탁): 식기세척기 옆, 싱크대 옆\n- 전자레인지: 문 닫힘\n- 싱크대(아일랜드): 미가동\n- 캐비닛 10, 13, 15, 18(아일랜드): 문 닫힘\n- 서랍 2, 5, 14(아일랜드): 서랍 닫힘\n- 토스터 오븐: 문 닫힘. 칸: 랙\n- 스토브: 문 닫힘, 미가동. 칸: 랙 1, 2(위에서부터), 뒤 왼쪽 화구, 뒤 오른쪽 화구, 앞 왼쪽 화구, 앞 가운데 화구, 앞 오른쪽 화구, 뒤 가운데 화구\n- 커피머신\n- 수납장 1, 2\n- 캐비닛 16(아일랜드)\n- 스툴 1부터 4까지\n- 토스터",
+  "entity_labels": {
+   "fx_drawer_1": "서랍 1",
+   "fx_coffee_machine_1": "커피머신",
+   "fx_counter_1": "조리대 1",
+   "fx_counter_2": "조리대 2",
+   "fx_counter_3": "조리대 3",
+   "fx_counter_4": "조리대 4",
+   "fx_dishwasher_1": "식기세척기",
+   "fx_cabinet_1": "수납장 1",
+   "fx_fridge_1": "냉장고",
+   "fx_cabinet_2": "캐비닛 1",
+   "fx_cabinet_3": "캐비닛 2",
+   "fx_cabinet_4": "캐비닛 3",
+   "fx_cabinet_5": "캐비닛 4",
+   "fx_cabinet_6": "캐비닛 5",
+   "fx_cabinet_7": "캐비닛 6",
+   "fx_counter_5": "조리대 5",
+   "fx_cabinet_8": "수납장 2",
+   "fx_microwave_1": "전자레인지",
+   "fx_cabinet_9": "캐비닛 7",
+   "fx_cabinet_10": "캐비닛 8",
+   "fx_cabinet_11": "캐비닛 9",
+   "fx_sink_1": "싱크대",
+   "fx_cabinet_12": "캐비닛 10",
+   "fx_drawer_2": "서랍 2",
+   "fx_cabinet_13": "캐비닛 11",
+   "fx_drawer_3": "서랍 3",
+   "fx_cabinet_14": "캐비닛 12",
+   "fx_drawer_4": "서랍 4",
+   "fx_cabinet_15": "캐비닛 13",
+   "fx_drawer_5": "서랍 5",
+   "fx_drawer_6": "서랍 6",
+   "fx_drawer_7": "서랍 7",
+   "fx_drawer_8": "서랍 8",
+   "fx_cabinet_16": "캐비닛 14",
+   "fx_drawer_9": "서랍 9",
+   "fx_cabinet_17": "캐비닛 15",
+   "fx_cabinet_18": "캐비닛 16",
+   "fx_drawer_10": "서랍 10",
+   "fx_drawer_11": "서랍 11",
+   "fx_drawer_12": "서랍 12",
+   "fx_cabinet_19": "캐비닛 17",
+   "fx_drawer_13": "서랍 13",
+   "fx_cabinet_20": "캐비닛 18",
+   "fx_drawer_14": "서랍 14",
+   "fx_cabinet_21": "캐비닛 19",
+   "fx_drawer_15": "서랍 15",
+   "fx_stool_1": "스툴 1",
+   "fx_stool_2": "스툴 2",
+   "fx_stool_3": "스툴 3",
+   "fx_stool_4": "스툴 4",
+   "fx_toaster_oven_1": "토스터 오븐",
+   "fx_toaster_1": "토스터",
+   "fx_cabinet_22": "캐비닛 20",
+   "fx_stove_1": "스토브",
+   "obj_001": "도마",
+   "obj_002": "납작빵",
+   "obj_003": "치즈",
+   "obj_004": "병 음료",
+   "fx_dishwasher_1/rack1": "식기세척기 랙 1",
+   "fx_dishwasher_1/rack0": "식기세척기 랙 2",
+   "fx_fridge_1/fridge_shelf1": "냉장고 냉장실 선반 1",
+   "fx_fridge_1/fridge_shelf0": "냉장고 냉장실 선반 2",
+   "fx_fridge_1/fridge_drawer0": "냉장고 냉장실 서랍",
+   "fx_toaster_oven_1/rack0": "토스터 오븐 랙",
+   "fx_stove_1/rack1": "스토브 랙 1",
+   "fx_stove_1/rack0": "스토브 랙 2",
+   "fx_stove_1/rear_left": "스토브 뒤 왼쪽 화구",
+   "fx_stove_1/rear_right": "스토브 뒤 오른쪽 화구",
+   "fx_stove_1/front_left": "스토브 앞 왼쪽 화구",
+   "fx_stove_1/front_center": "스토브 앞 가운데 화구",
+   "fx_stove_1/front_right": "스토브 앞 오른쪽 화구",
+   "fx_stove_1/rear_center": "스토브 뒤 가운데 화구"
+  }
+ },
+ "output": {
+  "reasoning": "① 지시 해석: 납작빵을 눕혀 냉장고 맨 위 선반에 놓고 치즈를 싱크대에 놓는 작업이다. 시간 조건은 없으며, 두 일을 나열했을 뿐 순서는 정하지 않았다. 두 물체가 처음 있는 가구는 조리대 1이므로 시작점은 조리대 1이고, 끝나는 곳은 냉장고 혹은 싱크대다. ② 씬 접지: 납작빵은 조리대 1 위의 도마 위에 있고, 치즈는 조리대 1 위에 있다. 냉장고의 맨 위 냉장실 선반은 냉장고 냉장실 선반 1이며 냉장고 문은 닫혀 있다. ③ 역할 부여: 납작빵과 치즈는 위치가 바뀌므로 필수다. 냉장고 냉장실 선반 1과 싱크대는 각각 물체를 받는 곳이므로 핵심 수단이다. 도마와 조리대 1은 초기 위치 기준이며, 냉장고는 닫힌 문을 열어야 선반에 접근할 수 있는 가구이므로 보조다. ④ 제약 도출: 냉장고 문을 여는 것이 납작빵을 선반에 놓는 것에 선행해야 한다. 납작빵을 눕혀 놓아야 한다는 배치 조건이 있다. ⑤ 목표 상태 도출: 최종적으로 납작빵은 냉장고 냉장실 선반 1 위에, 치즈는 싱크대 위에 있어야 한다. 눕힌 방향은 정해진 목표 상태 술어로 표현할 수 없어 공간 제약으로 둔다.",
+  "task_situation_description": {
+   "task_goal": {
+    "summary": "납작빵을 눕혀 냉장고 맨 위 선반에 놓고 치즈를 싱크대에 놓는 것",
+    "goal_state": [
+     [
+      {
+       "kind": "relation",
+       "subject": "납작빵",
+       "predicate": "on",
+       "object": "냉장고 냉장실 선반 1",
+       "value": true
+      },
+      {
+       "kind": "relation",
+       "subject": "치즈",
+       "predicate": "on",
+       "object": "싱크대",
+       "value": true
+      }
+     ]
+    ]
+   },
+   "spatiotemporal_conditions": {
+    "time": null,
+    "space": {
+     "start": "조리대 1",
+     "end": "냉장고 혹은 싱크대"
+    }
+   },
+   "target_objects": {
+    "required": [
+     {
+      "ref": "납작빵",
+      "location": "도마 위",
+      "state": null
+     },
+     {
+      "ref": "치즈",
+      "location": "조리대 1 위",
+      "state": null
+     }
+    ],
+    "key_means": [
+     {
+      "ref": "냉장고 냉장실 선반 1",
+      "location": null,
+      "state": null,
+      "alternatives": []
+     },
+     {
+      "ref": "싱크대",
+      "location": null,
+      "state": "미가동",
+      "alternatives": []
+     }
+    ],
+    "auxiliary": [
+     {
+      "ref": "도마",
+      "location": "조리대 1 위",
+      "note": "납작빵의 초기 위치 기준"
+     },
+     {
+      "ref": "조리대 1",
+      "location": null,
+      "note": "치즈의 초기 위치 기준이자 도마가 놓인 가구"
+     },
+     {
+      "ref": "냉장고",
+      "location": null,
+      "note": "문이 닫혀 있어 냉장고 냉장실 선반 1에 접근하려면 먼저 문을 열어야 하는 가구"
+     }
+    ]
+   },
+   "constraints": [
+    {
+     "type": "precedence",
+     "description": "냉장고 문이 닫혀 있으므로 문을 여는 것이 납작빵을 냉장고 냉장실 선반 1에 놓는 것에 선행해야 함"
+    },
+    {
+     "type": "spatial",
+     "description": "납작빵을 선반에 눕혀 놓아야 함"
+    }
+   ]
+  },
+  "task_situation_description_text": "작업 목표: 납작빵을 눕혀 냉장고 맨 위 선반에 놓고 치즈를 싱크대에 놓는 것\n목표 상태:\n- 납작빵: 냉장고 냉장실 선반 1 위\n- 치즈: 싱크대 위\n시간·공간 조건: 시간 조건은 없음, 공간 조건은 시작 조리대 1, 종료 냉장고 혹은 싱크대\n대상 물체:\n- 필수 물체: 납작빵(위치: 도마 위)\n- 필수 물체: 치즈(위치: 조리대 1 위)\n- 핵심 수단: 냉장고 냉장실 선반 1\n- 핵심 수단: 싱크대(상태: 미가동)\n- 보조 물체: 도마(위치: 조리대 1 위, 비고: 납작빵의 초기 위치 기준)\n- 보조 물체: 조리대 1(비고: 치즈의 초기 위치 기준이자 도마가 놓인 가구)\n- 보조 물체: 냉장고(비고: 문이 닫혀 있어 냉장고 냉장실 선반 1에 접근하려면 먼저 문을 열어야 하는 가구)\n제약 사항:\n- [선후] 냉장고 문이 닫혀 있으므로 문을 여는 것이 납작빵을 냉장고 냉장실 선반 1에 놓는 것에 선행해야 함\n- [공간] 납작빵을 선반에 눕혀 놓아야 함\n"
+ }
+}

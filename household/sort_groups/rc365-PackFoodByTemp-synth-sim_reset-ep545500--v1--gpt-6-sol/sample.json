@@ -1,0 +1,267 @@
+{
+ "id": "rc365-PackFoodByTemp-synth-sim_reset-ep545500--v1--gpt-6-sol",
+ "domain": "household",
+ "task_type": "sort_groups",
+ "agent": "gpt-6-sol",
+ "source": {
+  "data": "RoboCasa365 (MIT)",
+  "scene_id": "rc365/PackFoodByTemp/synth/sim_reset/ep_545500",
+  "task": "PackFoodByTemp",
+  "composed": false
+ },
+ "input": {
+  "instruction": "냉장고에 있는 당근이랑 피망은 한 밀폐용기에 담아서 아일랜드 식탁에 놓고, 케밥 꼬치랑 핫도그는 다른 밀폐용기에 담아서 스토브 쪽에 둬.",
+  "instruction_en": "Place the cold items (carrot and bell pepper) from the fridge in one tupperware on the dining counter. Place the warm items (kebab skewer and hot dog) in the stove area in another tupperware. ",
+  "world_state": "장소: 가정 주방\n로봇(PandaOmron). 들고 있는 물체 없음.\n\n물체가 놓인 곳:\n- 스토브 뒤 왼쪽 화구 위: 팬\n- 팬 위: 케밥 꼬치\n- 조리대 2 위, 스토브 옆: 접시\n- 접시 위: 핫도그\n- 냉장고 냉장실 선반 1 위: 당근\n- 냉장고 냉장실 선반 2 위: 피망\n- 조리대 5(아일랜드 식탁) 위, 스툴 2 옆: 밀폐용기 1, 밀폐용기 2\n\n물체 크기:\n- 밀폐용기: 큰 것부터 밀폐용기 1, 밀폐용기 2\n\n가구:\n- 서랍 1부터 5까지: 서랍 닫힘\n- 조리대 1: 커피머신 옆, 스토브 옆\n- 조리대 2: 냉장고 옆, 전자레인지 옆, 스토브 옆, 토스터 오븐 옆\n- 조리대 3: 싱크대 옆, 토스터 옆\n- 식기세척기(아일랜드): 문 닫힘. 칸: 랙 1, 2(위에서부터)\n- 냉장고: 문 열림, 냉동실 문 닫힘. 칸: 냉장실 선반 1, 2(위에서부터), 냉장실 서랍\n- 캐비닛 1부터 5까지, 7부터 12까지, 15, 18: 문 닫힘\n- 조리대 5(아일랜드 식탁): 식기세척기 옆\n- 전자레인지: 문 닫힘\n- 싱크대: 미가동. 칸: 왼쪽 개수대, 오른쪽 개수대\n- 캐비닛 14, 16, 17(아일랜드): 문 닫힘\n- 서랍 6부터 8까지(아일랜드): 서랍 닫힘\n- 스토브: 문 닫힘, 미가동. 칸: 랙, 뒤 왼쪽 화구, 앞 왼쪽 화구, 앞 오른쪽 화구, 뒤 오른쪽 화구\n- 토스터 오븐: 문 닫힘. 칸: 랙 1, 2(위에서부터)\n- 커피머신\n- 조리대 4\n- 수납장 1, 2\n- 캐비닛 6, 13\n- 스툴 1부터 4까지\n- 토스터",
+  "entity_labels": {
+   "fx_drawer_1": "서랍 1",
+   "fx_coffee_machine_1": "커피머신",
+   "fx_counter_1": "조리대 1",
+   "fx_counter_2": "조리대 2",
+   "fx_counter_3": "조리대 3",
+   "fx_counter_4": "조리대 4",
+   "fx_dishwasher_1": "식기세척기",
+   "fx_cabinet_1": "수납장 1",
+   "fx_fridge_1": "냉장고",
+   "fx_cabinet_2": "캐비닛 1",
+   "fx_cabinet_3": "캐비닛 2",
+   "fx_cabinet_4": "캐비닛 3",
+   "fx_cabinet_5": "캐비닛 4",
+   "fx_cabinet_6": "캐비닛 5",
+   "fx_counter_5": "조리대 5",
+   "fx_cabinet_7": "수납장 2",
+   "fx_microwave_1": "전자레인지",
+   "fx_cabinet_8": "캐비닛 6",
+   "fx_cabinet_9": "캐비닛 7",
+   "fx_cabinet_10": "캐비닛 8",
+   "fx_sink_1": "싱크대",
+   "fx_cabinet_11": "캐비닛 9",
+   "fx_cabinet_12": "캐비닛 10",
+   "fx_drawer_2": "서랍 2",
+   "fx_drawer_3": "서랍 3",
+   "fx_drawer_4": "서랍 4",
+   "fx_drawer_5": "서랍 5",
+   "fx_cabinet_13": "캐비닛 11",
+   "fx_cabinet_14": "캐비닛 12",
+   "fx_cabinet_15": "캐비닛 13",
+   "fx_cabinet_16": "캐비닛 14",
+   "fx_drawer_6": "서랍 6",
+   "fx_cabinet_17": "캐비닛 15",
+   "fx_cabinet_18": "캐비닛 16",
+   "fx_drawer_7": "서랍 7",
+   "fx_cabinet_19": "캐비닛 17",
+   "fx_drawer_8": "서랍 8",
+   "fx_stool_1": "스툴 1",
+   "fx_stool_2": "스툴 2",
+   "fx_stool_3": "스툴 3",
+   "fx_stool_4": "스툴 4",
+   "fx_stove_1": "스토브",
+   "fx_toaster_oven_1": "토스터 오븐",
+   "fx_toaster_1": "토스터",
+   "fx_cabinet_20": "캐비닛 18",
+   "obj_001": "팬",
+   "obj_002": "케밥 꼬치",
+   "obj_003": "접시",
+   "obj_004": "핫도그",
+   "obj_005": "당근",
+   "obj_006": "피망",
+   "obj_007": "밀폐용기 1",
+   "obj_008": "밀폐용기 2",
+   "fx_dishwasher_1/rack1": "식기세척기 랙 1",
+   "fx_dishwasher_1/rack0": "식기세척기 랙 2",
+   "fx_fridge_1/fridge_shelf1": "냉장고 냉장실 선반 1",
+   "fx_fridge_1/fridge_shelf0": "냉장고 냉장실 선반 2",
+   "fx_fridge_1/fridge_drawer0": "냉장고 냉장실 서랍",
+   "fx_sink_1/basin_left": "싱크대 왼쪽 개수대",
+   "fx_sink_1/basin_right": "싱크대 오른쪽 개수대",
+   "fx_stove_1/rack0": "스토브 랙",
+   "fx_stove_1/rear_left": "스토브 뒤 왼쪽 화구",
+   "fx_stove_1/front_left": "스토브 앞 왼쪽 화구",
+   "fx_stove_1/front_right": "스토브 앞 오른쪽 화구",
+   "fx_stove_1/rear_right": "스토브 뒤 오른쪽 화구",
+   "fx_toaster_oven_1/rack1": "토스터 오븐 랙 1",
+   "fx_toaster_oven_1/rack0": "토스터 오븐 랙 2"
+  }
+ },
+ "output": {
+  "reasoning": "① 지시 해석: 당근과 피망은 한 밀폐용기에, 케밥 꼬치와 핫도그는 다른 밀폐용기에 담는다. 첫 용기는 아일랜드 식탁에, 둘째 용기는 스토브 근처에 둔다. 시간 조건이나 두 묶음 사이의 작업 순서는 정해지지 않았다. 옮길 물체가 처음 있는 곳을 기준으로 시작 장소는 냉장고 혹은 스토브 혹은 조리대 2 혹은 조리대 5이고, 끝 장소는 조리대 5 혹은 스토브다. ② 씬 접지: 당근과 피망은 냉장고에, 케밥 꼬치는 스토브의 팬 위에, 핫도그는 조리대 2의 접시 위에 있다. 밀폐용기 1과 밀폐용기 2는 조리대 5에 있으며, 지시의 아일랜드 식탁은 조리대 5를 가리킨다. ③ 역할 부여: 음식 네 가지와 위치가 바뀌거나 음식이 담겨야 하는 밀폐용기 두 개는 필수다. 조리대 5는 첫 용기를 받는 곳이므로 핵심 수단이다. 냉장고·팬·접시는 음식의 초기 위치 기준이고, 스토브는 케밥 꼬치의 초기 위치 기준이자 둘째 용기를 둘 근처의 기준이므로 보조다. 조리대 2도 접시의 위치를 통해 핫도그의 초기 위치를 나타내는 보조다. ④ 제약 도출: 두 음식 묶음에는 서로 다른 밀폐용기를 써야 한다. 냉장고 문은 이미 열려 있으며, 별도로 지정된 작업 순서는 없다. ⑤ 목표 상태: 두 밀폐용기 중 어느 것이 각 음식 묶음을 담을지 정해지지 않아 두 경우로 쓴다. 각 경우에서 첫 용기는 조리대 5 위에, 둘째 용기는 스토브 근처에 있어야 한다.",
+  "task_situation_description": {
+   "task_goal": {
+    "summary": "당근과 피망을 한 밀폐용기에 담아 아일랜드 식탁에 놓고, 케밥 꼬치와 핫도그를 다른 밀폐용기에 담아 스토브 근처에 두는 것",
+    "goal_state": [
+     [
+      {
+       "kind": "relation",
+       "subject": "당근",
+       "predicate": "in",
+       "object": "밀폐용기 1",
+       "value": true
+      },
+      {
+       "kind": "relation",
+       "subject": "피망",
+       "predicate": "in",
+       "object": "밀폐용기 1",
+       "value": true
+      },
+      {
+       "kind": "relation",
+       "subject": "케밥 꼬치",
+       "predicate": "in",
+       "object": "밀폐용기 2",
+       "value": true
+      },
+      {
+       "kind": "relation",
+       "subject": "핫도그",
+       "predicate": "in",
+       "object": "밀폐용기 2",
+       "value": true
+      },
+      {
+       "kind": "relation",
+       "subject": "밀폐용기 1",
+       "predicate": "on",
+       "object": "조리대 5",
+       "value": true
+      },
+      {
+       "kind": "relation",
+       "subject": "밀폐용기 2",
+       "predicate": "near",
+       "object": "스토브",
+       "value": true
+      }
+     ],
+     [
+      {
+       "kind": "relation",
+       "subject": "당근",
+       "predicate": "in",
+       "object": "밀폐용기 2",
+       "value": true
+      },
+      {
+       "kind": "relation",
+       "subject": "피망",
+       "predicate": "in",
+       "object": "밀폐용기 2",
+       "value": true
+      },
+      {
+       "kind": "relation",
+       "subject": "케밥 꼬치",
+       "predicate": "in",
+       "object": "밀폐용기 1",
+       "value": true
+      },
+      {
+       "kind": "relation",
+       "subject": "핫도그",
+       "predicate": "in",
+       "object": "밀폐용기 1",
+       "value": true
+      },
+      {
+       "kind": "relation",
+       "subject": "밀폐용기 2",
+       "predicate": "on",
+       "object": "조리대 5",
+       "value": true
+      },
+      {
+       "kind": "relation",
+       "subject": "밀폐용기 1",
+       "predicate": "near",
+       "object": "스토브",
+       "value": true
+      }
+     ]
+    ]
+   },
+   "spatiotemporal_conditions": {
+    "time": null,
+    "space": {
+     "start": "냉장고 혹은 스토브 혹은 조리대 2 혹은 조리대 5",
+     "end": "조리대 5 혹은 스토브"
+    }
+   },
+   "target_objects": {
+    "required": [
+     {
+      "ref": "당근",
+      "location": "냉장고 냉장실 선반 1 위",
+      "state": null
+     },
+     {
+      "ref": "피망",
+      "location": "냉장고 냉장실 선반 2 위",
+      "state": null
+     },
+     {
+      "ref": "케밥 꼬치",
+      "location": "팬 위",
+      "state": null
+     },
+     {
+      "ref": "핫도그",
+      "location": "접시 위",
+      "state": null
+     },
+     {
+      "ref": "밀폐용기 1",
+      "location": "조리대 5(아일랜드 식탁) 위, 스툴 2 옆",
+      "state": null
+     },
+     {
+      "ref": "밀폐용기 2",
+      "location": "조리대 5(아일랜드 식탁) 위, 스툴 2 옆",
+      "state": null
+     }
+    ],
+    "key_means": [
+     {
+      "ref": "조리대 5",
+      "location": null,
+      "state": null,
+      "alternatives": []
+     }
+    ],
+    "auxiliary": [
+     {
+      "ref": "냉장고",
+      "location": null,
+      "note": "당근과 피망의 초기 위치 기준"
+     },
+     {
+      "ref": "팬",
+      "location": "스토브 뒤 왼쪽 화구 위",
+      "note": "케밥 꼬치의 초기 위치 기준"
+     },
+     {
+      "ref": "접시",
+      "location": "조리대 2 위, 스토브 옆",
+      "note": "핫도그의 초기 위치 기준"
+     },
+     {
+      "ref": "조리대 2",
+      "location": null,
+      "note": "핫도그가 놓인 접시의 위치를 나타내는 초기 위치 기준"
+     },
+     {
+      "ref": "스토브",
+      "location": null,
+      "note": "케밥 꼬치의 초기 위치 기준이자 밀폐용기를 둘 근처의 기준"
+     }
+    ]
+   },
+   "constraints": [
+    {
+     "type": "resource",
+     "description": "당근·피망과 케밥 꼬치·핫도그에는 서로 다른 밀폐용기를 사용해야 함"
+    }
+   ]
+  },
+  "task_situation_description_text": "작업 목표: 당근과 피망을 한 밀폐용기에 담아 아일랜드 식탁에 놓고, 케밥 꼬치와 핫도그를 다른 밀폐용기에 담아 스토브 근처에 두는 것\n목표 상태:\n- 경우 1: 당근: 밀폐용기 1 안; 피망: 밀폐용기 1 안; 케밥 꼬치: 밀폐용기 2 안; 핫도그: 밀폐용기 2 안; 밀폐용기 1: 조리대 5 위; 밀폐용기 2: 스토브 근처\n- 경우 2: 당근: 밀폐용기 2 안; 피망: 밀폐용기 2 안; 케밥 꼬치: 밀폐용기 1 안; 핫도그: 밀폐용기 1 안; 밀폐용기 2: 조리대 5 위; 밀폐용기 1: 스토브 근처\n시간·공간 조건: 시간 조건은 없음, 공간 조건은 시작 냉장고 혹은 스토브 혹은 조리대 2 혹은 조리대 5, 종료 조리대 5 혹은 스토브\n대상 물체:\n- 필수 물체: 당근(위치: 냉장고 냉장실 선반 1 위)\n- 필수 물체: 피망(위치: 냉장고 냉장실 선반 2 위)\n- 필수 물체: 케밥 꼬치(위치: 팬 위)\n- 필수 물체: 핫도그(위치: 접시 위)\n- 필수 물체: 밀폐용기 1(위치: 조리대 5(아일랜드 식탁) 위, 스툴 2 옆)\n- 필수 물체: 밀폐용기 2(위치: 조리대 5(아일랜드 식탁) 위, 스툴 2 옆)\n- 핵심 수단: 조리대 5\n- 보조 물체: 냉장고(비고: 당근과 피망의 초기 위치 기준)\n- 보조 물체: 팬(위치: 스토브 뒤 왼쪽 화구 위, 비고: 케밥 꼬치의 초기 위치 기준)\n- 보조 물체: 접시(위치: 조리대 2 위, 스토브 옆, 비고: 핫도그의 초기 위치 기준)\n- 보조 물체: 조리대 2(비고: 핫도그가 놓인 접시의 위치를 나타내는 초기 위치 기준)\n- 보조 물체: 스토브(비고: 케밥 꼬치의 초기 위치 기준이자 밀폐용기를 둘 근처의 기준)\n제약 사항:\n- [자원] 당근·피망과 케밥 꼬치·핫도그에는 서로 다른 밀폐용기를 사용해야 함\n"
+ }
+}

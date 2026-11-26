@@ -1,0 +1,169 @@
+{
+ "id": "rc365-StockingBreakfastFoods-synth-sim_reset-ep234400--v1--gpt-6-sol",
+ "domain": "household",
+ "task_type": "sort_two",
+ "agent": "gpt-6-sol",
+ "source": {
+  "data": "RoboCasa365 (MIT)",
+  "scene_id": "rc365/StockingBreakfastFoods/synth/sim_reset/ep_234400",
+  "task": "StockingBreakfastFoods",
+  "composed": false
+ },
+ "input": {
+  "instruction": "조리대에 있는 요거트랑 꿀병을 각각 집어서, 각자 가장 가까운 캐비닛에 넣어줘.",
+  "instruction_en": "Pick the yogurt and honey bottle from the counter and place them in the cabinets closest to them.",
+  "world_state": "장소: 가정 주방\n로봇(PandaOmron). 들고 있는 물체 없음.\n\n물체가 놓인 곳:\n- 조리대 1 위, 캐비닛 5 옆: 요거트, 레몬 조각\n- 조리대 4 위, 캐비닛 2 옆: 꿀병, 스낵바\n- 캐비닛 5 선반 위: 세제 디스펜서\n- 캐비닛 2 선반 위: 배\n\n가구:\n- 캐비닛 1, 3, 4, 6부터 9까지, 13, 14, 16부터 22까지: 문 닫힘\n- 서랍 1부터 10까지: 서랍 닫힘\n- 캐비닛 2, 5: 문 열림\n- 조리대 1: 스토브 옆, 토스터 오븐 옆\n- 조리대 2: 커피머신 옆, 식기세척기 옆, 싱크대 옆\n- 조리대 3: 냉장고 옆, 전자레인지 옆\n- 조리대 4: 스토브 옆, 토스터 옆\n- 식기세척기: 문 닫힘. 칸: 랙 1, 2(위에서부터)\n- 냉장고: 문 닫힘, 냉동실 문 닫힘. 칸: 냉장실 선반 1, 2(위에서부터), 냉장실 서랍\n- 전자레인지: 문 닫힘\n- 싱크대: 미가동\n- 캐비닛 12, 15(아일랜드): 문 닫힘\n- 스토브: 문 닫힘, 미가동. 칸: 랙, 앞 왼쪽 화구, 뒤 왼쪽 화구, 앞 오른쪽 화구, 뒤 오른쪽 화구, 앞 가운데 화구, 뒤 가운데 화구\n- 토스터 오븐: 문 닫힘\n- 커피머신\n- 조리대 5, 6\n- 수납장 1, 2\n- 조리대 7, 8(아일랜드 식탁)\n- 캐비닛 10, 11(아일랜드)\n- 스툴 1, 2\n- 토스터",
+  "entity_labels": {
+   "fx_cabinet_1": "캐비닛 1",
+   "fx_drawer_1": "서랍 1",
+   "fx_cabinet_2": "캐비닛 2",
+   "fx_cabinet_3": "캐비닛 3",
+   "fx_cabinet_4": "캐비닛 4",
+   "fx_cabinet_5": "캐비닛 5",
+   "fx_cabinet_6": "캐비닛 6",
+   "fx_cabinet_7": "캐비닛 7",
+   "fx_cabinet_8": "캐비닛 8",
+   "fx_cabinet_9": "캐비닛 9",
+   "fx_coffee_machine_1": "커피머신",
+   "fx_counter_1": "조리대 1",
+   "fx_counter_2": "조리대 2",
+   "fx_counter_3": "조리대 3",
+   "fx_counter_4": "조리대 4",
+   "fx_counter_5": "조리대 5",
+   "fx_counter_6": "조리대 6",
+   "fx_dishwasher_1": "식기세척기",
+   "fx_cabinet_10": "수납장 1",
+   "fx_fridge_1": "냉장고",
+   "fx_counter_7": "조리대 7",
+   "fx_counter_8": "조리대 8",
+   "fx_cabinet_11": "수납장 2",
+   "fx_microwave_1": "전자레인지",
+   "fx_cabinet_12": "캐비닛 10",
+   "fx_cabinet_13": "캐비닛 11",
+   "fx_sink_1": "싱크대",
+   "fx_cabinet_14": "캐비닛 12",
+   "fx_drawer_2": "서랍 2",
+   "fx_drawer_3": "서랍 3",
+   "fx_drawer_4": "서랍 4",
+   "fx_cabinet_15": "캐비닛 13",
+   "fx_cabinet_16": "캐비닛 14",
+   "fx_cabinet_17": "캐비닛 15",
+   "fx_cabinet_18": "캐비닛 16",
+   "fx_cabinet_19": "캐비닛 17",
+   "fx_cabinet_20": "캐비닛 18",
+   "fx_drawer_5": "서랍 5",
+   "fx_drawer_6": "서랍 6",
+   "fx_drawer_7": "서랍 7",
+   "fx_cabinet_21": "캐비닛 19",
+   "fx_drawer_8": "서랍 8",
+   "fx_drawer_9": "서랍 9",
+   "fx_drawer_10": "서랍 10",
+   "fx_cabinet_22": "캐비닛 20",
+   "fx_cabinet_23": "캐비닛 21",
+   "fx_stool_1": "스툴 1",
+   "fx_stool_2": "스툴 2",
+   "fx_stove_1": "스토브",
+   "fx_toaster_1": "토스터",
+   "fx_toaster_oven_1": "토스터 오븐",
+   "fx_cabinet_24": "캐비닛 22",
+   "obj_001": "요거트",
+   "obj_002": "꿀병",
+   "obj_003": "레몬 조각",
+   "obj_004": "세제 디스펜서",
+   "obj_005": "스낵바",
+   "obj_006": "배",
+   "fx_dishwasher_1/rack1": "식기세척기 랙 1",
+   "fx_dishwasher_1/rack0": "식기세척기 랙 2",
+   "fx_fridge_1/fridge_shelf1": "냉장고 냉장실 선반 1",
+   "fx_fridge_1/fridge_shelf0": "냉장고 냉장실 선반 2",
+   "fx_fridge_1/fridge_drawer0": "냉장고 냉장실 서랍",
+   "fx_stove_1/rack0": "스토브 랙",
+   "fx_stove_1/front_left": "스토브 앞 왼쪽 화구",
+   "fx_stove_1/rear_left": "스토브 뒤 왼쪽 화구",
+   "fx_stove_1/front_right": "스토브 앞 오른쪽 화구",
+   "fx_stove_1/rear_right": "스토브 뒤 오른쪽 화구",
+   "fx_stove_1/front_center": "스토브 앞 가운데 화구",
+   "fx_stove_1/rear_center": "스토브 뒤 가운데 화구"
+  }
+ },
+ "output": {
+  "reasoning": "① 지시 해석: 조리대에 있는 요거트와 꿀병을 각각 가장 가까운 캐비닛에 넣는 작업이다. 시간 조건이나 두 물체 사이의 작업 순서는 정해지지 않았다. 시작 장소는 조리대 1 혹은 조리대 4이고, 끝나는 장소는 캐비닛 5 혹은 캐비닛 2다. ② 씬 접지: 요거트는 캐비닛 5 옆 조리대 1에, 꿀병은 캐비닛 2 옆 조리대 4에 있다. 두 캐비닛의 문은 열려 있다. ③ 역할 부여: 위치가 바뀌는 요거트와 꿀병은 필수, 이를 받는 캐비닛 5와 캐비닛 2는 핵심 수단이다. 조리대 1과 조리대 4는 각각의 초기 위치 기준이므로 보조다. ④ 제약 도출: 각 물체를 가장 가까운 캐비닛에 넣어야 한다는 공간 조건이 있다. 두 캐비닛은 이미 열려 있으므로 문을 여는 선행 조건은 없다. ⑤ 목표 상태 도출: 요거트는 캐비닛 5 안에, 꿀병은 캐비닛 2 안에 있어야 한다. 두 상태가 함께 성립하는 경우 하나다.",
+  "task_situation_description": {
+   "task_goal": {
+    "summary": "조리대의 요거트와 꿀병을 각각 가장 가까운 캐비닛에 넣는 것",
+    "goal_state": [
+     [
+      {
+       "kind": "relation",
+       "subject": "요거트",
+       "predicate": "in",
+       "object": "캐비닛 5",
+       "value": true
+      },
+      {
+       "kind": "relation",
+       "subject": "꿀병",
+       "predicate": "in",
+       "object": "캐비닛 2",
+       "value": true
+      }
+     ]
+    ]
+   },
+   "spatiotemporal_conditions": {
+    "time": null,
+    "space": {
+     "start": "조리대 1 혹은 조리대 4",
+     "end": "캐비닛 5 혹은 캐비닛 2"
+    }
+   },
+   "target_objects": {
+    "required": [
+     {
+      "ref": "요거트",
+      "location": "조리대 1 위, 캐비닛 5 옆",
+      "state": null
+     },
+     {
+      "ref": "꿀병",
+      "location": "조리대 4 위, 캐비닛 2 옆",
+      "state": null
+     }
+    ],
+    "key_means": [
+     {
+      "ref": "캐비닛 5",
+      "location": null,
+      "state": "문 열림",
+      "alternatives": []
+     },
+     {
+      "ref": "캐비닛 2",
+      "location": null,
+      "state": "문 열림",
+      "alternatives": []
+     }
+    ],
+    "auxiliary": [
+     {
+      "ref": "조리대 1",
+      "location": null,
+      "note": "요거트의 초기 위치 기준"
+     },
+     {
+      "ref": "조리대 4",
+      "location": null,
+      "note": "꿀병의 초기 위치 기준"
+     }
+    ]
+   },
+   "constraints": [
+    {
+     "type": "spatial",
+     "description": "각 물체를 자신에게 가장 가까운 캐비닛에 넣어야 함. 요거트가 있는 조리대 1은 캐비닛 5 옆이고, 꿀병이 있는 조리대 4는 캐비닛 2 옆임"
+    }
+   ]
+  },
+  "task_situation_description_text": "작업 목표: 조리대의 요거트와 꿀병을 각각 가장 가까운 캐비닛에 넣는 것\n목표 상태:\n- 요거트: 캐비닛 5 안\n- 꿀병: 캐비닛 2 안\n시간·공간 조건: 시간 조건은 없음, 공간 조건은 시작 조리대 1 혹은 조리대 4, 종료 캐비닛 5 혹은 캐비닛 2\n대상 물체:\n- 필수 물체: 요거트(위치: 조리대 1 위, 캐비닛 5 옆)\n- 필수 물체: 꿀병(위치: 조리대 4 위, 캐비닛 2 옆)\n- 핵심 수단: 캐비닛 5(상태: 문 열림)\n- 핵심 수단: 캐비닛 2(상태: 문 열림)\n- 보조 물체: 조리대 1(비고: 요거트의 초기 위치 기준)\n- 보조 물체: 조리대 4(비고: 꿀병의 초기 위치 기준)\n제약 사항:\n- [공간] 각 물체를 자신에게 가장 가까운 캐비닛에 넣어야 함. 요거트가 있는 조리대 1은 캐비닛 5 옆이고, 꿀병이 있는 조리대 4는 캐비닛 2 옆임\n"
+ }
+}

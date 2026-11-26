@@ -1,0 +1,165 @@
+{
+ "id": "rc365-ClearCuttingBoard-synth-sim_reset-ep413800--sort_two-85542db1--v1--gemini-3.8-flash",
+ "domain": "household",
+ "task_type": "sort_two",
+ "agent": "gemini-3.8-flash",
+ "source": {
+  "data": "RoboCasa365 (MIT)",
+  "scene_id": "rc365/ClearCuttingBoard/synth/sim_reset/ep_413800",
+  "task": "sort_two",
+  "composed": true
+ },
+ "input": {
+  "instruction": "마늘은 냉장고 냉동실 맨 위 선반에 넣고, 오이는 도마 위에 올려놔.",
+  "instruction_en": "Put the garlic on the top freezer shelf of the fridge and the cucumber on the cutting board.",
+  "world_state": "장소: 가정 주방\n로봇(PandaOmron). 들고 있는 물체 없음.\n\n물체가 놓인 곳:\n- 조리대 1 위: 도마, 마늘, 오이\n- 도마 위: 달걀\n\n가구:\n- 서랍 1, 3, 4, 6: 서랍 닫힘\n- 조리대 1: 커피머신 옆, 식기세척기 옆, 냉장고 옆, 전자레인지 옆, 싱크대 옆\n- 조리대 2: 스토브 옆, 토스터 옆\n- 조리대 3: 스토브 옆\n- 식기세척기: 문 닫힘. 칸: 랙 1, 2(위에서부터)\n- 냉장고: 문 닫힘, 냉동실 문 닫힘. 칸: 냉장실 선반 1부터 5까지(위에서부터), 냉동실 선반 1부터 3까지(위에서부터), 냉동실 서랍 1, 2(위에서부터)\n- 캐비닛 1부터 6까지, 8, 9, 11, 13, 16: 문 닫힘\n- 전자레인지: 문 닫힘\n- 싱크대: 미가동. 칸: 왼쪽 개수대, 오른쪽 개수대\n- 캐비닛 7, 10, 14, 15(아일랜드): 문 닫힘\n- 서랍 2, 5, 7, 8(아일랜드): 서랍 닫힘\n- 스토브: 문 닫힘, 미가동. 칸: 랙, 앞 왼쪽 화구, 앞 오른쪽 화구, 뒤 왼쪽 화구, 뒤 오른쪽 화구\n- 커피머신\n- 수납장 1, 2\n- 조리대 4(아일랜드 식탁)\n- 캐비닛 12\n- 스툴 1, 2\n- 토스터",
+  "entity_labels": {
+   "fx_drawer_1": "서랍 1",
+   "fx_coffee_machine_1": "커피머신",
+   "fx_counter_1": "조리대 1",
+   "fx_counter_2": "조리대 2",
+   "fx_counter_3": "조리대 3",
+   "fx_dishwasher_1": "식기세척기",
+   "fx_cabinet_1": "수납장 1",
+   "fx_fridge_1": "냉장고",
+   "fx_cabinet_2": "캐비닛 1",
+   "fx_counter_4": "조리대 4",
+   "fx_cabinet_3": "수납장 2",
+   "fx_microwave_1": "전자레인지",
+   "fx_cabinet_4": "캐비닛 2",
+   "fx_cabinet_5": "캐비닛 3",
+   "fx_cabinet_6": "캐비닛 4",
+   "fx_cabinet_7": "캐비닛 5",
+   "fx_cabinet_8": "캐비닛 6",
+   "fx_sink_1": "싱크대",
+   "fx_cabinet_9": "캐비닛 7",
+   "fx_drawer_2": "서랍 2",
+   "fx_cabinet_10": "캐비닛 8",
+   "fx_drawer_3": "서랍 3",
+   "fx_cabinet_11": "캐비닛 9",
+   "fx_drawer_4": "서랍 4",
+   "fx_cabinet_12": "캐비닛 10",
+   "fx_drawer_5": "서랍 5",
+   "fx_cabinet_13": "캐비닛 11",
+   "fx_cabinet_14": "캐비닛 12",
+   "fx_cabinet_15": "캐비닛 13",
+   "fx_drawer_6": "서랍 6",
+   "fx_drawer_7": "서랍 7",
+   "fx_drawer_8": "서랍 8",
+   "fx_cabinet_16": "캐비닛 14",
+   "fx_cabinet_17": "캐비닛 15",
+   "fx_stool_1": "스툴 1",
+   "fx_stool_2": "스툴 2",
+   "fx_stove_1": "스토브",
+   "fx_toaster_1": "토스터",
+   "fx_cabinet_18": "캐비닛 16",
+   "obj_001": "도마",
+   "obj_002": "달걀",
+   "obj_003": "마늘",
+   "obj_004": "오이",
+   "fx_dishwasher_1/rack1": "식기세척기 랙 1",
+   "fx_dishwasher_1/rack0": "식기세척기 랙 2",
+   "fx_fridge_1/fridge_shelf4": "냉장고 냉장실 선반 1",
+   "fx_fridge_1/fridge_shelf3": "냉장고 냉장실 선반 2",
+   "fx_fridge_1/fridge_shelf2": "냉장고 냉장실 선반 3",
+   "fx_fridge_1/fridge_shelf1": "냉장고 냉장실 선반 4",
+   "fx_fridge_1/fridge_shelf0": "냉장고 냉장실 선반 5",
+   "fx_fridge_1/freezer_shelf2": "냉장고 냉동실 선반 1",
+   "fx_fridge_1/freezer_shelf1": "냉장고 냉동실 선반 2",
+   "fx_fridge_1/freezer_shelf0": "냉장고 냉동실 선반 3",
+   "fx_fridge_1/freezer_drawer1": "냉장고 냉동실 서랍 1",
+   "fx_fridge_1/freezer_drawer0": "냉장고 냉동실 서랍 2",
+   "fx_sink_1/basin_left": "싱크대 왼쪽 개수대",
+   "fx_sink_1/basin_right": "싱크대 오른쪽 개수대",
+   "fx_stove_1/rack0": "스토브 랙",
+   "fx_stove_1/front_left": "스토브 앞 왼쪽 화구",
+   "fx_stove_1/front_right": "스토브 앞 오른쪽 화구",
+   "fx_stove_1/rear_left": "스토브 뒤 왼쪽 화구",
+   "fx_stove_1/rear_right": "스토브 뒤 오른쪽 화구"
+  }
+ },
+ "output": {
+  "reasoning": "① 지시 해석: 마늘을 냉장고 냉동실 맨 위 선반에 넣고, 오이를 도마 위에 올리는 작업이다. 별도의 시간 조건은 없으며, 순서가 정해지지 않은 병렬 작업이다. 두 대상 물체(마늘, 오이) 모두 조리대 1에 있으므로 시작 위치는 '조리대 1'이며, 최종 도착지는 냉장고와 조리대 1(도마)이므로 끝나는 곳은 순서가 정해지지 않아 '냉장고 혹은 조리대 1'이다. ② 씬 접지: 환경 설명에서 마늘과 오이는 조리대 1 위에 있고, 도마 역시 조리대 1 위에 놓여 있다. 냉장고 칸 정보에서 '냉동실 선반 1부터 3까지(위에서부터)' 중 맨 위 선반은 '냉장고 냉동실 선반 1'로 접지된다. ③ 역할 부여: 위치가 바뀌어야 하는 마늘과 오이는 필수(required)다. 물체를 받는 곳인 냉장고 냉동실 선반 1과 도마는 핵심 수단(key_means)이다. 마늘과 오이의 초기 위치인 조리대 1과 마늘을 넣기 위해 문을 열어야 하는 냉장고는 보조(auxiliary)다. ④ 제약 도출: 냉장고의 냉동실 문이 닫혀 있으므로 냉동실 문을 먼저 여는 선행 조건이 발생한다. 도마 위에 이미 달걀이 놓여 있어 오이를 배치할 때 물리적 간섭에 유의해야 한다. ⑤ 목표 상태 도출: 마늘이 냉장고 냉동실 선반 1 안에 들어가고(in), 오이가 도마 위에 놓이는(on) 하나의 경우로 구성된다.",
+  "task_situation_description": {
+   "task_goal": {
+    "summary": "마늘을 냉장고 냉동실 선반 1에 넣고 오이를 도마 위에 올리는 것",
+    "goal_state": [
+     [
+      {
+       "kind": "relation",
+       "subject": "마늘",
+       "predicate": "in",
+       "object": "냉장고 냉동실 선반 1",
+       "value": true
+      },
+      {
+       "kind": "relation",
+       "subject": "오이",
+       "predicate": "on",
+       "object": "도마",
+       "value": true
+      }
+     ]
+    ]
+   },
+   "spatiotemporal_conditions": {
+    "time": null,
+    "space": {
+     "start": "조리대 1",
+     "end": "냉장고 혹은 조리대 1"
+    }
+   },
+   "target_objects": {
+    "required": [
+     {
+      "ref": "마늘",
+      "location": "조리대 1 위",
+      "state": null
+     },
+     {
+      "ref": "오이",
+      "location": "조리대 1 위",
+      "state": null
+     }
+    ],
+    "key_means": [
+     {
+      "ref": "냉장고 냉동실 선반 1",
+      "location": null,
+      "state": null,
+      "alternatives": []
+     },
+     {
+      "ref": "도마",
+      "location": "조리대 1 위",
+      "state": null,
+      "alternatives": []
+     }
+    ],
+    "auxiliary": [
+     {
+      "ref": "조리대 1",
+      "location": null,
+      "note": "마늘과 오이의 초기 위치 기준"
+     },
+     {
+      "ref": "냉장고",
+      "location": null,
+      "note": "마늘을 넣기 위해 냉동실 문을 열어야 하는 가구"
+     }
+    ]
+   },
+   "constraints": [
+    {
+     "type": "precedence",
+     "description": "냉장고 냉동실 문이 닫혀 있으므로 냉동실 문을 여는 것이 마늘을 선반에 넣는 것에 선행해야 함"
+    },
+    {
+     "type": "physical",
+     "description": "도마 위에 달걀이 놓여 있으므로 오이를 올릴 때 간섭에 주의해야 함"
+    }
+   ]
+  },
+  "task_situation_description_text": "작업 목표: 마늘을 냉장고 냉동실 선반 1에 넣고 오이를 도마 위에 올리는 것\n목표 상태:\n- 마늘: 냉장고 냉동실 선반 1 안\n- 오이: 도마 위\n시간·공간 조건: 시간 조건은 없음, 공간 조건은 시작 조리대 1, 종료 냉장고 혹은 조리대 1\n대상 물체:\n- 필수 물체: 마늘(위치: 조리대 1 위)\n- 필수 물체: 오이(위치: 조리대 1 위)\n- 핵심 수단: 냉장고 냉동실 선반 1\n- 핵심 수단: 도마(위치: 조리대 1 위)\n- 보조 물체: 조리대 1(비고: 마늘과 오이의 초기 위치 기준)\n- 보조 물체: 냉장고(비고: 마늘을 넣기 위해 냉동실 문을 열어야 하는 가구)\n제약 사항:\n- [선후] 냉장고 냉동실 문이 닫혀 있으므로 냉동실 문을 여는 것이 마늘을 선반에 넣는 것에 선행해야 함\n- [물리] 도마 위에 달걀이 놓여 있으므로 오이를 올릴 때 간섭에 주의해야 함\n"
+ }
+}

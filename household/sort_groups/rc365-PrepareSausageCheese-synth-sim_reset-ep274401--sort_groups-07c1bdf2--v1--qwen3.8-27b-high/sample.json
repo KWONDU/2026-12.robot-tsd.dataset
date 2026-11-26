@@ -1,0 +1,163 @@
+{
+ "id": "rc365-PrepareSausageCheese-synth-sim_reset-ep274401--sort_groups-07c1bdf2--v1--qwen3.8-27b-high",
+ "domain": "household",
+ "task_type": "sort_groups",
+ "agent": "qwen3.8-27b-high",
+ "source": {
+  "data": "RoboCasa365 (MIT)",
+  "scene_id": "rc365/PrepareSausageCheese/synth/sim_reset/ep_274401",
+  "task": "sort_groups",
+  "composed": true
+ },
+ "input": {
+  "instruction": "바게트는 냉장고 냉장실 맨 위 선반에 넣고, 소시지는 전자레인지에 넣어.",
+  "instruction_en": "Put the baguette on the top shelf of the fridge and the sausage in the microwave.",
+  "world_state": "장소: 가정 주방\n로봇(PandaOmron). 들고 있는 물체 없음.\n\n물체가 놓인 곳:\n- 냉장고 냉장실 선반 1 위: 소시지\n- 냉장고 냉장실 선반 2 위: 치즈\n- 조리대 3 위: 도마, 칼\n- 도마 위: 바게트\n\n가구:\n- 서랍 1부터 10까지: 서랍 닫힘\n- 캐비닛 1부터 15까지: 문 닫힘\n- 조리대 1, 4: 스토브 옆\n- 조리대 2: 커피머신 옆, 식기세척기 옆, 냉장고 옆, 토스터 오븐 옆\n- 조리대 3: 전자레인지 옆, 싱크대 옆, 토스터 옆\n- 식기세척기: 문 닫힘. 칸: 랙 1, 2(위에서부터)\n- 냉장고: 문 닫힘, 냉동실 문 닫힘. 칸: 냉장실 선반 1, 2(위에서부터), 냉장실 서랍\n- 전자레인지: 문 닫힘\n- 싱크대: 미가동\n- 스토브: 문 닫힘, 미가동. 칸: 랙, 뒤 왼쪽 화구, 앞 오른쪽 화구, 뒤 오른쪽 화구, 앞 왼쪽 화구\n- 토스터 오븐: 문 닫힘\n- 커피머신\n- 조리대 5(식탁용 조리대)\n- 조리대 6부터 8까지\n- 수납장 1, 2\n- 스툴 1부터 3까지\n- 토스터",
+  "entity_labels": {
+   "fx_drawer_1": "서랍 1",
+   "fx_cabinet_1": "캐비닛 1",
+   "fx_cabinet_2": "캐비닛 2",
+   "fx_cabinet_3": "캐비닛 3",
+   "fx_coffee_machine_1": "커피머신",
+   "fx_counter_1": "조리대 1",
+   "fx_counter_2": "조리대 2",
+   "fx_counter_3": "조리대 3",
+   "fx_counter_4": "조리대 4",
+   "fx_counter_5": "조리대 5",
+   "fx_counter_6": "조리대 6",
+   "fx_counter_7": "조리대 7",
+   "fx_counter_8": "조리대 8",
+   "fx_dishwasher_1": "식기세척기",
+   "fx_cabinet_4": "수납장 1",
+   "fx_fridge_1": "냉장고",
+   "fx_cabinet_5": "캐비닛 4",
+   "fx_cabinet_6": "수납장 2",
+   "fx_microwave_1": "전자레인지",
+   "fx_cabinet_7": "캐비닛 5",
+   "fx_sink_1": "싱크대",
+   "fx_cabinet_8": "캐비닛 6",
+   "fx_drawer_2": "서랍 2",
+   "fx_cabinet_9": "캐비닛 7",
+   "fx_drawer_3": "서랍 3",
+   "fx_cabinet_10": "캐비닛 8",
+   "fx_cabinet_11": "캐비닛 9",
+   "fx_drawer_4": "서랍 4",
+   "fx_drawer_5": "서랍 5",
+   "fx_drawer_6": "서랍 6",
+   "fx_drawer_7": "서랍 7",
+   "fx_cabinet_12": "캐비닛 10",
+   "fx_cabinet_13": "캐비닛 11",
+   "fx_drawer_8": "서랍 8",
+   "fx_cabinet_14": "캐비닛 12",
+   "fx_drawer_9": "서랍 9",
+   "fx_drawer_10": "서랍 10",
+   "fx_cabinet_15": "캐비닛 13",
+   "fx_cabinet_16": "캐비닛 14",
+   "fx_stool_1": "스툴 1",
+   "fx_stool_2": "스툴 2",
+   "fx_stool_3": "스툴 3",
+   "fx_stove_1": "스토브",
+   "fx_toaster_1": "토스터",
+   "fx_toaster_oven_1": "토스터 오븐",
+   "fx_cabinet_17": "캐비닛 15",
+   "obj_001": "소시지",
+   "obj_002": "치즈",
+   "obj_003": "도마",
+   "obj_004": "바게트",
+   "obj_005": "칼",
+   "fx_dishwasher_1/rack1": "식기세척기 랙 1",
+   "fx_dishwasher_1/rack0": "식기세척기 랙 2",
+   "fx_fridge_1/fridge_shelf1": "냉장고 냉장실 선반 1",
+   "fx_fridge_1/fridge_shelf0": "냉장고 냉장실 선반 2",
+   "fx_fridge_1/fridge_drawer0": "냉장고 냉장실 서랍",
+   "fx_stove_1/rack0": "스토브 랙",
+   "fx_stove_1/rear_left": "스토브 뒤 왼쪽 화구",
+   "fx_stove_1/front_right": "스토브 앞 오른쪽 화구",
+   "fx_stove_1/rear_right": "스토브 뒤 오른쪽 화구",
+   "fx_stove_1/front_left": "스토브 앞 왼쪽 화구"
+  }
+ },
+ "output": {
+  "reasoning": "① 지시 해석: 두 개의 이동 작업을 나열한 지시다. (a) 바게트를 냉장고 냉장실 맨 위 선반에 넣는 것, (b) 소시지를 전자레인지에 넣는 것. '하고/넣어'로 나열만 했을 뿐 순서를 정한 표현이 아니므로 선후 제약 없음. 시간 조건은 없다. 시작 곳은 옮길 물체의 초기 위치: 바게트는 도마 위, 도마는 조리대 3 위이므로 조리대 3; 소시지는 냉장고 냉장실 선반 1 위이므로 냉장고. 끝은 물체를 받는 곳: 바게트→냉장고, 소시지→전자레인지. ② 씬 접지: 바게트는 '도마 위'에 있고, 도마·칼은 '조리대 3 위'에 있다. 소시지는 '냉장고 냉장실 선반 1 위'에 있다. 냉장고는 '문 닫힘, 냉동실 문 닫힘'이고 칸은 냉장실 선반 1, 2(위에서부터), 냉장실 서랍. '맨 위 선반'은 위에서부터 1번이므로 '냉장고 냉장실 선반 1'에 대응. 전자레인지는 '문 닫힘'. ③ 역할 부여: 바게트와 소시지는 위치가 바뀌어야 하므로 필수. 냉장고 냉장실 선반 1은 바게트를 받는 곳이므로 핵심 수단. 전자레인지는 소시지를 받는 곳이므로 핵심 수단. 도마는 바게트가 처음 놓여 있는 물체이므로 보조(초기 위치 기준). 소시지의 초기 위치(냉장고 냉장실 선반 1)는 이미 핵심 수단에 포함되어 있어 보조에 중복 등록하지 않음. ④ 제약 도출: 냉장고 문이 닫혀 있으므로 바게트를 선반에 놓기 전에 냉장고를 열어야 함(선행). 전자레인지 문이 닫혀 있으므로 소시지를 넣기 전에 문을 열어야 함(선행). 조리대 3 위에는 칼이 있고 바게트를 집는 작업 영역과 동일하므로 안전 주의 필요. ⑤ 목표 상태: 바게트가 냉장고 냉장실 선반 1 안에 있고, 소시지가 전자레인지 안에 있는 것이 최종 상태. 두 작업이 독립적이므로 경우 하나에 두 단언을 함께 쓴다.",
+  "task_situation_description": {
+   "task_goal": {
+    "summary": "바게트를 냉장고 냉장실 맨 위 선반에 넣고 소시지를 전자레인지에 넣는 것",
+    "goal_state": [
+     [
+      {
+       "kind": "relation",
+       "subject": "바게트",
+       "predicate": "in",
+       "object": "냉장고 냉장실 선반 1",
+       "value": true
+      },
+      {
+       "kind": "relation",
+       "subject": "소시지",
+       "predicate": "in",
+       "object": "전자레인지",
+       "value": true
+      }
+     ]
+    ]
+   },
+   "spatiotemporal_conditions": {
+    "time": null,
+    "space": {
+     "start": "조리대 3 혹은 냉장고",
+     "end": "냉장고 혹은 전자레인지"
+    }
+   },
+   "target_objects": {
+    "required": [
+     {
+      "ref": "바게트",
+      "location": "도마 위",
+      "state": null
+     },
+     {
+      "ref": "소시지",
+      "location": "냉장고 냉장실 선반 1 위",
+      "state": null
+     }
+    ],
+    "key_means": [
+     {
+      "ref": "냉장고 냉장실 선반 1",
+      "location": null,
+      "state": null,
+      "alternatives": []
+     },
+     {
+      "ref": "전자레인지",
+      "location": null,
+      "state": "문 닫힘",
+      "alternatives": []
+     }
+    ],
+    "auxiliary": [
+     {
+      "ref": "도마",
+      "location": "조리대 3 위",
+      "note": "바게트의 초기 위치 기준"
+     }
+    ]
+   },
+   "constraints": [
+    {
+     "type": "precedence",
+     "description": "냉장고 문이 닫혀 있으므로 냉장실 선반 1에 바게트를 놓기 전에 냉장고를 열어야 함"
+    },
+    {
+     "type": "precedence",
+     "description": "전자레인지 문이 닫혀 있으므로 소시지를 넣기 전에 전자레인지 문을 열어야 함"
+    },
+    {
+     "type": "safety",
+     "description": "바게트가 놓인 조리대 3 위에는 칼이 있으므로 바게트를 집어 올릴 때 칼에 주의해야 함"
+    }
+   ]
+  },
+  "task_situation_description_text": "작업 목표: 바게트를 냉장고 냉장실 맨 위 선반에 넣고 소시지를 전자레인지에 넣는 것\n목표 상태:\n- 바게트: 냉장고 냉장실 선반 1 안\n- 소시지: 전자레인지 안\n시간·공간 조건: 시간 조건은 없음, 공간 조건은 시작 조리대 3 혹은 냉장고, 종료 냉장고 혹은 전자레인지\n대상 물체:\n- 필수 물체: 바게트(위치: 도마 위)\n- 필수 물체: 소시지(위치: 냉장고 냉장실 선반 1 위)\n- 핵심 수단: 냉장고 냉장실 선반 1\n- 핵심 수단: 전자레인지(상태: 문 닫힘)\n- 보조 물체: 도마(위치: 조리대 3 위, 비고: 바게트의 초기 위치 기준)\n제약 사항:\n- [선후] 냉장고 문이 닫혀 있으므로 냉장실 선반 1에 바게트를 놓기 전에 냉장고를 열어야 함\n- [선후] 전자레인지 문이 닫혀 있으므로 소시지를 넣기 전에 전자레인지 문을 열어야 함\n- [안전] 바게트가 놓인 조리대 3 위에는 칼이 있으므로 바게트를 집어 올릴 때 칼에 주의해야 함\n"
+ }
+}

@@ -1,0 +1,152 @@
+{
+ "id": "rc365-AlcoholServingPrep-synth-sim_reset-ep445101--sort_two-caaa9e79--v1--qwen3.8-27b-high",
+ "domain": "household",
+ "task_type": "sort_two",
+ "agent": "qwen3.8-27b-high",
+ "source": {
+  "data": "RoboCasa365 (MIT)",
+  "scene_id": "rc365/AlcoholServingPrep/synth/sim_reset/ep_445101",
+  "task": "sort_two",
+  "composed": true
+ },
+ "input": {
+  "instruction": "맥주는 조리대에 놓고, 저그는 식기세척기 아래쪽 랙에 넣어.",
+  "instruction_en": "Put the beer on a counter and the jug on the bottom rack of the dishwasher.",
+  "world_state": "장소: 가정 주방\n로봇(PandaOmron). 들고 있는 물체 없음.\n\n물체가 놓인 곳:\n- 캐비닛 1 선반 위: 맥주, 컵\n- 조리대 5(아일랜드 식탁) 위: 초, 컵케이크\n- 싱크대 개수대 안: 저그\n\n가구:\n- 조리대 1: 커피머신 옆, 전자레인지 옆, 스토브 옆\n- 조리대 2: 식기세척기 옆, 냉장고 옆, 싱크대 옆, 토스터 옆\n- 조리대 3: 전자레인지 옆, 스토브 옆\n- 식기세척기: 문 닫힘. 칸: 랙 1, 2(위에서부터)\n- 냉장고: 문 닫힘, 냉동실 문 닫힘. 칸: 냉동실 선반 1부터 3까지(위에서부터), 냉장실 선반 1부터 3까지(위에서부터), 냉동실 서랍 1, 2(위에서부터), 냉장실 서랍 1, 2(위에서부터)\n- 캐비닛 1부터 9까지: 문 닫힘\n- 전자레인지: 문 닫힘\n- 싱크대: 미가동\n- 서랍 1, 2: 서랍 닫힘\n- 스토브: 문 닫힘, 미가동. 칸: 랙, 뒤 왼쪽 화구, 앞 왼쪽 화구, 앞 오른쪽 화구, 뒤 오른쪽 화구\n- 커피머신\n- 조리대 4\n- 수납장\n- 조리대 5(아일랜드 식탁)\n- 스툴 1부터 3까지\n- 토스터",
+  "entity_labels": {
+   "fx_coffee_machine_1": "커피머신",
+   "fx_counter_1": "조리대 1",
+   "fx_counter_2": "조리대 2",
+   "fx_counter_3": "조리대 3",
+   "fx_counter_4": "조리대 4",
+   "fx_dishwasher_1": "식기세척기",
+   "fx_cabinet_1": "수납장",
+   "fx_fridge_1": "냉장고",
+   "fx_cabinet_2": "캐비닛 1",
+   "fx_cabinet_3": "캐비닛 2",
+   "fx_counter_5": "조리대 5",
+   "fx_cabinet_4": "캐비닛 3",
+   "fx_microwave_1": "전자레인지",
+   "fx_cabinet_5": "캐비닛 4",
+   "fx_cabinet_6": "캐비닛 5",
+   "fx_cabinet_7": "캐비닛 6",
+   "fx_sink_1": "싱크대",
+   "fx_cabinet_8": "캐비닛 7",
+   "fx_drawer_1": "서랍 1",
+   "fx_cabinet_9": "캐비닛 8",
+   "fx_cabinet_10": "캐비닛 9",
+   "fx_drawer_2": "서랍 2",
+   "fx_stool_1": "스툴 1",
+   "fx_stool_2": "스툴 2",
+   "fx_stool_3": "스툴 3",
+   "fx_stove_1": "스토브",
+   "fx_toaster_1": "토스터",
+   "obj_001": "맥주",
+   "obj_002": "컵",
+   "obj_003": "초",
+   "obj_004": "컵케이크",
+   "obj_005": "저그",
+   "fx_dishwasher_1/rack1": "식기세척기 랙 1",
+   "fx_dishwasher_1/rack0": "식기세척기 랙 2",
+   "fx_fridge_1/freezer_shelf2": "냉장고 냉동실 선반 1",
+   "fx_fridge_1/freezer_shelf1": "냉장고 냉동실 선반 2",
+   "fx_fridge_1/freezer_shelf0": "냉장고 냉동실 선반 3",
+   "fx_fridge_1/fridge_shelf2": "냉장고 냉장실 선반 1",
+   "fx_fridge_1/fridge_shelf1": "냉장고 냉장실 선반 2",
+   "fx_fridge_1/fridge_shelf0": "냉장고 냉장실 선반 3",
+   "fx_fridge_1/freezer_drawer1": "냉장고 냉동실 서랍 1",
+   "fx_fridge_1/freezer_drawer0": "냉장고 냉동실 서랍 2",
+   "fx_fridge_1/fridge_drawer1": "냉장고 냉장실 서랍 1",
+   "fx_fridge_1/fridge_drawer0": "냉장고 냉장실 서랍 2",
+   "fx_stove_1/rack0": "스토브 랙",
+   "fx_stove_1/rear_left": "스토브 뒤 왼쪽 화구",
+   "fx_stove_1/front_left": "스토브 앞 왼쪽 화구",
+   "fx_stove_1/front_right": "스토브 앞 오른쪽 화구",
+   "fx_stove_1/rear_right": "스토브 뒤 오른쪽 화구"
+  }
+ },
+ "output": {
+  "reasoning": "① 지시 해석: 두 개의 이동 작업을 나열한 지시다. 맥주를 조리대에 놓고, 저그를 식기세척기 아래쪽 랙에 넣는 것이다. '…하고, …해' 형식의 나열이므로 순서가 정해진 것이 아니다. 시간 조건은 없다. 시작 곳: 맥주는 캐비닛 1 선반 위에, 저그는 싱크대 개수대 안에 있으므로 start는 '캐비닛 1 혹은 싱크대'. 끝 곳: 맥주는 조리대로, 저그는 식기세척기로 이동하므로 end는 '조리대 혹은 식기세척기'. ② 씬 접지: 맥주는 캐비닛 1 선반 위에 있다. 저그는 싱크대 개수대 안에 있다. 조리대는 1~5로 여러 개 존재하며 지시는 번호 없이 '조리대'라고 했으므로 어느 것이든 된다. 식기세척기는 문이 닫혀 있고 칸이 랙 1, 2(위에서부터)로 되어 있으며, '아래쪽 랙'은 랙 2에 해당한다. ③ 역할 부여: 맥주와 저그는 위치가 바뀌어야 하므로 필수. 조리대는 맥주를 받는 곳이므로 핵심 수단(지시가 번호 없이 '조리대'라고 했으므로 번호를 뗀 이름 사용). 식기세척기 랙 2는 저그를 받는 특정 칸이므로 핵심 수단. 캐비닛 1은 맥주의 초기 위치 기준이자 문이 닫혀 있어 먼저 열어야 하는 가구이므로 보조. 싱크대는 저그의 초기 위치 기준이므로 보조. ④ 제약 도출: 캐비닛 1의 문이 닫혀 있어 맥주를 꺼내기 전에 문을 여는 것이 선행이다. 식기세척기의 문이 닫혀 있어 저그를 넣기 전에 문을 여는 것이 선행이다. 두 작업 간에는 지시가 순서를 정하지 않았으므로 선후 제약이 없다. ⑤ 목표 상태: 맥주가 조리대 위에 있고, 저그가 식기세척기 랙 2 안에 있는 상태. 경우는 하나이며 단언 두 개로 표현된다.",
+  "task_situation_description": {
+   "task_goal": {
+    "summary": "맥주를 조리대에 놓고 저그를 식기세척기 아래쪽 랙에 넣는 것",
+    "goal_state": [
+     [
+      {
+       "kind": "relation",
+       "subject": "맥주",
+       "predicate": "on",
+       "object": "조리대",
+       "value": true
+      },
+      {
+       "kind": "relation",
+       "subject": "저그",
+       "predicate": "in",
+       "object": "식기세척기 랙 2",
+       "value": true
+      }
+     ]
+    ]
+   },
+   "spatiotemporal_conditions": {
+    "time": null,
+    "space": {
+     "start": "캐비닛 1 혹은 싱크대",
+     "end": "조리대 혹은 식기세척기"
+    }
+   },
+   "target_objects": {
+    "required": [
+     {
+      "ref": "맥주",
+      "location": "캐비닛 1 선반 위",
+      "state": null
+     },
+     {
+      "ref": "저그",
+      "location": "싱크대 개수대 안",
+      "state": null
+     }
+    ],
+    "key_means": [
+     {
+      "ref": "조리대",
+      "location": null,
+      "state": null,
+      "alternatives": []
+     },
+     {
+      "ref": "식기세척기 랙 2",
+      "location": null,
+      "state": null,
+      "alternatives": []
+     }
+    ],
+    "auxiliary": [
+     {
+      "ref": "캐비닛 1",
+      "location": null,
+      "note": "맥주의 초기 위치 기준. 문이 닫혀 있어 먼저 열어야 함"
+     },
+     {
+      "ref": "싱크대",
+      "location": null,
+      "note": "저그의 초기 위치 기준"
+     }
+    ]
+   },
+   "constraints": [
+    {
+     "type": "precedence",
+     "description": "캐비닛 1의 문이 닫혀 있으므로 문을 여는 것이 맥주를 꺼내는 것에 선행해야 함"
+    },
+    {
+     "type": "precedence",
+     "description": "식기세척기의 문이 닫혀 있으므로 문을 여는 것이 저그를 랙에 넣는 것에 선행해야 함"
+    }
+   ]
+  },
+  "task_situation_description_text": "작업 목표: 맥주를 조리대에 놓고 저그를 식기세척기 아래쪽 랙에 넣는 것\n목표 상태:\n- 맥주: 조리대 위\n- 저그: 식기세척기 랙 2 안\n시간·공간 조건: 시간 조건은 없음, 공간 조건은 시작 캐비닛 1 혹은 싱크대, 종료 조리대 혹은 식기세척기\n대상 물체:\n- 필수 물체: 맥주(위치: 캐비닛 1 선반 위)\n- 필수 물체: 저그(위치: 싱크대 개수대 안)\n- 핵심 수단: 조리대\n- 핵심 수단: 식기세척기 랙 2\n- 보조 물체: 캐비닛 1(비고: 맥주의 초기 위치 기준. 문이 닫혀 있어 먼저 열어야 함)\n- 보조 물체: 싱크대(비고: 저그의 초기 위치 기준)\n제약 사항:\n- [선후] 캐비닛 1의 문이 닫혀 있으므로 문을 여는 것이 맥주를 꺼내는 것에 선행해야 함\n- [선후] 식기세척기의 문이 닫혀 있으므로 문을 여는 것이 저그를 랙에 넣는 것에 선행해야 함\n"
+ }
+}

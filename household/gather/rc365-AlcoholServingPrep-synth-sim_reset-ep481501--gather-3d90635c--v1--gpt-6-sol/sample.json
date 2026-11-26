@@ -1,0 +1,180 @@
+{
+ "id": "rc365-AlcoholServingPrep-synth-sim_reset-ep481501--gather-3d90635c--v1--gpt-6-sol",
+ "domain": "household",
+ "task_type": "gather",
+ "agent": "gpt-6-sol",
+ "source": {
+  "data": "RoboCasa365 (MIT)",
+  "scene_id": "rc365/AlcoholServingPrep/synth/sim_reset/ep_481501",
+  "task": "gather",
+  "composed": true
+ },
+ "input": {
+  "instruction": "양주랑 요거트 하나를 냉장고 서랍에 넣어 줘.",
+  "instruction_en": "Bring the liquor and one of the yogurts and put them in the drawer of the fridge.",
+  "world_state": "장소: 가정 주방\n로봇(PandaOmron). 들고 있는 물체 없음.\n\n물체가 놓인 곳:\n- 캐비닛 2 선반 위: 양주, 머그\n- 조리대 5(아일랜드 식탁) 위: 초, 요거트 1\n- 싱크대 왼쪽 개수대 안: 요거트 2\n\n가구:\n- 서랍 1부터 6까지: 서랍 닫힘\n- 조리대 1: 스토브 옆\n- 조리대 2: 토스터 오븐 옆, 스토브 옆\n- 조리대 3: 커피머신 옆, 식기세척기 옆, 냉장고 옆, 전자레인지 옆, 싱크대 옆, 토스터 옆\n- 식기세척기: 문 닫힘. 칸: 랙 1, 2(위에서부터)\n- 냉장고: 문 닫힘, 냉동실 문 닫힘. 칸: 냉장실 선반 1, 2(위에서부터), 냉장실 서랍\n- 캐비닛 1부터 5까지, 7부터 13까지, 16: 문 닫힘\n- 전자레인지: 문 닫힘\n- 싱크대: 미가동. 칸: 왼쪽 개수대, 오른쪽 개수대\n- 서랍 7부터 13까지(아일랜드): 서랍 닫힘\n- 캐비닛 15(아일랜드): 문 닫힘\n- 토스터 오븐: 문 닫힘. 칸: 랙 1, 2(위에서부터)\n- 스토브: 문 닫힘, 미가동. 칸: 랙, 앞 가운데 화구, 앞 왼쪽 화구, 앞 오른쪽 화구, 뒤 가운데 화구, 뒤 왼쪽 화구, 뒤 오른쪽 화구\n- 커피머신\n- 조리대 4\n- 수납장 1, 2\n- 조리대 5(아일랜드 식탁)\n- 캐비닛 6, 14\n- 스툴 1부터 4까지\n- 토스터",
+  "entity_labels": {
+   "fx_drawer_1": "서랍 1",
+   "fx_coffee_machine_1": "커피머신",
+   "fx_counter_1": "조리대 1",
+   "fx_counter_2": "조리대 2",
+   "fx_counter_3": "조리대 3",
+   "fx_counter_4": "조리대 4",
+   "fx_dishwasher_1": "식기세척기",
+   "fx_cabinet_1": "수납장 1",
+   "fx_fridge_1": "냉장고",
+   "fx_cabinet_2": "캐비닛 1",
+   "fx_cabinet_3": "캐비닛 2",
+   "fx_cabinet_4": "캐비닛 3",
+   "fx_cabinet_5": "캐비닛 4",
+   "fx_cabinet_6": "캐비닛 5",
+   "fx_counter_5": "조리대 5",
+   "fx_cabinet_7": "수납장 2",
+   "fx_microwave_1": "전자레인지",
+   "fx_cabinet_8": "캐비닛 6",
+   "fx_cabinet_9": "캐비닛 7",
+   "fx_cabinet_10": "캐비닛 8",
+   "fx_sink_1": "싱크대",
+   "fx_cabinet_11": "캐비닛 9",
+   "fx_cabinet_12": "캐비닛 10",
+   "fx_cabinet_13": "캐비닛 11",
+   "fx_drawer_2": "서랍 2",
+   "fx_cabinet_14": "캐비닛 12",
+   "fx_drawer_3": "서랍 3",
+   "fx_cabinet_15": "캐비닛 13",
+   "fx_cabinet_16": "캐비닛 14",
+   "fx_drawer_4": "서랍 4",
+   "fx_drawer_5": "서랍 5",
+   "fx_drawer_6": "서랍 6",
+   "fx_drawer_7": "서랍 7",
+   "fx_cabinet_17": "캐비닛 15",
+   "fx_drawer_8": "서랍 8",
+   "fx_drawer_9": "서랍 9",
+   "fx_drawer_10": "서랍 10",
+   "fx_drawer_11": "서랍 11",
+   "fx_drawer_12": "서랍 12",
+   "fx_drawer_13": "서랍 13",
+   "fx_stool_1": "스툴 1",
+   "fx_stool_2": "스툴 2",
+   "fx_stool_3": "스툴 3",
+   "fx_stool_4": "스툴 4",
+   "fx_toaster_oven_1": "토스터 오븐",
+   "fx_toaster_1": "토스터",
+   "fx_cabinet_18": "캐비닛 16",
+   "fx_stove_1": "스토브",
+   "obj_001": "양주",
+   "obj_002": "머그",
+   "obj_003": "초",
+   "obj_004": "요거트 1",
+   "obj_005": "요거트 2",
+   "fx_dishwasher_1/rack1": "식기세척기 랙 1",
+   "fx_dishwasher_1/rack0": "식기세척기 랙 2",
+   "fx_fridge_1/fridge_shelf1": "냉장고 냉장실 선반 1",
+   "fx_fridge_1/fridge_shelf0": "냉장고 냉장실 선반 2",
+   "fx_fridge_1/fridge_drawer0": "냉장고 냉장실 서랍",
+   "fx_sink_1/basin_left": "싱크대 왼쪽 개수대",
+   "fx_sink_1/basin_right": "싱크대 오른쪽 개수대",
+   "fx_toaster_oven_1/rack1": "토스터 오븐 랙 1",
+   "fx_toaster_oven_1/rack0": "토스터 오븐 랙 2",
+   "fx_stove_1/rack0": "스토브 랙",
+   "fx_stove_1/front_center": "스토브 앞 가운데 화구",
+   "fx_stove_1/front_left": "스토브 앞 왼쪽 화구",
+   "fx_stove_1/front_right": "스토브 앞 오른쪽 화구",
+   "fx_stove_1/rear_center": "스토브 뒤 가운데 화구",
+   "fx_stove_1/rear_left": "스토브 뒤 왼쪽 화구",
+   "fx_stove_1/rear_right": "스토브 뒤 오른쪽 화구"
+  }
+ },
+ "output": {
+  "reasoning": "① 지시 해석: 양주와 요거트 1 또는 요거트 2 중 하나를 냉장고 서랍에 넣는 작업이다. 시간 조건이나 작업 순서는 지정되지 않았다. 시작 장소는 양주가 있는 캐비닛 2와 선택할 요거트가 있는 조리대 5 또는 싱크대이며, 끝나는 장소는 냉장고다. ② 씬 접지: 양주는 캐비닛 2 선반 위에, 요거트 1은 조리대 5 위에, 요거트 2는 싱크대 왼쪽 개수대 안에 있다. 지시의 냉장고 서랍은 냉장고 냉장실 서랍에 해당한다. 캐비닛 2와 냉장고의 문은 닫혀 있다. ③ 역할 부여: 양주와 선택할 요거트는 옮길 대상이므로 필수다. 냉장고 냉장실 서랍은 받는 곳이므로 핵심 수단이다. 캐비닛 2는 양주의 초기 위치이자 접근을 위해 문을 열어야 하는 가구이고, 조리대 5와 싱크대는 각각 요거트의 초기 위치이므로 보조다. 냉장고는 서랍에 접근하려면 문을 열어야 하는 가구이므로 보조다. ④ 제약 도출: 캐비닛 2 문을 여는 것은 양주를 꺼내는 것에, 냉장고 문을 여는 것은 물체를 서랍에 넣는 것에 선행해야 한다. 요거트는 두 개 중 하나만 선택한다. ⑤ 목표 상태 도출: 양주와 번호를 특정하지 않은 요거트 하나가 냉장고 냉장실 서랍 안에 있는 상태를 쓴다. 요거트 선택은 다른 선택과 맞물리지 않으므로 경우를 나누지 않는다.",
+  "task_situation_description": {
+   "task_goal": {
+    "summary": "양주와 요거트 하나를 냉장고 냉장실 서랍에 넣는 것.",
+    "goal_state": [
+     [
+      {
+       "kind": "relation",
+       "subject": "양주",
+       "predicate": "in",
+       "object": "냉장고 냉장실 서랍",
+       "value": true
+      },
+      {
+       "kind": "relation",
+       "subject": "요거트",
+       "predicate": "in",
+       "object": "냉장고 냉장실 서랍",
+       "value": true
+      }
+     ]
+    ]
+   },
+   "spatiotemporal_conditions": {
+    "time": null,
+    "space": {
+     "start": "캐비닛 2 혹은 조리대 5 혹은 싱크대",
+     "end": "냉장고"
+    }
+   },
+   "target_objects": {
+    "required": [
+     {
+      "ref": "양주",
+      "location": "캐비닛 2 선반 위",
+      "state": null
+     },
+     {
+      "ref": "요거트",
+      "location": "조리대 5(아일랜드 식탁) 위 혹은 싱크대 왼쪽 개수대 안",
+      "state": null
+     }
+    ],
+    "key_means": [
+     {
+      "ref": "냉장고 냉장실 서랍",
+      "location": null,
+      "state": null,
+      "alternatives": []
+     }
+    ],
+    "auxiliary": [
+     {
+      "ref": "캐비닛 2",
+      "location": null,
+      "note": "양주의 초기 위치 기준이며, 양주에 닿으려면 닫힌 문을 열어야 하는 가구"
+     },
+     {
+      "ref": "조리대 5",
+      "location": null,
+      "note": "요거트 1을 선택할 경우의 초기 위치 기준"
+     },
+     {
+      "ref": "싱크대",
+      "location": null,
+      "note": "요거트 2를 선택할 경우의 초기 위치 기준"
+     },
+     {
+      "ref": "냉장고",
+      "location": null,
+      "note": "냉장실 서랍에 접근하려면 닫힌 문을 열어야 하는 가구"
+     }
+    ]
+   },
+   "constraints": [
+    {
+     "type": "precedence",
+     "description": "캐비닛 2 문을 여는 것이 양주를 꺼내는 것에 선행해야 함"
+    },
+    {
+     "type": "precedence",
+     "description": "냉장고 문을 여는 것이 양주와 선택한 요거트를 냉장실 서랍에 넣는 것에 선행해야 함"
+    },
+    {
+     "type": "resource",
+     "description": "요거트 1과 요거트 2 중 하나만 선택해야 함"
+    }
+   ]
+  },
+  "task_situation_description_text": "작업 목표: 양주와 요거트 하나를 냉장고 냉장실 서랍에 넣는 것.\n목표 상태:\n- 양주: 냉장고 냉장실 서랍 안\n- 요거트: 냉장고 냉장실 서랍 안\n시간·공간 조건: 시간 조건은 없음, 공간 조건은 시작 캐비닛 2 혹은 조리대 5 혹은 싱크대, 종료 냉장고\n대상 물체:\n- 필수 물체: 양주(위치: 캐비닛 2 선반 위)\n- 필수 물체: 요거트(위치: 조리대 5(아일랜드 식탁) 위 혹은 싱크대 왼쪽 개수대 안)\n- 핵심 수단: 냉장고 냉장실 서랍\n- 보조 물체: 캐비닛 2(비고: 양주의 초기 위치 기준이며, 양주에 닿으려면 닫힌 문을 열어야 하는 가구)\n- 보조 물체: 조리대 5(비고: 요거트 1을 선택할 경우의 초기 위치 기준)\n- 보조 물체: 싱크대(비고: 요거트 2를 선택할 경우의 초기 위치 기준)\n- 보조 물체: 냉장고(비고: 냉장실 서랍에 접근하려면 닫힌 문을 열어야 하는 가구)\n제약 사항:\n- [선후] 캐비닛 2 문을 여는 것이 양주를 꺼내는 것에 선행해야 함\n- [선후] 냉장고 문을 여는 것이 양주와 선택한 요거트를 냉장실 서랍에 넣는 것에 선행해야 함\n- [자원] 요거트 1과 요거트 2 중 하나만 선택해야 함\n"
+ }
+}

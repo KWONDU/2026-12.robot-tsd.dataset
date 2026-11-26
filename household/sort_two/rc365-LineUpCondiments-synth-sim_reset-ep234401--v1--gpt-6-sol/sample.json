@@ -1,0 +1,227 @@
+{
+ "id": "rc365-LineUpCondiments-synth-sim_reset-ep234401--v1--gpt-6-sol",
+ "domain": "household",
+ "task_type": "sort_two",
+ "agent": "gpt-6-sol",
+ "source": {
+  "data": "RoboCasa365 (MIT)",
+  "scene_id": "rc365/LineUpCondiments/synth/sim_reset/ep_234401",
+  "task": "LineUpCondiments",
+  "composed": false
+ },
+ "input": {
+  "instruction": "캐비닛에서 시럽 병이랑 소스 병을 꺼내 스토브 근처 조리대에 나란히 일렬로 놓아.",
+  "instruction_en": "Take two condiments from the cabinet and move them on the counter near the stove.Make sure the condiments are lined up with each other, next to each other.",
+  "world_state": "장소: 가정 주방\n로봇(PandaOmron). 들고 있는 물체 없음.\n\n물체가 놓인 곳:\n- 캐비닛 22 선반 위: 시럽 병, 소스 병\n\n가구:\n- 캐비닛 1, 3, 4, 6부터 9까지, 13, 14, 16부터 21까지: 문 닫힘\n- 서랍 1부터 10까지: 서랍 닫힘\n- 조리대 1: 스토브 옆, 토스터 오븐 옆\n- 조리대 2: 커피머신 옆, 식기세척기 옆, 싱크대 옆\n- 조리대 3: 냉장고 옆, 전자레인지 옆\n- 조리대 4: 스토브 옆, 토스터 옆\n- 식기세척기: 문 닫힘. 칸: 랙 1, 2(위에서부터)\n- 냉장고: 문 닫힘, 냉동실 문 닫힘. 칸: 냉장실 선반 1, 2(위에서부터), 냉장실 서랍\n- 전자레인지: 문 닫힘\n- 싱크대: 미가동\n- 캐비닛 12, 15(아일랜드): 문 닫힘\n- 스토브: 문 닫힘, 미가동. 칸: 랙, 앞 왼쪽 화구, 뒤 왼쪽 화구, 앞 오른쪽 화구, 뒤 오른쪽 화구, 앞 가운데 화구, 뒤 가운데 화구\n- 토스터 오븐: 문 닫힘\n- 캐비닛 22: 문 열림\n- 캐비닛 2, 5\n- 커피머신\n- 조리대 5, 6\n- 수납장 1, 2\n- 조리대 7, 8(아일랜드 식탁)\n- 캐비닛 10, 11(아일랜드)\n- 스툴 1, 2\n- 토스터",
+  "entity_labels": {
+   "fx_cabinet_1": "캐비닛 1",
+   "fx_drawer_1": "서랍 1",
+   "fx_cabinet_2": "캐비닛 2",
+   "fx_cabinet_3": "캐비닛 3",
+   "fx_cabinet_4": "캐비닛 4",
+   "fx_cabinet_5": "캐비닛 5",
+   "fx_cabinet_6": "캐비닛 6",
+   "fx_cabinet_7": "캐비닛 7",
+   "fx_cabinet_8": "캐비닛 8",
+   "fx_cabinet_9": "캐비닛 9",
+   "fx_coffee_machine_1": "커피머신",
+   "fx_counter_1": "조리대 1",
+   "fx_counter_2": "조리대 2",
+   "fx_counter_3": "조리대 3",
+   "fx_counter_4": "조리대 4",
+   "fx_counter_5": "조리대 5",
+   "fx_counter_6": "조리대 6",
+   "fx_dishwasher_1": "식기세척기",
+   "fx_cabinet_10": "수납장 1",
+   "fx_fridge_1": "냉장고",
+   "fx_counter_7": "조리대 7",
+   "fx_counter_8": "조리대 8",
+   "fx_cabinet_11": "수납장 2",
+   "fx_microwave_1": "전자레인지",
+   "fx_cabinet_12": "캐비닛 10",
+   "fx_cabinet_13": "캐비닛 11",
+   "fx_sink_1": "싱크대",
+   "fx_cabinet_14": "캐비닛 12",
+   "fx_drawer_2": "서랍 2",
+   "fx_drawer_3": "서랍 3",
+   "fx_drawer_4": "서랍 4",
+   "fx_cabinet_15": "캐비닛 13",
+   "fx_cabinet_16": "캐비닛 14",
+   "fx_cabinet_17": "캐비닛 15",
+   "fx_cabinet_18": "캐비닛 16",
+   "fx_cabinet_19": "캐비닛 17",
+   "fx_cabinet_20": "캐비닛 18",
+   "fx_drawer_5": "서랍 5",
+   "fx_drawer_6": "서랍 6",
+   "fx_drawer_7": "서랍 7",
+   "fx_cabinet_21": "캐비닛 19",
+   "fx_drawer_8": "서랍 8",
+   "fx_drawer_9": "서랍 9",
+   "fx_drawer_10": "서랍 10",
+   "fx_cabinet_22": "캐비닛 20",
+   "fx_cabinet_23": "캐비닛 21",
+   "fx_stool_1": "스툴 1",
+   "fx_stool_2": "스툴 2",
+   "fx_stove_1": "스토브",
+   "fx_toaster_1": "토스터",
+   "fx_toaster_oven_1": "토스터 오븐",
+   "fx_cabinet_24": "캐비닛 22",
+   "obj_001": "시럽 병",
+   "obj_002": "소스 병",
+   "fx_dishwasher_1/rack1": "식기세척기 랙 1",
+   "fx_dishwasher_1/rack0": "식기세척기 랙 2",
+   "fx_fridge_1/fridge_shelf1": "냉장고 냉장실 선반 1",
+   "fx_fridge_1/fridge_shelf0": "냉장고 냉장실 선반 2",
+   "fx_fridge_1/fridge_drawer0": "냉장고 냉장실 서랍",
+   "fx_stove_1/rack0": "스토브 랙",
+   "fx_stove_1/front_left": "스토브 앞 왼쪽 화구",
+   "fx_stove_1/rear_left": "스토브 뒤 왼쪽 화구",
+   "fx_stove_1/front_right": "스토브 앞 오른쪽 화구",
+   "fx_stove_1/rear_right": "스토브 뒤 오른쪽 화구",
+   "fx_stove_1/front_center": "스토브 앞 가운데 화구",
+   "fx_stove_1/rear_center": "스토브 뒤 가운데 화구"
+  }
+ },
+ "output": {
+  "reasoning": "① 지시 해석: 캐비닛 22의 시럽 병과 소스 병을 꺼내 스토브 근처 조리대 한 곳에 나란히 일렬로 놓는 작업이다. 시간 조건은 없다. 두 병이 있는 캐비닛 22에서 시작하며, 끝나는 곳은 조리대 1 혹은 조리대 4다. ② 씬 접지: 두 병은 캐비닛 22 선반 위에 있다. 스토브 옆에 있는 조리대는 조리대 1과 조리대 4이며, 캐비닛 22의 문은 열려 있다. ③ 역할 부여: 위치가 바뀌는 두 병은 필수다. 병을 받는 조리대 1과 조리대 4는 서로 대안인 핵심 수단이다. 캐비닛 22는 초기 위치 기준, 스토브는 근처라는 조건의 기준이므로 각각 보조다. ④ 제약 도출: 두 병은 서로 다른 조리대로 나뉘지 않고 같은 조리대에 나란히 일렬로 놓여야 한다. 캐비닛 22의 문은 이미 열려 있어 문을 여는 선행 조건은 없다. ⑤ 목표 상태: 두 병이 함께 조리대 1에 놓이는 경우와 함께 조리대 4에 놓이는 경우를 구분했다. 각 경우에 두 병이 스토브 근처에 있고 서로 가까이 놓인 관계를 썼으며, 일렬이라는 배치 조건은 관계 술어로 표현할 수 없어 공간 제약에 썼다.",
+  "task_situation_description": {
+   "task_goal": {
+    "summary": "캐비닛 22의 시럽 병과 소스 병을 스토브 근처 조리대 한 곳에 나란히 일렬로 놓는 것",
+    "goal_state": [
+     [
+      {
+       "kind": "relation",
+       "subject": "시럽 병",
+       "predicate": "on",
+       "object": "조리대 1",
+       "value": true
+      },
+      {
+       "kind": "relation",
+       "subject": "소스 병",
+       "predicate": "on",
+       "object": "조리대 1",
+       "value": true
+      },
+      {
+       "kind": "relation",
+       "subject": "시럽 병",
+       "predicate": "near",
+       "object": "스토브",
+       "value": true
+      },
+      {
+       "kind": "relation",
+       "subject": "소스 병",
+       "predicate": "near",
+       "object": "스토브",
+       "value": true
+      },
+      {
+       "kind": "relation",
+       "subject": "시럽 병",
+       "predicate": "near",
+       "object": "소스 병",
+       "value": true
+      }
+     ],
+     [
+      {
+       "kind": "relation",
+       "subject": "시럽 병",
+       "predicate": "on",
+       "object": "조리대 4",
+       "value": true
+      },
+      {
+       "kind": "relation",
+       "subject": "소스 병",
+       "predicate": "on",
+       "object": "조리대 4",
+       "value": true
+      },
+      {
+       "kind": "relation",
+       "subject": "시럽 병",
+       "predicate": "near",
+       "object": "스토브",
+       "value": true
+      },
+      {
+       "kind": "relation",
+       "subject": "소스 병",
+       "predicate": "near",
+       "object": "스토브",
+       "value": true
+      },
+      {
+       "kind": "relation",
+       "subject": "시럽 병",
+       "predicate": "near",
+       "object": "소스 병",
+       "value": true
+      }
+     ]
+    ]
+   },
+   "spatiotemporal_conditions": {
+    "time": null,
+    "space": {
+     "start": "캐비닛 22",
+     "end": "조리대 1 혹은 조리대 4"
+    }
+   },
+   "target_objects": {
+    "required": [
+     {
+      "ref": "시럽 병",
+      "location": "캐비닛 22 선반 위",
+      "state": null
+     },
+     {
+      "ref": "소스 병",
+      "location": "캐비닛 22 선반 위",
+      "state": null
+     }
+    ],
+    "key_means": [
+     {
+      "ref": "조리대 1",
+      "location": null,
+      "state": null,
+      "alternatives": [
+       "조리대 4"
+      ]
+     },
+     {
+      "ref": "조리대 4",
+      "location": null,
+      "state": null,
+      "alternatives": [
+       "조리대 1"
+      ]
+     }
+    ],
+    "auxiliary": [
+     {
+      "ref": "캐비닛 22",
+      "location": null,
+      "note": "두 병의 초기 위치 기준"
+     },
+     {
+      "ref": "스토브",
+      "location": null,
+      "note": "두 병을 놓을 자리의 근처 기준"
+     }
+    ]
+   },
+   "constraints": [
+    {
+     "type": "spatial",
+     "description": "두 병을 같은 조리대 위에 나란히 일렬로 배치해야 함"
+    }
+   ]
+  },
+  "task_situation_description_text": "작업 목표: 캐비닛 22의 시럽 병과 소스 병을 스토브 근처 조리대 한 곳에 나란히 일렬로 놓는 것\n목표 상태:\n- 경우 1: 시럽 병: 조리대 1 위; 소스 병: 조리대 1 위; 시럽 병: 스토브 근처; 소스 병: 스토브 근처; 시럽 병: 소스 병 근처\n- 경우 2: 시럽 병: 조리대 4 위; 소스 병: 조리대 4 위; 시럽 병: 스토브 근처; 소스 병: 스토브 근처; 시럽 병: 소스 병 근처\n시간·공간 조건: 시간 조건은 없음, 공간 조건은 시작 캐비닛 22, 종료 조리대 1 혹은 조리대 4\n대상 물체:\n- 필수 물체: 시럽 병(위치: 캐비닛 22 선반 위)\n- 필수 물체: 소스 병(위치: 캐비닛 22 선반 위)\n- 핵심 수단: 조리대 1(대안: 조리대 4)\n- 핵심 수단: 조리대 4(대안: 조리대 1)\n- 보조 물체: 캐비닛 22(비고: 두 병의 초기 위치 기준)\n- 보조 물체: 스토브(비고: 두 병을 놓을 자리의 근처 기준)\n제약 사항:\n- [공간] 두 병을 같은 조리대 위에 나란히 일렬로 배치해야 함\n"
+ }
+}
