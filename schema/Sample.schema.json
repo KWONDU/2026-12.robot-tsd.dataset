@@ -1,0 +1,1090 @@
+{
+  "$defs": {
+    "ChecklistItem": {
+      "additionalProperties": false,
+      "properties": {
+        "score": {
+          "title": "Score",
+          "type": "integer"
+        },
+        "rationale": {
+          "title": "Rationale",
+          "type": "string"
+        }
+      },
+      "required": [
+        "score",
+        "rationale"
+      ],
+      "title": "ChecklistItem",
+      "type": "object"
+    },
+    "ChecklistResult": {
+      "additionalProperties": false,
+      "properties": {
+        "pass": {
+          "title": "Pass",
+          "type": "boolean"
+        },
+        "rubric_version": {
+          "title": "Rubric Version",
+          "type": "string"
+        },
+        "judge_model": {
+          "title": "Judge Model",
+          "type": "string"
+        },
+        "items": {
+          "additionalProperties": {
+            "$ref": "#/$defs/ChecklistItem"
+          },
+          "title": "Items",
+          "type": "object"
+        },
+        "total": {
+          "title": "Total",
+          "type": "integer"
+        }
+      },
+      "required": [
+        "pass",
+        "rubric_version",
+        "judge_model",
+        "items",
+        "total"
+      ],
+      "title": "ChecklistResult",
+      "type": "object"
+    },
+    "GeneratorMeta": {
+      "additionalProperties": false,
+      "properties": {
+        "model": {
+          "title": "Model",
+          "type": "string"
+        },
+        "provider": {
+          "title": "Provider",
+          "type": "string"
+        },
+        "prompt_version": {
+          "title": "Prompt Version",
+          "type": "string"
+        },
+        "temperature": {
+          "title": "Temperature",
+          "type": "number"
+        },
+        "seed": {
+          "title": "Seed",
+          "type": "integer"
+        }
+      },
+      "required": [
+        "model",
+        "provider",
+        "prompt_version",
+        "temperature",
+        "seed"
+      ],
+      "title": "GeneratorMeta",
+      "type": "object"
+    },
+    "GoalAssertion": {
+      "additionalProperties": false,
+      "description": "작업을 마쳤을 때 성립해야 하는(또는 성립하지 않아야 하는) 상태 단언 하나. 행동이나 순서가 아니라 상태이며, 현재 씬 상태와 같은 어휘(관계 술어, 상태 키, entity id)로 쓴다. 적은 것만 확인 대상이고, 적지 않은 상태는 \"바뀌면 안 됨\"이 아니라 \"상관없음\"이다.",
+      "properties": {
+        "kind": {
+          "description": "단언 종류: relation(관계), state(물체나 가구의 상태)",
+          "title": "Kind",
+          "type": "string"
+        },
+        "subject": {
+          "description": "주어 entity id (환경 컨텍스트의 물체·가구 id)",
+          "title": "Subject",
+          "type": "string"
+        },
+        "predicate": {
+          "description": "relation이면 관계 술어, 상태 단언이면 상태 키",
+          "title": "Predicate",
+          "type": "string"
+        },
+        "object": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "description": "relation의 대상. 로봇이 드는 관계와 상태 단언은 null",
+          "title": "Object"
+        },
+        "value": {
+          "default": true,
+          "description": "true면 성립해야 하고 false면 성립하지 않아야 한다",
+          "title": "Value",
+          "type": "boolean"
+        }
+      },
+      "required": [
+        "kind",
+        "subject",
+        "predicate"
+      ],
+      "title": "GoalAssertion",
+      "type": "object"
+    },
+    "GoalCheckResult": {
+      "additionalProperties": false,
+      "description": "목표 상태·완료 판정의 규칙 검사 결과.",
+      "properties": {
+        "pass": {
+          "title": "Pass",
+          "type": "boolean"
+        },
+        "problems": {
+          "items": {
+            "type": "string"
+          },
+          "title": "Problems",
+          "type": "array"
+        },
+        "initial_status": {
+          "enum": [
+            "satisfied",
+            "unsatisfied",
+            "unknown"
+          ],
+          "title": "Initial Status",
+          "type": "string"
+        },
+        "assertion_status": {
+          "items": {
+            "enum": [
+              "satisfied",
+              "unsatisfied",
+              "unknown"
+            ],
+            "type": "string"
+          },
+          "title": "Assertion Status",
+          "type": "array"
+        },
+        "trivial": {
+          "default": false,
+          "title": "Trivial",
+          "type": "boolean"
+        }
+      },
+      "required": [
+        "pass",
+        "initial_status"
+      ],
+      "title": "GoalCheckResult",
+      "type": "object"
+    },
+    "GoalOracleResult": {
+      "additionalProperties": false,
+      "description": "원천이 알려 준 성공 판정(정답)과 생성된 목표 상태의 대조. 원천이 모르면 available=false.",
+      "properties": {
+        "pass": {
+          "title": "Pass",
+          "type": "boolean"
+        },
+        "available": {
+          "title": "Available",
+          "type": "boolean"
+        },
+        "oracle": {
+          "items": {
+            "additionalProperties": true,
+            "type": "object"
+          },
+          "title": "Oracle",
+          "type": "array"
+        },
+        "matched": {
+          "items": {
+            "type": "boolean"
+          },
+          "title": "Matched",
+          "type": "array"
+        },
+        "already_holds": {
+          "items": {
+            "type": "boolean"
+          },
+          "title": "Already Holds",
+          "type": "array"
+        },
+        "recall": {
+          "anyOf": [
+            {
+              "type": "number"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Recall"
+        },
+        "alternatives": {
+          "default": 1,
+          "title": "Alternatives",
+          "type": "integer"
+        },
+        "chosen": {
+          "default": 0,
+          "title": "Chosen",
+          "type": "integer"
+        }
+      },
+      "required": [
+        "pass",
+        "available"
+      ],
+      "title": "GoalOracleResult",
+      "type": "object"
+    },
+    "GroundingResult": {
+      "additionalProperties": false,
+      "properties": {
+        "pass": {
+          "title": "Pass",
+          "type": "boolean"
+        },
+        "unknown_refs": {
+          "items": {
+            "type": "string"
+          },
+          "title": "Unknown Refs",
+          "type": "array"
+        },
+        "state_conflicts": {
+          "items": {
+            "type": "string"
+          },
+          "title": "State Conflicts",
+          "type": "array"
+        },
+        "hallucinated_entities": {
+          "items": {
+            "type": "string"
+          },
+          "title": "Hallucinated Entities",
+          "type": "array"
+        }
+      },
+      "required": [
+        "pass"
+      ],
+      "title": "GroundingResult",
+      "type": "object"
+    },
+    "ResolvabilityResult": {
+      "additionalProperties": false,
+      "properties": {
+        "pass": {
+          "title": "Pass",
+          "type": "boolean"
+        },
+        "rationale": {
+          "title": "Rationale",
+          "type": "string"
+        }
+      },
+      "required": [
+        "pass",
+        "rationale"
+      ],
+      "title": "ResolvabilityResult",
+      "type": "object"
+    },
+    "RewriterMeta": {
+      "additionalProperties": false,
+      "properties": {
+        "model": {
+          "title": "Model",
+          "type": "string"
+        },
+        "prompt_version": {
+          "title": "Prompt Version",
+          "type": "string"
+        }
+      },
+      "required": [
+        "model",
+        "prompt_version"
+      ],
+      "title": "RewriterMeta",
+      "type": "object"
+    },
+    "SampleInput": {
+      "additionalProperties": false,
+      "properties": {
+        "user_instruction": {
+          "title": "User Instruction",
+          "type": "string"
+        },
+        "original_instruction_en": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Original Instruction En"
+        },
+        "instruction_specificity": {
+          "enum": [
+            "explicit",
+            "natural",
+            "underspecified"
+          ],
+          "title": "Instruction Specificity",
+          "type": "string"
+        },
+        "environment_context": {
+          "additionalProperties": true,
+          "title": "Environment Context",
+          "type": "object"
+        },
+        "world_state": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "World State"
+        },
+        "entity_labels": {
+          "additionalProperties": {
+            "type": "string"
+          },
+          "title": "Entity Labels",
+          "type": "object"
+        }
+      },
+      "required": [
+        "user_instruction",
+        "instruction_specificity",
+        "environment_context"
+      ],
+      "title": "SampleInput",
+      "type": "object"
+    },
+    "SampleIntermediate": {
+      "additionalProperties": false,
+      "properties": {
+        "reasoning": {
+          "title": "Reasoning",
+          "type": "string"
+        }
+      },
+      "required": [
+        "reasoning"
+      ],
+      "title": "SampleIntermediate",
+      "type": "object"
+    },
+    "SampleMeta": {
+      "additionalProperties": false,
+      "properties": {
+        "generator": {
+          "anyOf": [
+            {
+              "$ref": "#/$defs/GeneratorMeta"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null
+        },
+        "rewriter": {
+          "anyOf": [
+            {
+              "$ref": "#/$defs/RewriterMeta"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null
+        },
+        "verification": {
+          "anyOf": [
+            {
+              "$ref": "#/$defs/VerificationResult"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null
+        },
+        "sampling": {
+          "anyOf": [
+            {
+              "additionalProperties": true,
+              "type": "object"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Sampling"
+        },
+        "task_template": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Task Template"
+        },
+        "status": {
+          "default": "pending",
+          "enum": [
+            "pending",
+            "accepted",
+            "alternate",
+            "rejected",
+            "needs_review"
+          ],
+          "title": "Status",
+          "type": "string"
+        },
+        "created_at": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Created At"
+        },
+        "pipeline_version": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Pipeline Version"
+        },
+        "schema_version": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Schema Version"
+        }
+      },
+      "title": "SampleMeta",
+      "type": "object"
+    },
+    "SampleOutput": {
+      "additionalProperties": false,
+      "properties": {
+        "task_situation_description": {
+          "$ref": "#/$defs/TaskSituationDescription"
+        },
+        "task_situation_description_text": {
+          "title": "Task Situation Description Text",
+          "type": "string"
+        }
+      },
+      "required": [
+        "task_situation_description",
+        "task_situation_description_text"
+      ],
+      "title": "SampleOutput",
+      "type": "object"
+    },
+    "SituationResult": {
+      "additionalProperties": false,
+      "description": "작업 합성이 남긴 상황 사실(돌아가게 만드는 통로, 기다려야 하는 곳, 시간 창, 가공 시간)이 설명문에 있는지.\n상황 사실이 없는 시나리오(원천 과제, 가정·물류 합성)는 available=false로 통과한다.",
+      "properties": {
+        "pass": {
+          "title": "Pass",
+          "type": "boolean"
+        },
+        "available": {
+          "title": "Available",
+          "type": "boolean"
+        },
+        "missing": {
+          "items": {
+            "type": "string"
+          },
+          "title": "Missing",
+          "type": "array"
+        }
+      },
+      "required": [
+        "pass",
+        "available"
+      ],
+      "title": "SituationResult",
+      "type": "object"
+    },
+    "SpaceCondition": {
+      "additionalProperties": false,
+      "description": "공간 조건: 작업이 시작되는 곳과 끝나는 곳. 순서가 정해지지 않아 후보가 여럿이면 후보를 모두 '혹은'으로 잇는다.",
+      "properties": {
+        "start": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "description": "작업이 시작되는 곳 (옮길 물체가 처음 있는 곳)",
+          "title": "Start"
+        },
+        "end": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "description": "작업이 끝나는 곳",
+          "title": "End"
+        }
+      },
+      "title": "SpaceCondition",
+      "type": "object"
+    },
+    "SpatiotemporalConditions": {
+      "additionalProperties": false,
+      "properties": {
+        "time": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Time"
+        },
+        "space": {
+          "anyOf": [
+            {
+              "$ref": "#/$defs/SpaceCondition"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null
+        }
+      },
+      "title": "SpatiotemporalConditions",
+      "type": "object"
+    },
+    "StructureResult": {
+      "additionalProperties": false,
+      "properties": {
+        "pass": {
+          "title": "Pass",
+          "type": "boolean"
+        },
+        "has_step_list": {
+          "title": "Has Step List",
+          "type": "boolean"
+        },
+        "field_order_ok": {
+          "title": "Field Order Ok",
+          "type": "boolean"
+        },
+        "all_objects_have_location": {
+          "title": "All Objects Have Location",
+          "type": "boolean"
+        }
+      },
+      "required": [
+        "pass",
+        "has_step_list",
+        "field_order_ok",
+        "all_objects_have_location"
+      ],
+      "title": "StructureResult",
+      "type": "object"
+    },
+    "SufficiencyProbeResult": {
+      "additionalProperties": false,
+      "properties": {
+        "pass": {
+          "title": "Pass",
+          "type": "boolean"
+        },
+        "judge_model": {
+          "title": "Judge Model",
+          "type": "string"
+        },
+        "missing_info": {
+          "items": {
+            "type": "string"
+          },
+          "title": "Missing Info",
+          "type": "array"
+        },
+        "score": {
+          "title": "Score",
+          "type": "integer"
+        }
+      },
+      "required": [
+        "pass",
+        "judge_model",
+        "score"
+      ],
+      "title": "SufficiencyProbeResult",
+      "type": "object"
+    },
+    "TSDAuxiliaryObject": {
+      "additionalProperties": false,
+      "properties": {
+        "ref": {
+          "title": "Ref",
+          "type": "string"
+        },
+        "location": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Location"
+        },
+        "note": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Note"
+        }
+      },
+      "required": [
+        "ref"
+      ],
+      "title": "TSDAuxiliaryObject",
+      "type": "object"
+    },
+    "TSDConstraint": {
+      "additionalProperties": false,
+      "properties": {
+        "type": {
+          "enum": [
+            "precedence",
+            "resource",
+            "physical",
+            "safety",
+            "spatial",
+            "other"
+          ],
+          "title": "Type",
+          "type": "string"
+        },
+        "description": {
+          "title": "Description",
+          "type": "string"
+        }
+      },
+      "required": [
+        "type",
+        "description"
+      ],
+      "title": "TSDConstraint",
+      "type": "object"
+    },
+    "TSDKeyMeans": {
+      "additionalProperties": false,
+      "properties": {
+        "ref": {
+          "title": "Ref",
+          "type": "string"
+        },
+        "location": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Location"
+        },
+        "state": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "State"
+        },
+        "alternatives": {
+          "items": {
+            "type": "string"
+          },
+          "title": "Alternatives",
+          "type": "array"
+        }
+      },
+      "required": [
+        "ref"
+      ],
+      "title": "TSDKeyMeans",
+      "type": "object"
+    },
+    "TSDRequiredObject": {
+      "additionalProperties": false,
+      "properties": {
+        "ref": {
+          "title": "Ref",
+          "type": "string"
+        },
+        "location": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Location"
+        },
+        "state": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "State"
+        }
+      },
+      "required": [
+        "ref"
+      ],
+      "title": "TSDRequiredObject",
+      "type": "object"
+    },
+    "TSDTargetObjects": {
+      "additionalProperties": false,
+      "properties": {
+        "required": {
+          "items": {
+            "$ref": "#/$defs/TSDRequiredObject"
+          },
+          "title": "Required",
+          "type": "array"
+        },
+        "key_means": {
+          "items": {
+            "$ref": "#/$defs/TSDKeyMeans"
+          },
+          "title": "Key Means",
+          "type": "array"
+        },
+        "auxiliary": {
+          "items": {
+            "$ref": "#/$defs/TSDAuxiliaryObject"
+          },
+          "title": "Auxiliary",
+          "type": "array"
+        }
+      },
+      "title": "TSDTargetObjects",
+      "type": "object"
+    },
+    "TaskGoal": {
+      "additionalProperties": false,
+      "description": "작업 목표. 사람이 읽는 요약과, 그것을 기계가 확인할 수 있게 옮긴 목표 상태.",
+      "properties": {
+        "summary": {
+          "description": "사람이 읽는 최종 목적 한 문장",
+          "title": "Summary",
+          "type": "string"
+        },
+        "goal_state": {
+          "description": "작업을 마쳤을 때의 상태. 만족하는 경우마다 단언 목록 하나 (경우 안은 모두 성립, 경우 중 하나면 된다)",
+          "items": {
+            "items": {
+              "$ref": "#/$defs/GoalAssertion"
+            },
+            "type": "array"
+          },
+          "title": "Goal State",
+          "type": "array"
+        }
+      },
+      "required": [
+        "summary"
+      ],
+      "title": "TaskGoal",
+      "type": "object"
+    },
+    "TaskSituationDescription": {
+      "additionalProperties": false,
+      "properties": {
+        "task_goal": {
+          "$ref": "#/$defs/TaskGoal"
+        },
+        "spatiotemporal_conditions": {
+          "$ref": "#/$defs/SpatiotemporalConditions"
+        },
+        "target_objects": {
+          "$ref": "#/$defs/TSDTargetObjects"
+        },
+        "constraints": {
+          "items": {
+            "$ref": "#/$defs/TSDConstraint"
+          },
+          "title": "Constraints",
+          "type": "array"
+        }
+      },
+      "required": [
+        "task_goal",
+        "spatiotemporal_conditions",
+        "target_objects"
+      ],
+      "title": "TaskSituationDescription",
+      "type": "object"
+    },
+    "VerificationResult": {
+      "additionalProperties": false,
+      "properties": {
+        "schema_valid": {
+          "title": "Schema Valid",
+          "type": "boolean"
+        },
+        "grounding": {
+          "anyOf": [
+            {
+              "$ref": "#/$defs/GroundingResult"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null
+        },
+        "structure": {
+          "anyOf": [
+            {
+              "$ref": "#/$defs/StructureResult"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null
+        },
+        "checklist": {
+          "anyOf": [
+            {
+              "$ref": "#/$defs/ChecklistResult"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null
+        },
+        "sufficiency_probe": {
+          "anyOf": [
+            {
+              "$ref": "#/$defs/SufficiencyProbeResult"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null
+        },
+        "instruction_resolvability": {
+          "anyOf": [
+            {
+              "$ref": "#/$defs/ResolvabilityResult"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null
+        },
+        "goal": {
+          "anyOf": [
+            {
+              "$ref": "#/$defs/GoalCheckResult"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null
+        },
+        "goal_oracle": {
+          "anyOf": [
+            {
+              "$ref": "#/$defs/GoalOracleResult"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null
+        },
+        "situation": {
+          "anyOf": [
+            {
+              "$ref": "#/$defs/SituationResult"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null
+        },
+        "skipped_reason": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Skipped Reason"
+        },
+        "final_pass": {
+          "title": "Final Pass",
+          "type": "boolean"
+        }
+      },
+      "required": [
+        "schema_valid",
+        "final_pass"
+      ],
+      "title": "VerificationResult",
+      "type": "object"
+    }
+  },
+  "additionalProperties": false,
+  "properties": {
+    "sample_id": {
+      "title": "Sample Id",
+      "type": "string"
+    },
+    "scenario_id": {
+      "title": "Scenario Id",
+      "type": "string"
+    },
+    "domain": {
+      "title": "Domain",
+      "type": "string"
+    },
+    "lang": {
+      "title": "Lang",
+      "type": "string"
+    },
+    "input": {
+      "$ref": "#/$defs/SampleInput"
+    },
+    "intermediate": {
+      "anyOf": [
+        {
+          "$ref": "#/$defs/SampleIntermediate"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "default": null
+    },
+    "output": {
+      "anyOf": [
+        {
+          "$ref": "#/$defs/SampleOutput"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "default": null
+    },
+    "meta": {
+      "$ref": "#/$defs/SampleMeta"
+    }
+  },
+  "required": [
+    "sample_id",
+    "scenario_id",
+    "domain",
+    "lang",
+    "input"
+  ],
+  "title": "Sample",
+  "type": "object"
+}

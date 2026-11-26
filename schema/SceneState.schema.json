@@ -1,0 +1,674 @@
+{
+  "$defs": {
+    "AgentInfo": {
+      "additionalProperties": false,
+      "properties": {
+        "embodiment": {
+          "title": "Embodiment",
+          "type": "string"
+        },
+        "base_near_fixture_id": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Base Near Fixture Id"
+        },
+        "holding": {
+          "items": {
+            "type": "string"
+          },
+          "title": "Holding",
+          "type": "array"
+        }
+      },
+      "required": [
+        "embodiment"
+      ],
+      "title": "AgentInfo",
+      "type": "object"
+    },
+    "FacilityMap": {
+      "additionalProperties": false,
+      "description": "로봇이 미리 가진 지도 (씬 상태 0.6): 지금 보이지 않아도 아는 정적 정보와 시설 알림.\n곳은 가구(FixtureEntry)이고, 여기서는 그 곳이 어느 구역인지와 곳 사이의 통로만 적는다.",
+      "properties": {
+        "zones": {
+          "items": {
+            "$ref": "#/$defs/MapZone"
+          },
+          "title": "Zones",
+          "type": "array"
+        },
+        "stations": {
+          "additionalProperties": {
+            "type": "string"
+          },
+          "title": "Stations",
+          "type": "object"
+        },
+        "aisles": {
+          "items": {
+            "$ref": "#/$defs/MapAisle"
+          },
+          "title": "Aisles",
+          "type": "array"
+        },
+        "notices": {
+          "items": {
+            "type": "string"
+          },
+          "title": "Notices",
+          "type": "array"
+        }
+      },
+      "required": [
+        "zones",
+        "stations",
+        "aisles"
+      ],
+      "title": "FacilityMap",
+      "type": "object"
+    },
+    "FixtureEntry": {
+      "additionalProperties": false,
+      "properties": {
+        "id": {
+          "title": "Id",
+          "type": "string"
+        },
+        "category": {
+          "title": "Category",
+          "type": "string"
+        },
+        "name_ko": {
+          "title": "Name Ko",
+          "type": "string"
+        },
+        "location_desc": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Location Desc"
+        },
+        "states": {
+          "additionalProperties": true,
+          "title": "States",
+          "type": "object"
+        },
+        "state_source": {
+          "default": "unknown",
+          "enum": [
+            "metadata",
+            "task_source_static",
+            "sim",
+            "default_assumed",
+            "unknown"
+          ],
+          "title": "State Source",
+          "type": "string"
+        },
+        "regions": {
+          "items": {
+            "$ref": "#/$defs/RegionEntry"
+          },
+          "title": "Regions",
+          "type": "array"
+        }
+      },
+      "required": [
+        "id",
+        "category",
+        "name_ko"
+      ],
+      "title": "FixtureEntry",
+      "type": "object"
+    },
+    "LayoutInfo": {
+      "additionalProperties": false,
+      "properties": {
+        "layout_id": {
+          "anyOf": [
+            {
+              "type": "integer"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Layout Id"
+        },
+        "layout_name": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Layout Name"
+        },
+        "style_id": {
+          "anyOf": [
+            {
+              "type": "integer"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Style Id"
+        },
+        "style_name": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Style Name"
+        }
+      },
+      "title": "LayoutInfo",
+      "type": "object"
+    },
+    "MapAisle": {
+      "additionalProperties": false,
+      "description": "두 곳(가구 id)을 잇는 통로 하나. one_way면 a에서 b로만 다닌다.",
+      "properties": {
+        "a": {
+          "title": "A",
+          "type": "string"
+        },
+        "b": {
+          "title": "B",
+          "type": "string"
+        },
+        "name_ko": {
+          "title": "Name Ko",
+          "type": "string"
+        },
+        "length_m": {
+          "title": "Length M",
+          "type": "number"
+        },
+        "closed": {
+          "default": false,
+          "title": "Closed",
+          "type": "boolean"
+        },
+        "one_way": {
+          "default": false,
+          "title": "One Way",
+          "type": "boolean"
+        },
+        "note": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Note"
+        }
+      },
+      "required": [
+        "a",
+        "b",
+        "name_ko",
+        "length_m"
+      ],
+      "title": "MapAisle",
+      "type": "object"
+    },
+    "MapZone": {
+      "additionalProperties": false,
+      "description": "지도의 구역 하나 (씬 상태 0.6): 가공·조립·보관처럼 곳을 묶는 구역. restricted면 로봇이 들어가지 않는다.",
+      "properties": {
+        "id": {
+          "title": "Id",
+          "type": "string"
+        },
+        "name_ko": {
+          "title": "Name Ko",
+          "type": "string"
+        },
+        "restricted": {
+          "default": false,
+          "title": "Restricted",
+          "type": "boolean"
+        },
+        "note": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Note"
+        }
+      },
+      "required": [
+        "id",
+        "name_ko"
+      ],
+      "title": "MapZone",
+      "type": "object"
+    },
+    "ObjectEntry": {
+      "additionalProperties": false,
+      "properties": {
+        "id": {
+          "title": "Id",
+          "type": "string"
+        },
+        "category": {
+          "title": "Category",
+          "type": "string"
+        },
+        "name_ko": {
+          "title": "Name Ko",
+          "type": "string"
+        },
+        "states": {
+          "additionalProperties": true,
+          "title": "States",
+          "type": "object"
+        },
+        "placement": {
+          "anyOf": [
+            {
+              "$ref": "#/$defs/PlacementInfo"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null
+        },
+        "pose": {
+          "anyOf": [
+            {
+              "additionalProperties": {
+                "items": {
+                  "type": "number"
+                },
+                "type": "array"
+              },
+              "type": "object"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Pose"
+        },
+        "size_m": {
+          "anyOf": [
+            {
+              "items": {
+                "type": "number"
+              },
+              "type": "array"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Size M"
+        },
+        "size_class": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Size Class"
+        },
+        "role": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Role"
+        },
+        "known_by": {
+          "anyOf": [
+            {
+              "enum": [
+                "perceived",
+                "system"
+              ],
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Known By"
+        }
+      },
+      "required": [
+        "id",
+        "category",
+        "name_ko"
+      ],
+      "title": "ObjectEntry",
+      "type": "object"
+    },
+    "PlacementInfo": {
+      "additionalProperties": false,
+      "properties": {
+        "fixture_id": {
+          "title": "Fixture Id",
+          "type": "string"
+        },
+        "relation": {
+          "enum": [
+            "on",
+            "in",
+            "near",
+            "held_by",
+            "robot_at"
+          ],
+          "title": "Relation",
+          "type": "string"
+        },
+        "region": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Region"
+        },
+        "near_fixture_id": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Near Fixture Id"
+        },
+        "near_side": {
+          "anyOf": [
+            {
+              "enum": [
+                "left",
+                "right"
+              ],
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Near Side"
+        }
+      },
+      "required": [
+        "fixture_id",
+        "relation"
+      ],
+      "title": "PlacementInfo",
+      "type": "object"
+    },
+    "Provenance": {
+      "additionalProperties": false,
+      "properties": {
+        "dataset_path": {
+          "title": "Dataset Path",
+          "type": "string"
+        },
+        "episode_index": {
+          "title": "Episode Index",
+          "type": "integer"
+        },
+        "original_task_name": {
+          "title": "Original Task Name",
+          "type": "string"
+        },
+        "extraction_tier": {
+          "enum": [
+            "A",
+            "B"
+          ],
+          "title": "Extraction Tier",
+          "type": "string"
+        },
+        "assumed_defaults": {
+          "items": {
+            "type": "string"
+          },
+          "title": "Assumed Defaults",
+          "type": "array"
+        },
+        "sim_state_keys": {
+          "additionalProperties": {
+            "items": {
+              "type": "string"
+            },
+            "type": "array"
+          },
+          "title": "Sim State Keys",
+          "type": "object"
+        },
+        "source_object_names": {
+          "additionalProperties": {
+            "type": "string"
+          },
+          "title": "Source Object Names",
+          "type": "object"
+        },
+        "source_fixture_names": {
+          "additionalProperties": {
+            "type": "string"
+          },
+          "title": "Source Fixture Names",
+          "type": "object"
+        },
+        "source_fixture_refs": {
+          "additionalProperties": {
+            "type": "string"
+          },
+          "title": "Source Fixture Refs",
+          "type": "object"
+        }
+      },
+      "required": [
+        "dataset_path",
+        "episode_index",
+        "original_task_name",
+        "extraction_tier"
+      ],
+      "title": "Provenance",
+      "type": "object"
+    },
+    "RegionEntry": {
+      "additionalProperties": false,
+      "description": "가구 안의 칸 하나 (씬 상태 0.5): 냉장실 선반, 화구, 랙 등. 같은 종류가 여럿이면 위에서부터 번호를 붙인다.",
+      "properties": {
+        "key": {
+          "title": "Key",
+          "type": "string"
+        },
+        "name_ko": {
+          "title": "Name Ko",
+          "type": "string"
+        },
+        "states": {
+          "additionalProperties": true,
+          "title": "States",
+          "type": "object"
+        }
+      },
+      "required": [
+        "key",
+        "name_ko"
+      ],
+      "title": "RegionEntry",
+      "type": "object"
+    },
+    "RelationEntry": {
+      "additionalProperties": false,
+      "properties": {
+        "subj": {
+          "title": "Subj",
+          "type": "string"
+        },
+        "pred": {
+          "enum": [
+            "on",
+            "in",
+            "near",
+            "held_by",
+            "robot_at"
+          ],
+          "title": "Pred",
+          "type": "string"
+        },
+        "obj": {
+          "title": "Obj",
+          "type": "string"
+        },
+        "source": {
+          "default": "metadata",
+          "title": "Source",
+          "type": "string"
+        }
+      },
+      "required": [
+        "subj",
+        "pred",
+        "obj"
+      ],
+      "title": "RelationEntry",
+      "type": "object"
+    }
+  },
+  "additionalProperties": false,
+  "properties": {
+    "schema_version": {
+      "title": "Schema Version",
+      "type": "string"
+    },
+    "scene_id": {
+      "title": "Scene Id",
+      "type": "string"
+    },
+    "domain": {
+      "title": "Domain",
+      "type": "string"
+    },
+    "simulator": {
+      "title": "Simulator",
+      "type": "string"
+    },
+    "layout": {
+      "$ref": "#/$defs/LayoutInfo"
+    },
+    "fixtures": {
+      "items": {
+        "$ref": "#/$defs/FixtureEntry"
+      },
+      "title": "Fixtures",
+      "type": "array"
+    },
+    "objects": {
+      "items": {
+        "$ref": "#/$defs/ObjectEntry"
+      },
+      "title": "Objects",
+      "type": "array"
+    },
+    "relations": {
+      "items": {
+        "$ref": "#/$defs/RelationEntry"
+      },
+      "title": "Relations",
+      "type": "array"
+    },
+    "agent": {
+      "$ref": "#/$defs/AgentInfo"
+    },
+    "constraints": {
+      "items": {
+        "type": "string"
+      },
+      "title": "Constraints",
+      "type": "array"
+    },
+    "provenance": {
+      "$ref": "#/$defs/Provenance"
+    },
+    "map": {
+      "anyOf": [
+        {
+          "$ref": "#/$defs/FacilityMap"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "default": null
+    }
+  },
+  "required": [
+    "schema_version",
+    "scene_id",
+    "domain",
+    "simulator",
+    "layout",
+    "fixtures",
+    "objects",
+    "relations",
+    "agent",
+    "provenance"
+  ],
+  "title": "SceneState",
+  "type": "object"
+}

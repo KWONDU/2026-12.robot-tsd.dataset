@@ -1,0 +1,37 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "tsdgen"
+version = "0.1.0"
+description = "Task Situation Description dataset generation pipeline (RoboCasa365, Tier A)"
+requires-python = ">=3.11"
+dependencies = [
+    "pyyaml>=6",
+    "pydantic>=2",
+    "jsonschema>=4",
+    "httpx>=0.27",
+]
+
+[project.optional-dependencies]
+dev = ["pytest>=8", "ruff>=0.6"]
+# Tier B (source.options.robocasa365.sim_state): 시연 첫 프레임 MuJoCo 상태 읽기
+sim = ["numpy>=1.26", "mujoco>=3.1"]
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.ruff]
+line-length = 100
+target-version = "py311"
+src = ["src", "tests"]
+
+[tool.ruff.lint]
+select = ["E", "F", "W", "I", "UP", "B", "SIM", "C4", "PIE", "RET", "PERF"]
+# 줄 길이는 코드 구문에만 건다. 문자열·주석 안의 글자까지 세는 E501 대신 tests/test_conventions.py가 검사한다.
+ignore = ["E501"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+addopts = "-q --basetemp=tmp/pytest"

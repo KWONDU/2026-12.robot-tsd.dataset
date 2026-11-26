@@ -1,0 +1,75 @@
+# 데이터 원천에 대해 참인 것. 어디서 무엇을 어떻게 받는지이며 실행마다 바뀌지 않는다.
+# 어느 원천을 쓸지(adapter)와 얼마나 쓸지는 config.yaml의 source.options가 정하며,
+# 로드 시점에 어댑터별로 합쳐진다. 키 이름은 source adapter registry 등록값이고,
+# 각 블록의 스키마는 그 어댑터가 options_model로 선언한다.
+
+robocasa365:
+  domain: household # 이 원천의 장면이 속한 도메인 (resources/domains/<이름>.yaml)
+  description_ko: 로봇 시뮬레이션 데이터셋 RoboCasa365의 주방 씬 # 전달 문서에 쓰는 원천 소개
+  # 장면 합성(태스크 템플릿을 주방에 놓고 RoboCasa reset)에 쓰는 시뮬레이터. 의존성 고정 버전(mujoco 3.3.1 등)이
+  # 파이프라인 환경(.conda)과 달라서 따로 만든 환경에 설치한다: scripts/setup_robocasa_sim.sh. 커밋을 고정해 재현한다.
+  simulator:
+    venv: .venv-sim
+    root: data/sim # 소스와 에셋(약 13GB)이 여기 받힌다
+    repos:
+      robosuite: { url: https://github.com/ARISE-Initiative/robosuite, commit: 5ce6643f3092639d08f7b0f90ed1c6a84f50552c }
+      robocasa: { url: https://github.com/robocasa/robocasa, commit: 3443cdf3dd20f9ae8ed41adba442059b506891d0 }
+    # robocasa는 --no-deps로 설치하고 아래만 따로 넣는다. 빠진 lerobot·tianshou·torch는 데이터셋 변환·학습 도구용이라
+    # 장면을 만드는 데 쓰지 않는다. 버전은 robocasa setup.py의 고정값 그대로다.
+    # 장면 합성(TSDGEN_STAGE=synthesize)이 쓰는 값. 배치·스타일 번호는 RoboCasa 학습용 범위(scene_registry.py)
+    layout_ids: [11, 60]
+    style_ids: [11, 60]
+    robot: PandaOmron
+    obj_instance_split: pretrain
+    reset_worker: scripts/robocasa_reset_worker.py # .venv-sim의 파이썬으로 돌리는 작업자
+    packages: [numpy==2.2.5, numba==0.61.2, scipy==1.15.3, mujoco==3.3.1, Pillow, opencv-python-headless, pyyaml, tqdm, termcolor, imageio, h5py, lxml, gymnasium, pynput, pygame]
+  # 공식 배포는 HF가 아니라 UT Box의 태스크별 tar다 (docs/RECON_ROBOCASA365.md 참고)
+  box_links_url: https://raw.githubusercontent.com/robocasa/robocasa/main/robocasa/models/assets/box_links/box_links_ds.json
+  repo_tarball_url: https://github.com/robocasa/robocasa/archive/refs/heads/main.tar.gz
+  dataset_source: human # Box 배포 tar는 human 시연 기준 (mimicgen은 별도 링크 세트)
+  download_timeout_s: 180
+  prefetch: # 캐시에 미리 확보할 범위. 실행 대상(splits/families)과 별개로 넓게 잡을 수 있다
+    splits: [pretrain, target]
+    families: [atomic, composite]
+    workers: 6
+    retries: 3
+    retry_base_delay_s: 2.0 # 재시도 대기 = 이 값 × 2^시도 번호
+    log_every: 10 # 진행 상황 로그 간격 (태스크 수)
+
+simready_warehouse:
+  domain: logistics
+  description_ko: NVIDIA SimReady 창고 에셋 팩의 작업 구역 # 전달 문서에 쓰는 원천 소개
+  hf_repo: nvidia/PhysicalAI-SimReady-Warehouse-01 # 출처 (CC BY 4.0). 장면 파일(USD)만 받아 scripts/simready_extract.py로 읽는다
+  license: cc-by-4.0
+  cells_file: data/simready_static/cells.json # scripts/simready_extract.py가 쓴 작업 구역별 놓인 에셋 목록
+  simulator_tag: isaacsim_synthetic # 씬 상태의 simulator 칸 (Isaac Sim 에셋으로 코드가 만든 장면)
+  split: cells # 바탕 장면의 split (compose.logistics.base_split이 고른다)
+  robot: humanoid
+
+simready_workshop:
+  domain: manufacturing
+  description_ko: NVIDIA SimReady 에셋으로 규칙 생성한 자동차 부품 조립·정비 작업장 # 전달 문서에 쓰는 원천 소개
+  hf_repo: nvidia/simready-assets # 출처 (CC BY 4.0). 에셋별 USD만 받아 scripts/simready_catalog.py로 크기·관절을 읽는다
+  license: cc-by-4.0
+  catalog_file: data/simready_static/factory_catalog.json # scripts/simready_catalog.py가 쓴 에셋 목록
+  simulator_tag: isaacsim_synthetic # 씬 상태의 simulator 칸 (Isaac Sim 에셋으로 코드가 만든 장면)
+  split: stations # 바탕 장면의 split (compose.manufacturing.base_split이 고른다)
+  robot: humanoid
+
+factory_floor:
+  domain: manufacturing
+  description_ko: 공개 규칙(RoboCup Logistics League 2025 스마트 팩토리)과 공개 시설 배치 벤치마크로 만든 공장 바닥, 물건은 NVIDIA SimReady 에셋 # 전달 문서에 쓰는 원천 소개
+  flp_file: data/factory_static/flp_instances.json # scripts/flp_extract.py가 FloorLayout.jl 인스턴스에서 뽑은 작업장 수와 물동량
+  catalog_file: data/simready_static/factory_catalog.json # scripts/simready_catalog.py가 쓴 에셋 목록 (물건)
+  references: ["RoboCup Logistics League rulebook 2025", "joehuchette/FloorLayout.jl FLP instances (MIT)", "nvidia/simready-assets (CC BY 4.0)"]
+  license: cc-by-4.0
+  simulator_tag: rule_generated # 씬 상태의 simulator 칸 (규칙으로 만든 지도와 장면)
+  split: floors # 바탕 장면의 split (compose.manufacturing.base_split이 고른다)
+  robot: mobile_manipulator
+
+isaaclab_arena:
+  domain: household # 지금 받는 kitchen_bench 명세가 주방이다
+  description_ko: Isaac Lab-Arena 환경 명세의 주방 씬 # 전달 문서에 쓰는 원천 소개
+  # 저장소 전체가 10MB 미만이라 소스 트리를 통째로 캐시한다 (에셋은 Isaac Sim 측에 있음)
+  repo_tarball_url: https://github.com/isaac-sim/IsaacLab-Arena/archive/refs/heads/main.tar.gz
+  download_timeout_s: 600

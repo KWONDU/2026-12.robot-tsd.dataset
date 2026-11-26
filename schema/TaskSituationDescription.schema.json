@@ -1,0 +1,344 @@
+{
+  "$defs": {
+    "GoalAssertion": {
+      "additionalProperties": false,
+      "description": "작업을 마쳤을 때 성립해야 하는(또는 성립하지 않아야 하는) 상태 단언 하나. 행동이나 순서가 아니라 상태이며, 현재 씬 상태와 같은 어휘(관계 술어, 상태 키, entity id)로 쓴다. 적은 것만 확인 대상이고, 적지 않은 상태는 \"바뀌면 안 됨\"이 아니라 \"상관없음\"이다.",
+      "properties": {
+        "kind": {
+          "description": "단언 종류: relation(관계), state(물체나 가구의 상태)",
+          "title": "Kind",
+          "type": "string"
+        },
+        "subject": {
+          "description": "주어 entity id (환경 컨텍스트의 물체·가구 id)",
+          "title": "Subject",
+          "type": "string"
+        },
+        "predicate": {
+          "description": "relation이면 관계 술어, 상태 단언이면 상태 키",
+          "title": "Predicate",
+          "type": "string"
+        },
+        "object": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "description": "relation의 대상. 로봇이 드는 관계와 상태 단언은 null",
+          "title": "Object"
+        },
+        "value": {
+          "default": true,
+          "description": "true면 성립해야 하고 false면 성립하지 않아야 한다",
+          "title": "Value",
+          "type": "boolean"
+        }
+      },
+      "required": [
+        "kind",
+        "subject",
+        "predicate"
+      ],
+      "title": "GoalAssertion",
+      "type": "object"
+    },
+    "SpaceCondition": {
+      "additionalProperties": false,
+      "description": "공간 조건: 작업이 시작되는 곳과 끝나는 곳. 순서가 정해지지 않아 후보가 여럿이면 후보를 모두 '혹은'으로 잇는다.",
+      "properties": {
+        "start": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "description": "작업이 시작되는 곳 (옮길 물체가 처음 있는 곳)",
+          "title": "Start"
+        },
+        "end": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "description": "작업이 끝나는 곳",
+          "title": "End"
+        }
+      },
+      "title": "SpaceCondition",
+      "type": "object"
+    },
+    "SpatiotemporalConditions": {
+      "additionalProperties": false,
+      "properties": {
+        "time": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Time"
+        },
+        "space": {
+          "anyOf": [
+            {
+              "$ref": "#/$defs/SpaceCondition"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null
+        }
+      },
+      "title": "SpatiotemporalConditions",
+      "type": "object"
+    },
+    "TSDAuxiliaryObject": {
+      "additionalProperties": false,
+      "properties": {
+        "ref": {
+          "title": "Ref",
+          "type": "string"
+        },
+        "location": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Location"
+        },
+        "note": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Note"
+        }
+      },
+      "required": [
+        "ref"
+      ],
+      "title": "TSDAuxiliaryObject",
+      "type": "object"
+    },
+    "TSDConstraint": {
+      "additionalProperties": false,
+      "properties": {
+        "type": {
+          "enum": [
+            "precedence",
+            "resource",
+            "physical",
+            "safety",
+            "spatial",
+            "other"
+          ],
+          "title": "Type",
+          "type": "string"
+        },
+        "description": {
+          "title": "Description",
+          "type": "string"
+        }
+      },
+      "required": [
+        "type",
+        "description"
+      ],
+      "title": "TSDConstraint",
+      "type": "object"
+    },
+    "TSDKeyMeans": {
+      "additionalProperties": false,
+      "properties": {
+        "ref": {
+          "title": "Ref",
+          "type": "string"
+        },
+        "location": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Location"
+        },
+        "state": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "State"
+        },
+        "alternatives": {
+          "items": {
+            "type": "string"
+          },
+          "title": "Alternatives",
+          "type": "array"
+        }
+      },
+      "required": [
+        "ref"
+      ],
+      "title": "TSDKeyMeans",
+      "type": "object"
+    },
+    "TSDRequiredObject": {
+      "additionalProperties": false,
+      "properties": {
+        "ref": {
+          "title": "Ref",
+          "type": "string"
+        },
+        "location": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Location"
+        },
+        "state": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "State"
+        }
+      },
+      "required": [
+        "ref"
+      ],
+      "title": "TSDRequiredObject",
+      "type": "object"
+    },
+    "TSDTargetObjects": {
+      "additionalProperties": false,
+      "properties": {
+        "required": {
+          "items": {
+            "$ref": "#/$defs/TSDRequiredObject"
+          },
+          "title": "Required",
+          "type": "array"
+        },
+        "key_means": {
+          "items": {
+            "$ref": "#/$defs/TSDKeyMeans"
+          },
+          "title": "Key Means",
+          "type": "array"
+        },
+        "auxiliary": {
+          "items": {
+            "$ref": "#/$defs/TSDAuxiliaryObject"
+          },
+          "title": "Auxiliary",
+          "type": "array"
+        }
+      },
+      "title": "TSDTargetObjects",
+      "type": "object"
+    },
+    "TaskGoal": {
+      "additionalProperties": false,
+      "description": "작업 목표. 사람이 읽는 요약과, 그것을 기계가 확인할 수 있게 옮긴 목표 상태.",
+      "properties": {
+        "summary": {
+          "description": "사람이 읽는 최종 목적 한 문장",
+          "title": "Summary",
+          "type": "string"
+        },
+        "goal_state": {
+          "description": "작업을 마쳤을 때의 상태. 만족하는 경우마다 단언 목록 하나 (경우 안은 모두 성립, 경우 중 하나면 된다)",
+          "items": {
+            "items": {
+              "$ref": "#/$defs/GoalAssertion"
+            },
+            "type": "array"
+          },
+          "title": "Goal State",
+          "type": "array"
+        }
+      },
+      "required": [
+        "summary"
+      ],
+      "title": "TaskGoal",
+      "type": "object"
+    }
+  },
+  "additionalProperties": false,
+  "properties": {
+    "task_goal": {
+      "$ref": "#/$defs/TaskGoal"
+    },
+    "spatiotemporal_conditions": {
+      "$ref": "#/$defs/SpatiotemporalConditions"
+    },
+    "target_objects": {
+      "$ref": "#/$defs/TSDTargetObjects"
+    },
+    "constraints": {
+      "items": {
+        "$ref": "#/$defs/TSDConstraint"
+      },
+      "title": "Constraints",
+      "type": "array"
+    }
+  },
+  "required": [
+    "task_goal",
+    "spatiotemporal_conditions",
+    "target_objects"
+  ],
+  "title": "TaskSituationDescription",
+  "type": "object"
+}

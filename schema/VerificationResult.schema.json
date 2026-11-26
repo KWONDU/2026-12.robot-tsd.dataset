@@ -1,0 +1,431 @@
+{
+  "$defs": {
+    "ChecklistItem": {
+      "additionalProperties": false,
+      "properties": {
+        "score": {
+          "title": "Score",
+          "type": "integer"
+        },
+        "rationale": {
+          "title": "Rationale",
+          "type": "string"
+        }
+      },
+      "required": [
+        "score",
+        "rationale"
+      ],
+      "title": "ChecklistItem",
+      "type": "object"
+    },
+    "ChecklistResult": {
+      "additionalProperties": false,
+      "properties": {
+        "pass": {
+          "title": "Pass",
+          "type": "boolean"
+        },
+        "rubric_version": {
+          "title": "Rubric Version",
+          "type": "string"
+        },
+        "judge_model": {
+          "title": "Judge Model",
+          "type": "string"
+        },
+        "items": {
+          "additionalProperties": {
+            "$ref": "#/$defs/ChecklistItem"
+          },
+          "title": "Items",
+          "type": "object"
+        },
+        "total": {
+          "title": "Total",
+          "type": "integer"
+        }
+      },
+      "required": [
+        "pass",
+        "rubric_version",
+        "judge_model",
+        "items",
+        "total"
+      ],
+      "title": "ChecklistResult",
+      "type": "object"
+    },
+    "GoalCheckResult": {
+      "additionalProperties": false,
+      "description": "목표 상태·완료 판정의 규칙 검사 결과.",
+      "properties": {
+        "pass": {
+          "title": "Pass",
+          "type": "boolean"
+        },
+        "problems": {
+          "items": {
+            "type": "string"
+          },
+          "title": "Problems",
+          "type": "array"
+        },
+        "initial_status": {
+          "enum": [
+            "satisfied",
+            "unsatisfied",
+            "unknown"
+          ],
+          "title": "Initial Status",
+          "type": "string"
+        },
+        "assertion_status": {
+          "items": {
+            "enum": [
+              "satisfied",
+              "unsatisfied",
+              "unknown"
+            ],
+            "type": "string"
+          },
+          "title": "Assertion Status",
+          "type": "array"
+        },
+        "trivial": {
+          "default": false,
+          "title": "Trivial",
+          "type": "boolean"
+        }
+      },
+      "required": [
+        "pass",
+        "initial_status"
+      ],
+      "title": "GoalCheckResult",
+      "type": "object"
+    },
+    "GoalOracleResult": {
+      "additionalProperties": false,
+      "description": "원천이 알려 준 성공 판정(정답)과 생성된 목표 상태의 대조. 원천이 모르면 available=false.",
+      "properties": {
+        "pass": {
+          "title": "Pass",
+          "type": "boolean"
+        },
+        "available": {
+          "title": "Available",
+          "type": "boolean"
+        },
+        "oracle": {
+          "items": {
+            "additionalProperties": true,
+            "type": "object"
+          },
+          "title": "Oracle",
+          "type": "array"
+        },
+        "matched": {
+          "items": {
+            "type": "boolean"
+          },
+          "title": "Matched",
+          "type": "array"
+        },
+        "already_holds": {
+          "items": {
+            "type": "boolean"
+          },
+          "title": "Already Holds",
+          "type": "array"
+        },
+        "recall": {
+          "anyOf": [
+            {
+              "type": "number"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Recall"
+        },
+        "alternatives": {
+          "default": 1,
+          "title": "Alternatives",
+          "type": "integer"
+        },
+        "chosen": {
+          "default": 0,
+          "title": "Chosen",
+          "type": "integer"
+        }
+      },
+      "required": [
+        "pass",
+        "available"
+      ],
+      "title": "GoalOracleResult",
+      "type": "object"
+    },
+    "GroundingResult": {
+      "additionalProperties": false,
+      "properties": {
+        "pass": {
+          "title": "Pass",
+          "type": "boolean"
+        },
+        "unknown_refs": {
+          "items": {
+            "type": "string"
+          },
+          "title": "Unknown Refs",
+          "type": "array"
+        },
+        "state_conflicts": {
+          "items": {
+            "type": "string"
+          },
+          "title": "State Conflicts",
+          "type": "array"
+        },
+        "hallucinated_entities": {
+          "items": {
+            "type": "string"
+          },
+          "title": "Hallucinated Entities",
+          "type": "array"
+        }
+      },
+      "required": [
+        "pass"
+      ],
+      "title": "GroundingResult",
+      "type": "object"
+    },
+    "ResolvabilityResult": {
+      "additionalProperties": false,
+      "properties": {
+        "pass": {
+          "title": "Pass",
+          "type": "boolean"
+        },
+        "rationale": {
+          "title": "Rationale",
+          "type": "string"
+        }
+      },
+      "required": [
+        "pass",
+        "rationale"
+      ],
+      "title": "ResolvabilityResult",
+      "type": "object"
+    },
+    "SituationResult": {
+      "additionalProperties": false,
+      "description": "작업 합성이 남긴 상황 사실(돌아가게 만드는 통로, 기다려야 하는 곳, 시간 창, 가공 시간)이 설명문에 있는지.\n상황 사실이 없는 시나리오(원천 과제, 가정·물류 합성)는 available=false로 통과한다.",
+      "properties": {
+        "pass": {
+          "title": "Pass",
+          "type": "boolean"
+        },
+        "available": {
+          "title": "Available",
+          "type": "boolean"
+        },
+        "missing": {
+          "items": {
+            "type": "string"
+          },
+          "title": "Missing",
+          "type": "array"
+        }
+      },
+      "required": [
+        "pass",
+        "available"
+      ],
+      "title": "SituationResult",
+      "type": "object"
+    },
+    "StructureResult": {
+      "additionalProperties": false,
+      "properties": {
+        "pass": {
+          "title": "Pass",
+          "type": "boolean"
+        },
+        "has_step_list": {
+          "title": "Has Step List",
+          "type": "boolean"
+        },
+        "field_order_ok": {
+          "title": "Field Order Ok",
+          "type": "boolean"
+        },
+        "all_objects_have_location": {
+          "title": "All Objects Have Location",
+          "type": "boolean"
+        }
+      },
+      "required": [
+        "pass",
+        "has_step_list",
+        "field_order_ok",
+        "all_objects_have_location"
+      ],
+      "title": "StructureResult",
+      "type": "object"
+    },
+    "SufficiencyProbeResult": {
+      "additionalProperties": false,
+      "properties": {
+        "pass": {
+          "title": "Pass",
+          "type": "boolean"
+        },
+        "judge_model": {
+          "title": "Judge Model",
+          "type": "string"
+        },
+        "missing_info": {
+          "items": {
+            "type": "string"
+          },
+          "title": "Missing Info",
+          "type": "array"
+        },
+        "score": {
+          "title": "Score",
+          "type": "integer"
+        }
+      },
+      "required": [
+        "pass",
+        "judge_model",
+        "score"
+      ],
+      "title": "SufficiencyProbeResult",
+      "type": "object"
+    }
+  },
+  "additionalProperties": false,
+  "properties": {
+    "schema_valid": {
+      "title": "Schema Valid",
+      "type": "boolean"
+    },
+    "grounding": {
+      "anyOf": [
+        {
+          "$ref": "#/$defs/GroundingResult"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "default": null
+    },
+    "structure": {
+      "anyOf": [
+        {
+          "$ref": "#/$defs/StructureResult"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "default": null
+    },
+    "checklist": {
+      "anyOf": [
+        {
+          "$ref": "#/$defs/ChecklistResult"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "default": null
+    },
+    "sufficiency_probe": {
+      "anyOf": [
+        {
+          "$ref": "#/$defs/SufficiencyProbeResult"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "default": null
+    },
+    "instruction_resolvability": {
+      "anyOf": [
+        {
+          "$ref": "#/$defs/ResolvabilityResult"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "default": null
+    },
+    "goal": {
+      "anyOf": [
+        {
+          "$ref": "#/$defs/GoalCheckResult"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "default": null
+    },
+    "goal_oracle": {
+      "anyOf": [
+        {
+          "$ref": "#/$defs/GoalOracleResult"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "default": null
+    },
+    "situation": {
+      "anyOf": [
+        {
+          "$ref": "#/$defs/SituationResult"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "default": null
+    },
+    "skipped_reason": {
+      "anyOf": [
+        {
+          "type": "string"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "default": null,
+      "title": "Skipped Reason"
+    },
+    "final_pass": {
+      "title": "Final Pass",
+      "type": "boolean"
+    }
+  },
+  "required": [
+    "schema_valid",
+    "final_pass"
+  ],
+  "title": "VerificationResult",
+  "type": "object"
+}

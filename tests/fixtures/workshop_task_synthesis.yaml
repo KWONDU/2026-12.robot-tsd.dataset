@@ -1,0 +1,334 @@
+# 작업대 장면(서랍마다 따로 여닫히는 공구함, 넣고 돌리는 설비)의 작업 합성 낱말. 제조 도메인이 공장 지도 기반 운반으로
+# 바뀌기 전(2026-11-15) resources/domains/manufacturing.yaml의 task_synthesis를 그대로 옮겼다.
+# 작업대 유형(tasks/types_machine.py 등)은 등록부에 남아 있어 테스트가 이 표로 본다.
+object_en:
+  adjustable_wrench: adjustable wrench
+  air_filter: air filter
+  battery: battery
+  bearing: bearing
+  bolt_m4: M4 bolt
+  bolt_m8: M8 bolt
+  bolt_m20: M20 bolt
+  brake_fluid: brake fluid bottle
+  brake_pad: brake pad
+  bulb: light bulb
+  camshaft: camshaft
+  chain_guide: chain guide
+  cleaner_spray: cleaner spray can
+  combination_wrench: combination wrench
+  coolant: coolant jug
+  crankshaft: crankshaft
+  drain_pan: oil drain pan
+  drill: power drill
+  drive_belt: drive belt
+  ecu: engine control module
+  engine_mount: engine mount
+  engine_oil: engine oil bottle
+  flat_screwdriver: flathead screwdriver
+  fuel_filter: fuel filter
+  fuse: fuse
+  hammer: hammer
+  hose: hose
+  idler_pulley: idler pulley
+  impact_wrench: impact wrench
+  long_nose_pliers: long-nose pliers
+  multimeter: multimeter
+  nut_m4: M4 nut
+  nut_m8: M8 nut
+  nut_m12: M12 nut
+  nut_m16: M16 nut
+  nut_m20: M20 nut
+  oil_filter: oil filter
+  oil_pump: oil pump
+  oil_seal: oil seal
+  paper_cup: paper cup
+  parts_tray_black: black parts tray
+  parts_tray_blue: blue parts tray
+  parts_tray_gray: gray parts tray
+  parts_tray_green: green parts tray
+  parts_tray_orange: orange parts tray
+  parts_tray_red: red parts tray
+  parts_tray_white: white parts tray
+  phillips_screwdriver: Phillips screwdriver
+  piston: piston
+  pliers: pliers
+  ratchet: ratchet
+  rubber_mallet: rubber mallet
+  socket: socket
+  spark_plug: spark plug
+  sprocket: sprocket
+  starter_motor: starter motor
+  tensioner: chain tensioner
+  threadlocker: threadlocker bottle
+  timing_chain: timing chain
+  toolbox: toolbox
+  torque_wrench: torque wrench
+  torx_screwdriver: Torx screwdriver
+  towel: shop towel
+  water_pump: water pump
+  work_gloves: work gloves
+object_plural_en:
+  adjustable_wrench: adjustable wrenches
+  air_filter: air filters
+  battery: batteries
+  bearing: bearings
+  bolt_m4: M4 bolts
+  bolt_m8: M8 bolts
+  bolt_m20: M20 bolts
+  brake_fluid: brake fluid bottles
+  brake_pad: brake pads
+  bulb: light bulbs
+  camshaft: camshafts
+  chain_guide: chain guides
+  cleaner_spray: cleaner spray cans
+  combination_wrench: combination wrenches
+  coolant: coolant jugs
+  crankshaft: crankshafts
+  drain_pan: oil drain pans
+  drill: power drills
+  drive_belt: drive belts
+  ecu: engine control modules
+  engine_mount: engine mounts
+  engine_oil: engine oil bottles
+  flat_screwdriver: flathead screwdrivers
+  fuel_filter: fuel filters
+  fuse: fuses
+  hammer: hammers
+  hose: hoses
+  idler_pulley: idler pulleys
+  impact_wrench: impact wrenches
+  long_nose_pliers: long-nose pliers
+  multimeter: multimeters
+  nut_m4: M4 nuts
+  nut_m8: M8 nuts
+  nut_m12: M12 nuts
+  nut_m16: M16 nuts
+  nut_m20: M20 nuts
+  oil_filter: oil filters
+  oil_pump: oil pumps
+  oil_seal: oil seals
+  paper_cup: paper cups
+  parts_tray_black: black parts trays
+  parts_tray_blue: blue parts trays
+  parts_tray_gray: gray parts trays
+  parts_tray_green: green parts trays
+  parts_tray_orange: orange parts trays
+  parts_tray_red: red parts trays
+  parts_tray_white: white parts trays
+  phillips_screwdriver: Phillips screwdrivers
+  piston: pistons
+  pliers: pliers
+  ratchet: ratchets
+  rubber_mallet: rubber mallets
+  socket: sockets
+  spark_plug: spark plugs
+  sprocket: sprockets
+  starter_motor: starter motors
+  tensioner: chain tensioners
+  threadlocker: threadlocker bottles
+  timing_chain: timing chains
+  toolbox: toolboxes
+  torque_wrench: torque wrenches
+  torx_screwdriver: Torx screwdrivers
+  towel: shop towels
+  water_pump: water pumps
+  work_gloves: work gloves
+fixture_en:
+  workbench: workbench
+  tool_cabinet: tool cabinet
+  bin_cart: bin cart
+  tray_cart: tray cart
+  parts_rack: parts rack
+  parts_washer: parts washer
+  filter_crusher: filter crusher
+  printer_3d: 3D printer
+  welding_station: welding station
+  air_compressor: air compressor
+  oily_waste_can: oily waste can
+  recycling_bin: recycling bin
+  trash_bin: trash bin
+  floor: floor
+region_en:
+  top: top
+  drawer: drawer
+  cabinet: cabinet
+  shelf: shelf
+  tier: tier
+  tray: tray
+ordinals_en:
+- second
+- third
+- fourth
+- fifth
+- sixth
+- seventh
+burners: []
+open_keys:
+- door_open
+- drawer_open
+- lid_open
+door_names:
+  door_open: door
+  drawer_open: drawer
+  lid_open: lid
+compartments: true
+region_doors: {}
+destinations:
+  parts_washer:
+    relation: in
+    trait: washable
+  filter_crusher:
+    relation: in
+    trait: crushable
+  oily_waste_can:
+    relation: in
+    trait: oily
+  recycling_bin:
+    relation: in
+    trait: recyclable
+  trash_bin:
+    relation: in
+    trait: waste
+region_destinations:
+  workbench:
+    top:
+      relation: 'on'
+      not_types:
+      - waste
+      - oily
+    drawer:
+      relation: in
+      types:
+      - tool
+      - small
+      not_types:
+      - waste
+      - oily
+      - recyclable
+    cabinet:
+      relation: in
+      types:
+      - consumable
+      - part
+      not_types:
+      - waste
+      - oily
+    shelf:
+      relation: 'on'
+      not_types:
+      - waste
+      - oily
+      - recyclable
+  tool_cabinet:
+    top:
+      relation: 'on'
+      types:
+      - tool
+      - part
+    drawer:
+      relation: in
+      types:
+      - tool
+  bin_cart:
+    tier:
+      relation: 'on'
+      types:
+      - small
+      not_types:
+      - waste
+      - oily
+      - recyclable
+  tray_cart:
+    tray:
+      relation: 'on'
+      not_types:
+      - waste
+      - oily
+  parts_rack:
+    shelf:
+      relation: 'on'
+      types:
+      - part
+      - consumable
+      not_types:
+      - waste
+      - oily
+receptacle_items:
+  types:
+  - small
+  not_types:
+  - waste
+  - oily
+  - recyclable
+receptacles:
+  in:
+  - parts_tray_black
+  - parts_tray_blue
+  - parts_tray_gray
+  - parts_tray_green
+  - parts_tray_orange
+  - parts_tray_red
+  - parts_tray_white
+heaters:
+- parts_washer
+- filter_crusher
+heater_traits:
+  parts_washer: washable
+  filter_crusher: crushable
+washers: []
+durations_s:
+- 60
+- 90
+- 120
+- 180
+size_ratio_min: 1.15
+switches:
+  workbench:
+    drawer_open:
+    - Open {target}.
+    - Close {target}.
+    door_open:
+    - Open {target}.
+    - Close {target}.
+  tool_cabinet:
+    drawer_open:
+    - Open {target}.
+    - Close {target}.
+  parts_washer:
+    door_open:
+    - Open the door of {target}.
+    - Close the door of {target}.
+    turned_on:
+    - Turn on {target}.
+    - Turn off {target}.
+  filter_crusher:
+    door_open:
+    - Open the door of {target}.
+    - Close the door of {target}.
+  printer_3d:
+    lid_open:
+    - Open the lid of {target}.
+    - Close the lid of {target}.
+  welding_station:
+    turned_on:
+    - Turn on {target}.
+    - Turn off {target}.
+  air_compressor:
+    turned_on:
+    - Turn on {target}.
+    - Turn off {target}.
+  oily_waste_can:
+    lid_open:
+    - Open the lid of {target}.
+    - Close the lid of {target}.
+  recycling_bin:
+    lid_open:
+    - Open the lid of {target}.
+    - Close the lid of {target}.
+  trash_bin:
+    lid_open:
+    - Open the lid of {target}.
+    - Close the lid of {target}.
+group_max: 4
+clear_max: 6
+stack_height_max: 4
