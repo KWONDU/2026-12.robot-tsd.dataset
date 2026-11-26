@@ -1,0 +1,168 @@
+{
+ "id": "rc365-DivideBuffetTrays-synth-sim_reset-ep445100--either-1bf6f845--v1--gpt-6-sol",
+ "domain": "household",
+ "task_type": "either",
+ "agent": "gpt-6-sol",
+ "source": {
+  "data": "RoboCasa365 (MIT)",
+  "scene_id": "rc365/DivideBuffetTrays/synth/sim_reset/ep_445100",
+  "task": "either",
+  "composed": true
+ },
+ "input": {
+  "instruction": "쟁반 하나에는 레몬 조각을 올리고, 다른 쟁반에는 생선을 올려.",
+  "instruction_en": "Put the lemon wedge on one tray and the fish on the other tray.",
+  "world_state": "장소: 가정 주방\n로봇(PandaOmron). 들고 있는 물체 없음.\n\n물체가 놓인 곳:\n- 냉장고 냉장실 선반 1 위: 마늘, 레몬 조각\n- 냉장고 냉장실 선반 2 위: 생선, 닭다리\n- 조리대 5(아일랜드 식탁) 위, 스툴 1 옆: 쟁반 1\n- 쟁반 1 위: 집게 1\n- 조리대 5(아일랜드 식탁) 위, 스툴 2 옆: 쟁반 2\n- 쟁반 2 위: 집게 2\n- 조리대 5(아일랜드 식탁) 위: 컵 1, 컵 2\n\n물체 크기:\n- 쟁반: 큰 것부터 쟁반 1, 쟁반 2\n\n가구:\n- 조리대 1: 커피머신 옆, 전자레인지 옆, 스토브 옆\n- 조리대 2: 식기세척기 옆, 냉장고 옆, 싱크대 옆, 토스터 옆\n- 조리대 3: 전자레인지 옆, 스토브 옆\n- 식기세척기: 문 닫힘. 칸: 랙 1, 2(위에서부터)\n- 냉장고: 문 닫힘, 냉동실 문 닫힘. 칸: 냉동실 선반 1부터 3까지(위에서부터), 냉장실 선반 1부터 3까지(위에서부터), 냉동실 서랍 1, 2(위에서부터), 냉장실 서랍 1, 2(위에서부터)\n- 캐비닛 1부터 9까지: 문 닫힘\n- 전자레인지: 문 닫힘\n- 싱크대: 미가동\n- 서랍 1, 2: 서랍 닫힘\n- 스토브: 문 닫힘, 미가동. 칸: 랙, 뒤 왼쪽 화구, 앞 왼쪽 화구, 앞 오른쪽 화구, 뒤 오른쪽 화구\n- 커피머신\n- 조리대 4\n- 수납장\n- 조리대 5(아일랜드 식탁)\n- 스툴 1부터 3까지\n- 토스터",
+  "entity_labels": {
+   "fx_coffee_machine_1": "커피머신",
+   "fx_counter_1": "조리대 1",
+   "fx_counter_2": "조리대 2",
+   "fx_counter_3": "조리대 3",
+   "fx_counter_4": "조리대 4",
+   "fx_dishwasher_1": "식기세척기",
+   "fx_cabinet_1": "수납장",
+   "fx_fridge_1": "냉장고",
+   "fx_cabinet_2": "캐비닛 1",
+   "fx_cabinet_3": "캐비닛 2",
+   "fx_counter_5": "조리대 5",
+   "fx_cabinet_4": "캐비닛 3",
+   "fx_microwave_1": "전자레인지",
+   "fx_cabinet_5": "캐비닛 4",
+   "fx_cabinet_6": "캐비닛 5",
+   "fx_cabinet_7": "캐비닛 6",
+   "fx_sink_1": "싱크대",
+   "fx_cabinet_8": "캐비닛 7",
+   "fx_drawer_1": "서랍 1",
+   "fx_cabinet_9": "캐비닛 8",
+   "fx_cabinet_10": "캐비닛 9",
+   "fx_drawer_2": "서랍 2",
+   "fx_stool_1": "스툴 1",
+   "fx_stool_2": "스툴 2",
+   "fx_stool_3": "스툴 3",
+   "fx_stove_1": "스토브",
+   "fx_toaster_1": "토스터",
+   "obj_001": "마늘",
+   "obj_002": "레몬 조각",
+   "obj_003": "생선",
+   "obj_004": "닭다리",
+   "obj_005": "쟁반 1",
+   "obj_006": "집게 1",
+   "obj_007": "쟁반 2",
+   "obj_008": "집게 2",
+   "obj_009": "컵 1",
+   "obj_010": "컵 2",
+   "fx_dishwasher_1/rack1": "식기세척기 랙 1",
+   "fx_dishwasher_1/rack0": "식기세척기 랙 2",
+   "fx_fridge_1/freezer_shelf2": "냉장고 냉동실 선반 1",
+   "fx_fridge_1/freezer_shelf1": "냉장고 냉동실 선반 2",
+   "fx_fridge_1/freezer_shelf0": "냉장고 냉동실 선반 3",
+   "fx_fridge_1/fridge_shelf2": "냉장고 냉장실 선반 1",
+   "fx_fridge_1/fridge_shelf1": "냉장고 냉장실 선반 2",
+   "fx_fridge_1/fridge_shelf0": "냉장고 냉장실 선반 3",
+   "fx_fridge_1/freezer_drawer1": "냉장고 냉동실 서랍 1",
+   "fx_fridge_1/freezer_drawer0": "냉장고 냉동실 서랍 2",
+   "fx_fridge_1/fridge_drawer1": "냉장고 냉장실 서랍 1",
+   "fx_fridge_1/fridge_drawer0": "냉장고 냉장실 서랍 2",
+   "fx_stove_1/rack0": "스토브 랙",
+   "fx_stove_1/rear_left": "스토브 뒤 왼쪽 화구",
+   "fx_stove_1/front_left": "스토브 앞 왼쪽 화구",
+   "fx_stove_1/front_right": "스토브 앞 오른쪽 화구",
+   "fx_stove_1/rear_right": "스토브 뒤 오른쪽 화구"
+  }
+ },
+ "output": {
+  "reasoning": "① 지시 해석: 레몬 조각과 생선을 서로 다른 쟁반에 올리는 작업이다. 시간 조건이나 두 물체를 옮기는 순서는 정해져 있지 않다. 두 물체가 모두 냉장고에 있으므로 작업은 냉장고에서 시작해 쟁반들이 있는 조리대 5에서 끝난다. ② 씬 접지: 레몬 조각은 냉장고 냉장실 선반 1 위, 생선은 냉장고 냉장실 선반 2 위에 있다. 쟁반 1과 쟁반 2는 조리대 5 위에 있으며 냉장고 문은 닫혀 있다. ③ 역할 부여: 레몬 조각과 생선은 옮겨야 하므로 필수다. 두 쟁반은 물체를 받는 곳이므로 핵심 수단이며, 각 쟁반에 다른 쟁반을 대안으로 적는다. 냉장고는 두 물체의 초기 위치 기준이자, 물체에 닿으려면 문을 열어야 하는 가구이므로 보조다. ④ 제약 도출: 닫힌 냉장고 문을 여는 것이 레몬 조각과 생선을 꺼내는 것에 선행해야 한다. ⑤ 목표 상태: 레몬 조각과 생선이 서로 다른 쟁반 위에 있는 최종 상태는 배정을 바꾼 두 경우다.",
+  "task_situation_description": {
+   "task_goal": {
+    "summary": "레몬 조각과 생선을 서로 다른 쟁반에 각각 올리는 것",
+    "goal_state": [
+     [
+      {
+       "kind": "relation",
+       "subject": "레몬 조각",
+       "predicate": "on",
+       "object": "쟁반 1",
+       "value": true
+      },
+      {
+       "kind": "relation",
+       "subject": "생선",
+       "predicate": "on",
+       "object": "쟁반 2",
+       "value": true
+      }
+     ],
+     [
+      {
+       "kind": "relation",
+       "subject": "레몬 조각",
+       "predicate": "on",
+       "object": "쟁반 2",
+       "value": true
+      },
+      {
+       "kind": "relation",
+       "subject": "생선",
+       "predicate": "on",
+       "object": "쟁반 1",
+       "value": true
+      }
+     ]
+    ]
+   },
+   "spatiotemporal_conditions": {
+    "time": null,
+    "space": {
+     "start": "냉장고",
+     "end": "조리대 5"
+    }
+   },
+   "target_objects": {
+    "required": [
+     {
+      "ref": "레몬 조각",
+      "location": "냉장고 냉장실 선반 1 위",
+      "state": null
+     },
+     {
+      "ref": "생선",
+      "location": "냉장고 냉장실 선반 2 위",
+      "state": null
+     }
+    ],
+    "key_means": [
+     {
+      "ref": "쟁반 1",
+      "location": "조리대 5(아일랜드 식탁) 위, 스툴 1 옆",
+      "state": null,
+      "alternatives": [
+       "쟁반 2"
+      ]
+     },
+     {
+      "ref": "쟁반 2",
+      "location": "조리대 5(아일랜드 식탁) 위, 스툴 2 옆",
+      "state": null,
+      "alternatives": [
+       "쟁반 1"
+      ]
+     }
+    ],
+    "auxiliary": [
+     {
+      "ref": "냉장고",
+      "location": null,
+      "note": "레몬 조각과 생선의 초기 위치 기준이며, 두 물체에 닿으려면 닫힌 문을 열어야 하는 가구"
+     }
+    ]
+   },
+   "constraints": [
+    {
+     "type": "precedence",
+     "description": "냉장고 문이 닫혀 있으므로 문을 여는 것이 레몬 조각과 생선을 꺼내는 것에 선행해야 함"
+    }
+   ]
+  },
+  "task_situation_description_text": "작업 목표: 레몬 조각과 생선을 서로 다른 쟁반에 각각 올리는 것\n목표 상태:\n- 경우 1: 레몬 조각: 쟁반 1 위; 생선: 쟁반 2 위\n- 경우 2: 레몬 조각: 쟁반 2 위; 생선: 쟁반 1 위\n시간·공간 조건: 시간 조건은 없음, 공간 조건은 시작 냉장고, 종료 조리대 5\n대상 물체:\n- 필수 물체: 레몬 조각(위치: 냉장고 냉장실 선반 1 위)\n- 필수 물체: 생선(위치: 냉장고 냉장실 선반 2 위)\n- 핵심 수단: 쟁반 1(위치: 조리대 5(아일랜드 식탁) 위, 스툴 1 옆, 대안: 쟁반 2)\n- 핵심 수단: 쟁반 2(위치: 조리대 5(아일랜드 식탁) 위, 스툴 2 옆, 대안: 쟁반 1)\n- 보조 물체: 냉장고(비고: 레몬 조각과 생선의 초기 위치 기준이며, 두 물체에 닿으려면 닫힌 문을 열어야 하는 가구)\n제약 사항:\n- [선후] 냉장고 문이 닫혀 있으므로 문을 여는 것이 레몬 조각과 생선을 꺼내는 것에 선행해야 함\n"
+ }
+}

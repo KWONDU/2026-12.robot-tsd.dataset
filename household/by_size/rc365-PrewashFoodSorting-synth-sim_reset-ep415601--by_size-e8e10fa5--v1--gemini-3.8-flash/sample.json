@@ -1,0 +1,133 @@
+{
+ "id": "rc365-PrewashFoodSorting-synth-sim_reset-ep415601--by_size-e8e10fa5--v1--gemini-3.8-flash",
+ "domain": "household",
+ "task_type": "by_size",
+ "agent": "gemini-3.8-flash",
+ "source": {
+  "data": "RoboCasa365 (MIT)",
+  "scene_id": "rc365/PrewashFoodSorting/synth/sim_reset/ep_415601",
+  "task": "by_size",
+  "composed": true
+ },
+ "input": {
+  "instruction": "큰 감자를 싱크대에 넣어.",
+  "instruction_en": "Put the larger potato in the sink.",
+  "world_state": "장소: 가정 주방\n로봇(PandaOmron). 들고 있는 물체 없음.\n\n물체가 놓인 곳:\n- 캐비닛 5 선반 위: 감자 1, 감자 2\n- 싱크대 개수대 안: 고구마\n- 조리대 1 위, 싱크대 옆: 그릇 1, 그릇 2\n\n물체 크기:\n- 감자: 큰 것부터 감자 1, 감자 2\n- 그릇: 큰 것부터 그릇 2, 그릇 1\n\n가구:\n- 서랍 1, 3, 4, 6: 서랍 닫힘\n- 조리대 1: 커피머신 옆, 식기세척기 옆, 냉장고 옆, 전자레인지 옆, 싱크대 옆\n- 조리대 2: 스토브 옆, 토스터 옆\n- 조리대 3: 스토브 옆\n- 식기세척기: 문 닫힘. 칸: 랙 1, 2(위에서부터)\n- 냉장고: 문 닫힘, 냉동실 문 닫힘. 칸: 냉장실 선반 1부터 5까지(위에서부터), 냉동실 선반 1부터 3까지(위에서부터), 냉동실 서랍 1, 2(위에서부터)\n- 캐비닛 1부터 4까지, 6, 8, 9, 11, 13, 16: 문 닫힘\n- 전자레인지: 문 닫힘\n- 캐비닛 5: 문 열림\n- 싱크대: 미가동\n- 캐비닛 7, 10, 14, 15(아일랜드): 문 닫힘\n- 서랍 2, 5, 7, 8(아일랜드): 서랍 닫힘\n- 스토브: 문 닫힘, 미가동. 칸: 랙, 앞 왼쪽 화구, 뒤 오른쪽 화구, 뒤 왼쪽 화구, 앞 오른쪽 화구, 가운데 화구\n- 커피머신\n- 수납장 1, 2\n- 조리대 4(아일랜드 식탁)\n- 캐비닛 12\n- 스툴 1, 2\n- 토스터",
+  "entity_labels": {
+   "fx_drawer_1": "서랍 1",
+   "fx_coffee_machine_1": "커피머신",
+   "fx_counter_1": "조리대 1",
+   "fx_counter_2": "조리대 2",
+   "fx_counter_3": "조리대 3",
+   "fx_dishwasher_1": "식기세척기",
+   "fx_cabinet_1": "수납장 1",
+   "fx_fridge_1": "냉장고",
+   "fx_cabinet_2": "캐비닛 1",
+   "fx_counter_4": "조리대 4",
+   "fx_cabinet_3": "수납장 2",
+   "fx_microwave_1": "전자레인지",
+   "fx_cabinet_4": "캐비닛 2",
+   "fx_cabinet_5": "캐비닛 3",
+   "fx_cabinet_6": "캐비닛 4",
+   "fx_cabinet_7": "캐비닛 5",
+   "fx_cabinet_8": "캐비닛 6",
+   "fx_sink_1": "싱크대",
+   "fx_cabinet_9": "캐비닛 7",
+   "fx_drawer_2": "서랍 2",
+   "fx_cabinet_10": "캐비닛 8",
+   "fx_drawer_3": "서랍 3",
+   "fx_cabinet_11": "캐비닛 9",
+   "fx_drawer_4": "서랍 4",
+   "fx_cabinet_12": "캐비닛 10",
+   "fx_drawer_5": "서랍 5",
+   "fx_cabinet_13": "캐비닛 11",
+   "fx_cabinet_14": "캐비닛 12",
+   "fx_cabinet_15": "캐비닛 13",
+   "fx_drawer_6": "서랍 6",
+   "fx_drawer_7": "서랍 7",
+   "fx_drawer_8": "서랍 8",
+   "fx_cabinet_16": "캐비닛 14",
+   "fx_cabinet_17": "캐비닛 15",
+   "fx_stool_1": "스툴 1",
+   "fx_stool_2": "스툴 2",
+   "fx_stove_1": "스토브",
+   "fx_toaster_1": "토스터",
+   "fx_cabinet_18": "캐비닛 16",
+   "obj_001": "감자 1",
+   "obj_002": "감자 2",
+   "obj_003": "고구마",
+   "obj_004": "그릇 1",
+   "obj_005": "그릇 2",
+   "fx_dishwasher_1/rack1": "식기세척기 랙 1",
+   "fx_dishwasher_1/rack0": "식기세척기 랙 2",
+   "fx_fridge_1/fridge_shelf4": "냉장고 냉장실 선반 1",
+   "fx_fridge_1/fridge_shelf3": "냉장고 냉장실 선반 2",
+   "fx_fridge_1/fridge_shelf2": "냉장고 냉장실 선반 3",
+   "fx_fridge_1/fridge_shelf1": "냉장고 냉장실 선반 4",
+   "fx_fridge_1/fridge_shelf0": "냉장고 냉장실 선반 5",
+   "fx_fridge_1/freezer_shelf2": "냉장고 냉동실 선반 1",
+   "fx_fridge_1/freezer_shelf1": "냉장고 냉동실 선반 2",
+   "fx_fridge_1/freezer_shelf0": "냉장고 냉동실 선반 3",
+   "fx_fridge_1/freezer_drawer1": "냉장고 냉동실 서랍 1",
+   "fx_fridge_1/freezer_drawer0": "냉장고 냉동실 서랍 2",
+   "fx_stove_1/rack0": "스토브 랙",
+   "fx_stove_1/front_left": "스토브 앞 왼쪽 화구",
+   "fx_stove_1/rear_right": "스토브 뒤 오른쪽 화구",
+   "fx_stove_1/rear_left": "스토브 뒤 왼쪽 화구",
+   "fx_stove_1/front_right": "스토브 앞 오른쪽 화구",
+   "fx_stove_1/center": "스토브 가운데 화구"
+  }
+ },
+ "output": {
+  "reasoning": "① 지시 해석: '큰 감자를 싱크대에 넣어'라는 지시로, 큰 감자를 식별하여 싱크대 안으로 옮기는 작업이다. 시간 조건은 제시되지 않았다. 작업은 감자가 있는 캐비닛 5에서 시작하여 싱크대에서 끝난다. ② 씬 접지: 크기 정보에서 큰 감자는 '감자 1'이다. 감자 1은 '캐비닛 5 선반 위'에 있으며, 캐비닛 5는 문 열림 상태다. 도착지는 '싱크대'다. ③ 물체 역할 부여: 감자 1은 위치가 변경되어야 하므로 필수(required)다. 싱크대는 물체를 받는 장소이므로 핵심 수단(key_means)이다. 캐비닛 5는 감자 1이 처음 놓여 있던 가구이므로 보조(auxiliary)다. ④ 제약 도출: 캐비닛 5의 문이 이미 열려 있어 추가적인 선행 작업이 필요하지 않으며 특별한 물리적/순서 제약이 없다. ⑤ 목표 상태 도출: 최종 목표 상태는 감자 1이 싱크대 안에 있는 상태(in)이다.",
+  "task_situation_description": {
+   "task_goal": {
+    "summary": "큰 감자(감자 1)를 싱크대에 넣는 것",
+    "goal_state": [
+     [
+      {
+       "kind": "relation",
+       "subject": "감자 1",
+       "predicate": "in",
+       "object": "싱크대",
+       "value": true
+      }
+     ]
+    ]
+   },
+   "spatiotemporal_conditions": {
+    "time": null,
+    "space": {
+     "start": "캐비닛 5",
+     "end": "싱크대"
+    }
+   },
+   "target_objects": {
+    "required": [
+     {
+      "ref": "감자 1",
+      "location": "캐비닛 5 선반 위",
+      "state": null
+     }
+    ],
+    "key_means": [
+     {
+      "ref": "싱크대",
+      "location": null,
+      "state": "미가동",
+      "alternatives": []
+     }
+    ],
+    "auxiliary": [
+     {
+      "ref": "캐비닛 5",
+      "location": null,
+      "note": "감자 1의 초기 위치 기준"
+     }
+    ]
+   },
+   "constraints": []
+  },
+  "task_situation_description_text": "작업 목표: 큰 감자(감자 1)를 싱크대에 넣는 것\n목표 상태:\n- 감자 1: 싱크대 안\n시간·공간 조건: 시간 조건은 없음, 공간 조건은 시작 캐비닛 5, 종료 싱크대\n대상 물체:\n- 필수 물체: 감자 1(위치: 캐비닛 5 선반 위)\n- 핵심 수단: 싱크대(상태: 미가동)\n- 보조 물체: 캐비닛 5(비고: 감자 1의 초기 위치 기준)\n제약 사항: 없음\n"
+ }
+}

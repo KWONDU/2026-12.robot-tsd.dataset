@@ -1,0 +1,127 @@
+{
+ "id": "rc365-FillKettle-synth-sim_reset-ep445101--relocate-0f8ba706--v1--qwen3.8-27b-high",
+ "domain": "household",
+ "task_type": "relocate",
+ "agent": "qwen3.8-27b-high",
+ "source": {
+  "data": "RoboCasa365 (MIT)",
+  "scene_id": "rc365/FillKettle/synth/sim_reset/ep_445101",
+  "task": "relocate",
+  "composed": true
+ },
+ "input": {
+  "instruction": "고구마를 냉장고 맨 아래 선반에 넣어 줘.",
+  "instruction_en": "Put the sweet potato on the bottom shelf of the fridge.",
+  "world_state": "장소: 가정 주방\n로봇(PandaOmron). 들고 있는 물체 없음.\n\n물체가 놓인 곳:\n- 캐비닛 5 선반 위: 주전자\n- 싱크대 개수대 안: 고구마\n\n가구:\n- 조리대 1: 커피머신 옆, 전자레인지 옆, 스토브 옆\n- 조리대 2: 식기세척기 옆, 냉장고 옆, 싱크대 옆, 토스터 옆\n- 조리대 3: 전자레인지 옆, 스토브 옆\n- 식기세척기: 문 닫힘. 칸: 랙 1, 2(위에서부터)\n- 냉장고: 문 닫힘, 냉동실 문 닫힘. 칸: 냉동실 선반 1부터 3까지(위에서부터), 냉장실 선반 1부터 3까지(위에서부터), 냉동실 서랍 1, 2(위에서부터), 냉장실 서랍 1, 2(위에서부터)\n- 캐비닛 1부터 9까지: 문 닫힘\n- 전자레인지: 문 닫힘\n- 싱크대: 미가동\n- 서랍 1, 2: 서랍 닫힘\n- 스토브: 문 닫힘, 미가동. 칸: 랙, 뒤 왼쪽 화구, 앞 왼쪽 화구, 앞 오른쪽 화구, 뒤 오른쪽 화구\n- 커피머신\n- 조리대 4\n- 수납장\n- 조리대 5(아일랜드 식탁)\n- 스툴 1부터 3까지\n- 토스터",
+  "entity_labels": {
+   "fx_coffee_machine_1": "커피머신",
+   "fx_counter_1": "조리대 1",
+   "fx_counter_2": "조리대 2",
+   "fx_counter_3": "조리대 3",
+   "fx_counter_4": "조리대 4",
+   "fx_dishwasher_1": "식기세척기",
+   "fx_cabinet_1": "수납장",
+   "fx_fridge_1": "냉장고",
+   "fx_cabinet_2": "캐비닛 1",
+   "fx_cabinet_3": "캐비닛 2",
+   "fx_counter_5": "조리대 5",
+   "fx_cabinet_4": "캐비닛 3",
+   "fx_microwave_1": "전자레인지",
+   "fx_cabinet_5": "캐비닛 4",
+   "fx_cabinet_6": "캐비닛 5",
+   "fx_cabinet_7": "캐비닛 6",
+   "fx_sink_1": "싱크대",
+   "fx_cabinet_8": "캐비닛 7",
+   "fx_drawer_1": "서랍 1",
+   "fx_cabinet_9": "캐비닛 8",
+   "fx_cabinet_10": "캐비닛 9",
+   "fx_drawer_2": "서랍 2",
+   "fx_stool_1": "스툴 1",
+   "fx_stool_2": "스툴 2",
+   "fx_stool_3": "스툴 3",
+   "fx_stove_1": "스토브",
+   "fx_toaster_1": "토스터",
+   "obj_001": "주전자",
+   "obj_002": "고구마",
+   "fx_dishwasher_1/rack1": "식기세척기 랙 1",
+   "fx_dishwasher_1/rack0": "식기세척기 랙 2",
+   "fx_fridge_1/freezer_shelf2": "냉장고 냉동실 선반 1",
+   "fx_fridge_1/freezer_shelf1": "냉장고 냉동실 선반 2",
+   "fx_fridge_1/freezer_shelf0": "냉장고 냉동실 선반 3",
+   "fx_fridge_1/fridge_shelf2": "냉장고 냉장실 선반 1",
+   "fx_fridge_1/fridge_shelf1": "냉장고 냉장실 선반 2",
+   "fx_fridge_1/fridge_shelf0": "냉장고 냉장실 선반 3",
+   "fx_fridge_1/freezer_drawer1": "냉장고 냉동실 서랍 1",
+   "fx_fridge_1/freezer_drawer0": "냉장고 냉동실 서랍 2",
+   "fx_fridge_1/fridge_drawer1": "냉장고 냉장실 서랍 1",
+   "fx_fridge_1/fridge_drawer0": "냉장고 냉장실 서랍 2",
+   "fx_stove_1/rack0": "스토브 랙",
+   "fx_stove_1/rear_left": "스토브 뒤 왼쪽 화구",
+   "fx_stove_1/front_left": "스토브 앞 왼쪽 화구",
+   "fx_stove_1/front_right": "스토브 앞 오른쪽 화구",
+   "fx_stove_1/rear_right": "스토브 뒤 오른쪽 화구"
+  }
+ },
+ "output": {
+  "reasoning": "① 지시 해석: 고구마를 냉장고 맨 아래 선반에 넣는 작업이다. 시간 조건은 없다. 작업은 고구마가 있는 싱크대에서 시작하여 냉장고에서 끝난다. '맨 아래 선반'은 냉장실 선반 중 가장 아래(위에서부터 3번째)를 가리킨다. ② 씬 접지: 고구마는 '싱크대 개수대 안'에 있다. 냉장고는 '문 닫힘, 냉동실 문 닫힘' 상태이며, 칸으로 '냉장실 선반 1부터 3까지(위에서부터)'가 있다. '냉장고 맨 아래 선반'은 '냉장실 선반 3'에 해당한다. ③ 역할 부여: 고구마는 위치가 바뀌어야 하므로 필수. 냉장고 냉장실 선반 3은 지시가 특정 칸까지 지목한 받는 곳이므로 핵심 수단(수용 대상). 냉장고는 문이 닫혀 있어 고구마에 닿으려면 먼저 열어야 하므로 보조(①, 상태 변경 필요 가구). 싱크대는 고구마가 처음 놓여 있는 가구가므로 보조(③, 초기 위치 기준). ④ 제약 도출: 냉장고 문이 닫혀 있으므로 문을 여는 것이 고구마를 선반에 넣는 것에 선행해야 한다. ⑤ 목표 상태: 고구마가 냉장고 냉장실 선반 3 안에 있는 상태. 경우 하나. 지시가 문 열기를 직접 요청한 것이 아니므로 door_open 단언은 포함하지 않고 constraints의 precedence로만 처리한다.",
+  "task_situation_description": {
+   "task_goal": {
+    "summary": "고구마를 냉장고 냉장실 맨 아래 선반(냉장실 선반 3)에 넣는 것",
+    "goal_state": [
+     [
+      {
+       "kind": "relation",
+       "subject": "고구마",
+       "predicate": "in",
+       "object": "냉장고 냉장실 선반 3",
+       "value": true
+      }
+     ]
+    ]
+   },
+   "spatiotemporal_conditions": {
+    "time": null,
+    "space": {
+     "start": "싱크대",
+     "end": "냉장고"
+    }
+   },
+   "target_objects": {
+    "required": [
+     {
+      "ref": "고구마",
+      "location": "싱크대 개수대 안",
+      "state": null
+     }
+    ],
+    "key_means": [
+     {
+      "ref": "냉장고 냉장실 선반 3",
+      "location": null,
+      "state": null,
+      "alternatives": []
+     }
+    ],
+    "auxiliary": [
+     {
+      "ref": "냉장고",
+      "location": null,
+      "note": "문 닫힘으로 먼저 열어야 하는 가구"
+     },
+     {
+      "ref": "싱크대",
+      "location": null,
+      "note": "고구마의 초기 위치 기준"
+     }
+    ]
+   },
+   "constraints": [
+    {
+     "type": "precedence",
+     "description": "냉장고 문이 닫혀 있으므로 문을 여는 것이 고구마를 냉장실 선반 3에 넣는 것에 선행해야 함"
+    }
+   ]
+  },
+  "task_situation_description_text": "작업 목표: 고구마를 냉장고 냉장실 맨 아래 선반(냉장실 선반 3)에 넣는 것\n목표 상태:\n- 고구마: 냉장고 냉장실 선반 3 안\n시간·공간 조건: 시간 조건은 없음, 공간 조건은 시작 싱크대, 종료 냉장고\n대상 물체:\n- 필수 물체: 고구마(위치: 싱크대 개수대 안)\n- 핵심 수단: 냉장고 냉장실 선반 3\n- 보조 물체: 냉장고(비고: 문 닫힘으로 먼저 열어야 하는 가구)\n- 보조 물체: 싱크대(비고: 고구마의 초기 위치 기준)\n제약 사항:\n- [선후] 냉장고 문이 닫혀 있으므로 문을 여는 것이 고구마를 냉장실 선반 3에 넣는 것에 선행해야 함\n"
+ }
+}

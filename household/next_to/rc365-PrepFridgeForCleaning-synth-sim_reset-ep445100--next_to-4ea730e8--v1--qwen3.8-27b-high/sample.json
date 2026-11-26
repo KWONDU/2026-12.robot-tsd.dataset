@@ -1,0 +1,121 @@
+{
+ "id": "rc365-PrepFridgeForCleaning-synth-sim_reset-ep445100--next_to-4ea730e8--v1--qwen3.8-27b-high",
+ "domain": "household",
+ "task_type": "next_to",
+ "agent": "qwen3.8-27b-high",
+ "source": {
+  "data": "RoboCasa365 (MIT)",
+  "scene_id": "rc365/PrepFridgeForCleaning/synth/sim_reset/ep_445100",
+  "task": "next_to",
+  "composed": true
+ },
+ "input": {
+  "instruction": "사과를 호박 옆에 놓아.",
+  "instruction_en": "Place the apple next to the squash.",
+  "world_state": "장소: 가정 주방\n로봇(PandaOmron). 들고 있는 물체 없음.\n\n물체가 놓인 곳:\n- 냉장고 냉장실 선반 1 위: 사과, 호박, 스테이크\n\n가구:\n- 조리대 1: 커피머신 옆, 전자레인지 옆, 스토브 옆\n- 조리대 2: 식기세척기 옆, 냉장고 옆, 싱크대 옆, 토스터 옆\n- 조리대 3: 전자레인지 옆, 스토브 옆\n- 식기세척기: 문 닫힘. 칸: 랙 1, 2(위에서부터)\n- 냉장고: 문 닫힘, 냉동실 문 닫힘. 칸: 냉동실 선반 1부터 3까지(위에서부터), 냉장실 선반 1부터 3까지(위에서부터), 냉동실 서랍 1, 2(위에서부터), 냉장실 서랍 1, 2(위에서부터)\n- 캐비닛 1부터 9까지: 문 닫힘\n- 전자레인지: 문 닫힘\n- 싱크대: 미가동\n- 서랍 1, 2: 서랍 닫힘\n- 스토브: 문 닫힘, 미가동. 칸: 랙, 뒤 왼쪽 화구, 앞 왼쪽 화구, 앞 오른쪽 화구, 뒤 오른쪽 화구\n- 커피머신\n- 조리대 4\n- 수납장\n- 조리대 5(아일랜드 식탁)\n- 스툴 1부터 3까지\n- 토스터",
+  "entity_labels": {
+   "fx_coffee_machine_1": "커피머신",
+   "fx_counter_1": "조리대 1",
+   "fx_counter_2": "조리대 2",
+   "fx_counter_3": "조리대 3",
+   "fx_counter_4": "조리대 4",
+   "fx_dishwasher_1": "식기세척기",
+   "fx_cabinet_1": "수납장",
+   "fx_fridge_1": "냉장고",
+   "fx_cabinet_2": "캐비닛 1",
+   "fx_cabinet_3": "캐비닛 2",
+   "fx_counter_5": "조리대 5",
+   "fx_cabinet_4": "캐비닛 3",
+   "fx_microwave_1": "전자레인지",
+   "fx_cabinet_5": "캐비닛 4",
+   "fx_cabinet_6": "캐비닛 5",
+   "fx_cabinet_7": "캐비닛 6",
+   "fx_sink_1": "싱크대",
+   "fx_cabinet_8": "캐비닛 7",
+   "fx_drawer_1": "서랍 1",
+   "fx_cabinet_9": "캐비닛 8",
+   "fx_cabinet_10": "캐비닛 9",
+   "fx_drawer_2": "서랍 2",
+   "fx_stool_1": "스툴 1",
+   "fx_stool_2": "스툴 2",
+   "fx_stool_3": "스툴 3",
+   "fx_stove_1": "스토브",
+   "fx_toaster_1": "토스터",
+   "obj_001": "사과",
+   "obj_002": "호박",
+   "obj_003": "스테이크",
+   "fx_dishwasher_1/rack1": "식기세척기 랙 1",
+   "fx_dishwasher_1/rack0": "식기세척기 랙 2",
+   "fx_fridge_1/freezer_shelf2": "냉장고 냉동실 선반 1",
+   "fx_fridge_1/freezer_shelf1": "냉장고 냉동실 선반 2",
+   "fx_fridge_1/freezer_shelf0": "냉장고 냉동실 선반 3",
+   "fx_fridge_1/fridge_shelf2": "냉장고 냉장실 선반 1",
+   "fx_fridge_1/fridge_shelf1": "냉장고 냉장실 선반 2",
+   "fx_fridge_1/fridge_shelf0": "냉장고 냉장실 선반 3",
+   "fx_fridge_1/freezer_drawer1": "냉장고 냉동실 서랍 1",
+   "fx_fridge_1/freezer_drawer0": "냉장고 냉동실 서랍 2",
+   "fx_fridge_1/fridge_drawer1": "냉장고 냉장실 서랍 1",
+   "fx_fridge_1/fridge_drawer0": "냉장고 냉장실 서랍 2",
+   "fx_stove_1/rack0": "스토브 랙",
+   "fx_stove_1/rear_left": "스토브 뒤 왼쪽 화구",
+   "fx_stove_1/front_left": "스토브 앞 왼쪽 화구",
+   "fx_stove_1/front_right": "스토브 앞 오른쪽 화구",
+   "fx_stove_1/rear_right": "스토브 뒤 오른쪽 화구"
+  }
+ },
+ "output": {
+  "reasoning": "① 지시 해석: '사과를 호박 옆에 놓아'는 사과를 호박 근처에 배치하는 작업이다. 시간 조건은 없다. 작업은 사과가 있는 냉장고에서 시작하고, 호박이 있는 냉장고에서 끝난다(사과와 호박이 같은 선반에 있으므로 시작과 끝이 모두 냉장고). ② 씬 접지: 사과는 '냉장고 냉장실 선반 1 위'에 있고, 호박도 같은 선반에 있다. 스테이크도 같은 선반에 있으나 지시와 무관하다. 냉장고 문이 닫혀 있다. ③ 역할 부여: 사과는 위치가 바뀌어야 하는 goal_state 단언의 subject이므로 필수. 호박은 goal_state의 near 관계에서 기준이 되는 물체이므로 보조(②). 냉장고는 사과에 닿으려면 닫힌 문을 먼저 열어야 하는 가구가므로 보조(①). ④ 제약 도출: 냉장고 문이 닫혀 있으므로 문을 여는 것이 사과를 접근하는 것에 선행해야 한다. ⑤ 목표 상태: 지시가 요구한 끝 상태는 사과의 위치가 호박 옆이라는 near 관계 하나. on·in 단언은 지시에 없으므로 추가하지 않는다. 경우는 하나뿐이다.",
+  "task_situation_description": {
+   "task_goal": {
+    "summary": "사과를 호박 옆에 놓는 것",
+    "goal_state": [
+     [
+      {
+       "kind": "relation",
+       "subject": "사과",
+       "predicate": "near",
+       "object": "호박",
+       "value": true
+      }
+     ]
+    ]
+   },
+   "spatiotemporal_conditions": {
+    "time": null,
+    "space": {
+     "start": "냉장고",
+     "end": "냉장고"
+    }
+   },
+   "target_objects": {
+    "required": [
+     {
+      "ref": "사과",
+      "location": "냉장고 냉장실 선반 1 위",
+      "state": null
+     }
+    ],
+    "key_means": [],
+    "auxiliary": [
+     {
+      "ref": "호박",
+      "location": "냉장고 냉장실 선반 1 위",
+      "note": "near 관계의 기준 물체"
+     },
+     {
+      "ref": "냉장고",
+      "location": null,
+      "note": "사과에 닿으려면 문이 닫혀 있어 먼저 열어야 하는 가구"
+     }
+    ]
+   },
+   "constraints": [
+    {
+     "type": "precedence",
+     "description": "냉장고 문이 닫혀 있으므로 문을 여는 것이 사과를 접근하는 것에 선행해야 함"
+    }
+   ]
+  },
+  "task_situation_description_text": "작업 목표: 사과를 호박 옆에 놓는 것\n목표 상태:\n- 사과: 호박 근처\n시간·공간 조건: 시간 조건은 없음, 공간 조건은 시작 냉장고, 종료 냉장고\n대상 물체:\n- 필수 물체: 사과(위치: 냉장고 냉장실 선반 1 위)\n- 보조 물체: 호박(위치: 냉장고 냉장실 선반 1 위, 비고: near 관계의 기준 물체)\n- 보조 물체: 냉장고(비고: 사과에 닿으려면 문이 닫혀 있어 먼저 열어야 하는 가구)\n제약 사항:\n- [선후] 냉장고 문이 닫혀 있으므로 문을 여는 것이 사과를 접근하는 것에 선행해야 함\n"
+ }
+}

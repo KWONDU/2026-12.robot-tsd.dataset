@@ -1,0 +1,162 @@
+{
+ "id": "rc365-LoadFridgeByType-synth-sim_reset-ep413800--relocate_two-49368eb2--v1--gpt-6-sol",
+ "domain": "household",
+ "task_type": "relocate_two",
+ "agent": "gpt-6-sol",
+ "source": {
+  "data": "RoboCasa365 (MIT)",
+  "scene_id": "rc365/LoadFridgeByType/synth/sim_reset/ep_413800",
+  "task": "relocate_two",
+  "composed": true
+ },
+ "input": {
+  "instruction": "생선이랑 닭다리를 냉장고 냉동실 맨 위 서랍에 넣어줘.",
+  "instruction_en": "Put the fish and the chicken drumstick in the top freezer drawer of the fridge.",
+  "world_state": "장소: 가정 주방\n로봇(PandaOmron). 들고 있는 물체 없음.\n\n물체가 놓인 곳:\n- 조리대 1 위: 그릇 1, 그릇 2\n- 그릇 1 안: 버섯, 라임\n- 그릇 2 안: 생선, 닭다리\n\n물체 크기:\n- 그릇: 큰 것부터 그릇 1, 그릇 2\n\n가구:\n- 서랍 1, 3, 4, 6: 서랍 닫힘\n- 조리대 1: 커피머신 옆, 식기세척기 옆, 냉장고 옆, 전자레인지 옆, 싱크대 옆\n- 조리대 2: 스토브 옆, 토스터 옆\n- 조리대 3: 스토브 옆\n- 식기세척기: 문 닫힘. 칸: 랙 1, 2(위에서부터)\n- 냉장고: 문 열림, 냉동실 문 닫힘. 칸: 냉장실 선반 1부터 5까지(위에서부터), 냉동실 선반 1부터 3까지(위에서부터), 냉동실 서랍 1, 2(위에서부터)\n- 캐비닛 1부터 6까지, 8, 9, 11, 13, 16: 문 닫힘\n- 전자레인지: 문 닫힘\n- 싱크대: 미가동. 칸: 왼쪽 개수대, 오른쪽 개수대\n- 캐비닛 7, 10, 14, 15(아일랜드): 문 닫힘\n- 서랍 2, 5, 7, 8(아일랜드): 서랍 닫힘\n- 스토브: 문 닫힘, 미가동. 칸: 랙, 앞 왼쪽 화구, 앞 오른쪽 화구, 뒤 왼쪽 화구, 뒤 오른쪽 화구\n- 커피머신\n- 수납장 1, 2\n- 조리대 4(아일랜드 식탁)\n- 캐비닛 12\n- 스툴 1, 2\n- 토스터",
+  "entity_labels": {
+   "fx_drawer_1": "서랍 1",
+   "fx_coffee_machine_1": "커피머신",
+   "fx_counter_1": "조리대 1",
+   "fx_counter_2": "조리대 2",
+   "fx_counter_3": "조리대 3",
+   "fx_dishwasher_1": "식기세척기",
+   "fx_cabinet_1": "수납장 1",
+   "fx_fridge_1": "냉장고",
+   "fx_cabinet_2": "캐비닛 1",
+   "fx_counter_4": "조리대 4",
+   "fx_cabinet_3": "수납장 2",
+   "fx_microwave_1": "전자레인지",
+   "fx_cabinet_4": "캐비닛 2",
+   "fx_cabinet_5": "캐비닛 3",
+   "fx_cabinet_6": "캐비닛 4",
+   "fx_cabinet_7": "캐비닛 5",
+   "fx_cabinet_8": "캐비닛 6",
+   "fx_sink_1": "싱크대",
+   "fx_cabinet_9": "캐비닛 7",
+   "fx_drawer_2": "서랍 2",
+   "fx_cabinet_10": "캐비닛 8",
+   "fx_drawer_3": "서랍 3",
+   "fx_cabinet_11": "캐비닛 9",
+   "fx_drawer_4": "서랍 4",
+   "fx_cabinet_12": "캐비닛 10",
+   "fx_drawer_5": "서랍 5",
+   "fx_cabinet_13": "캐비닛 11",
+   "fx_cabinet_14": "캐비닛 12",
+   "fx_cabinet_15": "캐비닛 13",
+   "fx_drawer_6": "서랍 6",
+   "fx_drawer_7": "서랍 7",
+   "fx_drawer_8": "서랍 8",
+   "fx_cabinet_16": "캐비닛 14",
+   "fx_cabinet_17": "캐비닛 15",
+   "fx_stool_1": "스툴 1",
+   "fx_stool_2": "스툴 2",
+   "fx_stove_1": "스토브",
+   "fx_toaster_1": "토스터",
+   "fx_cabinet_18": "캐비닛 16",
+   "obj_001": "그릇 1",
+   "obj_002": "그릇 2",
+   "obj_003": "버섯",
+   "obj_004": "라임",
+   "obj_005": "생선",
+   "obj_006": "닭다리",
+   "fx_dishwasher_1/rack1": "식기세척기 랙 1",
+   "fx_dishwasher_1/rack0": "식기세척기 랙 2",
+   "fx_fridge_1/fridge_shelf4": "냉장고 냉장실 선반 1",
+   "fx_fridge_1/fridge_shelf3": "냉장고 냉장실 선반 2",
+   "fx_fridge_1/fridge_shelf2": "냉장고 냉장실 선반 3",
+   "fx_fridge_1/fridge_shelf1": "냉장고 냉장실 선반 4",
+   "fx_fridge_1/fridge_shelf0": "냉장고 냉장실 선반 5",
+   "fx_fridge_1/freezer_shelf2": "냉장고 냉동실 선반 1",
+   "fx_fridge_1/freezer_shelf1": "냉장고 냉동실 선반 2",
+   "fx_fridge_1/freezer_shelf0": "냉장고 냉동실 선반 3",
+   "fx_fridge_1/freezer_drawer1": "냉장고 냉동실 서랍 1",
+   "fx_fridge_1/freezer_drawer0": "냉장고 냉동실 서랍 2",
+   "fx_sink_1/basin_left": "싱크대 왼쪽 개수대",
+   "fx_sink_1/basin_right": "싱크대 오른쪽 개수대",
+   "fx_stove_1/rack0": "스토브 랙",
+   "fx_stove_1/front_left": "스토브 앞 왼쪽 화구",
+   "fx_stove_1/front_right": "스토브 앞 오른쪽 화구",
+   "fx_stove_1/rear_left": "스토브 뒤 왼쪽 화구",
+   "fx_stove_1/rear_right": "스토브 뒤 오른쪽 화구"
+  }
+ },
+ "output": {
+  "reasoning": "① 지시 해석: 생선과 닭다리를 냉장고 냉동실의 맨 위 서랍에 넣는 작업이다. 시간 조건은 없다. 두 물체가 있는 그릇 2가 조리대 1 위에 있으므로 조리대 1에서 시작해 냉장고에서 끝난다. ② 씬 접지: 생선과 닭다리는 그릇 2 안에 있고, 그릇 2는 조리대 1 위에 있다. 맨 위 냉동실 서랍은 냉장고 냉동실 서랍 1이다. 냉장고의 냉동실 문은 닫혀 있다. ③ 역할 부여: 생선과 닭다리는 옮길 대상이므로 필수다. 냉장고 냉동실 서랍 1은 받는 곳이므로 핵심 수단이다. 냉장고는 냉동실 문을 먼저 열어야 하는 가구이므로 보조이며, 그릇 2와 조리대 1은 초기 위치 기준이므로 보조다. ④ 제약 도출: 닫힌 냉동실 문을 여는 것이 생선과 닭다리를 냉동실 서랍에 넣는 것에 선행해야 한다. ⑤ 목표 상태: 생선과 닭다리가 모두 냉장고 냉동실 서랍 1 안에 있는 경우 하나가 최종 상태다.",
+  "task_situation_description": {
+   "task_goal": {
+    "summary": "생선과 닭다리를 냉장고 냉동실의 맨 위 서랍에 넣는 것.",
+    "goal_state": [
+     [
+      {
+       "kind": "relation",
+       "subject": "생선",
+       "predicate": "in",
+       "object": "냉장고 냉동실 서랍 1",
+       "value": true
+      },
+      {
+       "kind": "relation",
+       "subject": "닭다리",
+       "predicate": "in",
+       "object": "냉장고 냉동실 서랍 1",
+       "value": true
+      }
+     ]
+    ]
+   },
+   "spatiotemporal_conditions": {
+    "time": null,
+    "space": {
+     "start": "조리대 1",
+     "end": "냉장고"
+    }
+   },
+   "target_objects": {
+    "required": [
+     {
+      "ref": "생선",
+      "location": "그릇 2 안",
+      "state": null
+     },
+     {
+      "ref": "닭다리",
+      "location": "그릇 2 안",
+      "state": null
+     }
+    ],
+    "key_means": [
+     {
+      "ref": "냉장고 냉동실 서랍 1",
+      "location": null,
+      "state": null,
+      "alternatives": []
+     }
+    ],
+    "auxiliary": [
+     {
+      "ref": "냉장고",
+      "location": null,
+      "note": "냉동실 문이 닫혀 있어 생선과 닭다리를 넣기 전에 문을 열어야 하는 가구"
+     },
+     {
+      "ref": "그릇 2",
+      "location": "조리대 1 위",
+      "note": "생선과 닭다리가 처음 들어 있는 물체"
+     },
+     {
+      "ref": "조리대 1",
+      "location": null,
+      "note": "생선과 닭다리가 담긴 그릇 2의 초기 위치 기준"
+     }
+    ]
+   },
+   "constraints": [
+    {
+     "type": "precedence",
+     "description": "냉장고 냉동실 문이 닫혀 있으므로 문을 여는 것이 생선과 닭다리를 냉동실 서랍에 넣는 것에 선행해야 함"
+    }
+   ]
+  },
+  "task_situation_description_text": "작업 목표: 생선과 닭다리를 냉장고 냉동실의 맨 위 서랍에 넣는 것.\n목표 상태:\n- 생선: 냉장고 냉동실 서랍 1 안\n- 닭다리: 냉장고 냉동실 서랍 1 안\n시간·공간 조건: 시간 조건은 없음, 공간 조건은 시작 조리대 1, 종료 냉장고\n대상 물체:\n- 필수 물체: 생선(위치: 그릇 2 안)\n- 필수 물체: 닭다리(위치: 그릇 2 안)\n- 핵심 수단: 냉장고 냉동실 서랍 1\n- 보조 물체: 냉장고(비고: 냉동실 문이 닫혀 있어 생선과 닭다리를 넣기 전에 문을 열어야 하는 가구)\n- 보조 물체: 그릇 2(위치: 조리대 1 위, 비고: 생선과 닭다리가 처음 들어 있는 물체)\n- 보조 물체: 조리대 1(비고: 생선과 닭다리가 담긴 그릇 2의 초기 위치 기준)\n제약 사항:\n- [선후] 냉장고 냉동실 문이 닫혀 있으므로 문을 여는 것이 생선과 닭다리를 냉동실 서랍에 넣는 것에 선행해야 함\n"
+ }
+}

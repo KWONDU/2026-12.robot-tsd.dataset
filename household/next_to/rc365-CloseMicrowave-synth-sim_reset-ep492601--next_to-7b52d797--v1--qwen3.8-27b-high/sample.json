@@ -1,0 +1,136 @@
+{
+ "id": "rc365-CloseMicrowave-synth-sim_reset-ep492601--next_to-7b52d797--v1--qwen3.8-27b-high",
+ "domain": "household",
+ "task_type": "next_to",
+ "agent": "qwen3.8-27b-high",
+ "source": {
+  "data": "RoboCasa365 (MIT)",
+  "scene_id": "rc365/CloseMicrowave/synth/sim_reset/ep_492601",
+  "task": "next_to",
+  "composed": true
+ },
+ "input": {
+  "instruction": "새우를 케첩 옆에 놓아 주세요.",
+  "instruction_en": "Place the shrimp next to the ketchup.",
+  "world_state": "장소: 가정 주방\n로봇(PandaOmron). 들고 있는 물체 없음.\n\n물체가 놓인 곳:\n- 전자레인지 회전 접시 위: 새우\n- 조리대 3 위, 전자레인지 옆: 치즈 강판, 케첩, 레몬\n\n가구:\n- 조리대 1: 전자레인지 옆, 스토브 옆\n- 조리대 2: 식기세척기 옆, 싱크대 옆\n- 조리대 3: 커피머신 옆, 전자레인지 옆, 스토브 옆, 토스터 옆, 토스터 오븐 옆\n- 조리대 7(식탁용 조리대): 냉장고 옆\n- 식기세척기: 문 닫힘. 칸: 랙 1, 2(위에서부터)\n- 냉장고: 문 닫힘, 냉동실 문 닫힘. 칸: 냉장실 선반 1, 2(위에서부터), 냉장실 서랍\n- 캐비닛 1부터 10까지, 15부터 18까지: 문 닫힘\n- 전자레인지: 문 열림\n- 싱크대: 미가동\n- 서랍 1부터 5까지, 9부터 15까지: 서랍 닫힘\n- 캐비닛 12부터 14까지(식탁 구역): 문 닫힘\n- 서랍 6부터 8까지(식탁 구역): 서랍 닫힘\n- 스토브: 문 닫힘, 미가동. 칸: 랙, 앞 왼쪽 화구, 앞 오른쪽 화구, 뒤 왼쪽 화구, 뒤 오른쪽 화구\n- 토스터 오븐: 문 닫힘\n- 커피머신\n- 조리대 4, 6\n- 조리대 5(식탁용 조리대)\n- 수납장\n- 캐비닛 11\n- 스툴 1부터 4까지\n- 토스터",
+  "entity_labels": {
+   "fx_coffee_machine_1": "커피머신",
+   "fx_counter_1": "조리대 1",
+   "fx_counter_2": "조리대 2",
+   "fx_counter_3": "조리대 3",
+   "fx_counter_4": "조리대 4",
+   "fx_counter_5": "조리대 5",
+   "fx_counter_6": "조리대 6",
+   "fx_counter_7": "조리대 7",
+   "fx_dishwasher_1": "식기세척기",
+   "fx_cabinet_1": "수납장",
+   "fx_fridge_1": "냉장고",
+   "fx_cabinet_2": "캐비닛 1",
+   "fx_cabinet_3": "캐비닛 2",
+   "fx_cabinet_4": "캐비닛 3",
+   "fx_cabinet_5": "캐비닛 4",
+   "fx_microwave_1": "전자레인지",
+   "fx_cabinet_6": "캐비닛 5",
+   "fx_sink_1": "싱크대",
+   "fx_cabinet_7": "캐비닛 6",
+   "fx_drawer_1": "서랍 1",
+   "fx_cabinet_8": "캐비닛 7",
+   "fx_drawer_2": "서랍 2",
+   "fx_drawer_3": "서랍 3",
+   "fx_drawer_4": "서랍 4",
+   "fx_drawer_5": "서랍 5",
+   "fx_cabinet_9": "캐비닛 8",
+   "fx_cabinet_10": "캐비닛 9",
+   "fx_cabinet_11": "캐비닛 10",
+   "fx_cabinet_12": "캐비닛 11",
+   "fx_cabinet_13": "캐비닛 12",
+   "fx_drawer_6": "서랍 6",
+   "fx_cabinet_14": "캐비닛 13",
+   "fx_drawer_7": "서랍 7",
+   "fx_cabinet_15": "캐비닛 14",
+   "fx_drawer_8": "서랍 8",
+   "fx_cabinet_16": "캐비닛 15",
+   "fx_drawer_9": "서랍 9",
+   "fx_cabinet_17": "캐비닛 16",
+   "fx_drawer_10": "서랍 10",
+   "fx_drawer_11": "서랍 11",
+   "fx_drawer_12": "서랍 12",
+   "fx_drawer_13": "서랍 13",
+   "fx_cabinet_18": "캐비닛 17",
+   "fx_drawer_14": "서랍 14",
+   "fx_cabinet_19": "캐비닛 18",
+   "fx_drawer_15": "서랍 15",
+   "fx_stool_1": "스툴 1",
+   "fx_stool_2": "스툴 2",
+   "fx_stool_3": "스툴 3",
+   "fx_stool_4": "스툴 4",
+   "fx_stove_1": "스토브",
+   "fx_toaster_1": "토스터",
+   "fx_toaster_oven_1": "토스터 오븐",
+   "obj_001": "새우",
+   "obj_002": "치즈 강판",
+   "obj_003": "케첩",
+   "obj_004": "레몬",
+   "fx_dishwasher_1/rack1": "식기세척기 랙 1",
+   "fx_dishwasher_1/rack0": "식기세척기 랙 2",
+   "fx_fridge_1/fridge_shelf1": "냉장고 냉장실 선반 1",
+   "fx_fridge_1/fridge_shelf0": "냉장고 냉장실 선반 2",
+   "fx_fridge_1/fridge_drawer0": "냉장고 냉장실 서랍",
+   "fx_stove_1/rack0": "스토브 랙",
+   "fx_stove_1/front_left": "스토브 앞 왼쪽 화구",
+   "fx_stove_1/front_right": "스토브 앞 오른쪽 화구",
+   "fx_stove_1/rear_left": "스토브 뒤 왼쪽 화구",
+   "fx_stove_1/rear_right": "스토브 뒤 오른쪽 화구"
+  }
+ },
+ "output": {
+  "reasoning": "① 지시 해석: 새우를 케첩 옆에 놓는 작업이다. 시간 조건은 언급되지 않았다. 작업은 새우가 있는 전자레인지에서 시작하고, 케첩이 놓여 있는 조리대 3에서 끝난다(무엇의 옆에 두는 것은 기준이 되는 것이 있는 가구를 쓰므로). ② 씬 접지: 새우는 전자레인지 회전 접시 위에 있다. 케첩은 조리대 3 위, 전자레인지 옆에 있다. 전자레인지 문은 이미 열려 있다. ③ 역할 부여: 새우는 위치가 바뀌어야 하므로 필수다. 케첩은 goal_state의 near 관계에서 기준이 되는 것이므로 보조(②)다. 전자레인지는 새우가 처음 놓여 있는 가구가므로 초기 위치 기준인 보조(③)다. goal_state에 on·in 관계가 없으므로 핵심 수단은 없다. ④ 제약 도출: 전자레인지 문이 이미 열려 있어 문을 여는 선행 조건이 없다. 지시에서 순서·시간·물리적 제한이 언급되지 않아 제약은 없다. ⑤ 목표 상태: 지시는 '케첩 옆에 놓아 주세요'이므로 near 관계 하나로 표현한다. 놓을 표면(on)은 별도로 지정하지 않았으므로 near 단언 하나만 쓴다. 경우는 하나다.",
+  "task_situation_description": {
+   "task_goal": {
+    "summary": "새우를 케첩 옆에 놓는 것",
+    "goal_state": [
+     [
+      {
+       "kind": "relation",
+       "subject": "새우",
+       "predicate": "near",
+       "object": "케첩",
+       "value": true
+      }
+     ]
+    ]
+   },
+   "spatiotemporal_conditions": {
+    "time": null,
+    "space": {
+     "start": "전자레인지",
+     "end": "조리대 3"
+    }
+   },
+   "target_objects": {
+    "required": [
+     {
+      "ref": "새우",
+      "location": "전자레인지 회전 접시 위",
+      "state": null
+     }
+    ],
+    "key_means": [],
+    "auxiliary": [
+     {
+      "ref": "케첩",
+      "location": "조리대 3 위, 전자레인지 옆",
+      "note": "goal_state의 near 관계 기준"
+     },
+     {
+      "ref": "전자레인지",
+      "location": null,
+      "note": "새우의 초기 위치 기준"
+     }
+    ]
+   },
+   "constraints": []
+  },
+  "task_situation_description_text": "작업 목표: 새우를 케첩 옆에 놓는 것\n목표 상태:\n- 새우: 케첩 근처\n시간·공간 조건: 시간 조건은 없음, 공간 조건은 시작 전자레인지, 종료 조리대 3\n대상 물체:\n- 필수 물체: 새우(위치: 전자레인지 회전 접시 위)\n- 보조 물체: 케첩(위치: 조리대 3 위, 전자레인지 옆, 비고: goal_state의 near 관계 기준)\n- 보조 물체: 전자레인지(비고: 새우의 초기 위치 기준)\n제약 사항: 없음\n"
+ }
+}

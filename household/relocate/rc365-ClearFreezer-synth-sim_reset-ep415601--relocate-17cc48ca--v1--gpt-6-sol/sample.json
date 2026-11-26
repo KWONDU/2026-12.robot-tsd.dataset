@@ -1,0 +1,132 @@
+{
+ "id": "rc365-ClearFreezer-synth-sim_reset-ep415601--relocate-17cc48ca--v1--gpt-6-sol",
+ "domain": "household",
+ "task_type": "relocate",
+ "agent": "gpt-6-sol",
+ "source": {
+  "data": "RoboCasa365 (MIT)",
+  "scene_id": "rc365/ClearFreezer/synth/sim_reset/ep_415601",
+  "task": "relocate",
+  "composed": true
+ },
+ "input": {
+  "instruction": "버섯을 그릇에 넣어.",
+  "instruction_en": "Put the mushroom in the bowl.",
+  "world_state": "장소: 가정 주방\n로봇(PandaOmron). 들고 있는 물체 없음.\n\n물체가 놓인 곳:\n- 냉장고 냉동실 선반 2 위: 옥수수, 버섯, 레몬 조각\n- 조리대 1 위, 냉장고 옆: 그릇\n\n가구:\n- 서랍 1, 3, 4, 6: 서랍 닫힘\n- 조리대 1: 커피머신 옆, 식기세척기 옆, 냉장고 옆, 전자레인지 옆, 싱크대 옆\n- 조리대 2: 스토브 옆, 토스터 옆\n- 조리대 3: 스토브 옆\n- 식기세척기: 문 닫힘. 칸: 랙 1, 2(위에서부터)\n- 냉장고: 냉동실 문 열림, 문 닫힘. 칸: 냉장실 선반 1부터 5까지(위에서부터), 냉동실 선반 1부터 3까지(위에서부터), 냉동실 서랍 1, 2(위에서부터)\n- 캐비닛 1부터 6까지, 8, 9, 11, 13, 16: 문 닫힘\n- 전자레인지: 문 닫힘\n- 싱크대: 미가동\n- 캐비닛 7, 10, 14, 15(아일랜드): 문 닫힘\n- 서랍 2, 5, 7, 8(아일랜드): 서랍 닫힘\n- 스토브: 문 닫힘, 미가동. 칸: 랙, 앞 왼쪽 화구, 뒤 오른쪽 화구, 뒤 왼쪽 화구, 앞 오른쪽 화구, 가운데 화구\n- 커피머신\n- 수납장 1, 2\n- 조리대 4(아일랜드 식탁)\n- 캐비닛 12\n- 스툴 1, 2\n- 토스터",
+  "entity_labels": {
+   "fx_drawer_1": "서랍 1",
+   "fx_coffee_machine_1": "커피머신",
+   "fx_counter_1": "조리대 1",
+   "fx_counter_2": "조리대 2",
+   "fx_counter_3": "조리대 3",
+   "fx_dishwasher_1": "식기세척기",
+   "fx_cabinet_1": "수납장 1",
+   "fx_fridge_1": "냉장고",
+   "fx_cabinet_2": "캐비닛 1",
+   "fx_counter_4": "조리대 4",
+   "fx_cabinet_3": "수납장 2",
+   "fx_microwave_1": "전자레인지",
+   "fx_cabinet_4": "캐비닛 2",
+   "fx_cabinet_5": "캐비닛 3",
+   "fx_cabinet_6": "캐비닛 4",
+   "fx_cabinet_7": "캐비닛 5",
+   "fx_cabinet_8": "캐비닛 6",
+   "fx_sink_1": "싱크대",
+   "fx_cabinet_9": "캐비닛 7",
+   "fx_drawer_2": "서랍 2",
+   "fx_cabinet_10": "캐비닛 8",
+   "fx_drawer_3": "서랍 3",
+   "fx_cabinet_11": "캐비닛 9",
+   "fx_drawer_4": "서랍 4",
+   "fx_cabinet_12": "캐비닛 10",
+   "fx_drawer_5": "서랍 5",
+   "fx_cabinet_13": "캐비닛 11",
+   "fx_cabinet_14": "캐비닛 12",
+   "fx_cabinet_15": "캐비닛 13",
+   "fx_drawer_6": "서랍 6",
+   "fx_drawer_7": "서랍 7",
+   "fx_drawer_8": "서랍 8",
+   "fx_cabinet_16": "캐비닛 14",
+   "fx_cabinet_17": "캐비닛 15",
+   "fx_stool_1": "스툴 1",
+   "fx_stool_2": "스툴 2",
+   "fx_stove_1": "스토브",
+   "fx_toaster_1": "토스터",
+   "fx_cabinet_18": "캐비닛 16",
+   "obj_001": "옥수수",
+   "obj_002": "버섯",
+   "obj_003": "레몬 조각",
+   "obj_004": "그릇",
+   "fx_dishwasher_1/rack1": "식기세척기 랙 1",
+   "fx_dishwasher_1/rack0": "식기세척기 랙 2",
+   "fx_fridge_1/fridge_shelf4": "냉장고 냉장실 선반 1",
+   "fx_fridge_1/fridge_shelf3": "냉장고 냉장실 선반 2",
+   "fx_fridge_1/fridge_shelf2": "냉장고 냉장실 선반 3",
+   "fx_fridge_1/fridge_shelf1": "냉장고 냉장실 선반 4",
+   "fx_fridge_1/fridge_shelf0": "냉장고 냉장실 선반 5",
+   "fx_fridge_1/freezer_shelf2": "냉장고 냉동실 선반 1",
+   "fx_fridge_1/freezer_shelf1": "냉장고 냉동실 선반 2",
+   "fx_fridge_1/freezer_shelf0": "냉장고 냉동실 선반 3",
+   "fx_fridge_1/freezer_drawer1": "냉장고 냉동실 서랍 1",
+   "fx_fridge_1/freezer_drawer0": "냉장고 냉동실 서랍 2",
+   "fx_stove_1/rack0": "스토브 랙",
+   "fx_stove_1/front_left": "스토브 앞 왼쪽 화구",
+   "fx_stove_1/rear_right": "스토브 뒤 오른쪽 화구",
+   "fx_stove_1/rear_left": "스토브 뒤 왼쪽 화구",
+   "fx_stove_1/front_right": "스토브 앞 오른쪽 화구",
+   "fx_stove_1/center": "스토브 가운데 화구"
+  }
+ },
+ "output": {
+  "reasoning": "① 지시 해석: 버섯을 그릇 안에 넣는 작업이다. 시간 조건은 없다. 버섯이 있는 냉장고에서 시작해 그릇이 있는 조리대 1에서 끝난다. ② 씬 접지: 버섯은 냉장고 냉동실 선반 2 위에 있고, 그릇은 조리대 1 위, 냉장고 옆에 있다. 냉장고의 냉동실 문은 열려 있다. ③ 역할 부여: 버섯은 위치가 바뀌어야 하므로 필수, 그릇은 버섯을 받는 곳이므로 핵심 수단, 냉장고는 버섯의 초기 위치 기준이므로 보조다. ④ 제약 도출: 냉동실 문이 이미 열려 있어 문을 여는 선행 조건은 없다. 그 밖에 지시나 환경에서 도출되는 수행 제약도 없다. ⑤ 목표 상태: 버섯이 그릇 안에 있는 경우 하나다.",
+  "task_situation_description": {
+   "task_goal": {
+    "summary": "냉장고에 있는 버섯을 그릇에 넣는 것",
+    "goal_state": [
+     [
+      {
+       "kind": "relation",
+       "subject": "버섯",
+       "predicate": "in",
+       "object": "그릇",
+       "value": true
+      }
+     ]
+    ]
+   },
+   "spatiotemporal_conditions": {
+    "time": null,
+    "space": {
+     "start": "냉장고",
+     "end": "조리대 1"
+    }
+   },
+   "target_objects": {
+    "required": [
+     {
+      "ref": "버섯",
+      "location": "냉장고 냉동실 선반 2 위",
+      "state": null
+     }
+    ],
+    "key_means": [
+     {
+      "ref": "그릇",
+      "location": "조리대 1 위, 냉장고 옆",
+      "state": null,
+      "alternatives": []
+     }
+    ],
+    "auxiliary": [
+     {
+      "ref": "냉장고",
+      "location": null,
+      "note": "버섯의 초기 위치 기준"
+     }
+    ]
+   },
+   "constraints": []
+  },
+  "task_situation_description_text": "작업 목표: 냉장고에 있는 버섯을 그릇에 넣는 것\n목표 상태:\n- 버섯: 그릇 안\n시간·공간 조건: 시간 조건은 없음, 공간 조건은 시작 냉장고, 종료 조리대 1\n대상 물체:\n- 필수 물체: 버섯(위치: 냉장고 냉동실 선반 2 위)\n- 핵심 수단: 그릇(위치: 조리대 1 위, 냉장고 옆)\n- 보조 물체: 냉장고(비고: 버섯의 초기 위치 기준)\n제약 사항: 없음\n"
+ }
+}

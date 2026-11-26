@@ -1,0 +1,154 @@
+{
+ "id": "rc365-LoadFridgeByType-synth-sim_reset-ep353501--by_size-78366a2e--v1--qwen3.8-27b-high",
+ "domain": "household",
+ "task_type": "by_size",
+ "agent": "qwen3.8-27b-high",
+ "source": {
+  "data": "RoboCasa365 (MIT)",
+  "scene_id": "rc365/LoadFridgeByType/synth/sim_reset/ep_353501",
+  "task": "by_size",
+  "composed": true
+ },
+ "input": {
+  "instruction": "더 작은 닭다리를 냉장고 맨 위 선반에 넣어 줘.",
+  "instruction_en": "Put the smaller chicken drumstick on the top shelf of the fridge.",
+  "world_state": "장소: 가정 주방\n로봇(PandaOmron). 들고 있는 물체 없음.\n\n물체가 놓인 곳:\n- 조리대 3 위: 그릇 1, 그릇 2\n- 그릇 1 안: 레몬 조각, 아보카도\n- 그릇 2 안: 닭다리 1, 닭다리 2\n\n물체 크기:\n- 그릇: 큰 것부터 그릇 2, 그릇 1\n- 닭다리: 큰 것부터 닭다리 2, 닭다리 1\n\n가구:\n- 서랍 1부터 5까지, 10부터 13까지: 서랍 닫힘\n- 조리대 2: 커피머신 옆, 전자레인지 옆, 오븐 옆, 스토브 상판 옆, 토스터 오븐 옆\n- 조리대 3: 냉장고 옆, 토스터 옆\n- 조리대 4: 식기세척기 옆, 싱크대 옆\n- 식기세척기: 문 닫힘. 칸: 랙 1, 2(위에서부터)\n- 냉장고: 문 열림, 냉동실 문 닫힘. 칸: 냉장실 선반 1, 2(위에서부터), 냉장실 서랍\n- 캐비닛 1부터 6까지, 9, 10, 12, 14, 15, 19, 21: 문 닫힘\n- 전자레인지: 문 닫힘\n- 오븐: 문 닫힘. 칸: 랙 1, 2(위에서부터)\n- 싱크대: 미가동. 칸: 오른쪽 개수대, 왼쪽 개수대\n- 캐비닛 7, 11, 17, 20(식탁 구역): 문 닫힘\n- 캐비닛 8, 18(아일랜드): 문 닫힘\n- 서랍 6, 9(식탁 구역): 서랍 닫힘\n- 서랍 7, 8(아일랜드): 서랍 닫힘\n- 스토브 상판: 미가동. 칸: 뒤 오른쪽 화구, 앞 오른쪽 화구, 앞 왼쪽 화구, 뒤 왼쪽 화구\n- 토스터 오븐: 문 닫힘. 칸: 랙\n- 커피머신\n- 조리대 1(아일랜드)\n- 조리대 5(식탁용 조리대)\n- 조리대 6\n- 수납장 1부터 3까지\n- 캐비닛 13, 16\n- 스툴 1부터 6까지\n- 토스터",
+  "entity_labels": {
+   "fx_drawer_1": "서랍 1",
+   "fx_coffee_machine_1": "커피머신",
+   "fx_counter_1": "조리대 1",
+   "fx_counter_2": "조리대 2",
+   "fx_counter_3": "조리대 3",
+   "fx_counter_4": "조리대 4",
+   "fx_counter_5": "조리대 5",
+   "fx_counter_6": "조리대 6",
+   "fx_dishwasher_1": "식기세척기",
+   "fx_cabinet_1": "수납장 1",
+   "fx_fridge_1": "냉장고",
+   "fx_cabinet_2": "캐비닛 1",
+   "fx_cabinet_3": "캐비닛 2",
+   "fx_cabinet_4": "캐비닛 3",
+   "fx_cabinet_5": "캐비닛 4",
+   "fx_cabinet_6": "캐비닛 5",
+   "fx_cabinet_7": "수납장 2",
+   "fx_microwave_1": "전자레인지",
+   "fx_cabinet_8": "수납장 3",
+   "fx_oven_1": "오븐",
+   "fx_cabinet_9": "캐비닛 6",
+   "fx_sink_1": "싱크대",
+   "fx_cabinet_10": "캐비닛 7",
+   "fx_cabinet_11": "캐비닛 8",
+   "fx_cabinet_12": "캐비닛 9",
+   "fx_drawer_2": "서랍 2",
+   "fx_drawer_3": "서랍 3",
+   "fx_drawer_4": "서랍 4",
+   "fx_drawer_5": "서랍 5",
+   "fx_cabinet_13": "캐비닛 10",
+   "fx_cabinet_14": "캐비닛 11",
+   "fx_drawer_6": "서랍 6",
+   "fx_drawer_7": "서랍 7",
+   "fx_drawer_8": "서랍 8",
+   "fx_cabinet_15": "캐비닛 12",
+   "fx_cabinet_16": "캐비닛 13",
+   "fx_cabinet_17": "캐비닛 14",
+   "fx_cabinet_18": "캐비닛 15",
+   "fx_cabinet_19": "캐비닛 16",
+   "fx_cabinet_20": "캐비닛 17",
+   "fx_drawer_9": "서랍 9",
+   "fx_cabinet_21": "캐비닛 18",
+   "fx_cabinet_22": "캐비닛 19",
+   "fx_drawer_10": "서랍 10",
+   "fx_drawer_11": "서랍 11",
+   "fx_drawer_12": "서랍 12",
+   "fx_drawer_13": "서랍 13",
+   "fx_cabinet_23": "캐비닛 20",
+   "fx_stool_1": "스툴 1",
+   "fx_stool_2": "스툴 2",
+   "fx_stool_3": "스툴 3",
+   "fx_stool_4": "스툴 4",
+   "fx_stool_5": "스툴 5",
+   "fx_stool_6": "스툴 6",
+   "fx_stovetop_1": "스토브 상판",
+   "fx_toaster_1": "토스터",
+   "fx_toaster_oven_1": "토스터 오븐",
+   "fx_cabinet_24": "캐비닛 21",
+   "obj_001": "그릇 1",
+   "obj_002": "그릇 2",
+   "obj_003": "레몬 조각",
+   "obj_004": "아보카도",
+   "obj_005": "닭다리 1",
+   "obj_006": "닭다리 2",
+   "fx_dishwasher_1/rack1": "식기세척기 랙 1",
+   "fx_dishwasher_1/rack0": "식기세척기 랙 2",
+   "fx_fridge_1/fridge_shelf1": "냉장고 냉장실 선반 1",
+   "fx_fridge_1/fridge_shelf0": "냉장고 냉장실 선반 2",
+   "fx_fridge_1/fridge_drawer0": "냉장고 냉장실 서랍",
+   "fx_oven_1/rack1": "오븐 랙 1",
+   "fx_oven_1/rack0": "오븐 랙 2",
+   "fx_sink_1/basin_right": "싱크대 오른쪽 개수대",
+   "fx_sink_1/basin_left": "싱크대 왼쪽 개수대",
+   "fx_stovetop_1/rear_right": "스토브 상판 뒤 오른쪽 화구",
+   "fx_stovetop_1/front_right": "스토브 상판 앞 오른쪽 화구",
+   "fx_stovetop_1/front_left": "스토브 상판 앞 왼쪽 화구",
+   "fx_stovetop_1/rear_left": "스토브 상판 뒤 왼쪽 화구",
+   "fx_toaster_oven_1/rack0": "토스터 오븐 랙"
+  }
+ },
+ "output": {
+  "reasoning": "① 지시 해석: '더 작은 닭다리'를 '냉장고 맨 위 선반'에 넣는 작업이다. 환경 설명에서 닭다리 크기는 닭다리 2 > 닭다리 1이므로 '더 작은 닭다리'는 닭다리 1을 가리킨다. '맨 위 선반'은 위에서부터 냉장실 선반 1, 2이므로 냉장실 선반 1이다. 시간 조건은 없다. 작업은 닭다리 1이 있는 그릇 2(조리대 3 위)에서 시작해 냉장고에서 끝난다. ② 씬 접지: 닭다리 1은 그릇 2 안에 있고, 그릇 2는 조리대 3 위에 있다. 냉장고는 문 열림, 냉동실 문 닫힘 상태이고 칸으로 냉장실 선반 1, 2, 냉장실 서랍이 있다. ③ 역할 부여: 닭다리 1은 위치가 바뀌어야 하므로 필수다. 냉장고 냉장실 선반 1은 goal_state에서 닭다리 1이 on 관계로 놓이는 받는 곳이므로 핵심 수단이다. 그릇 2는 닭다리 1이 처음 놓여 있는 물체이므로 보조(초기 위치 기준)다. 조리대 3은 그릇 2가 놓여 있는 가구로 보조(초기 위치 기준)다. ④ 제약 도출: 냉장고 문이 이미 열려 있어 선행 제약이 없다. 지시에서 순서를 정한 표현도 없고, 추가 물리·안전 제약도 없다. ⑤ 목표 상태: 닭다리 1이 냉장고 냉장실 선반 1 위에 있는 것이 목표다. 경우는 하나다. 옮기는 작업이므로 도착 관계만 쓰고 원래 자리에 없다는 단언은 쓰지 않는다.",
+  "task_situation_description": {
+   "task_goal": {
+    "summary": "더 작은 닭다리(닭다리 1)를 냉장고 냉장실 맨 위 선반에 놓는 것",
+    "goal_state": [
+     [
+      {
+       "kind": "relation",
+       "subject": "닭다리 1",
+       "predicate": "on",
+       "object": "냉장고 냉장실 선반 1",
+       "value": true
+      }
+     ]
+    ]
+   },
+   "spatiotemporal_conditions": {
+    "time": null,
+    "space": {
+     "start": "조리대 3",
+     "end": "냉장고"
+    }
+   },
+   "target_objects": {
+    "required": [
+     {
+      "ref": "닭다리 1",
+      "location": "그릇 2 안",
+      "state": null
+     }
+    ],
+    "key_means": [
+     {
+      "ref": "냉장고 냉장실 선반 1",
+      "location": null,
+      "state": null,
+      "alternatives": []
+     }
+    ],
+    "auxiliary": [
+     {
+      "ref": "그릇 2",
+      "location": "조리대 3 위",
+      "note": "닭다리 1의 초기 위치 (그릇 2 안)"
+     },
+     {
+      "ref": "조리대 3",
+      "location": null,
+      "note": "그릇 2가 놓여 있는 가구"
+     }
+    ]
+   },
+   "constraints": []
+  },
+  "task_situation_description_text": "작업 목표: 더 작은 닭다리(닭다리 1)를 냉장고 냉장실 맨 위 선반에 놓는 것\n목표 상태:\n- 닭다리 1: 냉장고 냉장실 선반 1 위\n시간·공간 조건: 시간 조건은 없음, 공간 조건은 시작 조리대 3, 종료 냉장고\n대상 물체:\n- 필수 물체: 닭다리 1(위치: 그릇 2 안)\n- 핵심 수단: 냉장고 냉장실 선반 1\n- 보조 물체: 그릇 2(위치: 조리대 3 위, 비고: 닭다리 1의 초기 위치 (그릇 2 안))\n- 보조 물체: 조리대 3(비고: 그릇 2가 놓여 있는 가구)\n제약 사항: 없음\n"
+ }
+}

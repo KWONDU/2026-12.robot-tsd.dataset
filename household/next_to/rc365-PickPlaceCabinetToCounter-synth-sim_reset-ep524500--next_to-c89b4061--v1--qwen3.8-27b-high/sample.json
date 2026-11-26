@@ -1,0 +1,112 @@
+{
+ "id": "rc365-PickPlaceCabinetToCounter-synth-sim_reset-ep524500--next_to-c89b4061--v1--qwen3.8-27b-high",
+ "domain": "household",
+ "task_type": "next_to",
+ "agent": "qwen3.8-27b-high",
+ "source": {
+  "data": "RoboCasa365 (MIT)",
+  "scene_id": "rc365/PickPlaceCabinetToCounter/synth/sim_reset/ep_524500",
+  "task": "next_to",
+  "composed": true
+ },
+ "input": {
+  "instruction": "버섯을 새우 옆에 놓아.",
+  "instruction_en": "Place the mushroom next to the shrimp.",
+  "world_state": "장소: 가정 주방\n로봇(PandaOmron). 들고 있는 물체 없음.\n\n물체가 놓인 곳:\n- 캐비닛 5 선반 위: 찻주전자, 버섯\n- 조리대 4 위, 캐비닛 5 옆: 새우\n\n가구:\n- 캐비닛 1부터 4까지, 6부터 12까지: 문 닫힘\n- 조리대 1: 냉장고 옆, 전자레인지 옆\n- 조리대 2: 스토브 옆\n- 조리대 3: 커피머신 옆, 스토브 옆\n- 조리대 4: 식기세척기 옆, 싱크대 옆, 토스터 옆\n- 식기세척기: 문 닫힘. 칸: 랙 1, 2(위에서부터)\n- 냉장고: 문 닫힘, 냉동실 문 닫힘. 칸: 냉장실 선반 1, 2(위에서부터), 냉장실 서랍\n- 캐비닛 5: 문 열림\n- 전자레인지: 문 닫힘\n- 싱크대: 미가동\n- 서랍 1부터 6까지: 서랍 닫힘\n- 스토브: 문 닫힘, 미가동. 칸: 랙 1, 2(위에서부터)\n- 커피머신\n- 조리대 5, 6\n- 수납장\n- 캐비닛 13\n- 토스터",
+  "entity_labels": {
+   "fx_cabinet_1": "캐비닛 1",
+   "fx_coffee_machine_1": "커피머신",
+   "fx_counter_1": "조리대 1",
+   "fx_counter_2": "조리대 2",
+   "fx_counter_3": "조리대 3",
+   "fx_counter_4": "조리대 4",
+   "fx_counter_5": "조리대 5",
+   "fx_counter_6": "조리대 6",
+   "fx_dishwasher_1": "식기세척기",
+   "fx_cabinet_2": "수납장",
+   "fx_fridge_1": "냉장고",
+   "fx_cabinet_3": "캐비닛 2",
+   "fx_cabinet_4": "캐비닛 3",
+   "fx_cabinet_5": "캐비닛 4",
+   "fx_cabinet_6": "캐비닛 5",
+   "fx_cabinet_7": "캐비닛 6",
+   "fx_cabinet_8": "캐비닛 7",
+   "fx_microwave_1": "전자레인지",
+   "fx_cabinet_9": "캐비닛 8",
+   "fx_cabinet_10": "캐비닛 9",
+   "fx_sink_1": "싱크대",
+   "fx_drawer_1": "서랍 1",
+   "fx_drawer_2": "서랍 2",
+   "fx_drawer_3": "서랍 3",
+   "fx_cabinet_11": "캐비닛 10",
+   "fx_cabinet_12": "캐비닛 11",
+   "fx_drawer_4": "서랍 4",
+   "fx_drawer_5": "서랍 5",
+   "fx_drawer_6": "서랍 6",
+   "fx_cabinet_13": "캐비닛 12",
+   "fx_cabinet_14": "캐비닛 13",
+   "fx_stove_1": "스토브",
+   "fx_toaster_1": "토스터",
+   "obj_001": "찻주전자",
+   "obj_002": "새우",
+   "obj_003": "버섯",
+   "fx_dishwasher_1/rack1": "식기세척기 랙 1",
+   "fx_dishwasher_1/rack0": "식기세척기 랙 2",
+   "fx_fridge_1/fridge_shelf1": "냉장고 냉장실 선반 1",
+   "fx_fridge_1/fridge_shelf0": "냉장고 냉장실 선반 2",
+   "fx_fridge_1/fridge_drawer0": "냉장고 냉장실 서랍",
+   "fx_stove_1/rack1": "스토브 랙 1",
+   "fx_stove_1/rack0": "스토브 랙 2"
+  }
+ },
+ "output": {
+  "reasoning": "① 지시 해석: \"버섯을 새우 옆에 놓아\"는 버섯을 현재 위치에서 가져와 새우의 옆에 배치하는 작업이다. 시간 조건은 없다. 작업은 버섯이 있는 캐비닛 5에서 시작하고, 새우가 있는 조리대 4에서 끝난다. ② 씬 접지: 버섯은 캐비닛 5 선반 위에 있고, 새우는 조리대 4 위(캐비닛 5 옆)에 있다. 캐비닛 5의 문은 이미 열려 있다. ③ 역할 부여: 버섯은 위치가 바뀌어야 하므로 필수. 새우는 goal_state의 near 관계에서 기준이 되는 물체이므로 보조(②). 캐비닛 5는 버섯이 처음 놓여 있는 가구이므로 초기 위치 기준 보조(③). 핵심 수단은 없음: goal_state에 on·in 관계의 대상(그릇·가구)이 없고 도구도 없으므로. ④ 제약 도출: 캐비닛 5 문은 이미 열려 있어 선행 제약이 발생하지 않는다. 순서·안전·물리 제약도 없으므로 제약 목록은 비다. ⑤ 목표 상태 도출: 지시는 \"새우 옆에\"라고만 했으므로 near 관계 하나로 표현한다. 지시가 놓을 표면을 따로 지정하지 않았으므로 on·in을 추가하지 않는다. 경우는 하나뿐이다.",
+  "task_situation_description": {
+   "task_goal": {
+    "summary": "버섯을 캐비닛 5 선반에서 꺼내 새우 옆에 놓는 것",
+    "goal_state": [
+     [
+      {
+       "kind": "relation",
+       "subject": "버섯",
+       "predicate": "near",
+       "object": "새우",
+       "value": true
+      }
+     ]
+    ]
+   },
+   "spatiotemporal_conditions": {
+    "time": null,
+    "space": {
+     "start": "캐비닛 5",
+     "end": "조리대 4"
+    }
+   },
+   "target_objects": {
+    "required": [
+     {
+      "ref": "버섯",
+      "location": "캐비닛 5 선반 위",
+      "state": null
+     }
+    ],
+    "key_means": [],
+    "auxiliary": [
+     {
+      "ref": "새우",
+      "location": "조리대 4 위, 캐비닛 5 옆",
+      "note": "near 관계의 기준 물체"
+     },
+     {
+      "ref": "캐비닛 5",
+      "location": null,
+      "note": "버섯의 초기 위치 기준"
+     }
+    ]
+   },
+   "constraints": []
+  },
+  "task_situation_description_text": "작업 목표: 버섯을 캐비닛 5 선반에서 꺼내 새우 옆에 놓는 것\n목표 상태:\n- 버섯: 새우 근처\n시간·공간 조건: 시간 조건은 없음, 공간 조건은 시작 캐비닛 5, 종료 조리대 4\n대상 물체:\n- 필수 물체: 버섯(위치: 캐비닛 5 선반 위)\n- 보조 물체: 새우(위치: 조리대 4 위, 캐비닛 5 옆, 비고: near 관계의 기준 물체)\n- 보조 물체: 캐비닛 5(비고: 버섯의 초기 위치 기준)\n제약 사항: 없음\n"
+ }
+}

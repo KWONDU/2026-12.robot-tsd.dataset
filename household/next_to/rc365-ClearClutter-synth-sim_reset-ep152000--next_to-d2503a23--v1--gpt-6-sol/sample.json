@@ -1,0 +1,139 @@
+{
+ "id": "rc365-ClearClutter-synth-sim_reset-ep152000--next_to-d2503a23--v1--gpt-6-sol",
+ "domain": "household",
+ "task_type": "next_to",
+ "agent": "gpt-6-sol",
+ "source": {
+  "data": "RoboCasa365 (MIT)",
+  "scene_id": "rc365/ClearClutter/synth/sim_reset/ep_152000",
+  "task": "next_to",
+  "composed": true
+ },
+ "input": {
+  "instruction": "병 음료를 쟁반 옆에 놓아.",
+  "instruction_en": "Place the bottled drink next to the tray.",
+  "world_state": "장소: 가정 주방\n로봇(PandaOmron). 들고 있는 물체 없음.\n\n물체가 놓인 곳:\n- 조리대 4(아일랜드 식탁) 위, 싱크대 옆: 바나나, 잼, 병 음료, 쟁반\n\n가구:\n- 서랍 1부터 6까지, 9부터 12까지: 서랍 닫힘\n- 캐비닛 1부터 7까지, 9, 12, 14, 16부터 18까지, 20, 21: 문 닫힘\n- 조리대 1: 토스터 오븐 옆\n- 조리대 2: 커피머신 옆, 스토브 상판 옆\n- 조리대 3: 냉장고 옆, 전자레인지 옆, 오븐 옆, 토스터 옆\n- 식기세척기(아일랜드): 문 닫힘. 칸: 랙 1, 2(위에서부터)\n- 냉장고: 문 닫힘, 냉동실 문 닫힘. 칸: 냉장실 선반 1, 2(위에서부터), 냉장실 서랍\n- 조리대 4(아일랜드 식탁): 식기세척기 옆, 싱크대 옆\n- 전자레인지: 문 닫힘\n- 오븐: 문 닫힘. 칸: 랙 1, 2(위에서부터)\n- 싱크대(아일랜드): 미가동\n- 캐비닛 10, 15(아일랜드): 문 닫힘\n- 서랍 7, 8(아일랜드): 서랍 닫힘\n- 스토브 상판: 미가동. 칸: 뒤 오른쪽 화구, 뒤 가운데 화구, 앞 오른쪽 화구, 앞 왼쪽 화구, 앞 가운데 화구\n- 토스터 오븐: 문 닫힘. 칸: 랙 1, 2(위에서부터)\n- 커피머신\n- 수납장 1부터 3까지\n- 캐비닛 8, 11, 19(아일랜드)\n- 캐비닛 13\n- 스툴 1부터 3까지\n- 토스터",
+  "entity_labels": {
+   "fx_drawer_1": "서랍 1",
+   "fx_cabinet_1": "캐비닛 1",
+   "fx_cabinet_2": "캐비닛 2",
+   "fx_cabinet_3": "캐비닛 3",
+   "fx_cabinet_4": "캐비닛 4",
+   "fx_cabinet_5": "캐비닛 5",
+   "fx_cabinet_6": "캐비닛 6",
+   "fx_coffee_machine_1": "커피머신",
+   "fx_counter_1": "조리대 1",
+   "fx_counter_2": "조리대 2",
+   "fx_counter_3": "조리대 3",
+   "fx_dishwasher_1": "식기세척기",
+   "fx_cabinet_7": "수납장 1",
+   "fx_fridge_1": "냉장고",
+   "fx_cabinet_8": "캐비닛 7",
+   "fx_counter_4": "조리대 4",
+   "fx_cabinet_9": "수납장 2",
+   "fx_microwave_1": "전자레인지",
+   "fx_cabinet_10": "수납장 3",
+   "fx_oven_1": "오븐",
+   "fx_cabinet_11": "캐비닛 8",
+   "fx_sink_1": "싱크대",
+   "fx_cabinet_12": "캐비닛 9",
+   "fx_drawer_2": "서랍 2",
+   "fx_cabinet_13": "캐비닛 10",
+   "fx_cabinet_14": "캐비닛 11",
+   "fx_cabinet_15": "캐비닛 12",
+   "fx_cabinet_16": "캐비닛 13",
+   "fx_drawer_3": "서랍 3",
+   "fx_drawer_4": "서랍 4",
+   "fx_drawer_5": "서랍 5",
+   "fx_cabinet_17": "캐비닛 14",
+   "fx_drawer_6": "서랍 6",
+   "fx_cabinet_18": "캐비닛 15",
+   "fx_drawer_7": "서랍 7",
+   "fx_drawer_8": "서랍 8",
+   "fx_cabinet_19": "캐비닛 16",
+   "fx_drawer_9": "서랍 9",
+   "fx_cabinet_20": "캐비닛 17",
+   "fx_drawer_10": "서랍 10",
+   "fx_cabinet_21": "캐비닛 18",
+   "fx_drawer_11": "서랍 11",
+   "fx_cabinet_22": "캐비닛 19",
+   "fx_cabinet_23": "캐비닛 20",
+   "fx_drawer_12": "서랍 12",
+   "fx_stool_1": "스툴 1",
+   "fx_stool_2": "스툴 2",
+   "fx_stool_3": "스툴 3",
+   "fx_stovetop_1": "스토브 상판",
+   "fx_toaster_1": "토스터",
+   "fx_toaster_oven_1": "토스터 오븐",
+   "fx_cabinet_24": "캐비닛 21",
+   "obj_001": "바나나",
+   "obj_002": "잼",
+   "obj_003": "병 음료",
+   "obj_004": "쟁반",
+   "fx_dishwasher_1/rack1": "식기세척기 랙 1",
+   "fx_dishwasher_1/rack0": "식기세척기 랙 2",
+   "fx_fridge_1/fridge_shelf1": "냉장고 냉장실 선반 1",
+   "fx_fridge_1/fridge_shelf0": "냉장고 냉장실 선반 2",
+   "fx_fridge_1/fridge_drawer0": "냉장고 냉장실 서랍",
+   "fx_oven_1/rack1": "오븐 랙 1",
+   "fx_oven_1/rack0": "오븐 랙 2",
+   "fx_stovetop_1/rear_right": "스토브 상판 뒤 오른쪽 화구",
+   "fx_stovetop_1/rear_center": "스토브 상판 뒤 가운데 화구",
+   "fx_stovetop_1/front_right": "스토브 상판 앞 오른쪽 화구",
+   "fx_stovetop_1/front_left": "스토브 상판 앞 왼쪽 화구",
+   "fx_stovetop_1/front_center": "스토브 상판 앞 가운데 화구",
+   "fx_toaster_oven_1/rack1": "토스터 오븐 랙 1",
+   "fx_toaster_oven_1/rack0": "토스터 오븐 랙 2"
+  }
+ },
+ "output": {
+  "reasoning": "① 지시 해석: 병 음료를 쟁반 옆에 놓는 작업이다. 시간 조건은 없다. 병 음료와 쟁반이 모두 조리대 4에 있으므로 시작과 끝은 조리대 4다. ② 씬 접지: 병 음료와 쟁반은 조리대 4(아일랜드 식탁) 위, 싱크대 옆에 있다. ③ 역할 부여: 병 음료는 위치를 바꿔야 하므로 필수다. 쟁반은 옆에 둘 위치의 기준이므로 보조이고, 조리대 4는 병 음료의 초기 위치 기준이므로 보조다. ④ 제약 도출: 지시와 환경 설명에서 별도의 수행 제약은 도출되지 않는다. ⑤ 목표 상태 도출: 병 음료가 쟁반 근처에 있는 관계가 성립해야 한다. 놓을 곳을 별도로 지정하지 않았으므로 on 관계는 추가하지 않는다.",
+  "task_situation_description": {
+   "task_goal": {
+    "summary": "병 음료를 쟁반 옆에 놓는 것",
+    "goal_state": [
+     [
+      {
+       "kind": "relation",
+       "subject": "병 음료",
+       "predicate": "near",
+       "object": "쟁반",
+       "value": true
+      }
+     ]
+    ]
+   },
+   "spatiotemporal_conditions": {
+    "time": null,
+    "space": {
+     "start": "조리대 4",
+     "end": "조리대 4"
+    }
+   },
+   "target_objects": {
+    "required": [
+     {
+      "ref": "병 음료",
+      "location": "조리대 4(아일랜드 식탁) 위, 싱크대 옆",
+      "state": null
+     }
+    ],
+    "key_means": [],
+    "auxiliary": [
+     {
+      "ref": "쟁반",
+      "location": "조리대 4(아일랜드 식탁) 위, 싱크대 옆",
+      "note": "병 음료를 옆에 둘 위치의 기준"
+     },
+     {
+      "ref": "조리대 4",
+      "location": null,
+      "note": "병 음료의 초기 위치 기준"
+     }
+    ]
+   },
+   "constraints": []
+  },
+  "task_situation_description_text": "작업 목표: 병 음료를 쟁반 옆에 놓는 것\n목표 상태:\n- 병 음료: 쟁반 근처\n시간·공간 조건: 시간 조건은 없음, 공간 조건은 시작 조리대 4, 종료 조리대 4\n대상 물체:\n- 필수 물체: 병 음료(위치: 조리대 4(아일랜드 식탁) 위, 싱크대 옆)\n- 보조 물체: 쟁반(위치: 조리대 4(아일랜드 식탁) 위, 싱크대 옆, 비고: 병 음료를 옆에 둘 위치의 기준)\n- 보조 물체: 조리대 4(비고: 병 음료의 초기 위치 기준)\n제약 사항: 없음\n"
+ }
+}

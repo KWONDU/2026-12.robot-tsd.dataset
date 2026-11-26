@@ -1,0 +1,113 @@
+{
+ "id": "rc365-CloseCabinet-synth-sim_reset-ep524500--next_to-50d5e5fe--v1--gemini-3.8-flash",
+ "domain": "household",
+ "task_type": "next_to",
+ "agent": "gemini-3.8-flash",
+ "source": {
+  "data": "RoboCasa365 (MIT)",
+  "scene_id": "rc365/CloseCabinet/synth/sim_reset/ep_524500",
+  "task": "next_to",
+  "composed": true
+ },
+ "input": {
+  "instruction": "마늘을 달걀 옆에 놔.",
+  "instruction_en": "Place the garlic next to the egg.",
+  "world_state": "장소: 가정 주방\n로봇(PandaOmron). 들고 있는 물체 없음.\n\n물체가 놓인 곳:\n- 캐비닛 7 선반 위: 달걀\n- 조리대 4 위, 캐비닛 7 옆: 우유, 마늘, 비누\n\n가구:\n- 캐비닛 1부터 6까지, 8부터 12까지: 문 닫힘\n- 조리대 1: 냉장고 옆, 전자레인지 옆\n- 조리대 2: 스토브 옆\n- 조리대 3: 커피머신 옆, 스토브 옆\n- 조리대 4: 식기세척기 옆, 싱크대 옆, 토스터 옆\n- 식기세척기: 문 닫힘. 칸: 랙 1, 2(위에서부터)\n- 냉장고: 문 닫힘, 냉동실 문 닫힘. 칸: 냉장실 선반 1, 2(위에서부터), 냉장실 서랍\n- 캐비닛 7: 문 열림\n- 전자레인지: 문 닫힘\n- 싱크대: 미가동\n- 서랍 1부터 6까지: 서랍 닫힘\n- 스토브: 문 닫힘, 미가동. 칸: 랙 1, 2(위에서부터)\n- 커피머신\n- 조리대 5, 6\n- 수납장\n- 캐비닛 13\n- 토스터",
+  "entity_labels": {
+   "fx_cabinet_1": "캐비닛 1",
+   "fx_coffee_machine_1": "커피머신",
+   "fx_counter_1": "조리대 1",
+   "fx_counter_2": "조리대 2",
+   "fx_counter_3": "조리대 3",
+   "fx_counter_4": "조리대 4",
+   "fx_counter_5": "조리대 5",
+   "fx_counter_6": "조리대 6",
+   "fx_dishwasher_1": "식기세척기",
+   "fx_cabinet_2": "수납장",
+   "fx_fridge_1": "냉장고",
+   "fx_cabinet_3": "캐비닛 2",
+   "fx_cabinet_4": "캐비닛 3",
+   "fx_cabinet_5": "캐비닛 4",
+   "fx_cabinet_6": "캐비닛 5",
+   "fx_cabinet_7": "캐비닛 6",
+   "fx_cabinet_8": "캐비닛 7",
+   "fx_microwave_1": "전자레인지",
+   "fx_cabinet_9": "캐비닛 8",
+   "fx_cabinet_10": "캐비닛 9",
+   "fx_sink_1": "싱크대",
+   "fx_drawer_1": "서랍 1",
+   "fx_drawer_2": "서랍 2",
+   "fx_drawer_3": "서랍 3",
+   "fx_cabinet_11": "캐비닛 10",
+   "fx_cabinet_12": "캐비닛 11",
+   "fx_drawer_4": "서랍 4",
+   "fx_drawer_5": "서랍 5",
+   "fx_drawer_6": "서랍 6",
+   "fx_cabinet_13": "캐비닛 12",
+   "fx_cabinet_14": "캐비닛 13",
+   "fx_stove_1": "스토브",
+   "fx_toaster_1": "토스터",
+   "obj_001": "달걀",
+   "obj_002": "우유",
+   "obj_003": "마늘",
+   "obj_004": "비누",
+   "fx_dishwasher_1/rack1": "식기세척기 랙 1",
+   "fx_dishwasher_1/rack0": "식기세척기 랙 2",
+   "fx_fridge_1/fridge_shelf1": "냉장고 냉장실 선반 1",
+   "fx_fridge_1/fridge_shelf0": "냉장고 냉장실 선반 2",
+   "fx_fridge_1/fridge_drawer0": "냉장고 냉장실 서랍",
+   "fx_stove_1/rack1": "스토브 랙 1",
+   "fx_stove_1/rack0": "스토브 랙 2"
+  }
+ },
+ "output": {
+  "reasoning": "① 지시 해석: 마늘을 달걀 옆에 놓는 작업이다. 시간 조건은 없다. 마늘이 있는 조리대 4에서 시작하여 기준 물체인 달걀이 있는 캐비닛 7에서 작업이 끝난다. ② 씬 접지: 마늘은 조리대 4 위에 있고, 달걀은 캐비닛 7 선반 위에 있다. 캐비닛 7의 문은 이미 열려 있다. ③ 물체 역할 부여 근거: 마늘은 위치가 바뀌어야 하므로 필수(required)다. 달걀은 goal_state의 near 관계 기준이 되므로 보조(auxiliary)다. 조리대 4는 마늘의 초기 위치 기준 가구이므로 보조(auxiliary)다. 목표 달성을 위해 도구나 받는 용기를 쓰는 것이 아니므로 핵심 수단(key_means)은 없다. ④ 제약 도출 근거: 캐비닛 7의 문이 이미 열려 있고, 별도의 순서나 물리적 조건이 지시 또는 환경에 제시되지 않았으므로 제약 사항은 없다. ⑤ 목표 상태 도출 근거: 지시에서 특정 가구 안이나 위를 지정하지 않고 '달걀 옆'만을 요구했으므로, 마늘과 달걀 사이의 near 관계 단언 하나로 목표 상태를 구성한다.",
+  "task_situation_description": {
+   "task_goal": {
+    "summary": "마늘을 달걀 옆에 놓는 것",
+    "goal_state": [
+     [
+      {
+       "kind": "relation",
+       "subject": "마늘",
+       "predicate": "near",
+       "object": "달걀",
+       "value": true
+      }
+     ]
+    ]
+   },
+   "spatiotemporal_conditions": {
+    "time": null,
+    "space": {
+     "start": "조리대 4",
+     "end": "캐비닛 7"
+    }
+   },
+   "target_objects": {
+    "required": [
+     {
+      "ref": "마늘",
+      "location": "조리대 4 위, 캐비닛 7 옆",
+      "state": null
+     }
+    ],
+    "key_means": [],
+    "auxiliary": [
+     {
+      "ref": "달걀",
+      "location": "캐비닛 7 선반 위",
+      "note": "목표 위치(near)의 기준 물체"
+     },
+     {
+      "ref": "조리대 4",
+      "location": null,
+      "note": "마늘의 초기 위치 기준"
+     }
+    ]
+   },
+   "constraints": []
+  },
+  "task_situation_description_text": "작업 목표: 마늘을 달걀 옆에 놓는 것\n목표 상태:\n- 마늘: 달걀 근처\n시간·공간 조건: 시간 조건은 없음, 공간 조건은 시작 조리대 4, 종료 캐비닛 7\n대상 물체:\n- 필수 물체: 마늘(위치: 조리대 4 위, 캐비닛 7 옆)\n- 보조 물체: 달걀(위치: 캐비닛 7 선반 위, 비고: 목표 위치(near)의 기준 물체)\n- 보조 물체: 조리대 4(비고: 마늘의 초기 위치 기준)\n제약 사항: 없음\n"
+ }
+}
