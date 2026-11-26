@@ -1,0 +1,710 @@
+# 한국어 어휘·분류 자원 사전.
+# 코드가 아니라 이 파일이 단일 출처다. 항목 추가는 여기서만 한다.
+# unmapped 카테고리는 영어 원문을 그대로 쓰고 provenance에 기록된다.
+
+
+# fixture 카테고리 -> 한국어 표시명. 물체와 마찬가지로 출력 언어에 관한 것이라
+# 공용 사전에 둔다. 원본 클래스명을 이 카테고리로 옮기는 표는 어댑터 자원에 있다.
+fixture_names_ko:
+  blender: 블렌더
+  blender_lid: 블렌더 뚜껑
+  cabinet: 캐비닛
+  coffee_machine: 커피머신
+  counter: 조리대
+  dishwasher: 식기세척기
+  drawer: 서랍
+  electric_kettle: 전기 주전자
+  fridge: 냉장고
+  microwave: 전자레인지
+  open_cabinet: 개방 선반
+  oven: 오븐
+  sink: 싱크대
+  stand_mixer: 스탠드 믹서
+  stool: 스툴
+  stove: 스토브
+  stovetop: 스토브 상판
+  toaster: 토스터
+  toaster_oven: 토스터 오븐
+
+# 물체 카테고리(영어) → 한국어 표시명. RoboCasa object_cfgs.info.cat 값 기준.
+category_names_ko:
+  bread_flat: 납작빵
+  jug_wide_opening: 입구 넓은 저그
+  dates: 대추야자
+  walnut: 호두
+  scallops: 가리비
+  candy: 사탕
+  ice_cream: 아이스크림
+  cherry: 체리
+  peanut_butter: 땅콩버터
+  thermos: 보온병
+  ham: 햄
+  dumpling: 만두
+  cabbage: 양배추
+  ginger: 생강
+  cantaloupe: 멜론
+  grapes: 포도
+  spaghetti_box: 스파게티 상자
+  chili_pepper: 고추
+  celery: 셀러리
+  burrito: 부리토
+  olive_oil_bottle: 올리브유 병
+  bottle_opener: 병따개
+  jello_cup: 젤리 컵
+  lobster: 바닷가재
+  brussel_sprout: 방울양배추
+  sushi: 초밥
+  baking_sheet: 베이킹 팬
+  wine_glass: 와인잔
+  asparagus: 아스파라거스
+  lamb_chop: 양갈비
+  pickle: 피클
+  canola_oil: 카놀라유
+  strawberry: 딸기
+  watermelon: 수박
+  pomegranate: 석류
+  apricot: 살구
+  beet: 비트
+  radish: 무
+  salsa: 살사 소스
+  artichoke: 아티초크
+  scone: 스콘
+  hamburger: 햄버거
+  raspberry: 라즈베리
+  tacos: 타코
+  vinegar: 식초
+  zucchini: 애호박
+  pork_loin: 돼지 등심
+  pork_chop: 돼지갈비
+  coconut: 코코넛
+  cauliflower: 콜리플라워
+  lollipop: 막대사탕
+  salami: 살라미
+  butter_stick: 스틱 버터
+  can_opener: 캔 따개
+  tofu: 두부
+  pineapple: 파인애플
+  skewers: 꼬치
+  strainer: 거름망
+  tomato_slice: 토마토 슬라이스
+  saucepan_with_lid: 뚜껑 있는 소스팬
+  saucepan_lid: 소스팬 뚜껑
+  placemat: 식탁 매트
+  blender_jug: 블렌더 용기
+  mug: 머그
+  cup: 컵
+  bowl: 그릇
+  plate: 접시
+  pan: 팬
+  pot: 냄비
+  saucepan: 소스팬
+  oven_tray: 오븐 트레이
+  dish_brush: 설거지 솔
+  turkey_slice: 칠면조 슬라이스
+  kettle: 주전자
+  jar: 병
+  bottle: 병
+  beer: 맥주
+  wine: 와인
+  liquor: 양주
+  milk: 우유
+  juice: 주스
+  water_bottle: 물병
+  apple: 사과
+  banana: 바나나
+  lemon: 레몬
+  lime: 라임
+  orange: 오렌지
+  tomato: 토마토
+  potato: 감자
+  onion: 양파
+  garlic: 마늘
+  carrot: 당근
+  cucumber: 오이
+  corn: 옥수수
+  avocado: 아보카도
+  mushroom: 버섯
+  broccoli: 브로콜리
+  bell_pepper: 피망
+  eggplant: 가지
+  squash: 호박
+  sweet_potato: 고구마
+  bread: 빵
+  baguette: 바게트
+  croissant: 크루아상
+  bagel: 베이글
+  cake: 케이크
+  cupcake: 컵케이크
+  donut: 도넛
+  waffle: 와플
+  egg: 달걀
+  cheese: 치즈
+  fish: 생선
+  steak: 스테이크
+  chicken_breast: 닭가슴살
+  hot_dog: 핫도그
+  sausage: 소시지
+  bacon: 베이컨
+  shrimp: 새우
+  kebabs: 케밥
+  knife: 칼
+  fork: 포크
+  spoon: 숟가락
+  ladle: 국자
+  spatula: 뒤집개
+  whisk: 거품기
+  rolling_pin: 밀대
+  scissors: 가위
+  peeler: 필러
+  tongs: 집게
+  cutting_board: 도마
+  colander: 채반
+  measuring_cup: 계량컵
+  tray: 쟁반
+  basket: 바구니
+  sponge: 스펀지
+  soap_dispenser: 세제 디스펜서
+  candle: 초
+  can: 캔
+  boxed_drink: 팩 음료
+  boxed_food: 포장 식품
+  canned_food: 통조림
+  cereal: 시리얼
+  chips: 과자
+  chocolate: 초콜릿
+  condiment: 소스
+  ketchup: 케첩
+  mustard: 머스터드
+  jam: 잼
+  honey: 꿀
+  syrup: 시럽
+  yogurt: 요거트
+  butter: 버터
+  sugar_cube: 각설탕
+  ice_cube: 얼음
+  marshmallow: 마시멜로
+  lemonade: 레모네이드
+  coffee_cup: 커피잔
+  teapot: 찻주전자
+  dish_rack: 식기 건조대
+  cheese_grater: 치즈 강판
+  cookie_dough_ball: 쿠키 반죽
+  hotdog_bun: 핫도그 빵
+  kebab_skewer: 케밥 꼬치
+  kiwi: 키위
+  peach: 복숭아
+  pitcher: 물주전자
+  pizza: 피자
+  syrup_bottle: 시럽 병
+  bottled_drink: 병 음료
+  bottled_water: 생수병
+  glass_cup: 유리컵
+  lemon_wedge: 레몬 조각
+  chicken_drumstick: 닭다리
+  pear: 배
+  mango: 망고
+  tangerine: 귤
+  sandwich_bread: 샌드위치 빵
+  pancake: 팬케이크
+  digital_scale: 디지털 저울
+  bar: 스낵바
+  condiment_bottle: 소스 병
+  pickle_slice: 피클 조각
+  turmeric: 강황 가루
+  paprika: 파프리카 가루
+  cinnamon: 시나몬 가루
+  wooden_spoon: 나무 숟가락
+  cream_cheese_stick: 크림치즈 스틱
+  bagged_food: 봉지 식품
+  honey_bottle: 꿀병
+  kettle_non_electric: 주전자
+  shaker: 셰이커
+  lettuce: 상추
+  pizza_cutter: 피자 커터
+  flour_bag: 밀가루 포대
+  mayonnaise: 마요네즈
+  aluminum_foil: 알루미늄 포일
+  ice_cube_tray: 얼음 틀
+  tupperware: 밀폐용기
+  jug: 저그
+  spray: 분무기
+  oil_and_vinegar_bottle: 오일·식초 병
+  bar_soap: 비누
+  reamer: 즙짜개
+  salt_and_pepper_shaker: 소금·후추통
+  straw: 빨대
+
+# fixture/물체 상태 키 → 한국어 표현 (렌더링·접지 검사 공용)
+state_phrases:
+  door_open:
+    true: 문 열림
+    false: 문 닫힘
+  freezer_door_open:
+    true: 냉동실 문 열림
+    false: 냉동실 문 닫힘
+  door_partly_open: # 완전히 열리지도 닫히지도 않은 문·서랍 (세계 상태에만 나오고 목표 상태 키는 아니다)
+    true: 문 일부 열림
+  drawer_partly_open:
+    true: 서랍 일부 열림
+  drawer_open:
+    true: 서랍 열림
+    false: 서랍 닫힘
+  turned_on:
+    true: 가동 중
+    false: 미가동
+  filled:
+    true: 내용물 있음
+    false: 비어 있음
+  lid_open:
+    true: 뚜껑 열림
+    false: 뚜껑 닫힘
+  pulled_out:
+    true: 당겨 빼 놓음
+    false: 밀어 넣어 둠
+  head_raised:
+    true: 헤드 올라감
+    false: 헤드 내려감
+
+# 씬 근거 검사가 지어낸 물체로 세지 않는 이름: 다른 뜻으로 흔히 쓰이는 낱말 ('두 가지 경우'의 가지)
+grounding_homographs: [가지]
+
+# 자연어 세계 상태(world_state text 보기)에서 좌표로 받침을 찾았을 때 '안'으로 쓰는 용기류 카테고리 (나머지는 '위')
+container_categories: [tupperware, colander, bowl, cup, mug, pot, saucepan, basket, container, jar, kettle, pitcher, glass, wine_glass, measuring_cup, can, bottle, box]
+
+# 자연어 세계 상태에서 가구 안의 칸(원천 reset_region 이름, 끝의 숫자는 떼고 찾음)과 그 칸에서의 관계.
+# listed가 참인 종류는 세계 상태 글에 그 가구의 칸 목록으로 적고 이름으로 가리킬 수 있다(냉장고 냉장실 선반 2).
+# '가구 종류.칸'이 '칸'보다 먼저다. 여기 없는 칸(조리대 표면 geom_0, 서랍 안 int 등)은 칸 없이 가구 이름만 쓴다.
+region_ko:
+  # 창고 설비의 칸 (원천: simready_warehouse). 선반은 위에서부터 번호, 상판은 작업대의 맨 위 면
+  rack.shelf: { name: 선반, relation: "on", listed: true }
+  cart.shelf: { name: 선반, relation: "on", listed: true }
+  worktable.shelf: { name: 선반, relation: "on", listed: true }
+  worktable.top: { name: 상판, relation: "on", listed: true }
+  # 제조 작업장 설비의 칸 (원천: simready_workshop). 서랍·선반·단은 위에서부터 번호, 상판은 맨 위 면
+  workbench.top: { name: 상판, relation: "on", listed: true }
+  workbench.drawer: { name: 서랍, relation: "in", listed: true }
+  workbench.cabinet: { name: 수납장, relation: "in", listed: true }
+  workbench.shelf: { name: 선반, relation: "on", listed: true }
+  tool_cabinet.top: { name: 상판, relation: "on", listed: true }
+  tool_cabinet.drawer: { name: 서랍, relation: "in", listed: true }
+  bin_cart.tier: { name: 단, relation: "on", listed: true }
+  tray_cart.tray: { name: 트레이, relation: "on", listed: true }
+  parts_rack.shelf: { name: 선반, relation: "on", listed: true }
+  parts_washer.chamber: { name: 세척실, relation: "in" }
+  filter_crusher.chamber: { name: 압착실, relation: "in" }
+  printer_3d.bed: { name: 출력판, relation: "on" }
+  # 공장 바닥의 곳 (원천: factory_floor). 버퍼는 곳의 입구·출구 앞 자리
+  supply_station.output: { name: 출구 버퍼, relation: "on", listed: true }
+  machining_station.input: { name: 입구 버퍼, relation: "on", listed: true }
+  machining_station.output: { name: 출구 버퍼, relation: "on", listed: true }
+  assembly_station.input: { name: 입구 버퍼, relation: "on", listed: true }
+  assembly_station.output: { name: 출구 버퍼, relation: "on", listed: true }
+  inspection_station.input: { name: 입구 버퍼, relation: "on", listed: true }
+  inspection_station.output: { name: 출구 버퍼, relation: "on", listed: true }
+  shipping_dock.input: { name: 입구 버퍼, relation: "on", listed: true }
+  storage_station.shelf: { name: 선반, relation: "on", listed: true }
+  tool_crib.counter: { name: 반출대, relation: "on", listed: true }
+  waste_station.bin: { name: 수거함, relation: "in", listed: true }
+  fridge_shelf: { name: 냉장실 선반, relation: "on", listed: true }
+  freezer_shelf: { name: 냉동실 선반, relation: "on", listed: true }
+  fridge_drawer: { name: 냉장실 서랍, relation: "in", listed: true }
+  freezer_drawer: { name: 냉동실 서랍, relation: "in", listed: true }
+  basin: { name: 개수대, relation: "in" }
+  basin_left: { name: 왼쪽 개수대, relation: "in", listed: true }
+  basin_right: { name: 오른쪽 개수대, relation: "in", listed: true }
+  front_left: { name: 앞 왼쪽 화구, relation: "on", listed: true }
+  front_center: { name: 앞 가운데 화구, relation: "on", listed: true }
+  front_right: { name: 앞 오른쪽 화구, relation: "on", listed: true }
+  rear_left: { name: 뒤 왼쪽 화구, relation: "on", listed: true }
+  rear_center: { name: 뒤 가운데 화구, relation: "on", listed: true }
+  rear_right: { name: 뒤 오른쪽 화구, relation: "on", listed: true }
+  center: { name: 가운데 화구, relation: "on", listed: true }
+  microwave.tray: { name: 회전 접시, relation: "on" }
+  tray: { name: 트레이, relation: "on" }
+  rack: { name: 랙, relation: "on", listed: true }
+  slotL: { name: 왼쪽 투입구, relation: "in" }
+  slotR: { name: 오른쪽 투입구, relation: "in" }
+  sideL_slotL: { name: 왼쪽 칸 왼쪽 투입구, relation: "in" }
+  sideL_slotR: { name: 왼쪽 칸 오른쪽 투입구, relation: "in" }
+  sideR_slotL: { name: 오른쪽 칸 왼쪽 투입구, relation: "in" }
+  sideR_slotR: { name: 오른쪽 칸 오른쪽 투입구, relation: "in" }
+  coffee_machine.bottom: { name: 컵 받침, relation: "on" }
+  level: { name: 선반, relation: "on" }
+# 배치 기준이 된 옆 가구의 어느 쪽인지 (원천 loc). 방향이 없으면 either
+near_side_ko: { left: 왼쪽, right: 오른쪽, either: 옆 }
+
+# 자연어 세계 상태(world_state text 보기)에서 상태 이름표가 없는 상태 키의 한국어 표기 (도메인 이름은 resources/domains)
+state_key_ko:
+  contents: 내용물
+
+# 접지 검사에서 상태 모순 판단에 쓰는 상충 표현 사전.
+# TSD 텍스트에 아래 표현이 있는데 씬 상태가 반대이면 state_conflict로 잡는다.
+state_conflict_phrases:
+  door_open:
+    true: [문 열림, 열려 있]
+    false: [문 닫힘, 닫혀 있]
+  turned_on:
+    true: [가동 중, 켜져 있, 작동 중]
+    false: [미가동, 꺼져 있]
+  freezer_door_open:
+    true: [냉동실 문 열림, 냉동실 문이 열려, 냉동실이 열려]
+    false: [냉동실 문 닫힘, 냉동실 문이 닫혀, 냉동실이 닫혀]
+
+# 상태 서술에 이 말이 있으면 해당 상태 키의 상충 검사를 건너뛴다. 더 좁은 부위를 말하는 서술이라서다
+# (냉장고 본문은 닫혀 있어도 "냉동실 문이 열려 있음"은 모순이 아니고, freezer_door_open이 따로 검사한다).
+state_conflict_qualifiers:
+  door_open: [냉동실]
+
+# 관계 술어 한국어 (검토용 Markdown 표시)
+# 도메인 표시명 (대시보드의 최종 데이터셋)
+domain_ko: { household: 가사, logistics: 물류, manufacturing: 제조 }
+# 검수 항목 situation이 설명문에서 상황 사실을 찾을 때 쓰는 말 (verify/situation.py)
+situation_words:
+  aisle: 통로 # 통로 이름의 앞말 (통로 18). '통로 40, 9, 11'처럼 이어 쓴 번호도 통로로 본다
+  aisle_joins: [",", "·", "/", 와, 과, 및, 또는, 혹은, 그리고]
+  wait: [기다, 다시 가동, 재가동]
+  minute: 분
+relation_ko: { "on": 위, "in": 안, near: 근처, held_by: 파지, robot_at: 로봇 위치 }
+
+# 제약 유형 한국어 라벨 (렌더러)
+constraint_type_ko:
+  precedence: 선후
+  resource: 자원
+  physical: 물리
+  safety: 안전
+  spatial: 공간
+  other: 기타
+
+# 체크리스트 루브릭 항목 키 -> 한국어 표시명 (스펙 3절 7번, 순서 고정).
+# 키 순서가 채점·표시 순서이고, 대시보드·분석 프롬프트의 항목 이름도 여기서 온다.
+checklist_items:
+  goal_reflected: 작업 목표 반영
+  spatiotemporal_reflected: 시간·공간 조건 반영
+  objects_and_locations_sufficient: 물체·위치 충분성
+  role_assignment_valid: 역할 구분 타당성
+  executable_from_description: 설명문만으로 계획 가능
+
+# 샘플 판정 상태 한국어 표시명 (대시보드)
+status_ko:
+  accepted: 채택
+  alternate: 차순위
+  rejected: 미달
+  needs_review: 재검토
+
+# 목표 상태(task_goal.goal_state) 단언 종류 한국어 표시명. 키는 goals.GOAL_KINDS 등록 이름이다.
+goal_kind_ko:
+  relation: 관계
+  state: 상태
+  object_state: 물체 상태 # 3.0까지의 기록 표시용 (지금은 state 하나)
+  fixture_state: 가구 상태
+
+# 완료 판정(task_goal.completion_conditions) 종류 한국어 표시명. 설명문 3.2까지의 기록을 화면에 보일 때만 쓴다 (3.3에서 칸을 없앰).
+completion_kind_ko:
+  goal_state: 목표 상태 성립
+  duration: 지속 시간
+  unresolved: 상태로 표현할 수 없는 기준
+
+# 목표 판정의 세 값 한국어 표시명
+goal_status_ko:
+  satisfied: 만족
+  unsatisfied: 불만족
+  unknown: 알 수 없음
+
+# 실행(run) 진행 상태 한국어 표시명 (대시보드). 상태는 산출물 파일로만 판단한다.
+run_status_ko:
+  done: 완료
+  running: 진행 중
+  incomplete: 미완료
+  empty: 산출물 없음
+
+# 실행 상태에 마우스를 올리면 보이는 판단 기준 (대시보드)
+run_status_hint_ko:
+  incomplete: 끝나지 않았는데 한동안(dashboard.stale_after_min) 파일이 바뀌지 않았어요. 멈췄거나 일부 단계만 돌린 실행이에요
+
+# 파이프라인 스테이지 한국어 표시명 (대시보드 진행 표)
+stage_ko:
+  sample: 시나리오 선별
+  contextualize: 지시 재작성
+  generate: 설명문 생성
+  verify: 검수
+  select: 전달본 선별
+
+# 검수 단계 한국어 표시명 (대시보드). 키는 verify.checks의 등록 이름, resolvability는 재작성 단계의 지시 해소 판정이다.
+verify_check_ko:
+  schema: 스키마
+  grounding: 씬 근거
+  structure: 구조
+  goal: 목표 상태
+  goal_oracle: 정답 대조
+  situation: 상황 사실
+  checklist: 체크리스트
+  probe: 정보 충분성
+  resolvability: 지시 해소
+  other: 기타
+
+# 검수 항목 결과에서 문제를 담는 목록 필드의 한국어 표시명 (대시보드 미달 근거). 키는 models의 결과 필드 이름이다.
+verify_problem_ko:
+  unknown_refs: 씬에 없는 id
+  state_conflicts: 씬과 다른 상태
+  hallucinated_entities: 씬에 없는 물체
+  missing_info: 빠진 정보
+  problems: 어긋난 내용
+  missing: 설명문에 없는 상황 사실
+
+# 데이터 구조 화면(대시보드)의 필드 설명. 키는 필드 이름이고, 같은 이름이 모델마다 뜻이 다르면 "모델.필드"로 따로 적는다.
+# 스키마에 description이 있는 필드(목표 상태)는 그 설명을 먼저 쓴다. 전달 스키마(JSON Schema)에는 들어가지 않는 화면용 문구다.
+schema_field_ko:
+  sample_id: 샘플 id
+  scenario_id: 원래 시나리오 id
+  domain: 도메인 (가사 등)
+  lang: 서술 언어
+  input: 모델이 받는 입력
+  user_instruction: 사용자 지시 (한국어로 다시 쓴 것)
+  original_instruction_en: 다시 쓰기 전 원문 지시 (참고용, 모델에는 안 들어감)
+  instruction_specificity: 지시를 얼마나 구체적으로 썼는지
+  environment_context: 씬 상태 (정답 단서를 뺀 것)
+  intermediate: 중간 추론
+  reasoning: 설명문을 만들기까지의 추론
+  output: 모델이 내는 출력
+  task_situation_description: 작업상황설명문 JSON
+  task_situation_description_text: JSON을 사람이 읽는 글로 옮긴 것
+  meta: 생성·검수 기록 (학습 대상 아님)
+  generator: 생성 모델과 프롬프트 버전
+  rewriter: 지시를 다시 쓴 모델
+  verification: 검수 결과
+  task_template: 이 샘플을 낳은 태스크 템플릿 (원천/태스크)
+  sampling: 선별 기록
+  status: 최종 판정
+  created_at: 만든 시각
+  pipeline_version: 코드 버전
+  schema_version: 스키마 버전
+  task_goal: 작업 목표
+  spatiotemporal_conditions: 시간·공간 조건
+  time: 시간 조건 (없으면 비움)
+  space: 공간 조건 (작업이 시작되는 곳과 끝나는 곳)
+  start: 작업이 시작되는 곳. 순서가 정해지지 않아 후보가 여럿이면 모두 '혹은'으로 잇는다
+  end: 작업이 끝나는 곳. 순서가 정해지지 않아 후보가 여럿이면 모두 '혹은'으로 잇는다
+  target_objects: 작업에 쓰이는 물체 (역할별)
+  required: 필수. 직접 옮기거나 상태를 바꾸는 물체
+  key_means: 핵심 수단. 목표에 필요한 도구·설비·담을 곳
+  auxiliary: 보조. 위치 기준이 되거나 이해를 돕는 물체
+  ref: 가리키는 물체·가구 (세계 상태의 이름. JSON 보기에서는 id)
+  name_ko: 한국어 이름
+  location: 지금 위치 (세계 상태의 놓인 곳. 없으면 비움)
+  state: 작업과 관련된 지금 상태 (세계 상태에 적힌 것. 없으면 비움)
+  alternatives: 대신 쓸 수 있는 수단의 id
+  note: 이 물체를 적은 이유
+  constraints: 지켜야 할 제약
+  type: 제약 유형
+  TSDConstraint.description: 지켜야 할 내용
+  scene_id: 씬 id (태스크 이름이 드러나지 않게 바꾼 것)
+  simulator: 원천 시뮬레이터
+  layout: 주방 배치
+  layout_id: 배치 번호
+  layout_name: 배치 이름
+  style_id: 스타일 번호
+  style_name: 스타일 이름
+  fixtures: 가구·설비 (싱크대, 냉장고 등)
+  id: id
+  category: 분류
+  location_desc: 위치 설명
+  states: 지금 상태 (문 열림 등)
+  state_source: 상태를 어디서 알았는지
+  objects: 옮길 수 있는 물체
+  placement: 놓인 곳
+  fixture_id: 놓인 가구의 id
+  relation: 놓인 관계 (위, 안 등)
+  region: 가구 안의 칸 (원천 이름 그대로, 예 freezer_shelf2, basin)
+  near_fixture_id: 배치 기준이 된 옆 가구의 id
+  near_side: 그 옆 가구의 어느 쪽인지 (left, right)
+  pose: 위치·자세 좌표 (Tier B에서만 채움)
+  size_class: 크기 분류
+  role: 물체 역할 (정답 단서)
+  relations: 물체 사이 관계
+  subj: 주어 id
+  pred: 관계
+  obj: 대상 id
+  source: 관계를 알아낸 근거
+  agent: 로봇 상태
+  embodiment: 로봇 종류
+  base_near_fixture_id: 로봇 가까이 있는 가구
+  holding: 잡고 있는 물체
+  SceneState.constraints: 씬 수준 제약 (원천에 없어 비워 둠)
+  schema_valid: 스키마 검사 통과 여부
+  grounding: 씬 근거 검사 결과
+  unknown_refs: 씬에 없는 id
+  state_conflicts: 씬과 다른 상태
+  hallucinated_entities: 씬에 없는 물체
+  structure: 구조 검사 결과
+  has_step_list: 실행 단계 목록이 들어 있는지
+  field_order_ok: 필드 순서를 지켰는지
+  all_objects_have_location: 세계 상태에 놓인 곳이 있는 물체에 위치를 적었는지
+  checklist: 체크리스트 채점 결과
+  rubric_version: 채점 프롬프트 버전
+  judge_model: 채점한 모델
+  items: 항목별 점수
+  total: 항목 점수 합계
+  score: 점수
+  rationale: 점수를 준 근거
+  sufficiency_probe: 정보 충분성 판정 결과
+  missing_info: 설명문만으로는 모자란 정보
+  instruction_resolvability: 지시 해소 판정 결과 (재작성 단계)
+  goal: 목표 상태 규칙 검사 결과
+  problems: 어긋난 내용
+  initial_status: 목표 상태를 처음 씬과 비교한 결과
+  assertion_status: 조건마다 처음 씬과 비교한 결과
+  trivial: 처음 씬에서 이미 이뤄진 목표인지
+  goal_oracle: 원천 성공 판정(정답)과 대조한 결과
+  available: 이 태스크에 정답이 있는지
+  oracle: 정답 조건 목록
+  matched: 정답 조건마다 맞혔는지
+  already_holds: 처음 씬에서 이미 성립하는 정답 조건인지
+  recall: 정답 조건을 맞힌 비율
+  skipped_reason: 처음 걸린 검사와 그 이유 (뒤 검사는 건너뜀)
+  final_pass: 최종 통과 여부
+  pass: 이 검사를 통과했는지
+  TaskGoal.summary: 사람이 읽는 목표 한 문장
+  TaskGoal.goal_state: 작업을 마쳤을 때 성립해야 하는 상태 (행동이나 순서가 아님)
+  GoalAssertion.kind: 조건 종류 (관계, 물체 상태, 가구 상태)
+  GoalAssertion.subject: 조건의 주인공 id
+  GoalAssertion.predicate: 관계(위, 안 등)나 상태 이름(문 열림 등)
+  GoalAssertion.object: 관계의 상대 id
+  GoalAssertion.value: 성립해야 하면 true, 아니어야 하면 false
+  CompletionCondition.kind: 기준 종류 (목표 상태 성립, 지속 시간, 상태로 못 나타내는 기준)
+  CompletionCondition.description: 기준 설명 (한국어)
+  CompletionCondition.subject: 기준이 걸린 id
+  CompletionCondition.value: 수치 (지속 시간 같은 것)
+  CompletionCondition.unit: 단위 (초, 분)
+  provenance: 출처 기록 (정답 단서)
+
+# 데이터 구조 화면의 값 종류 표시명 (JSON Schema type)
+schema_type_ko:
+  string: 글
+  integer: 정수
+  number: 숫자
+  boolean: 참/거짓
+  array: 목록
+  object: 묶음
+  enum: 정해진 값
+
+# 검수 항목이 하는 일과 통과 기준 (대시보드 데이터 구조 화면). rule의 {이름}은 verify.thresholds 값으로 채우고, 그 값이 비어 있으면 off를 쓴다.
+verify_check_info_ko:
+  schema:
+    desc: 설명문이 정해진 JSON 구조를 지켰는지 봐요
+    rule: 구조가 어긋나면 미달
+  grounding:
+    desc: 설명문에 나온 id·물체·상태가 환경 컨텍스트에 실제로 있는지 봐요
+    rule: 없는 것을 하나라도 지어내면 미달
+  structure:
+    desc: 실행 단계 목록이 없는지, 필드 순서와 물체 위치 병기를 지켰는지 봐요
+    rule: 하나라도 어기면 미달
+  goal:
+    desc: 목표 상태가 정해진 어휘 안에 있고 대상 물체와 맞는지, 처음 씬에서 이미 이뤄진 목표는 아닌지 봐요
+    rule: 문제가 있으면 미달
+  goal_oracle:
+    desc: 목표 상태가 RoboCasa 성공 판정 코드(정답)의 조건을 얼마나 담았는지 재요
+    rule: 맞힌 비율 {goal_oracle_min_recall} 이상
+    off: 기록만 하고 떨어뜨리지 않음
+  situation:
+    desc: 작업을 만들 때 코드가 정한 상황 사실(돌아가게 만드는 통로, 기다려야 하는 설비, 시간 창, 가공 시간)이 설명문에 있는지 봐요
+    rule: 하나라도 없으면 미달 (상황 사실이 없는 작업은 통과)
+  checklist:
+    desc: 체크리스트 항목마다 다른 LLM이 점수를 매겨요
+    rule: 모든 항목 {checklist_min_item_score}점 이상
+  probe:
+    desc: 설명문만 보고 작업을 계획할 때 빠진 정보가 있는지 LLM이 판정해요
+    rule: "{probe_min_score}점 이상"
+  resolvability:
+    desc: 다시 쓴 지시가 환경 정보만으로 원래 작업을 가리키는지 재작성 단계에서 LLM이 판정해요
+    rule: 해소 안 되면 미달
+
+# 프롬프트 화면(대시보드): LLM 역할이 하는 일. 키는 roles.py의 등록 이름이고 순서는 파이프라인 순서다.
+role_purpose_ko:
+  rewrite: RoboCasa의 영어 원문 지시를 한국어 발화로 다시 써요
+  resolvability: 다시 쓴 지시가 환경 정보만으로 원래 작업을 가리키는지 판정해요
+  generate: 지시와 환경 컨텍스트를 받아 추론과 작업상황설명문을 만들어요
+  checklist: 만든 설명문을 체크리스트 항목마다 채점해요 (생성한 모델과 다른 모델)
+  probe: 설명문만 보고 작업을 계획할 때 빠진 정보가 있는지 판정해요
+
+# 프롬프트 화면: 프롬프트 파일의 <<자리>>에 무엇이 들어가는지. 키는 자리 이름이다.
+# 목표 상태에 쓸 상태 키가 없는 도메인에서 프롬프트의 상태 키 자리(<<DOMAIN_STATE_KEYS>>)에 넣는 말
+no_state_keys_ko: "(없음: 이 도메인에서는 state 단언을 쓰지 않는다)"
+
+prompt_slot_ko:
+  USER_INSTRUCTION: 사용자 지시 (한국어로 다시 쓴 것)
+  ENVIRONMENT_CONTEXT: 환경 컨텍스트 JSON (모델이 받는 씬 상태)
+  ORIGINAL_INSTRUCTION: 원천 데이터셋의 원문 지시 (영어)
+  REWRITTEN_INSTRUCTION: 다시 쓴 한국어 지시
+  GOLDEN_INSTRUCTION: 골든 예시의 지시
+  GOLDEN_CONTEXT: 골든 예시의 환경 컨텍스트
+  GOLDEN_OUTPUT: 골든 예시의 출력 (추론과 설명문)
+  TSD_JSON: 채점할 설명문 JSON
+  TSD_TEXT: 채점할 설명문을 글로 옮긴 것
+  DOMAIN_ROBOT: 도메인의 로봇 종류 (resources/domains, 가정은 가정용 로봇)
+  DOMAIN_PLACE: 도메인의 장소 (가정은 주방)
+  DOMAIN_FIXTURE: 옮기지 않는 설비를 부르는 낱말 (가정은 가구)
+  DOMAIN_STATE_KEYS: 목표 상태에 쓸 수 있는 상태 키와 풀이 (도메인 프로필의 goal_state_keys)
+  DOMAIN_RELATIONS: 목표 상태에 쓸 수 있는 관계 술어와 풀이 (도메인 프로필의 goal_relations)
+  DOMAIN_KNOWLEDGE: 이 도메인에서만 필요한 지식 (도메인 프로필의 knowledge, 없으면 빈칸)
+  EX_ACCESS: 도메인 예시 - 닿으려면 먼저 상태를 바꿔야 하는 것
+  EX_PRECONDITION: 도메인 예시 - 환경 설명에서 따라 나오는 선행 조건
+  EX_STATE_COMMANDS: 도메인 예시 - 상태를 바꾸라는 지시
+  EX_REMOVE: 도메인 예시 - 도착지 없이 없애라는 지시
+  EX_UNSPECIFIED: 도메인 예시 - 원 지시가 어느 것인지 정하지 않은 표현
+  EX_ORIGIN: 도메인 예시 - 옮길 물체가 처음 놓여 있는 곳 (보조의 초기 위치 기준)
+  EX_SPACE: 도메인 예시 - 작업이 시작되는 곳과 끝나는 곳
+  EX_RECEPTACLES: 도메인 예시 - 최종 수용 대상
+  EX_LOCATIONS: 도메인 예시 - 놓인 곳
+  EX_STATES: 도메인 예시 - 상태
+  EX_NUMBERED: 도메인 예시 - 번호 붙은 이름
+  EX_GOAL_ACTION: 도메인 예시 - 목표 상태가 아닌 행동
+  EX_GOAL_STATE: 도메인 예시 - 목표 상태
+  EX_UNEXPRESSIBLE: 도메인 예시 - 상태로 표현할 수 없는 목표
+  EX_PLAN_STEPS: 도메인 예시 - 단위작업
+  EX_REFERRING: 도메인 예시 - 번호 없이 가리키는 말
+  EX_OMISSION: 도메인 예시 - 생략한 지시
+  EX_EITHER: 도메인 예시 - 만족하는 최종 상태가 여러 가지인 지시
+  EX_ANY: 도메인 예시 - 번호를 뗀 이름 (아무 것)
+  EX_REGION: 도메인 예시 - 가구의 칸 이름
+  EX_REGION_LEVELS: 도메인 예시 - 받는 곳을 지시가 말한 만큼만 구체적으로
+  EX_GROUP: 도메인 예시 - 조건으로 여럿을 묶어 가리킨 지시
+  EX_HINT_GROUP: 도메인 예시 - 같은 위치 설명이 붙은 여럿을 그 설명으로 가리키기
+  EX_RENAME: 도메인 예시 - 원문 낱말 대신 환경 설명의 이름으로 부르기
+  GOLDEN_EXAMPLES: 예시 목록 (도메인 프로필의 golden_examples)
+
+# 작업상황설명문 대상 물체의 역할 표시명 (대시보드). 키는 target_objects의 필드 이름이다.
+target_role_ko:
+  required: 필수
+  key_means: 핵심 수단
+  auxiliary: 보조
+
+# 태스크 화면: 시나리오 분류(RoboCasa task_family) 표시명
+task_family_ko:
+  atomic: 단일 동작
+  composite: 복합 작업
+
+# 체크리스트 점수 뜻 (채점 프롬프트의 척도와 같다)
+score_labels_ko:
+  0: 미달
+  1: 부분 충족
+  2: 충족
+
+# 시나리오 필터 한국어 표시명 (대시보드). 키는 sampling.filters의 등록 이름이다.
+scenario_filter_ko:
+  directional_reference: 방향을 가리키는 지시
+
+# LLM 역할 한국어 표시명 (대시보드). 키는 roles.py의 등록 이름이다.
+role_ko:
+  rewrite: 지시 재작성
+  resolvability: 지시 해소 판정
+  generate: 설명문 생성
+  checklist: 체크리스트 채점
+  probe: 정보 충분성 판정
+
+# 씬 상태 값의 출처 한국어 표시명 (대시보드). 키는 models.StateSource 값이다.
+state_source_ko:
+  metadata: 메타데이터
+  task_source_static: 태스크 소스 정적 분석
+  sim: 시뮬레이터 첫 프레임
+  default_assumed: 기본값 가정
+  unknown: 모름

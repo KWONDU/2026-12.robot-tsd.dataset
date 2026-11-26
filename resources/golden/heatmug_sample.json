@@ -1,0 +1,158 @@
+{
+ "note": "골든 예시 (스펙 5.6). generate 프롬프트의 few-shot과 렌더러·검증기 단위테스트가 공유하는 단일 출처.",
+ "user_instruction": "머그에 든 우유 전자레인지에 30초 데워 줘",
+ "scene_state": {
+  "schema_version": "0.2",
+  "scene_id": "golden/HeatMug/manual/ep_0000",
+  "domain": "household",
+  "simulator": "manual",
+  "layout": {
+   "layout_id": null,
+   "layout_name": null,
+   "style_id": null,
+   "style_name": null
+  },
+  "fixtures": [
+   {
+    "id": "fx_dining_table_1",
+    "category": "dining_table",
+    "name_ko": "식탁",
+    "location_desc": "주방 내",
+    "states": {},
+    "state_source": "metadata"
+   },
+   {
+    "id": "fx_microwave_1",
+    "category": "microwave",
+    "name_ko": "전자레인지",
+    "location_desc": "조리대 우측",
+    "states": {
+     "door_open": false,
+     "turned_on": false
+    },
+    "state_source": "task_source_static"
+   }
+  ],
+  "objects": [
+   {
+    "id": "obj_001",
+    "category": "mug",
+    "name_ko": "머그",
+    "states": {
+     "filled": true,
+     "contents": "milk"
+    },
+    "placement": {
+     "fixture_id": "fx_dining_table_1",
+     "relation": "on"
+    },
+    "pose": null,
+    "size_class": null,
+    "role": null
+   }
+  ],
+  "relations": [
+   {
+    "subj": "obj_001",
+    "pred": "on",
+    "obj": "fx_dining_table_1",
+    "source": "metadata"
+   }
+  ],
+  "agent": {
+   "embodiment": "PandaOmron",
+   "base_near_fixture_id": null,
+   "holding": []
+  },
+  "constraints": [],
+  "provenance": {
+   "dataset_path": "golden",
+   "episode_index": 0,
+   "original_task_name": "HeatMug",
+   "extraction_tier": "A",
+   "assumed_defaults": [],
+   "source_object_names": {
+    "obj_001": "obj"
+   },
+   "source_fixture_names": {},
+   "source_fixture_refs": {}
+  }
+ },
+ "reasoning": "① 지시 해석: 머그에 담긴 우유를 전자레인지로 30초 가열한 뒤 회수하는 작업이다. ② 씬 접지: 우유가 담긴 머그는 obj_001로 fx_dining_table_1 위에 있고, 가열 수단인 전자레인지는 fx_microwave_1로 문이 닫혀 있고 미가동 상태다. ③ 역할 부여: obj_001은 조작 대상이므로 필수 물체, fx_microwave_1은 가열 수단이므로 핵심 수단, fx_dining_table_1은 초기 위치 기준이므로 보조 물체다. ④ 제약 도출: 전자레인지 문이 닫혀 있으므로 머그 투입 전에 문 개방이 선행해야 하고, 머그에 액체가 담겨 있어 이동 중 기울임이 제한된다. ⑤ 목표 상태·완료 판정: 가열은 씬 상태 어휘로 표현할 수 없으므로 30초 가동을 지속 시간 판정으로 남기고, 회수는 머그가 전자레인지 안에 있지 않은 최종 상태로 옮긴다.",
+ "task_situation_description": {
+  "task_goal": {
+   "summary": "식탁 위 머그에 담긴 우유를 전자레인지로 30초 가열한 후 회수하는 것",
+   "goal_state": [
+    [
+     {
+      "kind": "relation",
+      "subject": "obj_001",
+      "predicate": "in",
+      "object": "fx_microwave_1",
+      "value": false
+     }
+    ]
+   ],
+   "completion_conditions": [
+    {
+     "kind": "duration",
+     "description": "머그를 넣은 전자레인지가 30초 동안 가동됨",
+     "subject": "fx_microwave_1",
+     "value": 30,
+     "unit": "sec"
+    },
+    {
+     "kind": "goal_state",
+     "description": "가열을 마친 머그가 전자레인지 밖으로 회수됨",
+     "subject": null,
+     "value": null,
+     "unit": null
+    }
+   ]
+  },
+  "spatiotemporal_conditions": {
+   "time": "가열 시간 30초",
+   "space": "식탁과 조리대 우측 전자레인지 사이 구간"
+  },
+  "target_objects": {
+   "required": [
+    {
+     "ref": "obj_001",
+     "location": "식탁 위",
+     "state": "우유 담김"
+    }
+   ],
+   "key_means": [
+    {
+     "ref": "fx_microwave_1",
+     "location": "조리대 우측",
+     "state": "문 닫힘, 미가동",
+     "alternatives": []
+    }
+   ],
+   "auxiliary": [
+    {
+     "ref": "fx_dining_table_1",
+     "location": "주방 내",
+     "note": "머그의 초기 위치 기준"
+    }
+   ]
+  },
+  "constraints": [
+   {
+    "type": "precedence",
+    "description": "머그를 파지한 상태에서는 전자레인지 문을 열 수 없으므로 문 개방이 머그 이동에 선행해야 함"
+   },
+   {
+    "type": "physical",
+    "description": "머그에 액체가 담겨 있어 이동 중 기울임이 제한됨"
+   }
+  ]
+ },
+ "views": {
+  "text": {
+   "note": "world_state text 보기용 추론. 입력에 id가 없으므로 이름으로 쓴다. 설명문의 가리키는 칸은 보기의 이름표로 자동으로 바뀐다.",
+   "reasoning": "① 지시 해석: 머그에 담긴 우유를 전자레인지로 30초 가열한 뒤 회수하는 작업이다. ② 씬 접지: 우유가 담긴 머그는 식탁 위에 있고, 가열 수단인 전자레인지는 문이 닫혀 있고 미가동 상태다. ③ 역할 부여: 머그는 조작 대상이므로 필수 물체, 전자레인지는 가열 수단이므로 핵심 수단, 식탁은 초기 위치 기준이므로 보조 물체다. ④ 제약 도출: 전자레인지 문이 닫혀 있으므로 머그 투입 전에 문 개방이 선행해야 하고, 머그에 액체가 담겨 있어 이동 중 기울임이 제한된다. ⑤ 목표 상태·완료 판정: 가열은 상태 어휘로 표현할 수 없으므로 30초 가동을 지속 시간 판정으로 남기고, 회수는 머그가 전자레인지 안에 있지 않은 최종 상태로 옮긴다."
+  }
+ }
+}

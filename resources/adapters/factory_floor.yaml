@@ -1,0 +1,68 @@
+# 제조 도메인(공장 바닥에서 작업장 사이를 오가는 운반) 장면을 만드는 표. 어댑터는 src/tsdgen/adapters/factory_floor.py,
+# 배치 규칙은 src/tsdgen/adapters/factory_layout.py(RoboCup Logistics League 2025 규칙집의 스마트 팩토리)를 따른다.
+# 작업장 수와 물동량은 공개 시설 배치 벤치마크(data/factory_static/flp_instances.json, scripts/flp_extract.py)에서 온다.
+# 물건은 SimReady 에셋 목록(data/simready_static/factory_catalog.json)과 그 이름표(resources/adapters/simready_workshop.yaml)를 쓴다.
+
+grid:
+  zones_per_station: 8 # 규칙집 경기장: 기계 7대에 1m 구역 56개
+  cell_m: 3 # 공장 규모로 키운 구역 한 칸의 길이 (m). 통로 길이 = 경로 칸 수 x 이 값
+  entry_cells: 4 # 진입 구역(로봇 대기 구역) 칸 수. 규칙집처럼 구석에 둔다
+  max_tries: 6 # 배치가 안 되면 seed를 바꿔 다시 하는 횟수
+
+# 벤치마크 부서를 곳으로 바꿀 때의 역할: 물동량 그래프에서 들어오는 흐름이 없으면 공급, 나가는 흐름이 없으면 출하,
+# 그 사이는 공급에서 떨어진 깊이로 가공(얕음)·조립(깊음), 출하 바로 앞이면 검사로 본다 (규칙집 흐름: 공급 → 가공 → 조립 → 출하)
+roles:
+  supply: { category: supply_station, ko: 자재 공급대, zone: material, regions: [output] }
+  process: { category: machining_station, ko: 가공기, zone: machining, regions: [input, output], states: [turned_on] }
+  assembly: { category: assembly_station, ko: 조립 스테이션, zone: assembly, regions: [input, output], states: [turned_on] }
+  inspection: { category: inspection_station, ko: 검사대, zone: assembly, regions: [input, output] }
+  shipping: { category: shipping_dock, ko: 출하 도크, zone: shipping, regions: [input] }
+  # 벤치마크 밖에서 늘 두는 곳 (규칙집의 보관 기계, 공구·충전·폐기는 공장 운영에 늘 있다)
+  storage: { category: storage_station, ko: 자동 창고, zone: material, regions: [shelf], shelves: 6 }
+  tool_crib: { category: tool_crib, ko: 공구 보관소, zone: support, regions: [counter] }
+  charger: { category: charging_station, ko: 충전소, zone: support, regions: [] }
+  waste: { category: waste_station, ko: 폐기물 수거장, zone: support, regions: [bin] }
+  bay: { category: robot_bay, ko: 로봇 대기 구역, zone: support, regions: [] }
+extra_roles: [storage, tool_crib, charger, waste]
+# 부서를 공정 순서로 늘어놓았을 때 앞뒤에서 떼는 몫 (가공·조립은 그 사이를 반씩)
+role_shares: { supply: 0.15, inspection: 0.1, shipping: 0.1 }
+
+zones:
+  material: 자재 구역
+  machining: 가공 구역
+  assembly: 조립 구역
+  shipping: 출하 구역
+  support: 지원 구역
+
+region_ko: { input: 입구 버퍼, output: 출구 버퍼, shelf: 선반, counter: 반출대, bin: 수거함 }
+
+# 시설 알림과 지도 표시
+aisle_name: "통로 {n}"
+closures: # 막힌 통로의 까닭 (0개에서 2개)
+  count: [0, 1, 1, 2]
+  reasons: [바닥 보수 공사 중, 바닥 청소 중, 적재물이 쌓여 있음]
+one_way:
+  count: [0, 0, 1, 2]
+restricted: # 로봇이 들어가지 않는 구역 (통로 칸 몇 개를 덮는다)
+  odds: 0.5
+  kinds:
+    - { name: 지게차 작업 구역, note: 지게차 작업 중 }
+    - { name: 용접 작업 구역, note: 용접 작업 중 }
+    - { name: 안전 점검 구역, note: 안전 점검 중 }
+  cells: [2, 4]
+downtime: # 가공기·조립 스테이션의 점검 정지 (규칙집: 정해진 정지 30에서 60초)
+  odds: 0.25
+  seconds: [30, 45, 60]
+processing_s: [15, 20, 25] # 규칙집: 가공·조립 15에서 25초
+
+# 곳마다 놓이는 물건 (SimReady 물건 표의 성질이나 분류). 출구 버퍼의 물건은 공장 시스템이 알려 준다(로봇이 지금 보지 못함)
+contents:
+  supply: { output: [[part, 1, 2]] }
+  process: { output: [[part, 0, 1]], input: [[part, 0, 1]] }
+  assembly: { output: [[part, 0, 1]], input: [[part, 0, 1]] }
+  inspection: { input: [[part, 0, 1]], output: [[part, 0, 1]] }
+  storage: { shelf: [[part, 0, 1], [consumable, 0, 1]] }
+  tool_crib: { counter: [[tool, 1, 3]] }
+  waste: { bin: [] }
+  shipping: { input: [] }
+waste_at_stations: [[oily, 0, 1], [recyclable, 0, 1]] # 가공·조립 곳에 놓인 버릴 것 (수거 작업용, 기름 묻은 것·재활용할 것)

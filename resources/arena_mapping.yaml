@@ -1,0 +1,191 @@
+# Arena 상호운용 매핑. 값은 실제 Arena 저장소(data/raw/isaaclab_arena)에서 뽑았다.
+#
+# 이 파일은 우리 씬 상태와 Arena 환경 스펙 사이를 오갈 때만 쓰인다. 매핑이 없으면
+# (null) 그 항목은 변환에서 빠지고 unmapped로 보고된다. 조용히 버리지 않는다.
+#
+# object_registry: 우리 물체 카테고리 -> Arena 객체 registry_name.
+#   Arena 객체 라이브러리는 164종이고 우리 카테고리는 138종이라
+#   상당수가 대응되지 않는다. 대응 없는 카테고리를 Arena로 내보내면 그 물체는 씬에서 사라진다.
+#
+# fixture_prim_path: 우리 fixture 카테고리 -> 배경 안의 prim 경로.
+#   prim 경로는 주방 배경마다 다르므로 정답이 하나가 아니다. 아래 값은 실제 스펙에서
+#   관찰된 예시이며, 다른 주방을 쓰면 Arena의 `cli_runner.py --mode prim_tree` 출력으로
+#   확인해 채워야 한다 (Isaac Sim 필요).
+#
+# background_registry: RoboCasa layout/style 조합 -> Arena 주방 배경.
+#   RoboCasa 주방은 2,500종인데 Arena 주방은 5종 남짓이라 1:1 대응이 없다.
+#   default를 쓰되 그 사실을 provenance에 남긴다.
+
+object_registry:
+  apple: apple_01_objaverse_robolab
+  avocado: avocado01_fruits_veggies_robolab
+  bagel: bagel_00_objaverse_robolab
+  baguette: baguette_02_objaverse_robolab
+  banana: banana_ycb_robolab
+  bowl: bowl_ycb_robolab
+  butter: butter_hope_robolab
+  chocolate: chocolate_pudding_mix_hope_robolab
+  corn: corn_can_hope_robolab
+  fork: fork_big_vomp_robolab
+  ketchup: ketchup_bottle_hope_robolab
+  ladle: ladle_handal_robolab
+  lemon: lemon_01_fruits_veggies_robolab
+  lime: lime01_fruits_veggies_robolab
+  mayonnaise: mayonnaise_bottle_hope_robolab
+  milk: milk_carton_hope_robolab
+  mug: mug_hot3d_robolab
+  mustard: mustard_bottle_hope_robolab
+  orange: orange_01_fruits_veggies_robolab
+  pitcher: pitcher_hot3d_robolab
+  plate: plate_large_vomp_robolab
+  potato: potato_masher_hot3d_robolab
+  spatula: spatula_01_vomp_robolab
+  spoon: spoon_1_handal_robolab
+  tomato: tomato_sauce_can_hope_robolab
+  yogurt: yogurt_cup_hope_robolab
+  aluminum_foil: null
+  bacon: null
+  bagged_food: null
+  bar: null
+  bar_soap: null
+  basket: null
+  beer: null
+  bell_pepper: null
+  bottle: null
+  bottled_drink: null
+  bottled_water: null
+  boxed_drink: null
+  boxed_food: null
+  bread: null
+  broccoli: null
+  cake: null
+  can: null
+  candle: null
+  canned_food: null
+  carrot: null
+  cereal: null
+  cheese: null
+  cheese_grater: null
+  chicken_breast: null
+  chicken_drumstick: null
+  chips: null
+  cinnamon: null
+  coffee_cup: null
+  colander: null
+  condiment: null
+  condiment_bottle: null
+  cookie_dough_ball: null
+  cream_cheese_stick: null
+  croissant: null
+  cucumber: null
+  cup: null
+  cupcake: null
+  cutting_board: null
+  digital_scale: null
+  dish_rack: null
+  donut: null
+  egg: null
+  eggplant: null
+  fish: null
+  flour_bag: null
+  garlic: null
+  glass_cup: null
+  honey: null
+  honey_bottle: null
+  hot_dog: null
+  hotdog_bun: null
+  ice_cube: null
+  ice_cube_tray: null
+  jam: null
+  jar: null
+  jug: null
+  juice: null
+  kebab_skewer: null
+  kebabs: null
+  kettle: null
+  kettle_non_electric: null
+  kiwi: null
+  knife: null
+  lemon_wedge: null
+  lemonade: null
+  lettuce: null
+  liquor: null
+  mango: null
+  marshmallow: null
+  measuring_cup: null
+  mushroom: null
+  oil_and_vinegar_bottle: null
+  onion: null
+  pan: null
+  pancake: null
+  paprika: null
+  peach: null
+  pear: null
+  peeler: null
+  pickle_slice: null
+  pizza: null
+  pizza_cutter: null
+  pot: null
+  reamer: null
+  rolling_pin: null
+  salt_and_pepper_shaker: null
+  sandwich_bread: null
+  sausage: null
+  scissors: null
+  shaker: null
+  shrimp: null
+  soap_dispenser: null
+  sponge: null
+  spray: null
+  squash: null
+  steak: null
+  straw: null
+  sugar_cube: null
+  sweet_potato: null
+  syrup: null
+  syrup_bottle: null
+  tangerine: null
+  teapot: null
+  tongs: null
+  tray: null
+  tupperware: null
+  turmeric: null
+  waffle: null
+  water_bottle: null
+  whisk: null
+  wine: null
+  wooden_spoon: null
+
+fixture_prim_path:
+  blender: null
+  cabinet: null
+  coffee_machine: null
+  counter: counter_main_main_group/top_geometry_right
+  dishwasher: null
+  drawer: null
+  electric_kettle: null
+  fridge: fridge_main_group
+  microwave: microwave_main_group
+  open_cabinet: null
+  oven: null
+  sink: Sink/BasinBottom
+  stand_mixer: null
+  stool: null
+  stove: null
+  stovetop: null
+  toaster: null
+  toaster_oven: null
+
+background_registry:
+  default: lightwheel_kitchen_one_wall_coastal
+  by_layout_name: # RoboCasa layout 이름이 확인되면 여기에 대응을 채운다
+    l_shaped: lightwheel_kitchen_l_shaped_scandinavian
+    u_shaped_with_island: lightwheel_kitchen_u_shaped_with_island_farmhouse2
+    g_shaped_large: lightwheel_kitchen_g_shaped_large_scandinavian
+    one_wall: lightwheel_kitchen_one_wall_coastal
+
+embodiment_registry:
+  default: droid_abs_joint_pos
+  # 이족보행 휴머노이드는 ETRI 핵심 키워드다. Arena가 g1/gr1을 등록하면 여기에 추가한다.
+
+floor_prim_path: floor_room/geometry

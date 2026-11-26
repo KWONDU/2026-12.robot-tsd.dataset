@@ -1,0 +1,332 @@
+# 가정 도메인 (RoboCasa365 주방). 도메인 하나에 이 파일 하나다. 파일 이름이 도메인 이름이고, 원천 어댑터 설정의
+# domain(config/sources.yaml)이 이 이름을 고른다. 새 도메인(제조·물류 등)은 같은 키로 파일을 하나 더 만든다.
+#
+# 프롬프트는 도메인 낱말을 자리(<<DOMAIN_...>>, <<EX_...>>)로 받는다. 아래 값으로 채우면 가정 도메인 프롬프트가 된다.
+# 낱말 뒤에 조사가 바로 붙는 자리가 있으므로 fixture_ko는 받침 없는 낱말로 고른다(가구 -> 설비 같은 식).
+
+name_ko: 가정 주방 # 세계 상태 글의 '장소:'
+robot_ko: 가정용 로봇 # 프롬프트의 역할 설명
+place_ko: 주방 # 프롬프트의 '로봇이 인식한 ~의 세계 상태'
+fixture_ko: 가구 # 옮기지 않는 설비를 부르는 낱말 (세계 상태 글의 절 제목과 프롬프트)
+golden: golden/heatmug_sample.json # 예전 판 프롬프트(gen_v7까지)의 예시 한 건 (resources/ 기준)
+# gen_v8부터 쓰는 예시 목록(<<GOLDEN_EXAMPLES>>). 평가에 쓰는 장면에서 가져오지 않는다
+golden_examples: [golden/household/heat_mug.json]
+
+# 목표 상태의 상태 단언(kind state)에 쓸 수 있는 상태 키. 한국어 풀이는 사전 state_phrases의 true 값이다.
+goal_state_keys: [door_open, freezer_door_open, drawer_open, lid_open, turned_on, filled, pulled_out, head_raised]
+
+# 목표 상태의 관계 단언에 쓸 수 있는 술어와 풀이 (프롬프트의 <<DOMAIN_RELATIONS>>)
+goal_relations: { "on": 위, "in": 안, near: 근처, held_by: 로봇이 들고 있음 }
+
+# 이 도메인에서만 필요한 지식이 있으면 여기에 문장으로 적는다. 생성·채점·재작성·해소 프롬프트의
+# <<DOMAIN_KNOWLEDGE>> 자리에 그대로 들어간다. 가정 도메인은 지금 넣을 것이 없어 비워 둔다.
+knowledge: ""
+
+# 도메인마다 다른 프롬프트 규칙 문장. 키가 곧 프롬프트의 자리 이름이고(<<DOMAIN_NAMING>> 등), 문장 안의 예시 자리
+# (<<EX_...>>, <<DOMAIN_FIXTURE>>)는 이 프로필 값으로 채운다. 가정·물류 값은 예전 판 프롬프트에 박혀 있던 문장 그대로라
+# rewrite_v7·resolve_v7·gen_v19·check_v19를 채운 글이 rewrite_v6·resolve_v6·gen_v18·check_v18과 글자까지 같다.
+prompt_rules:
+  DOMAIN_NAMING: '사용자는 환경 설명의 번호(예: <<EX_NUMBERED>>)를 모른다. 지시에 번호를 쓰지 말고, 사람이 말하듯 이름과 위치·특징(예: <<EX_REFERRING>>)으로 가리킨다.'
+  DOMAIN_NAME_NUMBERS: '번호는 뺀다'
+  DOMAIN_NAMING_JUDGE: '재작성문은 사용자가 한 말이라 환경 설명의 번호를 쓰지 않는다. 번호 없이도 이름과 위치·특징으로 하나로 특정되면 해소된 것으로 본다.'
+  DOMAIN_AUX_STATE: '옮길 물체에 닿으려면 먼저 상태를 바꿔야 하는 <<DOMAIN_FIXTURE>>(예: <<EX_ACCESS>>. 지시가 그 상태를 바꾸라고 해서 goal_state에 쓴 경우는 필수다)'
+  DOMAIN_AUX_STATE_CHECK: '먼저 상태를 바꿔야 닿을 수 있는 출발지 <<DOMAIN_FIXTURE>>(예: <<EX_ACCESS>>)'
+  DOMAIN_TIME: '지시가 말한 시간 조건(지속 시간, 기다리는 시간, 언제까지)만 쓴다.'
+  DOMAIN_TIME_CHECK: '지시가 말한 시간 조건(지속 시간, 기다리는 시간, 언제까지)'
+  DOMAIN_ROUTE_CHECK: '' # gen_v20부터: 지식 문단 바로 뒤에 붙는 길 점검 순서 (공장만, 제조 Qwen이 길 점검을 빼먹어 넣음)
+  DOMAIN_EXECUTABLE_CHECK: ''
+prompt_examples:
+  RECEPTACLES: 그릇·접시 # 최종 수용 대상의 예 (뒤에 '·<<DOMAIN_FIXTURE>> 등'이 붙는다)
+  LOCATIONS: '"냉장고 냉동실 선반 위", "조리대 3 위, 싱크대 옆"'
+  STATES: '"문 닫힘", "가동 중"'
+  NUMBERED: 조리대 2
+  ANY: 조리대 # 번호를 뗀 이름 (그 이름의 아무 것)
+  REGION: 냉장고 냉장실 선반 2, 스토브 앞 왼쪽 화구 # 가구의 칸 이름 (가구 이름 + 칸 이름)
+  # 받는 곳을 지시가 말한 만큼만 구체적으로 쓰는 예
+  REGION_LEVELS: '"냉장고에 넣어"는 냉장고, "냉동실에 넣어"는 냉장고 냉동실, "냉장실 선반에 올려"는 냉장고 냉장실 선반, "냉장실 맨 위 선반에 올려"는 냉장고 냉장실 선반 1, "화구 아무 데나 올려"는 스토브 화구'
+  GROUP: 열려 있는 서랍을 전부 닫아 # 조건으로 여럿을 묶어 가리킨 지시
+  HINT_GROUP: "'조리대 4부터 6까지(아일랜드 식탁)' 가운데 아무 데나 놓으면 될 때 '아일랜드 식탁'" # 위치 설명으로 여럿을 묶어 가리키기
+  ACCESS: 문이 닫혀 있어 먼저 열어야 하는 캐비닛 # 옮길 물체에 닿으려면 먼저 상태를 바꿔야 하는 것
+  PRECONDITION: 닫힌 문을 먼저 열어야 함 # 환경 설명에서 따라 나오는 선행 조건
+  STATE_COMMANDS: 켜라, 끄라, 열라, 닫으라 # 상태를 바꾸라는 지시
+  REMOVE: 꺼내라, 치우라 # 도착지 없이 있던 곳에서 없애라는 지시
+  UNSPECIFIED: the counter # 원 지시가 종류만 말하고 어느 것인지 정하지 않은 표현
+  ORIGIN: 머그가 놓여 있는 식탁 # 옮길 물체가 처음 놓여 있는 곳 (보조: 초기 위치 기준)
+  SPACE: '식탁 위 머그를 전자레인지에 넣는 작업이면 start는 "식탁", end는 "전자레인지". 냉장고의 우유와 조리대 2의 빵을 식탁에 옮기는 작업이면 start는 "냉장고 혹은 조리대 2", end는 "식탁"' # 공간 조건: 작업이 시작되는 곳과 끝나는 곳
+  GOAL_ACTION: 전자레인지 문을 연다
+  GOAL_STATE: 머그가 전자레인지 안에 있다
+  UNEXPRESSIBLE: 가열 정도, 세척 여부
+  PLAN_STEPS: '"냉장고로 이동", "생선을 잡기"'
+  REFERRING: 아일랜드 조리대, 머그가 놓인 조리대
+  OMISSION: 컵 좀 데워 줘
+  RENAME: 원문이 dining counter라고 해도 환경 설명에 '조리대 5(아일랜드 식탁)'으로 나오면 '아일랜드 식탁'이라고 부른다
+  EITHER: 레몬은 한 그릇에, 브로콜리는 다른 그릇에 담으라는 지시라면 레몬이 그릇 1에 있는 경우와 그릇 2에 있는 경우 # 만족하는 최종 상태가 여러 가지인 예
+
+# 작업 합성(compose 스테이지)이 쓰는 낱말과 규칙. 장면의 물체·가구·칸으로 작업 유형의 빈칸을 채울 때,
+# 지시문(영어 원문)에 쓸 이름과 "무엇을 어디에 둘 수 있는가"를 여기서 읽는다. 성질(trait)은 원천이 알려 준 것이다.
+task_synthesis:
+  object_en: { kettle_non_electric: kettle, kettle_electric: electric kettle, bread_flat: flatbread } # 없으면 분류 이름의 밑줄을 띄어 쓴다
+  fixture_en: { stovetop: stove, toaster_oven: toaster oven, coffee_machine: coffee machine }
+  region_en: # 칸 종류 -> 지시문에 쓰는 이름 (여기 없는 칸은 가리키지 않는다)
+    fridge_shelf: shelf
+    fridge_drawer: drawer
+    freezer_shelf: freezer shelf
+    freezer_drawer: freezer drawer
+    rack: rack
+    front_left: front left burner
+    front_right: front right burner
+    front_center: front center burner
+    rear_left: rear left burner
+    rear_right: rear right burner
+    rear_center: rear center burner
+    center: center burner
+  burners: [front_left, front_right, front_center, rear_left, rear_right, rear_center, center]
+  open_keys: [door_open, drawer_open] # 안의 물체에 닿으려면 열려 있어야 하는 상태 키
+  region_doors: # 가구의 문과 따로 여닫는 칸: 칸 종류 -> 상태 키와 문 이름
+    freezer_shelf: { key: freezer_door_open, name: freezer door }
+    freezer_drawer: { key: freezer_door_open, name: freezer door }
+  destinations: # 물체를 받는 가구: 관계, 필요한 성질, any면 그 종류 아무 것
+    counter: { relation: "on", any: true }
+    sink: { relation: "in", trait: washable }
+    microwave: { relation: "in", trait: microwavable }
+    fridge: { relation: "in", trait: fridgable }
+  region_destinations: # 물체를 받는 칸: 가구 종류 -> 칸 종류 -> 관계와 조건
+    fridge:
+      fridge_shelf: { relation: "on", trait: fridgable }
+      fridge_drawer: { relation: "in", trait: fridgable }
+      freezer_shelf: { relation: "on", trait: freezable }
+      freezer_drawer: { relation: "in", trait: freezable }
+    dishwasher:
+      rack: { relation: "on", types: [receptacle, utensil] } # 식기와 조리 도구만
+    stove: &burner_rules
+      front_left: &cookware { relation: "on", categories: [pan, pot, saucepan, kettle_non_electric] }
+      front_right: *cookware
+      front_center: *cookware
+      rear_left: *cookware
+      rear_right: *cookware
+      rear_center: *cookware
+      center: *cookware
+    stovetop: *burner_rules
+  receptacle_items: { not_types: [receptacle] } # 용기에 담을 수 있는 것: 용기 자신은 다른 용기에 담지 않는다
+  receptacles: # 다른 물체를 받는 물체: 관계 -> 종류
+    "in": [bowl, pot, saucepan, pan, tupperware]
+    "on": [plate, tray, cutting_board]
+  heaters: [microwave]
+  washers: [sink]
+  durations_s: [20, 30, 45, 60]
+  size_ratio_min: 1.15 # 큰 것·작은 것으로 가를 부피 비 하한 (세계 상태 글의 크기 순서와 같은 기준)
+  switches: # 상태만 바꾸는 작업: 가구 종류 -> 상태 키 -> [참으로 만드는 지시, 거짓으로 만드는 지시]
+    fridge: { door_open: ["Open {target}.", "Close {target}."], drawer_open: ["Pull open {target}.", "Push {target} closed."] }
+    microwave: { door_open: ["Open {target}.", "Close {target}."] }
+    dishwasher: { door_open: ["Open {target}.", "Close {target}."], pulled_out: ["Pull out {target}.", "Push {target} back in."] }
+    oven: { door_open: ["Open {target}.", "Close {target}."], pulled_out: ["Pull out {target}.", "Push {target} back in."] }
+    toaster_oven: { door_open: ["Open {target}.", "Close {target}."], pulled_out: ["Pull out {target}.", "Push {target} back in."] }
+    sink: { turned_on: ["Turn on the faucet of {target}.", "Turn off the faucet of {target}."] }
+    stove: { turned_on: ["Turn on {target}.", "Turn off {target}."] }
+    stovetop: { turned_on: ["Turn on {target}.", "Turn off {target}."] }
+    electric_kettle: { lid_open: ["Open the lid of {target}.", "Close the lid of {target}."] }
+
+  # 원 과제에 있는 구조(모아 담기, 비우기, 쌓기, 여러 개 옮기기)를 가정 합성에 더할 때 쓰는 낱말 (2026-11-15, docs/DECISIONS.md)
+  holder_trait: receptacle
+  group_max: 4
+  clear_max: 6
+  stack_height_max: 4
+  object_plural_en:
+    aluminum_foil: aluminum foils
+    apple: apples
+    apricot: apricots
+    artichoke: artichokes
+    asparagus: asparaguses
+    avocado: avocados
+    bacon: bacons
+    bagel: bagels
+    bagged_food: bagged foods
+    baguette: baguettes
+    baking_sheet: baking sheets
+    banana: bananas
+    bar: bars
+    bar_soap: bar soaps
+    basket: baskets
+    beer: beers
+    beet: beets
+    bell_pepper: bell peppers
+    blender_jug: blender jugs
+    bottle_opener: bottle openers
+    bottled_drink: bottled drinks
+    bottled_water: bottled waters
+    bowl: bowls
+    boxed_drink: boxed drinks
+    boxed_food: boxed foods
+    bread: breads
+    bread_flat: flatbreads
+    broccoli: broccolis
+    brussel_sprout: brussel sprouts
+    burrito: burritos
+    butter_stick: butter sticks
+    cabbage: cabbages
+    cake: cakes
+    can: cans
+    can_opener: can openers
+    candle: candles
+    candy: candies
+    canned_food: canned foods
+    canola_oil: canola oils
+    cantaloupe: cantaloupes
+    carrot: carrots
+    cauliflower: cauliflowers
+    celery: celeries
+    cereal: cereals
+    cheese: cheeses
+    cheese_grater: cheese graters
+    cherry: cherries
+    chicken_breast: chicken breasts
+    chicken_drumstick: chicken drumsticks
+    chili_pepper: chili peppers
+    chips: bags of chips
+    chocolate: chocolates
+    cinnamon: cinnamons
+    coconut: coconuts
+    coffee_cup: coffee cups
+    colander: colanders
+    condiment_bottle: condiment bottles
+    cookie_dough_ball: cookie dough balls
+    corn: corns
+    cream_cheese_stick: cream cheese sticks
+    croissant: croissants
+    cucumber: cucumbers
+    cup: cups
+    cupcake: cupcakes
+    cutting_board: cutting boards
+    dates: dates
+    digital_scale: digital scales
+    dish_brush: dish brushes
+    donut: donuts
+    dumpling: dumplings
+    egg: eggs
+    eggplant: eggplants
+    fish: fishes
+    flour_bag: flour bags
+    fork: forks
+    garlic: garlics
+    ginger: gingers
+    glass_cup: glass cups
+    grapes: bunches of grapes
+    ham: hams
+    hamburger: hamburgers
+    honey_bottle: honey bottles
+    hot_dog: hot dogs
+    hotdog_bun: hotdog buns
+    ice_cream: ice creams
+    ice_cube: ice cubes
+    ice_cube_tray: ice cube trays
+    jam: jams
+    jar: jars
+    jello_cup: jello cups
+    jug: jugs
+    jug_wide_opening: jug wide openings
+    juice: juices
+    kebab_skewer: kebab skewers
+    kebabs: kebabs
+    ketchup: ketchups
+    kettle_non_electric: kettles
+    kiwi: kiwis
+    knife: knives
+    ladle: ladles
+    lamb_chop: lamb chops
+    lemon: lemons
+    lemon_wedge: lemon wedges
+    lemonade: lemonades
+    lettuce: lettuces
+    lime: limes
+    liquor: liquors
+    lobster: lobsters
+    lollipop: lollipops
+    mango: mangos
+    marshmallow: marshmallows
+    mayonnaise: mayonnaises
+    measuring_cup: measuring cups
+    milk: milks
+    mug: mugs
+    mushroom: mushrooms
+    mustard: mustards
+    oil_and_vinegar_bottle: oil and vinegar bottles
+    olive_oil_bottle: olive oil bottles
+    onion: onions
+    orange: oranges
+    oven_tray: oven trays
+    pan: pans
+    pancake: pancakes
+    paprika: paprikas
+    peach: peaches
+    peanut_butter: peanut butters
+    pear: pears
+    peeler: peelers
+    pickle: pickles
+    pickle_slice: pickle slices
+    pineapple: pineapples
+    pitcher: pitchers
+    pizza: pizzas
+    pizza_cutter: pizza cutters
+    placemat: placemats
+    plate: plates
+    pomegranate: pomegranates
+    pork_chop: pork chops
+    pork_loin: pork loins
+    pot: pots
+    potato: potatoes
+    radish: radishes
+    raspberry: raspberries
+    reamer: reamers
+    rolling_pin: rolling pins
+    salami: salamis
+    salsa: salsas
+    salt_and_pepper_shaker: salt and pepper shakers
+    sandwich_bread: sandwich breads
+    saucepan: saucepans
+    saucepan_lid: saucepan lids
+    saucepan_with_lid: saucepan with lids
+    sausage: sausages
+    scallops: scallops
+    scissors: pairs of scissors
+    scone: scones
+    shaker: shakers
+    shrimp: shrimps
+    skewers: skewers
+    soap_dispenser: soap dispensers
+    spaghetti_box: spaghetti boxes
+    spatula: spatulas
+    sponge: sponges
+    spoon: spoons
+    spray: sprays
+    squash: squashes
+    steak: steaks
+    strainer: strainers
+    straw: straws
+    strawberry: strawberries
+    sugar_cube: sugar cubes
+    sushi: sushis
+    sweet_potato: sweet potatoes
+    syrup_bottle: syrup bottles
+    tacos: tacos
+    tangerine: tangerines
+    teapot: teapots
+    thermos: thermoses
+    tofu: tofus
+    tomato: tomatoes
+    tomato_slice: tomato slices
+    tongs: pairs of tongs
+    tray: trays
+    tupperware: tupperwares
+    turkey_slice: turkey slices
+    turmeric: turmerics
+    vinegar: vinegars
+    waffle: waffles
+    walnut: walnuts
+    water_bottle: water bottles
+    watermelon: watermelons
+    whisk: whisks
+    wine: wines
+    wine_glass: wine glasses
+    wooden_spoon: wooden spoons
+    yogurt: yogurts
+    zucchini: zucchinis

@@ -1,0 +1,238 @@
+# 제조(자동차 부품 조립·정비 작업장) 장면을 만드는 표. 에셋은 NVIDIA SimReady 에셋 모음(nvidia/simready-assets, CC BY 4.0)이다.
+# 에셋의 크기·질량·관절은 scripts/simready_catalog.py가 만든 목록(data/simready_static/factory_catalog.json)에서 읽고,
+# 어댑터(src/tsdgen/adapters/simready_workshop.py)가 이 표의 작업대 틀(stations)로 설비를 놓고 칸에 물건을 넣는다.
+# 받은 배치가 아니라 규칙으로 만든 배치다(협의자료 2-2절: 카탈로그에서 물체 목록을 정하고 배치 규칙과 제약 조건을 조합해
+# 씬 상태를 코드로 만든다). 작업대 틀은 공개 벤치마크의 작업대 구성을 따랐다(아래 basis).
+
+# 물건 종류: 에셋 이름 정규식 -> 분류, 한국어 이름, 성질. 위에서부터 처음 맞는 것을 쓴다. 여기 없는 에셋은 쓰지 않는다.
+# 성질: graspable 손으로 옮길 수 있음, small 용기에 담을 만한 작은 것, tool 공구, part 부품, holder 다른 것을 담는 용기,
+# consumable 소모품, waste 버릴 것(쓰레기통), oily 기름 묻은 폐기물(유류 폐기물통), recyclable 재활용할 것(재활용함),
+# washable 부품 세척기에 넣어 씻는 금속 부품, crushable 필터 압착기에 넣는 사용한 필터
+items:
+  - { match: "^handTool_socket_", category: socket, ko: 소켓, traits: [graspable, small, tool] }
+  - { match: "^handTool_(torque_wrench|wrench_torque)", category: torque_wrench, ko: 토크 렌치, traits: [graspable, tool] }
+  - { match: "^handTool_wrench_adjustable", category: adjustable_wrench, ko: 몽키 스패너, traits: [graspable, tool] }
+  - { match: "^handTool_wrench_(combination|\\d)", category: combination_wrench, ko: 콤비네이션 렌치, traits: [graspable, tool] }
+  - { match: "^handTool_(air_)?ratchet", category: ratchet, ko: 라쳇 핸들, traits: [graspable, tool] }
+  - { match: "^handTool_screwdriver_phillips", category: phillips_screwdriver, ko: 십자 드라이버, traits: [graspable, small, tool] }
+  - { match: "^handTool_screwdriver_slotted", category: flat_screwdriver, ko: 일자 드라이버, traits: [graspable, small, tool] }
+  - { match: "^handTool_screwdriver_torx", category: torx_screwdriver, ko: 별 드라이버, traits: [graspable, small, tool] }
+  - { match: "^handTool_pliers_long_nose", category: long_nose_pliers, ko: 롱노즈 플라이어, traits: [graspable, small, tool] }
+  - { match: "^handTool_pliers_(combination|diagonal)", category: pliers, ko: 플라이어, traits: [graspable, small, tool] }
+  - { match: "^handTool_hammer_rubberMallet", category: rubber_mallet, ko: 고무망치, traits: [graspable, tool] }
+  - { match: "^handTool_hammer_", category: hammer, ko: 망치, traits: [graspable, tool] }
+  - { match: "^testingTool_multimeter", category: multimeter, ko: 멀티미터, traits: [graspable, small, tool] }
+  - { match: "^powerTool_drill", category: drill, ko: 전동 드릴, traits: [graspable, tool] }
+  - { match: "^powerTool_impact_wrench_b", category: impact_wrench, ko: 임팩트 렌치, traits: [graspable, tool] }
+  - { match: "^engineComponent_water_pump_(a|b|c)", category: water_pump, ko: 워터 펌프, traits: [graspable, part, washable] }
+  - { match: "^engineComponent_oil_pump", category: oil_pump, ko: 오일 펌프, traits: [graspable, part, washable] }
+  - { match: "^engineComponent_oil_filter_(a|d)", category: oil_filter, ko: 오일 필터, traits: [graspable, small, part, crushable, recyclable] }
+  - { match: "^engineComponent_engine_mount", category: engine_mount, ko: 엔진 마운트, traits: [graspable, part, washable] }
+  - { match: "^engineComponent_spark_plug", category: spark_plug, ko: 점화 플러그, traits: [graspable, small, part] }
+  - { match: "^engineComponent_cylinder_piston_(a|b)", category: piston, ko: 피스톤, traits: [graspable, part, washable] }
+  - { match: "^engineComponent_camshaft_a", category: camshaft, ko: 캠축, traits: [graspable, part, washable] }
+  - { match: "^engineComponent_crankshaft", category: crankshaft, ko: 크랭크축, traits: [graspable, part, washable] }
+  - { match: "^engineComponent_timing_chain_(cam|crank|inter)Sprocket", category: sprocket, ko: 스프로킷, traits: [graspable, small, part, washable] }
+  - { match: "^engineComponent_timing_chain_guide", category: chain_guide, ko: 체인 가이드, traits: [graspable, small, part] }
+  - { match: "^engineComponent_timing_chain_tensioner", category: tensioner, ko: 체인 텐셔너, traits: [graspable, small, part] }
+  - { match: "^engineComponent_timing_chain_(a|b)", category: timing_chain, ko: 타이밍 체인, traits: [graspable, small, part] }
+  - { match: "^engineComponent_idler_pulley", category: idler_pulley, ko: 아이들러 풀리, traits: [graspable, small, part] }
+  - { match: "^electricalSystem_battery_(a|c)", category: battery, ko: 배터리, traits: [graspable, part] }
+  - { match: "^electricalSystem_starter", category: starter_motor, ko: 시동 모터, traits: [graspable, part] }
+  - { match: "^electricalSystem_engine_control_module_b", category: ecu, ko: 엔진 제어 모듈, traits: [graspable, part] }
+  - { match: "^brakeSystem_brake_pad", category: brake_pad, ko: 브레이크 패드, traits: [graspable, small, part, washable] }
+  - { match: "^consumable_bearing_ball", category: bearing, ko: 베어링, traits: [graspable, small, part, washable] }
+  - { match: "^consumable_oil_seal", category: oil_seal, ko: 오일 실, traits: [graspable, small, part] }
+  - { match: "^consumable_fuse_", category: fuse, ko: 퓨즈, traits: [graspable, small, consumable] }
+  - { match: "^consumable_lightBulb_", category: bulb, ko: 전구, traits: [graspable, small, consumable] }
+  - { match: "^consumable_(air_filter_engine|cabin_filter)", category: air_filter, ko: 에어 필터, traits: [graspable, consumable, waste] }
+  - { match: "^consumable_fuel_filter", category: fuel_filter, ko: 연료 필터, traits: [graspable, small, consumable, crushable, oily] }
+  - { match: "^consumable_hose_", category: hose, ko: 호스, traits: [graspable, consumable] }
+  - { match: "^consumable_belt_(serpentine|timing_a)", category: drive_belt, ko: 구동 벨트, traits: [graspable, consumable] }
+  - { match: "^consumable_engine_oil", category: engine_oil, ko: 엔진 오일 통, traits: [graspable, consumable] }
+  - { match: "^consumable_brake_fluid", category: brake_fluid, ko: 브레이크액 통, traits: [graspable, consumable] }
+  - { match: "^consumable_antifreeze_coolant", category: coolant, ko: 냉각수 통, traits: [graspable, consumable] }
+  - { match: "^consumable_spray_solvent", category: cleaner_spray, ko: 세정제 스프레이, traits: [graspable, small, consumable] }
+  - { match: "^consumable_threadlocker", category: threadlocker, ko: 나사 고정제, traits: [graspable, small, consumable] }
+  - { match: "^consumable_microfiber_towel_(folded|wrinkled)", category: towel, ko: 작업용 타월, traits: [graspable, small, consumable, oily] }
+  - { match: "^consumable_cup_paper", category: paper_cup, ko: 종이컵, traits: [graspable, small, recyclable] }
+  - { match: "^ppe_gloves_(cloth|lightDuty|leather)", category: work_gloves, ko: 작업 장갑, traits: [graspable, small, oily] }
+  - { match: "^factory_bolt_m0*(\\d+)_", category: "bolt_m{1}", ko: "M{1} 볼트", traits: [graspable, small, part] }
+  - { match: "^factory_nut_m0*(\\d+)_", category: "nut_m{1}", ko: "M{1} 너트", traits: [graspable, small, part] }
+  - { match: "^crate_(blue|gray|green|orange|red|white|black)_a(14|19|20)", category: "parts_tray_{1}", ko: "{color} 부품 트레이", traits: [graspable, holder] }
+  - { match: "^storage_toolbox_carry_hardCase", category: toolbox, ko: 공구함, traits: [graspable, holder] }
+  - { match: "^serviceTool_oil_pan_(a|b)", category: drain_pan, ko: 오일 받이, traits: [graspable, holder] }
+
+# 부품 트레이 색의 한국어 ({color} 자리)
+colors: { blue: 파란, gray: 회색, green: 초록, orange: 주황, red: 빨간, white: 흰색, black: 검은 }
+
+# 설비: 에셋 이름 정규식 -> 분류, 한국어 이름, 칸. 칸은 위에서부터 적는다.
+# 칸 하나: key(칸 종류, 번호는 어댑터가 붙인다), relation(on/in), state(그 칸만의 여닫힘: drawer_open 등, 없으면 설비의 상태),
+# from_joint(그 칸의 수를 관절 수에서 셀 때 관절 이름 앞부분), count(관절이 없을 때 고정 수).
+# states: 설비 자체의 상태 키와 그 상태를 정하는 관절 이름 앞부분 (관절이 실제로 있는 에셋만 그 상태를 갖는다)
+fixtures:
+  - match: "^furniture_workbench_standard_e01$"
+    category: workbench
+    ko: 작업대
+    regions:
+      - { key: top, relation: "on" }
+      - { key: drawer, relation: "in", state: drawer_open, from_joint: drawer }
+      - { key: cabinet, relation: "in", state: door_open, from_joint: door, count_max: 1 }
+  - match: "^furniture_workbench_modular_(a|b)01$"
+    category: workbench
+    ko: 작업대
+    regions:
+      - { key: top, relation: "on" }
+      - { key: cabinet, relation: "in", state: door_open, from_joint: door, count_max: 1 }
+  - match: "^furniture_workbench_standard_d01$"
+    category: workbench
+    ko: 작업대
+    regions:
+      - { key: top, relation: "on" }
+      - { key: shelf, relation: "on", count: 1 }
+  - match: "^equipment_(rolling_tool_cabinet_a01|rolling_tool_cabinet_heavyDuty_b01|rolling_tool_chest_cabinet_combo_d01|mechanic_tool_cart_g01|tools_trolley_a01)$"
+    category: tool_cabinet
+    ko: 공구 캐비닛
+    regions:
+      - { key: top, relation: "on" }
+      - { key: drawer, relation: "in", state: drawer_open, from_joint: drawer }
+  - match: "^equipment_(multi_tier_bin_cart_c01|angle_bin_cart_d01)$"
+    category: bin_cart
+    ko: 부품 카트
+    regions:
+      - { key: tier, relation: "on", count: 3 }
+  - match: "^equipment_mechanic_work_tray_cart_i01$"
+    category: tray_cart
+    ko: 작업 카트
+    regions:
+      - { key: tray, relation: "on", count: 2 }
+  - match: "^storageSystem_rack_heavyDuty_e01$"
+    category: parts_rack
+    ko: 부품 랙
+    regions:
+      - { key: shelf, relation: "on", count: 3 }
+  - match: "^equipment_parts_washer_cabinet_b01$"
+    category: parts_washer
+    ko: 부품 세척기
+    states: { door_open: door, turned_on: button }
+    regions:
+      - { key: chamber, relation: "in" }
+  - match: "^serviceTool_used_filter_crusher_(a|b)01$"
+    category: filter_crusher
+    ko: 필터 압착기
+    states: { door_open: door }
+    regions:
+      - { key: chamber, relation: "in" }
+  - match: "^equipment_3d_printer_(a|b)01$"
+    category: printer_3d
+    ko: 3D 프린터
+    states: { lid_open: lid }
+    regions:
+      - { key: bed, relation: "on" }
+  - match: "^powerTool_welding_station_a01$"
+    category: welding_station
+    ko: 용접기
+    states: { turned_on: switch }
+    regions: []
+  - match: "^equipment_airCompressor_b01$"
+    category: air_compressor
+    ko: 공기 압축기
+    states: { turned_on: switch }
+    regions: []
+  - match: "^wasteManagement_oilyWasteCan_metal_a01$"
+    category: oily_waste_can
+    ko: 유류 폐기물통
+    states: { lid_open: lid }
+    regions: [] # 폐기함 안은 칸으로 나누지 않는다 (물체는 폐기함 안에 놓인다)
+  - match: "^wasteManagement_recyclingBin_multiStream_a01$"
+    category: recycling_bin
+    ko: 재활용함
+    states: { lid_open: lid }
+    regions: [] # 폐기함 안은 칸으로 나누지 않는다 (물체는 폐기함 안에 놓인다)
+  - match: "^wasteManagement_trashBin_wheeled_a01$"
+    category: trash_bin
+    ko: 쓰레기통
+    states: { lid_open: lid }
+    regions: [] # 폐기함 안은 칸으로 나누지 않는다 (물체는 폐기함 안에 놓인다)
+
+# 칸 종류의 한국어 이름 (번호는 위에서부터)
+region_ko: { top: 상판, drawer: 서랍, cabinet: 수납장, shelf: 선반, tier: 단, tray: 트레이, chamber: 세척실, bed: 출력판 }
+# 설비별로 칸 이름이 다르면 여기서 덮어쓴다 ('설비 분류.칸 종류')
+region_ko_by_fixture: { filter_crusher.chamber: 압착실 }
+
+# 작업대 틀: 장면 하나는 틀 2개나 3개를 고른다. 틀마다 설비 하나를 고르고(설비 후보 중 seed로), 칸마다 물건을 넣는다.
+# fill: 칸 종류 -> [물건 성질 또는 분류, 최소 수, 최대 수]. 칸이 여럿이면(서랍 1부터 4까지) 칸마다 따로 채우고, 빈 칸도 둔다.
+# basis: 이 틀을 만든 근거가 된 공개 벤치마크 과제
+stations:
+  assembly_bench:
+    basis: "GenieSim install_bearing_shaft_seat, pour_workpiece; Isaac Lab-Arena 공구 작업대"
+    fixture: [workbench]
+    fill:
+      top: [[part, 1, 3], [tool, 0, 2], [parts_tray, 0, 1]]
+      drawer: [[tool, 0, 2]]
+      cabinet: [[consumable, 0, 2]]
+      shelf: [[part, 0, 2]]
+    tray_fill: [[small_part, 1, 3]] # 트레이에 담기는 작은 부품 (볼트, 너트, 베어링 등)
+  tool_storage:
+    basis: "Isaac Lab-Arena 'Close the drawer and socket toolcase'; 공구 반납"
+    fixture: [tool_cabinet]
+    fill:
+      top: [[tool, 0, 2], [toolbox, 0, 1]]
+      drawer: [[tool, 0, 3]]
+  parts_washing:
+    basis: "부품 세척기에 부품 넣고 빼기 (Isaac Lab-Arena 장비 조작, GenieSim 부품 투입)"
+    fixture: [parts_washer]
+    fill:
+      chamber: [[washable, 0, 1]]
+    beside: [tray_cart, workbench] # 옆에 둘 설비 하나 (넣을 부품이 놓인 곳)
+    beside_fill:
+      top: [[washable, 1, 2]]
+      tray: [[washable, 0, 2]]
+      shelf: [[part, 0, 1]]
+  filter_crushing:
+    basis: "사용한 오일 필터를 필터 압착기에 넣어 압착하기 (정비 작업장 폐유 필터 처리)"
+    fixture: [filter_crusher]
+    fill:
+      chamber: [[crushable, 0, 1]]
+    beside: [tray_cart, workbench]
+    beside_fill:
+      top: [[crushable, 0, 1], [oily, 0, 2]]
+      tray: [[crushable, 0, 1], [oily, 0, 1]]
+  kitting:
+    basis: "ARIAC 키팅(빈에서 부품을 골라 트레이에), GenieSim pour_workpiece"
+    fixture: [bin_cart]
+    fill:
+      tier: [[small_part, 1, 3], [consumable, 0, 1]]
+    beside: [workbench]
+    beside_fill:
+      top: [[parts_tray, 1, 2]]
+  waste_station:
+    basis: "작업장 정리: 사용한 필터·타월·장갑을 유류 폐기물통과 재활용함에 버리기"
+    fixture: [oily_waste_can, recycling_bin, trash_bin]
+    extra_fixtures: 1 # 폐기함을 하나 더 둔다
+    beside: [tray_cart, workbench]
+    beside_fill:
+      top: [[oily, 0, 2], [recyclable, 0, 1], [waste, 0, 1]]
+      tray: [[oily, 0, 1], [recyclable, 0, 1], [waste, 0, 1]]
+  parts_shelf:
+    basis: "부품 보관 랙에서 부품 꺼내기·보충 (GenieSim transport cartons, 물류의 적치와 같은 일)"
+    fixture: [parts_rack]
+    fill:
+      shelf: [[part, 0, 2], [consumable, 0, 1], [parts_tray, 0, 1]]
+  power_tools:
+    basis: "용접기·공기 압축기 켜고 끄기, 3D 프린터 뚜껑 여닫기 (Isaac Lab-Arena 'turn off the oscilloscope')"
+    fixture: [welding_station, air_compressor, printer_3d]
+    beside: [workbench]
+    beside_fill:
+      top: [[tool, 1, 2], [part, 0, 1]]
+
+# fill에서 쓰는 이름: 여기 있으면 이 조건(traits: 모두 가진 것, prefix: 분류가 이것으로 시작하는 것),
+# 없으면 같은 이름의 분류, 그것도 아니면 같은 이름의 성질 하나를 가진 물건이다.
+groups:
+  small_part: { traits: [small, part] }
+  parts_tray: { prefix: parts_tray }
+
+# 처음 상태를 정하는 확률 (seed로 정한다)
+state_odds: { drawer_open: 0.3, door_open: 0.3, lid_open: 0.3, turned_on: 0.4 }
+# 함께 참일 수 없는 상태 (앞의 것이 참이면 뒤의 것은 거짓): 문이 열린 세척기는 돌지 않는다
+exclusive_states: [[door_open, turned_on]]

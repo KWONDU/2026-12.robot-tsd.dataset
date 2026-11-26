@@ -1,0 +1,1386 @@
+{
+  "note": "제조(공장 지도 기반 운반) 생성 프롬프트의 두 번째 예시. 물건을 집으러 가는 길의 가장 짧은 길이 막힌 통로와 출입 제한 구역을 지나는 통로라 돌아가야 하고, 받는 곳이 점검으로 멈춰 있어 다시 가동될 때까지 기다려야 한다. 첫 예시(deliver_detour)는 나르는 길이 막힌 경우다.",
+  "user_instruction": "시동 모터를 조립 스테이션 1 입구 버퍼로 가져다 줘.",
+  "scene_state": {
+    "schema_version": "0.6",
+    "scene_id": "factory_floor/5e241066c0",
+    "domain": "manufacturing",
+    "simulator": "rule_generated",
+    "layout": {
+      "layout_id": null,
+      "layout_name": "Bozer97_1",
+      "style_id": null,
+      "style_name": null
+    },
+    "fixtures": [
+      {
+        "id": "fx_floor_1",
+        "category": "floor",
+        "name_ko": "바닥",
+        "location_desc": null,
+        "states": {},
+        "state_source": "unknown",
+        "regions": []
+      },
+      {
+        "id": "fx_robot_bay_1",
+        "category": "robot_bay",
+        "name_ko": "로봇 대기 구역",
+        "location_desc": "지원 구역",
+        "states": {},
+        "state_source": "metadata",
+        "regions": []
+      },
+      {
+        "id": "fx_supply_station_1",
+        "category": "supply_station",
+        "name_ko": "자재 공급대",
+        "location_desc": "자재 구역",
+        "states": {},
+        "state_source": "metadata",
+        "regions": [
+          {
+            "key": "output",
+            "name_ko": "출구 버퍼",
+            "states": {}
+          }
+        ]
+      },
+      {
+        "id": "fx_machining_station_1",
+        "category": "machining_station",
+        "name_ko": "가공기 1",
+        "location_desc": "가공 구역",
+        "states": {
+          "turned_on": true
+        },
+        "state_source": "metadata",
+        "regions": [
+          {
+            "key": "input",
+            "name_ko": "입구 버퍼",
+            "states": {}
+          },
+          {
+            "key": "output",
+            "name_ko": "출구 버퍼",
+            "states": {}
+          }
+        ]
+      },
+      {
+        "id": "fx_machining_station_2",
+        "category": "machining_station",
+        "name_ko": "가공기 2",
+        "location_desc": "가공 구역",
+        "states": {
+          "turned_on": false
+        },
+        "state_source": "metadata",
+        "regions": [
+          {
+            "key": "input",
+            "name_ko": "입구 버퍼",
+            "states": {}
+          },
+          {
+            "key": "output",
+            "name_ko": "출구 버퍼",
+            "states": {}
+          }
+        ]
+      },
+      {
+        "id": "fx_assembly_station_1",
+        "category": "assembly_station",
+        "name_ko": "조립 스테이션 1",
+        "location_desc": "조립 구역",
+        "states": {
+          "turned_on": false
+        },
+        "state_source": "metadata",
+        "regions": [
+          {
+            "key": "input",
+            "name_ko": "입구 버퍼",
+            "states": {}
+          },
+          {
+            "key": "output",
+            "name_ko": "출구 버퍼",
+            "states": {}
+          }
+        ]
+      },
+      {
+        "id": "fx_assembly_station_2",
+        "category": "assembly_station",
+        "name_ko": "조립 스테이션 2",
+        "location_desc": "조립 구역",
+        "states": {
+          "turned_on": true
+        },
+        "state_source": "metadata",
+        "regions": [
+          {
+            "key": "input",
+            "name_ko": "입구 버퍼",
+            "states": {}
+          },
+          {
+            "key": "output",
+            "name_ko": "출구 버퍼",
+            "states": {}
+          }
+        ]
+      },
+      {
+        "id": "fx_inspection_station_1",
+        "category": "inspection_station",
+        "name_ko": "검사대",
+        "location_desc": "조립 구역",
+        "states": {},
+        "state_source": "metadata",
+        "regions": [
+          {
+            "key": "input",
+            "name_ko": "입구 버퍼",
+            "states": {}
+          },
+          {
+            "key": "output",
+            "name_ko": "출구 버퍼",
+            "states": {}
+          }
+        ]
+      },
+      {
+        "id": "fx_assembly_station_3",
+        "category": "assembly_station",
+        "name_ko": "조립 스테이션 3",
+        "location_desc": "조립 구역",
+        "states": {
+          "turned_on": false
+        },
+        "state_source": "metadata",
+        "regions": [
+          {
+            "key": "input",
+            "name_ko": "입구 버퍼",
+            "states": {}
+          },
+          {
+            "key": "output",
+            "name_ko": "출구 버퍼",
+            "states": {}
+          }
+        ]
+      },
+      {
+        "id": "fx_machining_station_3",
+        "category": "machining_station",
+        "name_ko": "가공기 3",
+        "location_desc": "가공 구역",
+        "states": {
+          "turned_on": true
+        },
+        "state_source": "metadata",
+        "regions": [
+          {
+            "key": "input",
+            "name_ko": "입구 버퍼",
+            "states": {}
+          },
+          {
+            "key": "output",
+            "name_ko": "출구 버퍼",
+            "states": {}
+          }
+        ]
+      },
+      {
+        "id": "fx_shipping_dock_1",
+        "category": "shipping_dock",
+        "name_ko": "출하 도크",
+        "location_desc": "출하 구역",
+        "states": {},
+        "state_source": "metadata",
+        "regions": [
+          {
+            "key": "input",
+            "name_ko": "입구 버퍼",
+            "states": {}
+          }
+        ]
+      },
+      {
+        "id": "fx_storage_station_1",
+        "category": "storage_station",
+        "name_ko": "자동 창고",
+        "location_desc": "자재 구역",
+        "states": {},
+        "state_source": "metadata",
+        "regions": [
+          {
+            "key": "shelf1",
+            "name_ko": "선반 1",
+            "states": {}
+          },
+          {
+            "key": "shelf2",
+            "name_ko": "선반 2",
+            "states": {}
+          },
+          {
+            "key": "shelf3",
+            "name_ko": "선반 3",
+            "states": {}
+          },
+          {
+            "key": "shelf4",
+            "name_ko": "선반 4",
+            "states": {}
+          },
+          {
+            "key": "shelf5",
+            "name_ko": "선반 5",
+            "states": {}
+          },
+          {
+            "key": "shelf6",
+            "name_ko": "선반 6",
+            "states": {}
+          }
+        ]
+      },
+      {
+        "id": "fx_tool_crib_1",
+        "category": "tool_crib",
+        "name_ko": "공구 보관소",
+        "location_desc": "지원 구역",
+        "states": {},
+        "state_source": "metadata",
+        "regions": [
+          {
+            "key": "counter",
+            "name_ko": "반출대",
+            "states": {}
+          }
+        ]
+      },
+      {
+        "id": "fx_charging_station_1",
+        "category": "charging_station",
+        "name_ko": "충전소",
+        "location_desc": "지원 구역",
+        "states": {},
+        "state_source": "metadata",
+        "regions": []
+      },
+      {
+        "id": "fx_waste_station_1",
+        "category": "waste_station",
+        "name_ko": "폐기물 수거장",
+        "location_desc": "지원 구역",
+        "states": {},
+        "state_source": "metadata",
+        "regions": [
+          {
+            "key": "bin",
+            "name_ko": "수거함",
+            "states": {}
+          }
+        ]
+      }
+    ],
+    "objects": [
+      {
+        "id": "obj_001",
+        "category": "engine_mount",
+        "name_ko": "엔진 마운트",
+        "states": {},
+        "placement": {
+          "fixture_id": "fx_supply_station_1",
+          "relation": "on",
+          "region": "output",
+          "near_fixture_id": null,
+          "near_side": null
+        },
+        "pose": null,
+        "size_m": [
+          0.112,
+          0.143,
+          0.162
+        ],
+        "size_class": null,
+        "role": null,
+        "known_by": "system"
+      },
+      {
+        "id": "obj_002",
+        "category": "oil_filter",
+        "name_ko": "오일 필터",
+        "states": {},
+        "placement": {
+          "fixture_id": "fx_supply_station_1",
+          "relation": "on",
+          "region": "output",
+          "near_fixture_id": null,
+          "near_side": null
+        },
+        "pose": null,
+        "size_m": [
+          0.079,
+          0.079,
+          0.138
+        ],
+        "size_class": null,
+        "role": null,
+        "known_by": "system"
+      },
+      {
+        "id": "obj_003",
+        "category": "piston",
+        "name_ko": "피스톤",
+        "states": {},
+        "placement": {
+          "fixture_id": "fx_machining_station_1",
+          "relation": "on",
+          "region": "input",
+          "near_fixture_id": null,
+          "near_side": null
+        },
+        "pose": null,
+        "size_m": [
+          0.098,
+          0.098,
+          0.303
+        ],
+        "size_class": null,
+        "role": null,
+        "known_by": "system"
+      },
+      {
+        "id": "obj_004",
+        "category": "oil_filter",
+        "name_ko": "오일 필터",
+        "states": {},
+        "placement": {
+          "fixture_id": "fx_machining_station_1",
+          "relation": "on",
+          "region": "output",
+          "near_fixture_id": null,
+          "near_side": null
+        },
+        "pose": null,
+        "size_m": [
+          0.09,
+          0.088,
+          0.11
+        ],
+        "size_class": null,
+        "role": null,
+        "known_by": "system"
+      },
+      {
+        "id": "obj_005",
+        "category": "starter_motor",
+        "name_ko": "시동 모터",
+        "states": {},
+        "placement": {
+          "fixture_id": "fx_machining_station_2",
+          "relation": "on",
+          "region": "output",
+          "near_fixture_id": null,
+          "near_side": null
+        },
+        "pose": null,
+        "size_m": [
+          0.354,
+          0.175,
+          0.214
+        ],
+        "size_class": null,
+        "role": null,
+        "known_by": "system"
+      },
+      {
+        "id": "obj_006",
+        "category": "towel",
+        "name_ko": "작업용 타월",
+        "states": {},
+        "placement": {
+          "fixture_id": "fx_machining_station_2",
+          "relation": "on",
+          "region": "output",
+          "near_fixture_id": null,
+          "near_side": null
+        },
+        "pose": null,
+        "size_m": [
+          0.409,
+          0.209,
+          0.017
+        ],
+        "size_class": null,
+        "role": null,
+        "known_by": "system"
+      },
+      {
+        "id": "obj_007",
+        "category": "oil_pump",
+        "name_ko": "오일 펌프",
+        "states": {},
+        "placement": {
+          "fixture_id": "fx_assembly_station_1",
+          "relation": "on",
+          "region": "input",
+          "near_fixture_id": null,
+          "near_side": null
+        },
+        "pose": null,
+        "size_m": [
+          0.12,
+          0.339,
+          0.122
+        ],
+        "size_class": null,
+        "role": null,
+        "known_by": "system"
+      },
+      {
+        "id": "obj_008",
+        "category": "timing_chain",
+        "name_ko": "타이밍 체인",
+        "states": {},
+        "placement": {
+          "fixture_id": "fx_assembly_station_1",
+          "relation": "on",
+          "region": "output",
+          "near_fixture_id": null,
+          "near_side": null
+        },
+        "pose": null,
+        "size_m": [
+          0.223,
+          0.033,
+          0.007
+        ],
+        "size_class": null,
+        "role": null,
+        "known_by": "system"
+      },
+      {
+        "id": "obj_009",
+        "category": "camshaft",
+        "name_ko": "캠축",
+        "states": {},
+        "placement": {
+          "fixture_id": "fx_assembly_station_2",
+          "relation": "on",
+          "region": "output",
+          "near_fixture_id": null,
+          "near_side": null
+        },
+        "pose": null,
+        "size_m": [
+          0.579,
+          0.076,
+          0.069
+        ],
+        "size_class": null,
+        "role": null,
+        "known_by": "system"
+      },
+      {
+        "id": "obj_010",
+        "category": "towel",
+        "name_ko": "작업용 타월",
+        "states": {},
+        "placement": {
+          "fixture_id": "fx_assembly_station_2",
+          "relation": "on",
+          "region": "output",
+          "near_fixture_id": null,
+          "near_side": null
+        },
+        "pose": null,
+        "size_m": [
+          0.204,
+          0.212,
+          0.035
+        ],
+        "size_class": null,
+        "role": null,
+        "known_by": "system"
+      },
+      {
+        "id": "obj_011",
+        "category": "oil_filter",
+        "name_ko": "오일 필터",
+        "states": {},
+        "placement": {
+          "fixture_id": "fx_assembly_station_2",
+          "relation": "on",
+          "region": "output",
+          "near_fixture_id": null,
+          "near_side": null
+        },
+        "pose": null,
+        "size_m": [
+          0.09,
+          0.088,
+          0.11
+        ],
+        "size_class": null,
+        "role": null,
+        "known_by": "system"
+      },
+      {
+        "id": "obj_012",
+        "category": "crankshaft",
+        "name_ko": "크랭크축",
+        "states": {},
+        "placement": {
+          "fixture_id": "fx_assembly_station_3",
+          "relation": "on",
+          "region": "input",
+          "near_fixture_id": null,
+          "near_side": null
+        },
+        "pose": null,
+        "size_m": [
+          0.414,
+          0.088,
+          0.115
+        ],
+        "size_class": null,
+        "role": null,
+        "known_by": "system"
+      },
+      {
+        "id": "obj_013",
+        "category": "towel",
+        "name_ko": "작업용 타월",
+        "states": {},
+        "placement": {
+          "fixture_id": "fx_assembly_station_3",
+          "relation": "on",
+          "region": "output",
+          "near_fixture_id": null,
+          "near_side": null
+        },
+        "pose": null,
+        "size_m": [
+          0.406,
+          0.339,
+          0.034
+        ],
+        "size_class": null,
+        "role": null,
+        "known_by": "system"
+      },
+      {
+        "id": "obj_014",
+        "category": "oil_filter",
+        "name_ko": "오일 필터",
+        "states": {},
+        "placement": {
+          "fixture_id": "fx_assembly_station_3",
+          "relation": "on",
+          "region": "output",
+          "near_fixture_id": null,
+          "near_side": null
+        },
+        "pose": null,
+        "size_m": [
+          0.09,
+          0.088,
+          0.11
+        ],
+        "size_class": null,
+        "role": null,
+        "known_by": "system"
+      },
+      {
+        "id": "obj_015",
+        "category": "timing_chain",
+        "name_ko": "타이밍 체인",
+        "states": {},
+        "placement": {
+          "fixture_id": "fx_machining_station_3",
+          "relation": "on",
+          "region": "output",
+          "near_fixture_id": null,
+          "near_side": null
+        },
+        "pose": null,
+        "size_m": [
+          0.223,
+          0.033,
+          0.007
+        ],
+        "size_class": null,
+        "role": null,
+        "known_by": "system"
+      },
+      {
+        "id": "obj_016",
+        "category": "towel",
+        "name_ko": "작업용 타월",
+        "states": {},
+        "placement": {
+          "fixture_id": "fx_machining_station_3",
+          "relation": "on",
+          "region": "output",
+          "near_fixture_id": null,
+          "near_side": null
+        },
+        "pose": null,
+        "size_m": [
+          0.204,
+          0.212,
+          0.035
+        ],
+        "size_class": null,
+        "role": null,
+        "known_by": "system"
+      },
+      {
+        "id": "obj_017",
+        "category": "nut_m12",
+        "name_ko": "M12 너트",
+        "states": {},
+        "placement": {
+          "fixture_id": "fx_storage_station_1",
+          "relation": "on",
+          "region": "shelf2",
+          "near_fixture_id": null,
+          "near_side": null
+        },
+        "pose": null,
+        "size_m": [
+          0.019,
+          0.022,
+          0.01
+        ],
+        "size_class": null,
+        "role": null,
+        "known_by": "system"
+      },
+      {
+        "id": "obj_018",
+        "category": "air_filter",
+        "name_ko": "에어 필터",
+        "states": {},
+        "placement": {
+          "fixture_id": "fx_storage_station_1",
+          "relation": "on",
+          "region": "shelf2",
+          "near_fixture_id": null,
+          "near_side": null
+        },
+        "pose": null,
+        "size_m": [
+          0.353,
+          0.203,
+          0.03
+        ],
+        "size_class": null,
+        "role": null,
+        "known_by": "system"
+      },
+      {
+        "id": "obj_019",
+        "category": "piston",
+        "name_ko": "피스톤",
+        "states": {},
+        "placement": {
+          "fixture_id": "fx_storage_station_1",
+          "relation": "on",
+          "region": "shelf5",
+          "near_fixture_id": null,
+          "near_side": null
+        },
+        "pose": null,
+        "size_m": [
+          0.09,
+          0.09,
+          0.177
+        ],
+        "size_class": null,
+        "role": null,
+        "known_by": "system"
+      },
+      {
+        "id": "obj_020",
+        "category": "air_filter",
+        "name_ko": "에어 필터",
+        "states": {},
+        "placement": {
+          "fixture_id": "fx_storage_station_1",
+          "relation": "on",
+          "region": "shelf5",
+          "near_fixture_id": null,
+          "near_side": null
+        },
+        "pose": null,
+        "size_m": [
+          0.353,
+          0.203,
+          0.03
+        ],
+        "size_class": null,
+        "role": null,
+        "known_by": "system"
+      },
+      {
+        "id": "obj_021",
+        "category": "engine_oil",
+        "name_ko": "엔진 오일 통",
+        "states": {},
+        "placement": {
+          "fixture_id": "fx_storage_station_1",
+          "relation": "on",
+          "region": "shelf6",
+          "near_fixture_id": null,
+          "near_side": null
+        },
+        "pose": null,
+        "size_m": [
+          0.083,
+          0.21,
+          0.289
+        ],
+        "size_class": null,
+        "role": null,
+        "known_by": "system"
+      },
+      {
+        "id": "obj_022",
+        "category": "combination_wrench",
+        "name_ko": "콤비네이션 렌치",
+        "states": {},
+        "placement": {
+          "fixture_id": "fx_tool_crib_1",
+          "relation": "on",
+          "region": "counter",
+          "near_fixture_id": null,
+          "near_side": null
+        },
+        "pose": null,
+        "size_m": [
+          0.26,
+          0.046,
+          0.018
+        ],
+        "size_class": null,
+        "role": null,
+        "known_by": "system"
+      },
+      {
+        "id": "obj_023",
+        "category": "torx_screwdriver",
+        "name_ko": "별 드라이버",
+        "states": {},
+        "placement": {
+          "fixture_id": "fx_tool_crib_1",
+          "relation": "on",
+          "region": "counter",
+          "near_fixture_id": null,
+          "near_side": null
+        },
+        "pose": null,
+        "size_m": [
+          0.148,
+          0.027,
+          0.026
+        ],
+        "size_class": null,
+        "role": null,
+        "known_by": "system"
+      },
+      {
+        "id": "obj_024",
+        "category": "hammer",
+        "name_ko": "망치",
+        "states": {},
+        "placement": {
+          "fixture_id": "fx_tool_crib_1",
+          "relation": "on",
+          "region": "counter",
+          "near_fixture_id": null,
+          "near_side": null
+        },
+        "pose": null,
+        "size_m": [
+          0.268,
+          0.104,
+          0.036
+        ],
+        "size_class": null,
+        "role": null,
+        "known_by": "system"
+      }
+    ],
+    "relations": [
+      {
+        "subj": "obj_001",
+        "pred": "on",
+        "obj": "fx_supply_station_1",
+        "source": "rule"
+      },
+      {
+        "subj": "obj_002",
+        "pred": "on",
+        "obj": "fx_supply_station_1",
+        "source": "rule"
+      },
+      {
+        "subj": "obj_003",
+        "pred": "on",
+        "obj": "fx_machining_station_1",
+        "source": "rule"
+      },
+      {
+        "subj": "obj_004",
+        "pred": "on",
+        "obj": "fx_machining_station_1",
+        "source": "rule"
+      },
+      {
+        "subj": "obj_005",
+        "pred": "on",
+        "obj": "fx_machining_station_2",
+        "source": "rule"
+      },
+      {
+        "subj": "obj_006",
+        "pred": "on",
+        "obj": "fx_machining_station_2",
+        "source": "rule"
+      },
+      {
+        "subj": "obj_007",
+        "pred": "on",
+        "obj": "fx_assembly_station_1",
+        "source": "rule"
+      },
+      {
+        "subj": "obj_008",
+        "pred": "on",
+        "obj": "fx_assembly_station_1",
+        "source": "rule"
+      },
+      {
+        "subj": "obj_009",
+        "pred": "on",
+        "obj": "fx_assembly_station_2",
+        "source": "rule"
+      },
+      {
+        "subj": "obj_010",
+        "pred": "on",
+        "obj": "fx_assembly_station_2",
+        "source": "rule"
+      },
+      {
+        "subj": "obj_011",
+        "pred": "on",
+        "obj": "fx_assembly_station_2",
+        "source": "rule"
+      },
+      {
+        "subj": "obj_012",
+        "pred": "on",
+        "obj": "fx_assembly_station_3",
+        "source": "rule"
+      },
+      {
+        "subj": "obj_013",
+        "pred": "on",
+        "obj": "fx_assembly_station_3",
+        "source": "rule"
+      },
+      {
+        "subj": "obj_014",
+        "pred": "on",
+        "obj": "fx_assembly_station_3",
+        "source": "rule"
+      },
+      {
+        "subj": "obj_015",
+        "pred": "on",
+        "obj": "fx_machining_station_3",
+        "source": "rule"
+      },
+      {
+        "subj": "obj_016",
+        "pred": "on",
+        "obj": "fx_machining_station_3",
+        "source": "rule"
+      },
+      {
+        "subj": "obj_017",
+        "pred": "on",
+        "obj": "fx_storage_station_1",
+        "source": "rule"
+      },
+      {
+        "subj": "obj_018",
+        "pred": "on",
+        "obj": "fx_storage_station_1",
+        "source": "rule"
+      },
+      {
+        "subj": "obj_019",
+        "pred": "on",
+        "obj": "fx_storage_station_1",
+        "source": "rule"
+      },
+      {
+        "subj": "obj_020",
+        "pred": "on",
+        "obj": "fx_storage_station_1",
+        "source": "rule"
+      },
+      {
+        "subj": "obj_021",
+        "pred": "on",
+        "obj": "fx_storage_station_1",
+        "source": "rule"
+      },
+      {
+        "subj": "obj_022",
+        "pred": "on",
+        "obj": "fx_tool_crib_1",
+        "source": "rule"
+      },
+      {
+        "subj": "obj_023",
+        "pred": "on",
+        "obj": "fx_tool_crib_1",
+        "source": "rule"
+      },
+      {
+        "subj": "obj_024",
+        "pred": "on",
+        "obj": "fx_tool_crib_1",
+        "source": "rule"
+      }
+    ],
+    "agent": {
+      "embodiment": "mobile_manipulator",
+      "base_near_fixture_id": "fx_robot_bay_1",
+      "holding": []
+    },
+    "constraints": [],
+    "provenance": {
+      "dataset_path": "RoboCup Logistics League rulebook 2025; joehuchette/FloorLayout.jl FLP instances (MIT); nvidia/simready-assets (CC BY 4.0)",
+      "episode_index": 2150,
+      "original_task_name": "layout",
+      "extraction_tier": "A",
+      "assumed_defaults": [],
+      "sim_state_keys": {},
+      "source_object_names": {
+        "obj_001": "engineComponent_engine_mount_e01",
+        "obj_002": "engineComponent_oil_filter_d01",
+        "obj_003": "engineComponent_cylinder_piston_a01",
+        "obj_004": "engineComponent_oil_filter_a01",
+        "obj_005": "electricalSystem_starter_b01",
+        "obj_006": "consumable_microfiber_towel_folded_large_a01",
+        "obj_007": "engineComponent_oil_pump_a01",
+        "obj_008": "engineComponent_timing_chain_b01",
+        "obj_009": "engineComponent_camshaft_a01",
+        "obj_010": "consumable_microfiber_towel_folded_small_b01",
+        "obj_011": "engineComponent_oil_filter_a01",
+        "obj_012": "engineComponent_crankshaft_b01",
+        "obj_013": "consumable_microfiber_towel_wrinkled_b01",
+        "obj_014": "engineComponent_oil_filter_a01",
+        "obj_015": "engineComponent_timing_chain_b01",
+        "obj_016": "consumable_microfiber_towel_folded_small_b01",
+        "obj_017": "factory_nut_m12_loose",
+        "obj_018": "consumable_cabin_filter_enhanced_a01",
+        "obj_019": "engineComponent_cylinder_piston_b01",
+        "obj_020": "consumable_cabin_filter_enhanced_a01",
+        "obj_021": "consumable_engine_oil_a01",
+        "obj_022": "handTool_wrench_combination_a01",
+        "obj_023": "handTool_screwdriver_torx_t10_a01",
+        "obj_024": "handTool_hammer_crossPeen_b01"
+      },
+      "source_fixture_names": {},
+      "source_fixture_refs": {}
+    },
+    "map": {
+      "zones": [
+        {
+          "id": "assembly",
+          "name_ko": "조립 구역",
+          "restricted": false,
+          "note": null
+        },
+        {
+          "id": "machining",
+          "name_ko": "가공 구역",
+          "restricted": false,
+          "note": null
+        },
+        {
+          "id": "material",
+          "name_ko": "자재 구역",
+          "restricted": false,
+          "note": null
+        },
+        {
+          "id": "shipping",
+          "name_ko": "출하 구역",
+          "restricted": false,
+          "note": null
+        },
+        {
+          "id": "support",
+          "name_ko": "지원 구역",
+          "restricted": false,
+          "note": null
+        },
+        {
+          "id": "restricted",
+          "name_ko": "용접 작업 구역",
+          "restricted": true,
+          "note": "용접 작업 중"
+        }
+      ],
+      "stations": {
+        "fx_robot_bay_1": "support",
+        "fx_supply_station_1": "material",
+        "fx_machining_station_1": "machining",
+        "fx_machining_station_2": "machining",
+        "fx_assembly_station_1": "assembly",
+        "fx_assembly_station_2": "assembly",
+        "fx_inspection_station_1": "assembly",
+        "fx_assembly_station_3": "assembly",
+        "fx_machining_station_3": "machining",
+        "fx_shipping_dock_1": "shipping",
+        "fx_storage_station_1": "material",
+        "fx_tool_crib_1": "support",
+        "fx_charging_station_1": "support",
+        "fx_waste_station_1": "support"
+      },
+      "aisles": [
+        {
+          "a": "fx_robot_bay_1",
+          "b": "fx_tool_crib_1",
+          "name_ko": "통로 1",
+          "length_m": 21.0,
+          "closed": false,
+          "one_way": false,
+          "note": null
+        },
+        {
+          "a": "fx_robot_bay_1",
+          "b": "fx_charging_station_1",
+          "name_ko": "통로 2",
+          "length_m": 21.0,
+          "closed": false,
+          "one_way": false,
+          "note": null
+        },
+        {
+          "a": "fx_robot_bay_1",
+          "b": "fx_assembly_station_3",
+          "name_ko": "통로 3",
+          "length_m": 15.0,
+          "closed": false,
+          "one_way": false,
+          "note": null
+        },
+        {
+          "a": "fx_robot_bay_1",
+          "b": "fx_storage_station_1",
+          "name_ko": "통로 4",
+          "length_m": 12.0,
+          "closed": true,
+          "one_way": false,
+          "note": "바닥 보수 공사 중"
+        },
+        {
+          "a": "fx_supply_station_1",
+          "b": "fx_machining_station_1",
+          "name_ko": "통로 5",
+          "length_m": 6.0,
+          "closed": false,
+          "one_way": false,
+          "note": null
+        },
+        {
+          "a": "fx_supply_station_1",
+          "b": "fx_charging_station_1",
+          "name_ko": "통로 6",
+          "length_m": 12.0,
+          "closed": false,
+          "one_way": false,
+          "note": "용접 작업 구역을 지남"
+        },
+        {
+          "a": "fx_supply_station_1",
+          "b": "fx_inspection_station_1",
+          "name_ko": "통로 7",
+          "length_m": 6.0,
+          "closed": false,
+          "one_way": false,
+          "note": null
+        },
+        {
+          "a": "fx_machining_station_1",
+          "b": "fx_waste_station_1",
+          "name_ko": "통로 8",
+          "length_m": 9.0,
+          "closed": false,
+          "one_way": false,
+          "note": null
+        },
+        {
+          "a": "fx_machining_station_1",
+          "b": "fx_assembly_station_2",
+          "name_ko": "통로 9",
+          "length_m": 9.0,
+          "closed": false,
+          "one_way": false,
+          "note": null
+        },
+        {
+          "a": "fx_machining_station_1",
+          "b": "fx_machining_station_3",
+          "name_ko": "통로 10",
+          "length_m": 6.0,
+          "closed": false,
+          "one_way": false,
+          "note": null
+        },
+        {
+          "a": "fx_machining_station_1",
+          "b": "fx_shipping_dock_1",
+          "name_ko": "통로 11",
+          "length_m": 6.0,
+          "closed": false,
+          "one_way": false,
+          "note": null
+        },
+        {
+          "a": "fx_machining_station_2",
+          "b": "fx_tool_crib_1",
+          "name_ko": "통로 12",
+          "length_m": 6.0,
+          "closed": false,
+          "one_way": false,
+          "note": null
+        },
+        {
+          "a": "fx_machining_station_2",
+          "b": "fx_inspection_station_1",
+          "name_ko": "통로 13",
+          "length_m": 6.0,
+          "closed": false,
+          "one_way": false,
+          "note": null
+        },
+        {
+          "a": "fx_machining_station_2",
+          "b": "fx_machining_station_3",
+          "name_ko": "통로 14",
+          "length_m": 9.0,
+          "closed": false,
+          "one_way": false,
+          "note": null
+        },
+        {
+          "a": "fx_machining_station_2",
+          "b": "fx_storage_station_1",
+          "name_ko": "통로 15",
+          "length_m": 9.0,
+          "closed": false,
+          "one_way": false,
+          "note": "용접 작업 구역을 지남"
+        },
+        {
+          "a": "fx_assembly_station_1",
+          "b": "fx_tool_crib_1",
+          "name_ko": "통로 16",
+          "length_m": 6.0,
+          "closed": false,
+          "one_way": false,
+          "note": null
+        },
+        {
+          "a": "fx_assembly_station_1",
+          "b": "fx_charging_station_1",
+          "name_ko": "통로 17",
+          "length_m": 18.0,
+          "closed": false,
+          "one_way": false,
+          "note": "용접 작업 구역을 지남"
+        },
+        {
+          "a": "fx_assembly_station_1",
+          "b": "fx_assembly_station_3",
+          "name_ko": "통로 18",
+          "length_m": 6.0,
+          "closed": false,
+          "one_way": false,
+          "note": null
+        },
+        {
+          "a": "fx_assembly_station_2",
+          "b": "fx_waste_station_1",
+          "name_ko": "통로 19",
+          "length_m": 9.0,
+          "closed": false,
+          "one_way": false,
+          "note": null
+        },
+        {
+          "a": "fx_assembly_station_2",
+          "b": "fx_shipping_dock_1",
+          "name_ko": "통로 20",
+          "length_m": 6.0,
+          "closed": false,
+          "one_way": false,
+          "note": null
+        },
+        {
+          "a": "fx_inspection_station_1",
+          "b": "fx_machining_station_3",
+          "name_ko": "통로 21",
+          "length_m": 6.0,
+          "closed": false,
+          "one_way": false,
+          "note": null
+        },
+        {
+          "a": "fx_assembly_station_3",
+          "b": "fx_tool_crib_1",
+          "name_ko": "통로 22",
+          "length_m": 9.0,
+          "closed": false,
+          "one_way": false,
+          "note": null
+        },
+        {
+          "a": "fx_assembly_station_3",
+          "b": "fx_storage_station_1",
+          "name_ko": "통로 23",
+          "length_m": 6.0,
+          "closed": false,
+          "one_way": false,
+          "note": null
+        },
+        {
+          "a": "fx_machining_station_3",
+          "b": "fx_tool_crib_1",
+          "name_ko": "통로 24",
+          "length_m": 12.0,
+          "closed": false,
+          "one_way": false,
+          "note": null
+        },
+        {
+          "a": "fx_machining_station_3",
+          "b": "fx_waste_station_1",
+          "name_ko": "통로 25",
+          "length_m": 12.0,
+          "closed": false,
+          "one_way": false,
+          "note": null
+        },
+        {
+          "a": "fx_storage_station_1",
+          "b": "fx_tool_crib_1",
+          "name_ko": "통로 26",
+          "length_m": 18.0,
+          "closed": true,
+          "one_way": false,
+          "note": "바닥 청소 중"
+        },
+        {
+          "a": "fx_storage_station_1",
+          "b": "fx_charging_station_1",
+          "name_ko": "통로 27",
+          "length_m": 12.0,
+          "closed": false,
+          "one_way": false,
+          "note": null
+        }
+      ],
+      "notices": [
+        "통로 4(로봇 대기 구역 - 자동 창고) 막힘: 바닥 보수 공사 중",
+        "통로 26(자동 창고 - 공구 보관소) 막힘: 바닥 청소 중",
+        "가공기 2 점검으로 정지, 약 60초 뒤 다시 가동",
+        "조립 스테이션 1 점검으로 정지, 약 60초 뒤 다시 가동",
+        "조립 스테이션 3 점검으로 정지, 약 60초 뒤 다시 가동"
+      ]
+    }
+  },
+  "reasoning": "① 지시 해석: 가공기 2 출구 버퍼에 있는 시동 모터를 조립 스테이션 1 입구 버퍼로 옮기는 작업이다. 지시에 시간 조건은 없지만, 시설 알림에 조립 스테이션 1이 점검으로 멈춰 있고 약 60초 뒤 다시 가동된다고 되어 있어 그때까지 기다려야 하므로 이 기다림을 시간 조건에 쓴다. 시동 모터가 가공기 2에 있고 받는 곳이 조립 스테이션 1이므로 작업은 가공기 2에서 시작해 조립 스테이션 1에서 끝난다. ② 씬 접지: 공장 시스템이 알려 준 대로 시동 모터는 가공기 2 출구 버퍼 위에 하나 있다. 로봇은 지금 로봇 대기 구역 근처에 있다. 로봇 대기 구역에서 가공기 2까지 통로 길이로 가장 짧은 길은 통로 4와 통로 15(자동 창고를 거침, 21 m)인데, 통로 4는 바닥 보수 공사 중이라 막혀 있고 통로 15는 출입 제한인 용접 작업 구역을 지난다. 가공기 2에서 조립 스테이션 1까지는 통로 12와 통로 16(공구 보관소를 거침)이 가장 짧고 막히지 않았다. 가공기 2도 점검으로 멈춰 있지만 출구 버퍼의 물건을 집는 데는 상관없다. ③ 역할 부여: 위치가 바뀌는 시동 모터는 필수다. 시동 모터를 받는 조립 스테이션 1 입구 버퍼는 핵심 수단이다. 조립 스테이션 1은 물건을 넣으려면 다시 가동될 때까지 기다려야 하는 설비라 보조이고, 가공기 2는 시동 모터가 처음 놓인 곳이므로 초기 위치 기준인 보조다. ④ 제약 도출: 물건을 집으러 가는 길에서 가장 짧은 길의 통로 4와 통로 15를 쓸 수 없다는 것을 공간 제약으로 쓴다. 어느 길로 돌아갈지는 이동 계획이 정하므로 쓰지 않는다. 조립 스테이션 1이 다시 가동된 뒤에 시동 모터를 넣어야 한다. ⑤ 목표 상태: 지시가 요구한 끝 상태는 시동 모터가 조립 스테이션 1 입구 버퍼 위에 있는 것이다.",
+  "task_situation_description": {
+    "task_goal": {
+      "summary": "가공기 2 출구 버퍼의 시동 모터를 조립 스테이션 1 입구 버퍼로 옮기는 것",
+      "goal_state": [
+        [
+          {
+            "kind": "relation",
+            "subject": "obj_005",
+            "predicate": "on",
+            "object": "fx_assembly_station_1/input",
+            "value": true
+          }
+        ]
+      ]
+    },
+    "spatiotemporal_conditions": {
+      "time": "조립 스테이션 1이 점검을 마치고 다시 가동될 때까지 약 60초 기다려야 함",
+      "space": {
+        "start": "가공기 2",
+        "end": "조립 스테이션 1"
+      }
+    },
+    "target_objects": {
+      "required": [
+        {
+          "ref": "obj_005",
+          "location": "가공기 2 출구 버퍼 위",
+          "state": null
+        }
+      ],
+      "key_means": [
+        {
+          "ref": "fx_assembly_station_1/input",
+          "location": null,
+          "state": null,
+          "alternatives": []
+        }
+      ],
+      "auxiliary": [
+        {
+          "ref": "fx_assembly_station_1",
+          "location": null,
+          "note": "점검으로 멈춰 있어 다시 가동될 때까지 기다려야 하는 설비"
+        },
+        {
+          "ref": "fx_machining_station_2",
+          "location": null,
+          "note": "시동 모터의 초기 위치 기준"
+        }
+      ]
+    },
+    "constraints": [
+      {
+        "type": "spatial",
+        "description": "로봇 대기 구역에서 가공기 2로 가는 가장 짧은 길의 통로 4는 바닥 보수 공사 중이라 막혀 있고 통로 15는 출입 제한인 용접 작업 구역을 지나므로 둘 다 쓸 수 없음"
+      },
+      {
+        "type": "precedence",
+        "description": "조립 스테이션 1이 다시 가동된 뒤 시동 모터를 조립 스테이션 1 입구 버퍼에 넣어야 함"
+      }
+    ]
+  }
+}

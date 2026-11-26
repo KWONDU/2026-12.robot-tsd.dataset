@@ -1,0 +1,617 @@
+# 물류 도메인 (창고의 작업 구역). 도메인 하나에 이 파일 하나다. 원천 어댑터 설정의 domain(config/sources.yaml)이
+# 이 이름을 고른다. 장면은 SimReady 창고 팩에서 오고(src/tsdgen/adapters/simready_warehouse.py), 작업 지시는 작업 합성이 만든다.
+#
+# 프롬프트는 도메인 낱말을 자리(<<DOMAIN_...>>, <<EX_...>>)로 받는다. 낱말 뒤에 조사가 바로 붙는 자리가 있으므로
+# fixture_ko는 받침 없는 낱말로 고른다.
+
+name_ko: 물류 창고 # 세계 상태 글의 '장소:'
+robot_ko: 물류 작업 로봇 # 프롬프트의 역할 설명
+place_ko: 창고 # 프롬프트의 '로봇이 인식한 ~의 세계 상태'
+fixture_ko: 설비 # 옮기지 않는 설비를 부르는 낱말 (팔레트, 랙, 작업대, 카트)
+golden: golden/logistics/uncover_box.json # 예전 판 프롬프트의 예시 자리 (이 도메인은 gen_v8 이후 판만 쓴다)
+golden_examples: [golden/logistics/uncover_box.json]
+
+# 목표 상태의 상태 단언에 쓸 수 있는 상태 키. 이 팩의 장면에는 여닫거나 켜는 설비가 없어 비어 있다.
+goal_state_keys: []
+
+# 목표 상태의 관계 단언에 쓸 수 있는 술어와 풀이 (프롬프트의 <<DOMAIN_RELATIONS>>)
+goal_relations: { "on": 위, "in": 안, near: 근처, held_by: 로봇이 들고 있음 }
+
+# 이 도메인에서만 필요한 지식. 생성·채점·재작성·해소 프롬프트의 <<DOMAIN_KNOWLEDGE>> 자리에 그대로 들어간다.
+knowledge: >-
+  이 도메인에서는 물체가 서로 위에 쌓여 있는 일이 많다. 옮길 물체 위나 안에 다른 물체가 놓여 있으면 그 물체를 먼저 치워야
+  옮길 물체에 닿을 수 있다. 그런 물체는 대상 물체의 보조(auxiliary)에 올리고 note에 먼저 치워야 하는 물체라고 쓰며,
+  그것을 치우는 일이 먼저라는 선후 제약(precedence)을 constraints에 쓴다. 지시가 그 물체를 어디에 두라고 말하지 않았으면
+  그 물체의 도착 위치는 목표 상태에 쓰지 않는다. 같은 이름의 물체가 여럿이고 지시가 그 가운데 아무것이나 하나를 말하면
+  번호를 뗀 이름으로 쓰고, 전부를 말하면 번호 붙은 이름을 하나씩 모두 쓴다. 이 도메인의 설비에는 여닫거나 켜는 상태가
+  없으므로 상태 단언은 쓰지 않는다. 물체의 무게는 환경 설명에 없으므로 무게를 근거로 삼지 않는다.
+
+# 도메인마다 다른 프롬프트 규칙 문장. 키가 곧 프롬프트의 자리 이름이고(<<DOMAIN_NAMING>> 등), 문장 안의 예시 자리
+# (<<EX_...>>, <<DOMAIN_FIXTURE>>)는 이 프로필 값으로 채운다. 가정·물류 값은 예전 판 프롬프트에 박혀 있던 문장 그대로라
+# rewrite_v7·resolve_v7·gen_v19·check_v19를 채운 글이 rewrite_v6·resolve_v6·gen_v18·check_v18과 글자까지 같다.
+prompt_rules:
+  DOMAIN_NAMING: '사용자는 환경 설명의 번호(예: <<EX_NUMBERED>>)를 모른다. 지시에 번호를 쓰지 말고, 사람이 말하듯 이름과 위치·특징(예: <<EX_REFERRING>>)으로 가리킨다.'
+  DOMAIN_NAME_NUMBERS: '번호는 뺀다'
+  DOMAIN_NAMING_JUDGE: '재작성문은 사용자가 한 말이라 환경 설명의 번호를 쓰지 않는다. 번호 없이도 이름과 위치·특징으로 하나로 특정되면 해소된 것으로 본다.'
+  DOMAIN_AUX_STATE: '옮길 물체에 닿으려면 먼저 상태를 바꿔야 하는 <<DOMAIN_FIXTURE>>(예: <<EX_ACCESS>>. 지시가 그 상태를 바꾸라고 해서 goal_state에 쓴 경우는 필수다)'
+  DOMAIN_AUX_STATE_CHECK: '먼저 상태를 바꿔야 닿을 수 있는 출발지 <<DOMAIN_FIXTURE>>(예: <<EX_ACCESS>>)'
+  DOMAIN_TIME: '지시가 말한 시간 조건(지속 시간, 기다리는 시간, 언제까지)만 쓴다.'
+  DOMAIN_TIME_CHECK: '지시가 말한 시간 조건(지속 시간, 기다리는 시간, 언제까지)'
+  DOMAIN_ROUTE_CHECK: '' # gen_v20부터: 지식 문단 바로 뒤에 붙는 길 점검 순서 (공장만, 제조 Qwen이 길 점검을 빼먹어 넣음)
+  DOMAIN_EXECUTABLE_CHECK: ''
+prompt_examples:
+  RECEPTACLES: 상자·크레이트
+  LOCATIONS: '"작업대 선반 위", "팔레트 2 위"'
+  STATES: '"문 닫힘", "가동 중"'
+  NUMBERED: 팔레트 2
+  ANY: 팔레트
+  REGION: 랙 선반 2, 작업대 상판
+  REGION_LEVELS: '"랙에 올려"는 랙, "랙 선반에 올려"는 랙 선반, "랙 맨 위 선반에 올려"는 랙 선반 1, "작업대 위에 올려"는 작업대 상판'
+  GROUP: 작업대 위에 있는 노란 크레이트를 전부 팔레트로 옮겨
+  HINT_GROUP: "'팔레트 5부터 8까지(랙 위)' 가운데 아무 데나 놓으면 될 때 '랙 위'"
+  ACCESS: 덮개가 닫혀 있어 먼저 열어야 하는 보관 설비
+  PRECONDITION: 위에 놓인 물체를 먼저 치워야 함
+  STATE_COMMANDS: 켜라, 끄라, 열라, 닫으라
+  REMOVE: 꺼내라, 치우라
+  UNSPECIFIED: a pallet
+  ORIGIN: 상자가 놓여 있는 작업대
+  SPACE: '작업대 위 상자를 팔레트에 올리는 작업이면 start는 "작업대", end는 "팔레트". 카트의 상자와 랙의 크레이트를 작업대에 옮기는 작업이면 start는 "카트 혹은 랙", end는 "작업대"'
+  GOAL_ACTION: 상자를 들어 올린다
+  GOAL_STATE: 상자가 팔레트 위에 있다
+  UNEXPRESSIBLE: 가지런히 정렬됨, 라벨이 앞을 향함
+  PLAN_STEPS: '"팔레트로 이동", "상자를 잡기"'
+  REFERRING: 팔레트 위에 쌓인 상자, 작업대 선반에 있는 크레이트
+  OMISSION: 상자 좀 치워 줘
+  RENAME: 원문이 work table이라고 해도 환경 설명에 '작업대'로 나오면 '작업대'라고 부른다
+  EITHER: 노란 크레이트는 한 팔레트에, 파란 크레이트는 다른 팔레트에 올리라는 지시라면 노란 크레이트가 팔레트 1에 있는 경우와 팔레트 2에 있는 경우
+
+# 작업 합성(compose 스테이지)이 쓰는 낱말과 규칙. 성질(trait)은 원천 어댑터가 알려 준 것이다
+# (stackable 쌓을 수 있는 상자류, holder 다른 것을 담는 용기, small 용기에 담을 만한 작은 것, disposable 버리거나 재활용할 포장재,
+# graspable 손으로 옮길 수 있는 것).
+task_synthesis:
+  object_en: # 물체 분류 -> 지시문에 쓰는 이름
+    barcode_scanner: barcode scanner
+    barcode_scanner_brown: brown barcode scanner
+    barcode_scanner_white: white barcode scanner
+    barcode_scanner_yellow: yellow barcode scanner
+    barcode_scanner_blue: blue barcode scanner
+    barcode_scanner_gray: gray barcode scanner
+    barcode_scanner_black: black barcode scanner
+    barcode_scanner_red: red barcode scanner
+    barcode_scanner_green: green barcode scanner
+    barcode_scanner_orange: orange barcode scanner
+    barcode_scanner_mint: mint barcode scanner
+    barcode_scanner_lightgreen: light green barcode scanner
+    barcode_scanner_violet: violet barcode scanner
+    box: box
+    box_brown: brown box
+    box_white: white box
+    box_yellow: yellow box
+    box_blue: blue box
+    box_gray: gray box
+    box_black: black box
+    box_red: red box
+    box_green: green box
+    box_orange: orange box
+    box_mint: mint box
+    box_lightgreen: light green box
+    box_violet: violet box
+    bucket: bucket
+    bucket_brown: brown bucket
+    bucket_white: white bucket
+    bucket_yellow: yellow bucket
+    bucket_blue: blue bucket
+    bucket_gray: gray bucket
+    bucket_black: black bucket
+    bucket_red: red bucket
+    bucket_green: green bucket
+    bucket_orange: orange bucket
+    bucket_mint: mint bucket
+    bucket_lightgreen: light green bucket
+    bucket_violet: violet bucket
+    cardboard_box: cardboard box
+    cardboard_box_brown: brown cardboard box
+    cardboard_box_white: white cardboard box
+    cardboard_box_yellow: yellow cardboard box
+    cardboard_box_blue: blue cardboard box
+    cardboard_box_gray: gray cardboard box
+    cardboard_box_black: black cardboard box
+    cardboard_box_red: red cardboard box
+    cardboard_box_green: green cardboard box
+    cardboard_box_orange: orange cardboard box
+    cardboard_box_mint: mint cardboard box
+    cardboard_box_lightgreen: light green cardboard box
+    cardboard_box_violet: violet cardboard box
+    corrugated_box: corrugated box
+    corrugated_box_brown: brown corrugated box
+    corrugated_box_white: white corrugated box
+    corrugated_box_yellow: yellow corrugated box
+    corrugated_box_blue: blue corrugated box
+    corrugated_box_gray: gray corrugated box
+    corrugated_box_black: black corrugated box
+    corrugated_box_red: red corrugated box
+    corrugated_box_green: green corrugated box
+    corrugated_box_orange: orange corrugated box
+    corrugated_box_mint: mint corrugated box
+    corrugated_box_lightgreen: light green corrugated box
+    corrugated_box_violet: violet corrugated box
+    crate: crate
+    crate_brown: brown crate
+    crate_white: white crate
+    crate_yellow: yellow crate
+    crate_blue: blue crate
+    crate_gray: gray crate
+    crate_black: black crate
+    crate_red: red crate
+    crate_green: green crate
+    crate_orange: orange crate
+    crate_mint: mint crate
+    crate_lightgreen: light green crate
+    crate_violet: violet crate
+    cube_box: cube box
+    cube_box_brown: brown cube box
+    cube_box_white: white cube box
+    cube_box_yellow: yellow cube box
+    cube_box_blue: blue cube box
+    cube_box_gray: gray cube box
+    cube_box_black: black cube box
+    cube_box_red: red cube box
+    cube_box_green: green cube box
+    cube_box_orange: orange cube box
+    cube_box_mint: mint cube box
+    cube_box_lightgreen: light green cube box
+    cube_box_violet: violet cube box
+    flat_box: flat box
+    flat_box_brown: brown flat box
+    flat_box_white: white flat box
+    flat_box_yellow: yellow flat box
+    flat_box_blue: blue flat box
+    flat_box_gray: gray flat box
+    flat_box_black: black flat box
+    flat_box_red: red flat box
+    flat_box_green: green flat box
+    flat_box_orange: orange flat box
+    flat_box_mint: mint flat box
+    flat_box_lightgreen: light green flat box
+    flat_box_violet: violet flat box
+    folded_boxes: bundle of folded boxes
+    folded_boxes_brown: brown bundle of folded boxes
+    folded_boxes_white: white bundle of folded boxes
+    folded_boxes_yellow: yellow bundle of folded boxes
+    folded_boxes_blue: blue bundle of folded boxes
+    folded_boxes_gray: gray bundle of folded boxes
+    folded_boxes_black: black bundle of folded boxes
+    folded_boxes_red: red bundle of folded boxes
+    folded_boxes_green: green bundle of folded boxes
+    folded_boxes_orange: orange bundle of folded boxes
+    folded_boxes_mint: mint bundle of folded boxes
+    folded_boxes_lightgreen: light green bundle of folded boxes
+    folded_boxes_violet: violet bundle of folded boxes
+    large_box: large box
+    large_box_brown: brown large box
+    large_box_white: white large box
+    large_box_yellow: yellow large box
+    large_box_blue: blue large box
+    large_box_gray: gray large box
+    large_box_black: black large box
+    large_box_red: red large box
+    large_box_green: green large box
+    large_box_orange: orange large box
+    large_box_mint: mint large box
+    large_box_lightgreen: light green large box
+    large_box_violet: violet large box
+    lidded_pail: lidded pail
+    lidded_pail_brown: brown lidded pail
+    lidded_pail_white: white lidded pail
+    lidded_pail_yellow: yellow lidded pail
+    lidded_pail_blue: blue lidded pail
+    lidded_pail_gray: gray lidded pail
+    lidded_pail_black: black lidded pail
+    lidded_pail_red: red lidded pail
+    lidded_pail_green: green lidded pail
+    lidded_pail_orange: orange lidded pail
+    lidded_pail_mint: mint lidded pail
+    lidded_pail_lightgreen: light green lidded pail
+    lidded_pail_violet: violet lidded pail
+    long_box: long box
+    long_box_brown: brown long box
+    long_box_white: white long box
+    long_box_yellow: yellow long box
+    long_box_blue: blue long box
+    long_box_gray: gray long box
+    long_box_black: black long box
+    long_box_red: red long box
+    long_box_green: green long box
+    long_box_orange: orange long box
+    long_box_mint: mint long box
+    long_box_lightgreen: light green long box
+    long_box_violet: violet long box
+    open_box: open box
+    open_box_brown: brown open box
+    open_box_white: white open box
+    open_box_yellow: yellow open box
+    open_box_blue: blue open box
+    open_box_gray: gray open box
+    open_box_black: black open box
+    open_box_red: red open box
+    open_box_green: green open box
+    open_box_orange: orange open box
+    open_box_mint: mint open box
+    open_box_lightgreen: light green open box
+    open_box_violet: violet open box
+    paper_roll: paper roll
+    paper_roll_brown: brown paper roll
+    paper_roll_white: white paper roll
+    paper_roll_yellow: yellow paper roll
+    paper_roll_blue: blue paper roll
+    paper_roll_gray: gray paper roll
+    paper_roll_black: black paper roll
+    paper_roll_red: red paper roll
+    paper_roll_green: green paper roll
+    paper_roll_orange: orange paper roll
+    paper_roll_mint: mint paper roll
+    paper_roll_lightgreen: light green paper roll
+    paper_roll_violet: violet paper roll
+    plywood_crate: plywood crate
+    plywood_crate_brown: brown plywood crate
+    plywood_crate_white: white plywood crate
+    plywood_crate_yellow: yellow plywood crate
+    plywood_crate_blue: blue plywood crate
+    plywood_crate_gray: gray plywood crate
+    plywood_crate_black: black plywood crate
+    plywood_crate_red: red plywood crate
+    plywood_crate_green: green plywood crate
+    plywood_crate_orange: orange plywood crate
+    plywood_crate_mint: mint plywood crate
+    plywood_crate_lightgreen: light green plywood crate
+    plywood_crate_violet: violet plywood crate
+    printer_box: printer box
+    printer_box_brown: brown printer box
+    printer_box_white: white printer box
+    printer_box_yellow: yellow printer box
+    printer_box_blue: blue printer box
+    printer_box_gray: gray printer box
+    printer_box_black: black printer box
+    printer_box_red: red printer box
+    printer_box_green: green printer box
+    printer_box_orange: orange printer box
+    printer_box_mint: mint printer box
+    printer_box_lightgreen: light green printer box
+    printer_box_violet: violet printer box
+    storage_bin: storage bin
+    storage_bin_brown: brown storage bin
+    storage_bin_white: white storage bin
+    storage_bin_yellow: yellow storage bin
+    storage_bin_blue: blue storage bin
+    storage_bin_gray: gray storage bin
+    storage_bin_black: black storage bin
+    storage_bin_red: red storage bin
+    storage_bin_green: green storage bin
+    storage_bin_orange: orange storage bin
+    storage_bin_mint: mint storage bin
+    storage_bin_lightgreen: light green storage bin
+    storage_bin_violet: violet storage bin
+    tape: roll of tape
+    tape_brown: brown roll of tape
+    tape_white: white roll of tape
+    tape_yellow: yellow roll of tape
+    tape_blue: blue roll of tape
+    tape_gray: gray roll of tape
+    tape_black: black roll of tape
+    tape_red: red roll of tape
+    tape_green: green roll of tape
+    tape_orange: orange roll of tape
+    tape_mint: mint roll of tape
+    tape_lightgreen: light green roll of tape
+    tape_violet: violet roll of tape
+    tape_dispenser: tape dispenser
+    tape_dispenser_brown: brown tape dispenser
+    tape_dispenser_white: white tape dispenser
+    tape_dispenser_yellow: yellow tape dispenser
+    tape_dispenser_blue: blue tape dispenser
+    tape_dispenser_gray: gray tape dispenser
+    tape_dispenser_black: black tape dispenser
+    tape_dispenser_red: red tape dispenser
+    tape_dispenser_green: green tape dispenser
+    tape_dispenser_orange: orange tape dispenser
+    tape_dispenser_mint: mint tape dispenser
+    tape_dispenser_lightgreen: light green tape dispenser
+    tape_dispenser_violet: violet tape dispenser
+    wooden_crate: wooden crate
+    wooden_crate_brown: brown wooden crate
+    wooden_crate_white: white wooden crate
+    wooden_crate_yellow: yellow wooden crate
+    wooden_crate_blue: blue wooden crate
+    wooden_crate_gray: gray wooden crate
+    wooden_crate_black: black wooden crate
+    wooden_crate_red: red wooden crate
+    wooden_crate_green: green wooden crate
+    wooden_crate_orange: orange wooden crate
+    wooden_crate_mint: mint wooden crate
+    wooden_crate_lightgreen: light green wooden crate
+    wooden_crate_violet: violet wooden crate
+  object_plural_en: # 여럿을 가리킬 때의 이름
+    barcode_scanner: barcode scanners
+    barcode_scanner_brown: brown barcode scanners
+    barcode_scanner_white: white barcode scanners
+    barcode_scanner_yellow: yellow barcode scanners
+    barcode_scanner_blue: blue barcode scanners
+    barcode_scanner_gray: gray barcode scanners
+    barcode_scanner_black: black barcode scanners
+    barcode_scanner_red: red barcode scanners
+    barcode_scanner_green: green barcode scanners
+    barcode_scanner_orange: orange barcode scanners
+    barcode_scanner_mint: mint barcode scanners
+    barcode_scanner_lightgreen: light green barcode scanners
+    barcode_scanner_violet: violet barcode scanners
+    box: boxes
+    box_brown: brown boxes
+    box_white: white boxes
+    box_yellow: yellow boxes
+    box_blue: blue boxes
+    box_gray: gray boxes
+    box_black: black boxes
+    box_red: red boxes
+    box_green: green boxes
+    box_orange: orange boxes
+    box_mint: mint boxes
+    box_lightgreen: light green boxes
+    box_violet: violet boxes
+    bucket: buckets
+    bucket_brown: brown buckets
+    bucket_white: white buckets
+    bucket_yellow: yellow buckets
+    bucket_blue: blue buckets
+    bucket_gray: gray buckets
+    bucket_black: black buckets
+    bucket_red: red buckets
+    bucket_green: green buckets
+    bucket_orange: orange buckets
+    bucket_mint: mint buckets
+    bucket_lightgreen: light green buckets
+    bucket_violet: violet buckets
+    cardboard_box: cardboard boxes
+    cardboard_box_brown: brown cardboard boxes
+    cardboard_box_white: white cardboard boxes
+    cardboard_box_yellow: yellow cardboard boxes
+    cardboard_box_blue: blue cardboard boxes
+    cardboard_box_gray: gray cardboard boxes
+    cardboard_box_black: black cardboard boxes
+    cardboard_box_red: red cardboard boxes
+    cardboard_box_green: green cardboard boxes
+    cardboard_box_orange: orange cardboard boxes
+    cardboard_box_mint: mint cardboard boxes
+    cardboard_box_lightgreen: light green cardboard boxes
+    cardboard_box_violet: violet cardboard boxes
+    corrugated_box: corrugated boxes
+    corrugated_box_brown: brown corrugated boxes
+    corrugated_box_white: white corrugated boxes
+    corrugated_box_yellow: yellow corrugated boxes
+    corrugated_box_blue: blue corrugated boxes
+    corrugated_box_gray: gray corrugated boxes
+    corrugated_box_black: black corrugated boxes
+    corrugated_box_red: red corrugated boxes
+    corrugated_box_green: green corrugated boxes
+    corrugated_box_orange: orange corrugated boxes
+    corrugated_box_mint: mint corrugated boxes
+    corrugated_box_lightgreen: light green corrugated boxes
+    corrugated_box_violet: violet corrugated boxes
+    crate: crates
+    crate_brown: brown crates
+    crate_white: white crates
+    crate_yellow: yellow crates
+    crate_blue: blue crates
+    crate_gray: gray crates
+    crate_black: black crates
+    crate_red: red crates
+    crate_green: green crates
+    crate_orange: orange crates
+    crate_mint: mint crates
+    crate_lightgreen: light green crates
+    crate_violet: violet crates
+    cube_box: cube boxes
+    cube_box_brown: brown cube boxes
+    cube_box_white: white cube boxes
+    cube_box_yellow: yellow cube boxes
+    cube_box_blue: blue cube boxes
+    cube_box_gray: gray cube boxes
+    cube_box_black: black cube boxes
+    cube_box_red: red cube boxes
+    cube_box_green: green cube boxes
+    cube_box_orange: orange cube boxes
+    cube_box_mint: mint cube boxes
+    cube_box_lightgreen: light green cube boxes
+    cube_box_violet: violet cube boxes
+    flat_box: flat boxes
+    flat_box_brown: brown flat boxes
+    flat_box_white: white flat boxes
+    flat_box_yellow: yellow flat boxes
+    flat_box_blue: blue flat boxes
+    flat_box_gray: gray flat boxes
+    flat_box_black: black flat boxes
+    flat_box_red: red flat boxes
+    flat_box_green: green flat boxes
+    flat_box_orange: orange flat boxes
+    flat_box_mint: mint flat boxes
+    flat_box_lightgreen: light green flat boxes
+    flat_box_violet: violet flat boxes
+    folded_boxes: bundles of folded boxes
+    folded_boxes_brown: brown bundles of folded boxes
+    folded_boxes_white: white bundles of folded boxes
+    folded_boxes_yellow: yellow bundles of folded boxes
+    folded_boxes_blue: blue bundles of folded boxes
+    folded_boxes_gray: gray bundles of folded boxes
+    folded_boxes_black: black bundles of folded boxes
+    folded_boxes_red: red bundles of folded boxes
+    folded_boxes_green: green bundles of folded boxes
+    folded_boxes_orange: orange bundles of folded boxes
+    folded_boxes_mint: mint bundles of folded boxes
+    folded_boxes_lightgreen: light green bundles of folded boxes
+    folded_boxes_violet: violet bundles of folded boxes
+    large_box: large boxes
+    large_box_brown: brown large boxes
+    large_box_white: white large boxes
+    large_box_yellow: yellow large boxes
+    large_box_blue: blue large boxes
+    large_box_gray: gray large boxes
+    large_box_black: black large boxes
+    large_box_red: red large boxes
+    large_box_green: green large boxes
+    large_box_orange: orange large boxes
+    large_box_mint: mint large boxes
+    large_box_lightgreen: light green large boxes
+    large_box_violet: violet large boxes
+    lidded_pail: lidded pails
+    lidded_pail_brown: brown lidded pails
+    lidded_pail_white: white lidded pails
+    lidded_pail_yellow: yellow lidded pails
+    lidded_pail_blue: blue lidded pails
+    lidded_pail_gray: gray lidded pails
+    lidded_pail_black: black lidded pails
+    lidded_pail_red: red lidded pails
+    lidded_pail_green: green lidded pails
+    lidded_pail_orange: orange lidded pails
+    lidded_pail_mint: mint lidded pails
+    lidded_pail_lightgreen: light green lidded pails
+    lidded_pail_violet: violet lidded pails
+    long_box: long boxes
+    long_box_brown: brown long boxes
+    long_box_white: white long boxes
+    long_box_yellow: yellow long boxes
+    long_box_blue: blue long boxes
+    long_box_gray: gray long boxes
+    long_box_black: black long boxes
+    long_box_red: red long boxes
+    long_box_green: green long boxes
+    long_box_orange: orange long boxes
+    long_box_mint: mint long boxes
+    long_box_lightgreen: light green long boxes
+    long_box_violet: violet long boxes
+    open_box: open boxes
+    open_box_brown: brown open boxes
+    open_box_white: white open boxes
+    open_box_yellow: yellow open boxes
+    open_box_blue: blue open boxes
+    open_box_gray: gray open boxes
+    open_box_black: black open boxes
+    open_box_red: red open boxes
+    open_box_green: green open boxes
+    open_box_orange: orange open boxes
+    open_box_mint: mint open boxes
+    open_box_lightgreen: light green open boxes
+    open_box_violet: violet open boxes
+    paper_roll: paper rolls
+    paper_roll_brown: brown paper rolls
+    paper_roll_white: white paper rolls
+    paper_roll_yellow: yellow paper rolls
+    paper_roll_blue: blue paper rolls
+    paper_roll_gray: gray paper rolls
+    paper_roll_black: black paper rolls
+    paper_roll_red: red paper rolls
+    paper_roll_green: green paper rolls
+    paper_roll_orange: orange paper rolls
+    paper_roll_mint: mint paper rolls
+    paper_roll_lightgreen: light green paper rolls
+    paper_roll_violet: violet paper rolls
+    plywood_crate: plywood crates
+    plywood_crate_brown: brown plywood crates
+    plywood_crate_white: white plywood crates
+    plywood_crate_yellow: yellow plywood crates
+    plywood_crate_blue: blue plywood crates
+    plywood_crate_gray: gray plywood crates
+    plywood_crate_black: black plywood crates
+    plywood_crate_red: red plywood crates
+    plywood_crate_green: green plywood crates
+    plywood_crate_orange: orange plywood crates
+    plywood_crate_mint: mint plywood crates
+    plywood_crate_lightgreen: light green plywood crates
+    plywood_crate_violet: violet plywood crates
+    printer_box: printer boxes
+    printer_box_brown: brown printer boxes
+    printer_box_white: white printer boxes
+    printer_box_yellow: yellow printer boxes
+    printer_box_blue: blue printer boxes
+    printer_box_gray: gray printer boxes
+    printer_box_black: black printer boxes
+    printer_box_red: red printer boxes
+    printer_box_green: green printer boxes
+    printer_box_orange: orange printer boxes
+    printer_box_mint: mint printer boxes
+    printer_box_lightgreen: light green printer boxes
+    printer_box_violet: violet printer boxes
+    storage_bin: storage bins
+    storage_bin_brown: brown storage bins
+    storage_bin_white: white storage bins
+    storage_bin_yellow: yellow storage bins
+    storage_bin_blue: blue storage bins
+    storage_bin_gray: gray storage bins
+    storage_bin_black: black storage bins
+    storage_bin_red: red storage bins
+    storage_bin_green: green storage bins
+    storage_bin_orange: orange storage bins
+    storage_bin_mint: mint storage bins
+    storage_bin_lightgreen: light green storage bins
+    storage_bin_violet: violet storage bins
+    tape: rolls of tape
+    tape_brown: brown rolls of tape
+    tape_white: white rolls of tape
+    tape_yellow: yellow rolls of tape
+    tape_blue: blue rolls of tape
+    tape_gray: gray rolls of tape
+    tape_black: black rolls of tape
+    tape_red: red rolls of tape
+    tape_green: green rolls of tape
+    tape_orange: orange rolls of tape
+    tape_mint: mint rolls of tape
+    tape_lightgreen: light green rolls of tape
+    tape_violet: violet rolls of tape
+    tape_dispenser: tape dispensers
+    tape_dispenser_brown: brown tape dispensers
+    tape_dispenser_white: white tape dispensers
+    tape_dispenser_yellow: yellow tape dispensers
+    tape_dispenser_blue: blue tape dispensers
+    tape_dispenser_gray: gray tape dispensers
+    tape_dispenser_black: black tape dispensers
+    tape_dispenser_red: red tape dispensers
+    tape_dispenser_green: green tape dispensers
+    tape_dispenser_orange: orange tape dispensers
+    tape_dispenser_mint: mint tape dispensers
+    tape_dispenser_lightgreen: light green tape dispensers
+    tape_dispenser_violet: violet tape dispensers
+    wooden_crate: wooden crates
+    wooden_crate_brown: brown wooden crates
+    wooden_crate_white: white wooden crates
+    wooden_crate_yellow: yellow wooden crates
+    wooden_crate_blue: blue wooden crates
+    wooden_crate_gray: gray wooden crates
+    wooden_crate_black: black wooden crates
+    wooden_crate_red: red wooden crates
+    wooden_crate_green: green wooden crates
+    wooden_crate_orange: orange wooden crates
+    wooden_crate_mint: mint wooden crates
+    wooden_crate_lightgreen: light green wooden crates
+    wooden_crate_violet: violet wooden crates
+  fixture_en: { worktable: work table, rack: rack, cart: cart, pallet: pallet, recycling_bin: recycling bin, trash_can: trash can, floor: floor }
+  region_en: { shelf: shelf, top: top } # 칸 종류 -> 지시문에 쓰는 이름
+  burners: []
+  open_keys: [] # 이 도메인의 설비에는 여닫는 상태가 없다
+  region_doors: {}
+  destinations: # 물체를 받는 설비: 관계, any면 그 종류 아무 것, trait가 있으면 그 성질이 있는 물체만
+    pallet: { relation: "on", any: true }
+    recycling_bin: { relation: "in", any: true, trait: disposable }
+    trash_can: { relation: "in", any: true, trait: disposable }
+  region_destinations: # 물체를 받는 칸: 설비 종류 -> 칸 종류 -> 관계
+    rack: { shelf: { relation: "on" } }
+    cart: { shelf: { relation: "on" } }
+    worktable: { shelf: { relation: "on" }, top: { relation: "on" } }
+  receptacle_items: { types: [small] } # 용기에 담을 수 있는 것: 작은 물건
+  receptacles: # 다른 물체를 받는 물체: 관계 -> 분류
+    "in": [bucket, bucket_brown, bucket_white, bucket_yellow, bucket_blue, bucket_gray, bucket_black, bucket_red, bucket_green, bucket_orange, bucket_mint, bucket_lightgreen, bucket_violet, crate, crate_brown, crate_white, crate_yellow, crate_blue, crate_gray, crate_black, crate_red, crate_green, crate_orange, crate_mint, crate_lightgreen, crate_violet, open_box, open_box_brown, open_box_white, open_box_yellow, open_box_blue, open_box_gray, open_box_black, open_box_red, open_box_green, open_box_orange, open_box_mint, open_box_lightgreen, open_box_violet, storage_bin, storage_bin_brown, storage_bin_white, storage_bin_yellow, storage_bin_blue, storage_bin_gray, storage_bin_black, storage_bin_red, storage_bin_green, storage_bin_orange, storage_bin_mint, storage_bin_lightgreen, storage_bin_violet]
+  heaters: []
+  washers: []
+  durations_s: []
+  size_ratio_min: 1.15
+  switches: {}
+  group_max: 4 # '전부 옮겨'로 묶는 같은 종류 물체 수의 상한 (목표 상태가 그만큼 길어진다)
+  clear_max: 6 # '자리를 비워'로 한 번에 옮기는 물체 수의 상한
+  stack_height_max: 4 # 쌓인 높이를 상황으로 가를 때의 상한 (그 이상은 같은 상황으로 본다)
