@@ -43,7 +43,7 @@ function showOverview() {
   fill($("content"),
     el("section", { class: "card" }, [
       el("h2", {}, "검수를 통과한 샘플"),
-      el("p", { class: "muted small" }, "한국어 자연어 지시와 로봇이 인식한 세계 상태를 입력으로, 추론과 작업 상황 설명문(TSD)을 출력으로 해요. 생성 에이전트 셋이 만들고 검수를 통과한 것만 담았어요."),
+      el("p", { class: "muted small" }, "한국어 자연어 지시와 세계 상태를 입력으로, 추론과 작업상황설명문(TSD)을 출력으로 한다. 3종의 생성 모델로 생성하고 자동 검수를 통과한 샘플만 수록하였다."),
       el("div", { class: "stats" }, [el("div", { class: "stat" }, [el("b", {}, fmt(rows.length)), "전체"]),
         ...byDomain.map(([d, rs]) => el("div", { class: "stat" }, [el("b", {}, fmt(rs.length)), `${DOMAINS[d]} · 유형 ${new Set(rs.map((r) => r.type)).size}개`]))]),
     ]),
@@ -76,7 +76,7 @@ function showSamples() {
   };
   let rows = [];
   const paint = () => {
-    fill(grid, rows.length ? rows.slice(0, state.shown).map(card) : el("p", { class: "empty" }, "조건에 맞는 샘플이 없어요."));
+    fill(grid, rows.length ? rows.slice(0, state.shown).map(card) : el("p", { class: "empty" }, "조건에 맞는 샘플이 없습니다."));
     more.hidden = rows.length <= state.shown;
   };
   const draw = () => {
@@ -98,7 +98,7 @@ function showSamples() {
 }
 
 async function showSample(path) {
-  fill($("content"), el("p", { class: "empty" }, "샘플을 불러오는 중이에요."));
+  fill($("content"), el("p", { class: "empty" }, "샘플을 불러오는 중입니다."));
   const sample = await (await fetch(`${RAW}${path}/sample.json`)).json();
   const tsd = sample.output.task_situation_description;
   const section = (title, body, open = true) => el("details", open ? { open: "" } : {}, [el("summary", {}, title), body]);
@@ -115,10 +115,10 @@ async function showSample(path) {
           el("a", { href: `${RAW}${path}/scene.json`, target: "_blank", rel: "noopener" }, "scene.json")]),
       ]),
     ])),
-    el("section", { class: "card" }, section("입력: 세계 상태 글 (모델이 받은 그대로)", el("pre", {}, sample.input.world_state || ""))),
+    el("section", { class: "card" }, section("입력: 세계 상태", el("pre", {}, sample.input.world_state || ""))),
     el("section", { class: "card" }, section("출력: 추론", el("pre", {}, sample.output.reasoning || ""))),
-    el("section", { class: "card" }, section("출력: 작업 상황 설명문", el("pre", {}, sample.output.task_situation_description_text || ""))),
-    el("section", { class: "card" }, section("출력: 작업 상황 설명문 JSON", el("pre", { class: "mono" }, JSON.stringify(tsd, null, 1)), false)));
+    el("section", { class: "card" }, section("출력: 작업상황설명문", el("pre", {}, sample.output.task_situation_description_text || ""))),
+    el("section", { class: "card" }, section("출력: 작업상황설명문 JSON", el("pre", { class: "mono" }, JSON.stringify(tsd, null, 1)), false)));
 }
 
 async function route() {
@@ -129,7 +129,7 @@ async function route() {
     else if (view === "samples") showSamples();
     else showOverview();
   } catch (error) {
-    fill($("content"), el("p", { class: "empty" }, `불러오지 못했어요: ${error.message || error}`));
+    fill($("content"), el("p", { class: "empty" }, `불러오지 못했습니다: ${error.message || error}`));
   }
   window.scrollTo(0, 0);
 }
@@ -140,4 +140,4 @@ async function start() {
   await route();
 }
 
-start().catch((error) => fill($("content"), el("p", { class: "empty" }, `불러오지 못했어요: ${error.message || error}`)));
+start().catch((error) => fill($("content"), el("p", { class: "empty" }, `불러오지 못했습니다: ${error.message || error}`)));
