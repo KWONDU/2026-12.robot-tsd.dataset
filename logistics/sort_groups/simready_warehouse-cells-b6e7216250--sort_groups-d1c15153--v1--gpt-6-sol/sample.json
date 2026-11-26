@@ -1,0 +1,156 @@
+{
+ "id": "simready_warehouse-cells-b6e7216250--sort_groups-d1c15153--v1--gpt-6-sol",
+ "domain": "logistics",
+ "task_type": "sort_groups",
+ "agent": "gpt-6-sol",
+ "source": {
+  "data": "NVIDIA PhysicalAI-SimReady-Warehouse-01 (CC BY 4.0)",
+  "scene_id": "simready_warehouse/b6e7216250",
+  "task": "sort_groups",
+  "composed": true
+ },
+ "input": {
+  "instruction": "흰색 골판지 상자들은 전부 카트 맨 위 선반에 올려놓고, 긴 상자들은 팔레트에 옮겨줘.",
+  "instruction_en": "Put all the white corrugated boxes on the top shelf of the cart and all the long boxes on a pallet.",
+  "world_state": "장소: 물류 창고\n로봇(humanoid). 들고 있는 물체 없음.\n\n물체가 놓인 곳:\n- 바닥 위: 골판지 상자 1, 흰색 골판지 상자 1, 흰색 골판지 상자 2, 골판지 상자 2, 흰색 골판지 상자 3\n- 카트 선반 3 위: 열린 상자\n- 카트 선반 2 위: 긴 상자 1, 납작 상자 1, 납작 상자 2\n- 납작 상자 1 위: 납작 상자 3\n- 긴 상자 1 위: 긴 상자 2\n- 카트 선반 1 위: 바코드 스캐너\n\n물체 크기:\n- 골판지 상자: 큰 것부터 골판지 상자 1, 골판지 상자 2\n- 흰색 골판지 상자: 큰 것부터 흰색 골판지 상자 2, 흰색 골판지 상자 3, 흰색 골판지 상자 1\n- 긴 상자: 큰 것부터 긴 상자 1, 긴 상자 2\n- 납작 상자: 큰 것부터 납작 상자 3, 납작 상자 1, 납작 상자 2\n\n설비:\n- 바닥\n- 팔레트 1, 2, 4(팔레트 위)\n- 팔레트 3\n- 카트: 칸: 선반 1부터 3까지(위에서부터)",
+  "entity_labels": {
+   "fx_floor_1": "바닥",
+   "fx_pallet_1": "팔레트 1",
+   "fx_pallet_2": "팔레트 2",
+   "fx_pallet_3": "팔레트 3",
+   "fx_pallet_4": "팔레트 4",
+   "fx_cart_1": "카트",
+   "obj_001": "골판지 상자 1",
+   "obj_002": "흰색 골판지 상자 1",
+   "obj_003": "흰색 골판지 상자 2",
+   "obj_004": "골판지 상자 2",
+   "obj_005": "흰색 골판지 상자 3",
+   "obj_006": "열린 상자",
+   "obj_007": "긴 상자 1",
+   "obj_008": "납작 상자 1",
+   "obj_009": "납작 상자 2",
+   "obj_010": "납작 상자 3",
+   "obj_011": "긴 상자 2",
+   "obj_012": "바코드 스캐너",
+   "fx_cart_1/shelf1": "카트 선반 1",
+   "fx_cart_1/shelf2": "카트 선반 2",
+   "fx_cart_1/shelf3": "카트 선반 3"
+  }
+ },
+ "output": {
+  "reasoning": "① 지시 해석: 흰색 골판지 상자 전부를 카트의 맨 위 선반에, 긴 상자 전부를 팔레트에 옮기는 작업이다. 시간 조건은 없고 두 종류의 상자를 옮기는 순서도 정해지지 않았다. 흰색 골판지 상자는 바닥에, 긴 상자는 카트에 있으므로 시작 장소는 바닥 혹은 카트이고, 도착 장소는 카트 혹은 팔레트다. ② 씬 접지: 흰색 골판지 상자 1·2·3은 바닥 위에 있다. 긴 상자 1은 카트 선반 2 위에 있고 긴 상자 2는 긴 상자 1 위에 있다. 카트의 맨 위 선반은 선반 1이다. ③ 역할 부여: 위치를 바꿀 다섯 상자는 필수이고, 상자를 받는 카트 선반 1과 팔레트는 핵심 수단이다. 바닥과 카트는 옮길 상자들의 초기 위치 기준이므로 보조다. 긴 상자 2는 긴 상자 1 위에 있지만, 옮길 대상으로도 지정되어 있어 필수로만 분류한다. ④ 제약 도출: 긴 상자 1 위에 놓인 긴 상자 2를 먼저 치워야 긴 상자 1을 옮길 수 있다. ⑤ 목표 상태: 흰색 골판지 상자 1·2·3은 각각 카트 선반 1 위에, 긴 상자 1·2는 각각 팔레트 위에 있어야 한다. 어느 팔레트든 가능하므로 번호를 뗀 이름을 쓴다.",
+  "task_situation_description": {
+   "task_goal": {
+    "summary": "흰색 골판지 상자 전부를 카트 맨 위 선반에 올리고 긴 상자 전부를 팔레트로 옮기는 것",
+    "goal_state": [
+     [
+      {
+       "kind": "relation",
+       "subject": "흰색 골판지 상자 1",
+       "predicate": "on",
+       "object": "카트 선반 1",
+       "value": true
+      },
+      {
+       "kind": "relation",
+       "subject": "흰색 골판지 상자 2",
+       "predicate": "on",
+       "object": "카트 선반 1",
+       "value": true
+      },
+      {
+       "kind": "relation",
+       "subject": "흰색 골판지 상자 3",
+       "predicate": "on",
+       "object": "카트 선반 1",
+       "value": true
+      },
+      {
+       "kind": "relation",
+       "subject": "긴 상자 1",
+       "predicate": "on",
+       "object": "팔레트",
+       "value": true
+      },
+      {
+       "kind": "relation",
+       "subject": "긴 상자 2",
+       "predicate": "on",
+       "object": "팔레트",
+       "value": true
+      }
+     ]
+    ]
+   },
+   "spatiotemporal_conditions": {
+    "time": null,
+    "space": {
+     "start": "바닥 혹은 카트",
+     "end": "카트 혹은 팔레트"
+    }
+   },
+   "target_objects": {
+    "required": [
+     {
+      "ref": "흰색 골판지 상자 1",
+      "location": "바닥 위",
+      "state": null
+     },
+     {
+      "ref": "흰색 골판지 상자 2",
+      "location": "바닥 위",
+      "state": null
+     },
+     {
+      "ref": "흰색 골판지 상자 3",
+      "location": "바닥 위",
+      "state": null
+     },
+     {
+      "ref": "긴 상자 1",
+      "location": "카트 선반 2 위",
+      "state": null
+     },
+     {
+      "ref": "긴 상자 2",
+      "location": "긴 상자 1 위",
+      "state": null
+     }
+    ],
+    "key_means": [
+     {
+      "ref": "카트 선반 1",
+      "location": null,
+      "state": null,
+      "alternatives": []
+     },
+     {
+      "ref": "팔레트",
+      "location": null,
+      "state": null,
+      "alternatives": []
+     }
+    ],
+    "auxiliary": [
+     {
+      "ref": "바닥",
+      "location": null,
+      "note": "흰색 골판지 상자 1·2·3의 초기 위치 기준"
+     },
+     {
+      "ref": "카트",
+      "location": null,
+      "note": "긴 상자 1·2의 초기 위치 기준"
+     }
+    ]
+   },
+   "constraints": [
+    {
+     "type": "precedence",
+     "description": "긴 상자 2가 긴 상자 1 위에 놓여 있으므로 긴 상자 2를 치우는 것이 긴 상자 1을 옮기는 것에 선행해야 함"
+    }
+   ]
+  },
+  "task_situation_description_text": "작업 목표: 흰색 골판지 상자 전부를 카트 맨 위 선반에 올리고 긴 상자 전부를 팔레트로 옮기는 것\n목표 상태:\n- 흰색 골판지 상자 1: 카트 선반 1 위\n- 흰색 골판지 상자 2: 카트 선반 1 위\n- 흰색 골판지 상자 3: 카트 선반 1 위\n- 긴 상자 1: 팔레트 위\n- 긴 상자 2: 팔레트 위\n시간·공간 조건: 시간 조건은 없음, 공간 조건은 시작 바닥 혹은 카트, 종료 카트 혹은 팔레트\n대상 물체:\n- 필수 물체: 흰색 골판지 상자 1(위치: 바닥 위)\n- 필수 물체: 흰색 골판지 상자 2(위치: 바닥 위)\n- 필수 물체: 흰색 골판지 상자 3(위치: 바닥 위)\n- 필수 물체: 긴 상자 1(위치: 카트 선반 2 위)\n- 필수 물체: 긴 상자 2(위치: 긴 상자 1 위)\n- 핵심 수단: 카트 선반 1\n- 핵심 수단: 팔레트\n- 보조 물체: 바닥(비고: 흰색 골판지 상자 1·2·3의 초기 위치 기준)\n- 보조 물체: 카트(비고: 긴 상자 1·2의 초기 위치 기준)\n제약 사항:\n- [선후] 긴 상자 2가 긴 상자 1 위에 놓여 있으므로 긴 상자 2를 치우는 것이 긴 상자 1을 옮기는 것에 선행해야 함\n"
+ }
+}

@@ -1,0 +1,948 @@
+{
+ "schema_version": "0.5",
+ "scene_id": "scene_30247ec3aca5",
+ "domain": "logistics",
+ "simulator": "isaacsim_synthetic",
+ "layout": {
+  "layout_id": null,
+  "layout_name": "WarehousePile_A6+sm_warehousecomposition_m04_01+sm_warehousecomposition_m18_01",
+  "style_id": null,
+  "style_name": null
+ },
+ "fixtures": [
+  {
+   "id": "fx_floor_1",
+   "category": "floor",
+   "name_ko": "바닥",
+   "location_desc": null,
+   "states": {},
+   "state_source": "unknown",
+   "regions": []
+  },
+  {
+   "id": "fx_pallet_1",
+   "category": "pallet",
+   "name_ko": "팔레트",
+   "location_desc": null,
+   "states": {},
+   "state_source": "unknown",
+   "regions": []
+  }
+ ],
+ "objects": [
+  {
+   "id": "obj_001",
+   "category": "plywood_crate",
+   "name_ko": "합판 상자",
+   "states": {},
+   "placement": {
+    "fixture_id": "fx_floor_1",
+    "relation": "on",
+    "region": null,
+    "near_fixture_id": null,
+    "near_side": null
+   },
+   "pose": null,
+   "size_m": [
+    1.002,
+    1.009,
+    1.016
+   ],
+   "size_class": null
+  },
+  {
+   "id": "obj_002",
+   "category": "plywood_crate",
+   "name_ko": "합판 상자",
+   "states": {},
+   "placement": {
+    "fixture_id": "fx_floor_1",
+    "relation": "on",
+    "region": null,
+    "near_fixture_id": null,
+    "near_side": null
+   },
+   "pose": null,
+   "size_m": [
+    1.002,
+    1.009,
+    1.016
+   ],
+   "size_class": null
+  },
+  {
+   "id": "obj_003",
+   "category": "storage_bin_black",
+   "name_ko": "검은 보관함",
+   "states": {},
+   "placement": {
+    "fixture_id": "fx_floor_1",
+    "relation": "on",
+    "region": null,
+    "near_fixture_id": null,
+    "near_side": null
+   },
+   "pose": null,
+   "size_m": [
+    0.6,
+    0.4,
+    0.428
+   ],
+   "size_class": null
+  },
+  {
+   "id": "obj_004",
+   "category": "storage_bin_orange",
+   "name_ko": "주황 보관함",
+   "states": {},
+   "placement": {
+    "fixture_id": "fx_floor_1",
+    "relation": "on",
+    "region": null,
+    "near_fixture_id": null,
+    "near_side": null
+   },
+   "pose": null,
+   "size_m": [
+    0.6,
+    0.401,
+    0.428
+   ],
+   "size_class": null
+  },
+  {
+   "id": "obj_005",
+   "category": "storage_bin_gray",
+   "name_ko": "회색 보관함",
+   "states": {},
+   "placement": {
+    "fixture_id": "fx_floor_1",
+    "relation": "on",
+    "region": null,
+    "near_fixture_id": null,
+    "near_side": null
+   },
+   "pose": null,
+   "size_m": [
+    0.6,
+    0.4,
+    0.428
+   ],
+   "size_class": null
+  },
+  {
+   "id": "obj_006",
+   "category": "storage_bin_gray",
+   "name_ko": "회색 보관함",
+   "states": {},
+   "placement": {
+    "fixture_id": "fx_floor_1",
+    "relation": "on",
+    "region": null,
+    "near_fixture_id": null,
+    "near_side": null
+   },
+   "pose": null,
+   "size_m": [
+    0.6,
+    0.401,
+    0.428
+   ],
+   "size_class": null
+  },
+  {
+   "id": "obj_007",
+   "category": "storage_bin_orange",
+   "name_ko": "주황 보관함",
+   "states": {},
+   "placement": {
+    "fixture_id": "fx_floor_1",
+    "relation": "on",
+    "region": null,
+    "near_fixture_id": null,
+    "near_side": null
+   },
+   "pose": null,
+   "size_m": [
+    0.441,
+    0.626,
+    0.428
+   ],
+   "size_class": null
+  },
+  {
+   "id": "obj_008",
+   "category": "storage_bin_black",
+   "name_ko": "검은 보관함",
+   "states": {},
+   "placement": {
+    "fixture_id": "fx_floor_1",
+    "relation": "on",
+    "region": null,
+    "near_fixture_id": null,
+    "near_side": null
+   },
+   "pose": null,
+   "size_m": [
+    0.6,
+    0.401,
+    0.428
+   ],
+   "size_class": null
+  },
+  {
+   "id": "obj_009",
+   "category": "storage_bin_gray",
+   "name_ko": "회색 보관함",
+   "states": {},
+   "placement": {
+    "fixture_id": "fx_floor_1",
+    "relation": "on",
+    "region": null,
+    "near_fixture_id": null,
+    "near_side": null
+   },
+   "pose": null,
+   "size_m": [
+    0.6,
+    0.4,
+    0.428
+   ],
+   "size_class": null
+  },
+  {
+   "id": "obj_010",
+   "category": "plywood_crate",
+   "name_ko": "합판 상자",
+   "states": {},
+   "placement": {
+    "fixture_id": "fx_floor_1",
+    "relation": "on",
+    "region": null,
+    "near_fixture_id": null,
+    "near_side": null
+   },
+   "pose": null,
+   "size_m": [
+    1.089,
+    1.093,
+    1.908
+   ],
+   "size_class": null
+  },
+  {
+   "id": "obj_011",
+   "category": "storage_bin_gray",
+   "name_ko": "회색 보관함",
+   "states": {},
+   "placement": {
+    "fixture_id": "fx_floor_1",
+    "relation": "on",
+    "region": null,
+    "near_fixture_id": null,
+    "near_side": null
+   },
+   "pose": null,
+   "size_m": [
+    0.44,
+    0.626,
+    0.428
+   ],
+   "size_class": null
+  },
+  {
+   "id": "obj_012",
+   "category": "storage_bin_white",
+   "name_ko": "흰색 보관함",
+   "states": {},
+   "placement": {
+    "fixture_id": "fx_floor_1",
+    "relation": "on",
+    "region": null,
+    "near_fixture_id": null,
+    "near_side": null
+   },
+   "pose": null,
+   "size_m": [
+    0.6,
+    0.401,
+    0.428
+   ],
+   "size_class": null
+  },
+  {
+   "id": "obj_013",
+   "category": "storage_bin_black",
+   "name_ko": "검은 보관함",
+   "states": {},
+   "placement": {
+    "fixture_id": "fx_floor_1",
+    "relation": "on",
+    "region": null,
+    "near_fixture_id": null,
+    "near_side": null
+   },
+   "pose": null,
+   "size_m": [
+    0.6,
+    0.4,
+    0.428
+   ],
+   "size_class": null
+  },
+  {
+   "id": "obj_014",
+   "category": "storage_bin_black",
+   "name_ko": "검은 보관함",
+   "states": {},
+   "placement": {
+    "fixture_id": "fx_floor_1",
+    "relation": "on",
+    "region": null,
+    "near_fixture_id": null,
+    "near_side": null
+   },
+   "pose": null,
+   "size_m": [
+    0.6,
+    0.401,
+    0.428
+   ],
+   "size_class": null
+  },
+  {
+   "id": "obj_015",
+   "category": "cube_box",
+   "name_ko": "정육면체 상자",
+   "states": {},
+   "placement": {
+    "fixture_id": "fx_floor_1",
+    "relation": "on",
+    "region": null,
+    "near_fixture_id": null,
+    "near_side": null
+   },
+   "pose": null,
+   "size_m": [
+    0.514,
+    0.508,
+    0.522
+   ],
+   "size_class": null
+  },
+  {
+   "id": "obj_016",
+   "category": "cube_box",
+   "name_ko": "정육면체 상자",
+   "states": {},
+   "placement": {
+    "fixture_id": "fx_floor_1",
+    "relation": "on",
+    "region": null,
+    "near_fixture_id": null,
+    "near_side": null
+   },
+   "pose": null,
+   "size_m": [
+    0.508,
+    0.514,
+    0.522
+   ],
+   "size_class": null
+  },
+  {
+   "id": "obj_017",
+   "category": "flat_box",
+   "name_ko": "납작 상자",
+   "states": {},
+   "placement": {
+    "fixture_id": "fx_floor_1",
+    "relation": "on",
+    "region": null,
+    "near_fixture_id": null,
+    "near_side": null
+   },
+   "pose": null,
+   "size_m": [
+    0.51,
+    0.61,
+    0.166
+   ],
+   "size_class": null
+  },
+  {
+   "id": "obj_018",
+   "category": "flat_box",
+   "name_ko": "납작 상자",
+   "states": {},
+   "placement": {
+    "fixture_id": "fx_floor_1",
+    "relation": "on",
+    "region": null,
+    "near_fixture_id": null,
+    "near_side": null
+   },
+   "pose": null,
+   "size_m": [
+    0.61,
+    0.509,
+    0.166
+   ],
+   "size_class": null
+  },
+  {
+   "id": "obj_019",
+   "category": "flat_box",
+   "name_ko": "납작 상자",
+   "states": {},
+   "placement": null,
+   "pose": null,
+   "size_m": [
+    0.561,
+    0.652,
+    0.166
+   ],
+   "size_class": null
+  },
+  {
+   "id": "obj_020",
+   "category": "flat_box",
+   "name_ko": "납작 상자",
+   "states": {},
+   "placement": null,
+   "pose": null,
+   "size_m": [
+    0.61,
+    0.509,
+    0.166
+   ],
+   "size_class": null
+  },
+  {
+   "id": "obj_021",
+   "category": "cardboard_box",
+   "name_ko": "종이 상자",
+   "states": {},
+   "placement": {
+    "fixture_id": "fx_pallet_1",
+    "relation": "on",
+    "region": null,
+    "near_fixture_id": null,
+    "near_side": null
+   },
+   "pose": null,
+   "size_m": [
+    0.699,
+    0.51,
+    0.521
+   ],
+   "size_class": null
+  },
+  {
+   "id": "obj_022",
+   "category": "cardboard_box",
+   "name_ko": "종이 상자",
+   "states": {},
+   "placement": {
+    "fixture_id": "fx_pallet_1",
+    "relation": "on",
+    "region": null,
+    "near_fixture_id": null,
+    "near_side": null
+   },
+   "pose": null,
+   "size_m": [
+    0.699,
+    0.51,
+    0.521
+   ],
+   "size_class": null
+  },
+  {
+   "id": "obj_023",
+   "category": "cardboard_box",
+   "name_ko": "종이 상자",
+   "states": {},
+   "placement": {
+    "fixture_id": "fx_pallet_1",
+    "relation": "on",
+    "region": null,
+    "near_fixture_id": null,
+    "near_side": null
+   },
+   "pose": null,
+   "size_m": [
+    0.51,
+    0.699,
+    0.521
+   ],
+   "size_class": null
+  },
+  {
+   "id": "obj_024",
+   "category": "flat_box",
+   "name_ko": "납작 상자",
+   "states": {},
+   "placement": null,
+   "pose": null,
+   "size_m": [
+    0.366,
+    0.396,
+    0.11
+   ],
+   "size_class": null
+  },
+  {
+   "id": "obj_025",
+   "category": "storage_bin_orange",
+   "name_ko": "주황 보관함",
+   "states": {},
+   "placement": null,
+   "pose": null,
+   "size_m": [
+    0.6,
+    0.4,
+    0.428
+   ],
+   "size_class": null
+  },
+  {
+   "id": "obj_026",
+   "category": "storage_bin_orange",
+   "name_ko": "주황 보관함",
+   "states": {},
+   "placement": null,
+   "pose": null,
+   "size_m": [
+    0.441,
+    0.626,
+    0.428
+   ],
+   "size_class": null
+  },
+  {
+   "id": "obj_027",
+   "category": "storage_bin_gray",
+   "name_ko": "회색 보관함",
+   "states": {},
+   "placement": null,
+   "pose": null,
+   "size_m": [
+    0.6,
+    0.4,
+    0.428
+   ],
+   "size_class": null
+  },
+  {
+   "id": "obj_028",
+   "category": "storage_bin_gray",
+   "name_ko": "회색 보관함",
+   "states": {},
+   "placement": null,
+   "pose": null,
+   "size_m": [
+    0.6,
+    0.401,
+    0.428
+   ],
+   "size_class": null
+  },
+  {
+   "id": "obj_029",
+   "category": "storage_bin_gray",
+   "name_ko": "회색 보관함",
+   "states": {},
+   "placement": null,
+   "pose": null,
+   "size_m": [
+    0.6,
+    0.4,
+    0.428
+   ],
+   "size_class": null
+  },
+  {
+   "id": "obj_030",
+   "category": "storage_bin_gray",
+   "name_ko": "회색 보관함",
+   "states": {},
+   "placement": null,
+   "pose": null,
+   "size_m": [
+    0.44,
+    0.626,
+    0.428
+   ],
+   "size_class": null
+  },
+  {
+   "id": "obj_031",
+   "category": "storage_bin_black",
+   "name_ko": "검은 보관함",
+   "states": {},
+   "placement": null,
+   "pose": null,
+   "size_m": [
+    0.656,
+    0.491,
+    0.428
+   ],
+   "size_class": null
+  },
+  {
+   "id": "obj_032",
+   "category": "storage_bin_black",
+   "name_ko": "검은 보관함",
+   "states": {},
+   "placement": null,
+   "pose": null,
+   "size_m": [
+    0.631,
+    0.449,
+    0.428
+   ],
+   "size_class": null
+  },
+  {
+   "id": "obj_033",
+   "category": "flat_box",
+   "name_ko": "납작 상자",
+   "states": {},
+   "placement": null,
+   "pose": null,
+   "size_m": [
+    0.318,
+    0.315,
+    0.162
+   ],
+   "size_class": null
+  },
+  {
+   "id": "obj_034",
+   "category": "flat_box",
+   "name_ko": "납작 상자",
+   "states": {},
+   "placement": null,
+   "pose": null,
+   "size_m": [
+    0.365,
+    0.368,
+    0.162
+   ],
+   "size_class": null
+  },
+  {
+   "id": "obj_035",
+   "category": "flat_box",
+   "name_ko": "납작 상자",
+   "states": {},
+   "placement": null,
+   "pose": null,
+   "size_m": [
+    0.315,
+    0.318,
+    0.162
+   ],
+   "size_class": null
+  },
+  {
+   "id": "obj_036",
+   "category": "cardboard_box",
+   "name_ko": "종이 상자",
+   "states": {},
+   "placement": null,
+   "pose": null,
+   "size_m": [
+    0.513,
+    0.51,
+    0.26
+   ],
+   "size_class": null
+  },
+  {
+   "id": "obj_037",
+   "category": "cardboard_box",
+   "name_ko": "종이 상자",
+   "states": {},
+   "placement": null,
+   "pose": null,
+   "size_m": [
+    0.513,
+    0.511,
+    0.26
+   ],
+   "size_class": null
+  },
+  {
+   "id": "obj_038",
+   "category": "cardboard_box",
+   "name_ko": "종이 상자",
+   "states": {},
+   "placement": null,
+   "pose": null,
+   "size_m": [
+    0.345,
+    0.264,
+    0.166
+   ],
+   "size_class": null
+  },
+  {
+   "id": "obj_039",
+   "category": "cardboard_box",
+   "name_ko": "종이 상자",
+   "states": {},
+   "placement": null,
+   "pose": null,
+   "size_m": [
+    0.345,
+    0.401,
+    0.166
+   ],
+   "size_class": null
+  }
+ ],
+ "relations": [
+  {
+   "subj": "obj_001",
+   "pred": "on",
+   "obj": "fx_floor_1",
+   "source": "geometry"
+  },
+  {
+   "subj": "obj_002",
+   "pred": "on",
+   "obj": "fx_floor_1",
+   "source": "geometry"
+  },
+  {
+   "subj": "obj_003",
+   "pred": "on",
+   "obj": "fx_floor_1",
+   "source": "geometry"
+  },
+  {
+   "subj": "obj_004",
+   "pred": "on",
+   "obj": "fx_floor_1",
+   "source": "geometry"
+  },
+  {
+   "subj": "obj_005",
+   "pred": "on",
+   "obj": "fx_floor_1",
+   "source": "geometry"
+  },
+  {
+   "subj": "obj_006",
+   "pred": "on",
+   "obj": "fx_floor_1",
+   "source": "geometry"
+  },
+  {
+   "subj": "obj_007",
+   "pred": "on",
+   "obj": "fx_floor_1",
+   "source": "geometry"
+  },
+  {
+   "subj": "obj_008",
+   "pred": "on",
+   "obj": "fx_floor_1",
+   "source": "geometry"
+  },
+  {
+   "subj": "obj_009",
+   "pred": "on",
+   "obj": "fx_floor_1",
+   "source": "geometry"
+  },
+  {
+   "subj": "obj_010",
+   "pred": "on",
+   "obj": "fx_floor_1",
+   "source": "geometry"
+  },
+  {
+   "subj": "obj_011",
+   "pred": "on",
+   "obj": "fx_floor_1",
+   "source": "geometry"
+  },
+  {
+   "subj": "obj_012",
+   "pred": "on",
+   "obj": "fx_floor_1",
+   "source": "geometry"
+  },
+  {
+   "subj": "obj_013",
+   "pred": "on",
+   "obj": "fx_floor_1",
+   "source": "geometry"
+  },
+  {
+   "subj": "obj_014",
+   "pred": "on",
+   "obj": "fx_floor_1",
+   "source": "geometry"
+  },
+  {
+   "subj": "obj_015",
+   "pred": "on",
+   "obj": "fx_floor_1",
+   "source": "geometry"
+  },
+  {
+   "subj": "obj_016",
+   "pred": "on",
+   "obj": "fx_floor_1",
+   "source": "geometry"
+  },
+  {
+   "subj": "obj_017",
+   "pred": "on",
+   "obj": "fx_floor_1",
+   "source": "geometry"
+  },
+  {
+   "subj": "obj_018",
+   "pred": "on",
+   "obj": "fx_floor_1",
+   "source": "geometry"
+  },
+  {
+   "subj": "obj_019",
+   "pred": "on",
+   "obj": "obj_017",
+   "source": "geometry"
+  },
+  {
+   "subj": "obj_020",
+   "pred": "on",
+   "obj": "obj_018",
+   "source": "geometry"
+  },
+  {
+   "subj": "obj_021",
+   "pred": "on",
+   "obj": "fx_pallet_1",
+   "source": "geometry"
+  },
+  {
+   "subj": "obj_022",
+   "pred": "on",
+   "obj": "fx_pallet_1",
+   "source": "geometry"
+  },
+  {
+   "subj": "obj_023",
+   "pred": "on",
+   "obj": "fx_pallet_1",
+   "source": "geometry"
+  },
+  {
+   "subj": "obj_024",
+   "pred": "on",
+   "obj": "obj_020",
+   "source": "geometry"
+  },
+  {
+   "subj": "obj_025",
+   "pred": "on",
+   "obj": "obj_004",
+   "source": "geometry"
+  },
+  {
+   "subj": "obj_026",
+   "pred": "on",
+   "obj": "obj_007",
+   "source": "geometry"
+  },
+  {
+   "subj": "obj_027",
+   "pred": "on",
+   "obj": "obj_005",
+   "source": "geometry"
+  },
+  {
+   "subj": "obj_028",
+   "pred": "on",
+   "obj": "obj_006",
+   "source": "geometry"
+  },
+  {
+   "subj": "obj_029",
+   "pred": "on",
+   "obj": "obj_009",
+   "source": "geometry"
+  },
+  {
+   "subj": "obj_030",
+   "pred": "on",
+   "obj": "obj_011",
+   "source": "geometry"
+  },
+  {
+   "subj": "obj_031",
+   "pred": "on",
+   "obj": "obj_014",
+   "source": "geometry"
+  },
+  {
+   "subj": "obj_032",
+   "pred": "on",
+   "obj": "obj_013",
+   "source": "geometry"
+  },
+  {
+   "subj": "obj_033",
+   "pred": "on",
+   "obj": "obj_015",
+   "source": "geometry"
+  },
+  {
+   "subj": "obj_034",
+   "pred": "on",
+   "obj": "obj_016",
+   "source": "geometry"
+  },
+  {
+   "subj": "obj_035",
+   "pred": "on",
+   "obj": "obj_016",
+   "source": "geometry"
+  },
+  {
+   "subj": "obj_036",
+   "pred": "on",
+   "obj": "obj_021",
+   "source": "geometry"
+  },
+  {
+   "subj": "obj_037",
+   "pred": "on",
+   "obj": "obj_023",
+   "source": "geometry"
+  },
+  {
+   "subj": "obj_038",
+   "pred": "on",
+   "obj": "obj_036",
+   "source": "geometry"
+  },
+  {
+   "subj": "obj_039",
+   "pred": "on",
+   "obj": "obj_037",
+   "source": "geometry"
+  }
+ ],
+ "agent": {
+  "embodiment": "humanoid",
+  "base_near_fixture_id": null,
+  "holding": []
+ },
+ "constraints": []
+}

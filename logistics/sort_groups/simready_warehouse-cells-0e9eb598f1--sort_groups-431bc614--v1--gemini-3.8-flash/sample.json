@@ -1,0 +1,348 @@
+{
+ "id": "simready_warehouse-cells-0e9eb598f1--sort_groups-431bc614--v1--gemini-3.8-flash",
+ "domain": "logistics",
+ "task_type": "sort_groups",
+ "agent": "gemini-3.8-flash",
+ "source": {
+  "data": "NVIDIA PhysicalAI-SimReady-Warehouse-01 (CC BY 4.0)",
+  "scene_id": "simready_warehouse/0e9eb598f1",
+  "task": "sort_groups",
+  "composed": true
+ },
+ "input": {
+  "instruction": "바코드 스캐너는 랙 맨 아래 선반에 놓고, 상자들은 전부 랙 맨 위 선반에 올려줘.",
+  "instruction_en": "Put the barcode scanner on the bottom shelf of the rack and all the boxes on the top shelf of the rack.",
+  "world_state": "장소: 물류 창고\n로봇(humanoid). 들고 있는 물체 없음.\n\n물체가 놓인 곳:\n- 재활용함 안: 갈색 골판지 상자 1, 갈색 골판지 상자 2, 갈색 프린터 상자\n- 카트 선반 3 위: 열린 상자\n- 갈색 골판지 상자 2 위: 갈색 골판지 상자 3\n- 갈색 골판지 상자 3 위: 상자 1, 상자 2\n- 랙 선반 2 위: 나무 상자 1, 나무 상자 2\n- 카트 선반 2 위: 긴 상자 1, 납작 상자 1, 납작 상자 2\n- 납작 상자 1 위: 납작 상자 3\n- 긴 상자 1 위: 긴 상자 2\n- 카트 선반 1 위: 바코드 스캐너\n- 랙 선반 1 위: 나무 상자 3, 나무 상자 4, 나무 상자 5, 나무 상자 6\n\n물체 크기:\n- 갈색 골판지 상자: 큰 것부터 갈색 골판지 상자 2, 갈색 골판지 상자 3, 갈색 골판지 상자 1\n- 나무 상자: 큰 것부터 나무 상자 1·나무 상자 2(서로 비슷), 나무 상자 4·나무 상자 5·나무 상자 3·나무 상자 6(서로 비슷)\n- 긴 상자: 큰 것부터 긴 상자 1, 긴 상자 2\n- 납작 상자: 큰 것부터 납작 상자 3, 납작 상자 1, 납작 상자 2\n\n설비:\n- 바닥\n- 랙: 칸: 선반 1, 2(위에서부터)\n- 카트: 칸: 선반 1부터 3까지(위에서부터)\n- 재활용함",
+  "entity_labels": {
+   "fx_floor_1": "바닥",
+   "fx_rack_1": "랙",
+   "fx_cart_1": "카트",
+   "fx_recycling_bin_1": "재활용함",
+   "obj_001": "갈색 골판지 상자 1",
+   "obj_002": "갈색 골판지 상자 2",
+   "obj_003": "열린 상자",
+   "obj_004": "갈색 골판지 상자 3",
+   "obj_005": "갈색 프린터 상자",
+   "obj_006": "상자 1",
+   "obj_007": "상자 2",
+   "obj_008": "나무 상자 1",
+   "obj_009": "나무 상자 2",
+   "obj_010": "긴 상자 1",
+   "obj_011": "납작 상자 1",
+   "obj_012": "납작 상자 2",
+   "obj_013": "납작 상자 3",
+   "obj_014": "긴 상자 2",
+   "obj_015": "바코드 스캐너",
+   "obj_016": "나무 상자 3",
+   "obj_017": "나무 상자 4",
+   "obj_018": "나무 상자 5",
+   "obj_019": "나무 상자 6",
+   "fx_rack_1/shelf1": "랙 선반 1",
+   "fx_rack_1/shelf2": "랙 선반 2",
+   "fx_cart_1/shelf1": "카트 선반 1",
+   "fx_cart_1/shelf2": "카트 선반 2",
+   "fx_cart_1/shelf3": "카트 선반 3"
+  }
+ },
+ "output": {
+  "reasoning": "① 지시 해석: 바코드 스캐너를 랙 맨 아래 선반(랙 선반 2)에 놓고, 환경에 있는 모든 상자를 랙 맨 위 선반(랙 선반 1)에 올리는 작업이다. 시간 조건은 없다. 작업 대상들이 처음에 위치한 설비는 카트, 재활용함, 랙이고, 모든 물체의 최종 도착 설비는 랙이다. 작업 순서가 명시되지 않았으므로 작업 시작 위치는 카트 혹은 재활용함 혹은 랙이며, 종료 위치는 랙이다. ② 씬 접지: 바코드 스캐너는 카트 선반 1 위에 있고, 랙은 위에서부터 선반 1, 2가 있으므로 맨 아래 선반은 '랙 선반 2', 맨 위 선반은 '랙 선반 1'이다. 상자에 해당하는 물체는 갈색 골판지 상자 1·2·3, 갈색 프린터 상자, 열린 상자, 상자 1·2, 나무 상자 1·2·3·4·5·6, 긴 상자 1·2, 납작 상자 1·2·3으로 총 18개다. 나무 상자 3·4·5·6은 이미 랙 선반 1에 있으나, 지시가 상자 전부를 요구했으므로 목표 상태에 포함된다. ③ 역할 부여: 위치가 바뀌거나 최종 목표 위치가 확인되어야 하는 바코드 스캐너와 18개의 상자는 필수다. 도착 장소인 랙 선반 1과 랙 선반 2는 핵심 수단이다. 대상 물체들이 처음에 놓여 있는 설비인 카트, 재활용함, 랙은 초기 위치 기준으로서 보조다. 위에 다른 물체가 놓여 있는 상자들의 경우 그 위에 놓인 물체들도 모두 상자로서 필수 대상이므로 보조가 아닌 필수로 분류된다. ④ 제약 도출: 갈색 골판지 상자 2 위에는 갈색 골판지 상자 3이, 그 위에는 상자 1과 상자 2가 있으므로 상자 1과 2를 먼저 치워야 갈색 골판지 상자 3을, 갈색 골판지 상자 3을 치워야 갈색 골판지 상자 2를 옮길 수 있다. 또한 납작 상자 1 위에는 납작 상자 3이, 긴 상자 1 위에는 긴 상자 2가 놓여 있으므로 각각 위에 놓인 상자를 먼저 옮겨야 아래 상자를 옮길 수 있다. ⑤ 목표 상태: 바코드 스캐너가 랙 선반 2 위에 있고, 18개의 상자 각각이 랙 선반 1 위에 있는 단일 경우를 구성한다.",
+  "task_situation_description": {
+   "task_goal": {
+    "summary": "바코드 스캐너를 랙 선반 2에 놓고 모든 상자를 랙 선반 1로 옮기는 것",
+    "goal_state": [
+     [
+      {
+       "kind": "relation",
+       "subject": "바코드 스캐너",
+       "predicate": "on",
+       "object": "랙 선반 2",
+       "value": true
+      },
+      {
+       "kind": "relation",
+       "subject": "갈색 골판지 상자 1",
+       "predicate": "on",
+       "object": "랙 선반 1",
+       "value": true
+      },
+      {
+       "kind": "relation",
+       "subject": "갈색 골판지 상자 2",
+       "predicate": "on",
+       "object": "랙 선반 1",
+       "value": true
+      },
+      {
+       "kind": "relation",
+       "subject": "갈색 골판지 상자 3",
+       "predicate": "on",
+       "object": "랙 선반 1",
+       "value": true
+      },
+      {
+       "kind": "relation",
+       "subject": "갈색 프린터 상자",
+       "predicate": "on",
+       "object": "랙 선반 1",
+       "value": true
+      },
+      {
+       "kind": "relation",
+       "subject": "열린 상자",
+       "predicate": "on",
+       "object": "랙 선반 1",
+       "value": true
+      },
+      {
+       "kind": "relation",
+       "subject": "상자 1",
+       "predicate": "on",
+       "object": "랙 선반 1",
+       "value": true
+      },
+      {
+       "kind": "relation",
+       "subject": "상자 2",
+       "predicate": "on",
+       "object": "랙 선반 1",
+       "value": true
+      },
+      {
+       "kind": "relation",
+       "subject": "나무 상자 1",
+       "predicate": "on",
+       "object": "랙 선반 1",
+       "value": true
+      },
+      {
+       "kind": "relation",
+       "subject": "나무 상자 2",
+       "predicate": "on",
+       "object": "랙 선반 1",
+       "value": true
+      },
+      {
+       "kind": "relation",
+       "subject": "나무 상자 3",
+       "predicate": "on",
+       "object": "랙 선반 1",
+       "value": true
+      },
+      {
+       "kind": "relation",
+       "subject": "나무 상자 4",
+       "predicate": "on",
+       "object": "랙 선반 1",
+       "value": true
+      },
+      {
+       "kind": "relation",
+       "subject": "나무 상자 5",
+       "predicate": "on",
+       "object": "랙 선반 1",
+       "value": true
+      },
+      {
+       "kind": "relation",
+       "subject": "나무 상자 6",
+       "predicate": "on",
+       "object": "랙 선반 1",
+       "value": true
+      },
+      {
+       "kind": "relation",
+       "subject": "긴 상자 1",
+       "predicate": "on",
+       "object": "랙 선반 1",
+       "value": true
+      },
+      {
+       "kind": "relation",
+       "subject": "긴 상자 2",
+       "predicate": "on",
+       "object": "랙 선반 1",
+       "value": true
+      },
+      {
+       "kind": "relation",
+       "subject": "납작 상자 1",
+       "predicate": "on",
+       "object": "랙 선반 1",
+       "value": true
+      },
+      {
+       "kind": "relation",
+       "subject": "납작 상자 2",
+       "predicate": "on",
+       "object": "랙 선반 1",
+       "value": true
+      },
+      {
+       "kind": "relation",
+       "subject": "납작 상자 3",
+       "predicate": "on",
+       "object": "랙 선반 1",
+       "value": true
+      }
+     ]
+    ]
+   },
+   "spatiotemporal_conditions": {
+    "time": null,
+    "space": {
+     "start": "카트 혹은 재활용함 혹은 랙",
+     "end": "랙"
+    }
+   },
+   "target_objects": {
+    "required": [
+     {
+      "ref": "바코드 스캐너",
+      "location": "카트 선반 1 위",
+      "state": null
+     },
+     {
+      "ref": "갈색 골판지 상자 1",
+      "location": "재활용함 안",
+      "state": null
+     },
+     {
+      "ref": "갈색 골판지 상자 2",
+      "location": "재활용함 안",
+      "state": null
+     },
+     {
+      "ref": "갈색 골판지 상자 3",
+      "location": "갈색 골판지 상자 2 위",
+      "state": null
+     },
+     {
+      "ref": "갈색 프린터 상자",
+      "location": "재활용함 안",
+      "state": null
+     },
+     {
+      "ref": "열린 상자",
+      "location": "카트 선반 3 위",
+      "state": null
+     },
+     {
+      "ref": "상자 1",
+      "location": "갈색 골판지 상자 3 위",
+      "state": null
+     },
+     {
+      "ref": "상자 2",
+      "location": "갈색 골판지 상자 3 위",
+      "state": null
+     },
+     {
+      "ref": "나무 상자 1",
+      "location": "랙 선반 2 위",
+      "state": null
+     },
+     {
+      "ref": "나무 상자 2",
+      "location": "랙 선반 2 위",
+      "state": null
+     },
+     {
+      "ref": "나무 상자 3",
+      "location": "랙 선반 1 위",
+      "state": null
+     },
+     {
+      "ref": "나무 상자 4",
+      "location": "랙 선반 1 위",
+      "state": null
+     },
+     {
+      "ref": "나무 상자 5",
+      "location": "랙 선반 1 위",
+      "state": null
+     },
+     {
+      "ref": "나무 상자 6",
+      "location": "랙 선반 1 위",
+      "state": null
+     },
+     {
+      "ref": "긴 상자 1",
+      "location": "카트 선반 2 위",
+      "state": null
+     },
+     {
+      "ref": "긴 상자 2",
+      "location": "긴 상자 1 위",
+      "state": null
+     },
+     {
+      "ref": "납작 상자 1",
+      "location": "카트 선반 2 위",
+      "state": null
+     },
+     {
+      "ref": "납작 상자 2",
+      "location": "카트 선반 2 위",
+      "state": null
+     },
+     {
+      "ref": "납작 상자 3",
+      "location": "납작 상자 1 위",
+      "state": null
+     }
+    ],
+    "key_means": [
+     {
+      "ref": "랙 선반 2",
+      "location": null,
+      "state": null,
+      "alternatives": []
+     },
+     {
+      "ref": "랙 선반 1",
+      "location": null,
+      "state": null,
+      "alternatives": []
+     }
+    ],
+    "auxiliary": [
+     {
+      "ref": "카트",
+      "location": null,
+      "note": "바코드 스캐너, 열린 상자, 긴 상자 1, 납작 상자 1, 납작 상자 2의 초기 위치 기준"
+     },
+     {
+      "ref": "재활용함",
+      "location": null,
+      "note": "갈색 골판지 상자 1, 갈색 골판지 상자 2, 갈색 프린터 상자의 초기 위치 기준"
+     },
+     {
+      "ref": "랙",
+      "location": null,
+      "note": "나무 상자들의 초기 위치 기준"
+     }
+    ]
+   },
+   "constraints": [
+    {
+     "type": "precedence",
+     "description": "갈색 골판지 상자 3 위에 상자 1과 상자 2가 놓여 있으므로 상자 1과 상자 2를 치우는 것이 갈색 골판지 상자 3을 옮기는 것에 선행해야 함"
+    },
+    {
+     "type": "precedence",
+     "description": "갈색 골판지 상자 2 위에 갈색 골판지 상자 3이 놓여 있으므로 갈색 골판지 상자 3을 치우는 것이 갈색 골판지 상자 2를 옮기는 것에 선행해야 함"
+    },
+    {
+     "type": "precedence",
+     "description": "납작 상자 1 위에 납작 상자 3이 놓여 있으므로 납작 상자 3을 치우는 것이 납작 상자 1을 옮기는 것에 선행해야 함"
+    },
+    {
+     "type": "precedence",
+     "description": "긴 상자 1 위에 긴 상자 2가 놓여 있으므로 긴 상자 2를 치우는 것이 긴 상자 1을 옮기는 것에 선행해야 함"
+    }
+   ]
+  },
+  "task_situation_description_text": "작업 목표: 바코드 스캐너를 랙 선반 2에 놓고 모든 상자를 랙 선반 1로 옮기는 것\n목표 상태:\n- 바코드 스캐너: 랙 선반 2 위\n- 갈색 골판지 상자 1: 랙 선반 1 위\n- 갈색 골판지 상자 2: 랙 선반 1 위\n- 갈색 골판지 상자 3: 랙 선반 1 위\n- 갈색 프린터 상자: 랙 선반 1 위\n- 열린 상자: 랙 선반 1 위\n- 상자 1: 랙 선반 1 위\n- 상자 2: 랙 선반 1 위\n- 나무 상자 1: 랙 선반 1 위\n- 나무 상자 2: 랙 선반 1 위\n- 나무 상자 3: 랙 선반 1 위\n- 나무 상자 4: 랙 선반 1 위\n- 나무 상자 5: 랙 선반 1 위\n- 나무 상자 6: 랙 선반 1 위\n- 긴 상자 1: 랙 선반 1 위\n- 긴 상자 2: 랙 선반 1 위\n- 납작 상자 1: 랙 선반 1 위\n- 납작 상자 2: 랙 선반 1 위\n- 납작 상자 3: 랙 선반 1 위\n시간·공간 조건: 시간 조건은 없음, 공간 조건은 시작 카트 혹은 재활용함 혹은 랙, 종료 랙\n대상 물체:\n- 필수 물체: 바코드 스캐너(위치: 카트 선반 1 위)\n- 필수 물체: 갈색 골판지 상자 1(위치: 재활용함 안)\n- 필수 물체: 갈색 골판지 상자 2(위치: 재활용함 안)\n- 필수 물체: 갈색 골판지 상자 3(위치: 갈색 골판지 상자 2 위)\n- 필수 물체: 갈색 프린터 상자(위치: 재활용함 안)\n- 필수 물체: 열린 상자(위치: 카트 선반 3 위)\n- 필수 물체: 상자 1(위치: 갈색 골판지 상자 3 위)\n- 필수 물체: 상자 2(위치: 갈색 골판지 상자 3 위)\n- 필수 물체: 나무 상자 1(위치: 랙 선반 2 위)\n- 필수 물체: 나무 상자 2(위치: 랙 선반 2 위)\n- 필수 물체: 나무 상자 3(위치: 랙 선반 1 위)\n- 필수 물체: 나무 상자 4(위치: 랙 선반 1 위)\n- 필수 물체: 나무 상자 5(위치: 랙 선반 1 위)\n- 필수 물체: 나무 상자 6(위치: 랙 선반 1 위)\n- 필수 물체: 긴 상자 1(위치: 카트 선반 2 위)\n- 필수 물체: 긴 상자 2(위치: 긴 상자 1 위)\n- 필수 물체: 납작 상자 1(위치: 카트 선반 2 위)\n- 필수 물체: 납작 상자 2(위치: 카트 선반 2 위)\n- 필수 물체: 납작 상자 3(위치: 납작 상자 1 위)\n- 핵심 수단: 랙 선반 2\n- 핵심 수단: 랙 선반 1\n- 보조 물체: 카트(비고: 바코드 스캐너, 열린 상자, 긴 상자 1, 납작 상자 1, 납작 상자 2의 초기 위치 기준)\n- 보조 물체: 재활용함(비고: 갈색 골판지 상자 1, 갈색 골판지 상자 2, 갈색 프린터 상자의 초기 위치 기준)\n- 보조 물체: 랙(비고: 나무 상자들의 초기 위치 기준)\n제약 사항:\n- [선후] 갈색 골판지 상자 3 위에 상자 1과 상자 2가 놓여 있으므로 상자 1과 상자 2를 치우는 것이 갈색 골판지 상자 3을 옮기는 것에 선행해야 함\n- [선후] 갈색 골판지 상자 2 위에 갈색 골판지 상자 3이 놓여 있으므로 갈색 골판지 상자 3을 치우는 것이 갈색 골판지 상자 2를 옮기는 것에 선행해야 함\n- [선후] 납작 상자 1 위에 납작 상자 3이 놓여 있으므로 납작 상자 3을 치우는 것이 납작 상자 1을 옮기는 것에 선행해야 함\n- [선후] 긴 상자 1 위에 긴 상자 2가 놓여 있으므로 긴 상자 2를 치우는 것이 긴 상자 1을 옮기는 것에 선행해야 함\n"
+ }
+}

@@ -1,0 +1,608 @@
+{
+ "schema_version": "0.5",
+ "scene_id": "scene_39c74b2bc0b5",
+ "domain": "logistics",
+ "simulator": "isaacsim_synthetic",
+ "layout": {
+  "layout_id": null,
+  "layout_name": "RackLong_A7+Trolley_A3_NP+WarehousePile_A6",
+  "style_id": null,
+  "style_name": null
+ },
+ "fixtures": [
+  {
+   "id": "fx_floor_1",
+   "category": "floor",
+   "name_ko": "바닥",
+   "location_desc": null,
+   "states": {},
+   "state_source": "unknown",
+   "regions": []
+  },
+  {
+   "id": "fx_rack_1",
+   "category": "rack",
+   "name_ko": "랙",
+   "location_desc": null,
+   "states": {},
+   "state_source": "unknown",
+   "regions": [
+    {
+     "key": "shelf1",
+     "name_ko": "선반 1",
+     "states": {}
+    },
+    {
+     "key": "shelf2",
+     "name_ko": "선반 2",
+     "states": {}
+    }
+   ]
+  },
+  {
+   "id": "fx_pallet_1",
+   "category": "pallet",
+   "name_ko": "팔레트",
+   "location_desc": null,
+   "states": {},
+   "state_source": "unknown",
+   "regions": []
+  }
+ ],
+ "objects": [
+  {
+   "id": "obj_001",
+   "category": "crate_yellow",
+   "name_ko": "노란 크레이트",
+   "states": {},
+   "placement": {
+    "fixture_id": "fx_floor_1",
+    "relation": "on",
+    "region": null,
+    "near_fixture_id": null,
+    "near_side": null
+   },
+   "pose": null,
+   "size_m": [
+    0.007,
+    0.005,
+    0.002
+   ],
+   "size_class": null
+  },
+  {
+   "id": "obj_002",
+   "category": "crate_yellow",
+   "name_ko": "노란 크레이트",
+   "states": {},
+   "placement": {
+    "fixture_id": "fx_floor_1",
+    "relation": "on",
+    "region": null,
+    "near_fixture_id": null,
+    "near_side": null
+   },
+   "pose": null,
+   "size_m": [
+    0.007,
+    0.005,
+    0.002
+   ],
+   "size_class": null
+  },
+  {
+   "id": "obj_003",
+   "category": "flat_box_white",
+   "name_ko": "흰색 납작 상자",
+   "states": {},
+   "placement": null,
+   "pose": null,
+   "size_m": [
+    0.003,
+    0.004,
+    0.002
+   ],
+   "size_class": null
+  },
+  {
+   "id": "obj_004",
+   "category": "corrugated_box_brown",
+   "name_ko": "갈색 골판지 상자",
+   "states": {},
+   "placement": null,
+   "pose": null,
+   "size_m": [
+    0.002,
+    0.002,
+    0.002
+   ],
+   "size_class": null
+  },
+  {
+   "id": "obj_005",
+   "category": "corrugated_box_brown",
+   "name_ko": "갈색 골판지 상자",
+   "states": {},
+   "placement": null,
+   "pose": null,
+   "size_m": [
+    0.002,
+    0.002,
+    0.002
+   ],
+   "size_class": null
+  },
+  {
+   "id": "obj_006",
+   "category": "corrugated_box_brown",
+   "name_ko": "갈색 골판지 상자",
+   "states": {},
+   "placement": null,
+   "pose": null,
+   "size_m": [
+    0.002,
+    0.002,
+    0.002
+   ],
+   "size_class": null
+  },
+  {
+   "id": "obj_007",
+   "category": "crate_yellow",
+   "name_ko": "노란 크레이트",
+   "states": {},
+   "placement": null,
+   "pose": null,
+   "size_m": [
+    0.007,
+    0.005,
+    0.002
+   ],
+   "size_class": null
+  },
+  {
+   "id": "obj_008",
+   "category": "corrugated_box_brown",
+   "name_ko": "갈색 골판지 상자",
+   "states": {},
+   "placement": null,
+   "pose": null,
+   "size_m": [
+    0.002,
+    0.002,
+    0.002
+   ],
+   "size_class": null
+  },
+  {
+   "id": "obj_009",
+   "category": "printer_box_brown",
+   "name_ko": "갈색 프린터 상자",
+   "states": {},
+   "placement": null,
+   "pose": null,
+   "size_m": [
+    0.003,
+    0.002,
+    0.001
+   ],
+   "size_class": null
+  },
+  {
+   "id": "obj_010",
+   "category": "crate_yellow",
+   "name_ko": "노란 크레이트",
+   "states": {},
+   "placement": null,
+   "pose": null,
+   "size_m": [
+    0.007,
+    0.005,
+    0.002
+   ],
+   "size_class": null
+  },
+  {
+   "id": "obj_011",
+   "category": "crate_yellow",
+   "name_ko": "노란 크레이트",
+   "states": {},
+   "placement": null,
+   "pose": null,
+   "size_m": [
+    0.007,
+    0.005,
+    0.002
+   ],
+   "size_class": null
+  },
+  {
+   "id": "obj_012",
+   "category": "cardboard_box",
+   "name_ko": "종이 상자",
+   "states": {},
+   "placement": {
+    "fixture_id": "fx_pallet_1",
+    "relation": "on",
+    "region": null,
+    "near_fixture_id": null,
+    "near_side": null
+   },
+   "pose": null,
+   "size_m": [
+    0.699,
+    0.51,
+    0.521
+   ],
+   "size_class": null
+  },
+  {
+   "id": "obj_013",
+   "category": "cardboard_box",
+   "name_ko": "종이 상자",
+   "states": {},
+   "placement": {
+    "fixture_id": "fx_pallet_1",
+    "relation": "on",
+    "region": null,
+    "near_fixture_id": null,
+    "near_side": null
+   },
+   "pose": null,
+   "size_m": [
+    0.699,
+    0.51,
+    0.521
+   ],
+   "size_class": null
+  },
+  {
+   "id": "obj_014",
+   "category": "cardboard_box",
+   "name_ko": "종이 상자",
+   "states": {},
+   "placement": {
+    "fixture_id": "fx_pallet_1",
+    "relation": "on",
+    "region": null,
+    "near_fixture_id": null,
+    "near_side": null
+   },
+   "pose": null,
+   "size_m": [
+    0.51,
+    0.699,
+    0.521
+   ],
+   "size_class": null
+  },
+  {
+   "id": "obj_015",
+   "category": "wooden_crate",
+   "name_ko": "나무 상자",
+   "states": {},
+   "placement": {
+    "fixture_id": "fx_rack_1",
+    "relation": "on",
+    "region": "shelf2",
+    "near_fixture_id": null,
+    "near_side": null
+   },
+   "pose": null,
+   "size_m": [
+    0.912,
+    1.821,
+    0.923
+   ],
+   "size_class": null
+  },
+  {
+   "id": "obj_016",
+   "category": "wooden_crate",
+   "name_ko": "나무 상자",
+   "states": {},
+   "placement": {
+    "fixture_id": "fx_rack_1",
+    "relation": "on",
+    "region": "shelf2",
+    "near_fixture_id": null,
+    "near_side": null
+   },
+   "pose": null,
+   "size_m": [
+    0.912,
+    1.821,
+    0.923
+   ],
+   "size_class": null
+  },
+  {
+   "id": "obj_017",
+   "category": "cardboard_box",
+   "name_ko": "종이 상자",
+   "states": {},
+   "placement": null,
+   "pose": null,
+   "size_m": [
+    0.513,
+    0.51,
+    0.26
+   ],
+   "size_class": null
+  },
+  {
+   "id": "obj_018",
+   "category": "cardboard_box",
+   "name_ko": "종이 상자",
+   "states": {},
+   "placement": null,
+   "pose": null,
+   "size_m": [
+    0.513,
+    0.511,
+    0.26
+   ],
+   "size_class": null
+  },
+  {
+   "id": "obj_019",
+   "category": "cardboard_box",
+   "name_ko": "종이 상자",
+   "states": {},
+   "placement": null,
+   "pose": null,
+   "size_m": [
+    0.345,
+    0.264,
+    0.166
+   ],
+   "size_class": null
+  },
+  {
+   "id": "obj_020",
+   "category": "cardboard_box",
+   "name_ko": "종이 상자",
+   "states": {},
+   "placement": null,
+   "pose": null,
+   "size_m": [
+    0.345,
+    0.401,
+    0.166
+   ],
+   "size_class": null
+  },
+  {
+   "id": "obj_021",
+   "category": "wooden_crate",
+   "name_ko": "나무 상자",
+   "states": {},
+   "placement": {
+    "fixture_id": "fx_rack_1",
+    "relation": "on",
+    "region": "shelf1",
+    "near_fixture_id": null,
+    "near_side": null
+   },
+   "pose": null,
+   "size_m": [
+    0.914,
+    0.908,
+    0.922
+   ],
+   "size_class": null
+  },
+  {
+   "id": "obj_022",
+   "category": "wooden_crate",
+   "name_ko": "나무 상자",
+   "states": {},
+   "placement": {
+    "fixture_id": "fx_rack_1",
+    "relation": "on",
+    "region": "shelf1",
+    "near_fixture_id": null,
+    "near_side": null
+   },
+   "pose": null,
+   "size_m": [
+    0.914,
+    0.909,
+    0.922
+   ],
+   "size_class": null
+  },
+  {
+   "id": "obj_023",
+   "category": "wooden_crate",
+   "name_ko": "나무 상자",
+   "states": {},
+   "placement": {
+    "fixture_id": "fx_rack_1",
+    "relation": "on",
+    "region": "shelf1",
+    "near_fixture_id": null,
+    "near_side": null
+   },
+   "pose": null,
+   "size_m": [
+    0.914,
+    0.909,
+    0.922
+   ],
+   "size_class": null
+  },
+  {
+   "id": "obj_024",
+   "category": "wooden_crate",
+   "name_ko": "나무 상자",
+   "states": {},
+   "placement": {
+    "fixture_id": "fx_rack_1",
+    "relation": "on",
+    "region": "shelf1",
+    "near_fixture_id": null,
+    "near_side": null
+   },
+   "pose": null,
+   "size_m": [
+    0.914,
+    0.908,
+    0.922
+   ],
+   "size_class": null
+  }
+ ],
+ "relations": [
+  {
+   "subj": "obj_001",
+   "pred": "on",
+   "obj": "fx_floor_1",
+   "source": "geometry"
+  },
+  {
+   "subj": "obj_002",
+   "pred": "on",
+   "obj": "fx_floor_1",
+   "source": "geometry"
+  },
+  {
+   "subj": "obj_003",
+   "pred": "on",
+   "obj": "obj_001",
+   "source": "geometry"
+  },
+  {
+   "subj": "obj_004",
+   "pred": "on",
+   "obj": "obj_002",
+   "source": "geometry"
+  },
+  {
+   "subj": "obj_005",
+   "pred": "on",
+   "obj": "obj_002",
+   "source": "geometry"
+  },
+  {
+   "subj": "obj_006",
+   "pred": "on",
+   "obj": "obj_002",
+   "source": "geometry"
+  },
+  {
+   "subj": "obj_007",
+   "pred": "on",
+   "obj": "obj_001",
+   "source": "geometry"
+  },
+  {
+   "subj": "obj_008",
+   "pred": "on",
+   "obj": "obj_002",
+   "source": "geometry"
+  },
+  {
+   "subj": "obj_009",
+   "pred": "on",
+   "obj": "obj_002",
+   "source": "geometry"
+  },
+  {
+   "subj": "obj_010",
+   "pred": "on",
+   "obj": "obj_002",
+   "source": "geometry"
+  },
+  {
+   "subj": "obj_011",
+   "pred": "on",
+   "obj": "obj_002",
+   "source": "geometry"
+  },
+  {
+   "subj": "obj_012",
+   "pred": "on",
+   "obj": "fx_pallet_1",
+   "source": "geometry"
+  },
+  {
+   "subj": "obj_013",
+   "pred": "on",
+   "obj": "fx_pallet_1",
+   "source": "geometry"
+  },
+  {
+   "subj": "obj_014",
+   "pred": "on",
+   "obj": "fx_pallet_1",
+   "source": "geometry"
+  },
+  {
+   "subj": "obj_015",
+   "pred": "on",
+   "obj": "fx_rack_1",
+   "source": "geometry"
+  },
+  {
+   "subj": "obj_016",
+   "pred": "on",
+   "obj": "fx_rack_1",
+   "source": "geometry"
+  },
+  {
+   "subj": "obj_017",
+   "pred": "on",
+   "obj": "obj_012",
+   "source": "geometry"
+  },
+  {
+   "subj": "obj_018",
+   "pred": "on",
+   "obj": "obj_014",
+   "source": "geometry"
+  },
+  {
+   "subj": "obj_019",
+   "pred": "on",
+   "obj": "obj_017",
+   "source": "geometry"
+  },
+  {
+   "subj": "obj_020",
+   "pred": "on",
+   "obj": "obj_018",
+   "source": "geometry"
+  },
+  {
+   "subj": "obj_021",
+   "pred": "on",
+   "obj": "fx_rack_1",
+   "source": "geometry"
+  },
+  {
+   "subj": "obj_022",
+   "pred": "on",
+   "obj": "fx_rack_1",
+   "source": "geometry"
+  },
+  {
+   "subj": "obj_023",
+   "pred": "on",
+   "obj": "fx_rack_1",
+   "source": "geometry"
+  },
+  {
+   "subj": "obj_024",
+   "pred": "on",
+   "obj": "fx_rack_1",
+   "source": "geometry"
+  }
+ ],
+ "agent": {
+  "embodiment": "humanoid",
+  "base_near_fixture_id": null,
+  "holding": []
+ },
+ "constraints": []
+}

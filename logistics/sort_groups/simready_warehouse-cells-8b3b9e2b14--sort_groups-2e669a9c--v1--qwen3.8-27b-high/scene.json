@@ -1,0 +1,560 @@
+{
+ "schema_version": "0.5",
+ "scene_id": "scene_2c9fa1eb014f",
+ "domain": "logistics",
+ "simulator": "isaacsim_synthetic",
+ "layout": {
+  "layout_id": null,
+  "layout_name": "sm_packingtablecomposition_a07_01+sm_palletcomposition_a152_01+sm_warehousecomposition_m15_01",
+  "style_id": null,
+  "style_name": null
+ },
+ "fixtures": [
+  {
+   "id": "fx_floor_1",
+   "category": "floor",
+   "name_ko": "바닥",
+   "location_desc": null,
+   "states": {},
+   "state_source": "unknown",
+   "regions": []
+  },
+  {
+   "id": "fx_worktable_1",
+   "category": "worktable",
+   "name_ko": "작업대",
+   "location_desc": null,
+   "states": {},
+   "state_source": "unknown",
+   "regions": [
+    {
+     "key": "top",
+     "name_ko": "상판",
+     "states": {}
+    },
+    {
+     "key": "shelf1",
+     "name_ko": "선반",
+     "states": {}
+    }
+   ]
+  },
+  {
+   "id": "fx_trash_can_1",
+   "category": "trash_can",
+   "name_ko": "쓰레기통",
+   "location_desc": null,
+   "states": {},
+   "state_source": "unknown",
+   "regions": []
+  },
+  {
+   "id": "fx_pallet_1",
+   "category": "pallet",
+   "name_ko": "팔레트",
+   "location_desc": null,
+   "states": {},
+   "state_source": "unknown",
+   "regions": []
+  },
+  {
+   "id": "fx_recycling_bin_1",
+   "category": "recycling_bin",
+   "name_ko": "재활용함",
+   "location_desc": null,
+   "states": {},
+   "state_source": "unknown",
+   "regions": []
+  }
+ ],
+ "objects": [
+  {
+   "id": "obj_001",
+   "category": "corrugated_box_brown",
+   "name_ko": "갈색 골판지 상자",
+   "states": {},
+   "placement": {
+    "fixture_id": "fx_recycling_bin_1",
+    "relation": "in",
+    "region": null,
+    "near_fixture_id": null,
+    "near_side": null
+   },
+   "pose": null,
+   "size_m": [
+    0.252,
+    0.254,
+    0.21
+   ],
+   "size_class": null
+  },
+  {
+   "id": "obj_002",
+   "category": "corrugated_box_brown",
+   "name_ko": "갈색 골판지 상자",
+   "states": {},
+   "placement": {
+    "fixture_id": "fx_recycling_bin_1",
+    "relation": "in",
+    "region": null,
+    "near_fixture_id": null,
+    "near_side": null
+   },
+   "pose": null,
+   "size_m": [
+    0.302,
+    0.304,
+    0.252
+   ],
+   "size_class": null
+  },
+  {
+   "id": "obj_003",
+   "category": "folded_boxes_brown",
+   "name_ko": "갈색 접힌 상자 묶음",
+   "states": {},
+   "placement": {
+    "fixture_id": "fx_pallet_1",
+    "relation": "on",
+    "region": null,
+    "near_fixture_id": null,
+    "near_side": null
+   },
+   "pose": null,
+   "size_m": [
+    0.91,
+    0.693,
+    0.104
+   ],
+   "size_class": null
+  },
+  {
+   "id": "obj_004",
+   "category": "box_brown",
+   "name_ko": "갈색 상자",
+   "states": {},
+   "placement": {
+    "fixture_id": "fx_pallet_1",
+    "relation": "on",
+    "region": null,
+    "near_fixture_id": null,
+    "near_side": null
+   },
+   "pose": null,
+   "size_m": [
+    0.356,
+    0.357,
+    0.159
+   ],
+   "size_class": null
+  },
+  {
+   "id": "obj_005",
+   "category": "folded_boxes_white",
+   "name_ko": "흰색 접힌 상자 묶음",
+   "states": {},
+   "placement": {
+    "fixture_id": "fx_worktable_1",
+    "relation": "on",
+    "region": "shelf1",
+    "near_fixture_id": null,
+    "near_side": null
+   },
+   "pose": null,
+   "size_m": [
+    0.712,
+    0.924,
+    0.11
+   ],
+   "size_class": null
+  },
+  {
+   "id": "obj_006",
+   "category": "folded_boxes_brown",
+   "name_ko": "갈색 접힌 상자 묶음",
+   "states": {},
+   "placement": {
+    "fixture_id": "fx_worktable_1",
+    "relation": "on",
+    "region": "shelf1",
+    "near_fixture_id": null,
+    "near_side": null
+   },
+   "pose": null,
+   "size_m": [
+    0.786,
+    0.976,
+    0.11
+   ],
+   "size_class": null
+  },
+  {
+   "id": "obj_007",
+   "category": "corrugated_box_brown",
+   "name_ko": "갈색 골판지 상자",
+   "states": {},
+   "placement": null,
+   "pose": null,
+   "size_m": [
+    0.251,
+    0.254,
+    0.252
+   ],
+   "size_class": null
+  },
+  {
+   "id": "obj_008",
+   "category": "flat_box_brown",
+   "name_ko": "갈색 납작 상자",
+   "states": {},
+   "placement": null,
+   "pose": null,
+   "size_m": [
+    0.437,
+    0.602,
+    0.084
+   ],
+   "size_class": null
+  },
+  {
+   "id": "obj_009",
+   "category": "box_brown",
+   "name_ko": "갈색 상자",
+   "states": {},
+   "placement": null,
+   "pose": null,
+   "size_m": [
+    0.305,
+    0.458,
+    0.309
+   ],
+   "size_class": null
+  },
+  {
+   "id": "obj_010",
+   "category": "printer_box_brown",
+   "name_ko": "갈색 프린터 상자",
+   "states": {},
+   "placement": {
+    "fixture_id": "fx_recycling_bin_1",
+    "relation": "in",
+    "region": null,
+    "near_fixture_id": null,
+    "near_side": null
+   },
+   "pose": null,
+   "size_m": [
+    0.238,
+    0.137,
+    0.312
+   ],
+   "size_class": null
+  },
+  {
+   "id": "obj_011",
+   "category": "folded_boxes_brown",
+   "name_ko": "갈색 접힌 상자 묶음",
+   "states": {},
+   "placement": null,
+   "pose": null,
+   "size_m": [
+    0.799,
+    0.985,
+    0.11
+   ],
+   "size_class": null
+  },
+  {
+   "id": "obj_012",
+   "category": "folded_boxes_brown",
+   "name_ko": "갈색 접힌 상자 묶음",
+   "states": {},
+   "placement": null,
+   "pose": null,
+   "size_m": [
+    0.737,
+    0.942,
+    0.11
+   ],
+   "size_class": null
+  },
+  {
+   "id": "obj_013",
+   "category": "flat_box_brown",
+   "name_ko": "갈색 납작 상자",
+   "states": {},
+   "placement": null,
+   "pose": null,
+   "size_m": [
+    0.437,
+    0.602,
+    0.084
+   ],
+   "size_class": null
+  },
+  {
+   "id": "obj_014",
+   "category": "folded_boxes_brown",
+   "name_ko": "갈색 접힌 상자 묶음",
+   "states": {},
+   "placement": null,
+   "pose": null,
+   "size_m": [
+    0.72,
+    0.929,
+    0.11
+   ],
+   "size_class": null
+  },
+  {
+   "id": "obj_015",
+   "category": "flat_box_brown",
+   "name_ko": "갈색 납작 상자",
+   "states": {},
+   "placement": null,
+   "pose": null,
+   "size_m": [
+    0.437,
+    0.602,
+    0.085
+   ],
+   "size_class": null
+  },
+  {
+   "id": "obj_016",
+   "category": "box",
+   "name_ko": "상자",
+   "states": {},
+   "placement": null,
+   "pose": null,
+   "size_m": [
+    0.213,
+    0.182,
+    0.207
+   ],
+   "size_class": null
+  },
+  {
+   "id": "obj_017",
+   "category": "box",
+   "name_ko": "상자",
+   "states": {},
+   "placement": null,
+   "pose": null,
+   "size_m": [
+    0.202,
+    0.204,
+    0.206
+   ],
+   "size_class": null
+  },
+  {
+   "id": "obj_018",
+   "category": "flat_box_brown",
+   "name_ko": "갈색 납작 상자",
+   "states": {},
+   "placement": null,
+   "pose": null,
+   "size_m": [
+    0.468,
+    0.624,
+    0.084
+   ],
+   "size_class": null
+  },
+  {
+   "id": "obj_019",
+   "category": "tape_dispenser",
+   "name_ko": "테이프 커터기",
+   "states": {},
+   "placement": {
+    "fixture_id": "fx_worktable_1",
+    "relation": "on",
+    "region": "top",
+    "near_fixture_id": null,
+    "near_side": null
+   },
+   "pose": null,
+   "size_m": [
+    0.262,
+    0.294,
+    0.067
+   ],
+   "size_class": null
+  },
+  {
+   "id": "obj_020",
+   "category": "tape",
+   "name_ko": "테이프",
+   "states": {},
+   "placement": {
+    "fixture_id": "fx_worktable_1",
+    "relation": "on",
+    "region": "top",
+    "near_fixture_id": null,
+    "near_side": null
+   },
+   "pose": null,
+   "size_m": [
+    0.131,
+    0.131,
+    0.05
+   ],
+   "size_class": null
+  },
+  {
+   "id": "obj_021",
+   "category": "tape",
+   "name_ko": "테이프",
+   "states": {},
+   "placement": {
+    "fixture_id": "fx_worktable_1",
+    "relation": "on",
+    "region": "top",
+    "near_fixture_id": null,
+    "near_side": null
+   },
+   "pose": null,
+   "size_m": [
+    0.1,
+    0.1,
+    0.05
+   ],
+   "size_class": null
+  }
+ ],
+ "relations": [
+  {
+   "subj": "obj_001",
+   "pred": "in",
+   "obj": "fx_recycling_bin_1",
+   "source": "geometry"
+  },
+  {
+   "subj": "obj_002",
+   "pred": "in",
+   "obj": "fx_recycling_bin_1",
+   "source": "geometry"
+  },
+  {
+   "subj": "obj_003",
+   "pred": "on",
+   "obj": "fx_pallet_1",
+   "source": "geometry"
+  },
+  {
+   "subj": "obj_004",
+   "pred": "on",
+   "obj": "fx_pallet_1",
+   "source": "geometry"
+  },
+  {
+   "subj": "obj_005",
+   "pred": "on",
+   "obj": "fx_worktable_1",
+   "source": "geometry"
+  },
+  {
+   "subj": "obj_006",
+   "pred": "on",
+   "obj": "fx_worktable_1",
+   "source": "geometry"
+  },
+  {
+   "subj": "obj_007",
+   "pred": "on",
+   "obj": "obj_002",
+   "source": "geometry"
+  },
+  {
+   "subj": "obj_008",
+   "pred": "on",
+   "obj": "obj_003",
+   "source": "geometry"
+  },
+  {
+   "subj": "obj_009",
+   "pred": "on",
+   "obj": "obj_003",
+   "source": "geometry"
+  },
+  {
+   "subj": "obj_010",
+   "pred": "in",
+   "obj": "fx_recycling_bin_1",
+   "source": "geometry"
+  },
+  {
+   "subj": "obj_011",
+   "pred": "on",
+   "obj": "obj_005",
+   "source": "geometry"
+  },
+  {
+   "subj": "obj_012",
+   "pred": "on",
+   "obj": "obj_006",
+   "source": "geometry"
+  },
+  {
+   "subj": "obj_013",
+   "pred": "on",
+   "obj": "obj_008",
+   "source": "geometry"
+  },
+  {
+   "subj": "obj_014",
+   "pred": "on",
+   "obj": "obj_011",
+   "source": "geometry"
+  },
+  {
+   "subj": "obj_015",
+   "pred": "on",
+   "obj": "obj_013",
+   "source": "geometry"
+  },
+  {
+   "subj": "obj_016",
+   "pred": "on",
+   "obj": "obj_007",
+   "source": "geometry"
+  },
+  {
+   "subj": "obj_017",
+   "pred": "on",
+   "obj": "obj_007",
+   "source": "geometry"
+  },
+  {
+   "subj": "obj_018",
+   "pred": "on",
+   "obj": "obj_015",
+   "source": "geometry"
+  },
+  {
+   "subj": "obj_019",
+   "pred": "on",
+   "obj": "fx_worktable_1",
+   "source": "geometry"
+  },
+  {
+   "subj": "obj_020",
+   "pred": "on",
+   "obj": "fx_worktable_1",
+   "source": "geometry"
+  },
+  {
+   "subj": "obj_021",
+   "pred": "on",
+   "obj": "fx_worktable_1",
+   "source": "geometry"
+  }
+ ],
+ "agent": {
+  "embodiment": "humanoid",
+  "base_near_fixture_id": null,
+  "holding": []
+ },
+ "constraints": []
+}

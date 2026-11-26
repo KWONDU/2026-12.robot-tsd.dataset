@@ -1,0 +1,483 @@
+{
+ "id": "simready_warehouse-cells-6d8080035e--sort_groups-4b6c92d0--v1--gpt-6-sol",
+ "domain": "logistics",
+ "task_type": "sort_groups",
+ "agent": "gpt-6-sol",
+ "source": {
+  "data": "NVIDIA PhysicalAI-SimReady-Warehouse-01 (CC BY 4.0)",
+  "scene_id": "simready_warehouse/6d8080035e",
+  "task": "sort_groups",
+  "composed": true
+ },
+ "input": {
+  "instruction": "상자들은 전부 작업대 상판에 올려놓고, 테이프는 전부 팔레트에 올려놔.",
+  "instruction_en": "Put all the boxes on the top of the work table and all the rolls of tape on a pallet.",
+  "world_state": "장소: 물류 창고\n로봇(humanoid). 들고 있는 물체 없음.\n\n물체가 놓인 곳:\n- 재활용함 안: 갈색 골판지 상자 1, 갈색 골판지 상자 2, 갈색 프린터 상자\n- 작업대 선반 위: 흰색 접힌 상자 묶음, 갈색 접힌 상자 묶음 1\n- 갈색 골판지 상자 2 위: 갈색 골판지 상자 3\n- 흰색 접힌 상자 묶음 위: 갈색 접힌 상자 묶음 2\n- 갈색 접힌 상자 묶음 1 위: 갈색 접힌 상자 묶음 3\n- 갈색 접힌 상자 묶음 2 위: 갈색 접힌 상자 묶음 4\n- 갈색 골판지 상자 3 위: 상자 1, 상자 2\n- 랙 1 선반 2 위: 나무 상자 1, 나무 상자 2\n- 작업대 상판 위: 테이프 커터기, 테이프 1, 테이프 2\n- 나무 상자 1 위: 나무 상자 3, 나무 상자 6\n- 나무 상자 2 위: 나무 상자 4, 나무 상자 5\n- 랙 1 선반 1 위: 나무 상자 7, 나무 상자 8\n- 랙 2(랙 위) 위: 나무 상자 9, 나무 상자 10, 나무 상자 11, 나무 상자 12\n- 나무 상자 9 위: 나무 상자 13\n- 나무 상자 10 위: 나무 상자 14\n\n물체 크기:\n- 갈색 골판지 상자: 큰 것부터 갈색 골판지 상자 2, 갈색 골판지 상자 3, 갈색 골판지 상자 1\n- 갈색 접힌 상자 묶음: 큰 것부터 갈색 접힌 상자 묶음 2·갈색 접힌 상자 묶음 1·갈색 접힌 상자 묶음 3(서로 비슷), 갈색 접힌 상자 묶음 4\n- 나무 상자: 큰 것부터 나무 상자 1·나무 상자 2·나무 상자 7·나무 상자 8(서로 비슷), 나무 상자 11·나무 상자 12(서로 비슷), 나무 상자 10·나무 상자 13·나무 상자 14·나무 상자 4·나무 상자 5·나무 상자 9·나무 상자 3·나무 상자 6(서로 비슷)\n- 테이프: 큰 것부터 테이프 1, 테이프 2\n\n설비:\n- 바닥\n- 랙 1: 칸: 선반 1, 2(위에서부터)\n- 랙 2(랙 위)\n- 팔레트 1부터 4까지(랙 위)\n- 작업대: 칸: 상판, 선반\n- 쓰레기통\n- 재활용함",
+  "entity_labels": {
+   "fx_floor_1": "바닥",
+   "fx_rack_1": "랙 1",
+   "fx_rack_2": "랙 2",
+   "fx_pallet_1": "팔레트 1",
+   "fx_pallet_2": "팔레트 2",
+   "fx_pallet_3": "팔레트 3",
+   "fx_pallet_4": "팔레트 4",
+   "fx_worktable_1": "작업대",
+   "fx_trash_can_1": "쓰레기통",
+   "fx_recycling_bin_1": "재활용함",
+   "obj_001": "갈색 골판지 상자 1",
+   "obj_002": "갈색 골판지 상자 2",
+   "obj_003": "흰색 접힌 상자 묶음",
+   "obj_004": "갈색 접힌 상자 묶음 1",
+   "obj_005": "갈색 골판지 상자 3",
+   "obj_006": "갈색 프린터 상자",
+   "obj_007": "갈색 접힌 상자 묶음 2",
+   "obj_008": "갈색 접힌 상자 묶음 3",
+   "obj_009": "갈색 접힌 상자 묶음 4",
+   "obj_010": "상자 1",
+   "obj_011": "상자 2",
+   "obj_012": "나무 상자 1",
+   "obj_013": "나무 상자 2",
+   "obj_014": "테이프 커터기",
+   "obj_015": "테이프 1",
+   "obj_016": "테이프 2",
+   "obj_017": "나무 상자 3",
+   "obj_018": "나무 상자 4",
+   "obj_019": "나무 상자 5",
+   "obj_020": "나무 상자 6",
+   "obj_021": "나무 상자 7",
+   "obj_022": "나무 상자 8",
+   "obj_023": "나무 상자 9",
+   "obj_024": "나무 상자 10",
+   "obj_025": "나무 상자 11",
+   "obj_026": "나무 상자 12",
+   "obj_027": "나무 상자 13",
+   "obj_028": "나무 상자 14",
+   "fx_rack_1/shelf1": "랙 1 선반 1",
+   "fx_rack_1/shelf2": "랙 1 선반 2",
+   "fx_worktable_1/top": "작업대 상판",
+   "fx_worktable_1/shelf1": "작업대 선반"
+  }
+ },
+ "output": {
+  "reasoning": "① 지시 해석: 모든 상자를 작업대 상판에, 테이프 1과 테이프 2를 팔레트에 놓는 것이 목표다. 시간 조건은 없으며 두 종류의 물체를 옮기는 순서도 정해지지 않았다. 옮길 물체가 처음 있는 설비는 재활용함, 작업대, 랙 1, 랙 2이고, 도착지는 작업대와 팔레트다. ② 씬 접지: 환경 설명에서 이름에 상자가 들어간 물체 25개와 테이프 2개를 식별했다. ③ 역할 부여: 이 물체들은 모두 위치가 바뀌어야 하므로 필수다. 도착지인 작업대 상판과 팔레트는 핵심 수단이며, 재활용함·작업대·랙 1·랙 2는 초기 위치 기준인 보조다. 상자 위에 쌓인 물체도 모두 옮길 상자이므로 별도의 보조 물체로 중복해 올리지 않았다. ④ 제약 도출: 다른 상자 위에 놓인 상자는 아래 상자를 옮기기 전에 치워야 한다. ⑤ 목표 상태: 각 상자가 작업대 상판 위에 있고 각 테이프가 팔레트 위에 있는 관계를 쓴다. 어느 팔레트든 되므로 번호를 뗀 이름을 사용한다.",
+  "task_situation_description": {
+   "task_goal": {
+    "summary": "모든 상자를 작업대 상판으로 옮기고 테이프를 모두 팔레트 위로 옮기는 것",
+    "goal_state": [
+     [
+      {
+       "kind": "relation",
+       "subject": "갈색 골판지 상자 1",
+       "predicate": "on",
+       "object": "작업대 상판",
+       "value": true
+      },
+      {
+       "kind": "relation",
+       "subject": "갈색 골판지 상자 2",
+       "predicate": "on",
+       "object": "작업대 상판",
+       "value": true
+      },
+      {
+       "kind": "relation",
+       "subject": "갈색 골판지 상자 3",
+       "predicate": "on",
+       "object": "작업대 상판",
+       "value": true
+      },
+      {
+       "kind": "relation",
+       "subject": "갈색 프린터 상자",
+       "predicate": "on",
+       "object": "작업대 상판",
+       "value": true
+      },
+      {
+       "kind": "relation",
+       "subject": "흰색 접힌 상자 묶음",
+       "predicate": "on",
+       "object": "작업대 상판",
+       "value": true
+      },
+      {
+       "kind": "relation",
+       "subject": "갈색 접힌 상자 묶음 1",
+       "predicate": "on",
+       "object": "작업대 상판",
+       "value": true
+      },
+      {
+       "kind": "relation",
+       "subject": "갈색 접힌 상자 묶음 2",
+       "predicate": "on",
+       "object": "작업대 상판",
+       "value": true
+      },
+      {
+       "kind": "relation",
+       "subject": "갈색 접힌 상자 묶음 3",
+       "predicate": "on",
+       "object": "작업대 상판",
+       "value": true
+      },
+      {
+       "kind": "relation",
+       "subject": "갈색 접힌 상자 묶음 4",
+       "predicate": "on",
+       "object": "작업대 상판",
+       "value": true
+      },
+      {
+       "kind": "relation",
+       "subject": "상자 1",
+       "predicate": "on",
+       "object": "작업대 상판",
+       "value": true
+      },
+      {
+       "kind": "relation",
+       "subject": "상자 2",
+       "predicate": "on",
+       "object": "작업대 상판",
+       "value": true
+      },
+      {
+       "kind": "relation",
+       "subject": "나무 상자 1",
+       "predicate": "on",
+       "object": "작업대 상판",
+       "value": true
+      },
+      {
+       "kind": "relation",
+       "subject": "나무 상자 2",
+       "predicate": "on",
+       "object": "작업대 상판",
+       "value": true
+      },
+      {
+       "kind": "relation",
+       "subject": "나무 상자 3",
+       "predicate": "on",
+       "object": "작업대 상판",
+       "value": true
+      },
+      {
+       "kind": "relation",
+       "subject": "나무 상자 4",
+       "predicate": "on",
+       "object": "작업대 상판",
+       "value": true
+      },
+      {
+       "kind": "relation",
+       "subject": "나무 상자 5",
+       "predicate": "on",
+       "object": "작업대 상판",
+       "value": true
+      },
+      {
+       "kind": "relation",
+       "subject": "나무 상자 6",
+       "predicate": "on",
+       "object": "작업대 상판",
+       "value": true
+      },
+      {
+       "kind": "relation",
+       "subject": "나무 상자 7",
+       "predicate": "on",
+       "object": "작업대 상판",
+       "value": true
+      },
+      {
+       "kind": "relation",
+       "subject": "나무 상자 8",
+       "predicate": "on",
+       "object": "작업대 상판",
+       "value": true
+      },
+      {
+       "kind": "relation",
+       "subject": "나무 상자 9",
+       "predicate": "on",
+       "object": "작업대 상판",
+       "value": true
+      },
+      {
+       "kind": "relation",
+       "subject": "나무 상자 10",
+       "predicate": "on",
+       "object": "작업대 상판",
+       "value": true
+      },
+      {
+       "kind": "relation",
+       "subject": "나무 상자 11",
+       "predicate": "on",
+       "object": "작업대 상판",
+       "value": true
+      },
+      {
+       "kind": "relation",
+       "subject": "나무 상자 12",
+       "predicate": "on",
+       "object": "작업대 상판",
+       "value": true
+      },
+      {
+       "kind": "relation",
+       "subject": "나무 상자 13",
+       "predicate": "on",
+       "object": "작업대 상판",
+       "value": true
+      },
+      {
+       "kind": "relation",
+       "subject": "나무 상자 14",
+       "predicate": "on",
+       "object": "작업대 상판",
+       "value": true
+      },
+      {
+       "kind": "relation",
+       "subject": "테이프 1",
+       "predicate": "on",
+       "object": "팔레트",
+       "value": true
+      },
+      {
+       "kind": "relation",
+       "subject": "테이프 2",
+       "predicate": "on",
+       "object": "팔레트",
+       "value": true
+      }
+     ]
+    ]
+   },
+   "spatiotemporal_conditions": {
+    "time": null,
+    "space": {
+     "start": "재활용함 혹은 작업대 혹은 랙 1 혹은 랙 2",
+     "end": "작업대 혹은 팔레트"
+    }
+   },
+   "target_objects": {
+    "required": [
+     {
+      "ref": "갈색 골판지 상자 1",
+      "location": "재활용함 안",
+      "state": null
+     },
+     {
+      "ref": "갈색 골판지 상자 2",
+      "location": "재활용함 안",
+      "state": null
+     },
+     {
+      "ref": "갈색 골판지 상자 3",
+      "location": "갈색 골판지 상자 2 위",
+      "state": null
+     },
+     {
+      "ref": "갈색 프린터 상자",
+      "location": "재활용함 안",
+      "state": null
+     },
+     {
+      "ref": "흰색 접힌 상자 묶음",
+      "location": "작업대 선반 위",
+      "state": null
+     },
+     {
+      "ref": "갈색 접힌 상자 묶음 1",
+      "location": "작업대 선반 위",
+      "state": null
+     },
+     {
+      "ref": "갈색 접힌 상자 묶음 2",
+      "location": "흰색 접힌 상자 묶음 위",
+      "state": null
+     },
+     {
+      "ref": "갈색 접힌 상자 묶음 3",
+      "location": "갈색 접힌 상자 묶음 1 위",
+      "state": null
+     },
+     {
+      "ref": "갈색 접힌 상자 묶음 4",
+      "location": "갈색 접힌 상자 묶음 2 위",
+      "state": null
+     },
+     {
+      "ref": "상자 1",
+      "location": "갈색 골판지 상자 3 위",
+      "state": null
+     },
+     {
+      "ref": "상자 2",
+      "location": "갈색 골판지 상자 3 위",
+      "state": null
+     },
+     {
+      "ref": "나무 상자 1",
+      "location": "랙 1 선반 2 위",
+      "state": null
+     },
+     {
+      "ref": "나무 상자 2",
+      "location": "랙 1 선반 2 위",
+      "state": null
+     },
+     {
+      "ref": "나무 상자 3",
+      "location": "나무 상자 1 위",
+      "state": null
+     },
+     {
+      "ref": "나무 상자 4",
+      "location": "나무 상자 2 위",
+      "state": null
+     },
+     {
+      "ref": "나무 상자 5",
+      "location": "나무 상자 2 위",
+      "state": null
+     },
+     {
+      "ref": "나무 상자 6",
+      "location": "나무 상자 1 위",
+      "state": null
+     },
+     {
+      "ref": "나무 상자 7",
+      "location": "랙 1 선반 1 위",
+      "state": null
+     },
+     {
+      "ref": "나무 상자 8",
+      "location": "랙 1 선반 1 위",
+      "state": null
+     },
+     {
+      "ref": "나무 상자 9",
+      "location": "랙 2(랙 위) 위",
+      "state": null
+     },
+     {
+      "ref": "나무 상자 10",
+      "location": "랙 2(랙 위) 위",
+      "state": null
+     },
+     {
+      "ref": "나무 상자 11",
+      "location": "랙 2(랙 위) 위",
+      "state": null
+     },
+     {
+      "ref": "나무 상자 12",
+      "location": "랙 2(랙 위) 위",
+      "state": null
+     },
+     {
+      "ref": "나무 상자 13",
+      "location": "나무 상자 9 위",
+      "state": null
+     },
+     {
+      "ref": "나무 상자 14",
+      "location": "나무 상자 10 위",
+      "state": null
+     },
+     {
+      "ref": "테이프 1",
+      "location": "작업대 상판 위",
+      "state": null
+     },
+     {
+      "ref": "테이프 2",
+      "location": "작업대 상판 위",
+      "state": null
+     }
+    ],
+    "key_means": [
+     {
+      "ref": "작업대 상판",
+      "location": null,
+      "state": null,
+      "alternatives": []
+     },
+     {
+      "ref": "팔레트",
+      "location": "랙 위",
+      "state": null,
+      "alternatives": []
+     }
+    ],
+    "auxiliary": [
+     {
+      "ref": "재활용함",
+      "location": null,
+      "note": "갈색 골판지 상자 1·2와 갈색 프린터 상자의 초기 위치 기준"
+     },
+     {
+      "ref": "작업대",
+      "location": null,
+      "note": "접힌 상자 묶음과 테이프의 초기 위치 기준"
+     },
+     {
+      "ref": "랙 1",
+      "location": null,
+      "note": "나무 상자 1·2·7·8의 초기 위치 기준"
+     },
+     {
+      "ref": "랙 2",
+      "location": "랙 위",
+      "note": "나무 상자 9·10·11·12의 초기 위치 기준"
+     }
+    ]
+   },
+   "constraints": [
+    {
+     "type": "precedence",
+     "description": "상자 1과 상자 2를 갈색 골판지 상자 3 위에서 치우는 것이 갈색 골판지 상자 3을 옮기는 것에 선행해야 함"
+    },
+    {
+     "type": "precedence",
+     "description": "갈색 골판지 상자 3을 치우는 것이 갈색 골판지 상자 2를 옮기는 것에 선행해야 함"
+    },
+    {
+     "type": "precedence",
+     "description": "갈색 접힌 상자 묶음 4를 치우는 것이 갈색 접힌 상자 묶음 2를 옮기는 것에 선행해야 함"
+    },
+    {
+     "type": "precedence",
+     "description": "갈색 접힌 상자 묶음 2를 치우는 것이 흰색 접힌 상자 묶음을 옮기는 것에 선행해야 함"
+    },
+    {
+     "type": "precedence",
+     "description": "갈색 접힌 상자 묶음 3을 치우는 것이 갈색 접힌 상자 묶음 1을 옮기는 것에 선행해야 함"
+    },
+    {
+     "type": "precedence",
+     "description": "나무 상자 3과 나무 상자 6을 치우는 것이 나무 상자 1을 옮기는 것에 선행해야 함"
+    },
+    {
+     "type": "precedence",
+     "description": "나무 상자 4와 나무 상자 5를 치우는 것이 나무 상자 2를 옮기는 것에 선행해야 함"
+    },
+    {
+     "type": "precedence",
+     "description": "나무 상자 13을 치우는 것이 나무 상자 9를 옮기는 것에 선행해야 함"
+    },
+    {
+     "type": "precedence",
+     "description": "나무 상자 14를 치우는 것이 나무 상자 10을 옮기는 것에 선행해야 함"
+    }
+   ]
+  },
+  "task_situation_description_text": "작업 목표: 모든 상자를 작업대 상판으로 옮기고 테이프를 모두 팔레트 위로 옮기는 것\n목표 상태:\n- 갈색 골판지 상자 1: 작업대 상판 위\n- 갈색 골판지 상자 2: 작업대 상판 위\n- 갈색 골판지 상자 3: 작업대 상판 위\n- 갈색 프린터 상자: 작업대 상판 위\n- 흰색 접힌 상자 묶음: 작업대 상판 위\n- 갈색 접힌 상자 묶음 1: 작업대 상판 위\n- 갈색 접힌 상자 묶음 2: 작업대 상판 위\n- 갈색 접힌 상자 묶음 3: 작업대 상판 위\n- 갈색 접힌 상자 묶음 4: 작업대 상판 위\n- 상자 1: 작업대 상판 위\n- 상자 2: 작업대 상판 위\n- 나무 상자 1: 작업대 상판 위\n- 나무 상자 2: 작업대 상판 위\n- 나무 상자 3: 작업대 상판 위\n- 나무 상자 4: 작업대 상판 위\n- 나무 상자 5: 작업대 상판 위\n- 나무 상자 6: 작업대 상판 위\n- 나무 상자 7: 작업대 상판 위\n- 나무 상자 8: 작업대 상판 위\n- 나무 상자 9: 작업대 상판 위\n- 나무 상자 10: 작업대 상판 위\n- 나무 상자 11: 작업대 상판 위\n- 나무 상자 12: 작업대 상판 위\n- 나무 상자 13: 작업대 상판 위\n- 나무 상자 14: 작업대 상판 위\n- 테이프 1: 팔레트 위\n- 테이프 2: 팔레트 위\n시간·공간 조건: 시간 조건은 없음, 공간 조건은 시작 재활용함 혹은 작업대 혹은 랙 1 혹은 랙 2, 종료 작업대 혹은 팔레트\n대상 물체:\n- 필수 물체: 갈색 골판지 상자 1(위치: 재활용함 안)\n- 필수 물체: 갈색 골판지 상자 2(위치: 재활용함 안)\n- 필수 물체: 갈색 골판지 상자 3(위치: 갈색 골판지 상자 2 위)\n- 필수 물체: 갈색 프린터 상자(위치: 재활용함 안)\n- 필수 물체: 흰색 접힌 상자 묶음(위치: 작업대 선반 위)\n- 필수 물체: 갈색 접힌 상자 묶음 1(위치: 작업대 선반 위)\n- 필수 물체: 갈색 접힌 상자 묶음 2(위치: 흰색 접힌 상자 묶음 위)\n- 필수 물체: 갈색 접힌 상자 묶음 3(위치: 갈색 접힌 상자 묶음 1 위)\n- 필수 물체: 갈색 접힌 상자 묶음 4(위치: 갈색 접힌 상자 묶음 2 위)\n- 필수 물체: 상자 1(위치: 갈색 골판지 상자 3 위)\n- 필수 물체: 상자 2(위치: 갈색 골판지 상자 3 위)\n- 필수 물체: 나무 상자 1(위치: 랙 1 선반 2 위)\n- 필수 물체: 나무 상자 2(위치: 랙 1 선반 2 위)\n- 필수 물체: 나무 상자 3(위치: 나무 상자 1 위)\n- 필수 물체: 나무 상자 4(위치: 나무 상자 2 위)\n- 필수 물체: 나무 상자 5(위치: 나무 상자 2 위)\n- 필수 물체: 나무 상자 6(위치: 나무 상자 1 위)\n- 필수 물체: 나무 상자 7(위치: 랙 1 선반 1 위)\n- 필수 물체: 나무 상자 8(위치: 랙 1 선반 1 위)\n- 필수 물체: 나무 상자 9(위치: 랙 2(랙 위) 위)\n- 필수 물체: 나무 상자 10(위치: 랙 2(랙 위) 위)\n- 필수 물체: 나무 상자 11(위치: 랙 2(랙 위) 위)\n- 필수 물체: 나무 상자 12(위치: 랙 2(랙 위) 위)\n- 필수 물체: 나무 상자 13(위치: 나무 상자 9 위)\n- 필수 물체: 나무 상자 14(위치: 나무 상자 10 위)\n- 필수 물체: 테이프 1(위치: 작업대 상판 위)\n- 필수 물체: 테이프 2(위치: 작업대 상판 위)\n- 핵심 수단: 작업대 상판\n- 핵심 수단: 팔레트(위치: 랙 위)\n- 보조 물체: 재활용함(비고: 갈색 골판지 상자 1·2와 갈색 프린터 상자의 초기 위치 기준)\n- 보조 물체: 작업대(비고: 접힌 상자 묶음과 테이프의 초기 위치 기준)\n- 보조 물체: 랙 1(비고: 나무 상자 1·2·7·8의 초기 위치 기준)\n- 보조 물체: 랙 2(위치: 랙 위, 비고: 나무 상자 9·10·11·12의 초기 위치 기준)\n제약 사항:\n- [선후] 상자 1과 상자 2를 갈색 골판지 상자 3 위에서 치우는 것이 갈색 골판지 상자 3을 옮기는 것에 선행해야 함\n- [선후] 갈색 골판지 상자 3을 치우는 것이 갈색 골판지 상자 2를 옮기는 것에 선행해야 함\n- [선후] 갈색 접힌 상자 묶음 4를 치우는 것이 갈색 접힌 상자 묶음 2를 옮기는 것에 선행해야 함\n- [선후] 갈색 접힌 상자 묶음 2를 치우는 것이 흰색 접힌 상자 묶음을 옮기는 것에 선행해야 함\n- [선후] 갈색 접힌 상자 묶음 3을 치우는 것이 갈색 접힌 상자 묶음 1을 옮기는 것에 선행해야 함\n- [선후] 나무 상자 3과 나무 상자 6을 치우는 것이 나무 상자 1을 옮기는 것에 선행해야 함\n- [선후] 나무 상자 4와 나무 상자 5를 치우는 것이 나무 상자 2를 옮기는 것에 선행해야 함\n- [선후] 나무 상자 13을 치우는 것이 나무 상자 9를 옮기는 것에 선행해야 함\n- [선후] 나무 상자 14를 치우는 것이 나무 상자 10을 옮기는 것에 선행해야 함\n"
+ }
+}

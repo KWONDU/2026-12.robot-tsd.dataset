@@ -1,0 +1,1397 @@
+{
+ "schema_version": "0.5",
+ "scene_id": "scene_26d01a3d0bd0",
+ "domain": "logistics",
+ "simulator": "isaacsim_synthetic",
+ "layout": {
+  "layout_id": null,
+  "layout_name": "SM_Unpacking_Table_A1+Transporter_Racks_A1_NP+sm_warehousecomposition_m12_01",
+  "style_id": null,
+  "style_name": null
+ },
+ "fixtures": [
+  {
+   "id": "fx_floor_1",
+   "category": "floor",
+   "name_ko": "바닥",
+   "location_desc": null,
+   "states": {},
+   "state_source": "unknown",
+   "regions": []
+  },
+  {
+   "id": "fx_worktable_1",
+   "category": "worktable",
+   "name_ko": "작업대",
+   "location_desc": null,
+   "states": {},
+   "state_source": "unknown",
+   "regions": [
+    {
+     "key": "top",
+     "name_ko": "상판",
+     "states": {}
+    },
+    {
+     "key": "shelf1",
+     "name_ko": "선반",
+     "states": {}
+    }
+   ]
+  },
+  {
+   "id": "fx_cart_1",
+   "category": "cart",
+   "name_ko": "카트",
+   "location_desc": null,
+   "states": {},
+   "state_source": "unknown",
+   "regions": []
+  },
+  {
+   "id": "fx_cart_2",
+   "category": "cart",
+   "name_ko": "카트",
+   "location_desc": null,
+   "states": {},
+   "state_source": "unknown",
+   "regions": []
+  },
+  {
+   "id": "fx_cart_3",
+   "category": "cart",
+   "name_ko": "카트",
+   "location_desc": null,
+   "states": {},
+   "state_source": "unknown",
+   "regions": []
+  },
+  {
+   "id": "fx_cart_4",
+   "category": "cart",
+   "name_ko": "카트",
+   "location_desc": null,
+   "states": {},
+   "state_source": "unknown",
+   "regions": []
+  },
+  {
+   "id": "fx_cart_5",
+   "category": "cart",
+   "name_ko": "카트",
+   "location_desc": null,
+   "states": {},
+   "state_source": "unknown",
+   "regions": []
+  },
+  {
+   "id": "fx_cart_6",
+   "category": "cart",
+   "name_ko": "카트",
+   "location_desc": null,
+   "states": {},
+   "state_source": "unknown",
+   "regions": []
+  },
+  {
+   "id": "fx_cart_7",
+   "category": "cart",
+   "name_ko": "카트",
+   "location_desc": null,
+   "states": {},
+   "state_source": "unknown",
+   "regions": []
+  },
+  {
+   "id": "fx_cart_8",
+   "category": "cart",
+   "name_ko": "카트",
+   "location_desc": null,
+   "states": {},
+   "state_source": "unknown",
+   "regions": []
+  },
+  {
+   "id": "fx_cart_9",
+   "category": "cart",
+   "name_ko": "카트",
+   "location_desc": null,
+   "states": {},
+   "state_source": "unknown",
+   "regions": []
+  },
+  {
+   "id": "fx_cart_10",
+   "category": "cart",
+   "name_ko": "카트",
+   "location_desc": null,
+   "states": {},
+   "state_source": "unknown",
+   "regions": []
+  },
+  {
+   "id": "fx_cart_11",
+   "category": "cart",
+   "name_ko": "카트",
+   "location_desc": null,
+   "states": {},
+   "state_source": "unknown",
+   "regions": []
+  },
+  {
+   "id": "fx_cart_12",
+   "category": "cart",
+   "name_ko": "카트",
+   "location_desc": null,
+   "states": {},
+   "state_source": "unknown",
+   "regions": []
+  },
+  {
+   "id": "fx_cart_13",
+   "category": "cart",
+   "name_ko": "카트",
+   "location_desc": null,
+   "states": {},
+   "state_source": "unknown",
+   "regions": []
+  },
+  {
+   "id": "fx_cart_14",
+   "category": "cart",
+   "name_ko": "카트",
+   "location_desc": null,
+   "states": {},
+   "state_source": "unknown",
+   "regions": []
+  },
+  {
+   "id": "fx_cart_15",
+   "category": "cart",
+   "name_ko": "카트",
+   "location_desc": null,
+   "states": {},
+   "state_source": "unknown",
+   "regions": []
+  },
+  {
+   "id": "fx_cart_16",
+   "category": "cart",
+   "name_ko": "카트",
+   "location_desc": null,
+   "states": {},
+   "state_source": "unknown",
+   "regions": []
+  },
+  {
+   "id": "fx_cart_17",
+   "category": "cart",
+   "name_ko": "카트",
+   "location_desc": null,
+   "states": {},
+   "state_source": "unknown",
+   "regions": []
+  },
+  {
+   "id": "fx_cart_18",
+   "category": "cart",
+   "name_ko": "카트",
+   "location_desc": null,
+   "states": {},
+   "state_source": "unknown",
+   "regions": []
+  },
+  {
+   "id": "fx_cart_19",
+   "category": "cart",
+   "name_ko": "카트",
+   "location_desc": null,
+   "states": {},
+   "state_source": "unknown",
+   "regions": []
+  },
+  {
+   "id": "fx_cart_20",
+   "category": "cart",
+   "name_ko": "카트",
+   "location_desc": null,
+   "states": {},
+   "state_source": "unknown",
+   "regions": []
+  },
+  {
+   "id": "fx_cart_21",
+   "category": "cart",
+   "name_ko": "카트",
+   "location_desc": null,
+   "states": {},
+   "state_source": "unknown",
+   "regions": []
+  },
+  {
+   "id": "fx_cart_22",
+   "category": "cart",
+   "name_ko": "카트",
+   "location_desc": null,
+   "states": {},
+   "state_source": "unknown",
+   "regions": []
+  },
+  {
+   "id": "fx_cart_23",
+   "category": "cart",
+   "name_ko": "카트",
+   "location_desc": null,
+   "states": {},
+   "state_source": "unknown",
+   "regions": []
+  },
+  {
+   "id": "fx_cart_24",
+   "category": "cart",
+   "name_ko": "카트",
+   "location_desc": null,
+   "states": {},
+   "state_source": "unknown",
+   "regions": []
+  },
+  {
+   "id": "fx_cart_25",
+   "category": "cart",
+   "name_ko": "카트",
+   "location_desc": null,
+   "states": {},
+   "state_source": "unknown",
+   "regions": []
+  },
+  {
+   "id": "fx_cart_26",
+   "category": "cart",
+   "name_ko": "카트",
+   "location_desc": null,
+   "states": {},
+   "state_source": "unknown",
+   "regions": []
+  },
+  {
+   "id": "fx_cart_27",
+   "category": "cart",
+   "name_ko": "카트",
+   "location_desc": null,
+   "states": {},
+   "state_source": "unknown",
+   "regions": []
+  },
+  {
+   "id": "fx_cart_28",
+   "category": "cart",
+   "name_ko": "카트",
+   "location_desc": null,
+   "states": {},
+   "state_source": "unknown",
+   "regions": []
+  },
+  {
+   "id": "fx_cart_29",
+   "category": "cart",
+   "name_ko": "카트",
+   "location_desc": null,
+   "states": {},
+   "state_source": "unknown",
+   "regions": []
+  },
+  {
+   "id": "fx_cart_30",
+   "category": "cart",
+   "name_ko": "카트",
+   "location_desc": null,
+   "states": {},
+   "state_source": "unknown",
+   "regions": []
+  },
+  {
+   "id": "fx_cart_31",
+   "category": "cart",
+   "name_ko": "카트",
+   "location_desc": null,
+   "states": {},
+   "state_source": "unknown",
+   "regions": []
+  },
+  {
+   "id": "fx_cart_32",
+   "category": "cart",
+   "name_ko": "카트",
+   "location_desc": null,
+   "states": {},
+   "state_source": "unknown",
+   "regions": []
+  },
+  {
+   "id": "fx_cart_33",
+   "category": "cart",
+   "name_ko": "카트",
+   "location_desc": null,
+   "states": {},
+   "state_source": "unknown",
+   "regions": []
+  },
+  {
+   "id": "fx_cart_34",
+   "category": "cart",
+   "name_ko": "카트",
+   "location_desc": null,
+   "states": {},
+   "state_source": "unknown",
+   "regions": []
+  },
+  {
+   "id": "fx_cart_35",
+   "category": "cart",
+   "name_ko": "카트",
+   "location_desc": null,
+   "states": {},
+   "state_source": "unknown",
+   "regions": []
+  },
+  {
+   "id": "fx_cart_36",
+   "category": "cart",
+   "name_ko": "카트",
+   "location_desc": null,
+   "states": {},
+   "state_source": "unknown",
+   "regions": []
+  },
+  {
+   "id": "fx_cart_37",
+   "category": "cart",
+   "name_ko": "카트",
+   "location_desc": null,
+   "states": {},
+   "state_source": "unknown",
+   "regions": []
+  },
+  {
+   "id": "fx_cart_38",
+   "category": "cart",
+   "name_ko": "카트",
+   "location_desc": null,
+   "states": {},
+   "state_source": "unknown",
+   "regions": []
+  },
+  {
+   "id": "fx_cart_39",
+   "category": "cart",
+   "name_ko": "카트",
+   "location_desc": null,
+   "states": {},
+   "state_source": "unknown",
+   "regions": []
+  },
+  {
+   "id": "fx_cart_40",
+   "category": "cart",
+   "name_ko": "카트",
+   "location_desc": null,
+   "states": {},
+   "state_source": "unknown",
+   "regions": []
+  },
+  {
+   "id": "fx_cart_41",
+   "category": "cart",
+   "name_ko": "카트",
+   "location_desc": null,
+   "states": {},
+   "state_source": "unknown",
+   "regions": []
+  },
+  {
+   "id": "fx_cart_42",
+   "category": "cart",
+   "name_ko": "카트",
+   "location_desc": null,
+   "states": {},
+   "state_source": "unknown",
+   "regions": []
+  },
+  {
+   "id": "fx_cart_43",
+   "category": "cart",
+   "name_ko": "카트",
+   "location_desc": null,
+   "states": {},
+   "state_source": "unknown",
+   "regions": []
+  },
+  {
+   "id": "fx_cart_44",
+   "category": "cart",
+   "name_ko": "카트",
+   "location_desc": null,
+   "states": {},
+   "state_source": "unknown",
+   "regions": []
+  },
+  {
+   "id": "fx_cart_45",
+   "category": "cart",
+   "name_ko": "카트",
+   "location_desc": null,
+   "states": {},
+   "state_source": "unknown",
+   "regions": []
+  },
+  {
+   "id": "fx_cart_46",
+   "category": "cart",
+   "name_ko": "카트",
+   "location_desc": null,
+   "states": {},
+   "state_source": "unknown",
+   "regions": []
+  },
+  {
+   "id": "fx_cart_47",
+   "category": "cart",
+   "name_ko": "카트",
+   "location_desc": null,
+   "states": {},
+   "state_source": "unknown",
+   "regions": []
+  },
+  {
+   "id": "fx_cart_48",
+   "category": "cart",
+   "name_ko": "카트",
+   "location_desc": null,
+   "states": {},
+   "state_source": "unknown",
+   "regions": []
+  },
+  {
+   "id": "fx_cart_49",
+   "category": "cart",
+   "name_ko": "카트",
+   "location_desc": null,
+   "states": {},
+   "state_source": "unknown",
+   "regions": []
+  },
+  {
+   "id": "fx_cart_50",
+   "category": "cart",
+   "name_ko": "카트",
+   "location_desc": null,
+   "states": {},
+   "state_source": "unknown",
+   "regions": []
+  },
+  {
+   "id": "fx_cart_51",
+   "category": "cart",
+   "name_ko": "카트",
+   "location_desc": null,
+   "states": {},
+   "state_source": "unknown",
+   "regions": []
+  },
+  {
+   "id": "fx_cart_52",
+   "category": "cart",
+   "name_ko": "카트",
+   "location_desc": null,
+   "states": {},
+   "state_source": "unknown",
+   "regions": []
+  },
+  {
+   "id": "fx_cart_53",
+   "category": "cart",
+   "name_ko": "카트",
+   "location_desc": null,
+   "states": {},
+   "state_source": "unknown",
+   "regions": []
+  },
+  {
+   "id": "fx_cart_54",
+   "category": "cart",
+   "name_ko": "카트",
+   "location_desc": null,
+   "states": {},
+   "state_source": "unknown",
+   "regions": []
+  },
+  {
+   "id": "fx_cart_55",
+   "category": "cart",
+   "name_ko": "카트",
+   "location_desc": null,
+   "states": {},
+   "state_source": "unknown",
+   "regions": []
+  },
+  {
+   "id": "fx_cart_56",
+   "category": "cart",
+   "name_ko": "카트",
+   "location_desc": null,
+   "states": {},
+   "state_source": "unknown",
+   "regions": []
+  },
+  {
+   "id": "fx_cart_57",
+   "category": "cart",
+   "name_ko": "카트",
+   "location_desc": null,
+   "states": {},
+   "state_source": "unknown",
+   "regions": []
+  },
+  {
+   "id": "fx_cart_58",
+   "category": "cart",
+   "name_ko": "카트",
+   "location_desc": null,
+   "states": {},
+   "state_source": "unknown",
+   "regions": []
+  },
+  {
+   "id": "fx_cart_59",
+   "category": "cart",
+   "name_ko": "카트",
+   "location_desc": null,
+   "states": {},
+   "state_source": "unknown",
+   "regions": []
+  },
+  {
+   "id": "fx_cart_60",
+   "category": "cart",
+   "name_ko": "카트",
+   "location_desc": null,
+   "states": {},
+   "state_source": "unknown",
+   "regions": []
+  },
+  {
+   "id": "fx_cart_61",
+   "category": "cart",
+   "name_ko": "카트",
+   "location_desc": null,
+   "states": {},
+   "state_source": "unknown",
+   "regions": []
+  },
+  {
+   "id": "fx_cart_62",
+   "category": "cart",
+   "name_ko": "카트",
+   "location_desc": null,
+   "states": {},
+   "state_source": "unknown",
+   "regions": []
+  },
+  {
+   "id": "fx_cart_63",
+   "category": "cart",
+   "name_ko": "카트",
+   "location_desc": null,
+   "states": {},
+   "state_source": "unknown",
+   "regions": []
+  },
+  {
+   "id": "fx_cart_64",
+   "category": "cart",
+   "name_ko": "카트",
+   "location_desc": null,
+   "states": {},
+   "state_source": "unknown",
+   "regions": []
+  },
+  {
+   "id": "fx_cart_65",
+   "category": "cart",
+   "name_ko": "카트",
+   "location_desc": null,
+   "states": {},
+   "state_source": "unknown",
+   "regions": []
+  },
+  {
+   "id": "fx_cart_66",
+   "category": "cart",
+   "name_ko": "카트",
+   "location_desc": null,
+   "states": {},
+   "state_source": "unknown",
+   "regions": []
+  },
+  {
+   "id": "fx_cart_67",
+   "category": "cart",
+   "name_ko": "카트",
+   "location_desc": null,
+   "states": {},
+   "state_source": "unknown",
+   "regions": []
+  },
+  {
+   "id": "fx_cart_68",
+   "category": "cart",
+   "name_ko": "카트",
+   "location_desc": null,
+   "states": {},
+   "state_source": "unknown",
+   "regions": []
+  },
+  {
+   "id": "fx_cart_69",
+   "category": "cart",
+   "name_ko": "카트",
+   "location_desc": null,
+   "states": {},
+   "state_source": "unknown",
+   "regions": []
+  },
+  {
+   "id": "fx_cart_70",
+   "category": "cart",
+   "name_ko": "카트",
+   "location_desc": null,
+   "states": {},
+   "state_source": "unknown",
+   "regions": []
+  },
+  {
+   "id": "fx_cart_71",
+   "category": "cart",
+   "name_ko": "카트",
+   "location_desc": null,
+   "states": {},
+   "state_source": "unknown",
+   "regions": []
+  },
+  {
+   "id": "fx_cart_72",
+   "category": "cart",
+   "name_ko": "카트",
+   "location_desc": null,
+   "states": {},
+   "state_source": "unknown",
+   "regions": []
+  },
+  {
+   "id": "fx_cart_73",
+   "category": "cart",
+   "name_ko": "카트",
+   "location_desc": null,
+   "states": {},
+   "state_source": "unknown",
+   "regions": []
+  },
+  {
+   "id": "fx_cart_74",
+   "category": "cart",
+   "name_ko": "카트",
+   "location_desc": null,
+   "states": {},
+   "state_source": "unknown",
+   "regions": []
+  },
+  {
+   "id": "fx_cart_75",
+   "category": "cart",
+   "name_ko": "카트",
+   "location_desc": null,
+   "states": {},
+   "state_source": "unknown",
+   "regions": []
+  },
+  {
+   "id": "fx_cart_76",
+   "category": "cart",
+   "name_ko": "카트",
+   "location_desc": null,
+   "states": {},
+   "state_source": "unknown",
+   "regions": []
+  },
+  {
+   "id": "fx_cart_77",
+   "category": "cart",
+   "name_ko": "카트",
+   "location_desc": null,
+   "states": {},
+   "state_source": "unknown",
+   "regions": []
+  },
+  {
+   "id": "fx_cart_78",
+   "category": "cart",
+   "name_ko": "카트",
+   "location_desc": null,
+   "states": {},
+   "state_source": "unknown",
+   "regions": []
+  },
+  {
+   "id": "fx_cart_79",
+   "category": "cart",
+   "name_ko": "카트",
+   "location_desc": null,
+   "states": {},
+   "state_source": "unknown",
+   "regions": []
+  },
+  {
+   "id": "fx_cart_80",
+   "category": "cart",
+   "name_ko": "카트",
+   "location_desc": null,
+   "states": {},
+   "state_source": "unknown",
+   "regions": []
+  },
+  {
+   "id": "fx_cart_81",
+   "category": "cart",
+   "name_ko": "카트",
+   "location_desc": null,
+   "states": {},
+   "state_source": "unknown",
+   "regions": []
+  },
+  {
+   "id": "fx_cart_82",
+   "category": "cart",
+   "name_ko": "카트",
+   "location_desc": null,
+   "states": {},
+   "state_source": "unknown",
+   "regions": []
+  },
+  {
+   "id": "fx_cart_83",
+   "category": "cart",
+   "name_ko": "카트",
+   "location_desc": null,
+   "states": {},
+   "state_source": "unknown",
+   "regions": []
+  },
+  {
+   "id": "fx_cart_84",
+   "category": "cart",
+   "name_ko": "카트",
+   "location_desc": null,
+   "states": {},
+   "state_source": "unknown",
+   "regions": []
+  },
+  {
+   "id": "fx_cart_85",
+   "category": "cart",
+   "name_ko": "카트",
+   "location_desc": null,
+   "states": {},
+   "state_source": "unknown",
+   "regions": []
+  },
+  {
+   "id": "fx_cart_86",
+   "category": "cart",
+   "name_ko": "카트",
+   "location_desc": null,
+   "states": {},
+   "state_source": "unknown",
+   "regions": []
+  },
+  {
+   "id": "fx_cart_87",
+   "category": "cart",
+   "name_ko": "카트",
+   "location_desc": null,
+   "states": {},
+   "state_source": "unknown",
+   "regions": []
+  },
+  {
+   "id": "fx_cart_88",
+   "category": "cart",
+   "name_ko": "카트",
+   "location_desc": null,
+   "states": {},
+   "state_source": "unknown",
+   "regions": []
+  },
+  {
+   "id": "fx_cart_89",
+   "category": "cart",
+   "name_ko": "카트",
+   "location_desc": null,
+   "states": {},
+   "state_source": "unknown",
+   "regions": []
+  },
+  {
+   "id": "fx_cart_90",
+   "category": "cart",
+   "name_ko": "카트",
+   "location_desc": null,
+   "states": {},
+   "state_source": "unknown",
+   "regions": []
+  },
+  {
+   "id": "fx_cart_91",
+   "category": "cart",
+   "name_ko": "카트",
+   "location_desc": null,
+   "states": {},
+   "state_source": "unknown",
+   "regions": []
+  },
+  {
+   "id": "fx_cart_92",
+   "category": "cart",
+   "name_ko": "카트",
+   "location_desc": null,
+   "states": {},
+   "state_source": "unknown",
+   "regions": []
+  },
+  {
+   "id": "fx_cart_93",
+   "category": "cart",
+   "name_ko": "카트",
+   "location_desc": null,
+   "states": {},
+   "state_source": "unknown",
+   "regions": []
+  },
+  {
+   "id": "fx_cart_94",
+   "category": "cart",
+   "name_ko": "카트",
+   "location_desc": null,
+   "states": {},
+   "state_source": "unknown",
+   "regions": []
+  },
+  {
+   "id": "fx_cart_95",
+   "category": "cart",
+   "name_ko": "카트",
+   "location_desc": null,
+   "states": {},
+   "state_source": "unknown",
+   "regions": []
+  },
+  {
+   "id": "fx_cart_96",
+   "category": "cart",
+   "name_ko": "카트",
+   "location_desc": null,
+   "states": {},
+   "state_source": "unknown",
+   "regions": []
+  },
+  {
+   "id": "fx_cart_97",
+   "category": "cart",
+   "name_ko": "카트",
+   "location_desc": null,
+   "states": {},
+   "state_source": "unknown",
+   "regions": []
+  },
+  {
+   "id": "fx_cart_98",
+   "category": "cart",
+   "name_ko": "카트",
+   "location_desc": null,
+   "states": {},
+   "state_source": "unknown",
+   "regions": []
+  },
+  {
+   "id": "fx_cart_99",
+   "category": "cart",
+   "name_ko": "카트",
+   "location_desc": null,
+   "states": {},
+   "state_source": "unknown",
+   "regions": []
+  },
+  {
+   "id": "fx_cart_100",
+   "category": "cart",
+   "name_ko": "카트",
+   "location_desc": null,
+   "states": {},
+   "state_source": "unknown",
+   "regions": []
+  },
+  {
+   "id": "fx_pallet_1",
+   "category": "pallet",
+   "name_ko": "팔레트",
+   "location_desc": null,
+   "states": {},
+   "state_source": "unknown",
+   "regions": []
+  },
+  {
+   "id": "fx_trash_can_1",
+   "category": "trash_can",
+   "name_ko": "쓰레기통",
+   "location_desc": null,
+   "states": {},
+   "state_source": "unknown",
+   "regions": []
+  }
+ ],
+ "objects": [
+  {
+   "id": "obj_001",
+   "category": "flat_box_brown",
+   "name_ko": "갈색 납작 상자",
+   "states": {},
+   "placement": {
+    "fixture_id": "fx_floor_1",
+    "relation": "on",
+    "region": null,
+    "near_fixture_id": null,
+    "near_side": null
+   },
+   "pose": null,
+   "size_m": [
+    0.512,
+    0.628,
+    0.228
+   ],
+   "size_class": null
+  },
+  {
+   "id": "obj_002",
+   "category": "flat_box_brown",
+   "name_ko": "갈색 납작 상자",
+   "states": {},
+   "placement": {
+    "fixture_id": "fx_floor_1",
+    "relation": "on",
+    "region": null,
+    "near_fixture_id": null,
+    "near_side": null
+   },
+   "pose": null,
+   "size_m": [
+    0.577,
+    0.56,
+    0.205
+   ],
+   "size_class": null
+  },
+  {
+   "id": "obj_003",
+   "category": "flat_box_brown",
+   "name_ko": "갈색 납작 상자",
+   "states": {},
+   "placement": null,
+   "pose": null,
+   "size_m": [
+    0.577,
+    0.56,
+    0.205
+   ],
+   "size_class": null
+  },
+  {
+   "id": "obj_004",
+   "category": "box_brown",
+   "name_ko": "갈색 상자",
+   "states": {},
+   "placement": {
+    "fixture_id": "fx_pallet_1",
+    "relation": "on",
+    "region": null,
+    "near_fixture_id": null,
+    "near_side": null
+   },
+   "pose": null,
+   "size_m": [
+    0.405,
+    0.411,
+    0.416
+   ],
+   "size_class": null
+  },
+  {
+   "id": "obj_005",
+   "category": "box_white",
+   "name_ko": "흰색 상자",
+   "states": {},
+   "placement": {
+    "fixture_id": "fx_pallet_1",
+    "relation": "on",
+    "region": null,
+    "near_fixture_id": null,
+    "near_side": null
+   },
+   "pose": null,
+   "size_m": [
+    0.218,
+    0.366,
+    0.155
+   ],
+   "size_class": null
+  },
+  {
+   "id": "obj_006",
+   "category": "box_white",
+   "name_ko": "흰색 상자",
+   "states": {},
+   "placement": {
+    "fixture_id": "fx_pallet_1",
+    "relation": "on",
+    "region": null,
+    "near_fixture_id": null,
+    "near_side": null
+   },
+   "pose": null,
+   "size_m": [
+    0.218,
+    0.366,
+    0.155
+   ],
+   "size_class": null
+  },
+  {
+   "id": "obj_007",
+   "category": "box",
+   "name_ko": "상자",
+   "states": {},
+   "placement": {
+    "fixture_id": "fx_pallet_1",
+    "relation": "on",
+    "region": null,
+    "near_fixture_id": null,
+    "near_side": null
+   },
+   "pose": null,
+   "size_m": [
+    0.607,
+    0.404,
+    0.41
+   ],
+   "size_class": null
+  },
+  {
+   "id": "obj_008",
+   "category": "flat_box_brown",
+   "name_ko": "갈색 납작 상자",
+   "states": {},
+   "placement": null,
+   "pose": null,
+   "size_m": [
+    0.512,
+    0.628,
+    0.228
+   ],
+   "size_class": null
+  },
+  {
+   "id": "obj_009",
+   "category": "crate_blue",
+   "name_ko": "파란 크레이트",
+   "states": {},
+   "placement": {
+    "fixture_id": "fx_worktable_1",
+    "relation": "on",
+    "region": "shelf1",
+    "near_fixture_id": null,
+    "near_side": null
+   },
+   "pose": null,
+   "size_m": [
+    0.546,
+    0.689,
+    0.17
+   ],
+   "size_class": null
+  },
+  {
+   "id": "obj_010",
+   "category": "flat_box_white",
+   "name_ko": "흰색 납작 상자",
+   "states": {},
+   "placement": {
+    "fixture_id": "fx_worktable_1",
+    "relation": "on",
+    "region": "shelf1",
+    "near_fixture_id": null,
+    "near_side": null
+   },
+   "pose": null,
+   "size_m": [
+    0.509,
+    0.61,
+    0.166
+   ],
+   "size_class": null
+  },
+  {
+   "id": "obj_011",
+   "category": "box_brown",
+   "name_ko": "갈색 상자",
+   "states": {},
+   "placement": null,
+   "pose": null,
+   "size_m": [
+    0.208,
+    0.36,
+    0.155
+   ],
+   "size_class": null
+  },
+  {
+   "id": "obj_012",
+   "category": "box_brown",
+   "name_ko": "갈색 상자",
+   "states": {},
+   "placement": null,
+   "pose": null,
+   "size_m": [
+    0.208,
+    0.36,
+    0.155
+   ],
+   "size_class": null
+  },
+  {
+   "id": "obj_013",
+   "category": "corrugated_box_brown",
+   "name_ko": "갈색 골판지 상자",
+   "states": {},
+   "placement": null,
+   "pose": null,
+   "size_m": [
+    0.307,
+    0.31,
+    0.252
+   ],
+   "size_class": null
+  },
+  {
+   "id": "obj_014",
+   "category": "crate_yellow",
+   "name_ko": "노란 크레이트",
+   "states": {},
+   "placement": null,
+   "pose": null,
+   "size_m": [
+    0.456,
+    0.636,
+    0.17
+   ],
+   "size_class": null
+  },
+  {
+   "id": "obj_015",
+   "category": "box_white",
+   "name_ko": "흰색 상자",
+   "states": {},
+   "placement": null,
+   "pose": null,
+   "size_m": [
+    0.306,
+    0.309,
+    0.314
+   ],
+   "size_class": null
+  },
+  {
+   "id": "obj_016",
+   "category": "corrugated_box_brown",
+   "name_ko": "갈색 골판지 상자",
+   "states": {},
+   "placement": {
+    "fixture_id": "fx_worktable_1",
+    "relation": "on",
+    "region": "top",
+    "near_fixture_id": null,
+    "near_side": null
+   },
+   "pose": null,
+   "size_m": [
+    0.295,
+    0.297,
+    0.252
+   ],
+   "size_class": null
+  },
+  {
+   "id": "obj_017",
+   "category": "crate_yellow",
+   "name_ko": "노란 크레이트",
+   "states": {},
+   "placement": {
+    "fixture_id": "fx_worktable_1",
+    "relation": "on",
+    "region": "top",
+    "near_fixture_id": null,
+    "near_side": null
+   },
+   "pose": null,
+   "size_m": [
+    0.549,
+    0.687,
+    0.17
+   ],
+   "size_class": null
+  },
+  {
+   "id": "obj_018",
+   "category": "corrugated_box_white",
+   "name_ko": "흰색 골판지 상자",
+   "states": {},
+   "placement": {
+    "fixture_id": "fx_worktable_1",
+    "relation": "on",
+    "region": "top",
+    "near_fixture_id": null,
+    "near_side": null
+   },
+   "pose": null,
+   "size_m": [
+    0.438,
+    0.436,
+    0.253
+   ],
+   "size_class": null
+  }
+ ],
+ "relations": [
+  {
+   "subj": "obj_001",
+   "pred": "on",
+   "obj": "fx_floor_1",
+   "source": "geometry"
+  },
+  {
+   "subj": "obj_002",
+   "pred": "on",
+   "obj": "fx_floor_1",
+   "source": "geometry"
+  },
+  {
+   "subj": "obj_003",
+   "pred": "on",
+   "obj": "obj_002",
+   "source": "geometry"
+  },
+  {
+   "subj": "obj_004",
+   "pred": "on",
+   "obj": "fx_pallet_1",
+   "source": "geometry"
+  },
+  {
+   "subj": "obj_005",
+   "pred": "on",
+   "obj": "fx_pallet_1",
+   "source": "geometry"
+  },
+  {
+   "subj": "obj_006",
+   "pred": "on",
+   "obj": "fx_pallet_1",
+   "source": "geometry"
+  },
+  {
+   "subj": "obj_007",
+   "pred": "on",
+   "obj": "fx_pallet_1",
+   "source": "geometry"
+  },
+  {
+   "subj": "obj_008",
+   "pred": "on",
+   "obj": "obj_001",
+   "source": "geometry"
+  },
+  {
+   "subj": "obj_009",
+   "pred": "on",
+   "obj": "fx_worktable_1",
+   "source": "geometry"
+  },
+  {
+   "subj": "obj_010",
+   "pred": "on",
+   "obj": "fx_worktable_1",
+   "source": "geometry"
+  },
+  {
+   "subj": "obj_011",
+   "pred": "on",
+   "obj": "obj_005",
+   "source": "geometry"
+  },
+  {
+   "subj": "obj_012",
+   "pred": "on",
+   "obj": "obj_006",
+   "source": "geometry"
+  },
+  {
+   "subj": "obj_013",
+   "pred": "in",
+   "obj": "obj_009",
+   "source": "geometry"
+  },
+  {
+   "subj": "obj_014",
+   "pred": "on",
+   "obj": "obj_010",
+   "source": "geometry"
+  },
+  {
+   "subj": "obj_015",
+   "pred": "on",
+   "obj": "obj_004",
+   "source": "geometry"
+  },
+  {
+   "subj": "obj_016",
+   "pred": "on",
+   "obj": "fx_worktable_1",
+   "source": "geometry"
+  },
+  {
+   "subj": "obj_017",
+   "pred": "on",
+   "obj": "fx_worktable_1",
+   "source": "geometry"
+  },
+  {
+   "subj": "obj_018",
+   "pred": "on",
+   "obj": "fx_worktable_1",
+   "source": "geometry"
+  }
+ ],
+ "agent": {
+  "embodiment": "humanoid",
+  "base_near_fixture_id": null,
+  "holding": []
+ },
+ "constraints": []
+}

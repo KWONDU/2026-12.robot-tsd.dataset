@@ -1,0 +1,135 @@
+{
+ "id": "simready_warehouse-cells-2ad110306f--sort_groups-9b1c867f--v1--qwen3.8-27b-high",
+ "domain": "logistics",
+ "task_type": "sort_groups",
+ "agent": "qwen3.8-27b-high",
+ "source": {
+  "data": "NVIDIA PhysicalAI-SimReady-Warehouse-01 (CC BY 4.0)",
+  "scene_id": "simready_warehouse/2ad110306f",
+  "task": "sort_groups",
+  "composed": true
+ },
+ "input": {
+  "instruction": "긴 상자들은 랙 맨 위 선반에 올리고, 열린 상자는 팔레트 위에 올려놔.",
+  "instruction_en": "Put all the long boxes on the top shelf of the rack and the open box on a pallet.",
+  "world_state": "장소: 물류 창고\n로봇(humanoid). 들고 있는 물체 없음.\n\n물체가 놓인 곳:\n- 카트 선반 3 위: 열린 상자\n- 랙 선반 2 위: 나무 상자 1, 나무 상자 2\n- 카트 선반 2 위: 긴 상자 1, 납작 상자 1, 납작 상자 2\n- 납작 상자 1 위: 납작 상자 3\n- 긴 상자 1 위: 긴 상자 2\n- 카트 선반 1 위: 바코드 스캐너\n- 랙 선반 1 위: 나무 상자 3, 나무 상자 4, 나무 상자 5, 나무 상자 6\n\n물체 크기:\n- 나무 상자: 큰 것부터 나무 상자 1·나무 상자 2(서로 비슷), 나무 상자 4·나무 상자 5·나무 상자 3·나무 상자 6(서로 비슷)\n- 긴 상자: 큰 것부터 긴 상자 1, 긴 상자 2\n- 납작 상자: 큰 것부터 납작 상자 3, 납작 상자 1, 납작 상자 2\n\n설비:\n- 바닥\n- 팔레트 1, 3부터 8까지(팔레트 위)\n- 팔레트 2\n- 랙: 칸: 선반 1, 2(위에서부터)\n- 카트: 칸: 선반 1부터 3까지(위에서부터)",
+  "entity_labels": {
+   "fx_floor_1": "바닥",
+   "fx_pallet_1": "팔레트 1",
+   "fx_pallet_2": "팔레트 2",
+   "fx_pallet_3": "팔레트 3",
+   "fx_pallet_4": "팔레트 4",
+   "fx_pallet_5": "팔레트 5",
+   "fx_pallet_6": "팔레트 6",
+   "fx_pallet_7": "팔레트 7",
+   "fx_pallet_8": "팔레트 8",
+   "fx_rack_1": "랙",
+   "fx_cart_1": "카트",
+   "obj_001": "열린 상자",
+   "obj_002": "나무 상자 1",
+   "obj_003": "나무 상자 2",
+   "obj_004": "긴 상자 1",
+   "obj_005": "납작 상자 1",
+   "obj_006": "납작 상자 2",
+   "obj_007": "납작 상자 3",
+   "obj_008": "긴 상자 2",
+   "obj_009": "바코드 스캐너",
+   "obj_010": "나무 상자 3",
+   "obj_011": "나무 상자 4",
+   "obj_012": "나무 상자 5",
+   "obj_013": "나무 상자 6",
+   "fx_rack_1/shelf1": "랙 선반 1",
+   "fx_rack_1/shelf2": "랙 선반 2",
+   "fx_cart_1/shelf1": "카트 선반 1",
+   "fx_cart_1/shelf2": "카트 선반 2",
+   "fx_cart_1/shelf3": "카트 선반 3"
+  }
+ },
+ "output": {
+  "reasoning": "① 지시 해석: 두 가지 작업이 나열되어 있다. (1) 긴 상자(긴 상자 1, 긴 상자 2)를 랙 맨 위 선반(선반 1)에 올리고, (2) 열린 상자를 팔레트 위에 올린다. '…하고, …해' 형식으로 순서를 명시하지 않았으므로 선후 관계는 없다. 시간 조건도 없다. 모든 대상이 카트에 있으므로 시작은 카트이고, 도착지는 랙(긴 상자)과 팔레트(열린 상자)이므로 끝은 '랙 혹은 팔레트'이다. ② 씬 접지: 긴 상자 1은 카트 선반 2 위에, 긴 상자 2는 긴 상자 1 위에, 열린 상자는 카트 선반 3 위에 있다. 랙은 선반 1, 2(위에서부터)가 있고, 팔레트는 1, 2, 3~8이 있다. '랙 맨 위 선반'은 선반 1에 해당한다. '팔레트 위'는 특정 팔레트를 지정하지 않았다. ③ 역할 부여: 긴 상자 1·긴 상자 2·열린 상자는 위치가 바뀌므로 필수. 랙 선반 1은 긴 상자의 도착지(on 관계의 object)이므로 핵심 수단. 팔레트는 열린 상자의 도착지(on 관계의 object)이므로 핵심 수단. 카트는 세 물체의 초기 위치 설비이므로 보조. 긴 상자 2는 긴 상자 1 위에 놓여 있지만, 긴 상자 2 자체도 필수(이동 대상)이므로 우선순위에 따라 필수로만 기록하고, 쌓임 관계는 constraints의 precedence로 처리한다. ④ 제약 도출: 긴 상자 2가 긴 상자 1 위에 놓여 있어 긴 상자 1에 닿으려면 먼저 긴 상자 2를 치워야 하므로 선후 제약이 성립한다. ⑤ 목표 상태: 긴 상자 1이 랙 선반 1 위에, 긴 상자 2가 랙 선반 1 위에, 열린 상자가 팔레트 위에 있는 상태. 팔레트는 어느 것이든 되므로 번호를 뗀 이름으로 쓰고, 선택이 서로 맞물리지 않으므로 경우 나누지 않는다.",
+  "task_situation_description": {
+   "task_goal": {
+    "summary": "긴 상자 1과 긴 상자 2를 랙 맨 위 선반에, 열린 상자를 팔레트 위에 각각 옮기는 것",
+    "goal_state": [
+     [
+      {
+       "kind": "relation",
+       "subject": "긴 상자 1",
+       "predicate": "on",
+       "object": "랙 선반 1",
+       "value": true
+      },
+      {
+       "kind": "relation",
+       "subject": "긴 상자 2",
+       "predicate": "on",
+       "object": "랙 선반 1",
+       "value": true
+      },
+      {
+       "kind": "relation",
+       "subject": "열린 상자",
+       "predicate": "on",
+       "object": "팔레트",
+       "value": true
+      }
+     ]
+    ]
+   },
+   "spatiotemporal_conditions": {
+    "time": null,
+    "space": {
+     "start": "카트",
+     "end": "랙 혹은 팔레트"
+    }
+   },
+   "target_objects": {
+    "required": [
+     {
+      "ref": "긴 상자 1",
+      "location": "카트 선반 2 위",
+      "state": null
+     },
+     {
+      "ref": "긴 상자 2",
+      "location": "긴 상자 1 위",
+      "state": null
+     },
+     {
+      "ref": "열린 상자",
+      "location": "카트 선반 3 위",
+      "state": null
+     }
+    ],
+    "key_means": [
+     {
+      "ref": "랙 선반 1",
+      "location": null,
+      "state": null,
+      "alternatives": []
+     },
+     {
+      "ref": "팔레트",
+      "location": null,
+      "state": null,
+      "alternatives": []
+     }
+    ],
+    "auxiliary": [
+     {
+      "ref": "카트",
+      "location": null,
+      "note": "긴 상자 1, 긴 상자 2, 열린 상자의 초기 위치 기준"
+     }
+    ]
+   },
+   "constraints": [
+    {
+     "type": "precedence",
+     "description": "긴 상자 2가 긴 상자 1 위에 놓여 있으므로 긴 상자 1에 닿으려면 긴 상자 2를 먼저 치워야 함"
+    }
+   ]
+  },
+  "task_situation_description_text": "작업 목표: 긴 상자 1과 긴 상자 2를 랙 맨 위 선반에, 열린 상자를 팔레트 위에 각각 옮기는 것\n목표 상태:\n- 긴 상자 1: 랙 선반 1 위\n- 긴 상자 2: 랙 선반 1 위\n- 열린 상자: 팔레트 위\n시간·공간 조건: 시간 조건은 없음, 공간 조건은 시작 카트, 종료 랙 혹은 팔레트\n대상 물체:\n- 필수 물체: 긴 상자 1(위치: 카트 선반 2 위)\n- 필수 물체: 긴 상자 2(위치: 긴 상자 1 위)\n- 필수 물체: 열린 상자(위치: 카트 선반 3 위)\n- 핵심 수단: 랙 선반 1\n- 핵심 수단: 팔레트\n- 보조 물체: 카트(비고: 긴 상자 1, 긴 상자 2, 열린 상자의 초기 위치 기준)\n제약 사항:\n- [선후] 긴 상자 2가 긴 상자 1 위에 놓여 있으므로 긴 상자 1에 닿으려면 긴 상자 2를 먼저 치워야 함\n"
+ }
+}

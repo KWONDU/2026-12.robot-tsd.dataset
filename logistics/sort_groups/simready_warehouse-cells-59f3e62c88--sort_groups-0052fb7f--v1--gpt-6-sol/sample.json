@@ -1,0 +1,114 @@
+{
+ "id": "simready_warehouse-cells-59f3e62c88--sort_groups-0052fb7f--v1--gpt-6-sol",
+ "domain": "logistics",
+ "task_type": "sort_groups",
+ "agent": "gpt-6-sol",
+ "source": {
+  "data": "NVIDIA PhysicalAI-SimReady-Warehouse-01 (CC BY 4.0)",
+  "scene_id": "simready_warehouse/59f3e62c88",
+  "task": "sort_groups",
+  "composed": true
+ },
+ "input": {
+  "instruction": "흰색 골판지 상자는 팔레트에 올리고, 빨간 뚜껑 달린 통은 작업대 선반에 올려줘.",
+  "instruction_en": "Put the white corrugated box on a pallet and the red lidded pail on the shelf of the work table.",
+  "world_state": "장소: 물류 창고\n로봇(humanoid). 들고 있는 물체 없음.\n\n물체가 놓인 곳:\n- 팔레트 위: 빨간 뚜껑 달린 통, 파란 뚜껑 달린 통 1, 파란 뚜껑 달린 통 2, 파란 뚜껑 달린 통 3, 파란 뚜껑 달린 통 4, 파란 뚜껑 달린 통 5\n- 작업대 선반 위: 파란 크레이트, 흰색 납작 상자\n- 파란 크레이트 안: 갈색 골판지 상자 1\n- 흰색 납작 상자 위: 노란 크레이트 1\n- 작업대 상판 위: 갈색 골판지 상자 2, 노란 크레이트 2, 흰색 골판지 상자\n\n물체 크기:\n- 파란 뚜껑 달린 통: 큰 것부터 파란 뚜껑 달린 통 1, 파란 뚜껑 달린 통 3·파란 뚜껑 달린 통 4·파란 뚜껑 달린 통 5·파란 뚜껑 달린 통 2(서로 비슷)\n- 노란 크레이트: 큰 것부터 노란 크레이트 2, 노란 크레이트 1\n\n설비:\n- 바닥\n- 작업대: 칸: 상판, 선반\n- 팔레트\n- 재활용함 1부터 5까지\n- 카트 1, 2",
+  "entity_labels": {
+   "fx_floor_1": "바닥",
+   "fx_worktable_1": "작업대",
+   "fx_pallet_1": "팔레트",
+   "fx_recycling_bin_1": "재활용함 1",
+   "fx_recycling_bin_2": "재활용함 2",
+   "fx_recycling_bin_3": "재활용함 3",
+   "fx_recycling_bin_4": "재활용함 4",
+   "fx_recycling_bin_5": "재활용함 5",
+   "fx_cart_1": "카트 1",
+   "fx_cart_2": "카트 2",
+   "obj_001": "빨간 뚜껑 달린 통",
+   "obj_002": "파란 뚜껑 달린 통 1",
+   "obj_003": "파란 뚜껑 달린 통 2",
+   "obj_004": "파란 뚜껑 달린 통 3",
+   "obj_005": "파란 뚜껑 달린 통 4",
+   "obj_006": "파란 뚜껑 달린 통 5",
+   "obj_007": "파란 크레이트",
+   "obj_008": "흰색 납작 상자",
+   "obj_009": "갈색 골판지 상자 1",
+   "obj_010": "노란 크레이트 1",
+   "obj_011": "갈색 골판지 상자 2",
+   "obj_012": "노란 크레이트 2",
+   "obj_013": "흰색 골판지 상자",
+   "fx_worktable_1/top": "작업대 상판",
+   "fx_worktable_1/shelf1": "작업대 선반"
+  }
+ },
+ "output": {
+  "reasoning": "① 지시 해석: 흰색 골판지 상자를 팔레트에, 빨간 뚜껑 달린 통을 작업대 선반에 올리는 것이 목표다. 두 작업의 순서와 시간 조건은 정해지지 않았다. 두 물체가 각각 작업대와 팔레트에 있으므로 시작 후보는 작업대 혹은 팔레트이고, 도착지도 팔레트 혹은 작업대다. ② 씬 접지: 흰색 골판지 상자는 작업대 상판 위에, 빨간 뚜껑 달린 통은 팔레트 위에 있다. 통을 받을 곳은 작업대 선반이다. ③ 역할 부여: 옮길 두 물체는 필수다. 흰색 골판지 상자를 받는 팔레트와 통을 받는 작업대 선반은 핵심 수단이다. 작업대는 흰색 골판지 상자의 초기 위치 기준이므로 보조다. 팔레트는 통의 초기 위치이기도 하지만 핵심 수단 역할을 우선한다. ④ 제약 도출: 두 물체 위에 먼저 치워야 할 물체가 있다는 설명이 없고, 지시도 작업 순서를 정하지 않았으므로 별도 제약은 없다. ⑤ 목표 상태: 흰색 골판지 상자가 팔레트 위에 있고 빨간 뚜껑 달린 통이 작업대 선반 위에 있는 상태를 함께 쓴다.",
+  "task_situation_description": {
+   "task_goal": {
+    "summary": "흰색 골판지 상자를 팔레트에 올리고 빨간 뚜껑 달린 통을 작업대 선반에 올리는 것",
+    "goal_state": [
+     [
+      {
+       "kind": "relation",
+       "subject": "흰색 골판지 상자",
+       "predicate": "on",
+       "object": "팔레트",
+       "value": true
+      },
+      {
+       "kind": "relation",
+       "subject": "빨간 뚜껑 달린 통",
+       "predicate": "on",
+       "object": "작업대 선반",
+       "value": true
+      }
+     ]
+    ]
+   },
+   "spatiotemporal_conditions": {
+    "time": null,
+    "space": {
+     "start": "작업대 혹은 팔레트",
+     "end": "팔레트 혹은 작업대"
+    }
+   },
+   "target_objects": {
+    "required": [
+     {
+      "ref": "흰색 골판지 상자",
+      "location": "작업대 상판 위",
+      "state": null
+     },
+     {
+      "ref": "빨간 뚜껑 달린 통",
+      "location": "팔레트 위",
+      "state": null
+     }
+    ],
+    "key_means": [
+     {
+      "ref": "팔레트",
+      "location": null,
+      "state": null,
+      "alternatives": []
+     },
+     {
+      "ref": "작업대 선반",
+      "location": null,
+      "state": null,
+      "alternatives": []
+     }
+    ],
+    "auxiliary": [
+     {
+      "ref": "작업대",
+      "location": null,
+      "note": "흰색 골판지 상자의 초기 위치 기준"
+     }
+    ]
+   },
+   "constraints": []
+  },
+  "task_situation_description_text": "작업 목표: 흰색 골판지 상자를 팔레트에 올리고 빨간 뚜껑 달린 통을 작업대 선반에 올리는 것\n목표 상태:\n- 흰색 골판지 상자: 팔레트 위\n- 빨간 뚜껑 달린 통: 작업대 선반 위\n시간·공간 조건: 시간 조건은 없음, 공간 조건은 시작 작업대 혹은 팔레트, 종료 팔레트 혹은 작업대\n대상 물체:\n- 필수 물체: 흰색 골판지 상자(위치: 작업대 상판 위)\n- 필수 물체: 빨간 뚜껑 달린 통(위치: 팔레트 위)\n- 핵심 수단: 팔레트\n- 핵심 수단: 작업대 선반\n- 보조 물체: 작업대(비고: 흰색 골판지 상자의 초기 위치 기준)\n제약 사항: 없음\n"
+ }
+}

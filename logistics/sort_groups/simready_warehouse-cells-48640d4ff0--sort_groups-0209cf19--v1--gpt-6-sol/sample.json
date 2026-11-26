@@ -1,0 +1,552 @@
+{
+ "id": "simready_warehouse-cells-48640d4ff0--sort_groups-0209cf19--v1--gpt-6-sol",
+ "domain": "logistics",
+ "task_type": "sort_groups",
+ "agent": "gpt-6-sol",
+ "source": {
+  "data": "NVIDIA PhysicalAI-SimReady-Warehouse-01 (CC BY 4.0)",
+  "scene_id": "simready_warehouse/48640d4ff0",
+  "task": "sort_groups",
+  "composed": true
+ },
+ "input": {
+  "instruction": "갈색 프린터 상자는 카트 맨 위 선반에 두고, 나머지 상자들은 맨 아래 선반에 다 올려놔.",
+  "instruction_en": "Put all the boxes on the bottom shelf of the cart and the brown printer box on the top shelf of the cart.",
+  "world_state": "장소: 물류 창고\n로봇(humanoid). 들고 있는 물체 없음.\n\n물체가 놓인 곳:\n- 재활용함 안: 갈색 골판지 상자 1, 갈색 골판지 상자 2, 갈색 프린터 상자\n- 바닥 위: 갈색 납작 상자 1, 갈색 납작 상자 2\n- 카트 선반 3 위: 긴 상자 1, 납작 상자 1, 긴 상자 2, 납작 상자 2\n- 갈색 납작 상자 2 위: 갈색 납작 상자 3\n- 팔레트 위: 갈색 상자 1, 흰색 상자 1, 흰색 상자 2, 상자 1\n- 갈색 납작 상자 1 위: 갈색 납작 상자 4\n- 갈색 골판지 상자 2 위: 갈색 골판지 상자 3\n- 납작 상자 2 위: 긴 상자 3, 긴 상자 4\n- 긴 상자 1 위: 납작 상자 3\n- 흰색 상자 1 위: 갈색 상자 2\n- 흰색 상자 2 위: 갈색 상자 3\n- 갈색 골판지 상자 3 위: 상자 2, 상자 3\n- 갈색 상자 1 위: 흰색 상자 3\n- 카트 선반 2 위: 긴 상자 5, 긴 상자 6, 골판지 상자 1, 골판지 상자 2, 골판지 상자 3, 골판지 상자 4\n- 골판지 상자 4 위: 골판지 상자 5\n- 골판지 상자 1 위: 긴 상자 7\n- 골판지 상자 2 위: 긴 상자 8\n- 긴 상자 5 위: 흰색 납작 상자\n- 카트 선반 1 위: 바코드 스캐너\n\n물체 크기:\n- 갈색 골판지 상자: 큰 것부터 갈색 골판지 상자 2, 갈색 골판지 상자 3, 갈색 골판지 상자 1\n- 긴 상자: 큰 것부터 긴 상자 5·긴 상자 4·긴 상자 1(서로 비슷), 긴 상자 3, 긴 상자 7, 긴 상자 6, 긴 상자 2, 긴 상자 8\n- 납작 상자: 큰 것부터 납작 상자 2, 납작 상자 1, 납작 상자 3\n- 갈색 상자: 큰 것부터 갈색 상자 1, 갈색 상자 2·갈색 상자 3(서로 비슷)\n- 흰색 상자: 큰 것부터 흰색 상자 3, 흰색 상자 1·흰색 상자 2(서로 비슷)\n- 상자: 큰 것부터 상자 1, 상자 3·상자 2(서로 비슷)\n- 골판지 상자: 큰 것부터 골판지 상자 3, 골판지 상자 1·골판지 상자 4(서로 비슷), 골판지 상자 2·골판지 상자 5(서로 비슷)\n\n설비:\n- 바닥\n- 카트: 칸: 선반 1부터 3까지(위에서부터)\n- 팔레트\n- 쓰레기통\n- 재활용함",
+  "entity_labels": {
+   "fx_floor_1": "바닥",
+   "fx_cart_1": "카트",
+   "fx_pallet_1": "팔레트",
+   "fx_trash_can_1": "쓰레기통",
+   "fx_recycling_bin_1": "재활용함",
+   "obj_001": "갈색 골판지 상자 1",
+   "obj_002": "갈색 납작 상자 1",
+   "obj_003": "갈색 납작 상자 2",
+   "obj_004": "갈색 골판지 상자 2",
+   "obj_005": "긴 상자 1",
+   "obj_006": "납작 상자 1",
+   "obj_007": "긴 상자 2",
+   "obj_008": "납작 상자 2",
+   "obj_009": "갈색 납작 상자 3",
+   "obj_010": "갈색 상자 1",
+   "obj_011": "흰색 상자 1",
+   "obj_012": "흰색 상자 2",
+   "obj_013": "상자 1",
+   "obj_014": "갈색 납작 상자 4",
+   "obj_015": "갈색 골판지 상자 3",
+   "obj_016": "긴 상자 3",
+   "obj_017": "갈색 프린터 상자",
+   "obj_018": "긴 상자 4",
+   "obj_019": "납작 상자 3",
+   "obj_020": "갈색 상자 2",
+   "obj_021": "갈색 상자 3",
+   "obj_022": "상자 2",
+   "obj_023": "상자 3",
+   "obj_024": "흰색 상자 3",
+   "obj_025": "긴 상자 5",
+   "obj_026": "긴 상자 6",
+   "obj_027": "골판지 상자 1",
+   "obj_028": "골판지 상자 2",
+   "obj_029": "골판지 상자 3",
+   "obj_030": "골판지 상자 4",
+   "obj_031": "골판지 상자 5",
+   "obj_032": "긴 상자 7",
+   "obj_033": "긴 상자 8",
+   "obj_034": "흰색 납작 상자",
+   "obj_035": "바코드 스캐너",
+   "fx_cart_1/shelf1": "카트 선반 1",
+   "fx_cart_1/shelf2": "카트 선반 2",
+   "fx_cart_1/shelf3": "카트 선반 3"
+  }
+ },
+ "output": {
+  "reasoning": "① 지시 해석: 갈색 프린터 상자는 카트의 맨 위 선반인 선반 1에, 이를 제외한 모든 상자는 맨 아래 선반인 선반 3에 두라는 지시다. 시간 조건이나 두 배치 작업 사이의 순서는 정해지지 않았다. 옮길 상자들이 재활용함, 바닥, 카트, 팔레트에 있으므로 시작 장소는 이 네 곳 중 하나이고, 두 도착 선반이 모두 카트에 있으므로 끝나는 곳은 카트다. ② 씬 접지: 환경 설명의 갈색 프린터 상자와 나머지 상자 33개를 대상으로 식별했다. 카트의 선반은 위에서부터 선반 1, 선반 2, 선반 3이다. ③ 역할 부여: 도착 위치가 지정된 모든 상자는 필수다. 도착지인 카트 선반 1과 카트 선반 3은 핵심 수단이다. 초기 위치 기준인 재활용함, 바닥, 팔레트, 카트 선반 2는 보조다. 카트 선반 3은 초기 위치이기도 하지만 도착지이므로 핵심 수단으로만 올렸다. ④ 제약 도출: 아래에 있는 상자를 옮길 때에는 그 위에 놓인 상자를 먼저 치워야 한다. 카트 선반 1의 바코드 스캐너는 프린터 상자의 배치를 반드시 막는다고 단정할 근거가 없어 작업 대상으로 넣지 않았다. ⑤ 목표 상태: 갈색 프린터 상자가 카트 선반 1 위에 있고, 나머지 상자 각각이 카트 선반 3 위에 있는 관계를 적었다. 이미 선반 3에 있는 상자도 지시가 요구한 최종 상태에 포함했다.",
+  "task_situation_description": {
+   "task_goal": {
+    "summary": "갈색 프린터 상자는 카트 맨 위 선반에, 나머지 모든 상자는 카트 맨 아래 선반에 두는 것",
+    "goal_state": [
+     [
+      {
+       "kind": "relation",
+       "subject": "갈색 프린터 상자",
+       "predicate": "on",
+       "object": "카트 선반 1",
+       "value": true
+      },
+      {
+       "kind": "relation",
+       "subject": "갈색 골판지 상자 1",
+       "predicate": "on",
+       "object": "카트 선반 3",
+       "value": true
+      },
+      {
+       "kind": "relation",
+       "subject": "갈색 골판지 상자 2",
+       "predicate": "on",
+       "object": "카트 선반 3",
+       "value": true
+      },
+      {
+       "kind": "relation",
+       "subject": "갈색 골판지 상자 3",
+       "predicate": "on",
+       "object": "카트 선반 3",
+       "value": true
+      },
+      {
+       "kind": "relation",
+       "subject": "갈색 납작 상자 1",
+       "predicate": "on",
+       "object": "카트 선반 3",
+       "value": true
+      },
+      {
+       "kind": "relation",
+       "subject": "갈색 납작 상자 2",
+       "predicate": "on",
+       "object": "카트 선반 3",
+       "value": true
+      },
+      {
+       "kind": "relation",
+       "subject": "갈색 납작 상자 3",
+       "predicate": "on",
+       "object": "카트 선반 3",
+       "value": true
+      },
+      {
+       "kind": "relation",
+       "subject": "갈색 납작 상자 4",
+       "predicate": "on",
+       "object": "카트 선반 3",
+       "value": true
+      },
+      {
+       "kind": "relation",
+       "subject": "긴 상자 1",
+       "predicate": "on",
+       "object": "카트 선반 3",
+       "value": true
+      },
+      {
+       "kind": "relation",
+       "subject": "긴 상자 2",
+       "predicate": "on",
+       "object": "카트 선반 3",
+       "value": true
+      },
+      {
+       "kind": "relation",
+       "subject": "긴 상자 3",
+       "predicate": "on",
+       "object": "카트 선반 3",
+       "value": true
+      },
+      {
+       "kind": "relation",
+       "subject": "긴 상자 4",
+       "predicate": "on",
+       "object": "카트 선반 3",
+       "value": true
+      },
+      {
+       "kind": "relation",
+       "subject": "긴 상자 5",
+       "predicate": "on",
+       "object": "카트 선반 3",
+       "value": true
+      },
+      {
+       "kind": "relation",
+       "subject": "긴 상자 6",
+       "predicate": "on",
+       "object": "카트 선반 3",
+       "value": true
+      },
+      {
+       "kind": "relation",
+       "subject": "긴 상자 7",
+       "predicate": "on",
+       "object": "카트 선반 3",
+       "value": true
+      },
+      {
+       "kind": "relation",
+       "subject": "긴 상자 8",
+       "predicate": "on",
+       "object": "카트 선반 3",
+       "value": true
+      },
+      {
+       "kind": "relation",
+       "subject": "납작 상자 1",
+       "predicate": "on",
+       "object": "카트 선반 3",
+       "value": true
+      },
+      {
+       "kind": "relation",
+       "subject": "납작 상자 2",
+       "predicate": "on",
+       "object": "카트 선반 3",
+       "value": true
+      },
+      {
+       "kind": "relation",
+       "subject": "납작 상자 3",
+       "predicate": "on",
+       "object": "카트 선반 3",
+       "value": true
+      },
+      {
+       "kind": "relation",
+       "subject": "갈색 상자 1",
+       "predicate": "on",
+       "object": "카트 선반 3",
+       "value": true
+      },
+      {
+       "kind": "relation",
+       "subject": "갈색 상자 2",
+       "predicate": "on",
+       "object": "카트 선반 3",
+       "value": true
+      },
+      {
+       "kind": "relation",
+       "subject": "갈색 상자 3",
+       "predicate": "on",
+       "object": "카트 선반 3",
+       "value": true
+      },
+      {
+       "kind": "relation",
+       "subject": "흰색 상자 1",
+       "predicate": "on",
+       "object": "카트 선반 3",
+       "value": true
+      },
+      {
+       "kind": "relation",
+       "subject": "흰색 상자 2",
+       "predicate": "on",
+       "object": "카트 선반 3",
+       "value": true
+      },
+      {
+       "kind": "relation",
+       "subject": "흰색 상자 3",
+       "predicate": "on",
+       "object": "카트 선반 3",
+       "value": true
+      },
+      {
+       "kind": "relation",
+       "subject": "상자 1",
+       "predicate": "on",
+       "object": "카트 선반 3",
+       "value": true
+      },
+      {
+       "kind": "relation",
+       "subject": "상자 2",
+       "predicate": "on",
+       "object": "카트 선반 3",
+       "value": true
+      },
+      {
+       "kind": "relation",
+       "subject": "상자 3",
+       "predicate": "on",
+       "object": "카트 선반 3",
+       "value": true
+      },
+      {
+       "kind": "relation",
+       "subject": "골판지 상자 1",
+       "predicate": "on",
+       "object": "카트 선반 3",
+       "value": true
+      },
+      {
+       "kind": "relation",
+       "subject": "골판지 상자 2",
+       "predicate": "on",
+       "object": "카트 선반 3",
+       "value": true
+      },
+      {
+       "kind": "relation",
+       "subject": "골판지 상자 3",
+       "predicate": "on",
+       "object": "카트 선반 3",
+       "value": true
+      },
+      {
+       "kind": "relation",
+       "subject": "골판지 상자 4",
+       "predicate": "on",
+       "object": "카트 선반 3",
+       "value": true
+      },
+      {
+       "kind": "relation",
+       "subject": "골판지 상자 5",
+       "predicate": "on",
+       "object": "카트 선반 3",
+       "value": true
+      },
+      {
+       "kind": "relation",
+       "subject": "흰색 납작 상자",
+       "predicate": "on",
+       "object": "카트 선반 3",
+       "value": true
+      }
+     ]
+    ]
+   },
+   "spatiotemporal_conditions": {
+    "time": null,
+    "space": {
+     "start": "재활용함 혹은 바닥 혹은 카트 혹은 팔레트",
+     "end": "카트"
+    }
+   },
+   "target_objects": {
+    "required": [
+     {
+      "ref": "갈색 프린터 상자",
+      "location": "재활용함 안",
+      "state": null
+     },
+     {
+      "ref": "갈색 골판지 상자 1",
+      "location": "재활용함 안",
+      "state": null
+     },
+     {
+      "ref": "갈색 골판지 상자 2",
+      "location": "재활용함 안",
+      "state": null
+     },
+     {
+      "ref": "갈색 골판지 상자 3",
+      "location": "갈색 골판지 상자 2 위",
+      "state": null
+     },
+     {
+      "ref": "갈색 납작 상자 1",
+      "location": "바닥 위",
+      "state": null
+     },
+     {
+      "ref": "갈색 납작 상자 2",
+      "location": "바닥 위",
+      "state": null
+     },
+     {
+      "ref": "갈색 납작 상자 3",
+      "location": "갈색 납작 상자 2 위",
+      "state": null
+     },
+     {
+      "ref": "갈색 납작 상자 4",
+      "location": "갈색 납작 상자 1 위",
+      "state": null
+     },
+     {
+      "ref": "긴 상자 1",
+      "location": "카트 선반 3 위",
+      "state": null
+     },
+     {
+      "ref": "긴 상자 2",
+      "location": "카트 선반 3 위",
+      "state": null
+     },
+     {
+      "ref": "긴 상자 3",
+      "location": "납작 상자 2 위",
+      "state": null
+     },
+     {
+      "ref": "긴 상자 4",
+      "location": "납작 상자 2 위",
+      "state": null
+     },
+     {
+      "ref": "긴 상자 5",
+      "location": "카트 선반 2 위",
+      "state": null
+     },
+     {
+      "ref": "긴 상자 6",
+      "location": "카트 선반 2 위",
+      "state": null
+     },
+     {
+      "ref": "긴 상자 7",
+      "location": "골판지 상자 1 위",
+      "state": null
+     },
+     {
+      "ref": "긴 상자 8",
+      "location": "골판지 상자 2 위",
+      "state": null
+     },
+     {
+      "ref": "납작 상자 1",
+      "location": "카트 선반 3 위",
+      "state": null
+     },
+     {
+      "ref": "납작 상자 2",
+      "location": "카트 선반 3 위",
+      "state": null
+     },
+     {
+      "ref": "납작 상자 3",
+      "location": "긴 상자 1 위",
+      "state": null
+     },
+     {
+      "ref": "갈색 상자 1",
+      "location": "팔레트 위",
+      "state": null
+     },
+     {
+      "ref": "갈색 상자 2",
+      "location": "흰색 상자 1 위",
+      "state": null
+     },
+     {
+      "ref": "갈색 상자 3",
+      "location": "흰색 상자 2 위",
+      "state": null
+     },
+     {
+      "ref": "흰색 상자 1",
+      "location": "팔레트 위",
+      "state": null
+     },
+     {
+      "ref": "흰색 상자 2",
+      "location": "팔레트 위",
+      "state": null
+     },
+     {
+      "ref": "흰색 상자 3",
+      "location": "갈색 상자 1 위",
+      "state": null
+     },
+     {
+      "ref": "상자 1",
+      "location": "팔레트 위",
+      "state": null
+     },
+     {
+      "ref": "상자 2",
+      "location": "갈색 골판지 상자 3 위",
+      "state": null
+     },
+     {
+      "ref": "상자 3",
+      "location": "갈색 골판지 상자 3 위",
+      "state": null
+     },
+     {
+      "ref": "골판지 상자 1",
+      "location": "카트 선반 2 위",
+      "state": null
+     },
+     {
+      "ref": "골판지 상자 2",
+      "location": "카트 선반 2 위",
+      "state": null
+     },
+     {
+      "ref": "골판지 상자 3",
+      "location": "카트 선반 2 위",
+      "state": null
+     },
+     {
+      "ref": "골판지 상자 4",
+      "location": "카트 선반 2 위",
+      "state": null
+     },
+     {
+      "ref": "골판지 상자 5",
+      "location": "골판지 상자 4 위",
+      "state": null
+     },
+     {
+      "ref": "흰색 납작 상자",
+      "location": "긴 상자 5 위",
+      "state": null
+     }
+    ],
+    "key_means": [
+     {
+      "ref": "카트 선반 1",
+      "location": null,
+      "state": null,
+      "alternatives": []
+     },
+     {
+      "ref": "카트 선반 3",
+      "location": null,
+      "state": null,
+      "alternatives": []
+     }
+    ],
+    "auxiliary": [
+     {
+      "ref": "재활용함",
+      "location": null,
+      "note": "갈색 프린터 상자와 갈색 골판지 상자 1·2의 초기 위치 기준"
+     },
+     {
+      "ref": "바닥",
+      "location": null,
+      "note": "갈색 납작 상자 1·2의 초기 위치 기준"
+     },
+     {
+      "ref": "팔레트",
+      "location": null,
+      "note": "갈색 상자 1, 흰색 상자 1·2, 상자 1의 초기 위치 기준"
+     },
+     {
+      "ref": "카트 선반 2",
+      "location": null,
+      "note": "긴 상자 5·6과 골판지 상자 1·2·3·4의 초기 위치 기준"
+     }
+    ]
+   },
+   "constraints": [
+    {
+     "type": "precedence",
+     "description": "갈색 납작 상자 1·2를 옮기려면 각각 그 위의 갈색 납작 상자 4·3을 먼저 치워야 함"
+    },
+    {
+     "type": "precedence",
+     "description": "갈색 골판지 상자 2를 옮기려면 그 위의 갈색 골판지 상자 3을 먼저 치워야 하고, 갈색 골판지 상자 3을 옮기려면 그 위의 상자 2·3을 먼저 치워야 함"
+    },
+    {
+     "type": "precedence",
+     "description": "납작 상자 2를 옮기려면 그 위의 긴 상자 3·4를 먼저 치워야 하고, 긴 상자 1을 옮기려면 그 위의 납작 상자 3을 먼저 치워야 함"
+    },
+    {
+     "type": "precedence",
+     "description": "갈색 상자 1과 흰색 상자 1·2를 옮기려면 각각 그 위의 흰색 상자 3과 갈색 상자 2·3을 먼저 치워야 함"
+    },
+    {
+     "type": "precedence",
+     "description": "골판지 상자 1·2·4를 옮기려면 각각 그 위의 긴 상자 7·8과 골판지 상자 5를 먼저 치워야 하고, 긴 상자 5를 옮기려면 그 위의 흰색 납작 상자를 먼저 치워야 함"
+    }
+   ]
+  },
+  "task_situation_description_text": "작업 목표: 갈색 프린터 상자는 카트 맨 위 선반에, 나머지 모든 상자는 카트 맨 아래 선반에 두는 것\n목표 상태:\n- 갈색 프린터 상자: 카트 선반 1 위\n- 갈색 골판지 상자 1: 카트 선반 3 위\n- 갈색 골판지 상자 2: 카트 선반 3 위\n- 갈색 골판지 상자 3: 카트 선반 3 위\n- 갈색 납작 상자 1: 카트 선반 3 위\n- 갈색 납작 상자 2: 카트 선반 3 위\n- 갈색 납작 상자 3: 카트 선반 3 위\n- 갈색 납작 상자 4: 카트 선반 3 위\n- 긴 상자 1: 카트 선반 3 위\n- 긴 상자 2: 카트 선반 3 위\n- 긴 상자 3: 카트 선반 3 위\n- 긴 상자 4: 카트 선반 3 위\n- 긴 상자 5: 카트 선반 3 위\n- 긴 상자 6: 카트 선반 3 위\n- 긴 상자 7: 카트 선반 3 위\n- 긴 상자 8: 카트 선반 3 위\n- 납작 상자 1: 카트 선반 3 위\n- 납작 상자 2: 카트 선반 3 위\n- 납작 상자 3: 카트 선반 3 위\n- 갈색 상자 1: 카트 선반 3 위\n- 갈색 상자 2: 카트 선반 3 위\n- 갈색 상자 3: 카트 선반 3 위\n- 흰색 상자 1: 카트 선반 3 위\n- 흰색 상자 2: 카트 선반 3 위\n- 흰색 상자 3: 카트 선반 3 위\n- 상자 1: 카트 선반 3 위\n- 상자 2: 카트 선반 3 위\n- 상자 3: 카트 선반 3 위\n- 골판지 상자 1: 카트 선반 3 위\n- 골판지 상자 2: 카트 선반 3 위\n- 골판지 상자 3: 카트 선반 3 위\n- 골판지 상자 4: 카트 선반 3 위\n- 골판지 상자 5: 카트 선반 3 위\n- 흰색 납작 상자: 카트 선반 3 위\n시간·공간 조건: 시간 조건은 없음, 공간 조건은 시작 재활용함 혹은 바닥 혹은 카트 혹은 팔레트, 종료 카트\n대상 물체:\n- 필수 물체: 갈색 프린터 상자(위치: 재활용함 안)\n- 필수 물체: 갈색 골판지 상자 1(위치: 재활용함 안)\n- 필수 물체: 갈색 골판지 상자 2(위치: 재활용함 안)\n- 필수 물체: 갈색 골판지 상자 3(위치: 갈색 골판지 상자 2 위)\n- 필수 물체: 갈색 납작 상자 1(위치: 바닥 위)\n- 필수 물체: 갈색 납작 상자 2(위치: 바닥 위)\n- 필수 물체: 갈색 납작 상자 3(위치: 갈색 납작 상자 2 위)\n- 필수 물체: 갈색 납작 상자 4(위치: 갈색 납작 상자 1 위)\n- 필수 물체: 긴 상자 1(위치: 카트 선반 3 위)\n- 필수 물체: 긴 상자 2(위치: 카트 선반 3 위)\n- 필수 물체: 긴 상자 3(위치: 납작 상자 2 위)\n- 필수 물체: 긴 상자 4(위치: 납작 상자 2 위)\n- 필수 물체: 긴 상자 5(위치: 카트 선반 2 위)\n- 필수 물체: 긴 상자 6(위치: 카트 선반 2 위)\n- 필수 물체: 긴 상자 7(위치: 골판지 상자 1 위)\n- 필수 물체: 긴 상자 8(위치: 골판지 상자 2 위)\n- 필수 물체: 납작 상자 1(위치: 카트 선반 3 위)\n- 필수 물체: 납작 상자 2(위치: 카트 선반 3 위)\n- 필수 물체: 납작 상자 3(위치: 긴 상자 1 위)\n- 필수 물체: 갈색 상자 1(위치: 팔레트 위)\n- 필수 물체: 갈색 상자 2(위치: 흰색 상자 1 위)\n- 필수 물체: 갈색 상자 3(위치: 흰색 상자 2 위)\n- 필수 물체: 흰색 상자 1(위치: 팔레트 위)\n- 필수 물체: 흰색 상자 2(위치: 팔레트 위)\n- 필수 물체: 흰색 상자 3(위치: 갈색 상자 1 위)\n- 필수 물체: 상자 1(위치: 팔레트 위)\n- 필수 물체: 상자 2(위치: 갈색 골판지 상자 3 위)\n- 필수 물체: 상자 3(위치: 갈색 골판지 상자 3 위)\n- 필수 물체: 골판지 상자 1(위치: 카트 선반 2 위)\n- 필수 물체: 골판지 상자 2(위치: 카트 선반 2 위)\n- 필수 물체: 골판지 상자 3(위치: 카트 선반 2 위)\n- 필수 물체: 골판지 상자 4(위치: 카트 선반 2 위)\n- 필수 물체: 골판지 상자 5(위치: 골판지 상자 4 위)\n- 필수 물체: 흰색 납작 상자(위치: 긴 상자 5 위)\n- 핵심 수단: 카트 선반 1\n- 핵심 수단: 카트 선반 3\n- 보조 물체: 재활용함(비고: 갈색 프린터 상자와 갈색 골판지 상자 1·2의 초기 위치 기준)\n- 보조 물체: 바닥(비고: 갈색 납작 상자 1·2의 초기 위치 기준)\n- 보조 물체: 팔레트(비고: 갈색 상자 1, 흰색 상자 1·2, 상자 1의 초기 위치 기준)\n- 보조 물체: 카트 선반 2(비고: 긴 상자 5·6과 골판지 상자 1·2·3·4의 초기 위치 기준)\n제약 사항:\n- [선후] 갈색 납작 상자 1·2를 옮기려면 각각 그 위의 갈색 납작 상자 4·3을 먼저 치워야 함\n- [선후] 갈색 골판지 상자 2를 옮기려면 그 위의 갈색 골판지 상자 3을 먼저 치워야 하고, 갈색 골판지 상자 3을 옮기려면 그 위의 상자 2·3을 먼저 치워야 함\n- [선후] 납작 상자 2를 옮기려면 그 위의 긴 상자 3·4를 먼저 치워야 하고, 긴 상자 1을 옮기려면 그 위의 납작 상자 3을 먼저 치워야 함\n- [선후] 갈색 상자 1과 흰색 상자 1·2를 옮기려면 각각 그 위의 흰색 상자 3과 갈색 상자 2·3을 먼저 치워야 함\n- [선후] 골판지 상자 1·2·4를 옮기려면 각각 그 위의 긴 상자 7·8과 골판지 상자 5를 먼저 치워야 하고, 긴 상자 5를 옮기려면 그 위의 흰색 납작 상자를 먼저 치워야 함\n"
+ }
+}

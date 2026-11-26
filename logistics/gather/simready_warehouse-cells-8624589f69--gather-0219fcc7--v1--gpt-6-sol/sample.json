@@ -1,0 +1,129 @@
+{
+ "id": "simready_warehouse-cells-8624589f69--gather-0219fcc7--v1--gpt-6-sol",
+ "domain": "logistics",
+ "task_type": "gather",
+ "agent": "gpt-6-sol",
+ "source": {
+  "data": "NVIDIA PhysicalAI-SimReady-Warehouse-01 (CC BY 4.0)",
+  "scene_id": "simready_warehouse/8624589f69",
+  "task": "gather",
+  "composed": true
+ },
+ "input": {
+  "instruction": "상자 하나랑 프린터 상자를 카트 맨 위 선반으로 옮겨줘.",
+  "instruction_en": "Bring one of the boxes and the printer box to the top shelf of the cart.",
+  "world_state": "장소: 물류 창고\n로봇(humanoid). 들고 있는 물체 없음.\n\n물체가 놓인 곳:\n- 팔레트 1 위: 상자 1, 상자 2, 상자 3, 상자 4, 상자 5, 상자 6\n- 카트 선반 3 위: 열린 상자\n- 상자 2 위: 상자 7\n- 상자 1 위: 상자 8\n- 상자 6 위: 상자 9\n- 상자 5 위: 상자 10\n- 상자 8 위: 납작 상자 1\n- 상자 10 위: 납작 상자 2\n- 납작 상자 2 위: 프린터 상자\n- 카트 선반 2 위: 긴 상자 1, 납작 상자 3, 납작 상자 4\n- 납작 상자 3 위: 납작 상자 5\n- 긴 상자 1 위: 긴 상자 2\n- 카트 선반 1 위: 바코드 스캐너\n\n물체 크기:\n- 납작 상자: 큰 것부터 납작 상자 1·납작 상자 2(서로 비슷), 납작 상자 5, 납작 상자 3, 납작 상자 4\n- 긴 상자: 큰 것부터 긴 상자 1, 긴 상자 2\n\n설비:\n- 바닥\n- 팔레트 1부터 5까지, 10, 15, 16\n- 카트: 칸: 선반 1부터 3까지(위에서부터)\n- 팔레트 6부터 9까지, 11부터 14까지(팔레트 위)",
+  "entity_labels": {
+   "fx_floor_1": "바닥",
+   "fx_pallet_1": "팔레트 1",
+   "fx_cart_1": "카트",
+   "fx_pallet_2": "팔레트 2",
+   "fx_pallet_3": "팔레트 3",
+   "fx_pallet_4": "팔레트 4",
+   "fx_pallet_5": "팔레트 5",
+   "fx_pallet_6": "팔레트 6",
+   "fx_pallet_7": "팔레트 7",
+   "fx_pallet_8": "팔레트 8",
+   "fx_pallet_9": "팔레트 9",
+   "fx_pallet_10": "팔레트 10",
+   "fx_pallet_11": "팔레트 11",
+   "fx_pallet_12": "팔레트 12",
+   "fx_pallet_13": "팔레트 13",
+   "fx_pallet_14": "팔레트 14",
+   "fx_pallet_15": "팔레트 15",
+   "fx_pallet_16": "팔레트 16",
+   "obj_001": "상자 1",
+   "obj_002": "상자 2",
+   "obj_003": "상자 3",
+   "obj_004": "상자 4",
+   "obj_005": "상자 5",
+   "obj_006": "상자 6",
+   "obj_007": "열린 상자",
+   "obj_008": "상자 7",
+   "obj_009": "상자 8",
+   "obj_010": "상자 9",
+   "obj_011": "상자 10",
+   "obj_012": "납작 상자 1",
+   "obj_013": "납작 상자 2",
+   "obj_014": "프린터 상자",
+   "obj_015": "긴 상자 1",
+   "obj_016": "납작 상자 3",
+   "obj_017": "납작 상자 4",
+   "obj_018": "납작 상자 5",
+   "obj_019": "긴 상자 2",
+   "obj_020": "바코드 스캐너",
+   "fx_cart_1/shelf1": "카트 선반 1",
+   "fx_cart_1/shelf2": "카트 선반 2",
+   "fx_cart_1/shelf3": "카트 선반 3"
+  }
+ },
+ "output": {
+  "reasoning": "① 지시 해석: 상자 하나와 프린터 상자를 카트 맨 위 선반으로 옮긴다. 두 물체를 옮기는 순서나 시간 조건은 없다. 상자들은 팔레트 1 위 또는 그곳의 다른 상자 위에 있고 프린터 상자도 팔레트 1에 놓인 물체 위에 있으므로 시작 장소는 팔레트 1, 끝 장소는 카트다. ② 씬 접지: 상자 하나는 상자 1부터 10까지 가운데 하나이며, 카트 맨 위 선반은 카트 선반 1이다. 프린터 상자는 납작 상자 2 위에 있다. ③ 역할 부여: 옮길 상자와 프린터 상자는 필수다. 두 물체를 받는 카트 선반 1은 핵심 수단이다. 납작 상자 2와 팔레트 1은 각각 프린터 상자가 처음 놓인 물체와 작업 물체들의 초기 위치 기준이므로 보조다. ④ 제약 도출: 상자 가운데 위가 비어 있는 것을 고를 수 있으므로 다른 물체를 먼저 치워야 한다는 필수 선후 제약은 없다. 두 물체를 옮기는 순서도 지정되지 않았다. ⑤ 목표 상태: 선택한 상자 하나와 프린터 상자가 모두 카트 선반 1 위에 있어야 한다.",
+  "task_situation_description": {
+   "task_goal": {
+    "summary": "상자 하나와 프린터 상자를 카트 맨 위 선반으로 옮기는 것",
+    "goal_state": [
+     [
+      {
+       "kind": "relation",
+       "subject": "상자",
+       "predicate": "on",
+       "object": "카트 선반 1",
+       "value": true
+      },
+      {
+       "kind": "relation",
+       "subject": "프린터 상자",
+       "predicate": "on",
+       "object": "카트 선반 1",
+       "value": true
+      }
+     ]
+    ]
+   },
+   "spatiotemporal_conditions": {
+    "time": null,
+    "space": {
+     "start": "팔레트 1",
+     "end": "카트"
+    }
+   },
+   "target_objects": {
+    "required": [
+     {
+      "ref": "상자",
+      "location": null,
+      "state": null
+     },
+     {
+      "ref": "프린터 상자",
+      "location": "납작 상자 2 위",
+      "state": null
+     }
+    ],
+    "key_means": [
+     {
+      "ref": "카트 선반 1",
+      "location": null,
+      "state": null,
+      "alternatives": []
+     }
+    ],
+    "auxiliary": [
+     {
+      "ref": "납작 상자 2",
+      "location": "상자 10 위",
+      "note": "프린터 상자가 처음 놓여 있는 물체"
+     },
+     {
+      "ref": "팔레트 1",
+      "location": null,
+      "note": "상자들과 프린터 상자의 초기 위치 기준"
+     }
+    ]
+   },
+   "constraints": []
+  },
+  "task_situation_description_text": "작업 목표: 상자 하나와 프린터 상자를 카트 맨 위 선반으로 옮기는 것\n목표 상태:\n- 상자: 카트 선반 1 위\n- 프린터 상자: 카트 선반 1 위\n시간·공간 조건: 시간 조건은 없음, 공간 조건은 시작 팔레트 1, 종료 카트\n대상 물체:\n- 필수 물체: 상자\n- 필수 물체: 프린터 상자(위치: 납작 상자 2 위)\n- 핵심 수단: 카트 선반 1\n- 보조 물체: 납작 상자 2(위치: 상자 10 위, 비고: 프린터 상자가 처음 놓여 있는 물체)\n- 보조 물체: 팔레트 1(비고: 상자들과 프린터 상자의 초기 위치 기준)\n제약 사항: 없음\n"
+ }
+}
