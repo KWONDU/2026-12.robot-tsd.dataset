@@ -1,10 +1,10 @@
-# 2026-12.robot-tsd.dataset
+# 자율행동체 작업 상황 이해를 위한 작업상황설명문 데이터셋 구축
 
 자율행동체의 작업 상황 이해를 위한 작업상황설명문(Task Situation Description, TSD) 데이터셋이다. 한국어 자연어 지시(instruction)와 세계 상태(world state)를 입력으로, 추론(reasoning)과 작업상황설명문을 출력으로 한다. 가사(household), 물류(logistics), 제조(manufacturing) 3개 도메인의 62개 작업 유형(task type)에 대해 3종의 생성 모델로 샘플을 생성하고, 자동 검수를 통과한 60,411개 샘플을 수록하였다.
 
 | 항목 | 내용 |
 | --- | --- |
-| 데이터셋 뷰어 | https://kwondu.github.io/2026-12.robot-tsd.dataset/ |
+| 데이터셋 뷰어 | https://kwondu.github.io/2026-12.robot-tsd.dataset |
 | 구축 파이프라인 | [`pipeline` 브랜치](https://github.com/KWONDU/2026-12.robot-tsd.dataset/tree/pipeline) (코드, 프롬프트, 도메인 리소스, 대시보드) |
 | 라이선스 | 미정 (원천 데이터의 라이선스는 [원천 데이터 및 라이선스](#원천-데이터-및-라이선스) 참조) |
 
