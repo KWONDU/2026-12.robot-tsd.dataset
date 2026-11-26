@@ -59,11 +59,6 @@ def test_full_run_produces_deliverables(settings):
     assert (settings.run_dir() / "estimate.json").exists()
 
 
-# 자연어 보기 이전(JSON 보기)의 설정: 보기와 그 보기용 프롬프트 판을 함께 되돌린다
-JSON_VIEW_PROMPTS = {"generate": "gen_v3", "rewrite": "rewrite_v1", "checklist": "check_v3",
-                     "resolvability": "resolve_v1"}
-
-
 def _kist_package(settings):
     pkg = _deliverable_dir(settings) / "kist_package"
     kist_files = sorted((pkg / "samples").glob("*.json"))
@@ -106,18 +101,6 @@ def test_kist_package_carries_only_the_interface(settings):
     required = first["output"]["task_situation_description"]["target_objects"]["required"][0]
     assert required["ref"] in world  # 설명문의 ref는 세계 상태 글에 나온 이름이다
     assert not re.search(r"\b(?:obj|fx)_\w*\d", prompt)  # 예시도 같은 보기로 채운다
-
-
-def test_kist_package_json_view_keeps_scene_json(settings, monkeypatch):
-    """JSON 보기로 되돌리면 전달 입력은 예전처럼 씬 상태 JSON이고, id는 원본 데이터셋 이름으로 바뀐다."""
-    monkeypatch.setattr(settings.contextualize, "world_state", "json")
-    monkeypatch.setattr(settings, "prompts_versions", {**settings.prompts_versions, **JSON_VIEW_PROMPTS})
-    first, _prompt = _kist_package(settings)
-    env = first["input"]["environment_context"]
-    assert {"scene_id", "domain", "simulator", "layout", "constraints"} <= set(env)
-    first_obj = env["objects"][0]
-    assert "role" not in first_obj  # 모델 입력에 없던 필드는 지어내지 않는다
-    assert not re.fullmatch(r"obj_\d+", first_obj["id"])  # 원본 데이터셋의 실제 이름으로 치환
 
 
 def test_generate_resume_skips_done(settings):

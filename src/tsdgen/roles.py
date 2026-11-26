@@ -98,7 +98,7 @@ REWRITE = _register(
         output_model=RewriteOutput,
         params=GENERATION_PARAMS,
         calls_per_scenario=_once,
-        # 구체성 수준마다 프롬프트 파일이 다르다: rewrite_v1_natural.txt
+        # 구체성 수준마다 프롬프트 파일이 다르다: rewrite_natural.txt
         variant=lambda s: s.contextualize.specificity,
     )
 )

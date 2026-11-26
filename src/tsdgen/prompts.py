@@ -83,7 +83,7 @@ def golden_parts(settings: Settings, golden: dict | None = None,
     """골든 예시를 지금 세계 상태 보기에 맞춘 (지시, 예시 세계 상태, 예시 출력).
 
     예시 씬도 실제 입력과 같은 정제와 같은 보기를 거친다. 보기가 이름표를 쓰면(text) 예시 출력의 가리키는 칸도
-    그 이름으로 바꾸고, 추론은 골든 파일의 그 보기용 판을 쓴다. golden을 주지 않으면 도메인의 예전 판 예시다.
+    그 이름으로 바꾸고, 추론은 골든 파일의 그 보기용 판을 쓴다. golden을 주지 않으면 도메인의 기본 예시다.
     """
     golden = golden or golden_example(settings)
     golden_ctx = to_environment_context(SceneState.model_validate(golden["scene_state"]))
@@ -114,7 +114,7 @@ def examples_block(examples: list[tuple[str, Any, dict]]) -> str:
 
 
 def golden_values(settings: Settings) -> dict[str, str]:
-    """생성 프롬프트의 예시(shot) 자리 값. 예전 판은 한 건짜리 자리 셋, gen_v8부터는 목록 자리 하나를 쓴다."""
+    """생성 프롬프트의 예시(shot) 자리 값. 한 건짜리 자리 셋과 목록 자리 하나."""
     instruction, world, output = golden_parts(settings)
     return {"GOLDEN_INSTRUCTION": instruction, "GOLDEN_CONTEXT": world.text,
             "GOLDEN_OUTPUT": as_json(output),

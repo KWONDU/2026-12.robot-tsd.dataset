@@ -37,15 +37,15 @@ def prompt_values(settings: Any) -> dict[str, str]:
         "DOMAIN_STATE_KEYS": state_key_list(domain, lexicon),
         "DOMAIN_RELATIONS": ", ".join(f"{k}({v})" for k, v in domain["goal_relations"].items()),
         "DOMAIN_KNOWLEDGE": (domain.get("knowledge") or "").strip(),
-        # 채점 프롬프트(check_v20부터)의 지식 문단. 생성에게 시키는 계산(공장의 가장 짧은 길)을 규칙 검사가 맡는
+        # 채점 프롬프트의 지식 문단. 생성에게 시키는 계산(공장의 가장 짧은 길)을 규칙 검사가 맡는
         # 도메인은 그 계산 지시를 뺀 문단을 따로 둔다. 없으면 생성과 같다
         "DOMAIN_KNOWLEDGE_CHECK": (
             domain.get("knowledge_check") or domain.get("knowledge") or ""
         ).strip(),
     }
     values.update({f"{EXAMPLE_PREFIX}{k}": v for k, v in domain["prompt_examples"].items()})
-    # 도메인마다 다른 규칙 문장 (키가 곧 자리 이름: 번호 규칙은 rewrite_v7·resolve_v7부터, 시간·보조·채점 칸은
-    # gen_v19·check_v19부터). 문장 안의 자리(<<EX_...>>, <<DOMAIN_FIXTURE>>)는 위에서 만든 값으로 채운다
+    # 도메인마다 다른 규칙 문장 (키가 곧 자리 이름). 문장 안의 자리(<<EX_...>>, <<DOMAIN_FIXTURE>>)는
+    # 위에서 만든 값으로 채운다
     for slot, text in domain["prompt_rules"].items():
         values[slot] = SLOT_RE.sub(lambda m: values[m.group(1)], (text or "").strip())
     return values

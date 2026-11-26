@@ -8,8 +8,8 @@ name_ko: 가정 주방 # 세계 상태 글의 '장소:'
 robot_ko: 가정용 로봇 # 프롬프트의 역할 설명
 place_ko: 주방 # 프롬프트의 '로봇이 인식한 ~의 세계 상태'
 fixture_ko: 가구 # 옮기지 않는 설비를 부르는 낱말 (세계 상태 글의 절 제목과 프롬프트)
-golden: golden/heatmug_sample.json # 예전 판 프롬프트(gen_v7까지)의 예시 한 건 (resources/ 기준)
-# gen_v8부터 쓰는 예시 목록(<<GOLDEN_EXAMPLES>>). 평가에 쓰는 장면에서 가져오지 않는다
+golden: golden/heatmug_sample.json # 기본 예시 한 건 (resources/ 기준)
+# 생성 프롬프트에 넣는 예시 목록(<<GOLDEN_EXAMPLES>>). 평가에 쓰는 장면에서 가져오지 않는다
 golden_examples: [golden/household/heat_mug.json]
 
 # 목표 상태의 상태 단언(kind state)에 쓸 수 있는 상태 키. 한국어 풀이는 사전 state_phrases의 true 값이다.
@@ -23,8 +23,7 @@ goal_relations: { "on": 위, "in": 안, near: 근처, held_by: 로봇이 들고 
 knowledge: ""
 
 # 도메인마다 다른 프롬프트 규칙 문장. 키가 곧 프롬프트의 자리 이름이고(<<DOMAIN_NAMING>> 등), 문장 안의 예시 자리
-# (<<EX_...>>, <<DOMAIN_FIXTURE>>)는 이 프로필 값으로 채운다. 가정·물류 값은 예전 판 프롬프트에 박혀 있던 문장 그대로라
-# rewrite_v7·resolve_v7·gen_v19·check_v19를 채운 글이 rewrite_v6·resolve_v6·gen_v18·check_v18과 글자까지 같다.
+# (<<EX_...>>, <<DOMAIN_FIXTURE>>)는 이 프로필 값으로 채운다.
 prompt_rules:
   DOMAIN_NAMING: '사용자는 환경 설명의 번호(예: <<EX_NUMBERED>>)를 모른다. 지시에 번호를 쓰지 말고, 사람이 말하듯 이름과 위치·특징(예: <<EX_REFERRING>>)으로 가리킨다.'
   DOMAIN_NAME_NUMBERS: '번호는 뺀다'
@@ -33,7 +32,6 @@ prompt_rules:
   DOMAIN_AUX_STATE_CHECK: '먼저 상태를 바꿔야 닿을 수 있는 출발지 <<DOMAIN_FIXTURE>>(예: <<EX_ACCESS>>)'
   DOMAIN_TIME: '지시가 말한 시간 조건(지속 시간, 기다리는 시간, 언제까지)만 쓴다.'
   DOMAIN_TIME_CHECK: '지시가 말한 시간 조건(지속 시간, 기다리는 시간, 언제까지)'
-  DOMAIN_ROUTE_CHECK: '' # gen_v20부터: 지식 문단 바로 뒤에 붙는 길 점검 순서 (공장만, 제조 Qwen이 길 점검을 빼먹어 넣음)
   DOMAIN_EXECUTABLE_CHECK: ''
 prompt_examples:
   RECEPTACLES: 그릇·접시 # 최종 수용 대상의 예 (뒤에 '·<<DOMAIN_FIXTURE>> 등'이 붙는다)

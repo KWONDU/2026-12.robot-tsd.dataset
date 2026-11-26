@@ -55,7 +55,7 @@ value가 true면 성립해야 하고 false면 성립하지 않아야 한다. 적
 
 ## 도메인
 
-도메인(가정, 제조, 물류 등)은 원천이 정한다: `config/sources.yaml`의 원천 블록마다 `domain`이 있고 `settings.domain`이 지금 원천의 값을 돌려준다. 도메인마다 달라지는 것은 프로필 파일 하나(`resources/domains/<도메인>.yaml`)에 모은다: 세계 상태 글의 장소 이름과 가구 절 제목, 프롬프트의 로봇 종류·장소·가구 낱말, 목표 상태에 쓸 수 있는 상태 키, 프롬프트 지침 속 예시, 골든 예시 파일. 프롬프트는 이 값들을 자리(`<<DOMAIN_ROBOT>>`, `<<DOMAIN_PLACE>>`, `<<DOMAIN_FIXTURE>>`, `<<DOMAIN_STATE_KEYS>>`, `<<DOMAIN_RELATIONS>>`, `<<DOMAIN_KNOWLEDGE>>`, `<<EX_...>>`)로 받고 `domains.prompt_values`가 채운다. 가정 프로필로 채우면 자리 도입 전 판(gen_v5 등)과 글자 하나 다르지 않다(tests/test_domains.py). 새 도메인은 프로필 하나와 그 도메인 장면을 내는 원천 어댑터를 더하면 되고, 상태 키를 새로 쓰면 사전 `state_phrases`에 풀이를 더한다.
+도메인(가정, 제조, 물류 등)은 원천이 정한다: `config/sources.yaml`의 원천 블록마다 `domain`이 있고 `settings.domain`이 지금 원천의 값을 돌려준다. 도메인마다 달라지는 것은 프로필 파일 하나(`resources/domains/<도메인>.yaml`)에 모은다: 세계 상태 글의 장소 이름과 가구 절 제목, 프롬프트의 로봇 종류·장소·가구 낱말, 목표 상태에 쓸 수 있는 상태 키, 프롬프트 지침 속 예시, 골든 예시 파일. 프롬프트는 이 값들을 자리(`<<DOMAIN_ROBOT>>`, `<<DOMAIN_PLACE>>`, `<<DOMAIN_FIXTURE>>`, `<<DOMAIN_STATE_KEYS>>`, `<<DOMAIN_RELATIONS>>`, `<<DOMAIN_KNOWLEDGE>>`, `<<EX_...>>`)로 받고 `domains.prompt_values`가 채운다. 프롬프트 본문에는 도메인 낱말이 없다(tests/test_domains.py). 새 도메인은 프로필 하나와 그 도메인 장면을 내는 원천 어댑터를 더하면 되고, 상태 키를 새로 쓰면 사전 `state_phrases`에 풀이를 더한다.
 
 ## 교체 가능한 부분 (Strategy)
 

@@ -2,9 +2,6 @@
 
 import pytest
 
-from tsdgen import domains
-from tsdgen.config import CONFIG_PATH, PROJECT_ROOT, Settings, load_config_document
-from tsdgen.prompts import fill, load_template
 from tsdgen.resources import load_resources
 from tsdgen.tasks.factory_view import FactoryView
 from tsdgen.verify.situation import aisle_numbers, check_situation
@@ -68,17 +65,3 @@ def test_detour_cause_is_the_unusable_aisle_on_the_shortest_path(one_way, cause)
     assert view.blocked("a", "b") == {cause: ("통로 1",)}  # 직통을 쓸 수 없어 통로 2, 3으로 돌아간다
     assert view.blocked("b", "a") == ({} if one_way else {"closed": ("통로 1",)})  # 한 방향은 순방향이면 그대로
     assert view.route_traits(("a", "b"), ("b", "a")) == ((cause,), () if one_way else ("closed",))
-
-
-@pytest.mark.parametrize("adapter", ["robocasa365", "simready_warehouse"])
-def test_domain_slots_leave_household_and_logistics_prompts_unchanged(adapter):
-    data = load_config_document(CONFIG_PATH, PROJECT_ROOT)
-    data["source"]["adapter"] = adapter
-    settings = Settings.model_validate(data)
-    values = domains.prompt_values(settings)
-    pairs = [("generate", "gen_v18", "gen_v19"), ("checklist", "check_v18", "check_v19"),
-             ("checklist", "check_v19", "check_v20"), ("generate", "gen_v19", "gen_v20"),
-             ("resolvability", "resolve_v6", "resolve_v7"), ("rewrite", "rewrite_v6_natural", "rewrite_v7_natural")]
-    for role, old, new in pairs:
-        before = fill(load_template(settings, role, old)[0], values, strict=False)
-        assert fill(load_template(settings, role, new)[0], values, strict=False) == before, new
