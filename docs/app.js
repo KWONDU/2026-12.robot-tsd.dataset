@@ -1,6 +1,6 @@
-// robot-tsd.dataset 뷰어: samples.json(샘플 색인)을 읽고, 샘플 상세와 썸네일은 저장소 파일을 직접 읽는다.
+// 2026-12.robot-tsd.dataset 뷰어: samples.json(샘플 색인)을 읽고, 샘플 상세와 썸네일은 저장소 파일을 직접 읽는다.
 // 화면 상태는 URL hash가 전부다: #/overview, #/samples, #/sample/<경로>
-const REPO = "KWONDU/robot-tsd.dataset";
+const REPO = "KWONDU/2026-12.robot-tsd.dataset";
 const LOCAL = ["localhost", "127.0.0.1"].includes(location.hostname); // 로컬 확인용: 저장소 폴더를 그대로 띄웠을 때
 const RAW = LOCAL ? "../" : `https://raw.githubusercontent.com/${REPO}/main/`;
 const TREE = `https://github.com/${REPO}/tree/main/`;

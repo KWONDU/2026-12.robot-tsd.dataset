@@ -1,9 +1,9 @@
-# robot-tsd.dataset
+# 2026-12.robot-tsd.dataset
 
 로봇에게 내린 한국어 자연어 지시와 로봇이 인식한 세계 상태를 입력으로, 추론(reasoning)과 작업 상황 설명문(Task Situation Description, TSD)을 출력으로 하는 데이터셋이에요. 가사, 물류, 제조 세 도메인에서 생성 에이전트 셋이 만들고 검수를 통과한 샘플만 담았어요.
 
-- 데이터셋 뷰어: https://kwondu.github.io/robot-tsd.dataset/
-- 구축 파이프라인(코드, 프롬프트, 도메인 자원, 대시보드): [`pipeline` 브랜치](https://github.com/KWONDU/robot-tsd.dataset/tree/pipeline)
+- 데이터셋 뷰어: https://kwondu.github.io/2026-12.robot-tsd.dataset/
+- 구축 파이프라인(코드, 프롬프트, 도메인 자원, 대시보드): [`pipeline` 브랜치](https://github.com/KWONDU/2026-12.robot-tsd.dataset/tree/pipeline)
 - 라이선스: 미정 (원천 데이터의 라이선스는 아래 '원천과 출처 표기')
 
 ## 구성
