@@ -1,0 +1,154 @@
+{
+ "id": "rc365-PlateSteakMeal-synth-sim_reset-ep415601--store_and_close-52e27d00--v1--qwen3.8-27b-high",
+ "domain": "household",
+ "task_type": "store_and_close",
+ "agent": "qwen3.8-27b-high",
+ "source": {
+  "data": "RoboCasa365 (MIT)",
+  "scene_id": "rc365/PlateSteakMeal/synth/sim_reset/ep_415601",
+  "task": "store_and_close",
+  "composed": true
+ },
+ "input": {
+  "instruction": "쟁반에 있는 꼬치를 냉장고 맨 위 선반에 넣고 냉장고 문 닫아.",
+  "instruction_en": "Put the skewers on the top shelf of the fridge and close the fridge door.",
+  "world_state": "장소: 가정 주방\n로봇(PandaOmron). 들고 있는 물체 없음.\n\n물체가 놓인 곳:\n- 조리대 4(아일랜드 식탁) 위, 스툴 1 옆: 접시\n- 조리대 4(아일랜드 식탁) 위, 스툴 2 옆: 쟁반\n- 쟁반 위: 스테이크, 아스파라거스, 꼬치\n\n가구:\n- 서랍 1, 3, 4, 6: 서랍 닫힘\n- 조리대 1: 커피머신 옆, 식기세척기 옆, 냉장고 옆, 전자레인지 옆, 싱크대 옆\n- 조리대 2: 스토브 옆, 토스터 옆\n- 조리대 3: 스토브 옆\n- 식기세척기: 문 닫힘. 칸: 랙 1, 2(위에서부터)\n- 냉장고: 문 닫힘, 냉동실 문 닫힘. 칸: 냉장실 선반 1부터 5까지(위에서부터), 냉동실 선반 1부터 3까지(위에서부터), 냉동실 서랍 1, 2(위에서부터)\n- 캐비닛 1부터 6까지, 8, 9, 11, 13, 16: 문 닫힘\n- 전자레인지: 문 닫힘\n- 싱크대: 미가동\n- 캐비닛 7, 10, 14, 15(아일랜드): 문 닫힘\n- 서랍 2, 5, 7, 8(아일랜드): 서랍 닫힘\n- 스토브: 문 닫힘, 미가동. 칸: 랙, 앞 왼쪽 화구, 뒤 오른쪽 화구, 뒤 왼쪽 화구, 앞 오른쪽 화구, 가운데 화구\n- 커피머신\n- 수납장 1, 2\n- 조리대 4(아일랜드 식탁)\n- 캐비닛 12\n- 스툴 1, 2\n- 토스터",
+  "entity_labels": {
+   "fx_drawer_1": "서랍 1",
+   "fx_coffee_machine_1": "커피머신",
+   "fx_counter_1": "조리대 1",
+   "fx_counter_2": "조리대 2",
+   "fx_counter_3": "조리대 3",
+   "fx_dishwasher_1": "식기세척기",
+   "fx_cabinet_1": "수납장 1",
+   "fx_fridge_1": "냉장고",
+   "fx_cabinet_2": "캐비닛 1",
+   "fx_counter_4": "조리대 4",
+   "fx_cabinet_3": "수납장 2",
+   "fx_microwave_1": "전자레인지",
+   "fx_cabinet_4": "캐비닛 2",
+   "fx_cabinet_5": "캐비닛 3",
+   "fx_cabinet_6": "캐비닛 4",
+   "fx_cabinet_7": "캐비닛 5",
+   "fx_cabinet_8": "캐비닛 6",
+   "fx_sink_1": "싱크대",
+   "fx_cabinet_9": "캐비닛 7",
+   "fx_drawer_2": "서랍 2",
+   "fx_cabinet_10": "캐비닛 8",
+   "fx_drawer_3": "서랍 3",
+   "fx_cabinet_11": "캐비닛 9",
+   "fx_drawer_4": "서랍 4",
+   "fx_cabinet_12": "캐비닛 10",
+   "fx_drawer_5": "서랍 5",
+   "fx_cabinet_13": "캐비닛 11",
+   "fx_cabinet_14": "캐비닛 12",
+   "fx_cabinet_15": "캐비닛 13",
+   "fx_drawer_6": "서랍 6",
+   "fx_drawer_7": "서랍 7",
+   "fx_drawer_8": "서랍 8",
+   "fx_cabinet_16": "캐비닛 14",
+   "fx_cabinet_17": "캐비닛 15",
+   "fx_stool_1": "스툴 1",
+   "fx_stool_2": "스툴 2",
+   "fx_stove_1": "스토브",
+   "fx_toaster_1": "토스터",
+   "fx_cabinet_18": "캐비닛 16",
+   "obj_001": "접시",
+   "obj_002": "쟁반",
+   "obj_003": "스테이크",
+   "obj_004": "아스파라거스",
+   "obj_005": "꼬치",
+   "fx_dishwasher_1/rack1": "식기세척기 랙 1",
+   "fx_dishwasher_1/rack0": "식기세척기 랙 2",
+   "fx_fridge_1/fridge_shelf4": "냉장고 냉장실 선반 1",
+   "fx_fridge_1/fridge_shelf3": "냉장고 냉장실 선반 2",
+   "fx_fridge_1/fridge_shelf2": "냉장고 냉장실 선반 3",
+   "fx_fridge_1/fridge_shelf1": "냉장고 냉장실 선반 4",
+   "fx_fridge_1/fridge_shelf0": "냉장고 냉장실 선반 5",
+   "fx_fridge_1/freezer_shelf2": "냉장고 냉동실 선반 1",
+   "fx_fridge_1/freezer_shelf1": "냉장고 냉동실 선반 2",
+   "fx_fridge_1/freezer_shelf0": "냉장고 냉동실 선반 3",
+   "fx_fridge_1/freezer_drawer1": "냉장고 냉동실 서랍 1",
+   "fx_fridge_1/freezer_drawer0": "냉장고 냉동실 서랍 2",
+   "fx_stove_1/rack0": "스토브 랙",
+   "fx_stove_1/front_left": "스토브 앞 왼쪽 화구",
+   "fx_stove_1/rear_right": "스토브 뒤 오른쪽 화구",
+   "fx_stove_1/rear_left": "스토브 뒤 왼쪽 화구",
+   "fx_stove_1/front_right": "스토브 앞 오른쪽 화구",
+   "fx_stove_1/center": "스토브 가운데 화구"
+  }
+ },
+ "output": {
+  "reasoning": "① 지시 해석: 쟁반에 있는 꼬치를 냉장고 맨 위 선반에 넣고, 그 후 냉장고 문을 닫는 작업이다. 시간 조건은 명시되지 않았다. '넣고 … 닫아'는 순서를 명시하므로 꼬치를 넣는 것이 문을 닫는 것에 선행한다. 작업은 꼬치가 있는 조리대 4에서 시작하고, 마지막 행위(문 닫기)의 대상인 냉장고에서 끝난다. ② 씬 접지: 꼬치는 쟁반 위에 있고(쟁반 위: 스테이크, 아스파라거스, 꼬치), 쟁반은 조리대 4(아일랜드 식탁) 위, 스툴 2 옆에 있다. 냉장고는 문 닫힘, 냉동실 문 닫힘이며, 칸으로 냉장실 선반 1부터 5까지(위에서부터)가 있다. '맨 위 선반'은 냉장실 선반 1에 해당한다. ③ 역할 부여: 꼬치는 위치가 바뀌어야 하므로 필수(goal_state의 in 관계 subject). 냉장고는 지시가 '문 닫아'라고 명시하여 door_open 상태의 subject이므로 필수. 냉장고 냉장실 선반 1은 꼬치가 들어가는 곳(in 관계의 object)이므로 핵심 수단. 쟁반은 꼬치가 처음 놓여 있는 물체이므로 초기 위치 기준 보조. ④ 제약 도출: 냉장고 문이 현재 닫혀 있어 꼬치를 선반에 놓기 전에 문을 열어야 함(환경 상태에서 도출되는 선행 조건). 지시가 '넣고 … 닫아' 순서를 명시했으므로 꼬치를 선반에 놓는 것이 문을 닫는 것에 선행(지시 순서). ⑤ 목표 상태 도출: 꼬치가 냉장고 냉장실 선반 1 안에 있는 상태와 냉장고 문이 닫혀 있는 상태가 동시에 성립해야 한다. 경우는 하나다. 냉장고 문은 처음부터 닫혀 있지만 지시가 명시적으로 '닫아'라고 했으므로 goal_state에 포함한다.",
+  "task_situation_description": {
+   "task_goal": {
+    "summary": "쟁반에 있는 꼬치를 냉장고 맨 위 선반에 넣고 냉장고 문을 닫는 것",
+    "goal_state": [
+     [
+      {
+       "kind": "relation",
+       "subject": "꼬치",
+       "predicate": "in",
+       "object": "냉장고 냉장실 선반 1",
+       "value": true
+      },
+      {
+       "kind": "state",
+       "subject": "냉장고",
+       "predicate": "door_open",
+       "object": null,
+       "value": false
+      }
+     ]
+    ]
+   },
+   "spatiotemporal_conditions": {
+    "time": null,
+    "space": {
+     "start": "조리대 4",
+     "end": "냉장고"
+    }
+   },
+   "target_objects": {
+    "required": [
+     {
+      "ref": "꼬치",
+      "location": "쟁반 위",
+      "state": null
+     },
+     {
+      "ref": "냉장고",
+      "location": null,
+      "state": "문 닫힘, 냉동실 문 닫힘"
+     }
+    ],
+    "key_means": [
+     {
+      "ref": "냉장고 냉장실 선반 1",
+      "location": null,
+      "state": null,
+      "alternatives": []
+     }
+    ],
+    "auxiliary": [
+     {
+      "ref": "쟁반",
+      "location": "조리대 4(아일랜드 식탁) 위, 스툴 2 옆",
+      "note": "꼬치의 초기 위치 기준"
+     }
+    ]
+   },
+   "constraints": [
+    {
+     "type": "precedence",
+     "description": "냉장고 문이 닫혀 있어 꼬치를 냉장고 냉장실 선반 1에 놓기 전에 냉장고 문을 열어야 함"
+    },
+    {
+     "type": "precedence",
+     "description": "지시가 '넣고 … 닫아' 순서를 명시했으므로 꼬치를 선반에 놓는 것이 냉장고 문을 닫는 것에 선행해야 함"
+    }
+   ]
+  },
+  "task_situation_description_text": "작업 목표: 쟁반에 있는 꼬치를 냉장고 맨 위 선반에 넣고 냉장고 문을 닫는 것\n목표 상태:\n- 꼬치: 냉장고 냉장실 선반 1 안\n- 냉장고: 문 닫힘\n시간·공간 조건: 시간 조건은 없음, 공간 조건은 시작 조리대 4, 종료 냉장고\n대상 물체:\n- 필수 물체: 꼬치(위치: 쟁반 위)\n- 필수 물체: 냉장고(상태: 문 닫힘, 냉동실 문 닫힘)\n- 핵심 수단: 냉장고 냉장실 선반 1\n- 보조 물체: 쟁반(위치: 조리대 4(아일랜드 식탁) 위, 스툴 2 옆, 비고: 꼬치의 초기 위치 기준)\n제약 사항:\n- [선후] 냉장고 문이 닫혀 있어 꼬치를 냉장고 냉장실 선반 1에 놓기 전에 냉장고 문을 열어야 함\n- [선후] 지시가 '넣고 … 닫아' 순서를 명시했으므로 꼬치를 선반에 놓는 것이 냉장고 문을 닫는 것에 선행해야 함\n"
+ }
+}

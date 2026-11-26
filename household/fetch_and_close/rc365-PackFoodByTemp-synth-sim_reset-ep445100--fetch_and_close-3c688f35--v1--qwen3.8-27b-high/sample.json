@@ -1,0 +1,149 @@
+{
+ "id": "rc365-PackFoodByTemp-synth-sim_reset-ep445100--fetch_and_close-3c688f35--v1--qwen3.8-27b-high",
+ "domain": "household",
+ "task_type": "fetch_and_close",
+ "agent": "qwen3.8-27b-high",
+ "source": {
+  "data": "RoboCasa365 (MIT)",
+  "scene_id": "rc365/PackFoodByTemp/synth/sim_reset/ep_445100",
+  "task": "fetch_and_close",
+  "composed": true
+ },
+ "input": {
+  "instruction": "스토브에서 케밥 꼬치를 꺼내서 냉장고 냉동실 맨 위 서랍에 넣고, 스토브 문 닫아.",
+  "instruction_en": "Take the kebab skewer out of the stove and put it in the top freezer drawer of the fridge. Then close the stove.",
+  "world_state": "장소: 가정 주방\n로봇(PandaOmron). 들고 있는 물체 없음.\n\n물체가 놓인 곳:\n- 스토브 앞 오른쪽 화구 위: 팬\n- 팬 위: 케밥 꼬치\n- 조리대 3 위, 스토브 옆: 접시\n- 접시 위: 핫도그\n- 냉장고 냉장실 선반 1 위: 라임\n- 냉장고 냉장실 선반 2 위: 배\n- 조리대 5(아일랜드 식탁) 위, 스툴 2 옆: 밀폐용기 1, 밀폐용기 2\n\n물체 크기:\n- 밀폐용기: 큰 것부터 밀폐용기 2, 밀폐용기 1\n\n가구:\n- 조리대 1: 커피머신 옆, 전자레인지 옆, 스토브 옆\n- 조리대 2: 식기세척기 옆, 냉장고 옆, 싱크대 옆, 토스터 옆\n- 조리대 3: 전자레인지 옆, 스토브 옆\n- 식기세척기: 문 닫힘. 칸: 랙 1, 2(위에서부터)\n- 냉장고: 문 열림, 냉동실 문 닫힘. 칸: 냉동실 선반 1부터 3까지(위에서부터), 냉장실 선반 1부터 3까지(위에서부터), 냉동실 서랍 1, 2(위에서부터), 냉장실 서랍 1, 2(위에서부터)\n- 캐비닛 1부터 9까지: 문 닫힘\n- 전자레인지: 문 닫힘\n- 싱크대: 미가동\n- 서랍 1, 2: 서랍 닫힘\n- 스토브: 문 닫힘, 미가동. 칸: 랙, 뒤 왼쪽 화구, 앞 왼쪽 화구, 앞 오른쪽 화구, 뒤 오른쪽 화구\n- 커피머신\n- 조리대 4\n- 수납장\n- 조리대 5(아일랜드 식탁)\n- 스툴 1부터 3까지\n- 토스터",
+  "entity_labels": {
+   "fx_coffee_machine_1": "커피머신",
+   "fx_counter_1": "조리대 1",
+   "fx_counter_2": "조리대 2",
+   "fx_counter_3": "조리대 3",
+   "fx_counter_4": "조리대 4",
+   "fx_dishwasher_1": "식기세척기",
+   "fx_cabinet_1": "수납장",
+   "fx_fridge_1": "냉장고",
+   "fx_cabinet_2": "캐비닛 1",
+   "fx_cabinet_3": "캐비닛 2",
+   "fx_counter_5": "조리대 5",
+   "fx_cabinet_4": "캐비닛 3",
+   "fx_microwave_1": "전자레인지",
+   "fx_cabinet_5": "캐비닛 4",
+   "fx_cabinet_6": "캐비닛 5",
+   "fx_cabinet_7": "캐비닛 6",
+   "fx_sink_1": "싱크대",
+   "fx_cabinet_8": "캐비닛 7",
+   "fx_drawer_1": "서랍 1",
+   "fx_cabinet_9": "캐비닛 8",
+   "fx_cabinet_10": "캐비닛 9",
+   "fx_drawer_2": "서랍 2",
+   "fx_stool_1": "스툴 1",
+   "fx_stool_2": "스툴 2",
+   "fx_stool_3": "스툴 3",
+   "fx_stove_1": "스토브",
+   "fx_toaster_1": "토스터",
+   "obj_001": "팬",
+   "obj_002": "케밥 꼬치",
+   "obj_003": "접시",
+   "obj_004": "핫도그",
+   "obj_005": "라임",
+   "obj_006": "배",
+   "obj_007": "밀폐용기 1",
+   "obj_008": "밀폐용기 2",
+   "fx_dishwasher_1/rack1": "식기세척기 랙 1",
+   "fx_dishwasher_1/rack0": "식기세척기 랙 2",
+   "fx_fridge_1/freezer_shelf2": "냉장고 냉동실 선반 1",
+   "fx_fridge_1/freezer_shelf1": "냉장고 냉동실 선반 2",
+   "fx_fridge_1/freezer_shelf0": "냉장고 냉동실 선반 3",
+   "fx_fridge_1/fridge_shelf2": "냉장고 냉장실 선반 1",
+   "fx_fridge_1/fridge_shelf1": "냉장고 냉장실 선반 2",
+   "fx_fridge_1/fridge_shelf0": "냉장고 냉장실 선반 3",
+   "fx_fridge_1/freezer_drawer1": "냉장고 냉동실 서랍 1",
+   "fx_fridge_1/freezer_drawer0": "냉장고 냉동실 서랍 2",
+   "fx_fridge_1/fridge_drawer1": "냉장고 냉장실 서랍 1",
+   "fx_fridge_1/fridge_drawer0": "냉장고 냉장실 서랍 2",
+   "fx_stove_1/rack0": "스토브 랙",
+   "fx_stove_1/rear_left": "스토브 뒤 왼쪽 화구",
+   "fx_stove_1/front_left": "스토브 앞 왼쪽 화구",
+   "fx_stove_1/front_right": "스토브 앞 오른쪽 화구",
+   "fx_stove_1/rear_right": "스토브 뒤 오른쪽 화구"
+  }
+ },
+ "output": {
+  "reasoning": "① 지시 해석: \"스토브에서 케밥 꼬치를 꺼내서 냉장고 냉동실 맨 위 서랍에 넣고, 스토브 문 닫아\"는 두 가지 작업을 포함한다: (1) 케밥 꼬치를 스토브에서 꺼내 냉장고 냉동실 맨 위 서랍에 넣는 것, (2) 스토브 문을 닫는 것. \"꺼내서…넣고\"의 \"서\"가 꺼내기와 넣기의 순서를 정하며, \"스토브 문 닫아\"는 쉼표로 이어진 추가 지시(순서를 명시적으로 정한 표현 아님)다. 시간 조건은 없다. 작업은 케밥 꼬치가 있는 스토브에서 시작하고, 케밥 꼬치가 들어가는 냉장고에서 끝난다. \"스토브 문 닫아\"는 '그다음', '끝나면' 같은 순서 어가 없으므로 end는 케밥 꼬치의 도착지인 냉장고로 한다. ② 씬 접지: 케밥 꼬치는 팬 위에 있고, 팬은 스토브 앞 오른쪽 화구 위에 있다. 스토브는 문이 닫혀 있고 미가동이다. 냉장고는 문이 열려 있고 냉동실 문은 닫혀 있으며, 칸에 냉동실 서랍 1, 2(위에서부터)가 있다. \"냉동실 맨 위 서랍\"은 위에서부터 첫 번째인 냉동실 서랍 1에 해당한다. ③ 물체 역할 부여: 케밥 꼬치는 위치가 바뀌어야 하므로 필수. 스토브는 goal_state에서 door_open 단언의 subject이므로 필수(초기 위치 기준인 보조에도 해당하지만 필수 우선). 냉장고 냉동실 서랍 1은 케밥 꼬치를 받는 칸이므로 핵심 수단. 팬은 케밥 꼬치가 처음 놓여 있는 물체이므로 보조(초기 위치 기준). 냉장고는 냉동실 문이 닫혀 있어 케밥 꼬치를 넣기 전에 먼저 열어야 하는 가구이므로 보조(상태 변경 선행). ④ 제약 도출: 스토브 문이 닫혀 있으므로 케밥 꼬치를 꺼내기 전에 스토브 문을 여는 것이 선행. 냉장고 냉동실 문이 닫혀 있으므로 케밥 꼬치를 냉동실 서랍에 넣기 전에 냉동실 문을 여는 것이 선행. 스토브는 미가동이므로 화구가 뜨겁지 않아 안전 제약은 없다. ⑤ 목표 상태 도출: 케밥 꼬치가 냉장고 냉동실 서랍 1 안에 있고, 스토브 문이 닫혀 있어야 한다. 경우가 하나다. \"스토브 문 닫아\"는 현재 상태(문 닫힘)와 같지만 지시가明确要求하므로 goal_state에 포함한다.",
+  "task_situation_description": {
+   "task_goal": {
+    "summary": "스토브의 팬 위에서 케밥 꼬치를 꺼내 냉장고 냉동실 맨 위 서랍에 넣고 스토브 문을 닫는 것",
+    "goal_state": [
+     [
+      {
+       "kind": "relation",
+       "subject": "케밥 꼬치",
+       "predicate": "in",
+       "object": "냉장고 냉동실 서랍 1",
+       "value": true
+      },
+      {
+       "kind": "state",
+       "subject": "스토브",
+       "predicate": "door_open",
+       "object": null,
+       "value": false
+      }
+     ]
+    ]
+   },
+   "spatiotemporal_conditions": {
+    "time": null,
+    "space": {
+     "start": "스토브",
+     "end": "냉장고"
+    }
+   },
+   "target_objects": {
+    "required": [
+     {
+      "ref": "케밥 꼬치",
+      "location": "팬 위",
+      "state": null
+     },
+     {
+      "ref": "스토브",
+      "location": null,
+      "state": "문 닫힘, 미가동"
+     }
+    ],
+    "key_means": [
+     {
+      "ref": "냉장고 냉동실 서랍 1",
+      "location": null,
+      "state": null,
+      "alternatives": []
+     }
+    ],
+    "auxiliary": [
+     {
+      "ref": "팬",
+      "location": "스토브 앞 오른쪽 화구 위",
+      "note": "케밥 꼬치의 초기 위치 기준"
+     },
+     {
+      "ref": "냉장고",
+      "location": null,
+      "note": "냉동실 문이 닫혀 있어 케밥 꼬치를 넣기 전에 열어야 함"
+     }
+    ]
+   },
+   "constraints": [
+    {
+     "type": "precedence",
+     "description": "스토브 문이 닫혀 있으므로 케밥 꼬치를 꺼내기 전에 스토브 문을 여는 것이 선행해야 함"
+    },
+    {
+     "type": "precedence",
+     "description": "냉장고 냉동실 문이 닫혀 있으므로 케밥 꼬치를 냉동실 서랍 1에 넣기 전에 냉동실 문을 여는 것이 선행해야 함"
+    }
+   ]
+  },
+  "task_situation_description_text": "작업 목표: 스토브의 팬 위에서 케밥 꼬치를 꺼내 냉장고 냉동실 맨 위 서랍에 넣고 스토브 문을 닫는 것\n목표 상태:\n- 케밥 꼬치: 냉장고 냉동실 서랍 1 안\n- 스토브: 문 닫힘\n시간·공간 조건: 시간 조건은 없음, 공간 조건은 시작 스토브, 종료 냉장고\n대상 물체:\n- 필수 물체: 케밥 꼬치(위치: 팬 위)\n- 필수 물체: 스토브(상태: 문 닫힘, 미가동)\n- 핵심 수단: 냉장고 냉동실 서랍 1\n- 보조 물체: 팬(위치: 스토브 앞 오른쪽 화구 위, 비고: 케밥 꼬치의 초기 위치 기준)\n- 보조 물체: 냉장고(비고: 냉동실 문이 닫혀 있어 케밥 꼬치를 넣기 전에 열어야 함)\n제약 사항:\n- [선후] 스토브 문이 닫혀 있으므로 케밥 꼬치를 꺼내기 전에 스토브 문을 여는 것이 선행해야 함\n- [선후] 냉장고 냉동실 문이 닫혀 있으므로 케밥 꼬치를 냉동실 서랍 1에 넣기 전에 냉동실 문을 여는 것이 선행해야 함\n"
+ }
+}

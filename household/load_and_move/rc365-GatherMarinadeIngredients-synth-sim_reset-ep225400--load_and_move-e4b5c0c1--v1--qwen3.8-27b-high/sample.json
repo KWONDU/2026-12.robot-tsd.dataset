@@ -1,0 +1,163 @@
+{
+ "id": "rc365-GatherMarinadeIngredients-synth-sim_reset-ep225400--load_and_move-e4b5c0c1--v1--qwen3.8-27b-high",
+ "domain": "household",
+ "task_type": "load_and_move",
+ "agent": "qwen3.8-27b-high",
+ "source": {
+  "data": "RoboCasa365 (MIT)",
+  "scene_id": "rc365/GatherMarinadeIngredients/synth/sim_reset/ep_225400",
+  "task": "load_and_move",
+  "composed": true
+ },
+ "input": {
+  "instruction": "옥수수를 그릇에 담고, 그 그릇을 냉장고 맨 위 선반에 올려놔.",
+  "instruction_en": "Put the corn in the bowl, then put the bowl on the top shelf of the fridge.",
+  "world_state": "장소: 가정 주방\n로봇(PandaOmron). 들고 있는 물체 없음.\n\n물체가 놓인 곳:\n- 조리대 1 위, 캐비닛 1 옆: 그릇\n- 냉장고 냉장실 선반 1 위: 마늘, 옥수수\n- 캐비닛 1 선반 위: 오일·식초 병, 셰이커\n\n가구:\n- 서랍 1, 4부터 6까지, 8부터 10까지, 13: 서랍 닫힘\n- 캐비닛 1: 문 열림\n- 캐비닛 2부터 6까지, 9, 10, 13, 14, 17부터 19까지: 문 닫힘\n- 조리대 1: 커피머신 옆, 식기세척기 옆, 오븐 옆, 싱크대 옆, 토스터 옆\n- 조리대 2: 냉장고 옆, 토스터 오븐 옆\n- 조리대 3(식탁용 조리대): 전자레인지 옆, 스토브 상판 옆\n- 식기세척기: 문 닫힘. 칸: 랙 1, 2(위에서부터)\n- 냉장고: 문 열림, 냉동실 문 닫힘. 칸: 냉장실 선반 1, 2(위에서부터), 냉장실 서랍\n- 전자레인지: 문 닫힘\n- 오븐: 문 닫힘. 칸: 랙 1, 2(위에서부터)\n- 싱크대: 미가동\n- 캐비닛 7, 8, 11, 12, 15, 16(식탁 구역): 문 닫힘\n- 서랍 2, 3, 7, 11, 12(식탁 구역): 서랍 닫힘\n- 스토브 상판(식탁 구역): 미가동. 칸: 뒤 왼쪽 화구, 앞 왼쪽 화구, 앞 오른쪽 화구, 뒤 오른쪽 화구\n- 토스터 오븐: 문 닫힘. 칸: 랙\n- 커피머신\n- 조리대 4(식탁용 조리대)\n- 수납장 1, 2\n- 스툴 1부터 6까지\n- 토스터",
+  "entity_labels": {
+   "fx_drawer_1": "서랍 1",
+   "fx_cabinet_1": "캐비닛 1",
+   "fx_cabinet_2": "캐비닛 2",
+   "fx_cabinet_3": "캐비닛 3",
+   "fx_cabinet_4": "캐비닛 4",
+   "fx_cabinet_5": "캐비닛 5",
+   "fx_coffee_machine_1": "커피머신",
+   "fx_counter_1": "조리대 1",
+   "fx_counter_2": "조리대 2",
+   "fx_counter_3": "조리대 3",
+   "fx_counter_4": "조리대 4",
+   "fx_dishwasher_1": "식기세척기",
+   "fx_cabinet_6": "수납장 1",
+   "fx_fridge_1": "냉장고",
+   "fx_microwave_1": "전자레인지",
+   "fx_cabinet_7": "수납장 2",
+   "fx_cabinet_8": "캐비닛 6",
+   "fx_oven_1": "오븐",
+   "fx_sink_1": "싱크대",
+   "fx_cabinet_9": "캐비닛 7",
+   "fx_drawer_2": "서랍 2",
+   "fx_cabinet_10": "캐비닛 8",
+   "fx_drawer_3": "서랍 3",
+   "fx_cabinet_11": "캐비닛 9",
+   "fx_drawer_4": "서랍 4",
+   "fx_cabinet_12": "캐비닛 10",
+   "fx_drawer_5": "서랍 5",
+   "fx_drawer_6": "서랍 6",
+   "fx_cabinet_13": "캐비닛 11",
+   "fx_cabinet_14": "캐비닛 12",
+   "fx_drawer_7": "서랍 7",
+   "fx_cabinet_15": "캐비닛 13",
+   "fx_drawer_8": "서랍 8",
+   "fx_cabinet_16": "캐비닛 14",
+   "fx_drawer_9": "서랍 9",
+   "fx_drawer_10": "서랍 10",
+   "fx_cabinet_17": "캐비닛 15",
+   "fx_drawer_11": "서랍 11",
+   "fx_cabinet_18": "캐비닛 16",
+   "fx_drawer_12": "서랍 12",
+   "fx_cabinet_19": "캐비닛 17",
+   "fx_cabinet_20": "캐비닛 18",
+   "fx_drawer_13": "서랍 13",
+   "fx_stool_1": "스툴 1",
+   "fx_stool_2": "스툴 2",
+   "fx_stool_3": "스툴 3",
+   "fx_stool_4": "스툴 4",
+   "fx_stool_5": "스툴 5",
+   "fx_stool_6": "스툴 6",
+   "fx_stovetop_1": "스토브 상판",
+   "fx_toaster_1": "토스터",
+   "fx_toaster_oven_1": "토스터 오븐",
+   "fx_cabinet_21": "캐비닛 19",
+   "obj_001": "그릇",
+   "obj_002": "마늘",
+   "obj_003": "옥수수",
+   "obj_004": "오일·식초 병",
+   "obj_005": "셰이커",
+   "fx_dishwasher_1/rack1": "식기세척기 랙 1",
+   "fx_dishwasher_1/rack0": "식기세척기 랙 2",
+   "fx_fridge_1/fridge_shelf1": "냉장고 냉장실 선반 1",
+   "fx_fridge_1/fridge_shelf0": "냉장고 냉장실 선반 2",
+   "fx_fridge_1/fridge_drawer0": "냉장고 냉장실 서랍",
+   "fx_oven_1/rack1": "오븐 랙 1",
+   "fx_oven_1/rack0": "오븐 랙 2",
+   "fx_stovetop_1/rear_left": "스토브 상판 뒤 왼쪽 화구",
+   "fx_stovetop_1/front_left": "스토브 상판 앞 왼쪽 화구",
+   "fx_stovetop_1/front_right": "스토브 상판 앞 오른쪽 화구",
+   "fx_stovetop_1/rear_right": "스토브 상판 뒤 오른쪽 화구",
+   "fx_toaster_oven_1/rack0": "토스터 오븐 랙"
+  }
+ },
+ "output": {
+  "reasoning": "① 지시 해석: 옥수수를 그릇에 담고, 그 그릇을 냉장고 맨 위 선반에 올리는 작업이다. 시간 조건은 언급되지 않았다. '…하고, …해'는 순서를 명시적으로 정한 것이 아니나, '그 그릇'이라는 표현으로 옥수가 담겨 있는 그릇이 선반에 올라가야 한다는 물리적 의존성이 있다. 작업 시작은 옥수가 있는 냉장고와 그릇이 있는 조리대 1, 끝은 그릇이 도착하는 냉장고이다. ② 씬 접지: 옥수는 '냉장고 냉장실 선반 1 위'에 있고, 그릇은 '조리대 1 위, 캐비닛 1 옆'에 있다. 냉장고는 문이 열려 있으며 칸으로 냉장실 선반 1, 2(위에서부터)와 냉장실 서랍이 있다. '맨 위 선반'은 위에서부터 첫 번째인 '냉장실 선반 1'에 해당하므로, 받는 곳은 '냉장고 냉장실 선반 1'이다. ③ 역할 부여: 옥수는 그릇 안에 들어가 위치가 바뀌므로 필수. 그릇은 선반 위에 올라가 위치가 바뀌므로 필수(옥수를 받는 곳이기도 하나 필수 우선 적용). 냉장고 냉장실 선반 1은 그릇을 받는 곳이므로 핵심 수단. 냉장고는 옥수의 초기 위치 기준이므로 보조. 조리대 1은 그릇의 초기 위치 기준이므로 보조. ④ 제약 도출: 옥수가 그릇에 담겨 있는 상태에서 그릇이 선반에 올려져야 하므로 물리적 선후 제약이 있다. 냉장고 문은 이미 열려 있어 추가 제약 없음. ⑤ 목표 상태: 옥수가 그릇 안에 있고, 그릇이 냉장고 냉장실 선반 1 위에 있는 상태. 경우는 하나다.",
+  "task_situation_description": {
+   "task_goal": {
+    "summary": "옥수수를 그릇에 담아 그 그릇을 냉장고 맨 위 선반에 올리는 것",
+    "goal_state": [
+     [
+      {
+       "kind": "relation",
+       "subject": "옥수수",
+       "predicate": "in",
+       "object": "그릇",
+       "value": true
+      },
+      {
+       "kind": "relation",
+       "subject": "그릇",
+       "predicate": "on",
+       "object": "냉장고 냉장실 선반 1",
+       "value": true
+      }
+     ]
+    ]
+   },
+   "spatiotemporal_conditions": {
+    "time": null,
+    "space": {
+     "start": "냉장고 혹은 조리대 1",
+     "end": "냉장고"
+    }
+   },
+   "target_objects": {
+    "required": [
+     {
+      "ref": "옥수수",
+      "location": "냉장고 냉장실 선반 1 위",
+      "state": null
+     },
+     {
+      "ref": "그릇",
+      "location": "조리대 1 위, 캐비닛 1 옆",
+      "state": null
+     }
+    ],
+    "key_means": [
+     {
+      "ref": "냉장고 냉장실 선반 1",
+      "location": null,
+      "state": null,
+      "alternatives": []
+     }
+    ],
+    "auxiliary": [
+     {
+      "ref": "냉장고",
+      "location": null,
+      "note": "옥수의 초기 위치 기준"
+     },
+     {
+      "ref": "조리대 1",
+      "location": null,
+      "note": "그릇의 초기 위치 기준"
+     }
+    ]
+   },
+   "constraints": [
+    {
+     "type": "physical",
+     "description": "옥수가 그릇에 담겨 있어야 그 그릇이 냉장고 냉장실 선반 1에 올려질 수 있음"
+    }
+   ]
+  },
+  "task_situation_description_text": "작업 목표: 옥수수를 그릇에 담아 그 그릇을 냉장고 맨 위 선반에 올리는 것\n목표 상태:\n- 옥수수: 그릇 안\n- 그릇: 냉장고 냉장실 선반 1 위\n시간·공간 조건: 시간 조건은 없음, 공간 조건은 시작 냉장고 혹은 조리대 1, 종료 냉장고\n대상 물체:\n- 필수 물체: 옥수수(위치: 냉장고 냉장실 선반 1 위)\n- 필수 물체: 그릇(위치: 조리대 1 위, 캐비닛 1 옆)\n- 핵심 수단: 냉장고 냉장실 선반 1\n- 보조 물체: 냉장고(비고: 옥수의 초기 위치 기준)\n- 보조 물체: 조리대 1(비고: 그릇의 초기 위치 기준)\n제약 사항:\n- [물리] 옥수가 그릇에 담겨 있어야 그 그릇이 냉장고 냉장실 선반 1에 올려질 수 있음\n"
+ }
+}

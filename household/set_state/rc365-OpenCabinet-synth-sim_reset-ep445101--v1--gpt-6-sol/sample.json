@@ -1,0 +1,200 @@
+{
+ "id": "rc365-OpenCabinet-synth-sim_reset-ep445101--v1--gpt-6-sol",
+ "domain": "household",
+ "task_type": "set_state",
+ "agent": "gpt-6-sol",
+ "source": {
+  "data": "RoboCasa365 (MIT)",
+  "scene_id": "rc365/OpenCabinet/synth/sim_reset/ep_445101",
+  "task": "OpenCabinet",
+  "composed": false
+ },
+ "input": {
+  "instruction": "캐비닛 문들을 열어.",
+  "instruction_en": "Open the cabinet doors.",
+  "world_state": "장소: 가정 주방\n로봇(PandaOmron). 들고 있는 물체 없음.\n\n물체가 놓인 곳:\n- 캐비닛 1 선반 위: 물병\n- 조리대 3 위, 캐비닛 1 옆: 찻주전자\n\n가구:\n- 조리대 1: 커피머신 옆, 전자레인지 옆, 스토브 옆\n- 조리대 2: 식기세척기 옆, 냉장고 옆, 싱크대 옆, 토스터 옆\n- 조리대 3: 전자레인지 옆, 스토브 옆\n- 식기세척기: 문 닫힘. 칸: 랙 1, 2(위에서부터)\n- 냉장고: 문 닫힘, 냉동실 문 닫힘. 칸: 냉동실 선반 1부터 3까지(위에서부터), 냉장실 선반 1부터 3까지(위에서부터), 냉동실 서랍 1, 2(위에서부터), 냉장실 서랍 1, 2(위에서부터)\n- 캐비닛 1부터 9까지: 문 닫힘\n- 전자레인지: 문 닫힘\n- 싱크대: 미가동\n- 서랍 1, 2: 서랍 닫힘\n- 스토브: 문 닫힘, 미가동. 칸: 랙, 뒤 왼쪽 화구, 앞 왼쪽 화구, 앞 오른쪽 화구, 뒤 오른쪽 화구\n- 커피머신\n- 조리대 4\n- 수납장\n- 조리대 5(아일랜드 식탁)\n- 스툴 1부터 3까지\n- 토스터",
+  "entity_labels": {
+   "fx_coffee_machine_1": "커피머신",
+   "fx_counter_1": "조리대 1",
+   "fx_counter_2": "조리대 2",
+   "fx_counter_3": "조리대 3",
+   "fx_counter_4": "조리대 4",
+   "fx_dishwasher_1": "식기세척기",
+   "fx_cabinet_1": "수납장",
+   "fx_fridge_1": "냉장고",
+   "fx_cabinet_2": "캐비닛 1",
+   "fx_cabinet_3": "캐비닛 2",
+   "fx_counter_5": "조리대 5",
+   "fx_cabinet_4": "캐비닛 3",
+   "fx_microwave_1": "전자레인지",
+   "fx_cabinet_5": "캐비닛 4",
+   "fx_cabinet_6": "캐비닛 5",
+   "fx_cabinet_7": "캐비닛 6",
+   "fx_sink_1": "싱크대",
+   "fx_cabinet_8": "캐비닛 7",
+   "fx_drawer_1": "서랍 1",
+   "fx_cabinet_9": "캐비닛 8",
+   "fx_cabinet_10": "캐비닛 9",
+   "fx_drawer_2": "서랍 2",
+   "fx_stool_1": "스툴 1",
+   "fx_stool_2": "스툴 2",
+   "fx_stool_3": "스툴 3",
+   "fx_stove_1": "스토브",
+   "fx_toaster_1": "토스터",
+   "obj_001": "물병",
+   "obj_002": "찻주전자",
+   "fx_dishwasher_1/rack1": "식기세척기 랙 1",
+   "fx_dishwasher_1/rack0": "식기세척기 랙 2",
+   "fx_fridge_1/freezer_shelf2": "냉장고 냉동실 선반 1",
+   "fx_fridge_1/freezer_shelf1": "냉장고 냉동실 선반 2",
+   "fx_fridge_1/freezer_shelf0": "냉장고 냉동실 선반 3",
+   "fx_fridge_1/fridge_shelf2": "냉장고 냉장실 선반 1",
+   "fx_fridge_1/fridge_shelf1": "냉장고 냉장실 선반 2",
+   "fx_fridge_1/fridge_shelf0": "냉장고 냉장실 선반 3",
+   "fx_fridge_1/freezer_drawer1": "냉장고 냉동실 서랍 1",
+   "fx_fridge_1/freezer_drawer0": "냉장고 냉동실 서랍 2",
+   "fx_fridge_1/fridge_drawer1": "냉장고 냉장실 서랍 1",
+   "fx_fridge_1/fridge_drawer0": "냉장고 냉장실 서랍 2",
+   "fx_stove_1/rack0": "스토브 랙",
+   "fx_stove_1/rear_left": "스토브 뒤 왼쪽 화구",
+   "fx_stove_1/front_left": "스토브 앞 왼쪽 화구",
+   "fx_stove_1/front_right": "스토브 앞 오른쪽 화구",
+   "fx_stove_1/rear_right": "스토브 뒤 오른쪽 화구"
+  }
+ },
+ "output": {
+  "reasoning": "① 지시 해석: 캐비닛 문들을 모두 여는 작업이며 시간 조건은 없다. 상태를 바꿀 캐비닛이 아홉 개이고 순서가 정해지지 않았으므로 시작과 끝은 모두 캐비닛 1부터 캐비닛 9까지가 후보이다. ② 씬 접지: 환경 설명의 캐비닛 1부터 9까지는 모두 문이 닫혀 있다. ③ 역할 부여: 아홉 캐비닛 모두 문 상태를 바꿔야 하므로 필수 대상이다. ④ 제약 도출: 지시나 환경 설명에서 별도의 수행 제약은 도출되지 않는다. ⑤ 목표 상태: 캐비닛 1부터 캐비닛 9까지의 문이 모두 열린 상태여야 하므로, 아홉 상태 단언을 하나의 경우에 담는다.",
+  "task_situation_description": {
+   "task_goal": {
+    "summary": "캐비닛 1부터 캐비닛 9까지의 문을 모두 연다.",
+    "goal_state": [
+     [
+      {
+       "kind": "state",
+       "subject": "캐비닛 1",
+       "predicate": "door_open",
+       "object": null,
+       "value": true
+      },
+      {
+       "kind": "state",
+       "subject": "캐비닛 2",
+       "predicate": "door_open",
+       "object": null,
+       "value": true
+      },
+      {
+       "kind": "state",
+       "subject": "캐비닛 3",
+       "predicate": "door_open",
+       "object": null,
+       "value": true
+      },
+      {
+       "kind": "state",
+       "subject": "캐비닛 4",
+       "predicate": "door_open",
+       "object": null,
+       "value": true
+      },
+      {
+       "kind": "state",
+       "subject": "캐비닛 5",
+       "predicate": "door_open",
+       "object": null,
+       "value": true
+      },
+      {
+       "kind": "state",
+       "subject": "캐비닛 6",
+       "predicate": "door_open",
+       "object": null,
+       "value": true
+      },
+      {
+       "kind": "state",
+       "subject": "캐비닛 7",
+       "predicate": "door_open",
+       "object": null,
+       "value": true
+      },
+      {
+       "kind": "state",
+       "subject": "캐비닛 8",
+       "predicate": "door_open",
+       "object": null,
+       "value": true
+      },
+      {
+       "kind": "state",
+       "subject": "캐비닛 9",
+       "predicate": "door_open",
+       "object": null,
+       "value": true
+      }
+     ]
+    ]
+   },
+   "spatiotemporal_conditions": {
+    "time": null,
+    "space": {
+     "start": "캐비닛 1 혹은 캐비닛 2 혹은 캐비닛 3 혹은 캐비닛 4 혹은 캐비닛 5 혹은 캐비닛 6 혹은 캐비닛 7 혹은 캐비닛 8 혹은 캐비닛 9",
+     "end": "캐비닛 1 혹은 캐비닛 2 혹은 캐비닛 3 혹은 캐비닛 4 혹은 캐비닛 5 혹은 캐비닛 6 혹은 캐비닛 7 혹은 캐비닛 8 혹은 캐비닛 9"
+    }
+   },
+   "target_objects": {
+    "required": [
+     {
+      "ref": "캐비닛 1",
+      "location": null,
+      "state": "문 닫힘"
+     },
+     {
+      "ref": "캐비닛 2",
+      "location": null,
+      "state": "문 닫힘"
+     },
+     {
+      "ref": "캐비닛 3",
+      "location": null,
+      "state": "문 닫힘"
+     },
+     {
+      "ref": "캐비닛 4",
+      "location": null,
+      "state": "문 닫힘"
+     },
+     {
+      "ref": "캐비닛 5",
+      "location": null,
+      "state": "문 닫힘"
+     },
+     {
+      "ref": "캐비닛 6",
+      "location": null,
+      "state": "문 닫힘"
+     },
+     {
+      "ref": "캐비닛 7",
+      "location": null,
+      "state": "문 닫힘"
+     },
+     {
+      "ref": "캐비닛 8",
+      "location": null,
+      "state": "문 닫힘"
+     },
+     {
+      "ref": "캐비닛 9",
+      "location": null,
+      "state": "문 닫힘"
+     }
+    ],
+    "key_means": [],
+    "auxiliary": []
+   },
+   "constraints": []
+  },
+  "task_situation_description_text": "작업 목표: 캐비닛 1부터 캐비닛 9까지의 문을 모두 연다.\n목표 상태:\n- 캐비닛 1: 문 열림\n- 캐비닛 2: 문 열림\n- 캐비닛 3: 문 열림\n- 캐비닛 4: 문 열림\n- 캐비닛 5: 문 열림\n- 캐비닛 6: 문 열림\n- 캐비닛 7: 문 열림\n- 캐비닛 8: 문 열림\n- 캐비닛 9: 문 열림\n시간·공간 조건: 시간 조건은 없음, 공간 조건은 시작 캐비닛 1 혹은 캐비닛 2 혹은 캐비닛 3 혹은 캐비닛 4 혹은 캐비닛 5 혹은 캐비닛 6 혹은 캐비닛 7 혹은 캐비닛 8 혹은 캐비닛 9, 종료 캐비닛 1 혹은 캐비닛 2 혹은 캐비닛 3 혹은 캐비닛 4 혹은 캐비닛 5 혹은 캐비닛 6 혹은 캐비닛 7 혹은 캐비닛 8 혹은 캐비닛 9\n대상 물체:\n- 필수 물체: 캐비닛 1(상태: 문 닫힘)\n- 필수 물체: 캐비닛 2(상태: 문 닫힘)\n- 필수 물체: 캐비닛 3(상태: 문 닫힘)\n- 필수 물체: 캐비닛 4(상태: 문 닫힘)\n- 필수 물체: 캐비닛 5(상태: 문 닫힘)\n- 필수 물체: 캐비닛 6(상태: 문 닫힘)\n- 필수 물체: 캐비닛 7(상태: 문 닫힘)\n- 필수 물체: 캐비닛 8(상태: 문 닫힘)\n- 필수 물체: 캐비닛 9(상태: 문 닫힘)\n제약 사항: 없음\n"
+ }
+}

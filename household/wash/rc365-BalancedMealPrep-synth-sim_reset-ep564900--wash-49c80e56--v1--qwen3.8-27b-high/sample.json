@@ -1,0 +1,171 @@
+{
+ "id": "rc365-BalancedMealPrep-synth-sim_reset-ep564900--wash-49c80e56--v1--qwen3.8-27b-high",
+ "domain": "household",
+ "task_type": "wash",
+ "agent": "qwen3.8-27b-high",
+ "source": {
+  "data": "RoboCasa365 (MIT)",
+  "scene_id": "rc365/BalancedMealPrep/synth/sim_reset/ep_564900",
+  "task": "wash",
+  "composed": true
+ },
+ "input": {
+  "instruction": "닭다리랑 고구마를 아일랜드 싱크대에 넣고 수도꼭지 틀어.",
+  "instruction_en": "Put the chicken drumstick and the sweet potato in the sink and turn on the faucet.",
+  "world_state": "장소: 가정 주방\n로봇(PandaOmron). 들고 있는 물체 없음.\n\n물체가 놓인 곳:\n- 스토브 뒤 오른쪽 화구 위: 팬\n- 팬 위: 닭다리\n- 조리대 3 위, 스토브 옆: 접시, 그릇\n- 그릇 안: 고구마\n\n가구:\n- 서랍 1부터 9까지, 14, 15: 서랍 닫힘\n- 조리대 1: 냉장고 옆, 토스터 옆\n- 조리대 2: 스토브 옆, 토스터 오븐 옆\n- 조리대 3: 커피머신 옆, 스토브 옆\n- 조리대 4: 전자레인지 옆\n- 식기세척기(아일랜드): 문 닫힘. 칸: 랙 1, 2(위에서부터)\n- 냉장고: 문 닫힘, 냉동실 문 닫힘. 칸: 냉장실 선반 1, 2(위에서부터), 냉장실 서랍\n- 캐비닛 1부터 5까지, 8부터 12까지, 14, 15, 19, 22부터 25까지: 문 닫힘\n- 조리대 6(아일랜드 식탁): 식기세척기 옆, 싱크대 옆\n- 전자레인지: 문 닫힘\n- 싱크대(아일랜드): 미가동. 칸: 왼쪽 개수대, 오른쪽 개수대\n- 캐비닛 13, 16, 17, 20, 21(아일랜드): 문 닫힘\n- 서랍 10부터 13까지(아일랜드): 서랍 닫힘\n- 스토브: 문 닫힘, 미가동. 칸: 랙, 뒤 왼쪽 화구, 앞 왼쪽 화구, 앞 오른쪽 화구, 뒤 오른쪽 화구, 가운데 화구\n- 토스터 오븐: 문 닫힘. 칸: 랙\n- 커피머신\n- 조리대 5\n- 수납장 1, 2\n- 캐비닛 6, 7\n- 캐비닛 18(아일랜드)\n- 스툴 1부터 3까지\n- 토스터",
+  "entity_labels": {
+   "fx_drawer_1": "서랍 1",
+   "fx_coffee_machine_1": "커피머신",
+   "fx_counter_1": "조리대 1",
+   "fx_counter_2": "조리대 2",
+   "fx_counter_3": "조리대 3",
+   "fx_counter_4": "조리대 4",
+   "fx_counter_5": "조리대 5",
+   "fx_dishwasher_1": "식기세척기",
+   "fx_cabinet_1": "수납장 1",
+   "fx_fridge_1": "냉장고",
+   "fx_cabinet_2": "캐비닛 1",
+   "fx_cabinet_3": "캐비닛 2",
+   "fx_cabinet_4": "캐비닛 3",
+   "fx_cabinet_5": "캐비닛 4",
+   "fx_cabinet_6": "캐비닛 5",
+   "fx_counter_6": "조리대 6",
+   "fx_cabinet_7": "수납장 2",
+   "fx_microwave_1": "전자레인지",
+   "fx_cabinet_8": "캐비닛 6",
+   "fx_cabinet_9": "캐비닛 7",
+   "fx_cabinet_10": "캐비닛 8",
+   "fx_cabinet_11": "캐비닛 9",
+   "fx_cabinet_12": "캐비닛 10",
+   "fx_sink_1": "싱크대",
+   "fx_cabinet_13": "캐비닛 11",
+   "fx_cabinet_14": "캐비닛 12",
+   "fx_drawer_2": "서랍 2",
+   "fx_cabinet_15": "캐비닛 13",
+   "fx_drawer_3": "서랍 3",
+   "fx_drawer_4": "서랍 4",
+   "fx_drawer_5": "서랍 5",
+   "fx_cabinet_16": "캐비닛 14",
+   "fx_drawer_6": "서랍 6",
+   "fx_drawer_7": "서랍 7",
+   "fx_drawer_8": "서랍 8",
+   "fx_cabinet_17": "캐비닛 15",
+   "fx_drawer_9": "서랍 9",
+   "fx_drawer_10": "서랍 10",
+   "fx_drawer_11": "서랍 11",
+   "fx_drawer_12": "서랍 12",
+   "fx_cabinet_18": "캐비닛 16",
+   "fx_drawer_13": "서랍 13",
+   "fx_cabinet_19": "캐비닛 17",
+   "fx_cabinet_20": "캐비닛 18",
+   "fx_cabinet_21": "캐비닛 19",
+   "fx_cabinet_22": "캐비닛 20",
+   "fx_cabinet_23": "캐비닛 21",
+   "fx_cabinet_24": "캐비닛 22",
+   "fx_drawer_14": "서랍 14",
+   "fx_cabinet_25": "캐비닛 23",
+   "fx_cabinet_26": "캐비닛 24",
+   "fx_drawer_15": "서랍 15",
+   "fx_stool_1": "스툴 1",
+   "fx_stool_2": "스툴 2",
+   "fx_stool_3": "스툴 3",
+   "fx_stove_1": "스토브",
+   "fx_toaster_oven_1": "토스터 오븐",
+   "fx_toaster_1": "토스터",
+   "fx_cabinet_27": "캐비닛 25",
+   "obj_001": "팬",
+   "obj_002": "닭다리",
+   "obj_003": "접시",
+   "obj_004": "그릇",
+   "obj_005": "고구마",
+   "fx_dishwasher_1/rack1": "식기세척기 랙 1",
+   "fx_dishwasher_1/rack0": "식기세척기 랙 2",
+   "fx_fridge_1/fridge_shelf1": "냉장고 냉장실 선반 1",
+   "fx_fridge_1/fridge_shelf0": "냉장고 냉장실 선반 2",
+   "fx_fridge_1/fridge_drawer0": "냉장고 냉장실 서랍",
+   "fx_sink_1/basin_left": "싱크대 왼쪽 개수대",
+   "fx_sink_1/basin_right": "싱크대 오른쪽 개수대",
+   "fx_stove_1/rack0": "스토브 랙",
+   "fx_stove_1/rear_left": "스토브 뒤 왼쪽 화구",
+   "fx_stove_1/front_left": "스토브 앞 왼쪽 화구",
+   "fx_stove_1/front_right": "스토브 앞 오른쪽 화구",
+   "fx_stove_1/rear_right": "스토브 뒤 오른쪽 화구",
+   "fx_stove_1/center": "스토브 가운데 화구",
+   "fx_toaster_oven_1/rack0": "토스터 오븐 랙"
+  }
+ },
+ "output": {
+  "reasoning": "① 지시 해석: \"닭다리랑 고구마를 아일랜드 싱크대에 넣고 수도꼭지 틀어\"는 (1) 닭다리와 고구마를 싱크대에 넣는 이동 작업과 (2) 수도꼭지를 틀어(싱크대를 가동) 놓는 상태 변경 작업이다. 둘은 '하고…틀어' 나열로 순서가 정해지지 않았다. 시간 조건 없음. 시작은 옮길 물체의 초기 위치: 닭다리는 스토브(팬 위), 고구마는 조리대 3(그릇 위). 끝은 물체를 받고 수도꼭지를 트는 곳인 싱크대. ② 씬 접지: 닭다리는 팬 위에 있고 팬은 스토브 뒤 오른쪽 화구 위에 있다. 고구마는 그릇 안에 있고 그릇은 조리대 3 위, 스토브 옆에 있다. 싱크대는 아일랜드에 있으며 현재 미가동이다. ③ 역할 부여: 닭다리와 고구마는 위치가 바뀌어야 하므로 필수. 싱크대는 상태가 바뀌어야 하므로(미가동→가동 중) 필수이고, 동시에 물체를 받는 곳(핵심 수단)이기도 하나 필수에 우선한다. 팬은 닭다리의 초기 위치, 그릇은 고구마의 초기 위치이므로 보조. ④ 제약 도출: 지시는 두 작업을 나열만 했을 뿐 순서를 정하지 않았으므로 precedence 제약 없음. 스토브의 '문 닫힘'은 오븐 도어로 화구(스토브톱) 접근과 무관. 물리·안전 제약 없음. ⑤ 목표 상태: 닭다리가 싱크대 안에, 고구마가 싱크대 안에, 싱크대가 가동 중(turned_on)인 상태. 경우 하나.",
+  "task_situation_description": {
+   "task_goal": {
+    "summary": "닭다리와 고구마를 아일랜드 싱크대에 넣고 수도꼭지를 틀어 놓는 것",
+    "goal_state": [
+     [
+      {
+       "kind": "relation",
+       "subject": "닭다리",
+       "predicate": "in",
+       "object": "싱크대",
+       "value": true
+      },
+      {
+       "kind": "relation",
+       "subject": "고구마",
+       "predicate": "in",
+       "object": "싱크대",
+       "value": true
+      },
+      {
+       "kind": "state",
+       "subject": "싱크대",
+       "predicate": "turned_on",
+       "object": null,
+       "value": true
+      }
+     ]
+    ]
+   },
+   "spatiotemporal_conditions": {
+    "time": null,
+    "space": {
+     "start": "스토브 혹은 조리대 3",
+     "end": "싱크대"
+    }
+   },
+   "target_objects": {
+    "required": [
+     {
+      "ref": "닭다리",
+      "location": "팬 위",
+      "state": null
+     },
+     {
+      "ref": "고구마",
+      "location": "그릇 안",
+      "state": null
+     },
+     {
+      "ref": "싱크대",
+      "location": null,
+      "state": "미가동"
+     }
+    ],
+    "key_means": [],
+    "auxiliary": [
+     {
+      "ref": "팬",
+      "location": "스토브 뒤 오른쪽 화구 위",
+      "note": "닭다리의 초기 위치"
+     },
+     {
+      "ref": "그릇",
+      "location": "조리대 3 위, 스토브 옆",
+      "note": "고구마의 초기 위치"
+     }
+    ]
+   },
+   "constraints": []
+  },
+  "task_situation_description_text": "작업 목표: 닭다리와 고구마를 아일랜드 싱크대에 넣고 수도꼭지를 틀어 놓는 것\n목표 상태:\n- 닭다리: 싱크대 안\n- 고구마: 싱크대 안\n- 싱크대: 가동 중\n시간·공간 조건: 시간 조건은 없음, 공간 조건은 시작 스토브 혹은 조리대 3, 종료 싱크대\n대상 물체:\n- 필수 물체: 닭다리(위치: 팬 위)\n- 필수 물체: 고구마(위치: 그릇 안)\n- 필수 물체: 싱크대(상태: 미가동)\n- 보조 물체: 팬(위치: 스토브 뒤 오른쪽 화구 위, 비고: 닭다리의 초기 위치)\n- 보조 물체: 그릇(위치: 조리대 3 위, 스토브 옆, 비고: 고구마의 초기 위치)\n제약 사항: 없음\n"
+ }
+}

@@ -1,0 +1,162 @@
+{
+ "id": "rc365-LoadPreparedFood-synth-sim_reset-ep353500--fetch_and_close-43348ad3--v1--gemini-3.8-flash",
+ "domain": "household",
+ "task_type": "fetch_and_close",
+ "agent": "gemini-3.8-flash",
+ "source": {
+  "data": "RoboCasa365 (MIT)",
+  "scene_id": "rc365/LoadPreparedFood/synth/sim_reset/ep_353500",
+  "task": "fetch_and_close",
+  "composed": true
+ },
+ "input": {
+  "instruction": "냉장고에서 오이를 꺼내 밀폐용기에 넣고 냉장고 문 닫아.",
+  "instruction_en": "Take the cucumber out of the fridge and put it in the tupperware. Then close the fridge.",
+  "world_state": "장소: 가정 주방\n로봇(PandaOmron). 들고 있는 물체 없음.\n\n물체가 놓인 곳:\n- 조리대 3 위, 냉장고 옆: 밀폐용기\n- 밀폐용기 안: 칠면조 슬라이스, 호박 1\n- 냉장고 냉장실 선반 1 위: 오이, 블렌더 용기, 병 음료\n- 냉장고 냉장실 선반 2 위: 소스 병, 호박 2\n\n물체 크기:\n- 호박: 큰 것부터 호박 2, 호박 1\n\n가구:\n- 서랍 1부터 5까지, 10부터 13까지: 서랍 닫힘\n- 조리대 2: 커피머신 옆, 전자레인지 옆, 오븐 옆, 스토브 상판 옆, 토스터 오븐 옆\n- 조리대 3: 냉장고 옆, 토스터 옆\n- 조리대 4: 식기세척기 옆, 싱크대 옆\n- 식기세척기: 문 닫힘. 칸: 랙 1, 2(위에서부터)\n- 냉장고: 문 열림, 냉동실 문 닫힘. 칸: 냉장실 선반 1, 2(위에서부터), 냉장실 서랍\n- 캐비닛 1부터 6까지, 9, 10, 12, 14, 15, 19, 21: 문 닫힘\n- 전자레인지: 문 닫힘\n- 오븐: 문 닫힘. 칸: 랙 1, 2(위에서부터)\n- 싱크대: 미가동. 칸: 오른쪽 개수대, 왼쪽 개수대\n- 캐비닛 7, 11, 17, 20(식탁 구역): 문 닫힘\n- 캐비닛 8, 18(아일랜드): 문 닫힘\n- 서랍 6, 9(식탁 구역): 서랍 닫힘\n- 서랍 7, 8(아일랜드): 서랍 닫힘\n- 스토브 상판: 미가동. 칸: 뒤 오른쪽 화구, 앞 오른쪽 화구, 앞 왼쪽 화구, 뒤 왼쪽 화구\n- 토스터 오븐: 문 닫힘. 칸: 랙\n- 커피머신\n- 조리대 1(아일랜드)\n- 조리대 5(식탁용 조리대)\n- 조리대 6\n- 수납장 1부터 3까지\n- 캐비닛 13, 16\n- 스툴 1부터 6까지\n- 토스터",
+  "entity_labels": {
+   "fx_drawer_1": "서랍 1",
+   "fx_coffee_machine_1": "커피머신",
+   "fx_counter_1": "조리대 1",
+   "fx_counter_2": "조리대 2",
+   "fx_counter_3": "조리대 3",
+   "fx_counter_4": "조리대 4",
+   "fx_counter_5": "조리대 5",
+   "fx_counter_6": "조리대 6",
+   "fx_dishwasher_1": "식기세척기",
+   "fx_cabinet_1": "수납장 1",
+   "fx_fridge_1": "냉장고",
+   "fx_cabinet_2": "캐비닛 1",
+   "fx_cabinet_3": "캐비닛 2",
+   "fx_cabinet_4": "캐비닛 3",
+   "fx_cabinet_5": "캐비닛 4",
+   "fx_cabinet_6": "캐비닛 5",
+   "fx_cabinet_7": "수납장 2",
+   "fx_microwave_1": "전자레인지",
+   "fx_cabinet_8": "수납장 3",
+   "fx_oven_1": "오븐",
+   "fx_cabinet_9": "캐비닛 6",
+   "fx_sink_1": "싱크대",
+   "fx_cabinet_10": "캐비닛 7",
+   "fx_cabinet_11": "캐비닛 8",
+   "fx_cabinet_12": "캐비닛 9",
+   "fx_drawer_2": "서랍 2",
+   "fx_drawer_3": "서랍 3",
+   "fx_drawer_4": "서랍 4",
+   "fx_drawer_5": "서랍 5",
+   "fx_cabinet_13": "캐비닛 10",
+   "fx_cabinet_14": "캐비닛 11",
+   "fx_drawer_6": "서랍 6",
+   "fx_drawer_7": "서랍 7",
+   "fx_drawer_8": "서랍 8",
+   "fx_cabinet_15": "캐비닛 12",
+   "fx_cabinet_16": "캐비닛 13",
+   "fx_cabinet_17": "캐비닛 14",
+   "fx_cabinet_18": "캐비닛 15",
+   "fx_cabinet_19": "캐비닛 16",
+   "fx_cabinet_20": "캐비닛 17",
+   "fx_drawer_9": "서랍 9",
+   "fx_cabinet_21": "캐비닛 18",
+   "fx_cabinet_22": "캐비닛 19",
+   "fx_drawer_10": "서랍 10",
+   "fx_drawer_11": "서랍 11",
+   "fx_drawer_12": "서랍 12",
+   "fx_drawer_13": "서랍 13",
+   "fx_cabinet_23": "캐비닛 20",
+   "fx_stool_1": "스툴 1",
+   "fx_stool_2": "스툴 2",
+   "fx_stool_3": "스툴 3",
+   "fx_stool_4": "스툴 4",
+   "fx_stool_5": "스툴 5",
+   "fx_stool_6": "스툴 6",
+   "fx_stovetop_1": "스토브 상판",
+   "fx_toaster_1": "토스터",
+   "fx_toaster_oven_1": "토스터 오븐",
+   "fx_cabinet_24": "캐비닛 21",
+   "obj_001": "밀폐용기",
+   "obj_002": "칠면조 슬라이스",
+   "obj_003": "호박 1",
+   "obj_004": "오이",
+   "obj_005": "블렌더 용기",
+   "obj_006": "소스 병",
+   "obj_007": "호박 2",
+   "obj_008": "병 음료",
+   "fx_dishwasher_1/rack1": "식기세척기 랙 1",
+   "fx_dishwasher_1/rack0": "식기세척기 랙 2",
+   "fx_fridge_1/fridge_shelf1": "냉장고 냉장실 선반 1",
+   "fx_fridge_1/fridge_shelf0": "냉장고 냉장실 선반 2",
+   "fx_fridge_1/fridge_drawer0": "냉장고 냉장실 서랍",
+   "fx_oven_1/rack1": "오븐 랙 1",
+   "fx_oven_1/rack0": "오븐 랙 2",
+   "fx_sink_1/basin_right": "싱크대 오른쪽 개수대",
+   "fx_sink_1/basin_left": "싱크대 왼쪽 개수대",
+   "fx_stovetop_1/rear_right": "스토브 상판 뒤 오른쪽 화구",
+   "fx_stovetop_1/front_right": "스토브 상판 앞 오른쪽 화구",
+   "fx_stovetop_1/front_left": "스토브 상판 앞 왼쪽 화구",
+   "fx_stovetop_1/rear_left": "스토브 상판 뒤 왼쪽 화구",
+   "fx_toaster_oven_1/rack0": "토스터 오븐 랙"
+  }
+ },
+ "output": {
+  "reasoning": "① 지시 해석: 냉장고에 있는 오이를 밀폐용기에 넣고 냉장고 문을 닫는 작업이다. 시간 조건은 없다. 작업 시작 위치는 오이가 있는 냉장고이며, 마지막 작업인 냉장고 문 닫기가 이루어지는 곳도 냉장고이므로 끝 위치는 냉장고다. ② 씬 접지: 오이는 '냉장고 냉장실 선반 1 위'에 있고, '밀폐용기'는 '조리대 3 위, 냉장고 옆'에 있다. 냉장고는 '문 열림, 냉동실 문 닫힘' 상태다. ③ 물체 역할 부여: 오이는 밀폐용기로 옮겨져야 하므로 필수다. 냉장고는 문이 닫혀야(상태 변경) 하므로 필수다(초기 위치 기준이기도 하나 우선순위에 따라 필수). 밀폐용기는 오이를 받는 대상(in 관계의 object)이므로 핵심 수단이다. 세 기준에 해당하는 다른 물체가 없으므로 보조는 없다. ④ 제약 도출: 냉장고 문을 닫기 전에 오이를 먼저 꺼내야 하므로 선후 제약이 발생한다. ⑤ 목표 상태: 오이가 밀폐용기 안에 들어가 있고, 냉장고의 door_open 상태가 false여야 한다.",
+  "task_situation_description": {
+   "task_goal": {
+    "summary": "냉장고의 오이를 밀폐용기에 넣고 냉장고 문을 닫는 것",
+    "goal_state": [
+     [
+      {
+       "kind": "relation",
+       "subject": "오이",
+       "predicate": "in",
+       "object": "밀폐용기",
+       "value": true
+      },
+      {
+       "kind": "state",
+       "subject": "냉장고",
+       "predicate": "door_open",
+       "object": null,
+       "value": false
+      }
+     ]
+    ]
+   },
+   "spatiotemporal_conditions": {
+    "time": null,
+    "space": {
+     "start": "냉장고",
+     "end": "냉장고"
+    }
+   },
+   "target_objects": {
+    "required": [
+     {
+      "ref": "오이",
+      "location": "냉장고 냉장실 선반 1 위",
+      "state": null
+     },
+     {
+      "ref": "냉장고",
+      "location": null,
+      "state": "문 열림, 냉동실 문 닫힘"
+     }
+    ],
+    "key_means": [
+     {
+      "ref": "밀폐용기",
+      "location": "조리대 3 위, 냉장고 옆",
+      "state": null,
+      "alternatives": []
+     }
+    ],
+    "auxiliary": []
+   },
+   "constraints": [
+    {
+     "type": "precedence",
+     "description": "냉장고에서 오이를 꺼내는 작업이 냉장고 문을 닫는 작업에 선행해야 함"
+    }
+   ]
+  },
+  "task_situation_description_text": "작업 목표: 냉장고의 오이를 밀폐용기에 넣고 냉장고 문을 닫는 것\n목표 상태:\n- 오이: 밀폐용기 안\n- 냉장고: 문 닫힘\n시간·공간 조건: 시간 조건은 없음, 공간 조건은 시작 냉장고, 종료 냉장고\n대상 물체:\n- 필수 물체: 오이(위치: 냉장고 냉장실 선반 1 위)\n- 필수 물체: 냉장고(상태: 문 열림, 냉동실 문 닫힘)\n- 핵심 수단: 밀폐용기(위치: 조리대 3 위, 냉장고 옆)\n제약 사항:\n- [선후] 냉장고에서 오이를 꺼내는 작업이 냉장고 문을 닫는 작업에 선행해야 함\n"
+ }
+}

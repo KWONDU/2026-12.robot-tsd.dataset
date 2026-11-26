@@ -1,0 +1,143 @@
+{
+ "id": "rc365-MultistepSteaming-synth-sim_reset-ep481501--cook-8a3048b6--v1--gpt-6-sol",
+ "domain": "household",
+ "task_type": "cook",
+ "agent": "gpt-6-sol",
+ "source": {
+  "data": "RoboCasa365 (MIT)",
+  "scene_id": "rc365/MultistepSteaming/synth/sim_reset/ep_481501",
+  "task": "cook",
+  "composed": true
+ },
+ "input": {
+  "instruction": "냄비를 스토브 앞 가운데 화구에 올리고 그 화구 켜줘.",
+  "instruction_en": "Put the pot on the front center burner of the stove and turn that burner on.",
+  "world_state": "장소: 가정 주방\n로봇(PandaOmron). 들고 있는 물체 없음.\n\n물체가 놓인 곳:\n- 조리대 1 위, 스토브 옆: 냄비\n- 조리대 3 위, 싱크대 옆: 피망, 칠면조 슬라이스\n\n가구:\n- 서랍 1부터 6까지: 서랍 닫힘\n- 조리대 1: 스토브 옆\n- 조리대 2: 토스터 오븐 옆, 스토브 옆\n- 조리대 3: 커피머신 옆, 식기세척기 옆, 냉장고 옆, 전자레인지 옆, 싱크대 옆, 토스터 옆\n- 식기세척기: 문 닫힘. 칸: 랙 1, 2(위에서부터)\n- 냉장고: 문 닫힘, 냉동실 문 닫힘. 칸: 냉장실 선반 1, 2(위에서부터), 냉장실 서랍\n- 캐비닛 1부터 5까지, 7부터 13까지, 16: 문 닫힘\n- 전자레인지: 문 닫힘\n- 싱크대: 미가동. 칸: 왼쪽 개수대, 오른쪽 개수대\n- 서랍 7부터 13까지(아일랜드): 서랍 닫힘\n- 캐비닛 15(아일랜드): 문 닫힘\n- 토스터 오븐: 문 닫힘. 칸: 랙 1, 2(위에서부터)\n- 스토브: 미가동, 문 닫힘. 칸: 랙, 앞 가운데 화구, 앞 왼쪽 화구, 앞 오른쪽 화구, 뒤 가운데 화구, 뒤 왼쪽 화구, 뒤 오른쪽 화구\n- 커피머신\n- 조리대 4\n- 수납장 1, 2\n- 조리대 5(아일랜드 식탁)\n- 캐비닛 6, 14\n- 스툴 1부터 4까지\n- 토스터",
+  "entity_labels": {
+   "fx_drawer_1": "서랍 1",
+   "fx_coffee_machine_1": "커피머신",
+   "fx_counter_1": "조리대 1",
+   "fx_counter_2": "조리대 2",
+   "fx_counter_3": "조리대 3",
+   "fx_counter_4": "조리대 4",
+   "fx_dishwasher_1": "식기세척기",
+   "fx_cabinet_1": "수납장 1",
+   "fx_fridge_1": "냉장고",
+   "fx_cabinet_2": "캐비닛 1",
+   "fx_cabinet_3": "캐비닛 2",
+   "fx_cabinet_4": "캐비닛 3",
+   "fx_cabinet_5": "캐비닛 4",
+   "fx_cabinet_6": "캐비닛 5",
+   "fx_counter_5": "조리대 5",
+   "fx_cabinet_7": "수납장 2",
+   "fx_microwave_1": "전자레인지",
+   "fx_cabinet_8": "캐비닛 6",
+   "fx_cabinet_9": "캐비닛 7",
+   "fx_cabinet_10": "캐비닛 8",
+   "fx_sink_1": "싱크대",
+   "fx_cabinet_11": "캐비닛 9",
+   "fx_cabinet_12": "캐비닛 10",
+   "fx_cabinet_13": "캐비닛 11",
+   "fx_drawer_2": "서랍 2",
+   "fx_cabinet_14": "캐비닛 12",
+   "fx_drawer_3": "서랍 3",
+   "fx_cabinet_15": "캐비닛 13",
+   "fx_cabinet_16": "캐비닛 14",
+   "fx_drawer_4": "서랍 4",
+   "fx_drawer_5": "서랍 5",
+   "fx_drawer_6": "서랍 6",
+   "fx_drawer_7": "서랍 7",
+   "fx_cabinet_17": "캐비닛 15",
+   "fx_drawer_8": "서랍 8",
+   "fx_drawer_9": "서랍 9",
+   "fx_drawer_10": "서랍 10",
+   "fx_drawer_11": "서랍 11",
+   "fx_drawer_12": "서랍 12",
+   "fx_drawer_13": "서랍 13",
+   "fx_stool_1": "스툴 1",
+   "fx_stool_2": "스툴 2",
+   "fx_stool_3": "스툴 3",
+   "fx_stool_4": "스툴 4",
+   "fx_toaster_oven_1": "토스터 오븐",
+   "fx_toaster_1": "토스터",
+   "fx_cabinet_18": "캐비닛 16",
+   "fx_stove_1": "스토브",
+   "obj_001": "냄비",
+   "obj_002": "피망",
+   "obj_003": "칠면조 슬라이스",
+   "fx_dishwasher_1/rack1": "식기세척기 랙 1",
+   "fx_dishwasher_1/rack0": "식기세척기 랙 2",
+   "fx_fridge_1/fridge_shelf1": "냉장고 냉장실 선반 1",
+   "fx_fridge_1/fridge_shelf0": "냉장고 냉장실 선반 2",
+   "fx_fridge_1/fridge_drawer0": "냉장고 냉장실 서랍",
+   "fx_sink_1/basin_left": "싱크대 왼쪽 개수대",
+   "fx_sink_1/basin_right": "싱크대 오른쪽 개수대",
+   "fx_toaster_oven_1/rack1": "토스터 오븐 랙 1",
+   "fx_toaster_oven_1/rack0": "토스터 오븐 랙 2",
+   "fx_stove_1/rack0": "스토브 랙",
+   "fx_stove_1/front_center": "스토브 앞 가운데 화구",
+   "fx_stove_1/front_left": "스토브 앞 왼쪽 화구",
+   "fx_stove_1/front_right": "스토브 앞 오른쪽 화구",
+   "fx_stove_1/rear_center": "스토브 뒤 가운데 화구",
+   "fx_stove_1/rear_left": "스토브 뒤 왼쪽 화구",
+   "fx_stove_1/rear_right": "스토브 뒤 오른쪽 화구"
+  }
+ },
+ "output": {
+  "reasoning": "① 지시 해석: 냄비를 스토브 앞 가운데 화구에 올리고 그 화구를 켜는 작업이다. 시간 조건이나 명시된 작업 순서는 없다. 냄비가 있는 조리대 1에서 시작해 스토브에서 끝난다. ② 씬 접지: 냄비는 조리대 1 위, 스토브 옆에 있고, 스토브에는 앞 가운데 화구가 있다. ③ 역할 부여: 냄비는 위치가 바뀌므로 필수이고, 스토브 앞 가운데 화구는 가동 상태를 바꿔야 하므로 필수다. 조리대 1은 냄비의 초기 위치 기준이므로 보조다. ④ 제약 도출: 지시는 두 할 일을 나열했지만 순서를 명시하지 않았으며, 별도로 기재할 수행 제약도 없다. ⑤ 목표 상태: 냄비가 스토브 앞 가운데 화구 위에 있고 그 화구가 가동 중인 경우 하나다.",
+  "task_situation_description": {
+   "task_goal": {
+    "summary": "냄비를 스토브 앞 가운데 화구에 올리고 그 화구를 켜는 것",
+    "goal_state": [
+     [
+      {
+       "kind": "relation",
+       "subject": "냄비",
+       "predicate": "on",
+       "object": "스토브 앞 가운데 화구",
+       "value": true
+      },
+      {
+       "kind": "state",
+       "subject": "스토브 앞 가운데 화구",
+       "predicate": "turned_on",
+       "object": null,
+       "value": true
+      }
+     ]
+    ]
+   },
+   "spatiotemporal_conditions": {
+    "time": null,
+    "space": {
+     "start": "조리대 1",
+     "end": "스토브"
+    }
+   },
+   "target_objects": {
+    "required": [
+     {
+      "ref": "냄비",
+      "location": "조리대 1 위, 스토브 옆",
+      "state": null
+     },
+     {
+      "ref": "스토브 앞 가운데 화구",
+      "location": null,
+      "state": null
+     }
+    ],
+    "key_means": [],
+    "auxiliary": [
+     {
+      "ref": "조리대 1",
+      "location": null,
+      "note": "냄비의 초기 위치 기준"
+     }
+    ]
+   },
+   "constraints": []
+  },
+  "task_situation_description_text": "작업 목표: 냄비를 스토브 앞 가운데 화구에 올리고 그 화구를 켜는 것\n목표 상태:\n- 냄비: 스토브 앞 가운데 화구 위\n- 스토브 앞 가운데 화구: 가동 중\n시간·공간 조건: 시간 조건은 없음, 공간 조건은 시작 조리대 1, 종료 스토브\n대상 물체:\n- 필수 물체: 냄비(위치: 조리대 1 위, 스토브 옆)\n- 필수 물체: 스토브 앞 가운데 화구\n- 보조 물체: 조리대 1(비고: 냄비의 초기 위치 기준)\n제약 사항: 없음\n"
+ }
+}

@@ -1,0 +1,154 @@
+{
+ "id": "rc365-PlaceMeatInMarinade-synth-sim_reset-ep415601--load_and_move-57c6857d--v1--gpt-6-sol",
+ "domain": "household",
+ "task_type": "load_and_move",
+ "agent": "gpt-6-sol",
+ "source": {
+  "data": "RoboCasa365 (MIT)",
+  "scene_id": "rc365/PlaceMeatInMarinade/synth/sim_reset/ep_415601",
+  "task": "load_and_move",
+  "composed": true
+ },
+ "input": {
+  "instruction": "생수병을 팬 안에 넣고, 그 팬을 냉장고 냉장실 맨 아래 선반에 올려놔.",
+  "instruction_en": "Put the bottled water in the pan, then put the pan on the bottom shelf of the fridge.",
+  "world_state": "장소: 가정 주방\n로봇(PandaOmron). 들고 있는 물체 없음.\n\n물체가 놓인 곳:\n- 스토브 뒤 오른쪽 화구 위: 팬\n- 냉장고 냉장실 선반 1 위: 접시\n- 접시 위: 스테이크\n- 냉장고 냉장실 선반 3 위: 생수병\n\n가구:\n- 서랍 1, 3, 4, 6: 서랍 닫힘\n- 조리대 1: 커피머신 옆, 식기세척기 옆, 냉장고 옆, 전자레인지 옆, 싱크대 옆\n- 조리대 2: 스토브 옆, 토스터 옆\n- 조리대 3: 스토브 옆\n- 식기세척기: 문 닫힘. 칸: 랙 1, 2(위에서부터)\n- 냉장고: 문 닫힘, 냉동실 문 닫힘. 칸: 냉장실 선반 1부터 5까지(위에서부터), 냉동실 선반 1부터 3까지(위에서부터), 냉동실 서랍 1, 2(위에서부터)\n- 캐비닛 1부터 6까지, 8, 9, 11, 13, 16: 문 닫힘\n- 전자레인지: 문 닫힘\n- 싱크대: 미가동\n- 캐비닛 7, 10, 14, 15(아일랜드): 문 닫힘\n- 서랍 2, 5, 7, 8(아일랜드): 서랍 닫힘\n- 스토브: 문 닫힘, 미가동. 칸: 랙, 앞 왼쪽 화구, 뒤 오른쪽 화구, 뒤 왼쪽 화구, 앞 오른쪽 화구, 가운데 화구\n- 커피머신\n- 수납장 1, 2\n- 조리대 4(아일랜드 식탁)\n- 캐비닛 12\n- 스툴 1, 2\n- 토스터",
+  "entity_labels": {
+   "fx_drawer_1": "서랍 1",
+   "fx_coffee_machine_1": "커피머신",
+   "fx_counter_1": "조리대 1",
+   "fx_counter_2": "조리대 2",
+   "fx_counter_3": "조리대 3",
+   "fx_dishwasher_1": "식기세척기",
+   "fx_cabinet_1": "수납장 1",
+   "fx_fridge_1": "냉장고",
+   "fx_cabinet_2": "캐비닛 1",
+   "fx_counter_4": "조리대 4",
+   "fx_cabinet_3": "수납장 2",
+   "fx_microwave_1": "전자레인지",
+   "fx_cabinet_4": "캐비닛 2",
+   "fx_cabinet_5": "캐비닛 3",
+   "fx_cabinet_6": "캐비닛 4",
+   "fx_cabinet_7": "캐비닛 5",
+   "fx_cabinet_8": "캐비닛 6",
+   "fx_sink_1": "싱크대",
+   "fx_cabinet_9": "캐비닛 7",
+   "fx_drawer_2": "서랍 2",
+   "fx_cabinet_10": "캐비닛 8",
+   "fx_drawer_3": "서랍 3",
+   "fx_cabinet_11": "캐비닛 9",
+   "fx_drawer_4": "서랍 4",
+   "fx_cabinet_12": "캐비닛 10",
+   "fx_drawer_5": "서랍 5",
+   "fx_cabinet_13": "캐비닛 11",
+   "fx_cabinet_14": "캐비닛 12",
+   "fx_cabinet_15": "캐비닛 13",
+   "fx_drawer_6": "서랍 6",
+   "fx_drawer_7": "서랍 7",
+   "fx_drawer_8": "서랍 8",
+   "fx_cabinet_16": "캐비닛 14",
+   "fx_cabinet_17": "캐비닛 15",
+   "fx_stool_1": "스툴 1",
+   "fx_stool_2": "스툴 2",
+   "fx_stove_1": "스토브",
+   "fx_toaster_1": "토스터",
+   "fx_cabinet_18": "캐비닛 16",
+   "obj_001": "팬",
+   "obj_002": "접시",
+   "obj_003": "스테이크",
+   "obj_004": "생수병",
+   "fx_dishwasher_1/rack1": "식기세척기 랙 1",
+   "fx_dishwasher_1/rack0": "식기세척기 랙 2",
+   "fx_fridge_1/fridge_shelf4": "냉장고 냉장실 선반 1",
+   "fx_fridge_1/fridge_shelf3": "냉장고 냉장실 선반 2",
+   "fx_fridge_1/fridge_shelf2": "냉장고 냉장실 선반 3",
+   "fx_fridge_1/fridge_shelf1": "냉장고 냉장실 선반 4",
+   "fx_fridge_1/fridge_shelf0": "냉장고 냉장실 선반 5",
+   "fx_fridge_1/freezer_shelf2": "냉장고 냉동실 선반 1",
+   "fx_fridge_1/freezer_shelf1": "냉장고 냉동실 선반 2",
+   "fx_fridge_1/freezer_shelf0": "냉장고 냉동실 선반 3",
+   "fx_fridge_1/freezer_drawer1": "냉장고 냉동실 서랍 1",
+   "fx_fridge_1/freezer_drawer0": "냉장고 냉동실 서랍 2",
+   "fx_stove_1/rack0": "스토브 랙",
+   "fx_stove_1/front_left": "스토브 앞 왼쪽 화구",
+   "fx_stove_1/rear_right": "스토브 뒤 오른쪽 화구",
+   "fx_stove_1/rear_left": "스토브 뒤 왼쪽 화구",
+   "fx_stove_1/front_right": "스토브 앞 오른쪽 화구",
+   "fx_stove_1/center": "스토브 가운데 화구"
+  }
+ },
+ "output": {
+  "reasoning": "① 지시 해석: 생수병을 팬 안에 넣고 팬을 냉장고 냉장실 맨 아래 선반에 두는 것이 목표다. 맨 아래 선반은 냉장실 선반 5다. 지시는 두 할 일을 나열하지만 수행 순서를 명시하지 않았다. 옮길 물체가 처음 있는 곳은 냉장고와 스토브이므로 시작 장소는 둘 다이며, 끝나는 곳은 냉장고다. 시간 조건은 없다. ② 씬 접지: 생수병은 냉장고 냉장실 선반 3 위, 팬은 스토브 뒤 오른쪽 화구 위에 있다. 냉장고 문은 닫혀 있다. ③ 역할 부여: 생수병과 팬은 위치가 바뀌므로 필수다. 냉장고 냉장실 선반 5는 팬을 받는 곳이므로 핵심 수단이다. 냉장고는 생수병에 접근하고 팬을 배치하려면 문을 열어야 하는 가구로서 보조이며, 스토브는 팬의 초기 위치 기준으로서 보조다. ④ 제약 도출: 닫힌 냉장고 문을 여는 것은 생수병을 꺼내거나 팬을 선반에 놓는 것보다 선행해야 한다. ⑤ 목표 상태: 생수병이 팬 안에 있고 팬이 냉장고 냉장실 선반 5 위에 있는 한 경우다.",
+  "task_situation_description": {
+   "task_goal": {
+    "summary": "생수병을 팬 안에 넣고 팬을 냉장고 냉장실 맨 아래 선반에 두는 것",
+    "goal_state": [
+     [
+      {
+       "kind": "relation",
+       "subject": "생수병",
+       "predicate": "in",
+       "object": "팬",
+       "value": true
+      },
+      {
+       "kind": "relation",
+       "subject": "팬",
+       "predicate": "on",
+       "object": "냉장고 냉장실 선반 5",
+       "value": true
+      }
+     ]
+    ]
+   },
+   "spatiotemporal_conditions": {
+    "time": null,
+    "space": {
+     "start": "냉장고 혹은 스토브",
+     "end": "냉장고"
+    }
+   },
+   "target_objects": {
+    "required": [
+     {
+      "ref": "생수병",
+      "location": "냉장고 냉장실 선반 3 위",
+      "state": null
+     },
+     {
+      "ref": "팬",
+      "location": "스토브 뒤 오른쪽 화구 위",
+      "state": null
+     }
+    ],
+    "key_means": [
+     {
+      "ref": "냉장고 냉장실 선반 5",
+      "location": null,
+      "state": null,
+      "alternatives": []
+     }
+    ],
+    "auxiliary": [
+     {
+      "ref": "냉장고",
+      "location": null,
+      "note": "생수병에 접근하고 팬을 배치하려면 문을 열어야 하는 가구"
+     },
+     {
+      "ref": "스토브",
+      "location": null,
+      "note": "팬의 초기 위치 기준"
+     }
+    ]
+   },
+   "constraints": [
+    {
+     "type": "precedence",
+     "description": "냉장고 문이 닫혀 있으므로 문을 여는 것이 생수병을 꺼내거나 팬을 냉장실 선반 5에 놓는 것에 선행해야 함"
+    }
+   ]
+  },
+  "task_situation_description_text": "작업 목표: 생수병을 팬 안에 넣고 팬을 냉장고 냉장실 맨 아래 선반에 두는 것\n목표 상태:\n- 생수병: 팬 안\n- 팬: 냉장고 냉장실 선반 5 위\n시간·공간 조건: 시간 조건은 없음, 공간 조건은 시작 냉장고 혹은 스토브, 종료 냉장고\n대상 물체:\n- 필수 물체: 생수병(위치: 냉장고 냉장실 선반 3 위)\n- 필수 물체: 팬(위치: 스토브 뒤 오른쪽 화구 위)\n- 핵심 수단: 냉장고 냉장실 선반 5\n- 보조 물체: 냉장고(비고: 생수병에 접근하고 팬을 배치하려면 문을 열어야 하는 가구)\n- 보조 물체: 스토브(비고: 팬의 초기 위치 기준)\n제약 사항:\n- [선후] 냉장고 문이 닫혀 있으므로 문을 여는 것이 생수병을 꺼내거나 팬을 냉장실 선반 5에 놓는 것에 선행해야 함\n"
+ }
+}

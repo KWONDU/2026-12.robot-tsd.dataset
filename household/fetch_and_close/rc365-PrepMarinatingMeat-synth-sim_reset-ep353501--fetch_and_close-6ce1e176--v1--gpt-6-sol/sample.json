@@ -1,0 +1,159 @@
+{
+ "id": "rc365-PrepMarinatingMeat-synth-sim_reset-ep353501--fetch_and_close-6ce1e176--v1--gpt-6-sol",
+ "domain": "household",
+ "task_type": "fetch_and_close",
+ "agent": "gpt-6-sol",
+ "source": {
+  "data": "RoboCasa365 (MIT)",
+  "scene_id": "rc365/PrepMarinatingMeat/synth/sim_reset/ep_353501",
+  "task": "fetch_and_close",
+  "composed": true
+ },
+ "input": {
+  "instruction": "소스 병을 들어 있는 캐비닛에서 꺼내 싱크대에 넣고, 그 캐비닛 문을 닫아.",
+  "instruction_en": "Take the condiment bottle out of the cabinet it is in and put it in the sink. Then close that cabinet.",
+  "world_state": "장소: 가정 주방\n로봇(PandaOmron). 들고 있는 물체 없음.\n\n물체가 놓인 곳:\n- 조리대 3 위, 캐비닛 2 옆: 도마, 접시\n- 접시 위: 스테이크\n- 캐비닛 2 선반 위: 소스 병, 포크\n\n가구:\n- 서랍 1부터 5까지, 10부터 13까지: 서랍 닫힘\n- 조리대 2: 커피머신 옆, 전자레인지 옆, 오븐 옆, 스토브 상판 옆, 토스터 오븐 옆\n- 조리대 3: 냉장고 옆, 토스터 옆\n- 조리대 4: 식기세척기 옆, 싱크대 옆\n- 식기세척기: 문 닫힘. 칸: 랙 1, 2(위에서부터)\n- 냉장고: 문 닫힘, 냉동실 문 닫힘. 칸: 냉장실 선반 1, 2(위에서부터), 냉장실 서랍\n- 캐비닛 1, 3부터 6까지, 9, 10, 12, 14, 15, 19, 21: 문 닫힘\n- 캐비닛 2: 문 열림\n- 전자레인지: 문 닫힘\n- 오븐: 문 닫힘. 칸: 랙 1, 2(위에서부터)\n- 싱크대: 미가동. 칸: 오른쪽 개수대, 왼쪽 개수대\n- 캐비닛 7, 11, 17, 20(식탁 구역): 문 닫힘\n- 캐비닛 8, 18(아일랜드): 문 닫힘\n- 서랍 6, 9(식탁 구역): 서랍 닫힘\n- 서랍 7, 8(아일랜드): 서랍 닫힘\n- 스토브 상판: 미가동. 칸: 뒤 오른쪽 화구, 앞 오른쪽 화구, 앞 왼쪽 화구, 뒤 왼쪽 화구\n- 토스터 오븐: 문 닫힘. 칸: 랙\n- 커피머신\n- 조리대 1(아일랜드)\n- 조리대 5(식탁용 조리대)\n- 조리대 6\n- 수납장 1부터 3까지\n- 캐비닛 13, 16\n- 스툴 1부터 6까지\n- 토스터",
+  "entity_labels": {
+   "fx_drawer_1": "서랍 1",
+   "fx_coffee_machine_1": "커피머신",
+   "fx_counter_1": "조리대 1",
+   "fx_counter_2": "조리대 2",
+   "fx_counter_3": "조리대 3",
+   "fx_counter_4": "조리대 4",
+   "fx_counter_5": "조리대 5",
+   "fx_counter_6": "조리대 6",
+   "fx_dishwasher_1": "식기세척기",
+   "fx_cabinet_1": "수납장 1",
+   "fx_fridge_1": "냉장고",
+   "fx_cabinet_2": "캐비닛 1",
+   "fx_cabinet_3": "캐비닛 2",
+   "fx_cabinet_4": "캐비닛 3",
+   "fx_cabinet_5": "캐비닛 4",
+   "fx_cabinet_6": "캐비닛 5",
+   "fx_cabinet_7": "수납장 2",
+   "fx_microwave_1": "전자레인지",
+   "fx_cabinet_8": "수납장 3",
+   "fx_oven_1": "오븐",
+   "fx_cabinet_9": "캐비닛 6",
+   "fx_sink_1": "싱크대",
+   "fx_cabinet_10": "캐비닛 7",
+   "fx_cabinet_11": "캐비닛 8",
+   "fx_cabinet_12": "캐비닛 9",
+   "fx_drawer_2": "서랍 2",
+   "fx_drawer_3": "서랍 3",
+   "fx_drawer_4": "서랍 4",
+   "fx_drawer_5": "서랍 5",
+   "fx_cabinet_13": "캐비닛 10",
+   "fx_cabinet_14": "캐비닛 11",
+   "fx_drawer_6": "서랍 6",
+   "fx_drawer_7": "서랍 7",
+   "fx_drawer_8": "서랍 8",
+   "fx_cabinet_15": "캐비닛 12",
+   "fx_cabinet_16": "캐비닛 13",
+   "fx_cabinet_17": "캐비닛 14",
+   "fx_cabinet_18": "캐비닛 15",
+   "fx_cabinet_19": "캐비닛 16",
+   "fx_cabinet_20": "캐비닛 17",
+   "fx_drawer_9": "서랍 9",
+   "fx_cabinet_21": "캐비닛 18",
+   "fx_cabinet_22": "캐비닛 19",
+   "fx_drawer_10": "서랍 10",
+   "fx_drawer_11": "서랍 11",
+   "fx_drawer_12": "서랍 12",
+   "fx_drawer_13": "서랍 13",
+   "fx_cabinet_23": "캐비닛 20",
+   "fx_stool_1": "스툴 1",
+   "fx_stool_2": "스툴 2",
+   "fx_stool_3": "스툴 3",
+   "fx_stool_4": "스툴 4",
+   "fx_stool_5": "스툴 5",
+   "fx_stool_6": "스툴 6",
+   "fx_stovetop_1": "스토브 상판",
+   "fx_toaster_1": "토스터",
+   "fx_toaster_oven_1": "토스터 오븐",
+   "fx_cabinet_24": "캐비닛 21",
+   "obj_001": "도마",
+   "obj_002": "접시",
+   "obj_003": "스테이크",
+   "obj_004": "소스 병",
+   "obj_005": "포크",
+   "fx_dishwasher_1/rack1": "식기세척기 랙 1",
+   "fx_dishwasher_1/rack0": "식기세척기 랙 2",
+   "fx_fridge_1/fridge_shelf1": "냉장고 냉장실 선반 1",
+   "fx_fridge_1/fridge_shelf0": "냉장고 냉장실 선반 2",
+   "fx_fridge_1/fridge_drawer0": "냉장고 냉장실 서랍",
+   "fx_oven_1/rack1": "오븐 랙 1",
+   "fx_oven_1/rack0": "오븐 랙 2",
+   "fx_sink_1/basin_right": "싱크대 오른쪽 개수대",
+   "fx_sink_1/basin_left": "싱크대 왼쪽 개수대",
+   "fx_stovetop_1/rear_right": "스토브 상판 뒤 오른쪽 화구",
+   "fx_stovetop_1/front_right": "스토브 상판 앞 오른쪽 화구",
+   "fx_stovetop_1/front_left": "스토브 상판 앞 왼쪽 화구",
+   "fx_stovetop_1/rear_left": "스토브 상판 뒤 왼쪽 화구",
+   "fx_toaster_oven_1/rack0": "토스터 오븐 랙"
+  }
+ },
+ "output": {
+  "reasoning": "① 지시 해석: 캐비닛 2의 소스 병을 싱크대에 넣고 캐비닛 2 문을 닫는 작업이다. 시간 조건은 없다. 소스 병이 있는 캐비닛 2에서 시작하며, 두 일을 나열했을 뿐 완료 순서를 명시하지 않았으므로 끝나는 곳은 싱크대 혹은 캐비닛 2다. ② 씬 접지: 소스 병은 캐비닛 2 선반 위에 있고, 캐비닛 2 문은 열려 있다. 받는 곳은 싱크대다. ③ 역할 부여: 소스 병은 위치가, 캐비닛 2는 문 상태가 바뀌어야 하므로 모두 필수다. 싱크대는 소스 병을 받는 곳이므로 핵심 수단이다. ④ 제약 도출: 소스 병을 캐비닛 2에서 꺼낼 때는 문이 열려 있어야 하므로 병을 꺼내는 것이 문을 닫는 것에 선행해야 한다. ⑤ 목표 상태: 소스 병이 싱크대 안에 있고 캐비닛 2 문이 닫힌 경우 하나다.",
+  "task_situation_description": {
+   "task_goal": {
+    "summary": "캐비닛 2의 소스 병을 싱크대에 넣고 캐비닛 2 문을 닫는 것",
+    "goal_state": [
+     [
+      {
+       "kind": "relation",
+       "subject": "소스 병",
+       "predicate": "in",
+       "object": "싱크대",
+       "value": true
+      },
+      {
+       "kind": "state",
+       "subject": "캐비닛 2",
+       "predicate": "door_open",
+       "object": null,
+       "value": false
+      }
+     ]
+    ]
+   },
+   "spatiotemporal_conditions": {
+    "time": null,
+    "space": {
+     "start": "캐비닛 2",
+     "end": "싱크대 혹은 캐비닛 2"
+    }
+   },
+   "target_objects": {
+    "required": [
+     {
+      "ref": "소스 병",
+      "location": "캐비닛 2 선반 위",
+      "state": null
+     },
+     {
+      "ref": "캐비닛 2",
+      "location": null,
+      "state": "문 열림"
+     }
+    ],
+    "key_means": [
+     {
+      "ref": "싱크대",
+      "location": null,
+      "state": "미가동",
+      "alternatives": []
+     }
+    ],
+    "auxiliary": []
+   },
+   "constraints": [
+    {
+     "type": "precedence",
+     "description": "소스 병을 캐비닛 2에서 꺼낼 때 문이 열려 있어야 하므로, 병을 꺼내는 것이 캐비닛 2 문을 닫는 것에 선행해야 함"
+    }
+   ]
+  },
+  "task_situation_description_text": "작업 목표: 캐비닛 2의 소스 병을 싱크대에 넣고 캐비닛 2 문을 닫는 것\n목표 상태:\n- 소스 병: 싱크대 안\n- 캐비닛 2: 문 닫힘\n시간·공간 조건: 시간 조건은 없음, 공간 조건은 시작 캐비닛 2, 종료 싱크대 혹은 캐비닛 2\n대상 물체:\n- 필수 물체: 소스 병(위치: 캐비닛 2 선반 위)\n- 필수 물체: 캐비닛 2(상태: 문 열림)\n- 핵심 수단: 싱크대(상태: 미가동)\n제약 사항:\n- [선후] 소스 병을 캐비닛 2에서 꺼낼 때 문이 열려 있어야 하므로, 병을 꺼내는 것이 캐비닛 2 문을 닫는 것에 선행해야 함\n"
+ }
+}

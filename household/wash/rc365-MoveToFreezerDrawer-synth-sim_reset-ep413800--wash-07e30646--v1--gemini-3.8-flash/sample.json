@@ -1,0 +1,158 @@
+{
+ "id": "rc365-MoveToFreezerDrawer-synth-sim_reset-ep413800--wash-07e30646--v1--gemini-3.8-flash",
+ "domain": "household",
+ "task_type": "wash",
+ "agent": "gemini-3.8-flash",
+ "source": {
+  "data": "RoboCasa365 (MIT)",
+  "scene_id": "rc365/MoveToFreezerDrawer/synth/sim_reset/ep_413800",
+  "task": "wash",
+  "composed": true
+ },
+ "input": {
+  "instruction": "피망이랑 소스 병을 싱크대에 넣고 수도꼭지 틀어.",
+  "instruction_en": "Put the bell pepper and the condiment bottle in the sink and turn on the faucet.",
+  "world_state": "장소: 가정 주방\n로봇(PandaOmron). 들고 있는 물체 없음.\n\n물체가 놓인 곳:\n- 냉장고 냉장실 선반 1 위: 피망\n- 냉장고 냉장실 선반 2 위: 버섯\n- 냉장고 냉장실 선반 3 위: 소스 병\n\n가구:\n- 서랍 1, 3, 4, 6: 서랍 닫힘\n- 조리대 1: 커피머신 옆, 식기세척기 옆, 냉장고 옆, 전자레인지 옆, 싱크대 옆\n- 조리대 2: 스토브 옆, 토스터 옆\n- 조리대 3: 스토브 옆\n- 식기세척기: 문 닫힘. 칸: 랙 1, 2(위에서부터)\n- 냉장고: 문 열림, 냉동실 문 열림. 칸: 냉장실 선반 1부터 5까지(위에서부터), 냉동실 선반 1부터 3까지(위에서부터), 냉동실 서랍 1(서랍 열림), 냉동실 서랍 2(위에서부터)\n- 캐비닛 1부터 6까지, 8, 9, 11, 13, 16: 문 닫힘\n- 전자레인지: 문 닫힘\n- 싱크대: 미가동. 칸: 왼쪽 개수대, 오른쪽 개수대\n- 캐비닛 7, 10, 14, 15(아일랜드): 문 닫힘\n- 서랍 2, 5, 7, 8(아일랜드): 서랍 닫힘\n- 스토브: 문 닫힘, 미가동. 칸: 랙, 앞 왼쪽 화구, 앞 오른쪽 화구, 뒤 왼쪽 화구, 뒤 오른쪽 화구\n- 커피머신\n- 수납장 1, 2\n- 조리대 4(아일랜드 식탁)\n- 캐비닛 12\n- 스툴 1, 2\n- 토스터",
+  "entity_labels": {
+   "fx_drawer_1": "서랍 1",
+   "fx_coffee_machine_1": "커피머신",
+   "fx_counter_1": "조리대 1",
+   "fx_counter_2": "조리대 2",
+   "fx_counter_3": "조리대 3",
+   "fx_dishwasher_1": "식기세척기",
+   "fx_cabinet_1": "수납장 1",
+   "fx_fridge_1": "냉장고",
+   "fx_cabinet_2": "캐비닛 1",
+   "fx_counter_4": "조리대 4",
+   "fx_cabinet_3": "수납장 2",
+   "fx_microwave_1": "전자레인지",
+   "fx_cabinet_4": "캐비닛 2",
+   "fx_cabinet_5": "캐비닛 3",
+   "fx_cabinet_6": "캐비닛 4",
+   "fx_cabinet_7": "캐비닛 5",
+   "fx_cabinet_8": "캐비닛 6",
+   "fx_sink_1": "싱크대",
+   "fx_cabinet_9": "캐비닛 7",
+   "fx_drawer_2": "서랍 2",
+   "fx_cabinet_10": "캐비닛 8",
+   "fx_drawer_3": "서랍 3",
+   "fx_cabinet_11": "캐비닛 9",
+   "fx_drawer_4": "서랍 4",
+   "fx_cabinet_12": "캐비닛 10",
+   "fx_drawer_5": "서랍 5",
+   "fx_cabinet_13": "캐비닛 11",
+   "fx_cabinet_14": "캐비닛 12",
+   "fx_cabinet_15": "캐비닛 13",
+   "fx_drawer_6": "서랍 6",
+   "fx_drawer_7": "서랍 7",
+   "fx_drawer_8": "서랍 8",
+   "fx_cabinet_16": "캐비닛 14",
+   "fx_cabinet_17": "캐비닛 15",
+   "fx_stool_1": "스툴 1",
+   "fx_stool_2": "스툴 2",
+   "fx_stove_1": "스토브",
+   "fx_toaster_1": "토스터",
+   "fx_cabinet_18": "캐비닛 16",
+   "obj_001": "피망",
+   "obj_002": "버섯",
+   "obj_003": "소스 병",
+   "fx_dishwasher_1/rack1": "식기세척기 랙 1",
+   "fx_dishwasher_1/rack0": "식기세척기 랙 2",
+   "fx_fridge_1/fridge_shelf4": "냉장고 냉장실 선반 1",
+   "fx_fridge_1/fridge_shelf3": "냉장고 냉장실 선반 2",
+   "fx_fridge_1/fridge_shelf2": "냉장고 냉장실 선반 3",
+   "fx_fridge_1/fridge_shelf1": "냉장고 냉장실 선반 4",
+   "fx_fridge_1/fridge_shelf0": "냉장고 냉장실 선반 5",
+   "fx_fridge_1/freezer_shelf2": "냉장고 냉동실 선반 1",
+   "fx_fridge_1/freezer_shelf1": "냉장고 냉동실 선반 2",
+   "fx_fridge_1/freezer_shelf0": "냉장고 냉동실 선반 3",
+   "fx_fridge_1/freezer_drawer1": "냉장고 냉동실 서랍 1",
+   "fx_fridge_1/freezer_drawer0": "냉장고 냉동실 서랍 2",
+   "fx_sink_1/basin_left": "싱크대 왼쪽 개수대",
+   "fx_sink_1/basin_right": "싱크대 오른쪽 개수대",
+   "fx_stove_1/rack0": "스토브 랙",
+   "fx_stove_1/front_left": "스토브 앞 왼쪽 화구",
+   "fx_stove_1/front_right": "스토브 앞 오른쪽 화구",
+   "fx_stove_1/rear_left": "스토브 뒤 왼쪽 화구",
+   "fx_stove_1/rear_right": "스토브 뒤 오른쪽 화구"
+  }
+ },
+ "output": {
+  "reasoning": "① 지시 해석: 피망과 소스 병을 싱크대에 넣고 수도꼭지(싱크대)를 트는 작업이다. 시간 조건은 없다. 작업 대상들이 모두 냉장고에 있으므로 시작 지점은 냉장고이고, 최종적으로 물체를 넣고 가동해야 하는 싱크대에서 작업이 끝난다. ② 씬 접지: 피망은 냉장고 냉장실 선반 1에, 소스 병은 냉장고 냉장실 선반 3에 있다. 냉장고 문은 이미 열려 있다. 수도꼭지 조작은 환경 설명의 '싱크대: 미가동'의 가동 상태 전환에 해당한다. ③ 물체 역할 부여: 피망과 소스 병은 위치가 바뀌어야 하므로 필수다. 싱크대는 물체를 받는 곳이면서 상태(turned_on)가 바뀌어야 하는 대상이므로, 우선순위 규칙(필수 > 핵심 수단 > 보조)에 따라 필수로 지정한다. 냉장고는 피망과 소스 병의 초기 위치 기준이므로 보조다. ④ 제약 도출: 물건을 넣기 전에 물을 틀면 물 낭비 및 튐이 발생할 수 있어 싱크대에 물체를 넣은 후 수도꼭지를 트는 선후 관계가 요구된다. 또한 한 번에 하나의 물체만 파지할 수 있는 물리/자원 제약이 있다. ⑤ 목표 상태 도출: 피망과 소스 병이 싱크대 안에 들어가 있고(in), 싱크대가 가동 상태(turned_on: true)인 단일 경우로 구성된다.",
+  "task_situation_description": {
+   "task_goal": {
+    "summary": "피망과 소스 병을 싱크대에 넣고 싱크대 수도꼭지를 틀어 가동하는 것",
+    "goal_state": [
+     [
+      {
+       "kind": "relation",
+       "subject": "피망",
+       "predicate": "in",
+       "object": "싱크대",
+       "value": true
+      },
+      {
+       "kind": "relation",
+       "subject": "소스 병",
+       "predicate": "in",
+       "object": "싱크대",
+       "value": true
+      },
+      {
+       "kind": "state",
+       "subject": "싱크대",
+       "predicate": "turned_on",
+       "object": null,
+       "value": true
+      }
+     ]
+    ]
+   },
+   "spatiotemporal_conditions": {
+    "time": null,
+    "space": {
+     "start": "냉장고",
+     "end": "싱크대"
+    }
+   },
+   "target_objects": {
+    "required": [
+     {
+      "ref": "피망",
+      "location": "냉장고 냉장실 선반 1 위",
+      "state": null
+     },
+     {
+      "ref": "소스 병",
+      "location": "냉장고 냉장실 선반 3 위",
+      "state": null
+     },
+     {
+      "ref": "싱크대",
+      "location": null,
+      "state": "미가동"
+     }
+    ],
+    "key_means": [],
+    "auxiliary": [
+     {
+      "ref": "냉장고",
+      "location": null,
+      "note": "피망과 소스 병의 초기 위치 기준"
+     }
+    ]
+   },
+   "constraints": [
+    {
+     "type": "precedence",
+     "description": "피망과 소스 병을 싱크대에 넣는 작업이 수도꼭지를 트는(싱크대 가동) 작업에 선행해야 함"
+    },
+    {
+     "type": "resource",
+     "description": "한 번에 하나의 물체만 파지하여 운반할 수 있음"
+    }
+   ]
+  },
+  "task_situation_description_text": "작업 목표: 피망과 소스 병을 싱크대에 넣고 싱크대 수도꼭지를 틀어 가동하는 것\n목표 상태:\n- 피망: 싱크대 안\n- 소스 병: 싱크대 안\n- 싱크대: 가동 중\n시간·공간 조건: 시간 조건은 없음, 공간 조건은 시작 냉장고, 종료 싱크대\n대상 물체:\n- 필수 물체: 피망(위치: 냉장고 냉장실 선반 1 위)\n- 필수 물체: 소스 병(위치: 냉장고 냉장실 선반 3 위)\n- 필수 물체: 싱크대(상태: 미가동)\n- 보조 물체: 냉장고(비고: 피망과 소스 병의 초기 위치 기준)\n제약 사항:\n- [선후] 피망과 소스 병을 싱크대에 넣는 작업이 수도꼭지를 트는(싱크대 가동) 작업에 선행해야 함\n- [자원] 한 번에 하나의 물체만 파지하여 운반할 수 있음\n"
+ }
+}

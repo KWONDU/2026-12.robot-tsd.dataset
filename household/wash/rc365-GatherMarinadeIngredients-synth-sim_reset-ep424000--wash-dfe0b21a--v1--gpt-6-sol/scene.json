@@ -1,0 +1,1024 @@
+{
+ "schema_version": "0.5",
+ "scene_id": "scene_0fa203c637bc",
+ "domain": "household",
+ "simulator": "robocasa365",
+ "layout": {
+  "layout_id": 42,
+  "layout_name": null,
+  "style_id": 40,
+  "style_name": null
+ },
+ "fixtures": [
+  {
+   "id": "fx_drawer_1",
+   "category": "drawer",
+   "name_ko": "서랍",
+   "location_desc": null,
+   "states": {
+    "drawer_open": false
+   },
+   "state_source": "sim",
+   "regions": []
+  },
+  {
+   "id": "fx_coffee_machine_1",
+   "category": "coffee_machine",
+   "name_ko": "커피머신",
+   "location_desc": null,
+   "states": {},
+   "state_source": "unknown",
+   "regions": []
+  },
+  {
+   "id": "fx_counter_1",
+   "category": "counter",
+   "name_ko": "조리대",
+   "location_desc": null,
+   "states": {},
+   "state_source": "unknown",
+   "regions": []
+  },
+  {
+   "id": "fx_counter_2",
+   "category": "counter",
+   "name_ko": "조리대",
+   "location_desc": null,
+   "states": {},
+   "state_source": "unknown",
+   "regions": []
+  },
+  {
+   "id": "fx_counter_3",
+   "category": "counter",
+   "name_ko": "조리대",
+   "location_desc": null,
+   "states": {},
+   "state_source": "unknown",
+   "regions": []
+  },
+  {
+   "id": "fx_counter_4",
+   "category": "counter",
+   "name_ko": "조리대",
+   "location_desc": null,
+   "states": {},
+   "state_source": "unknown",
+   "regions": []
+  },
+  {
+   "id": "fx_dishwasher_1",
+   "category": "dishwasher",
+   "name_ko": "식기세척기",
+   "location_desc": "아일랜드",
+   "states": {
+    "door_open": false
+   },
+   "state_source": "sim",
+   "regions": [
+    {
+     "key": "rack1",
+     "name_ko": "랙 1",
+     "states": {
+      "pulled_out": false
+     }
+    },
+    {
+     "key": "rack0",
+     "name_ko": "랙 2",
+     "states": {
+      "pulled_out": false
+     }
+    }
+   ]
+  },
+  {
+   "id": "fx_cabinet_1",
+   "category": "cabinet",
+   "name_ko": "수납장",
+   "location_desc": null,
+   "states": {},
+   "state_source": "unknown",
+   "regions": []
+  },
+  {
+   "id": "fx_fridge_1",
+   "category": "fridge",
+   "name_ko": "냉장고",
+   "location_desc": null,
+   "states": {
+    "door_open": true,
+    "freezer_door_open": false
+   },
+   "state_source": "sim",
+   "regions": [
+    {
+     "key": "fridge_shelf1",
+     "name_ko": "냉장실 선반 1",
+     "states": {}
+    },
+    {
+     "key": "fridge_shelf0",
+     "name_ko": "냉장실 선반 2",
+     "states": {}
+    },
+    {
+     "key": "fridge_drawer0",
+     "name_ko": "냉장실 서랍",
+     "states": {
+      "drawer_open": false
+     }
+    }
+   ]
+  },
+  {
+   "id": "fx_cabinet_2",
+   "category": "cabinet",
+   "name_ko": "캐비닛",
+   "location_desc": null,
+   "states": {
+    "door_open": false
+   },
+   "state_source": "sim",
+   "regions": [
+    {
+     "key": "level0",
+     "name_ko": "선반",
+     "states": {}
+    }
+   ]
+  },
+  {
+   "id": "fx_cabinet_3",
+   "category": "cabinet",
+   "name_ko": "캐비닛",
+   "location_desc": null,
+   "states": {
+    "door_open": false
+   },
+   "state_source": "sim",
+   "regions": [
+    {
+     "key": "level2",
+     "name_ko": "선반 1",
+     "states": {}
+    },
+    {
+     "key": "level1",
+     "name_ko": "선반 2",
+     "states": {}
+    },
+    {
+     "key": "level0",
+     "name_ko": "선반 3",
+     "states": {}
+    }
+   ]
+  },
+  {
+   "id": "fx_cabinet_4",
+   "category": "cabinet",
+   "name_ko": "캐비닛",
+   "location_desc": null,
+   "states": {
+    "door_open": false
+   },
+   "state_source": "sim",
+   "regions": [
+    {
+     "key": "level2",
+     "name_ko": "선반 1",
+     "states": {}
+    },
+    {
+     "key": "level1",
+     "name_ko": "선반 2",
+     "states": {}
+    },
+    {
+     "key": "level0",
+     "name_ko": "선반 3",
+     "states": {}
+    }
+   ]
+  },
+  {
+   "id": "fx_cabinet_5",
+   "category": "cabinet",
+   "name_ko": "캐비닛",
+   "location_desc": null,
+   "states": {
+    "door_open": false
+   },
+   "state_source": "sim",
+   "regions": [
+    {
+     "key": "level1",
+     "name_ko": "선반 1",
+     "states": {}
+    },
+    {
+     "key": "level0",
+     "name_ko": "선반 2",
+     "states": {}
+    }
+   ]
+  },
+  {
+   "id": "fx_cabinet_6",
+   "category": "cabinet",
+   "name_ko": "캐비닛",
+   "location_desc": null,
+   "states": {
+    "door_open": true
+   },
+   "state_source": "sim",
+   "regions": [
+    {
+     "key": "level2",
+     "name_ko": "선반 1",
+     "states": {}
+    },
+    {
+     "key": "level1",
+     "name_ko": "선반 2",
+     "states": {}
+    },
+    {
+     "key": "level0",
+     "name_ko": "선반 3",
+     "states": {}
+    }
+   ]
+  },
+  {
+   "id": "fx_counter_5",
+   "category": "counter",
+   "name_ko": "조리대",
+   "location_desc": "아일랜드 식탁",
+   "states": {},
+   "state_source": "unknown",
+   "regions": []
+  },
+  {
+   "id": "fx_cabinet_7",
+   "category": "cabinet",
+   "name_ko": "수납장",
+   "location_desc": null,
+   "states": {},
+   "state_source": "unknown",
+   "regions": []
+  },
+  {
+   "id": "fx_microwave_1",
+   "category": "microwave",
+   "name_ko": "전자레인지",
+   "location_desc": null,
+   "states": {
+    "door_open": false
+   },
+   "state_source": "sim",
+   "regions": [
+    {
+     "key": "tray",
+     "name_ko": "회전 접시",
+     "states": {}
+    }
+   ]
+  },
+  {
+   "id": "fx_cabinet_8",
+   "category": "cabinet",
+   "name_ko": "수납장",
+   "location_desc": null,
+   "states": {},
+   "state_source": "unknown",
+   "regions": []
+  },
+  {
+   "id": "fx_oven_1",
+   "category": "oven",
+   "name_ko": "오븐",
+   "location_desc": null,
+   "states": {
+    "door_open": false
+   },
+   "state_source": "sim",
+   "regions": [
+    {
+     "key": "rack0",
+     "name_ko": "랙",
+     "states": {
+      "pulled_out": false
+     }
+    }
+   ]
+  },
+  {
+   "id": "fx_sink_1",
+   "category": "sink",
+   "name_ko": "싱크대",
+   "location_desc": "아일랜드",
+   "states": {
+    "turned_on": false
+   },
+   "state_source": "sim",
+   "regions": [
+    {
+     "key": "basin",
+     "name_ko": "개수대",
+     "states": {}
+    }
+   ]
+  },
+  {
+   "id": "fx_cabinet_9",
+   "category": "cabinet",
+   "name_ko": "캐비닛",
+   "location_desc": "아일랜드",
+   "states": {
+    "door_open": false
+   },
+   "state_source": "sim",
+   "regions": [
+    {
+     "key": "level2",
+     "name_ko": "선반 1",
+     "states": {}
+    },
+    {
+     "key": "level1",
+     "name_ko": "선반 2",
+     "states": {}
+    },
+    {
+     "key": "level0",
+     "name_ko": "선반 3",
+     "states": {}
+    }
+   ]
+  },
+  {
+   "id": "fx_cabinet_10",
+   "category": "cabinet",
+   "name_ko": "캐비닛",
+   "location_desc": null,
+   "states": {
+    "door_open": false
+   },
+   "state_source": "sim",
+   "regions": [
+    {
+     "key": "level2",
+     "name_ko": "선반 1",
+     "states": {}
+    },
+    {
+     "key": "level1",
+     "name_ko": "선반 2",
+     "states": {}
+    },
+    {
+     "key": "level0",
+     "name_ko": "선반 3",
+     "states": {}
+    }
+   ]
+  },
+  {
+   "id": "fx_cabinet_11",
+   "category": "cabinet",
+   "name_ko": "캐비닛",
+   "location_desc": null,
+   "states": {
+    "door_open": false
+   },
+   "state_source": "sim",
+   "regions": [
+    {
+     "key": "level2",
+     "name_ko": "선반 1",
+     "states": {}
+    },
+    {
+     "key": "level1",
+     "name_ko": "선반 2",
+     "states": {}
+    },
+    {
+     "key": "level0",
+     "name_ko": "선반 3",
+     "states": {}
+    }
+   ]
+  },
+  {
+   "id": "fx_cabinet_12",
+   "category": "cabinet",
+   "name_ko": "캐비닛",
+   "location_desc": null,
+   "states": {
+    "door_open": false
+   },
+   "state_source": "sim",
+   "regions": [
+    {
+     "key": "level2",
+     "name_ko": "선반 1",
+     "states": {}
+    },
+    {
+     "key": "level1",
+     "name_ko": "선반 2",
+     "states": {}
+    },
+    {
+     "key": "level0",
+     "name_ko": "선반 3",
+     "states": {}
+    }
+   ]
+  },
+  {
+   "id": "fx_cabinet_13",
+   "category": "cabinet",
+   "name_ko": "캐비닛",
+   "location_desc": "아일랜드",
+   "states": {
+    "door_open": false
+   },
+   "state_source": "sim",
+   "regions": [
+    {
+     "key": "level2",
+     "name_ko": "선반 1",
+     "states": {}
+    },
+    {
+     "key": "level1",
+     "name_ko": "선반 2",
+     "states": {}
+    },
+    {
+     "key": "level0",
+     "name_ko": "선반 3",
+     "states": {}
+    }
+   ]
+  },
+  {
+   "id": "fx_cabinet_14",
+   "category": "cabinet",
+   "name_ko": "캐비닛",
+   "location_desc": null,
+   "states": {
+    "door_open": false
+   },
+   "state_source": "sim",
+   "regions": [
+    {
+     "key": "level2",
+     "name_ko": "선반 1",
+     "states": {}
+    },
+    {
+     "key": "level1",
+     "name_ko": "선반 2",
+     "states": {}
+    },
+    {
+     "key": "level0",
+     "name_ko": "선반 3",
+     "states": {}
+    }
+   ]
+  },
+  {
+   "id": "fx_drawer_2",
+   "category": "drawer",
+   "name_ko": "서랍",
+   "location_desc": null,
+   "states": {
+    "drawer_open": false
+   },
+   "state_source": "sim",
+   "regions": []
+  },
+  {
+   "id": "fx_drawer_3",
+   "category": "drawer",
+   "name_ko": "서랍",
+   "location_desc": null,
+   "states": {
+    "drawer_open": false
+   },
+   "state_source": "sim",
+   "regions": []
+  },
+  {
+   "id": "fx_drawer_4",
+   "category": "drawer",
+   "name_ko": "서랍",
+   "location_desc": null,
+   "states": {
+    "drawer_open": false
+   },
+   "state_source": "sim",
+   "regions": []
+  },
+  {
+   "id": "fx_cabinet_15",
+   "category": "cabinet",
+   "name_ko": "캐비닛",
+   "location_desc": "아일랜드",
+   "states": {
+    "door_open": false
+   },
+   "state_source": "sim",
+   "regions": [
+    {
+     "key": "level2",
+     "name_ko": "선반 1",
+     "states": {}
+    },
+    {
+     "key": "level1",
+     "name_ko": "선반 2",
+     "states": {}
+    },
+    {
+     "key": "level0",
+     "name_ko": "선반 3",
+     "states": {}
+    }
+   ]
+  },
+  {
+   "id": "fx_drawer_5",
+   "category": "drawer",
+   "name_ko": "서랍",
+   "location_desc": null,
+   "states": {
+    "drawer_open": false
+   },
+   "state_source": "sim",
+   "regions": []
+  },
+  {
+   "id": "fx_drawer_6",
+   "category": "drawer",
+   "name_ko": "서랍",
+   "location_desc": null,
+   "states": {
+    "drawer_open": false
+   },
+   "state_source": "sim",
+   "regions": []
+  },
+  {
+   "id": "fx_cabinet_16",
+   "category": "cabinet",
+   "name_ko": "캐비닛",
+   "location_desc": null,
+   "states": {},
+   "state_source": "unknown",
+   "regions": []
+  },
+  {
+   "id": "fx_cabinet_17",
+   "category": "cabinet",
+   "name_ko": "캐비닛",
+   "location_desc": null,
+   "states": {
+    "door_open": false
+   },
+   "state_source": "sim",
+   "regions": [
+    {
+     "key": "level0",
+     "name_ko": "선반",
+     "states": {}
+    }
+   ]
+  },
+  {
+   "id": "fx_drawer_7",
+   "category": "drawer",
+   "name_ko": "서랍",
+   "location_desc": null,
+   "states": {
+    "drawer_open": false
+   },
+   "state_source": "sim",
+   "regions": []
+  },
+  {
+   "id": "fx_stool_1",
+   "category": "stool",
+   "name_ko": "스툴",
+   "location_desc": null,
+   "states": {},
+   "state_source": "unknown",
+   "regions": []
+  },
+  {
+   "id": "fx_stool_2",
+   "category": "stool",
+   "name_ko": "스툴",
+   "location_desc": null,
+   "states": {},
+   "state_source": "unknown",
+   "regions": []
+  },
+  {
+   "id": "fx_stool_3",
+   "category": "stool",
+   "name_ko": "스툴",
+   "location_desc": null,
+   "states": {},
+   "state_source": "unknown",
+   "regions": []
+  },
+  {
+   "id": "fx_stool_4",
+   "category": "stool",
+   "name_ko": "스툴",
+   "location_desc": null,
+   "states": {},
+   "state_source": "unknown",
+   "regions": []
+  },
+  {
+   "id": "fx_stovetop_1",
+   "category": "stovetop",
+   "name_ko": "스토브 상판",
+   "location_desc": null,
+   "states": {
+    "turned_on": false
+   },
+   "state_source": "sim",
+   "regions": [
+    {
+     "key": "center",
+     "name_ko": "가운데 화구",
+     "states": {
+      "turned_on": false
+     }
+    },
+    {
+     "key": "rear_left",
+     "name_ko": "뒤 왼쪽 화구",
+     "states": {
+      "turned_on": false
+     }
+    },
+    {
+     "key": "front_left",
+     "name_ko": "앞 왼쪽 화구",
+     "states": {
+      "turned_on": false
+     }
+    },
+    {
+     "key": "rear_right",
+     "name_ko": "뒤 오른쪽 화구",
+     "states": {
+      "turned_on": false
+     }
+    },
+    {
+     "key": "front_right",
+     "name_ko": "앞 오른쪽 화구",
+     "states": {
+      "turned_on": false
+     }
+    }
+   ]
+  },
+  {
+   "id": "fx_toaster_oven_1",
+   "category": "toaster_oven",
+   "name_ko": "토스터 오븐",
+   "location_desc": null,
+   "states": {
+    "door_open": false
+   },
+   "state_source": "sim",
+   "regions": [
+    {
+     "key": "rack0",
+     "name_ko": "랙",
+     "states": {
+      "pulled_out": false
+     }
+    }
+   ]
+  },
+  {
+   "id": "fx_toaster_1",
+   "category": "toaster",
+   "name_ko": "토스터",
+   "location_desc": null,
+   "states": {},
+   "state_source": "unknown",
+   "regions": [
+    {
+     "key": "sideL_slotR",
+     "name_ko": "왼쪽 칸 오른쪽 투입구",
+     "states": {}
+    },
+    {
+     "key": "sideL_slotL",
+     "name_ko": "왼쪽 칸 왼쪽 투입구",
+     "states": {}
+    },
+    {
+     "key": "sideR_slotR",
+     "name_ko": "오른쪽 칸 오른쪽 투입구",
+     "states": {}
+    },
+    {
+     "key": "sideR_slotL",
+     "name_ko": "오른쪽 칸 왼쪽 투입구",
+     "states": {}
+    }
+   ]
+  },
+  {
+   "id": "fx_cabinet_18",
+   "category": "cabinet",
+   "name_ko": "캐비닛",
+   "location_desc": null,
+   "states": {
+    "door_open": false
+   },
+   "state_source": "sim",
+   "regions": [
+    {
+     "key": "level1",
+     "name_ko": "선반 1",
+     "states": {}
+    },
+    {
+     "key": "level0",
+     "name_ko": "선반 2",
+     "states": {}
+    }
+   ]
+  }
+ ],
+ "objects": [
+  {
+   "id": "obj_001",
+   "category": "bowl",
+   "name_ko": "그릇",
+   "states": {},
+   "placement": {
+    "fixture_id": "fx_counter_3",
+    "relation": "on",
+    "region": "geom_0",
+    "near_fixture_id": "fx_cabinet_6",
+    "near_side": null
+   },
+   "pose": {
+    "pos": [
+     4.815,
+     -2.685,
+     0.977
+    ],
+    "quat": [
+     0.642,
+     -0.0,
+     -0.0,
+     -0.767
+    ]
+   },
+   "size_m": [
+    0.23,
+    0.23,
+    0.114
+   ],
+   "size_class": null
+  },
+  {
+   "id": "obj_002",
+   "category": "garlic",
+   "name_ko": "마늘",
+   "states": {},
+   "placement": {
+    "fixture_id": "fx_fridge_1",
+    "relation": "in",
+    "region": "fridge_shelf1",
+    "near_fixture_id": null,
+    "near_side": null
+   },
+   "pose": {
+    "pos": [
+     3.023,
+     -0.544,
+     1.385
+    ],
+    "quat": [
+     0.998,
+     -0.046,
+     0.012,
+     0.041
+    ]
+   },
+   "size_m": [
+    0.066,
+    0.061,
+    0.077
+   ],
+   "size_class": null
+  },
+  {
+   "id": "obj_003",
+   "category": "egg",
+   "name_ko": "달걀",
+   "states": {},
+   "placement": {
+    "fixture_id": "fx_fridge_1",
+    "relation": "in",
+    "region": "fridge_shelf0",
+    "near_fixture_id": null,
+    "near_side": null
+   },
+   "pose": {
+    "pos": [
+     2.961,
+     -0.504,
+     1.041
+    ],
+    "quat": [
+     0.999,
+     -0.0,
+     0.004,
+     -0.036
+    ]
+   },
+   "size_m": [
+    0.054,
+    0.067,
+    0.053
+   ],
+   "size_class": null
+  },
+  {
+   "id": "obj_004",
+   "category": "oil_and_vinegar_bottle",
+   "name_ko": "오일·식초 병",
+   "states": {},
+   "placement": {
+    "fixture_id": "fx_cabinet_6",
+    "relation": "in",
+    "region": "level0",
+    "near_fixture_id": null,
+    "near_side": null
+   },
+   "pose": {
+    "pos": [
+     4.959,
+     -2.922,
+     1.524
+    ],
+    "quat": [
+     0.793,
+     -0.002,
+     0.0,
+     -0.61
+    ]
+   },
+   "size_m": [
+    0.142,
+    0.137,
+    0.229
+   ],
+   "size_class": null
+  },
+  {
+   "id": "obj_005",
+   "category": "salt_and_pepper_shaker",
+   "name_ko": "소금·후추통",
+   "states": {},
+   "placement": {
+    "fixture_id": "fx_cabinet_6",
+    "relation": "in",
+    "region": "level0",
+    "near_fixture_id": null,
+    "near_side": null
+   },
+   "pose": {
+    "pos": [
+     4.943,
+     -2.798,
+     1.462
+    ],
+    "quat": [
+     0.447,
+     0.0,
+     0.001,
+     -0.895
+    ]
+   },
+   "size_m": [
+    0.046,
+    0.046,
+    0.104
+   ],
+   "size_class": null
+  }
+ ],
+ "relations": [
+  {
+   "subj": "obj_001",
+   "pred": "on",
+   "obj": "fx_counter_3",
+   "source": "metadata"
+  },
+  {
+   "subj": "obj_002",
+   "pred": "in",
+   "obj": "fx_fridge_1",
+   "source": "metadata"
+  },
+  {
+   "subj": "obj_003",
+   "pred": "in",
+   "obj": "fx_fridge_1",
+   "source": "metadata"
+  },
+  {
+   "subj": "obj_004",
+   "pred": "in",
+   "obj": "fx_cabinet_6",
+   "source": "metadata"
+  },
+  {
+   "subj": "obj_005",
+   "pred": "in",
+   "obj": "fx_cabinet_6",
+   "source": "metadata"
+  },
+  {
+   "subj": "fx_counter_2",
+   "pred": "near",
+   "obj": "fx_coffee_machine_1",
+   "source": "sim"
+  },
+  {
+   "subj": "fx_counter_5",
+   "pred": "near",
+   "obj": "fx_dishwasher_1",
+   "source": "sim"
+  },
+  {
+   "subj": "fx_counter_2",
+   "pred": "near",
+   "obj": "fx_fridge_1",
+   "source": "sim"
+  },
+  {
+   "subj": "fx_counter_3",
+   "pred": "near",
+   "obj": "fx_microwave_1",
+   "source": "sim"
+  },
+  {
+   "subj": "fx_counter_3",
+   "pred": "near",
+   "obj": "fx_oven_1",
+   "source": "sim"
+  },
+  {
+   "subj": "fx_counter_5",
+   "pred": "near",
+   "obj": "fx_sink_1",
+   "source": "sim"
+  },
+  {
+   "subj": "fx_counter_3",
+   "pred": "near",
+   "obj": "fx_stovetop_1",
+   "source": "sim"
+  },
+  {
+   "subj": "fx_counter_1",
+   "pred": "near",
+   "obj": "fx_toaster_oven_1",
+   "source": "sim"
+  },
+  {
+   "subj": "fx_counter_3",
+   "pred": "near",
+   "obj": "fx_toaster_1",
+   "source": "sim"
+  }
+ ],
+ "agent": {
+  "embodiment": "PandaOmron",
+  "base_near_fixture_id": null,
+  "holding": []
+ },
+ "constraints": []
+}

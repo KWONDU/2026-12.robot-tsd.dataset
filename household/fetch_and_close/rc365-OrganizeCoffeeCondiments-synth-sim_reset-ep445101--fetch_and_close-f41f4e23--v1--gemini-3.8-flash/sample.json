@@ -1,0 +1,140 @@
+{
+ "id": "rc365-OrganizeCoffeeCondiments-synth-sim_reset-ep445101--fetch_and_close-f41f4e23--v1--gemini-3.8-flash",
+ "domain": "household",
+ "task_type": "fetch_and_close",
+ "agent": "gemini-3.8-flash",
+ "source": {
+  "data": "RoboCasa365 (MIT)",
+  "scene_id": "rc365/OrganizeCoffeeCondiments/synth/sim_reset/ep_445101",
+  "task": "fetch_and_close",
+  "composed": true
+ },
+ "input": {
+  "instruction": "마시멜로를 놓아둔 캐비닛에서 꺼내서 냉장고 맨 아래 냉동실 서랍에 넣고, 그 캐비닛 문을 닫아줘.",
+  "instruction_en": "Take the marshmallow out of the cabinet it is in and put it in the bottom freezer drawer of the fridge. Then close that cabinet.",
+  "world_state": "장소: 가정 주방\n로봇(PandaOmron). 들고 있는 물체 없음.\n\n물체가 놓인 곳:\n- 캐비닛 4 선반 위: 시럽 병, 꿀병, 마시멜로\n- 조리대 1 위, 캐비닛 4 옆: 머그\n\n가구:\n- 조리대 1: 커피머신 옆, 전자레인지 옆, 스토브 옆\n- 조리대 2: 식기세척기 옆, 냉장고 옆, 싱크대 옆, 토스터 옆\n- 조리대 3: 전자레인지 옆, 스토브 옆\n- 식기세척기: 문 닫힘. 칸: 랙 1, 2(위에서부터)\n- 냉장고: 문 닫힘, 냉동실 문 닫힘. 칸: 냉동실 선반 1부터 3까지(위에서부터), 냉장실 선반 1부터 3까지(위에서부터), 냉동실 서랍 1, 2(위에서부터), 냉장실 서랍 1, 2(위에서부터)\n- 캐비닛 1부터 3까지, 5부터 9까지: 문 닫힘\n- 전자레인지: 문 닫힘\n- 캐비닛 4: 문 열림\n- 싱크대: 미가동\n- 서랍 1, 2: 서랍 닫힘\n- 스토브: 문 닫힘, 미가동. 칸: 랙, 뒤 왼쪽 화구, 앞 왼쪽 화구, 앞 오른쪽 화구, 뒤 오른쪽 화구\n- 커피머신\n- 조리대 4\n- 수납장\n- 조리대 5(아일랜드 식탁)\n- 스툴 1부터 3까지\n- 토스터",
+  "entity_labels": {
+   "fx_coffee_machine_1": "커피머신",
+   "fx_counter_1": "조리대 1",
+   "fx_counter_2": "조리대 2",
+   "fx_counter_3": "조리대 3",
+   "fx_counter_4": "조리대 4",
+   "fx_dishwasher_1": "식기세척기",
+   "fx_cabinet_1": "수납장",
+   "fx_fridge_1": "냉장고",
+   "fx_cabinet_2": "캐비닛 1",
+   "fx_cabinet_3": "캐비닛 2",
+   "fx_counter_5": "조리대 5",
+   "fx_cabinet_4": "캐비닛 3",
+   "fx_microwave_1": "전자레인지",
+   "fx_cabinet_5": "캐비닛 4",
+   "fx_cabinet_6": "캐비닛 5",
+   "fx_cabinet_7": "캐비닛 6",
+   "fx_sink_1": "싱크대",
+   "fx_cabinet_8": "캐비닛 7",
+   "fx_drawer_1": "서랍 1",
+   "fx_cabinet_9": "캐비닛 8",
+   "fx_cabinet_10": "캐비닛 9",
+   "fx_drawer_2": "서랍 2",
+   "fx_stool_1": "스툴 1",
+   "fx_stool_2": "스툴 2",
+   "fx_stool_3": "스툴 3",
+   "fx_stove_1": "스토브",
+   "fx_toaster_1": "토스터",
+   "obj_001": "시럽 병",
+   "obj_002": "꿀병",
+   "obj_003": "머그",
+   "obj_004": "마시멜로",
+   "fx_dishwasher_1/rack1": "식기세척기 랙 1",
+   "fx_dishwasher_1/rack0": "식기세척기 랙 2",
+   "fx_fridge_1/freezer_shelf2": "냉장고 냉동실 선반 1",
+   "fx_fridge_1/freezer_shelf1": "냉장고 냉동실 선반 2",
+   "fx_fridge_1/freezer_shelf0": "냉장고 냉동실 선반 3",
+   "fx_fridge_1/fridge_shelf2": "냉장고 냉장실 선반 1",
+   "fx_fridge_1/fridge_shelf1": "냉장고 냉장실 선반 2",
+   "fx_fridge_1/fridge_shelf0": "냉장고 냉장실 선반 3",
+   "fx_fridge_1/freezer_drawer1": "냉장고 냉동실 서랍 1",
+   "fx_fridge_1/freezer_drawer0": "냉장고 냉동실 서랍 2",
+   "fx_fridge_1/fridge_drawer1": "냉장고 냉장실 서랍 1",
+   "fx_fridge_1/fridge_drawer0": "냉장고 냉장실 서랍 2",
+   "fx_stove_1/rack0": "스토브 랙",
+   "fx_stove_1/rear_left": "스토브 뒤 왼쪽 화구",
+   "fx_stove_1/front_left": "스토브 앞 왼쪽 화구",
+   "fx_stove_1/front_right": "스토브 앞 오른쪽 화구",
+   "fx_stove_1/rear_right": "스토브 뒤 오른쪽 화구"
+  }
+ },
+ "output": {
+  "reasoning": "① 지시 해석: 캐비닛 4에 놓인 마시멜로를 냉장고 맨 아래 냉동실 서랍(냉장고 냉동실 서랍 2)에 넣고, 캐비닛 4의 문을 닫는 작업이다. 시간 조건은 없다. 작업 시작 위치는 마시멜로가 놓여 있는 캐비닛 4이고, 유저 지시가 나열식('~넣고, ~닫아줘')으로 표현되어 작업 순서가 고정되지 않았으므로 끝나는 곳은 냉장고 혹은 캐비닛 4이다. ② 씬 접지: 마시멜로는 '캐비닛 4 선반 위'에 있고, 대상 캐비닛은 '캐비닛 4'(현재 문 열림 상태)이다. 냉장고의 냉동실 서랍 중 맨 아래 서랍은 '냉장고 냉동실 서랍 2'이다. 냉장고는 문과 냉동실 문이 모두 닫혀 있다. ③ 역할 부여: 위치가 이동되어야 하는 '마시멜로'와 문 상태가 바뀌어야 하는 '캐비닛 4'는 필수(required)다. 마시멜로를 최종적으로 수납하는 장소인 '냉장고 냉동실 서랍 2'는 핵심 수단(key_means)이다. 냉장고 서랍에 접근하기 위해 선행하여 문을 열어야 하는 '냉장고'는 보조(auxiliary)다. ④ 제약 도출: 냉장고의 냉동실 문이 닫혀 있으므로 냉동실 서랍에 마시멜로를 넣기 전에 냉동실 문을 여는 선행 제약이 존재한다. 또한 캐비닛 4 안의 마시멜로를 먼저 꺼낸 뒤 캐비닛 4 문을 닫아야 하므로 선후 제약이 존재한다. ⑤ 목표 상태 도출 근거: 마시멜로가 냉장고 냉동실 서랍 2 안에 위치(in)해야 하며, 캐비닛 4의 문 열림 상태(door_open)가 false여야 한다.",
+  "task_situation_description": {
+   "task_goal": {
+    "summary": "마시멜로를 냉장고 맨 아래 냉동실 서랍에 넣고 캐비닛 4의 문을 닫는 것",
+    "goal_state": [
+     [
+      {
+       "kind": "relation",
+       "subject": "마시멜로",
+       "predicate": "in",
+       "object": "냉장고 냉동실 서랍 2",
+       "value": true
+      },
+      {
+       "kind": "state",
+       "subject": "캐비닛 4",
+       "predicate": "door_open",
+       "object": null,
+       "value": false
+      }
+     ]
+    ]
+   },
+   "spatiotemporal_conditions": {
+    "time": null,
+    "space": {
+     "start": "캐비닛 4",
+     "end": "냉장고 혹은 캐비닛 4"
+    }
+   },
+   "target_objects": {
+    "required": [
+     {
+      "ref": "마시멜로",
+      "location": "캐비닛 4 선반 위",
+      "state": null
+     },
+     {
+      "ref": "캐비닛 4",
+      "location": null,
+      "state": "문 열림"
+     }
+    ],
+    "key_means": [
+     {
+      "ref": "냉장고 냉동실 서랍 2",
+      "location": null,
+      "state": null,
+      "alternatives": []
+     }
+    ],
+    "auxiliary": [
+     {
+      "ref": "냉장고",
+      "location": null,
+      "note": "냉동실 서랍에 마시멜로를 넣기 위해 먼저 냉동실 문을 열어야 하는 가구"
+     }
+    ]
+   },
+   "constraints": [
+    {
+     "type": "precedence",
+     "description": "냉장고 냉동실 문이 닫혀 있으므로 냉동실 문을 여는 것이 마시멜로를 서랍에 넣는 것에 선행해야 함"
+    },
+    {
+     "type": "precedence",
+     "description": "캐비닛 4에서 마시멜로를 꺼내는 것이 캐비닛 4 문을 닫는 것에 선행해야 함"
+    }
+   ]
+  },
+  "task_situation_description_text": "작업 목표: 마시멜로를 냉장고 맨 아래 냉동실 서랍에 넣고 캐비닛 4의 문을 닫는 것\n목표 상태:\n- 마시멜로: 냉장고 냉동실 서랍 2 안\n- 캐비닛 4: 문 닫힘\n시간·공간 조건: 시간 조건은 없음, 공간 조건은 시작 캐비닛 4, 종료 냉장고 혹은 캐비닛 4\n대상 물체:\n- 필수 물체: 마시멜로(위치: 캐비닛 4 선반 위)\n- 필수 물체: 캐비닛 4(상태: 문 열림)\n- 핵심 수단: 냉장고 냉동실 서랍 2\n- 보조 물체: 냉장고(비고: 냉동실 서랍에 마시멜로를 넣기 위해 먼저 냉동실 문을 열어야 하는 가구)\n제약 사항:\n- [선후] 냉장고 냉동실 문이 닫혀 있으므로 냉동실 문을 여는 것이 마시멜로를 서랍에 넣는 것에 선행해야 함\n- [선후] 캐비닛 4에서 마시멜로를 꺼내는 것이 캐비닛 4 문을 닫는 것에 선행해야 함\n"
+ }
+}

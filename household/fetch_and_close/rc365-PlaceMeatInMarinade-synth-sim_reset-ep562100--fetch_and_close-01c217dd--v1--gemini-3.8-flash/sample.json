@@ -1,0 +1,169 @@
+{
+ "id": "rc365-PlaceMeatInMarinade-synth-sim_reset-ep562100--fetch_and_close-01c217dd--v1--gemini-3.8-flash",
+ "domain": "household",
+ "task_type": "fetch_and_close",
+ "agent": "gemini-3.8-flash",
+ "source": {
+  "data": "RoboCasa365 (MIT)",
+  "scene_id": "rc365/PlaceMeatInMarinade/synth/sim_reset/ep_562100",
+  "task": "fetch_and_close",
+  "composed": true
+ },
+ "input": {
+  "instruction": "냉장고에서 생선 꺼내서 팬에 넣고, 냉장고 문 닫아.",
+  "instruction_en": "Take the fish out of the fridge and put it in the pan. Then close the fridge.",
+  "world_state": "장소: 가정 주방\n로봇(PandaOmron). 들고 있는 물체 없음.\n\n물체가 놓인 곳:\n- 스토브 뒤 오른쪽 화구 위: 팬\n- 냉장고 냉장실 선반 1 위: 접시, 바나나\n- 접시 위: 생선\n\n가구:\n- 서랍 1부터 9까지, 14, 15: 서랍 닫힘\n- 조리대 1: 냉장고 옆, 토스터 옆\n- 조리대 2: 스토브 옆, 토스터 오븐 옆\n- 조리대 3: 커피머신 옆, 스토브 옆\n- 조리대 4: 전자레인지 옆\n- 식기세척기(아일랜드): 문 닫힘. 칸: 랙 1, 2(위에서부터)\n- 냉장고: 문 닫힘, 냉동실 문 닫힘. 칸: 냉장실 선반 1, 2(위에서부터), 냉장실 서랍\n- 캐비닛 1부터 5까지, 8부터 12까지, 14, 15, 19, 22부터 25까지: 문 닫힘\n- 조리대 6(아일랜드 식탁): 식기세척기 옆, 싱크대 옆\n- 전자레인지: 문 닫힘\n- 싱크대(아일랜드): 미가동\n- 캐비닛 13, 16, 17, 20, 21(아일랜드): 문 닫힘\n- 서랍 10부터 13까지(아일랜드): 서랍 닫힘\n- 스토브: 문 닫힘, 미가동. 칸: 랙, 뒤 왼쪽 화구, 앞 왼쪽 화구, 앞 오른쪽 화구, 뒤 오른쪽 화구, 앞 가운데 화구, 뒤 가운데 화구\n- 토스터 오븐: 문 닫힘. 칸: 랙 1, 2(위에서부터)\n- 커피머신\n- 조리대 5\n- 수납장 1, 2\n- 캐비닛 6, 7\n- 캐비닛 18(아일랜드)\n- 스툴 1부터 3까지\n- 토스터",
+  "entity_labels": {
+   "fx_drawer_1": "서랍 1",
+   "fx_coffee_machine_1": "커피머신",
+   "fx_counter_1": "조리대 1",
+   "fx_counter_2": "조리대 2",
+   "fx_counter_3": "조리대 3",
+   "fx_counter_4": "조리대 4",
+   "fx_counter_5": "조리대 5",
+   "fx_dishwasher_1": "식기세척기",
+   "fx_cabinet_1": "수납장 1",
+   "fx_fridge_1": "냉장고",
+   "fx_cabinet_2": "캐비닛 1",
+   "fx_cabinet_3": "캐비닛 2",
+   "fx_cabinet_4": "캐비닛 3",
+   "fx_cabinet_5": "캐비닛 4",
+   "fx_cabinet_6": "캐비닛 5",
+   "fx_counter_6": "조리대 6",
+   "fx_cabinet_7": "수납장 2",
+   "fx_microwave_1": "전자레인지",
+   "fx_cabinet_8": "캐비닛 6",
+   "fx_cabinet_9": "캐비닛 7",
+   "fx_cabinet_10": "캐비닛 8",
+   "fx_cabinet_11": "캐비닛 9",
+   "fx_cabinet_12": "캐비닛 10",
+   "fx_sink_1": "싱크대",
+   "fx_cabinet_13": "캐비닛 11",
+   "fx_cabinet_14": "캐비닛 12",
+   "fx_drawer_2": "서랍 2",
+   "fx_cabinet_15": "캐비닛 13",
+   "fx_drawer_3": "서랍 3",
+   "fx_drawer_4": "서랍 4",
+   "fx_drawer_5": "서랍 5",
+   "fx_cabinet_16": "캐비닛 14",
+   "fx_drawer_6": "서랍 6",
+   "fx_drawer_7": "서랍 7",
+   "fx_drawer_8": "서랍 8",
+   "fx_cabinet_17": "캐비닛 15",
+   "fx_drawer_9": "서랍 9",
+   "fx_drawer_10": "서랍 10",
+   "fx_drawer_11": "서랍 11",
+   "fx_drawer_12": "서랍 12",
+   "fx_cabinet_18": "캐비닛 16",
+   "fx_drawer_13": "서랍 13",
+   "fx_cabinet_19": "캐비닛 17",
+   "fx_cabinet_20": "캐비닛 18",
+   "fx_cabinet_21": "캐비닛 19",
+   "fx_cabinet_22": "캐비닛 20",
+   "fx_cabinet_23": "캐비닛 21",
+   "fx_cabinet_24": "캐비닛 22",
+   "fx_drawer_14": "서랍 14",
+   "fx_cabinet_25": "캐비닛 23",
+   "fx_cabinet_26": "캐비닛 24",
+   "fx_drawer_15": "서랍 15",
+   "fx_stool_1": "스툴 1",
+   "fx_stool_2": "스툴 2",
+   "fx_stool_3": "스툴 3",
+   "fx_stove_1": "스토브",
+   "fx_toaster_oven_1": "토스터 오븐",
+   "fx_toaster_1": "토스터",
+   "fx_cabinet_27": "캐비닛 25",
+   "obj_001": "팬",
+   "obj_002": "접시",
+   "obj_003": "생선",
+   "obj_004": "바나나",
+   "fx_dishwasher_1/rack1": "식기세척기 랙 1",
+   "fx_dishwasher_1/rack0": "식기세척기 랙 2",
+   "fx_fridge_1/fridge_shelf1": "냉장고 냉장실 선반 1",
+   "fx_fridge_1/fridge_shelf0": "냉장고 냉장실 선반 2",
+   "fx_fridge_1/fridge_drawer0": "냉장고 냉장실 서랍",
+   "fx_stove_1/rack0": "스토브 랙",
+   "fx_stove_1/rear_left": "스토브 뒤 왼쪽 화구",
+   "fx_stove_1/front_left": "스토브 앞 왼쪽 화구",
+   "fx_stove_1/front_right": "스토브 앞 오른쪽 화구",
+   "fx_stove_1/rear_right": "스토브 뒤 오른쪽 화구",
+   "fx_stove_1/front_center": "스토브 앞 가운데 화구",
+   "fx_stove_1/rear_center": "스토브 뒤 가운데 화구",
+   "fx_toaster_oven_1/rack1": "토스터 오븐 랙 1",
+   "fx_toaster_oven_1/rack0": "토스터 오븐 랙 2"
+  }
+ },
+ "output": {
+  "reasoning": "① 지시 해석: 냉장고 안에 있는 생선을 꺼내 팬에 넣고, 냉장고 문을 닫는 작업이다. 시간 조건은 제시되지 않았다. 작업은 생선이 위치한 냉장고에서 시작하여, 지시의 마지막 동작(냉장고 문 닫기) 대상인 냉장고에서 끝난다. ② 씬 접지: '생선'은 냉장고 냉장실 선반 1 위의 접시 위에 놓여 있다. '팬'은 스토브 뒤 오른쪽 화구 위에 있다. '냉장고'는 문이 닫혀 있는 상태이다. ③ 물체 역할 부여: 생선은 팬으로 위치가 이동해야 하므로 필수다. 냉장고는 지시에서 문을 닫도록 최종 상태를 명시했으므로 필수다. 팬은 생선을 담는 대상(in 관계의 object)이므로 핵심 수단이다. 접시는 생선이 초기에 놓여 있는 물체이므로 보조다. ④ 제약 도출: 냉장고 문이 현재 닫혀 있으므로 생선을 꺼내기 전에 문을 먼저 열어야 한다(precedence). 또한 생선을 꺼낸 이후에 냉장고 문을 닫아야 한다(precedence). ⑤ 목표 상태 도출: 생선이 팬 안에 위치하고(in true), 냉장고 문이 닫힌 상태(door_open false)가 되어야 하므로 단일 경우의 단언들로 구성한다.",
+  "task_situation_description": {
+   "task_goal": {
+    "summary": "냉장고에서 생선을 꺼내 팬에 넣고 냉장고 문을 닫는 것",
+    "goal_state": [
+     [
+      {
+       "kind": "relation",
+       "subject": "생선",
+       "predicate": "in",
+       "object": "팬",
+       "value": true
+      },
+      {
+       "kind": "state",
+       "subject": "냉장고",
+       "predicate": "door_open",
+       "object": null,
+       "value": false
+      }
+     ]
+    ]
+   },
+   "spatiotemporal_conditions": {
+    "time": null,
+    "space": {
+     "start": "냉장고",
+     "end": "냉장고"
+    }
+   },
+   "target_objects": {
+    "required": [
+     {
+      "ref": "생선",
+      "location": "접시 위",
+      "state": null
+     },
+     {
+      "ref": "냉장고",
+      "location": null,
+      "state": "문 닫힘, 냉동실 문 닫힘"
+     }
+    ],
+    "key_means": [
+     {
+      "ref": "팬",
+      "location": "스토브 뒤 오른쪽 화구 위",
+      "state": null,
+      "alternatives": []
+     }
+    ],
+    "auxiliary": [
+     {
+      "ref": "접시",
+      "location": "냉장고 냉장실 선반 1 위",
+      "note": "생선의 초기 위치 기준"
+     }
+    ]
+   },
+   "constraints": [
+    {
+     "type": "precedence",
+     "description": "냉장고 문이 닫혀 있으므로 냉장고 문을 여는 것이 생선을 꺼내는 것에 선행해야 함"
+    },
+    {
+     "type": "precedence",
+     "description": "생선을 꺼내는 것이 냉장고 문을 닫는 것에 선행해야 함"
+    }
+   ]
+  },
+  "task_situation_description_text": "작업 목표: 냉장고에서 생선을 꺼내 팬에 넣고 냉장고 문을 닫는 것\n목표 상태:\n- 생선: 팬 안\n- 냉장고: 문 닫힘\n시간·공간 조건: 시간 조건은 없음, 공간 조건은 시작 냉장고, 종료 냉장고\n대상 물체:\n- 필수 물체: 생선(위치: 접시 위)\n- 필수 물체: 냉장고(상태: 문 닫힘, 냉동실 문 닫힘)\n- 핵심 수단: 팬(위치: 스토브 뒤 오른쪽 화구 위)\n- 보조 물체: 접시(위치: 냉장고 냉장실 선반 1 위, 비고: 생선의 초기 위치 기준)\n제약 사항:\n- [선후] 냉장고 문이 닫혀 있으므로 냉장고 문을 여는 것이 생선을 꺼내는 것에 선행해야 함\n- [선후] 생선을 꺼내는 것이 냉장고 문을 닫는 것에 선행해야 함\n"
+ }
+}

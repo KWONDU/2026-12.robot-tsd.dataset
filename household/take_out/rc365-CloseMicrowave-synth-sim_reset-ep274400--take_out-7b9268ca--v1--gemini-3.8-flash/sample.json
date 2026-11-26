@@ -1,0 +1,127 @@
+{
+ "id": "rc365-CloseMicrowave-synth-sim_reset-ep274400--take_out-7b9268ca--v1--gemini-3.8-flash",
+ "domain": "household",
+ "task_type": "take_out",
+ "agent": "gemini-3.8-flash",
+ "source": {
+  "data": "RoboCasa365 (MIT)",
+  "scene_id": "rc365/CloseMicrowave/synth/sim_reset/ep_274400",
+  "task": "take_out",
+  "composed": true
+ },
+ "input": {
+  "instruction": "전자레인지에서 달걀 꺼내.",
+  "instruction_en": "Take the egg out of the microwave.",
+  "world_state": "장소: 가정 주방\n로봇(PandaOmron). 들고 있는 물체 없음.\n\n물체가 놓인 곳:\n- 전자레인지 회전 접시 위: 달걀\n- 조리대 3 위, 전자레인지 옆: 국자\n\n가구:\n- 서랍 1부터 10까지: 서랍 닫힘\n- 캐비닛 1부터 15까지: 문 닫힘\n- 조리대 1, 4: 스토브 옆\n- 조리대 2: 커피머신 옆, 식기세척기 옆, 냉장고 옆, 토스터 오븐 옆\n- 조리대 3: 전자레인지 옆, 싱크대 옆, 토스터 옆\n- 식기세척기: 문 닫힘. 칸: 랙 1, 2(위에서부터)\n- 냉장고: 문 닫힘, 냉동실 문 닫힘. 칸: 냉장실 선반 1, 2(위에서부터), 냉장실 서랍\n- 전자레인지: 문 열림\n- 싱크대: 미가동\n- 스토브: 문 닫힘, 미가동. 칸: 랙, 뒤 왼쪽 화구, 앞 오른쪽 화구, 뒤 오른쪽 화구, 앞 왼쪽 화구\n- 토스터 오븐: 문 닫힘\n- 커피머신\n- 조리대 5(식탁용 조리대)\n- 조리대 6부터 8까지\n- 수납장 1, 2\n- 스툴 1부터 3까지\n- 토스터",
+  "entity_labels": {
+   "fx_drawer_1": "서랍 1",
+   "fx_cabinet_1": "캐비닛 1",
+   "fx_cabinet_2": "캐비닛 2",
+   "fx_cabinet_3": "캐비닛 3",
+   "fx_coffee_machine_1": "커피머신",
+   "fx_counter_1": "조리대 1",
+   "fx_counter_2": "조리대 2",
+   "fx_counter_3": "조리대 3",
+   "fx_counter_4": "조리대 4",
+   "fx_counter_5": "조리대 5",
+   "fx_counter_6": "조리대 6",
+   "fx_counter_7": "조리대 7",
+   "fx_counter_8": "조리대 8",
+   "fx_dishwasher_1": "식기세척기",
+   "fx_cabinet_4": "수납장 1",
+   "fx_fridge_1": "냉장고",
+   "fx_cabinet_5": "캐비닛 4",
+   "fx_cabinet_6": "수납장 2",
+   "fx_microwave_1": "전자레인지",
+   "fx_cabinet_7": "캐비닛 5",
+   "fx_sink_1": "싱크대",
+   "fx_cabinet_8": "캐비닛 6",
+   "fx_drawer_2": "서랍 2",
+   "fx_cabinet_9": "캐비닛 7",
+   "fx_drawer_3": "서랍 3",
+   "fx_cabinet_10": "캐비닛 8",
+   "fx_cabinet_11": "캐비닛 9",
+   "fx_drawer_4": "서랍 4",
+   "fx_drawer_5": "서랍 5",
+   "fx_drawer_6": "서랍 6",
+   "fx_drawer_7": "서랍 7",
+   "fx_cabinet_12": "캐비닛 10",
+   "fx_cabinet_13": "캐비닛 11",
+   "fx_drawer_8": "서랍 8",
+   "fx_cabinet_14": "캐비닛 12",
+   "fx_drawer_9": "서랍 9",
+   "fx_drawer_10": "서랍 10",
+   "fx_cabinet_15": "캐비닛 13",
+   "fx_cabinet_16": "캐비닛 14",
+   "fx_stool_1": "스툴 1",
+   "fx_stool_2": "스툴 2",
+   "fx_stool_3": "스툴 3",
+   "fx_stove_1": "스토브",
+   "fx_toaster_1": "토스터",
+   "fx_toaster_oven_1": "토스터 오븐",
+   "fx_cabinet_17": "캐비닛 15",
+   "obj_001": "달걀",
+   "obj_002": "국자",
+   "fx_dishwasher_1/rack1": "식기세척기 랙 1",
+   "fx_dishwasher_1/rack0": "식기세척기 랙 2",
+   "fx_fridge_1/fridge_shelf1": "냉장고 냉장실 선반 1",
+   "fx_fridge_1/fridge_shelf0": "냉장고 냉장실 선반 2",
+   "fx_fridge_1/fridge_drawer0": "냉장고 냉장실 서랍",
+   "fx_stove_1/rack0": "스토브 랙",
+   "fx_stove_1/rear_left": "스토브 뒤 왼쪽 화구",
+   "fx_stove_1/front_right": "스토브 앞 오른쪽 화구",
+   "fx_stove_1/rear_right": "스토브 뒤 오른쪽 화구",
+   "fx_stove_1/front_left": "스토브 앞 왼쪽 화구"
+  }
+ },
+ "output": {
+  "reasoning": "① 지시 해석: 전자레인지에서 달걀을 꺼내는 작업으로 별도의 도착지가 지정되지 않았다. 시간 조건은 없으며, 작업 시작 위치는 달걀이 위치한 전자레인지이고 도착지가 없으므로 끝나는 위치는 null이다. ② 씬 접지: 달걀은 전자레인지 회전 접시 위에 놓여 있으며, 전자레인지의 문은 이미 열려 있다. ③ 물체 역할 부여 근거: 달걀은 위치가 바뀌어야 하므로 필수(required) 대상이다. 전자레인지는 달걀이 처음 놓여 있던 가구이므로 초기 위치 기준인 보조(auxiliary) 대상이다. 도구나 물체를 받는 곳이 없으므로 핵심 수단(key_means)은 없다. ④ 제약 도출 근거: 달걀은 충격에 취약하여 파손되기 쉬우므로 집거나 이동할 때 주의가 필요하다(physical). 전자레인지 문은 이미 열려 있어 문 열기 선행 작업은 필요하지 않다. ⑤ 목표 상태 도출 근거: 도착지 없이 기존 위치에서 없애라고만 지시했으므로 달걀이 전자레인지 내부에 존재하지 않는 상태(in = false)를 목표 상태로 설정한다.",
+  "task_situation_description": {
+   "task_goal": {
+    "summary": "달걀을 전자레인지 밖으로 꺼내는 것",
+    "goal_state": [
+     [
+      {
+       "kind": "relation",
+       "subject": "달걀",
+       "predicate": "in",
+       "object": "전자레인지",
+       "value": false
+      }
+     ]
+    ]
+   },
+   "spatiotemporal_conditions": {
+    "time": null,
+    "space": {
+     "start": "전자레인지",
+     "end": null
+    }
+   },
+   "target_objects": {
+    "required": [
+     {
+      "ref": "달걀",
+      "location": "전자레인지 회전 접시 위",
+      "state": null
+     }
+    ],
+    "key_means": [],
+    "auxiliary": [
+     {
+      "ref": "전자레인지",
+      "location": null,
+      "note": "달걀의 초기 위치 기준"
+     }
+    ]
+   },
+   "constraints": [
+    {
+     "type": "physical",
+     "description": "달걀은 충격에 깨지기 쉬우므로 파손에 유의하여 취급해야 함"
+    }
+   ]
+  },
+  "task_situation_description_text": "작업 목표: 달걀을 전자레인지 밖으로 꺼내는 것\n목표 상태:\n- 달걀: 전자레인지 안 아님\n시간·공간 조건: 시간 조건은 없음, 공간 조건은 시작 전자레인지\n대상 물체:\n- 필수 물체: 달걀(위치: 전자레인지 회전 접시 위)\n- 보조 물체: 전자레인지(비고: 달걀의 초기 위치 기준)\n제약 사항:\n- [물리] 달걀은 충격에 깨지기 쉬우므로 파손에 유의하여 취급해야 함\n"
+ }
+}

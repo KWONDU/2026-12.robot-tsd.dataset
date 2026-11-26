@@ -1,0 +1,138 @@
+{
+ "id": "rc365-PrepareSmoothie-synth-sim_reset-ep445100--wash-c516769b--v1--qwen3.8-27b-high",
+ "domain": "household",
+ "task_type": "wash",
+ "agent": "qwen3.8-27b-high",
+ "source": {
+  "data": "RoboCasa365 (MIT)",
+  "scene_id": "rc365/PrepareSmoothie/synth/sim_reset/ep_445100",
+  "task": "wash",
+  "composed": true
+ },
+ "input": {
+  "instruction": "망고랑 소스 병을 싱크대에 넣고 수도꼭지를 틀어.",
+  "instruction_en": "Put the mango and the condiment bottle in the sink and turn on the faucet.",
+  "world_state": "장소: 가정 주방\n로봇(PandaOmron). 들고 있는 물체 없음.\n\n물체가 놓인 곳:\n- 냉장고 냉장실 선반 1 위: 배, 망고, 소스 병\n- 조리대 5(아일랜드 식탁) 위, 블렌더 옆: 접시\n\n가구:\n- 조리대 1: 커피머신 옆, 전자레인지 옆, 스토브 옆\n- 조리대 2: 식기세척기 옆, 냉장고 옆, 싱크대 옆, 토스터 옆\n- 조리대 3: 전자레인지 옆, 스토브 옆\n- 식기세척기: 문 닫힘. 칸: 랙 1, 2(위에서부터)\n- 냉장고: 문 열림, 냉동실 문 닫힘. 칸: 냉동실 선반 1부터 3까지(위에서부터), 냉장실 선반 1부터 3까지(위에서부터), 냉동실 서랍 1, 2(위에서부터), 냉장실 서랍 1, 2(위에서부터)\n- 캐비닛 1부터 9까지: 문 닫힘\n- 조리대 5(아일랜드 식탁): 블렌더 옆\n- 전자레인지: 문 닫힘\n- 싱크대: 미가동\n- 서랍 1, 2: 서랍 닫힘\n- 스토브: 문 닫힘, 미가동. 칸: 랙, 뒤 왼쪽 화구, 앞 왼쪽 화구, 앞 오른쪽 화구, 뒤 오른쪽 화구\n- 블렌더(아일랜드)\n- 블렌더 뚜껑(아일랜드)\n- 커피머신\n- 조리대 4\n- 수납장\n- 스툴 1부터 3까지\n- 토스터",
+  "entity_labels": {
+   "fx_blender_1": "블렌더",
+   "fx_blender_lid_1": "블렌더 뚜껑",
+   "fx_coffee_machine_1": "커피머신",
+   "fx_counter_1": "조리대 1",
+   "fx_counter_2": "조리대 2",
+   "fx_counter_3": "조리대 3",
+   "fx_counter_4": "조리대 4",
+   "fx_dishwasher_1": "식기세척기",
+   "fx_cabinet_1": "수납장",
+   "fx_fridge_1": "냉장고",
+   "fx_cabinet_2": "캐비닛 1",
+   "fx_cabinet_3": "캐비닛 2",
+   "fx_counter_5": "조리대 5",
+   "fx_cabinet_4": "캐비닛 3",
+   "fx_microwave_1": "전자레인지",
+   "fx_cabinet_5": "캐비닛 4",
+   "fx_cabinet_6": "캐비닛 5",
+   "fx_cabinet_7": "캐비닛 6",
+   "fx_sink_1": "싱크대",
+   "fx_cabinet_8": "캐비닛 7",
+   "fx_drawer_1": "서랍 1",
+   "fx_cabinet_9": "캐비닛 8",
+   "fx_cabinet_10": "캐비닛 9",
+   "fx_drawer_2": "서랍 2",
+   "fx_stool_1": "스툴 1",
+   "fx_stool_2": "스툴 2",
+   "fx_stool_3": "스툴 3",
+   "fx_stove_1": "스토브",
+   "fx_toaster_1": "토스터",
+   "obj_001": "배",
+   "obj_002": "망고",
+   "obj_003": "소스 병",
+   "obj_004": "접시",
+   "fx_dishwasher_1/rack1": "식기세척기 랙 1",
+   "fx_dishwasher_1/rack0": "식기세척기 랙 2",
+   "fx_fridge_1/freezer_shelf2": "냉장고 냉동실 선반 1",
+   "fx_fridge_1/freezer_shelf1": "냉장고 냉동실 선반 2",
+   "fx_fridge_1/freezer_shelf0": "냉장고 냉동실 선반 3",
+   "fx_fridge_1/fridge_shelf2": "냉장고 냉장실 선반 1",
+   "fx_fridge_1/fridge_shelf1": "냉장고 냉장실 선반 2",
+   "fx_fridge_1/fridge_shelf0": "냉장고 냉장실 선반 3",
+   "fx_fridge_1/freezer_drawer1": "냉장고 냉동실 서랍 1",
+   "fx_fridge_1/freezer_drawer0": "냉장고 냉동실 서랍 2",
+   "fx_fridge_1/fridge_drawer1": "냉장고 냉장실 서랍 1",
+   "fx_fridge_1/fridge_drawer0": "냉장고 냉장실 서랍 2",
+   "fx_stove_1/rack0": "스토브 랙",
+   "fx_stove_1/rear_left": "스토브 뒤 왼쪽 화구",
+   "fx_stove_1/front_left": "스토브 앞 왼쪽 화구",
+   "fx_stove_1/front_right": "스토브 앞 오른쪽 화구",
+   "fx_stove_1/rear_right": "스토브 뒤 오른쪽 화구"
+  }
+ },
+ "output": {
+  "reasoning": "① 지시 해석: '망고랑 소스 병을 싱크대에 넣고 수도꼭지를 틀어'는 두 가지 작업을 나열한 것이다: (1) 망고와 소스 병을 싱크대에 넣기, (2) 수도꼭지를 틀기(싱크대 가동). '넣고…틀어'는 순서를 정한 것이 아니라 나열이므로 선후 제약이 없다. 시간 조건은 없다. 작업 시작은 망고·소스 병이 있는 냉장고이고, 끝은 싱크대(물체를 받는 곳이자 수도꼭지를 트는 곳)이다. ② 씬 접지: 망고와 소스 병은 '냉장고 냉장실 선반 1 위'에 있다. 싱크대는 '미가동' 상태이며 별도의 물체 목록에 수도꼭지는 나오지 않으므로 수도꼭지를 트는 것은 싱크대의 가동 상태 변경으로 해석한다. 냉장고 문은 이미 열려 있다. ③ 역할 부여: 망고·소스 병은 위치가 바뀌므로 필수. 싱크대는 (a) in 관계의 object(물체를 받는 곳)이자 (b) turned_on 상태 단언의 subject(상태 변경 대상)이므로 필수/핵심 수단 모두에 해당하지만 우선순위에 따라 필수로 분류. 냉장고는 옮길 물체의 초기 위치 기준이므로 보조. ④ 제약 도출: 냉장고 문은 이미 열려 있어 선행 제약을 만들지 않는다. 지시가 순서를 특정하지 않았고, 환경 설명에 추가 물리·안전·공간 제약이 드러나지 않으므로 제약 목록은 빈다. ⑤ 목표 상태: 지시가 요구한 끝 상태는 (1) 망고가 싱크대 안에 있다, (2) 소스 병이 싱크대 안에 있다, (3) 싱크대가 가동 중이라는 세 단언. 경우 분기가 필요하지 않다(하나의 경우로 충분). 원래 자리에 없다는 단언(value false)은 쓰지 않는다(옮기는 작업이므로).",
+  "task_situation_description": {
+   "task_goal": {
+    "summary": "망고와 소스 병을 싱크대에 넣고 수도꼭지를 가동하는 것",
+    "goal_state": [
+     [
+      {
+       "kind": "relation",
+       "subject": "망고",
+       "predicate": "in",
+       "object": "싱크대",
+       "value": true
+      },
+      {
+       "kind": "relation",
+       "subject": "소스 병",
+       "predicate": "in",
+       "object": "싱크대",
+       "value": true
+      },
+      {
+       "kind": "state",
+       "subject": "싱크대",
+       "predicate": "turned_on",
+       "object": null,
+       "value": true
+      }
+     ]
+    ]
+   },
+   "spatiotemporal_conditions": {
+    "time": null,
+    "space": {
+     "start": "냉장고",
+     "end": "싱크대"
+    }
+   },
+   "target_objects": {
+    "required": [
+     {
+      "ref": "망고",
+      "location": "냉장고 냉장실 선반 1 위",
+      "state": null
+     },
+     {
+      "ref": "소스 병",
+      "location": "냉장고 냉장실 선반 1 위",
+      "state": null
+     },
+     {
+      "ref": "싱크대",
+      "location": null,
+      "state": "미가동"
+     }
+    ],
+    "key_means": [],
+    "auxiliary": [
+     {
+      "ref": "냉장고",
+      "location": null,
+      "note": "망고와 소스 병의 초기 위치 기준"
+     }
+    ]
+   },
+   "constraints": []
+  },
+  "task_situation_description_text": "작업 목표: 망고와 소스 병을 싱크대에 넣고 수도꼭지를 가동하는 것\n목표 상태:\n- 망고: 싱크대 안\n- 소스 병: 싱크대 안\n- 싱크대: 가동 중\n시간·공간 조건: 시간 조건은 없음, 공간 조건은 시작 냉장고, 종료 싱크대\n대상 물체:\n- 필수 물체: 망고(위치: 냉장고 냉장실 선반 1 위)\n- 필수 물체: 소스 병(위치: 냉장고 냉장실 선반 1 위)\n- 필수 물체: 싱크대(상태: 미가동)\n- 보조 물체: 냉장고(비고: 망고와 소스 병의 초기 위치 기준)\n제약 사항: 없음\n"
+ }
+}

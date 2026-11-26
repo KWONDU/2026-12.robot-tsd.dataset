@@ -1,0 +1,142 @@
+{
+ "id": "rc365-GarnishCupcake-synth-sim_reset-ep445100--load_and_move-1ef391c0--v1--gpt-6-sol",
+ "domain": "household",
+ "task_type": "load_and_move",
+ "agent": "gpt-6-sol",
+ "source": {
+  "data": "RoboCasa365 (MIT)",
+  "scene_id": "rc365/GarnishCupcake/synth/sim_reset/ep_445100",
+  "task": "load_and_move",
+  "composed": true
+ },
+ "input": {
+  "instruction": "시나몬 가루를 그릇에 담고, 그 그릇을 냉장실 맨 아래 서랍에 넣어.",
+  "instruction_en": "Put the cinnamon in the bowl, then put the bowl in the bottom drawer of the fridge.",
+  "world_state": "장소: 가정 주방\n로봇(PandaOmron). 들고 있는 물체 없음.\n\n물체가 놓인 곳:\n- 캐비닛 1 선반 위: 시나몬 가루, 그릇\n- 조리대 5(아일랜드 식탁) 위, 스툴 1 옆: 접시, 초콜릿\n- 접시 위: 컵케이크\n\n가구:\n- 조리대 1: 커피머신 옆, 전자레인지 옆, 스토브 옆\n- 조리대 2: 식기세척기 옆, 냉장고 옆, 싱크대 옆, 토스터 옆\n- 조리대 3: 전자레인지 옆, 스토브 옆\n- 식기세척기: 문 닫힘. 칸: 랙 1, 2(위에서부터)\n- 냉장고: 문 닫힘, 냉동실 문 닫힘. 칸: 냉동실 선반 1부터 3까지(위에서부터), 냉장실 선반 1부터 3까지(위에서부터), 냉동실 서랍 1, 2(위에서부터), 냉장실 서랍 1, 2(위에서부터)\n- 캐비닛 1: 문 열림\n- 캐비닛 2부터 9까지: 문 닫힘\n- 전자레인지: 문 닫힘\n- 싱크대: 미가동\n- 서랍 1, 2: 서랍 닫힘\n- 스토브: 문 닫힘, 미가동. 칸: 랙, 뒤 왼쪽 화구, 앞 왼쪽 화구, 앞 오른쪽 화구, 뒤 오른쪽 화구\n- 커피머신\n- 조리대 4\n- 수납장\n- 조리대 5(아일랜드 식탁)\n- 스툴 1부터 3까지\n- 토스터",
+  "entity_labels": {
+   "fx_coffee_machine_1": "커피머신",
+   "fx_counter_1": "조리대 1",
+   "fx_counter_2": "조리대 2",
+   "fx_counter_3": "조리대 3",
+   "fx_counter_4": "조리대 4",
+   "fx_dishwasher_1": "식기세척기",
+   "fx_cabinet_1": "수납장",
+   "fx_fridge_1": "냉장고",
+   "fx_cabinet_2": "캐비닛 1",
+   "fx_cabinet_3": "캐비닛 2",
+   "fx_counter_5": "조리대 5",
+   "fx_cabinet_4": "캐비닛 3",
+   "fx_microwave_1": "전자레인지",
+   "fx_cabinet_5": "캐비닛 4",
+   "fx_cabinet_6": "캐비닛 5",
+   "fx_cabinet_7": "캐비닛 6",
+   "fx_sink_1": "싱크대",
+   "fx_cabinet_8": "캐비닛 7",
+   "fx_drawer_1": "서랍 1",
+   "fx_cabinet_9": "캐비닛 8",
+   "fx_cabinet_10": "캐비닛 9",
+   "fx_drawer_2": "서랍 2",
+   "fx_stool_1": "스툴 1",
+   "fx_stool_2": "스툴 2",
+   "fx_stool_3": "스툴 3",
+   "fx_stove_1": "스토브",
+   "fx_toaster_1": "토스터",
+   "obj_001": "시나몬 가루",
+   "obj_002": "그릇",
+   "obj_003": "접시",
+   "obj_004": "컵케이크",
+   "obj_005": "초콜릿",
+   "fx_dishwasher_1/rack1": "식기세척기 랙 1",
+   "fx_dishwasher_1/rack0": "식기세척기 랙 2",
+   "fx_fridge_1/freezer_shelf2": "냉장고 냉동실 선반 1",
+   "fx_fridge_1/freezer_shelf1": "냉장고 냉동실 선반 2",
+   "fx_fridge_1/freezer_shelf0": "냉장고 냉동실 선반 3",
+   "fx_fridge_1/fridge_shelf2": "냉장고 냉장실 선반 1",
+   "fx_fridge_1/fridge_shelf1": "냉장고 냉장실 선반 2",
+   "fx_fridge_1/fridge_shelf0": "냉장고 냉장실 선반 3",
+   "fx_fridge_1/freezer_drawer1": "냉장고 냉동실 서랍 1",
+   "fx_fridge_1/freezer_drawer0": "냉장고 냉동실 서랍 2",
+   "fx_fridge_1/fridge_drawer1": "냉장고 냉장실 서랍 1",
+   "fx_fridge_1/fridge_drawer0": "냉장고 냉장실 서랍 2",
+   "fx_stove_1/rack0": "스토브 랙",
+   "fx_stove_1/rear_left": "스토브 뒤 왼쪽 화구",
+   "fx_stove_1/front_left": "스토브 앞 왼쪽 화구",
+   "fx_stove_1/front_right": "스토브 앞 오른쪽 화구",
+   "fx_stove_1/rear_right": "스토브 뒤 오른쪽 화구"
+  }
+ },
+ "output": {
+  "reasoning": "① 지시 해석: 시나몬 가루를 그릇에 담고 그 그릇을 냉장실 맨 아래 서랍에 넣는 것이 목표다. 시간 조건은 없다. 시나몬 가루와 그릇이 있는 캐비닛 1에서 시작해 냉장고에서 끝난다. ② 씬 접지: 시나몬 가루와 그릇은 캐비닛 1 선반 위에 있다. 냉장고의 냉장실 서랍은 위에서부터 1, 2번이므로 맨 아래는 냉장고 냉장실 서랍 2다. 냉장고 문은 닫혀 있다. ③ 역할 부여: 시나몬 가루와 그릇은 위치가 바뀌므로 필수다. 냉장고 냉장실 서랍 2는 그릇을 받는 곳이므로 핵심 수단이다. 캐비닛 1은 두 물체의 초기 위치 기준이고, 냉장고는 닫힌 문을 열어야 서랍에 접근할 수 있으므로 보조다. ④ 제약 도출: 냉장고 문을 여는 것이 그릇을 냉장실 서랍에 넣는 것에 선행해야 한다. 지시는 두 일을 나열했으며 별도의 시간 조건은 정하지 않았다. ⑤ 목표 상태: 시나몬 가루가 그릇 안에 있고 그릇이 냉장고 냉장실 서랍 2 안에 있는 경우 하나다.",
+  "task_situation_description": {
+   "task_goal": {
+    "summary": "시나몬 가루를 그릇에 담아 냉장실 맨 아래 서랍에 넣는 것",
+    "goal_state": [
+     [
+      {
+       "kind": "relation",
+       "subject": "시나몬 가루",
+       "predicate": "in",
+       "object": "그릇",
+       "value": true
+      },
+      {
+       "kind": "relation",
+       "subject": "그릇",
+       "predicate": "in",
+       "object": "냉장고 냉장실 서랍 2",
+       "value": true
+      }
+     ]
+    ]
+   },
+   "spatiotemporal_conditions": {
+    "time": null,
+    "space": {
+     "start": "캐비닛 1",
+     "end": "냉장고"
+    }
+   },
+   "target_objects": {
+    "required": [
+     {
+      "ref": "시나몬 가루",
+      "location": "캐비닛 1 선반 위",
+      "state": null
+     },
+     {
+      "ref": "그릇",
+      "location": "캐비닛 1 선반 위",
+      "state": null
+     }
+    ],
+    "key_means": [
+     {
+      "ref": "냉장고 냉장실 서랍 2",
+      "location": null,
+      "state": null,
+      "alternatives": []
+     }
+    ],
+    "auxiliary": [
+     {
+      "ref": "캐비닛 1",
+      "location": null,
+      "note": "시나몬 가루와 그릇의 초기 위치 기준"
+     },
+     {
+      "ref": "냉장고",
+      "location": null,
+      "note": "문이 닫혀 있어 냉장실 서랍에 접근하려면 먼저 열어야 하는 가구"
+     }
+    ]
+   },
+   "constraints": [
+    {
+     "type": "precedence",
+     "description": "냉장고 문이 닫혀 있으므로 문을 여는 것이 그릇을 냉장실 서랍에 넣는 것에 선행해야 함"
+    }
+   ]
+  },
+  "task_situation_description_text": "작업 목표: 시나몬 가루를 그릇에 담아 냉장실 맨 아래 서랍에 넣는 것\n목표 상태:\n- 시나몬 가루: 그릇 안\n- 그릇: 냉장고 냉장실 서랍 2 안\n시간·공간 조건: 시간 조건은 없음, 공간 조건은 시작 캐비닛 1, 종료 냉장고\n대상 물체:\n- 필수 물체: 시나몬 가루(위치: 캐비닛 1 선반 위)\n- 필수 물체: 그릇(위치: 캐비닛 1 선반 위)\n- 핵심 수단: 냉장고 냉장실 서랍 2\n- 보조 물체: 캐비닛 1(비고: 시나몬 가루와 그릇의 초기 위치 기준)\n- 보조 물체: 냉장고(비고: 문이 닫혀 있어 냉장실 서랍에 접근하려면 먼저 열어야 하는 가구)\n제약 사항:\n- [선후] 냉장고 문이 닫혀 있으므로 문을 여는 것이 그릇을 냉장실 서랍에 넣는 것에 선행해야 함\n"
+ }
+}
