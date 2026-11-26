@@ -1,6 +1,6 @@
-# robot-tsd.dataset: 구축 파이프라인 (pipeline 브랜치)
+# 2026-12.robot-tsd.dataset: 구축 파이프라인 (pipeline 브랜치)
 
-[main 브랜치](https://github.com/KWONDU/robot-tsd.dataset)의 데이터셋을 만든 코드, 프롬프트, 도메인 자원, 대시보드예요. 로봇에게 내린 한국어 자연어 지시와 세계 상태를 입력으로, 추론과 작업 상황 설명문(TSD)을 만들고 검수해요. 실행 기록, 캐시, 원천 데이터는 들어 있지 않아요.
+[main 브랜치](https://github.com/KWONDU/2026-12.robot-tsd.dataset)의 데이터셋을 만든 코드, 프롬프트, 도메인 자원, 대시보드예요. 로봇에게 내린 한국어 자연어 지시와 세계 상태를 입력으로, 추론과 작업 상황 설명문(TSD)을 만들고 검수해요. 실행 기록, 캐시, 원천 데이터는 들어 있지 않아요.
 
 ## 구성
 
