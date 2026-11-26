@@ -1,0 +1,154 @@
+{
+ "id": "factory_floor-floors-c871284dbf--deliver_two-f9d546f9--v1--gemini-3.8-flash",
+ "domain": "manufacturing",
+ "task_type": "deliver_two",
+ "agent": "gemini-3.8-flash",
+ "source": {
+  "data": "RoboCup Logistics League 2025 rules, FloorLayout.jl FLP instances (MIT), NVIDIA SimReady assets (CC BY 4.0)",
+  "scene_id": "factory_floor/c871284dbf",
+  "task": "deliver_two",
+  "composed": true
+ },
+ "input": {
+  "instruction": "자재 공급대 출구 버퍼에 있는 M20 볼트는 검사대 입구 버퍼에, 피스톤은 가공기 2 입구 버퍼에 갖다 놔.",
+  "instruction_en": "Bring the M20 bolt to the input buffer of the inspection station and the piston to the input buffer of machining station 2.",
+  "world_state": "장소: 공장\n로봇(mobile_manipulator). 들고 있는 물체 없음. 가공기 1 근처에 있음.\n\n지도의 구역과 곳(미리 알고 있는 정보):\n- 조립 구역: 검사대, 조립 스테이션 1, 조립 스테이션 2, 조립 스테이션 3\n- 가공 구역: 가공기 1, 가공기 2, 가공기 3\n- 자재 구역: 자동 창고, 자재 공급대\n- 출하 구역: 출하 도크\n- 지원 구역: 공구 보관소, 로봇 대기 구역, 충전소, 폐기물 수거장\n\n지도의 통로:\n- 로봇 대기 구역 - 공구 보관소: 통로 1, 6 m\n- 로봇 대기 구역 - 가공기 2: 통로 2, 9 m\n- 자재 공급대 - 가공기 1: 통로 3, 6 m\n- 자재 공급대 - 충전소: 통로 4, 15 m\n- 자재 공급대 - 폐기물 수거장: 통로 5, 6 m\n- 자재 공급대 - 가공기 3: 통로 6, 12 m\n- 가공기 1 - 공구 보관소: 통로 7, 15 m\n- 가공기 1 - 검사대: 통로 8, 9 m\n- 가공기 1 - 가공기 3: 통로 9, 15 m\n- 가공기 1 - 출하 도크: 통로 10, 9 m\n- 공구 보관소 - 폐기물 수거장: 통로 11, 9 m\n- 충전소 - 폐기물 수거장: 통로 12, 18 m\n- 가공기 2 - 공구 보관소: 통로 13, 12 m\n- 가공기 2 - 폐기물 수거장: 통로 14, 12 m\n- 가공기 2 - 검사대: 통로 15, 6 m\n- 조립 스테이션 1 - 폐기물 수거장: 통로 16, 12 m\n- 조립 스테이션 1 - 조립 스테이션 3: 통로 17, 6 m\n- 조립 스테이션 1 - 가공기 3: 통로 18, 30 m\n- 조립 스테이션 2 - 검사대: 통로 19, 6 m\n- 조립 스테이션 2 - 가공기 3: 통로 20, 24 m\n- 조립 스테이션 2 - 출하 도크: 통로 21, 6 m\n- 검사대 - 공구 보관소: 통로 22, 15 m\n- 검사대 - 가공기 3: 통로 23, 27 m\n- 조립 스테이션 3 - 폐기물 수거장: 통로 24, 15 m\n- 조립 스테이션 3 - 가공기 3: 통로 25, 27 m\n- 조립 스테이션 3 - 자동 창고: 통로 26, 9 m\n- 가공기 3 - 충전소: 통로 27, 18 m\n- 가공기 3 - 폐기물 수거장: 통로 28, 21 m\n- 가공기 3 - 출하 도크: 통로 29, 21 m\n- 자동 창고 - 충전소: 통로 30, 6 m\n- 자동 창고 - 폐기물 수거장: 통로 31, 15 m\n\n시설 알림:\n- 가공기 1 점검으로 정지, 약 30초 뒤 다시 가동\n- 조립 스테이션 1 점검으로 정지, 약 45초 뒤 다시 가동\n- 조립 스테이션 2 점검으로 정지, 약 60초 뒤 다시 가동\n\n공장 시스템이 알려 준 물품(지금 보이지 않음):\n- 자재 공급대 출구 버퍼 위: M20 볼트, 피스톤\n- 가공기 2 입구 버퍼 위: M16 너트 1\n- 가공기 2 출구 버퍼 위: 엔진 마운트 2, 작업용 타월 1, 오일 필터 1\n- 조립 스테이션 1 출구 버퍼 위: 작업 장갑 2, 오일 필터 2\n- 조립 스테이션 2 입구 버퍼 위: M16 너트 2\n- 조립 스테이션 2 출구 버퍼 위: M12 너트 1, 종이컵\n- 조립 스테이션 3 입구 버퍼 위: 시동 모터\n- 조립 스테이션 3 출구 버퍼 위: 작업용 타월 2\n- 가공기 3 출구 버퍼 위: 체인 가이드, 오일 필터 3\n- 자동 창고 선반 2 위: 나사 고정제\n- 자동 창고 선반 4 위: M8 볼트 2\n- 자동 창고 선반 5 위: M4 볼트, 전구\n- 자동 창고 선반 6 위: M12 너트 2, 작업용 타월 3\n- 공구 보관소 반출대 위: 토크 렌치, 콤비네이션 렌치\n\n물체가 놓인 곳:\n- 가공기 1 입구 버퍼 위: 엔진 마운트 1\n- 가공기 1 출구 버퍼 위: M8 볼트 1, 작업 장갑 1\n\n설비:\n- 가공기 1(가공 구역): 미가동. 칸: 입구 버퍼, 출구 버퍼\n- 가공기 2(가공 구역): 가동 중. 칸: 입구 버퍼, 출구 버퍼\n- 조립 스테이션 1(조립 구역): 미가동. 칸: 입구 버퍼, 출구 버퍼\n- 조립 스테이션 2(조립 구역): 미가동. 칸: 입구 버퍼, 출구 버퍼\n- 조립 스테이션 3(조립 구역): 가동 중. 칸: 입구 버퍼, 출구 버퍼\n- 가공기 3(가공 구역): 가동 중. 칸: 입구 버퍼, 출구 버퍼\n- 바닥\n- 로봇 대기 구역(지원 구역)\n- 자재 공급대(자재 구역): 칸: 출구 버퍼\n- 검사대(조립 구역): 칸: 입구 버퍼, 출구 버퍼\n- 출하 도크(출하 구역): 칸: 입구 버퍼\n- 자동 창고(자재 구역): 칸: 선반 1부터 6까지(위에서부터)\n- 공구 보관소(지원 구역): 칸: 반출대\n- 충전소(지원 구역)\n- 폐기물 수거장(지원 구역): 칸: 수거함",
+  "entity_labels": {
+   "fx_floor_1": "바닥",
+   "fx_robot_bay_1": "로봇 대기 구역",
+   "fx_supply_station_1": "자재 공급대",
+   "fx_machining_station_1": "가공기 1",
+   "fx_machining_station_2": "가공기 2",
+   "fx_assembly_station_1": "조립 스테이션 1",
+   "fx_assembly_station_2": "조립 스테이션 2",
+   "fx_inspection_station_1": "검사대",
+   "fx_assembly_station_3": "조립 스테이션 3",
+   "fx_machining_station_3": "가공기 3",
+   "fx_shipping_dock_1": "출하 도크",
+   "fx_storage_station_1": "자동 창고",
+   "fx_tool_crib_1": "공구 보관소",
+   "fx_charging_station_1": "충전소",
+   "fx_waste_station_1": "폐기물 수거장",
+   "obj_001": "M20 볼트",
+   "obj_002": "피스톤",
+   "obj_003": "엔진 마운트 1",
+   "obj_004": "M8 볼트 1",
+   "obj_005": "작업 장갑 1",
+   "obj_006": "M16 너트 1",
+   "obj_007": "엔진 마운트 2",
+   "obj_008": "작업용 타월 1",
+   "obj_009": "오일 필터 1",
+   "obj_010": "작업 장갑 2",
+   "obj_011": "오일 필터 2",
+   "obj_012": "M16 너트 2",
+   "obj_013": "M12 너트 1",
+   "obj_014": "종이컵",
+   "obj_015": "시동 모터",
+   "obj_016": "작업용 타월 2",
+   "obj_017": "체인 가이드",
+   "obj_018": "오일 필터 3",
+   "obj_019": "나사 고정제",
+   "obj_020": "M8 볼트 2",
+   "obj_021": "M4 볼트",
+   "obj_022": "전구",
+   "obj_023": "M12 너트 2",
+   "obj_024": "작업용 타월 3",
+   "obj_025": "토크 렌치",
+   "obj_026": "콤비네이션 렌치",
+   "fx_supply_station_1/output": "자재 공급대 출구 버퍼",
+   "fx_machining_station_1/input": "가공기 1 입구 버퍼",
+   "fx_machining_station_1/output": "가공기 1 출구 버퍼",
+   "fx_machining_station_2/input": "가공기 2 입구 버퍼",
+   "fx_machining_station_2/output": "가공기 2 출구 버퍼",
+   "fx_assembly_station_1/input": "조립 스테이션 1 입구 버퍼",
+   "fx_assembly_station_1/output": "조립 스테이션 1 출구 버퍼",
+   "fx_assembly_station_2/input": "조립 스테이션 2 입구 버퍼",
+   "fx_assembly_station_2/output": "조립 스테이션 2 출구 버퍼",
+   "fx_inspection_station_1/input": "검사대 입구 버퍼",
+   "fx_inspection_station_1/output": "검사대 출구 버퍼",
+   "fx_assembly_station_3/input": "조립 스테이션 3 입구 버퍼",
+   "fx_assembly_station_3/output": "조립 스테이션 3 출구 버퍼",
+   "fx_machining_station_3/input": "가공기 3 입구 버퍼",
+   "fx_machining_station_3/output": "가공기 3 출구 버퍼",
+   "fx_shipping_dock_1/input": "출하 도크 입구 버퍼",
+   "fx_storage_station_1/shelf1": "자동 창고 선반 1",
+   "fx_storage_station_1/shelf2": "자동 창고 선반 2",
+   "fx_storage_station_1/shelf3": "자동 창고 선반 3",
+   "fx_storage_station_1/shelf4": "자동 창고 선반 4",
+   "fx_storage_station_1/shelf5": "자동 창고 선반 5",
+   "fx_storage_station_1/shelf6": "자동 창고 선반 6",
+   "fx_tool_crib_1/counter": "공구 보관소 반출대",
+   "fx_waste_station_1/bin": "폐기물 수거장 수거함"
+  }
+ },
+ "output": {
+  "reasoning": "① 지시 해석: 자재 공급대 출구 버퍼에 있는 M20 볼트를 검사대 입구 버퍼로, 피스톤을 가공기 2 입구 버퍼로 각각 옮기는 작업이다. 두 물체를 옮기는 작업의 선후 관계가 명시되지 않았으므로 작업 순서는 정해지지 않았다. 두 물체 모두 자재 공급대에서 시작하므로 시작 장소는 자재 공급대이며, 작업이 끝나는 곳은 검사대 또는 가공기 2 중 하나가 될 수 있어 '검사대 혹은 가공기 2'이다. 별도의 시간 조건은 없다.\n② 씬 접지: 환경 설명에 따르면 자재 공급대 출구 버퍼 위에 M20 볼트와 피스톤이 모두 존재한다. 검사대와 가공기 2는 가동 중이거나 점검 알림이 없어 바로 물건을 넣을 수 있다. 통로 중 막히거나 출입이 제한된 곳은 없다.\n③ 역할 부여: 작업 결과로 위치가 바뀌어야 하는 M20 볼트와 피스톤은 필수다. 두 물품을 받는 곳인 검사대 입구 버퍼와 가공기 2 입구 버퍼는 핵심 수단이다. 두 물체가 처음에 놓여 있는 자재 공급대는 초기 위치 기준이므로 보조다.\n④ 제약 도출: 통로에 막힘이나 출입 제한 구역이 없고, 대상 설비들도 점검 중이 아니므로 적용되는 제약 사항은 없다.\n⑤ 목표 상태: 작업 완료 시 M20 볼트는 검사대 입구 버퍼 위에 있고, 피스톤은 가공기 2 입구 버퍼 위에 있어야 한다.",
+  "task_situation_description": {
+   "task_goal": {
+    "summary": "자재 공급대 출구 버퍼의 M20 볼트를 검사대 입구 버퍼로, 피스톤을 가공기 2 입구 버퍼로 옮기는 것",
+    "goal_state": [
+     [
+      {
+       "kind": "relation",
+       "subject": "M20 볼트",
+       "predicate": "on",
+       "object": "검사대 입구 버퍼",
+       "value": true
+      },
+      {
+       "kind": "relation",
+       "subject": "피스톤",
+       "predicate": "on",
+       "object": "가공기 2 입구 버퍼",
+       "value": true
+      }
+     ]
+    ]
+   },
+   "spatiotemporal_conditions": {
+    "time": null,
+    "space": {
+     "start": "자재 공급대",
+     "end": "검사대 혹은 가공기 2"
+    }
+   },
+   "target_objects": {
+    "required": [
+     {
+      "ref": "M20 볼트",
+      "location": "자재 공급대 출구 버퍼 위",
+      "state": null
+     },
+     {
+      "ref": "피스톤",
+      "location": "자재 공급대 출구 버퍼 위",
+      "state": null
+     }
+    ],
+    "key_means": [
+     {
+      "ref": "검사대 입구 버퍼",
+      "location": null,
+      "state": null,
+      "alternatives": []
+     },
+     {
+      "ref": "가공기 2 입구 버퍼",
+      "location": null,
+      "state": null,
+      "alternatives": []
+     }
+    ],
+    "auxiliary": [
+     {
+      "ref": "자재 공급대",
+      "location": null,
+      "note": "M20 볼트와 피스톤의 초기 위치 기준"
+     }
+    ]
+   },
+   "constraints": []
+  },
+  "task_situation_description_text": "작업 목표: 자재 공급대 출구 버퍼의 M20 볼트를 검사대 입구 버퍼로, 피스톤을 가공기 2 입구 버퍼로 옮기는 것\n목표 상태:\n- M20 볼트: 검사대 입구 버퍼 위\n- 피스톤: 가공기 2 입구 버퍼 위\n시간·공간 조건: 시간 조건은 없음, 공간 조건은 시작 자재 공급대, 종료 검사대 혹은 가공기 2\n대상 물체:\n- 필수 물체: M20 볼트(위치: 자재 공급대 출구 버퍼 위)\n- 필수 물체: 피스톤(위치: 자재 공급대 출구 버퍼 위)\n- 핵심 수단: 검사대 입구 버퍼\n- 핵심 수단: 가공기 2 입구 버퍼\n- 보조 물체: 자재 공급대(비고: M20 볼트와 피스톤의 초기 위치 기준)\n제약 사항: 없음\n"
+ }
+}
