@@ -1,0 +1,1852 @@
+{
+ "schema_version": "0.5",
+ "scene_id": "scene_2a899c854b70",
+ "domain": "logistics",
+ "simulator": "isaacsim_synthetic",
+ "layout": {
+  "layout_id": null,
+  "layout_name": "RackLarge_A6+Transporter_Racks_A1_NP+sm_palletcomposition_a107_01",
+  "style_id": null,
+  "style_name": null
+ },
+ "fixtures": [
+  {
+   "id": "fx_floor_1",
+   "category": "floor",
+   "name_ko": "바닥",
+   "location_desc": null,
+   "states": {},
+   "state_source": "unknown",
+   "regions": []
+  },
+  {
+   "id": "fx_rack_1",
+   "category": "rack",
+   "name_ko": "랙",
+   "location_desc": null,
+   "states": {},
+   "state_source": "unknown",
+   "regions": [
+    {
+     "key": "shelf1",
+     "name_ko": "선반 1",
+     "states": {}
+    },
+    {
+     "key": "shelf2",
+     "name_ko": "선반 2",
+     "states": {}
+    }
+   ]
+  },
+  {
+   "id": "fx_cart_1",
+   "category": "cart",
+   "name_ko": "카트",
+   "location_desc": null,
+   "states": {},
+   "state_source": "unknown",
+   "regions": []
+  },
+  {
+   "id": "fx_cart_2",
+   "category": "cart",
+   "name_ko": "카트",
+   "location_desc": null,
+   "states": {},
+   "state_source": "unknown",
+   "regions": []
+  },
+  {
+   "id": "fx_cart_3",
+   "category": "cart",
+   "name_ko": "카트",
+   "location_desc": null,
+   "states": {},
+   "state_source": "unknown",
+   "regions": []
+  },
+  {
+   "id": "fx_cart_4",
+   "category": "cart",
+   "name_ko": "카트",
+   "location_desc": null,
+   "states": {},
+   "state_source": "unknown",
+   "regions": []
+  },
+  {
+   "id": "fx_cart_5",
+   "category": "cart",
+   "name_ko": "카트",
+   "location_desc": null,
+   "states": {},
+   "state_source": "unknown",
+   "regions": []
+  },
+  {
+   "id": "fx_cart_6",
+   "category": "cart",
+   "name_ko": "카트",
+   "location_desc": null,
+   "states": {},
+   "state_source": "unknown",
+   "regions": []
+  },
+  {
+   "id": "fx_cart_7",
+   "category": "cart",
+   "name_ko": "카트",
+   "location_desc": null,
+   "states": {},
+   "state_source": "unknown",
+   "regions": []
+  },
+  {
+   "id": "fx_cart_8",
+   "category": "cart",
+   "name_ko": "카트",
+   "location_desc": null,
+   "states": {},
+   "state_source": "unknown",
+   "regions": []
+  },
+  {
+   "id": "fx_cart_9",
+   "category": "cart",
+   "name_ko": "카트",
+   "location_desc": null,
+   "states": {},
+   "state_source": "unknown",
+   "regions": []
+  },
+  {
+   "id": "fx_cart_10",
+   "category": "cart",
+   "name_ko": "카트",
+   "location_desc": null,
+   "states": {},
+   "state_source": "unknown",
+   "regions": []
+  },
+  {
+   "id": "fx_cart_11",
+   "category": "cart",
+   "name_ko": "카트",
+   "location_desc": null,
+   "states": {},
+   "state_source": "unknown",
+   "regions": []
+  },
+  {
+   "id": "fx_cart_12",
+   "category": "cart",
+   "name_ko": "카트",
+   "location_desc": null,
+   "states": {},
+   "state_source": "unknown",
+   "regions": []
+  },
+  {
+   "id": "fx_cart_13",
+   "category": "cart",
+   "name_ko": "카트",
+   "location_desc": null,
+   "states": {},
+   "state_source": "unknown",
+   "regions": []
+  },
+  {
+   "id": "fx_cart_14",
+   "category": "cart",
+   "name_ko": "카트",
+   "location_desc": null,
+   "states": {},
+   "state_source": "unknown",
+   "regions": []
+  },
+  {
+   "id": "fx_cart_15",
+   "category": "cart",
+   "name_ko": "카트",
+   "location_desc": null,
+   "states": {},
+   "state_source": "unknown",
+   "regions": []
+  },
+  {
+   "id": "fx_cart_16",
+   "category": "cart",
+   "name_ko": "카트",
+   "location_desc": null,
+   "states": {},
+   "state_source": "unknown",
+   "regions": []
+  },
+  {
+   "id": "fx_cart_17",
+   "category": "cart",
+   "name_ko": "카트",
+   "location_desc": null,
+   "states": {},
+   "state_source": "unknown",
+   "regions": []
+  },
+  {
+   "id": "fx_cart_18",
+   "category": "cart",
+   "name_ko": "카트",
+   "location_desc": null,
+   "states": {},
+   "state_source": "unknown",
+   "regions": []
+  },
+  {
+   "id": "fx_cart_19",
+   "category": "cart",
+   "name_ko": "카트",
+   "location_desc": null,
+   "states": {},
+   "state_source": "unknown",
+   "regions": []
+  },
+  {
+   "id": "fx_cart_20",
+   "category": "cart",
+   "name_ko": "카트",
+   "location_desc": null,
+   "states": {},
+   "state_source": "unknown",
+   "regions": []
+  },
+  {
+   "id": "fx_cart_21",
+   "category": "cart",
+   "name_ko": "카트",
+   "location_desc": null,
+   "states": {},
+   "state_source": "unknown",
+   "regions": []
+  },
+  {
+   "id": "fx_cart_22",
+   "category": "cart",
+   "name_ko": "카트",
+   "location_desc": null,
+   "states": {},
+   "state_source": "unknown",
+   "regions": []
+  },
+  {
+   "id": "fx_cart_23",
+   "category": "cart",
+   "name_ko": "카트",
+   "location_desc": null,
+   "states": {},
+   "state_source": "unknown",
+   "regions": []
+  },
+  {
+   "id": "fx_cart_24",
+   "category": "cart",
+   "name_ko": "카트",
+   "location_desc": null,
+   "states": {},
+   "state_source": "unknown",
+   "regions": []
+  },
+  {
+   "id": "fx_cart_25",
+   "category": "cart",
+   "name_ko": "카트",
+   "location_desc": null,
+   "states": {},
+   "state_source": "unknown",
+   "regions": []
+  },
+  {
+   "id": "fx_cart_26",
+   "category": "cart",
+   "name_ko": "카트",
+   "location_desc": null,
+   "states": {},
+   "state_source": "unknown",
+   "regions": []
+  },
+  {
+   "id": "fx_cart_27",
+   "category": "cart",
+   "name_ko": "카트",
+   "location_desc": null,
+   "states": {},
+   "state_source": "unknown",
+   "regions": []
+  },
+  {
+   "id": "fx_cart_28",
+   "category": "cart",
+   "name_ko": "카트",
+   "location_desc": null,
+   "states": {},
+   "state_source": "unknown",
+   "regions": []
+  },
+  {
+   "id": "fx_cart_29",
+   "category": "cart",
+   "name_ko": "카트",
+   "location_desc": null,
+   "states": {},
+   "state_source": "unknown",
+   "regions": []
+  },
+  {
+   "id": "fx_cart_30",
+   "category": "cart",
+   "name_ko": "카트",
+   "location_desc": null,
+   "states": {},
+   "state_source": "unknown",
+   "regions": []
+  },
+  {
+   "id": "fx_cart_31",
+   "category": "cart",
+   "name_ko": "카트",
+   "location_desc": null,
+   "states": {},
+   "state_source": "unknown",
+   "regions": []
+  },
+  {
+   "id": "fx_cart_32",
+   "category": "cart",
+   "name_ko": "카트",
+   "location_desc": null,
+   "states": {},
+   "state_source": "unknown",
+   "regions": []
+  },
+  {
+   "id": "fx_cart_33",
+   "category": "cart",
+   "name_ko": "카트",
+   "location_desc": null,
+   "states": {},
+   "state_source": "unknown",
+   "regions": []
+  },
+  {
+   "id": "fx_cart_34",
+   "category": "cart",
+   "name_ko": "카트",
+   "location_desc": null,
+   "states": {},
+   "state_source": "unknown",
+   "regions": []
+  },
+  {
+   "id": "fx_cart_35",
+   "category": "cart",
+   "name_ko": "카트",
+   "location_desc": null,
+   "states": {},
+   "state_source": "unknown",
+   "regions": []
+  },
+  {
+   "id": "fx_cart_36",
+   "category": "cart",
+   "name_ko": "카트",
+   "location_desc": null,
+   "states": {},
+   "state_source": "unknown",
+   "regions": []
+  },
+  {
+   "id": "fx_cart_37",
+   "category": "cart",
+   "name_ko": "카트",
+   "location_desc": null,
+   "states": {},
+   "state_source": "unknown",
+   "regions": []
+  },
+  {
+   "id": "fx_cart_38",
+   "category": "cart",
+   "name_ko": "카트",
+   "location_desc": null,
+   "states": {},
+   "state_source": "unknown",
+   "regions": []
+  },
+  {
+   "id": "fx_cart_39",
+   "category": "cart",
+   "name_ko": "카트",
+   "location_desc": null,
+   "states": {},
+   "state_source": "unknown",
+   "regions": []
+  },
+  {
+   "id": "fx_cart_40",
+   "category": "cart",
+   "name_ko": "카트",
+   "location_desc": null,
+   "states": {},
+   "state_source": "unknown",
+   "regions": []
+  },
+  {
+   "id": "fx_cart_41",
+   "category": "cart",
+   "name_ko": "카트",
+   "location_desc": null,
+   "states": {},
+   "state_source": "unknown",
+   "regions": []
+  },
+  {
+   "id": "fx_cart_42",
+   "category": "cart",
+   "name_ko": "카트",
+   "location_desc": null,
+   "states": {},
+   "state_source": "unknown",
+   "regions": []
+  },
+  {
+   "id": "fx_cart_43",
+   "category": "cart",
+   "name_ko": "카트",
+   "location_desc": null,
+   "states": {},
+   "state_source": "unknown",
+   "regions": []
+  },
+  {
+   "id": "fx_cart_44",
+   "category": "cart",
+   "name_ko": "카트",
+   "location_desc": null,
+   "states": {},
+   "state_source": "unknown",
+   "regions": []
+  },
+  {
+   "id": "fx_cart_45",
+   "category": "cart",
+   "name_ko": "카트",
+   "location_desc": null,
+   "states": {},
+   "state_source": "unknown",
+   "regions": []
+  },
+  {
+   "id": "fx_cart_46",
+   "category": "cart",
+   "name_ko": "카트",
+   "location_desc": null,
+   "states": {},
+   "state_source": "unknown",
+   "regions": []
+  },
+  {
+   "id": "fx_cart_47",
+   "category": "cart",
+   "name_ko": "카트",
+   "location_desc": null,
+   "states": {},
+   "state_source": "unknown",
+   "regions": []
+  },
+  {
+   "id": "fx_cart_48",
+   "category": "cart",
+   "name_ko": "카트",
+   "location_desc": null,
+   "states": {},
+   "state_source": "unknown",
+   "regions": []
+  },
+  {
+   "id": "fx_cart_49",
+   "category": "cart",
+   "name_ko": "카트",
+   "location_desc": null,
+   "states": {},
+   "state_source": "unknown",
+   "regions": []
+  },
+  {
+   "id": "fx_cart_50",
+   "category": "cart",
+   "name_ko": "카트",
+   "location_desc": null,
+   "states": {},
+   "state_source": "unknown",
+   "regions": []
+  },
+  {
+   "id": "fx_cart_51",
+   "category": "cart",
+   "name_ko": "카트",
+   "location_desc": null,
+   "states": {},
+   "state_source": "unknown",
+   "regions": []
+  },
+  {
+   "id": "fx_cart_52",
+   "category": "cart",
+   "name_ko": "카트",
+   "location_desc": null,
+   "states": {},
+   "state_source": "unknown",
+   "regions": []
+  },
+  {
+   "id": "fx_cart_53",
+   "category": "cart",
+   "name_ko": "카트",
+   "location_desc": null,
+   "states": {},
+   "state_source": "unknown",
+   "regions": []
+  },
+  {
+   "id": "fx_cart_54",
+   "category": "cart",
+   "name_ko": "카트",
+   "location_desc": null,
+   "states": {},
+   "state_source": "unknown",
+   "regions": []
+  },
+  {
+   "id": "fx_cart_55",
+   "category": "cart",
+   "name_ko": "카트",
+   "location_desc": null,
+   "states": {},
+   "state_source": "unknown",
+   "regions": []
+  },
+  {
+   "id": "fx_cart_56",
+   "category": "cart",
+   "name_ko": "카트",
+   "location_desc": null,
+   "states": {},
+   "state_source": "unknown",
+   "regions": []
+  },
+  {
+   "id": "fx_cart_57",
+   "category": "cart",
+   "name_ko": "카트",
+   "location_desc": null,
+   "states": {},
+   "state_source": "unknown",
+   "regions": []
+  },
+  {
+   "id": "fx_cart_58",
+   "category": "cart",
+   "name_ko": "카트",
+   "location_desc": null,
+   "states": {},
+   "state_source": "unknown",
+   "regions": []
+  },
+  {
+   "id": "fx_cart_59",
+   "category": "cart",
+   "name_ko": "카트",
+   "location_desc": null,
+   "states": {},
+   "state_source": "unknown",
+   "regions": []
+  },
+  {
+   "id": "fx_cart_60",
+   "category": "cart",
+   "name_ko": "카트",
+   "location_desc": null,
+   "states": {},
+   "state_source": "unknown",
+   "regions": []
+  },
+  {
+   "id": "fx_cart_61",
+   "category": "cart",
+   "name_ko": "카트",
+   "location_desc": null,
+   "states": {},
+   "state_source": "unknown",
+   "regions": []
+  },
+  {
+   "id": "fx_cart_62",
+   "category": "cart",
+   "name_ko": "카트",
+   "location_desc": null,
+   "states": {},
+   "state_source": "unknown",
+   "regions": []
+  },
+  {
+   "id": "fx_cart_63",
+   "category": "cart",
+   "name_ko": "카트",
+   "location_desc": null,
+   "states": {},
+   "state_source": "unknown",
+   "regions": []
+  },
+  {
+   "id": "fx_cart_64",
+   "category": "cart",
+   "name_ko": "카트",
+   "location_desc": null,
+   "states": {},
+   "state_source": "unknown",
+   "regions": []
+  },
+  {
+   "id": "fx_cart_65",
+   "category": "cart",
+   "name_ko": "카트",
+   "location_desc": null,
+   "states": {},
+   "state_source": "unknown",
+   "regions": []
+  },
+  {
+   "id": "fx_cart_66",
+   "category": "cart",
+   "name_ko": "카트",
+   "location_desc": null,
+   "states": {},
+   "state_source": "unknown",
+   "regions": []
+  },
+  {
+   "id": "fx_cart_67",
+   "category": "cart",
+   "name_ko": "카트",
+   "location_desc": null,
+   "states": {},
+   "state_source": "unknown",
+   "regions": []
+  },
+  {
+   "id": "fx_cart_68",
+   "category": "cart",
+   "name_ko": "카트",
+   "location_desc": null,
+   "states": {},
+   "state_source": "unknown",
+   "regions": []
+  },
+  {
+   "id": "fx_cart_69",
+   "category": "cart",
+   "name_ko": "카트",
+   "location_desc": null,
+   "states": {},
+   "state_source": "unknown",
+   "regions": []
+  },
+  {
+   "id": "fx_cart_70",
+   "category": "cart",
+   "name_ko": "카트",
+   "location_desc": null,
+   "states": {},
+   "state_source": "unknown",
+   "regions": []
+  },
+  {
+   "id": "fx_cart_71",
+   "category": "cart",
+   "name_ko": "카트",
+   "location_desc": null,
+   "states": {},
+   "state_source": "unknown",
+   "regions": []
+  },
+  {
+   "id": "fx_cart_72",
+   "category": "cart",
+   "name_ko": "카트",
+   "location_desc": null,
+   "states": {},
+   "state_source": "unknown",
+   "regions": []
+  },
+  {
+   "id": "fx_cart_73",
+   "category": "cart",
+   "name_ko": "카트",
+   "location_desc": null,
+   "states": {},
+   "state_source": "unknown",
+   "regions": []
+  },
+  {
+   "id": "fx_cart_74",
+   "category": "cart",
+   "name_ko": "카트",
+   "location_desc": null,
+   "states": {},
+   "state_source": "unknown",
+   "regions": []
+  },
+  {
+   "id": "fx_cart_75",
+   "category": "cart",
+   "name_ko": "카트",
+   "location_desc": null,
+   "states": {},
+   "state_source": "unknown",
+   "regions": []
+  },
+  {
+   "id": "fx_cart_76",
+   "category": "cart",
+   "name_ko": "카트",
+   "location_desc": null,
+   "states": {},
+   "state_source": "unknown",
+   "regions": []
+  },
+  {
+   "id": "fx_cart_77",
+   "category": "cart",
+   "name_ko": "카트",
+   "location_desc": null,
+   "states": {},
+   "state_source": "unknown",
+   "regions": []
+  },
+  {
+   "id": "fx_cart_78",
+   "category": "cart",
+   "name_ko": "카트",
+   "location_desc": null,
+   "states": {},
+   "state_source": "unknown",
+   "regions": []
+  },
+  {
+   "id": "fx_cart_79",
+   "category": "cart",
+   "name_ko": "카트",
+   "location_desc": null,
+   "states": {},
+   "state_source": "unknown",
+   "regions": []
+  },
+  {
+   "id": "fx_cart_80",
+   "category": "cart",
+   "name_ko": "카트",
+   "location_desc": null,
+   "states": {},
+   "state_source": "unknown",
+   "regions": []
+  },
+  {
+   "id": "fx_cart_81",
+   "category": "cart",
+   "name_ko": "카트",
+   "location_desc": null,
+   "states": {},
+   "state_source": "unknown",
+   "regions": []
+  },
+  {
+   "id": "fx_cart_82",
+   "category": "cart",
+   "name_ko": "카트",
+   "location_desc": null,
+   "states": {},
+   "state_source": "unknown",
+   "regions": []
+  },
+  {
+   "id": "fx_cart_83",
+   "category": "cart",
+   "name_ko": "카트",
+   "location_desc": null,
+   "states": {},
+   "state_source": "unknown",
+   "regions": []
+  },
+  {
+   "id": "fx_cart_84",
+   "category": "cart",
+   "name_ko": "카트",
+   "location_desc": null,
+   "states": {},
+   "state_source": "unknown",
+   "regions": []
+  },
+  {
+   "id": "fx_cart_85",
+   "category": "cart",
+   "name_ko": "카트",
+   "location_desc": null,
+   "states": {},
+   "state_source": "unknown",
+   "regions": []
+  },
+  {
+   "id": "fx_cart_86",
+   "category": "cart",
+   "name_ko": "카트",
+   "location_desc": null,
+   "states": {},
+   "state_source": "unknown",
+   "regions": []
+  },
+  {
+   "id": "fx_cart_87",
+   "category": "cart",
+   "name_ko": "카트",
+   "location_desc": null,
+   "states": {},
+   "state_source": "unknown",
+   "regions": []
+  },
+  {
+   "id": "fx_cart_88",
+   "category": "cart",
+   "name_ko": "카트",
+   "location_desc": null,
+   "states": {},
+   "state_source": "unknown",
+   "regions": []
+  },
+  {
+   "id": "fx_cart_89",
+   "category": "cart",
+   "name_ko": "카트",
+   "location_desc": null,
+   "states": {},
+   "state_source": "unknown",
+   "regions": []
+  },
+  {
+   "id": "fx_cart_90",
+   "category": "cart",
+   "name_ko": "카트",
+   "location_desc": null,
+   "states": {},
+   "state_source": "unknown",
+   "regions": []
+  },
+  {
+   "id": "fx_cart_91",
+   "category": "cart",
+   "name_ko": "카트",
+   "location_desc": null,
+   "states": {},
+   "state_source": "unknown",
+   "regions": []
+  },
+  {
+   "id": "fx_cart_92",
+   "category": "cart",
+   "name_ko": "카트",
+   "location_desc": null,
+   "states": {},
+   "state_source": "unknown",
+   "regions": []
+  },
+  {
+   "id": "fx_cart_93",
+   "category": "cart",
+   "name_ko": "카트",
+   "location_desc": null,
+   "states": {},
+   "state_source": "unknown",
+   "regions": []
+  },
+  {
+   "id": "fx_cart_94",
+   "category": "cart",
+   "name_ko": "카트",
+   "location_desc": null,
+   "states": {},
+   "state_source": "unknown",
+   "regions": []
+  },
+  {
+   "id": "fx_cart_95",
+   "category": "cart",
+   "name_ko": "카트",
+   "location_desc": null,
+   "states": {},
+   "state_source": "unknown",
+   "regions": []
+  },
+  {
+   "id": "fx_cart_96",
+   "category": "cart",
+   "name_ko": "카트",
+   "location_desc": null,
+   "states": {},
+   "state_source": "unknown",
+   "regions": []
+  },
+  {
+   "id": "fx_cart_97",
+   "category": "cart",
+   "name_ko": "카트",
+   "location_desc": null,
+   "states": {},
+   "state_source": "unknown",
+   "regions": []
+  },
+  {
+   "id": "fx_cart_98",
+   "category": "cart",
+   "name_ko": "카트",
+   "location_desc": null,
+   "states": {},
+   "state_source": "unknown",
+   "regions": []
+  },
+  {
+   "id": "fx_cart_99",
+   "category": "cart",
+   "name_ko": "카트",
+   "location_desc": null,
+   "states": {},
+   "state_source": "unknown",
+   "regions": []
+  },
+  {
+   "id": "fx_cart_100",
+   "category": "cart",
+   "name_ko": "카트",
+   "location_desc": null,
+   "states": {},
+   "state_source": "unknown",
+   "regions": []
+  },
+  {
+   "id": "fx_pallet_1",
+   "category": "pallet",
+   "name_ko": "팔레트",
+   "location_desc": "팔레트 위",
+   "states": {},
+   "state_source": "unknown",
+   "regions": []
+  },
+  {
+   "id": "fx_pallet_2",
+   "category": "pallet",
+   "name_ko": "팔레트",
+   "location_desc": "팔레트 위",
+   "states": {},
+   "state_source": "unknown",
+   "regions": []
+  },
+  {
+   "id": "fx_pallet_3",
+   "category": "pallet",
+   "name_ko": "팔레트",
+   "location_desc": null,
+   "states": {},
+   "state_source": "unknown",
+   "regions": []
+  },
+  {
+   "id": "fx_pallet_4",
+   "category": "pallet",
+   "name_ko": "팔레트",
+   "location_desc": "팔레트 위",
+   "states": {},
+   "state_source": "unknown",
+   "regions": []
+  },
+  {
+   "id": "fx_pallet_5",
+   "category": "pallet",
+   "name_ko": "팔레트",
+   "location_desc": "팔레트 위",
+   "states": {},
+   "state_source": "unknown",
+   "regions": []
+  },
+  {
+   "id": "fx_pallet_6",
+   "category": "pallet",
+   "name_ko": "팔레트",
+   "location_desc": "팔레트 위",
+   "states": {},
+   "state_source": "unknown",
+   "regions": []
+  },
+  {
+   "id": "fx_pallet_7",
+   "category": "pallet",
+   "name_ko": "팔레트",
+   "location_desc": "팔레트 위",
+   "states": {},
+   "state_source": "unknown",
+   "regions": []
+  }
+ ],
+ "objects": [
+  {
+   "id": "obj_001",
+   "category": "wooden_crate",
+   "name_ko": "나무 상자",
+   "states": {},
+   "placement": {
+    "fixture_id": "fx_rack_1",
+    "relation": "on",
+    "region": "shelf2",
+    "near_fixture_id": null,
+    "near_side": null
+   },
+   "pose": null,
+   "size_m": [
+    0.912,
+    1.821,
+    0.923
+   ],
+   "size_class": null
+  },
+  {
+   "id": "obj_002",
+   "category": "wooden_crate",
+   "name_ko": "나무 상자",
+   "states": {},
+   "placement": {
+    "fixture_id": "fx_rack_1",
+    "relation": "on",
+    "region": "shelf2",
+    "near_fixture_id": null,
+    "near_side": null
+   },
+   "pose": null,
+   "size_m": [
+    0.912,
+    1.821,
+    0.923
+   ],
+   "size_class": null
+  },
+  {
+   "id": "obj_003",
+   "category": "wooden_crate",
+   "name_ko": "나무 상자",
+   "states": {},
+   "placement": {
+    "fixture_id": "fx_rack_1",
+    "relation": "on",
+    "region": "shelf2",
+    "near_fixture_id": null,
+    "near_side": null
+   },
+   "pose": null,
+   "size_m": [
+    1.821,
+    0.912,
+    0.923
+   ],
+   "size_class": null
+  },
+  {
+   "id": "obj_004",
+   "category": "wooden_crate",
+   "name_ko": "나무 상자",
+   "states": {},
+   "placement": {
+    "fixture_id": "fx_rack_1",
+    "relation": "on",
+    "region": "shelf2",
+    "near_fixture_id": null,
+    "near_side": null
+   },
+   "pose": null,
+   "size_m": [
+    1.821,
+    0.912,
+    0.923
+   ],
+   "size_class": null
+  },
+  {
+   "id": "obj_005",
+   "category": "cardboard_box",
+   "name_ko": "종이 상자",
+   "states": {},
+   "placement": {
+    "fixture_id": "fx_rack_1",
+    "relation": "on",
+    "region": "shelf1",
+    "near_fixture_id": null,
+    "near_side": null
+   },
+   "pose": null,
+   "size_m": [
+    0.596,
+    0.595,
+    0.608
+   ],
+   "size_class": null
+  },
+  {
+   "id": "obj_006",
+   "category": "cardboard_box",
+   "name_ko": "종이 상자",
+   "states": {},
+   "placement": {
+    "fixture_id": "fx_rack_1",
+    "relation": "on",
+    "region": "shelf1",
+    "near_fixture_id": null,
+    "near_side": null
+   },
+   "pose": null,
+   "size_m": [
+    0.589,
+    0.807,
+    0.602
+   ],
+   "size_class": null
+  },
+  {
+   "id": "obj_007",
+   "category": "cardboard_box",
+   "name_ko": "종이 상자",
+   "states": {},
+   "placement": {
+    "fixture_id": "fx_rack_1",
+    "relation": "on",
+    "region": "shelf1",
+    "near_fixture_id": null,
+    "near_side": null
+   },
+   "pose": null,
+   "size_m": [
+    0.591,
+    0.809,
+    0.602
+   ],
+   "size_class": null
+  },
+  {
+   "id": "obj_008",
+   "category": "cardboard_box",
+   "name_ko": "종이 상자",
+   "states": {},
+   "placement": {
+    "fixture_id": "fx_rack_1",
+    "relation": "on",
+    "region": "shelf1",
+    "near_fixture_id": null,
+    "near_side": null
+   },
+   "pose": null,
+   "size_m": [
+    0.595,
+    0.595,
+    0.608
+   ],
+   "size_class": null
+  },
+  {
+   "id": "obj_009",
+   "category": "cardboard_box",
+   "name_ko": "종이 상자",
+   "states": {},
+   "placement": {
+    "fixture_id": "fx_rack_1",
+    "relation": "on",
+    "region": "shelf1",
+    "near_fixture_id": null,
+    "near_side": null
+   },
+   "pose": null,
+   "size_m": [
+    0.595,
+    0.596,
+    0.608
+   ],
+   "size_class": null
+  },
+  {
+   "id": "obj_010",
+   "category": "cardboard_box",
+   "name_ko": "종이 상자",
+   "states": {},
+   "placement": {
+    "fixture_id": "fx_rack_1",
+    "relation": "on",
+    "region": "shelf1",
+    "near_fixture_id": null,
+    "near_side": null
+   },
+   "pose": null,
+   "size_m": [
+    0.602,
+    0.807,
+    0.589
+   ],
+   "size_class": null
+  },
+  {
+   "id": "obj_011",
+   "category": "cardboard_box",
+   "name_ko": "종이 상자",
+   "states": {},
+   "placement": {
+    "fixture_id": "fx_rack_1",
+    "relation": "on",
+    "region": "shelf1",
+    "near_fixture_id": null,
+    "near_side": null
+   },
+   "pose": null,
+   "size_m": [
+    0.589,
+    0.807,
+    0.602
+   ],
+   "size_class": null
+  },
+  {
+   "id": "obj_012",
+   "category": "cardboard_box",
+   "name_ko": "종이 상자",
+   "states": {},
+   "placement": {
+    "fixture_id": "fx_rack_1",
+    "relation": "on",
+    "region": "shelf1",
+    "near_fixture_id": null,
+    "near_side": null
+   },
+   "pose": null,
+   "size_m": [
+    0.807,
+    0.589,
+    0.602
+   ],
+   "size_class": null
+  },
+  {
+   "id": "obj_013",
+   "category": "cardboard_box",
+   "name_ko": "종이 상자",
+   "states": {},
+   "placement": {
+    "fixture_id": "fx_rack_1",
+    "relation": "on",
+    "region": "shelf1",
+    "near_fixture_id": null,
+    "near_side": null
+   },
+   "pose": null,
+   "size_m": [
+    0.82,
+    0.605,
+    0.602
+   ],
+   "size_class": null
+  },
+  {
+   "id": "obj_014",
+   "category": "cardboard_box",
+   "name_ko": "종이 상자",
+   "states": {},
+   "placement": {
+    "fixture_id": "fx_rack_1",
+    "relation": "on",
+    "region": "shelf1",
+    "near_fixture_id": null,
+    "near_side": null
+   },
+   "pose": null,
+   "size_m": [
+    0.618,
+    0.829,
+    0.602
+   ],
+   "size_class": null
+  },
+  {
+   "id": "obj_015",
+   "category": "cardboard_box",
+   "name_ko": "종이 상자",
+   "states": {},
+   "placement": {
+    "fixture_id": "fx_rack_1",
+    "relation": "on",
+    "region": "shelf1",
+    "near_fixture_id": null,
+    "near_side": null
+   },
+   "pose": null,
+   "size_m": [
+    0.605,
+    0.819,
+    0.602
+   ],
+   "size_class": null
+  },
+  {
+   "id": "obj_016",
+   "category": "cardboard_box",
+   "name_ko": "종이 상자",
+   "states": {},
+   "placement": {
+    "fixture_id": "fx_rack_1",
+    "relation": "on",
+    "region": "shelf1",
+    "near_fixture_id": null,
+    "near_side": null
+   },
+   "pose": null,
+   "size_m": [
+    0.622,
+    0.822,
+    0.589
+   ],
+   "size_class": null
+  },
+  {
+   "id": "obj_017",
+   "category": "cardboard_box",
+   "name_ko": "종이 상자",
+   "states": {},
+   "placement": null,
+   "pose": null,
+   "size_m": [
+    0.808,
+    0.589,
+    0.602
+   ],
+   "size_class": null
+  },
+  {
+   "id": "obj_018",
+   "category": "cardboard_box",
+   "name_ko": "종이 상자",
+   "states": {},
+   "placement": null,
+   "pose": null,
+   "size_m": [
+    0.857,
+    0.67,
+    0.589
+   ],
+   "size_class": null
+  },
+  {
+   "id": "obj_019",
+   "category": "cardboard_box",
+   "name_ko": "종이 상자",
+   "states": {},
+   "placement": null,
+   "pose": null,
+   "size_m": [
+    0.602,
+    0.807,
+    0.589
+   ],
+   "size_class": null
+  },
+  {
+   "id": "obj_020",
+   "category": "cardboard_box",
+   "name_ko": "종이 상자",
+   "states": {},
+   "placement": null,
+   "pose": null,
+   "size_m": [
+    0.828,
+    0.617,
+    0.602
+   ],
+   "size_class": null
+  },
+  {
+   "id": "obj_021",
+   "category": "cardboard_box",
+   "name_ko": "종이 상자",
+   "states": {},
+   "placement": null,
+   "pose": null,
+   "size_m": [
+    0.81,
+    0.593,
+    0.602
+   ],
+   "size_class": null
+  },
+  {
+   "id": "obj_022",
+   "category": "cardboard_box",
+   "name_ko": "종이 상자",
+   "states": {},
+   "placement": null,
+   "pose": null,
+   "size_m": [
+    0.879,
+    0.692,
+    0.602
+   ],
+   "size_class": null
+  },
+  {
+   "id": "obj_023",
+   "category": "cardboard_box",
+   "name_ko": "종이 상자",
+   "states": {},
+   "placement": null,
+   "pose": null,
+   "size_m": [
+    0.822,
+    0.609,
+    0.602
+   ],
+   "size_class": null
+  },
+  {
+   "id": "obj_024",
+   "category": "cardboard_box",
+   "name_ko": "종이 상자",
+   "states": {},
+   "placement": null,
+   "pose": null,
+   "size_m": [
+    0.813,
+    0.597,
+    0.602
+   ],
+   "size_class": null
+  },
+  {
+   "id": "obj_025",
+   "category": "cardboard_box",
+   "name_ko": "종이 상자",
+   "states": {},
+   "placement": null,
+   "pose": null,
+   "size_m": [
+    0.808,
+    0.602,
+    0.589
+   ],
+   "size_class": null
+  },
+  {
+   "id": "obj_026",
+   "category": "cardboard_box",
+   "name_ko": "종이 상자",
+   "states": {},
+   "placement": null,
+   "pose": null,
+   "size_m": [
+    0.84,
+    0.647,
+    0.589
+   ],
+   "size_class": null
+  },
+  {
+   "id": "obj_027",
+   "category": "cardboard_box",
+   "name_ko": "종이 상자",
+   "states": {},
+   "placement": null,
+   "pose": null,
+   "size_m": [
+    0.591,
+    0.809,
+    0.602
+   ],
+   "size_class": null
+  },
+  {
+   "id": "obj_028",
+   "category": "cardboard_box",
+   "name_ko": "종이 상자",
+   "states": {},
+   "placement": null,
+   "pose": null,
+   "size_m": [
+    0.345,
+    0.272,
+    0.178
+   ],
+   "size_class": null
+  },
+  {
+   "id": "obj_029",
+   "category": "cardboard_box",
+   "name_ko": "종이 상자",
+   "states": {},
+   "placement": null,
+   "pose": null,
+   "size_m": [
+    0.266,
+    0.35,
+    0.175
+   ],
+   "size_class": null
+  },
+  {
+   "id": "obj_030",
+   "category": "cardboard_box",
+   "name_ko": "종이 상자",
+   "states": {},
+   "placement": null,
+   "pose": null,
+   "size_m": [
+    0.378,
+    0.309,
+    0.166
+   ],
+   "size_class": null
+  },
+  {
+   "id": "obj_031",
+   "category": "cardboard_box",
+   "name_ko": "종이 상자",
+   "states": {},
+   "placement": null,
+   "pose": null,
+   "size_m": [
+    0.295,
+    0.368,
+    0.166
+   ],
+   "size_class": null
+  },
+  {
+   "id": "obj_032",
+   "category": "cardboard_box",
+   "name_ko": "종이 상자",
+   "states": {},
+   "placement": null,
+   "pose": null,
+   "size_m": [
+    0.596,
+    0.593,
+    0.301
+   ],
+   "size_class": null
+  },
+  {
+   "id": "obj_033",
+   "category": "cardboard_box",
+   "name_ko": "종이 상자",
+   "states": {},
+   "placement": null,
+   "pose": null,
+   "size_m": [
+    0.265,
+    0.345,
+    0.166
+   ],
+   "size_class": null
+  },
+  {
+   "id": "obj_034",
+   "category": "cardboard_box",
+   "name_ko": "종이 상자",
+   "states": {},
+   "placement": null,
+   "pose": null,
+   "size_m": [
+    0.691,
+    0.688,
+    0.301
+   ],
+   "size_class": null
+  },
+  {
+   "id": "obj_035",
+   "category": "cardboard_box",
+   "name_ko": "종이 상자",
+   "states": {},
+   "placement": null,
+   "pose": null,
+   "size_m": [
+    0.763,
+    0.761,
+    0.301
+   ],
+   "size_class": null
+  },
+  {
+   "id": "obj_036",
+   "category": "cardboard_box",
+   "name_ko": "종이 상자",
+   "states": {},
+   "placement": null,
+   "pose": null,
+   "size_m": [
+    0.683,
+    0.681,
+    0.301
+   ],
+   "size_class": null
+  },
+  {
+   "id": "obj_037",
+   "category": "cardboard_box",
+   "name_ko": "종이 상자",
+   "states": {},
+   "placement": null,
+   "pose": null,
+   "size_m": [
+    0.369,
+    0.297,
+    0.166
+   ],
+   "size_class": null
+  }
+ ],
+ "relations": [
+  {
+   "subj": "obj_001",
+   "pred": "on",
+   "obj": "fx_rack_1",
+   "source": "geometry"
+  },
+  {
+   "subj": "obj_002",
+   "pred": "on",
+   "obj": "fx_rack_1",
+   "source": "geometry"
+  },
+  {
+   "subj": "obj_003",
+   "pred": "on",
+   "obj": "fx_rack_1",
+   "source": "geometry"
+  },
+  {
+   "subj": "obj_004",
+   "pred": "on",
+   "obj": "fx_rack_1",
+   "source": "geometry"
+  },
+  {
+   "subj": "obj_005",
+   "pred": "on",
+   "obj": "fx_rack_1",
+   "source": "geometry"
+  },
+  {
+   "subj": "obj_006",
+   "pred": "on",
+   "obj": "fx_rack_1",
+   "source": "geometry"
+  },
+  {
+   "subj": "obj_007",
+   "pred": "on",
+   "obj": "fx_rack_1",
+   "source": "geometry"
+  },
+  {
+   "subj": "obj_008",
+   "pred": "on",
+   "obj": "fx_rack_1",
+   "source": "geometry"
+  },
+  {
+   "subj": "obj_009",
+   "pred": "on",
+   "obj": "fx_rack_1",
+   "source": "geometry"
+  },
+  {
+   "subj": "obj_010",
+   "pred": "on",
+   "obj": "fx_rack_1",
+   "source": "geometry"
+  },
+  {
+   "subj": "obj_011",
+   "pred": "on",
+   "obj": "fx_rack_1",
+   "source": "geometry"
+  },
+  {
+   "subj": "obj_012",
+   "pred": "on",
+   "obj": "fx_rack_1",
+   "source": "geometry"
+  },
+  {
+   "subj": "obj_013",
+   "pred": "on",
+   "obj": "fx_rack_1",
+   "source": "geometry"
+  },
+  {
+   "subj": "obj_014",
+   "pred": "on",
+   "obj": "fx_rack_1",
+   "source": "geometry"
+  },
+  {
+   "subj": "obj_015",
+   "pred": "on",
+   "obj": "fx_rack_1",
+   "source": "geometry"
+  },
+  {
+   "subj": "obj_016",
+   "pred": "on",
+   "obj": "fx_rack_1",
+   "source": "geometry"
+  },
+  {
+   "subj": "obj_017",
+   "pred": "on",
+   "obj": "obj_010",
+   "source": "geometry"
+  },
+  {
+   "subj": "obj_018",
+   "pred": "on",
+   "obj": "obj_008",
+   "source": "geometry"
+  },
+  {
+   "subj": "obj_019",
+   "pred": "on",
+   "obj": "obj_006",
+   "source": "geometry"
+  },
+  {
+   "subj": "obj_020",
+   "pred": "on",
+   "obj": "obj_016",
+   "source": "geometry"
+  },
+  {
+   "subj": "obj_021",
+   "pred": "on",
+   "obj": "obj_005",
+   "source": "geometry"
+  },
+  {
+   "subj": "obj_022",
+   "pred": "on",
+   "obj": "obj_014",
+   "source": "geometry"
+  },
+  {
+   "subj": "obj_023",
+   "pred": "on",
+   "obj": "obj_013",
+   "source": "geometry"
+  },
+  {
+   "subj": "obj_024",
+   "pred": "on",
+   "obj": "obj_012",
+   "source": "geometry"
+  },
+  {
+   "subj": "obj_025",
+   "pred": "on",
+   "obj": "obj_015",
+   "source": "geometry"
+  },
+  {
+   "subj": "obj_026",
+   "pred": "on",
+   "obj": "obj_016",
+   "source": "geometry"
+  },
+  {
+   "subj": "obj_027",
+   "pred": "on",
+   "obj": "obj_007",
+   "source": "geometry"
+  },
+  {
+   "subj": "obj_028",
+   "pred": "on",
+   "obj": "obj_025",
+   "source": "geometry"
+  },
+  {
+   "subj": "obj_029",
+   "pred": "on",
+   "obj": "obj_026",
+   "source": "geometry"
+  },
+  {
+   "subj": "obj_030",
+   "pred": "on",
+   "obj": "obj_021",
+   "source": "geometry"
+  },
+  {
+   "subj": "obj_031",
+   "pred": "on",
+   "obj": "obj_022",
+   "source": "geometry"
+  },
+  {
+   "subj": "obj_032",
+   "pred": "on",
+   "obj": "obj_019",
+   "source": "geometry"
+  },
+  {
+   "subj": "obj_033",
+   "pred": "on",
+   "obj": "obj_024",
+   "source": "geometry"
+  },
+  {
+   "subj": "obj_034",
+   "pred": "on",
+   "obj": "obj_027",
+   "source": "geometry"
+  },
+  {
+   "subj": "obj_035",
+   "pred": "on",
+   "obj": "obj_017",
+   "source": "geometry"
+  },
+  {
+   "subj": "obj_036",
+   "pred": "on",
+   "obj": "obj_018",
+   "source": "geometry"
+  },
+  {
+   "subj": "obj_037",
+   "pred": "on",
+   "obj": "obj_031",
+   "source": "geometry"
+  }
+ ],
+ "agent": {
+  "embodiment": "humanoid",
+  "base_near_fixture_id": null,
+  "holding": []
+ },
+ "constraints": []
+}

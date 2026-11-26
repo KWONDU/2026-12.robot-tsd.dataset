@@ -1,0 +1,339 @@
+{
+ "id": "simready_warehouse-cells-fb5bad03f4--unstack_all-e06032c1--v1--gpt-6-sol",
+ "domain": "logistics",
+ "task_type": "unstack_all",
+ "agent": "gpt-6-sol",
+ "source": {
+  "data": "NVIDIA PhysicalAI-SimReady-Warehouse-01 (CC BY 4.0)",
+  "scene_id": "simready_warehouse/fb5bad03f4",
+  "task": "unstack_all",
+  "composed": true
+ },
+ "input": {
+  "instruction": "쌓여 있는 상자들을 하나씩 따로 작업대 상판에 올려놔.",
+  "instruction_en": "Unstack the boxes and put each of them on the top of the work table on its own.",
+  "world_state": "장소: 물류 창고\n로봇(humanoid). 들고 있는 물체 없음.\n\n물체가 놓인 곳:\n- 바닥 위: 종이 상자 1, 종이 상자 2, 종이 상자 3, 종이 상자 4\n- 팔레트 위: 납작 상자 1, 납작 상자 2, 납작 상자 3, 납작 상자 4\n- 납작 상자 2 위: 납작 상자 5\n- 납작 상자 3 위: 상자 1, 상자 2\n- 납작 상자 1 위: 상자 3\n- 납작 상자 4 위: 상자 4\n- 작업대 선반 위: 파란 크레이트, 흰색 납작 상자\n- 파란 크레이트 안: 갈색 골판지 상자 1\n- 상자 1 위: 상자 5\n- 종이 상자 2 위: 종이 상자 5\n- 종이 상자 1 위: 종이 상자 6\n- 종이 상자 3 위: 종이 상자 7\n- 종이 상자 4 위: 종이 상자 8\n- 흰색 납작 상자 위: 노란 크레이트 1\n- 작업대 상판 위: 갈색 골판지 상자 2, 노란 크레이트 2, 흰색 골판지 상자\n\n물체 크기:\n- 종이 상자: 큰 것부터 종이 상자 2·종이 상자 3(서로 비슷), 종이 상자 1·종이 상자 4(서로 비슷), 종이 상자 5, 종이 상자 6·종이 상자 7·종이 상자 8(서로 비슷)\n- 납작 상자: 큰 것부터 납작 상자 5, 납작 상자 3·납작 상자 1·납작 상자 2·납작 상자 4(서로 비슷)\n- 상자: 큰 것부터 상자 3·상자 4(서로 비슷), 상자 2·상자 1(서로 비슷), 상자 5\n- 노란 크레이트: 큰 것부터 노란 크레이트 2, 노란 크레이트 1\n\n설비:\n- 바닥\n- 작업대: 칸: 상판, 선반\n- 팔레트",
+  "entity_labels": {
+   "fx_floor_1": "바닥",
+   "fx_worktable_1": "작업대",
+   "fx_pallet_1": "팔레트",
+   "obj_001": "종이 상자 1",
+   "obj_002": "종이 상자 2",
+   "obj_003": "종이 상자 3",
+   "obj_004": "종이 상자 4",
+   "obj_005": "납작 상자 1",
+   "obj_006": "납작 상자 2",
+   "obj_007": "납작 상자 3",
+   "obj_008": "납작 상자 4",
+   "obj_009": "납작 상자 5",
+   "obj_010": "상자 1",
+   "obj_011": "상자 2",
+   "obj_012": "상자 3",
+   "obj_013": "상자 4",
+   "obj_014": "파란 크레이트",
+   "obj_015": "흰색 납작 상자",
+   "obj_016": "갈색 골판지 상자 1",
+   "obj_017": "상자 5",
+   "obj_018": "종이 상자 5",
+   "obj_019": "종이 상자 6",
+   "obj_020": "종이 상자 7",
+   "obj_021": "종이 상자 8",
+   "obj_022": "노란 크레이트 1",
+   "obj_023": "갈색 골판지 상자 2",
+   "obj_024": "노란 크레이트 2",
+   "obj_025": "흰색 골판지 상자",
+   "fx_worktable_1/top": "작업대 상판",
+   "fx_worktable_1/shelf1": "작업대 선반"
+  }
+ },
+ "output": {
+  "reasoning": "① 지시 해석: 바닥과 팔레트에서 서로 쌓여 있는 상자들을 하나씩 분리해 작업대 상판에 따로 놓는 작업이다. 시간 조건은 없다. 옮길 상자들이 바닥과 팔레트에 있으므로 시작은 바닥 혹은 팔레트이고, 도착지는 작업대다. ② 씬 접지: 바닥의 종이 상자 1부터 8까지와 팔레트의 납작 상자 1부터 5까지 및 상자 1부터 5까지가 상자끼리 쌓인 대상이다. 작업대 선반의 흰색 납작 상자는 노란 크레이트와 함께 있지만 상자끼리 쌓인 대상은 아니다. ③ 역할 부여: 옮길 상자 18개는 필수, 상자를 받을 작업대 상판은 핵심 수단이다. 바닥과 팔레트는 상자들의 초기 위치 기준이므로 보조다. ④ 제약 도출: 아래에 있는 상자를 옮기려면 그 위의 상자를 먼저 치워야 한다. '하나씩 따로'는 한 번에 하나씩 옮기고 작업대 상판에서 서로 쌓지 않아야 한다는 조건이다. ⑤ 목표 상태 도출: 대상 상자 각각이 작업대 상판 위에 있는 관계를 최종 상태로 쓴다. 서로 따로 놓는 조건은 on 관계만으로 나타낼 수 없어 공간 제약으로 적는다.",
+  "task_situation_description": {
+   "task_goal": {
+    "summary": "바닥과 팔레트에서 쌓여 있는 상자들을 하나씩 분리해 작업대 상판에 따로 놓는 것",
+    "goal_state": [
+     [
+      {
+       "kind": "relation",
+       "subject": "종이 상자 1",
+       "predicate": "on",
+       "object": "작업대 상판",
+       "value": true
+      },
+      {
+       "kind": "relation",
+       "subject": "종이 상자 2",
+       "predicate": "on",
+       "object": "작업대 상판",
+       "value": true
+      },
+      {
+       "kind": "relation",
+       "subject": "종이 상자 3",
+       "predicate": "on",
+       "object": "작업대 상판",
+       "value": true
+      },
+      {
+       "kind": "relation",
+       "subject": "종이 상자 4",
+       "predicate": "on",
+       "object": "작업대 상판",
+       "value": true
+      },
+      {
+       "kind": "relation",
+       "subject": "종이 상자 5",
+       "predicate": "on",
+       "object": "작업대 상판",
+       "value": true
+      },
+      {
+       "kind": "relation",
+       "subject": "종이 상자 6",
+       "predicate": "on",
+       "object": "작업대 상판",
+       "value": true
+      },
+      {
+       "kind": "relation",
+       "subject": "종이 상자 7",
+       "predicate": "on",
+       "object": "작업대 상판",
+       "value": true
+      },
+      {
+       "kind": "relation",
+       "subject": "종이 상자 8",
+       "predicate": "on",
+       "object": "작업대 상판",
+       "value": true
+      },
+      {
+       "kind": "relation",
+       "subject": "납작 상자 1",
+       "predicate": "on",
+       "object": "작업대 상판",
+       "value": true
+      },
+      {
+       "kind": "relation",
+       "subject": "납작 상자 2",
+       "predicate": "on",
+       "object": "작업대 상판",
+       "value": true
+      },
+      {
+       "kind": "relation",
+       "subject": "납작 상자 3",
+       "predicate": "on",
+       "object": "작업대 상판",
+       "value": true
+      },
+      {
+       "kind": "relation",
+       "subject": "납작 상자 4",
+       "predicate": "on",
+       "object": "작업대 상판",
+       "value": true
+      },
+      {
+       "kind": "relation",
+       "subject": "납작 상자 5",
+       "predicate": "on",
+       "object": "작업대 상판",
+       "value": true
+      },
+      {
+       "kind": "relation",
+       "subject": "상자 1",
+       "predicate": "on",
+       "object": "작업대 상판",
+       "value": true
+      },
+      {
+       "kind": "relation",
+       "subject": "상자 2",
+       "predicate": "on",
+       "object": "작업대 상판",
+       "value": true
+      },
+      {
+       "kind": "relation",
+       "subject": "상자 3",
+       "predicate": "on",
+       "object": "작업대 상판",
+       "value": true
+      },
+      {
+       "kind": "relation",
+       "subject": "상자 4",
+       "predicate": "on",
+       "object": "작업대 상판",
+       "value": true
+      },
+      {
+       "kind": "relation",
+       "subject": "상자 5",
+       "predicate": "on",
+       "object": "작업대 상판",
+       "value": true
+      }
+     ]
+    ]
+   },
+   "spatiotemporal_conditions": {
+    "time": null,
+    "space": {
+     "start": "바닥 혹은 팔레트",
+     "end": "작업대"
+    }
+   },
+   "target_objects": {
+    "required": [
+     {
+      "ref": "종이 상자 1",
+      "location": "바닥 위",
+      "state": null
+     },
+     {
+      "ref": "종이 상자 2",
+      "location": "바닥 위",
+      "state": null
+     },
+     {
+      "ref": "종이 상자 3",
+      "location": "바닥 위",
+      "state": null
+     },
+     {
+      "ref": "종이 상자 4",
+      "location": "바닥 위",
+      "state": null
+     },
+     {
+      "ref": "종이 상자 5",
+      "location": "종이 상자 2 위",
+      "state": null
+     },
+     {
+      "ref": "종이 상자 6",
+      "location": "종이 상자 1 위",
+      "state": null
+     },
+     {
+      "ref": "종이 상자 7",
+      "location": "종이 상자 3 위",
+      "state": null
+     },
+     {
+      "ref": "종이 상자 8",
+      "location": "종이 상자 4 위",
+      "state": null
+     },
+     {
+      "ref": "납작 상자 1",
+      "location": "팔레트 위",
+      "state": null
+     },
+     {
+      "ref": "납작 상자 2",
+      "location": "팔레트 위",
+      "state": null
+     },
+     {
+      "ref": "납작 상자 3",
+      "location": "팔레트 위",
+      "state": null
+     },
+     {
+      "ref": "납작 상자 4",
+      "location": "팔레트 위",
+      "state": null
+     },
+     {
+      "ref": "납작 상자 5",
+      "location": "납작 상자 2 위",
+      "state": null
+     },
+     {
+      "ref": "상자 1",
+      "location": "납작 상자 3 위",
+      "state": null
+     },
+     {
+      "ref": "상자 2",
+      "location": "납작 상자 3 위",
+      "state": null
+     },
+     {
+      "ref": "상자 3",
+      "location": "납작 상자 1 위",
+      "state": null
+     },
+     {
+      "ref": "상자 4",
+      "location": "납작 상자 4 위",
+      "state": null
+     },
+     {
+      "ref": "상자 5",
+      "location": "상자 1 위",
+      "state": null
+     }
+    ],
+    "key_means": [
+     {
+      "ref": "작업대 상판",
+      "location": null,
+      "state": null,
+      "alternatives": []
+     }
+    ],
+    "auxiliary": [
+     {
+      "ref": "바닥",
+      "location": null,
+      "note": "종이 상자 1부터 4까지의 초기 위치 기준"
+     },
+     {
+      "ref": "팔레트",
+      "location": null,
+      "note": "납작 상자 1부터 4까지의 초기 위치 기준"
+     }
+    ]
+   },
+   "constraints": [
+    {
+     "type": "precedence",
+     "description": "종이 상자 5를 치우는 것이 종이 상자 2를 옮기는 것에, 종이 상자 6을 치우는 것이 종이 상자 1을 옮기는 것에 선행해야 함"
+    },
+    {
+     "type": "precedence",
+     "description": "종이 상자 7을 치우는 것이 종이 상자 3을 옮기는 것에, 종이 상자 8을 치우는 것이 종이 상자 4를 옮기는 것에 선행해야 함"
+    },
+    {
+     "type": "precedence",
+     "description": "납작 상자 5를 치우는 것이 납작 상자 2를 옮기는 것에 선행해야 함"
+    },
+    {
+     "type": "precedence",
+     "description": "상자 5를 치우는 것이 상자 1을 옮기는 것에 선행하고, 상자 1과 상자 2를 치우는 것이 납작 상자 3을 옮기는 것에 선행해야 함"
+    },
+    {
+     "type": "precedence",
+     "description": "상자 3을 치우는 것이 납작 상자 1을 옮기는 것에, 상자 4를 치우는 것이 납작 상자 4를 옮기는 것에 선행해야 함"
+    },
+    {
+     "type": "resource",
+     "description": "상자들은 한 번에 하나씩 옮겨야 함"
+    },
+    {
+     "type": "spatial",
+     "description": "옮긴 상자들은 작업대 상판에서 서로의 위에 쌓지 않고 따로 놓아야 함"
+    }
+   ]
+  },
+  "task_situation_description_text": "작업 목표: 바닥과 팔레트에서 쌓여 있는 상자들을 하나씩 분리해 작업대 상판에 따로 놓는 것\n목표 상태:\n- 종이 상자 1: 작업대 상판 위\n- 종이 상자 2: 작업대 상판 위\n- 종이 상자 3: 작업대 상판 위\n- 종이 상자 4: 작업대 상판 위\n- 종이 상자 5: 작업대 상판 위\n- 종이 상자 6: 작업대 상판 위\n- 종이 상자 7: 작업대 상판 위\n- 종이 상자 8: 작업대 상판 위\n- 납작 상자 1: 작업대 상판 위\n- 납작 상자 2: 작업대 상판 위\n- 납작 상자 3: 작업대 상판 위\n- 납작 상자 4: 작업대 상판 위\n- 납작 상자 5: 작업대 상판 위\n- 상자 1: 작업대 상판 위\n- 상자 2: 작업대 상판 위\n- 상자 3: 작업대 상판 위\n- 상자 4: 작업대 상판 위\n- 상자 5: 작업대 상판 위\n시간·공간 조건: 시간 조건은 없음, 공간 조건은 시작 바닥 혹은 팔레트, 종료 작업대\n대상 물체:\n- 필수 물체: 종이 상자 1(위치: 바닥 위)\n- 필수 물체: 종이 상자 2(위치: 바닥 위)\n- 필수 물체: 종이 상자 3(위치: 바닥 위)\n- 필수 물체: 종이 상자 4(위치: 바닥 위)\n- 필수 물체: 종이 상자 5(위치: 종이 상자 2 위)\n- 필수 물체: 종이 상자 6(위치: 종이 상자 1 위)\n- 필수 물체: 종이 상자 7(위치: 종이 상자 3 위)\n- 필수 물체: 종이 상자 8(위치: 종이 상자 4 위)\n- 필수 물체: 납작 상자 1(위치: 팔레트 위)\n- 필수 물체: 납작 상자 2(위치: 팔레트 위)\n- 필수 물체: 납작 상자 3(위치: 팔레트 위)\n- 필수 물체: 납작 상자 4(위치: 팔레트 위)\n- 필수 물체: 납작 상자 5(위치: 납작 상자 2 위)\n- 필수 물체: 상자 1(위치: 납작 상자 3 위)\n- 필수 물체: 상자 2(위치: 납작 상자 3 위)\n- 필수 물체: 상자 3(위치: 납작 상자 1 위)\n- 필수 물체: 상자 4(위치: 납작 상자 4 위)\n- 필수 물체: 상자 5(위치: 상자 1 위)\n- 핵심 수단: 작업대 상판\n- 보조 물체: 바닥(비고: 종이 상자 1부터 4까지의 초기 위치 기준)\n- 보조 물체: 팔레트(비고: 납작 상자 1부터 4까지의 초기 위치 기준)\n제약 사항:\n- [선후] 종이 상자 5를 치우는 것이 종이 상자 2를 옮기는 것에, 종이 상자 6을 치우는 것이 종이 상자 1을 옮기는 것에 선행해야 함\n- [선후] 종이 상자 7을 치우는 것이 종이 상자 3을 옮기는 것에, 종이 상자 8을 치우는 것이 종이 상자 4를 옮기는 것에 선행해야 함\n- [선후] 납작 상자 5를 치우는 것이 납작 상자 2를 옮기는 것에 선행해야 함\n- [선후] 상자 5를 치우는 것이 상자 1을 옮기는 것에 선행하고, 상자 1과 상자 2를 치우는 것이 납작 상자 3을 옮기는 것에 선행해야 함\n- [선후] 상자 3을 치우는 것이 납작 상자 1을 옮기는 것에, 상자 4를 치우는 것이 납작 상자 4를 옮기는 것에 선행해야 함\n- [자원] 상자들은 한 번에 하나씩 옮겨야 함\n- [공간] 옮긴 상자들은 작업대 상판에서 서로의 위에 쌓지 않고 따로 놓아야 함\n"
+ }
+}

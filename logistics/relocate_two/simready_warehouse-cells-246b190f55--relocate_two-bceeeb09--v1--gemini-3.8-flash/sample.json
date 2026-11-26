@@ -1,0 +1,114 @@
+{
+ "id": "simready_warehouse-cells-246b190f55--relocate_two-bceeeb09--v1--gemini-3.8-flash",
+ "domain": "logistics",
+ "task_type": "relocate_two",
+ "agent": "gemini-3.8-flash",
+ "source": {
+  "data": "NVIDIA PhysicalAI-SimReady-Warehouse-01 (CC BY 4.0)",
+  "scene_id": "simready_warehouse/246b190f55",
+  "task": "relocate_two",
+  "composed": true
+ },
+ "input": {
+  "instruction": "열린 상자랑 갈색 프린터 상자를 팔레트에 올려놔.",
+  "instruction_en": "Put the open box and the brown printer box on a pallet.",
+  "world_state": "장소: 물류 창고\n로봇(humanoid). 들고 있는 물체 없음.\n\n물체가 놓인 곳:\n- 재활용함 안: 갈색 골판지 상자 1, 갈색 골판지 상자 2, 갈색 프린터 상자\n- 카트 선반 3 위: 열린 상자\n- 갈색 골판지 상자 2 위: 갈색 골판지 상자 3\n- 갈색 골판지 상자 3 위: 상자 1, 상자 2\n- 카트 선반 2 위: 긴 상자 1, 납작 상자 1, 납작 상자 2\n- 납작 상자 1 위: 납작 상자 3\n- 긴 상자 1 위: 긴 상자 2\n- 카트 선반 1 위: 바코드 스캐너\n\n물체 크기:\n- 갈색 골판지 상자: 큰 것부터 갈색 골판지 상자 2, 갈색 골판지 상자 3, 갈색 골판지 상자 1\n- 긴 상자: 큰 것부터 긴 상자 1, 긴 상자 2\n- 납작 상자: 큰 것부터 납작 상자 3, 납작 상자 1, 납작 상자 2\n\n설비:\n- 바닥\n- 팔레트 1, 2, 4부터 7까지(팔레트 위)\n- 팔레트 3\n- 카트: 칸: 선반 1부터 3까지(위에서부터)\n- 재활용함",
+  "entity_labels": {
+   "fx_floor_1": "바닥",
+   "fx_pallet_1": "팔레트 1",
+   "fx_pallet_2": "팔레트 2",
+   "fx_pallet_3": "팔레트 3",
+   "fx_pallet_4": "팔레트 4",
+   "fx_pallet_5": "팔레트 5",
+   "fx_pallet_6": "팔레트 6",
+   "fx_pallet_7": "팔레트 7",
+   "fx_cart_1": "카트",
+   "fx_recycling_bin_1": "재활용함",
+   "obj_001": "갈색 골판지 상자 1",
+   "obj_002": "갈색 골판지 상자 2",
+   "obj_003": "열린 상자",
+   "obj_004": "갈색 골판지 상자 3",
+   "obj_005": "갈색 프린터 상자",
+   "obj_006": "상자 1",
+   "obj_007": "상자 2",
+   "obj_008": "긴 상자 1",
+   "obj_009": "납작 상자 1",
+   "obj_010": "납작 상자 2",
+   "obj_011": "납작 상자 3",
+   "obj_012": "긴 상자 2",
+   "obj_013": "바코드 스캐너",
+   "fx_cart_1/shelf1": "카트 선반 1",
+   "fx_cart_1/shelf2": "카트 선반 2",
+   "fx_cart_1/shelf3": "카트 선반 3"
+  }
+ },
+ "output": {
+  "reasoning": "① 지시 해석: 열린 상자와 갈색 프린터 상자를 팔레트 위에 올리는 작업이다. 순서가 정해지지 않은 나열형 지시이므로 시작 장소는 두 물체가 놓여 있는 설비인 카트와 재활용함 둘 다 해당하여 '카트 혹은 재활용함'이며, 끝나는 곳은 '팔레트'이다. 시간 조건은 없다. ② 씬 접지: '열린 상자'는 카트 선반 3 위에 놓여 있고, '갈색 프린터 상자'는 재활용함 안에 있다. 팔레트는 여러 개가 존재하므로 번호를 뗀 '팔레트'로 접지한다. 두 물체 위에 다른 물체가 쌓여 있지 않다. ③ 물체 역할 부여 근거: 위치를 옮겨야 하는 열린 상자와 갈색 프린터 상자는 필수(required)이다. 두 물체를 받는 목적지인 팔레트는 핵심 수단(key_means)이다. 물체들의 초기 위치 기준이 되는 카트와 재활용함은 보조(auxiliary)이다. ④ 제약 도출 근거: 지시나 물리적 환경에서 특정 작업 순서나 간섭이 발생하지 않으므로 제약 사항은 없다. ⑤ 목표 상태 도출 근거: 열린 상자와 갈색 프린터 상자가 모두 팔레트 위에 놓인 상태(on)가 되어야 한다.",
+  "task_situation_description": {
+   "task_goal": {
+    "summary": "열린 상자와 갈색 프린터 상자를 팔레트 위로 옮기는 것",
+    "goal_state": [
+     [
+      {
+       "kind": "relation",
+       "subject": "열린 상자",
+       "predicate": "on",
+       "object": "팔레트",
+       "value": true
+      },
+      {
+       "kind": "relation",
+       "subject": "갈색 프린터 상자",
+       "predicate": "on",
+       "object": "팔레트",
+       "value": true
+      }
+     ]
+    ]
+   },
+   "spatiotemporal_conditions": {
+    "time": null,
+    "space": {
+     "start": "카트 혹은 재활용함",
+     "end": "팔레트"
+    }
+   },
+   "target_objects": {
+    "required": [
+     {
+      "ref": "열린 상자",
+      "location": "카트 선반 3 위",
+      "state": null
+     },
+     {
+      "ref": "갈색 프린터 상자",
+      "location": "재활용함 안",
+      "state": null
+     }
+    ],
+    "key_means": [
+     {
+      "ref": "팔레트",
+      "location": null,
+      "state": null,
+      "alternatives": []
+     }
+    ],
+    "auxiliary": [
+     {
+      "ref": "카트",
+      "location": null,
+      "note": "열린 상자의 초기 위치 기준"
+     },
+     {
+      "ref": "재활용함",
+      "location": null,
+      "note": "갈색 프린터 상자의 초기 위치 기준"
+     }
+    ]
+   },
+   "constraints": []
+  },
+  "task_situation_description_text": "작업 목표: 열린 상자와 갈색 프린터 상자를 팔레트 위로 옮기는 것\n목표 상태:\n- 열린 상자: 팔레트 위\n- 갈색 프린터 상자: 팔레트 위\n시간·공간 조건: 시간 조건은 없음, 공간 조건은 시작 카트 혹은 재활용함, 종료 팔레트\n대상 물체:\n- 필수 물체: 열린 상자(위치: 카트 선반 3 위)\n- 필수 물체: 갈색 프린터 상자(위치: 재활용함 안)\n- 핵심 수단: 팔레트\n- 보조 물체: 카트(비고: 열린 상자의 초기 위치 기준)\n- 보조 물체: 재활용함(비고: 갈색 프린터 상자의 초기 위치 기준)\n제약 사항: 없음\n"
+ }
+}

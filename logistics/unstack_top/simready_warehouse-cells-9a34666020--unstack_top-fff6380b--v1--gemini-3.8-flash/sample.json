@@ -1,0 +1,100 @@
+{
+ "id": "simready_warehouse-cells-9a34666020--unstack_top-fff6380b--v1--gemini-3.8-flash",
+ "domain": "logistics",
+ "task_type": "unstack_top",
+ "agent": "gemini-3.8-flash",
+ "source": {
+  "data": "NVIDIA PhysicalAI-SimReady-Warehouse-01 (CC BY 4.0)",
+  "scene_id": "simready_warehouse/9a34666020",
+  "task": "unstack_top",
+  "composed": true
+ },
+ "input": {
+  "instruction": "납작 상자 위에 올려진 납작 상자를 꺼내서 랙 맨 위 선반에 올려놔.",
+  "instruction_en": "Take the top flat box off the stack of flat boxes and put it on the top shelf of the rack.",
+  "world_state": "장소: 물류 창고\n로봇(humanoid). 들고 있는 물체 없음.\n\n물체가 놓인 곳:\n- 팔레트 4 위: 납작 상자 1, 납작 상자 2, 납작 상자 3, 납작 상자 4\n- 납작 상자 2 위: 납작 상자 5\n- 납작 상자 3 위: 상자 1, 상자 2\n- 납작 상자 1 위: 상자 3\n- 납작 상자 4 위: 상자 4\n- 상자 1 위: 상자 5\n- 랙 선반 2 위: 나무 상자 1, 나무 상자 2\n- 랙 선반 1 위: 나무 상자 3, 나무 상자 4, 나무 상자 5, 나무 상자 6\n\n물체 크기:\n- 납작 상자: 큰 것부터 납작 상자 5, 납작 상자 3·납작 상자 1·납작 상자 2·납작 상자 4(서로 비슷)\n- 상자: 큰 것부터 상자 3·상자 4(서로 비슷), 상자 2·상자 1(서로 비슷), 상자 5\n- 나무 상자: 큰 것부터 나무 상자 1·나무 상자 2(서로 비슷), 나무 상자 4·나무 상자 5·나무 상자 3·나무 상자 6(서로 비슷)\n\n설비:\n- 바닥\n- 랙: 칸: 선반 1, 2(위에서부터)\n- 팔레트 1, 3(팔레트 위)\n- 팔레트 2, 4",
+  "entity_labels": {
+   "fx_floor_1": "바닥",
+   "fx_rack_1": "랙",
+   "fx_pallet_1": "팔레트 1",
+   "fx_pallet_2": "팔레트 2",
+   "fx_pallet_3": "팔레트 3",
+   "fx_pallet_4": "팔레트 4",
+   "obj_001": "납작 상자 1",
+   "obj_002": "납작 상자 2",
+   "obj_003": "납작 상자 3",
+   "obj_004": "납작 상자 4",
+   "obj_005": "납작 상자 5",
+   "obj_006": "상자 1",
+   "obj_007": "상자 2",
+   "obj_008": "상자 3",
+   "obj_009": "상자 4",
+   "obj_010": "상자 5",
+   "obj_011": "나무 상자 1",
+   "obj_012": "나무 상자 2",
+   "obj_013": "나무 상자 3",
+   "obj_014": "나무 상자 4",
+   "obj_015": "나무 상자 5",
+   "obj_016": "나무 상자 6",
+   "fx_rack_1/shelf1": "랙 선반 1",
+   "fx_rack_1/shelf2": "랙 선반 2"
+  }
+ },
+ "output": {
+  "reasoning": "① 지시 해석: 납작 상자 위에 올려진 납작 상자를 꺼내 랙의 맨 위 선반에 올려놓는 작업이다. 시간 조건은 없으며, 물체가 위치한 팔레트 4에서 시작하여 목적지인 랙에서 작업이 끝난다. ② 씬 접지: 환경 설명에서 '납작 상자 2 위'에 '납작 상자 5'가 놓여 있으므로 옮길 대상은 납작 상자 5이다. 랙의 칸 중 위에서부터 선반 1, 2이므로 맨 위 선반은 '랙 선반 1'이다. ③ 물체 역할 부여: 위치가 바뀌는 납작 상자 5는 필수다. 도착지인 랙 선반 1은 핵심 수단이다. 납작 상자 5의 초기 위치 기준이 되는 납작 상자 2와 팔레트 4는 보조다. ④ 제약 도출: 납작 상자 5 위에 다른 물체가 놓여 있지 않으므로 선행 치우기 등의 제약 사항은 없다. ⑤ 목표 상태 도출: 지시가 요구한 최종 상태는 납작 상자 5가 랙 선반 1 위에 놓이는 것이다.",
+  "task_situation_description": {
+   "task_goal": {
+    "summary": "납작 상자 2 위에 올려진 납작 상자 5를 랙 선반 1 위로 옮기는 것",
+    "goal_state": [
+     [
+      {
+       "kind": "relation",
+       "subject": "납작 상자 5",
+       "predicate": "on",
+       "object": "랙 선반 1",
+       "value": true
+      }
+     ]
+    ]
+   },
+   "spatiotemporal_conditions": {
+    "time": null,
+    "space": {
+     "start": "팔레트 4",
+     "end": "랙"
+    }
+   },
+   "target_objects": {
+    "required": [
+     {
+      "ref": "납작 상자 5",
+      "location": "납작 상자 2 위",
+      "state": null
+     }
+    ],
+    "key_means": [
+     {
+      "ref": "랙 선반 1",
+      "location": null,
+      "state": null,
+      "alternatives": []
+     }
+    ],
+    "auxiliary": [
+     {
+      "ref": "납작 상자 2",
+      "location": "팔레트 4 위",
+      "note": "납작 상자 5의 초기 위치 기준 물체"
+     },
+     {
+      "ref": "팔레트 4",
+      "location": null,
+      "note": "납작 상자 5의 초기 위치 기준 설비"
+     }
+    ]
+   },
+   "constraints": []
+  },
+  "task_situation_description_text": "작업 목표: 납작 상자 2 위에 올려진 납작 상자 5를 랙 선반 1 위로 옮기는 것\n목표 상태:\n- 납작 상자 5: 랙 선반 1 위\n시간·공간 조건: 시간 조건은 없음, 공간 조건은 시작 팔레트 4, 종료 랙\n대상 물체:\n- 필수 물체: 납작 상자 5(위치: 납작 상자 2 위)\n- 핵심 수단: 랙 선반 1\n- 보조 물체: 납작 상자 2(위치: 팔레트 4 위, 비고: 납작 상자 5의 초기 위치 기준 물체)\n- 보조 물체: 팔레트 4(비고: 납작 상자 5의 초기 위치 기준 설비)\n제약 사항: 없음\n"
+ }
+}

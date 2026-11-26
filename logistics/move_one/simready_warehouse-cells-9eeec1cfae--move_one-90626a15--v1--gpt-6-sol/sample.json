@@ -1,0 +1,88 @@
+{
+ "id": "simready_warehouse-cells-9eeec1cfae--move_one-90626a15--v1--gpt-6-sol",
+ "domain": "logistics",
+ "task_type": "move_one",
+ "agent": "gpt-6-sol",
+ "source": {
+  "data": "NVIDIA PhysicalAI-SimReady-Warehouse-01 (CC BY 4.0)",
+  "scene_id": "simready_warehouse/9eeec1cfae",
+  "task": "move_one",
+  "composed": true
+ },
+ "input": {
+  "instruction": "갈색 골판지 상자 하나를 랙 맨 아래 선반에 올려놔.",
+  "instruction_en": "Put one of the brown corrugated boxes on the bottom shelf of the rack.",
+  "world_state": "장소: 물류 창고\n로봇(humanoid). 들고 있는 물체 없음.\n\n물체가 놓인 곳:\n- 재활용함 안: 갈색 골판지 상자 1, 갈색 골판지 상자 2, 갈색 프린터 상자\n- 갈색 골판지 상자 2 위: 갈색 골판지 상자 3\n- 갈색 골판지 상자 3 위: 상자 1, 상자 2\n- 랙 선반 2 위: 나무 상자 1, 나무 상자 2\n- 랙 선반 1 위: 나무 상자 3, 나무 상자 4, 나무 상자 5, 나무 상자 6\n\n물체 크기:\n- 갈색 골판지 상자: 큰 것부터 갈색 골판지 상자 2, 갈색 골판지 상자 3, 갈색 골판지 상자 1\n- 나무 상자: 큰 것부터 나무 상자 1·나무 상자 2(서로 비슷), 나무 상자 4·나무 상자 5·나무 상자 3·나무 상자 6(서로 비슷)\n\n설비:\n- 바닥\n- 랙: 칸: 선반 1, 2(위에서부터)\n- 재활용함",
+  "entity_labels": {
+   "fx_floor_1": "바닥",
+   "fx_rack_1": "랙",
+   "fx_recycling_bin_1": "재활용함",
+   "obj_001": "갈색 골판지 상자 1",
+   "obj_002": "갈색 골판지 상자 2",
+   "obj_003": "갈색 골판지 상자 3",
+   "obj_004": "갈색 프린터 상자",
+   "obj_005": "상자 1",
+   "obj_006": "상자 2",
+   "obj_007": "나무 상자 1",
+   "obj_008": "나무 상자 2",
+   "obj_009": "나무 상자 3",
+   "obj_010": "나무 상자 4",
+   "obj_011": "나무 상자 5",
+   "obj_012": "나무 상자 6",
+   "fx_rack_1/shelf1": "랙 선반 1",
+   "fx_rack_1/shelf2": "랙 선반 2"
+  }
+ },
+ "output": {
+  "reasoning": "① 지시 해석: 갈색 골판지 상자 하나를 랙의 맨 아래 선반에 올리는 작업이다. 시간 조건은 없다. 상자들이 있는 재활용함에서 시작해 랙에서 끝난다. ② 씬 접지: 랙의 선반은 위에서부터 선반 1, 선반 2이므로 맨 아래 선반은 랙 선반 2다. 갈색 골판지 상자 1과 2는 재활용함 안에 있고, 갈색 골판지 상자 3은 상자 2 위에 있다. ③ 역할 부여: 옮길 갈색 골판지 상자는 필수, 받는 곳인 랙 선반 2는 핵심 수단, 초기 위치의 설비인 재활용함은 보조다. ④ 제약 도출: 위에 다른 물체가 놓이지 않은 갈색 골판지 상자 1을 선택할 수 있으므로 반드시 거쳐야 하는 선행 작업은 없다. ⑤ 목표 상태: 번호를 지정하지 않고 상자 하나만 요구했으므로 번호를 뗀 이름을 쓰며, 그 상자가 랙 선반 2 위에 있는 관계를 목표로 한다.",
+  "task_situation_description": {
+   "task_goal": {
+    "summary": "갈색 골판지 상자 하나를 랙 맨 아래 선반에 올려놓는 것",
+    "goal_state": [
+     [
+      {
+       "kind": "relation",
+       "subject": "갈색 골판지 상자",
+       "predicate": "on",
+       "object": "랙 선반 2",
+       "value": true
+      }
+     ]
+    ]
+   },
+   "spatiotemporal_conditions": {
+    "time": null,
+    "space": {
+     "start": "재활용함",
+     "end": "랙"
+    }
+   },
+   "target_objects": {
+    "required": [
+     {
+      "ref": "갈색 골판지 상자",
+      "location": null,
+      "state": null
+     }
+    ],
+    "key_means": [
+     {
+      "ref": "랙 선반 2",
+      "location": null,
+      "state": null,
+      "alternatives": []
+     }
+    ],
+    "auxiliary": [
+     {
+      "ref": "재활용함",
+      "location": null,
+      "note": "갈색 골판지 상자의 초기 위치 기준"
+     }
+    ]
+   },
+   "constraints": []
+  },
+  "task_situation_description_text": "작업 목표: 갈색 골판지 상자 하나를 랙 맨 아래 선반에 올려놓는 것\n목표 상태:\n- 갈색 골판지 상자: 랙 선반 2 위\n시간·공간 조건: 시간 조건은 없음, 공간 조건은 시작 재활용함, 종료 랙\n대상 물체:\n- 필수 물체: 갈색 골판지 상자\n- 핵심 수단: 랙 선반 2\n- 보조 물체: 재활용함(비고: 갈색 골판지 상자의 초기 위치 기준)\n제약 사항: 없음\n"
+ }
+}
